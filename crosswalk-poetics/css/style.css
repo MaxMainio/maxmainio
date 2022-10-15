@@ -66,7 +66,7 @@ body{
     max-width: 1400px;
     height: 100vh;
     margin: 0 auto 0 auto;
-    background-color: green;
+    /* background-color: green; */
 }
 
 .work-title{
@@ -83,7 +83,7 @@ body{
     max-width: 2560px;
     height: 100%;
     margin: 0 auto 0 auto;
-    background-color: red;
+    /* background-color: red; */
 }
 
 
