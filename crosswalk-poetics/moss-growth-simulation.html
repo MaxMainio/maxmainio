@@ -2,45 +2,45 @@
 <html>
 	<head>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Test 1</title>
+		<title>Max Mainio | Moss Growth Simulation</title>
 		<link rel="stylesheet" type="text/css" href="css/style.css"> </link>
 	</head>
 
 	<body>
-		<div id="set-height"></div>
+		<nav class="navbar">
+			<div class="nav-container">
+				<div class="nav-grid">
+					<h1 style="grid-column: 1 / 3;">Max Mainio Beidler</h1>
+					<h1 style="grid-column: 7 / 7;"><a href="https://wwww.maxmainio.com">Portfolio</a></h1>
 
-		<img id="bg-img" src="assets/Cropped.jpg">
+					<div class="nav-flex">
+						<h1><a href="https://www.maxmainio.com/about">About</a></h1>
+						<h1><a class="non-active" title="Coming soon...">→</a></h1>
+					</div>
+				</div>
+			</div>
+		</nav>
 
-		<video id="v0" tabindex="0" autobuffer preload>
-			<source src="assets/Moss.mp4"></source>
-		</video>
+		<section class="work-section">
+			<div class="in-container">
+				<div class="work-title">
+					<h1 class="title">Moss Growth Simulation</h1>
+					<h1>Moss growth simulation</h1>
+					<p class="work-p">lorem ipsum...</p>
+				</div>
+			</div>
 
-		<script>
+			<div class="out-container">
+				<div id="set-height"></div>
 
-		var frameNumber = 0, // start video at frame 0
-			// lower numbers = faster playback
-			playbackConst = 500, 
-			// get page height from video duration
-			setHeight = document.getElementById("set-height"), 
-			// select video element         
-			vid = document.getElementById('v0'); 
-			// var vid = $('#v0')[0]; // jquery option
+				<!-- <img id="bg-img" src="assets/Cropped.jpg"> -->
 
-		// dynamically set the page height according to video length
-		vid.addEventListener('loadedmetadata', function() {
-		setHeight.style.height = Math.floor(vid.duration) * playbackConst * 2.8 + "px";
-		});
+				<video id="v0" tabindex="0" autobuffer preload>
+					<source src="assets/Moss.mp4"></source>
+				</video>
+			</div>
+		</section>
 
-
-		// Use requestAnimationFrame for smooth playback
-		function scrollPlay(){  
-		var frameNumber  = window.pageYOffset/playbackConst;
-		vid.currentTime  = frameNumber;
-		window.requestAnimationFrame(scrollPlay);
-		}
-
-		window.requestAnimationFrame(scrollPlay);
-
-		</script>
+		<script src="js/scripts.js"></script>
 	</body>
 </html>

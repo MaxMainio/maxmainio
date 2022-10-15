@@ -1,8 +1,103 @@
-#v0{
+/* @font-face {
+    font-family: "Helvetica";
+    src: url('../../assets/fonts/HelveticaNeueLTStd-Roman.otf') format('otf');
+} */
+
+:root{
+    --type-color:#333;
+    --green: #00ff00;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: Helvetica, sans-serif;
+}
+
+
+
+
+
+/* Nav */
+
+.navbar{
     position: fixed;
-    bottom: 0;
+    top: 0;
+    left: 0;
     right: 0;
-    width: auto;
+    bottom: auto;
+
+    z-index: 10000;
+}
+
+.nav-container{
+    max-width: 1400px;
+    margin: 0 auto 0 auto;
+}
+
+.nav-grid{
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 1rem;
+
+    margin: 1rem;
+}
+
+.nav-flex{
+    grid-column: 8 / 8;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+
+.work-section{
+    height: auto;
+    width: 100%;
+    position: absolute;
+}
+
+.in-container{
+    position: absolute;
+    inset: 0 0 auto 0;
+
+    max-width: 1400px;
+    height: 100vh;
+    margin: 0 auto 0 auto;
+    background-color: green;
+}
+
+.work-title{
+    position: absolute;
+    inset: auto auto 0 0;
+    z-index: 100;
+    margin: 0 0 1rem 1rem;
+}
+
+.out-container{
+    position: relative;
+    inset: auto;
+
+    max-width: 2560px;
+    height: 100%;
+    margin: 0 auto 0 auto;
+    background-color: red;
+}
+
+
+
+
+
+
+
+
+#v0{
+    position: sticky;
+    inset: 0 0 0 0;
+    margin: auto 0 0 68.75%;
+    width: 800px;
 
     mix-blend-mode: darken;
 }
@@ -16,4 +111,64 @@
     bottom: 0;
     right: 0;
     width: 800px;
+}
+
+
+
+
+
+
+h1{
+    font-weight: normal;
+    font-size: 1rem;
+    line-height: 1rem;
+
+    margin: 0;
+    color: var(--type-color);
+}
+
+.title{
+    font-weight: bold;
+    font-size: 3rem;
+    line-height: 3rem;
+}
+
+p{
+    font-weight: lighter;
+    font-size: 0.8rem;
+    line-height: 1.1rem;
+    letter-spacing: 0.5px;
+
+    margin: 0;
+    color: var(--type-color);
+}
+
+.work-p{
+    margin-top: 0.5rem;
+    width: 60ch;
+}
+
+a{
+    text-decoration: none;
+    color: var(--type-color);
+}
+
+a:hover{
+    background-color: var(--green);
+}
+
+.non-active{
+    cursor: not-allowed;
+}
+
+
+
+
+
+
+
+
+
+@media screen {
+    
 }
