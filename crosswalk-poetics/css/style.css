@@ -1,0 +1,19 @@
+#v0{
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: auto;
+
+    mix-blend-mode: darken;
+}
+
+#set-height{
+    display: block;
+}
+
+#bg-img{
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 800px;
+}
