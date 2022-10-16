@@ -11,7 +11,7 @@ var frameNumber = 0, // start video at frame 0
 
 		// dynamically set the page height according to video length
 		vid.addEventListener('loadedmetadata', function() {
-		setHeight.style.height = Math.floor(vid.duration) * playbackConst * 1.8 + "px";
+		setHeight.style.height = Math.floor(vid.duration) * playbackConst * 2.8 + "px";
 		});
 
 
