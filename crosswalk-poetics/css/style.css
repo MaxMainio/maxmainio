@@ -53,10 +53,10 @@
     box-shadow: 0 0 50px rgba(0, 0, 0, 0.1);
 }
 
-
 #v0{
     position: absolute;
     inset: 0;
+    width: 800px;
     mix-blend-mode: darken;
 }
 
@@ -103,5 +103,43 @@
 @media only screen and (max-width: 2560px) {
     .content-frame{
         margin: auto 0 0 calc(100vw - 800px);
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .content-frame{
+        inset: 0 0 auto 0;
+        margin: 0 0 auto 0;
+        height: auto;
+        width: 100%;
+    }
+
+    #v0{
+        height: auto;
+        width: 100%;
+    }
+
+    #bg-img{
+        height: auto;
+        width: 100%;
+    }
+}
+
+@media only screen and (max-height: 1024px) {
+    .content-frame{
+        inset: 0 0 0 auto;
+        margin: 0 0 0 calc(100vw - (78vh - 1rem));
+        height: calc(100vh - 1rem);
+        width: auto;
+    }
+
+    #v0{
+        height: calc(100vh - 1rem);
+        width: auto;
+    }
+
+    #bg-img{
+        height: calc(100vh - 1rem);
+        width: auto;
     }
 }
