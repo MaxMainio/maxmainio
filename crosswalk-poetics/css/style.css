@@ -125,7 +125,7 @@
     }
 }
 
-@media only screen and (max-height: 1024px) {
+@media only screen and (max-height: 1040px) {
     .content-frame{
         inset: 0 0 0 auto;
         margin: 0 0 0 calc(100vw - (78vh - 1rem));
