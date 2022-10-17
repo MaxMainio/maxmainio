@@ -45,7 +45,7 @@
 
 .content-frame{
     position: sticky;
-    inset: calc(100vh - (1024px + 1rem)) 0 1rem 0;
+    top: calc(100vh - (1024px + 1rem));
     margin: 0 0 0 68.75%;
     width: 800px;
     height: 1024px;
@@ -106,25 +106,6 @@
     }
 }
 
-@media only screen and (max-width: 1024px) {
-    .content-frame{
-        inset: 0 0 auto 0;
-        margin: 0 0 auto 0;
-        height: auto;
-        width: 100%;
-    }
-
-    #v0{
-        height: auto;
-        width: 100%;
-    }
-
-    #bg-img{
-        height: auto;
-        width: 100%;
-    }
-}
-
 @media only screen and (max-height: 1040px) {
     .content-frame{
         inset: 0 0 0 auto;
@@ -141,5 +122,24 @@
     #bg-img{
         height: calc(100vh - 1rem);
         width: auto;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .content-frame{
+        inset: 0 0 auto 0;
+        margin: 0 0 auto 0;
+        height: auto;
+        width: 100%;
+    }
+
+    #v0{
+        height: auto;
+        width: 100%;
+    }
+
+    #bg-img{
+        height: auto;
+        width: 100%;
     }
 }
