@@ -27,8 +27,12 @@ section{
     position: sticky;
     top: 3rem;
 
-    width: 100%;
-    height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+
+    width: auto;
+    height: auto;
 
     background-color: red;
 }
@@ -51,15 +55,23 @@ section{
     grid-column: 2 / 2;
 }
 
-.offset-small{
+
+
+
+
+
+
+
+
+.follow-small{
     margin-top: 0.5rem;
 }
 
-.offset-medium{
+.follow-medium{
     margin-top: 0.75rem;
 }
 
-.offset-large{
+.follow-large{
     margin-top: 1.5rem;
 }
 

@@ -67,6 +67,10 @@
     --green: #00ff00;
 }
 
+*, *::before, *::after{
+    box-sizing: border-box;
+}
+
 body{
     margin: 0;
     padding: 0;
@@ -86,7 +90,7 @@ body{
 
 /* Nav Bar */
 
-.navbar{
+nav{
     position: fixed;
     top: 0;
     left: 0;
@@ -179,4 +183,68 @@ a:hover{
 
 .non-active{
     cursor: not-allowed;
+}
+
+
+
+
+
+
+
+
+
+/* Image Carousels */
+
+.carousel{
+    position: relative;
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+}
+
+.carousel > ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.slide{
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    /* transition: 200ms ease-in-out; */
+}
+
+.slide > img{
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.slide[data-active]{
+    opacity: 1;
+}
+
+.carousel-button{
+    position: absolute;
+    z-index: 2;
+    background: none;
+    border: none;
+
+    width: 30%;
+    height: 100%;
+
+    background-color: rgba(255, 0, 0, .1);
+}
+
+.carousel-button.prev{
+    left: 0;
+    cursor: w-resize;
+}
+
+.carousel-button.next{
+    right: 0;
+    cursor: e-resize;
 }

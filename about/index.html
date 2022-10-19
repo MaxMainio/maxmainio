@@ -3,13 +3,14 @@
 	<head>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="icon" href="../assets/icons/favicon.png">
-		<title>About Max Mainio Beidler</title>
 		<link rel="stylesheet" type="text/css" href="../css/main.css"> </link>
 		<link rel="stylesheet" type="text/css" href="about.css"> </link>
+		<script src="scripts.js" defer></script>
+		<title>About Max Mainio Beidler</title>
 	</head>
 
 	<body>
-		<nav class="navbar">
+		<nav>
 			<div class="nav-container">
 				<div class="nav-grid">
 					<h1 class="nav-title">Max Mainio Beidler</h1>
@@ -28,7 +29,29 @@
 				<div class="about-grid">
 					<div class="profile-column">
 						<div class="profile-div">
+							<div class="carousel" data-carousel>
+								<button class="carousel-button prev" data-carousel-button="prev">&larr;</button>
+								
+								<button class="carousel-button next" data-carousel-button="next">&rarr;</button>
 
+								<ul data-slides>
+									<li class="slide" data-active="">
+										<img src="assets/profile/Profile 1.jpg" alt="Picture of me after a hair cut 2022">
+									</li>
+
+									<li class="slide">
+										<img src="assets/profile/Profile 7.jpg" alt="My girlfriend likes taking pictures of me when I'm trying to eat.">
+									</li>
+
+									<li class="slide">
+										<img src="assets/profile/Profile 11.jpg" alt="A picture of me wearing a friend's apparel homework.">
+									</li>
+								</ul>
+							</div>
+							
+							<p style="margin-top: 0.25rem;">
+								That's <a href="https://philosophynow.org/issues/84/Who_Or_What_Am_I" target="_blank">me</a>! 🤭
+							</p>
 						</div>
 					</div>
 
@@ -37,16 +60,16 @@
 						<p>
 							My name is Max Mainio Beidler. I am currently studying Graphic Design at the Rhode Island School of Design and I will be graduating with a Bachelor of Fine Arts in June of 2023.
 						</p>
-						<p class="offset-small">
+						<p class="follow-small">
 							I am a dual citizen of Finland and the United States. I am currently living on the East coast of the U.S., but I call the capital city of Helsinki Finland my home.
 						</p>
-						<p class="offset-small">
+						<p class="follow-small">
 							I am interested in creating and growing in all areas of design, technology, and the arts, in addition to deepening my expertise in graphic design.
 						</p>
-						<p class="offset-small">
+						<p class="follow-small">
 							This is an exciting time to be a designer, as the world of design is rapidly and fundamentally evolving with the emergence of new tools and technology such as artificial intelligence, variable fonts, generative design methods…
 						</p>
-						<p class="offset-small">
+						<p class="follow-small">
 							I spend a considerable amount of my time exploring these new dimensions of design while still embracing the importance of design traditions.
 						</p>
 					</div>
@@ -60,9 +83,9 @@
 								<p><a>+1 (401) 651 3014</a></p>
 							</div>
 	
-							<div class="first-column offset-small">
+							<div class="first-column follow-medium">
 								<h2>Contact for:</h2>
-								<p><a href="mailto:beidler.max@gmail.com?Subject=Request for your resume.">resume</a></p>
+								<p><a href="mailto:beidler.max@gmail.com?Subject=Request for your resume.">Resume</a></p>
 								<p><a href="mailto:beidler.max@gmail.com?Subject=Request for your portfolio.">Portfolio</a></p>
 							</div>
 						</div>
@@ -92,7 +115,7 @@
 									<a href="https://www.adobe.com/products/xd.html" target="_blank">XD</a></p>
 							</div>
 
-							<div class="offset-medium">
+							<div class="follow-medium">
 								<h3>3D:</h3>
 								<p>	<a href="https://www.blender.org/" target="_blank">Blender</a>, 
 									<a href="https://www.maxon.net/en/cinema-4d" target="_blank">Cinema 4D</a>, 
@@ -103,8 +126,8 @@
 									<a href="https://www.rhino3d.com/" target="_blank">Rhino</a></p>
 							</div>
 
-							<div class="offset-medium">
-								<h3 class="offset-medium">Web:</h3>
+							<div class="follow-medium">
+								<h3 class="follow-medium">Web:</h3>
 								<p>	<a href="https://www.figma.com/" target="_blank">Figma</a>, 
 									<a href="https://www.protopie.io/" target="_blank">Protopie</a>, 
 									<a href="https://webflow.com/?r=0" target="_blank">Webflow</a>, 
@@ -115,7 +138,7 @@
 							</div>
 						</div>
 
-						<div class="offset-large">
+						<div class="follow-large">
 							<h2>Design</h2>
 							<div>
 								<h3>Print:</h3>
@@ -127,8 +150,8 @@
 									<a href="https://en.wikipedia.org/wiki/Bookbinding" target="_blank">Various print publication binding methods</a></p>
 							</div>
 
-							<div class="offset-medium">
-								<h3 class="offset-medium">Fine arts:</h3>
+							<div class="follow-medium">
+								<h3 class="follow-medium">Fine arts:</h3>
 								<p>	<a href="https://en.wikipedia.org/wiki/Digital_photography" target="_blank">Digital photography</a>, 
 									<a href="https://en.wikipedia.org/wiki/Analog_photography" target="_blank">Film photography</a>, 
 									<a href="https://en.wikipedia.org/wiki/Darkroom" target="_blank">Darkroom</a>, 
@@ -139,7 +162,7 @@
 							</div>
 						</div>
 
-						<div class="offset-large">
+						<div class="follow-large">
 							<h2>Interpersonal</h2>
 							<div>
 								<h3>Leadership:</h3>
@@ -147,8 +170,8 @@
 									<a href="https://fi.wikipedia.org/wiki/Isonen" target="_blank">Camp counselor training & experience</a></p>
 							</div>
 							
-							<div class="offset-medium">
-								<h3 class="offset-medium">Language:</h3>
+							<div class="follow-medium">
+								<h3 class="follow-medium">Language:</h3>
 								<p>Fluent in both <a href="https://en.wikipedia.org/wiki/English" target="_blank">English</a> & <a href="https://en.wikipedia.org/wiki/Finnish" target="_blank">Finnish</a></p>
 							</div>
 						</div>
@@ -171,7 +194,7 @@
 							</p>
 						</div>
 
-						<div class="offset-medium">
+						<div class="follow-medium">
 							<h2>
 								<a href="https://www.hel.fi/kuvatl/fi" target="_blank">Torkkeli Helsinki's Upper Secondary School of Visual Arts</a>
 							</h2>
@@ -203,7 +226,7 @@
 							<p class="xp-interactive"><a>Less...</a></p>
 						</div>
 
-						<div class="xp-div offset-medium">
+						<div class="xp-div follow-medium">
 							<h2 class="xp-content">
 								<a href="https://neoscape.com/" target="_blank">Neoscape</a>, 
 								<a href="https://en.wikipedia.org/wiki/Boston" target="_blank">Boston</a>, 
@@ -222,7 +245,7 @@
 							<p class="xp-interactive"><a>Less...</a></p>
 						</div>
 
-						<div class="xp-div offset-medium">
+						<div class="xp-div follow-medium">
 							<h2 class="xp-content">
 								<a href="https://ruotuvaki.fi/etusivu" target="_blank">Ruotuväki</a>, 
 								<a href="https://puolustusvoimat.fi/etusivu" target="_blank">Finland's National Defence Force</a>
@@ -241,7 +264,7 @@
 							<p class="xp-interactive"><a>Less...</a></p>
 						</div>
 
-						<div class="xp-div offset-medium">
+						<div class="xp-div follow-medium">
 							<h2 class="xp-content">
 								<a href="https://www.converse.com/" target="_blank">Converse</a>, 
 								<a href="https://www.google.com/maps/place/Converse+Lovejoy+Wharf/@42.3669255,-71.0589057,18.78z/data=!4m5!3m4!1s0x89e3708dd042ce0f:0x23f32a49039a4d8c!8m2!3d42.3671984!4d-71.0594008" target="_blank">World Headquarters</a>, 
@@ -261,7 +284,7 @@
 							<p class="xp-interactive"><a>Less...</a></p>
 						</div>
 
-						<div class="xp-div offset-medium">
+						<div class="xp-div follow-medium">
 							<h2 class="xp-content">
 								<a href="https://raksystems.fi/raksystems-suomessa/raksystemsin-tytaryhtiot/hssr-oy/" target="_blank">HSSR Oy</a>, 
 								<a href="https://www.google.com/search?q=construction+company&sxsrf=ALiCzsbHK4Xjlmw6npfIiDwmKri2qiErfA%3A1662733466235&ei=mkwbY_3mDfDJptQP59OqqA4&ved=0ahUKEwj9m_Hs9If6AhXwpIkEHeepCuUQ4dUDCA4&uact=5&oq=construction+company&gs_lcp=Cgdnd3Mtd2l6EAMyCAgAEIAEEMkDMgUIABCSAzILCAAQgAQQsQMQgwEyCAgAEIAEELEDMgUIABCABDIFCAAQgAQyBQgAEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEOgoIABBHENYEELADOg0IABBHENYEELADEMkDOggIABCSAxCwAzoHCAAQsAMQQzoKCAAQsQMQgwEQQzoECAAQQ0oECEEYAEoECEYYAFC2A1jLHmDZIGgBcAF4AIABoASIAfMIkgEHNC4yLjUtMZgBAKABAcgBCsABAQ&sclient=gws-wiz" target="_blank">Construction Company</a>, 
@@ -281,7 +304,7 @@
 							<p class="xp-interactive"><a>Less...</a></p>
 						</div>
 
-						<div class="xp-div offset-medium">
+						<div class="xp-div follow-medium">
 							<h2 class="xp-content">
 								<a href="http://kauppatori2017.aalto.fi/" target="_blank">Kauppatori 2017</a>, 
 								Design Competition, 
