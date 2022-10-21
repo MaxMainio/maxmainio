@@ -47,24 +47,19 @@ buttons.forEach(button => {
 // 	}()); // immediate invocation
 // 	}
 
+// if (allXpBtns[i].innerHTML === "More..."){
+// 	allXpBtns[i].innerHTML = "Less...";
+// } else {
+// 	allXpBtns[i].innerHTML = "More...";
+// }
+
 var allXpBtns = document.getElementsByClassName("xp-btn");
 
 for (var i = allXpBtns.length-1; i >=0  ; i--) {
 	(function () {
 		var modal = allXpBtns[i].id + "_modal"
 		allXpBtns[i].addEventListener("click", function() { 
-			document.getElementById(modal).classList.toggle("hide")
-			
-			if (allXpBtns[i].innerHTML === "More..."){
-				allXpBtns[i].innerHTML = "Less...";
-			} else {
-				allXpBtns[i].innerHTML = "More...";
-			}
-		
-
-		
+			document.getElementById(modal).classList.toggle("hide")		
 		}, false)
-
-
 	}());
 	}
