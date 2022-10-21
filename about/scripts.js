@@ -18,3 +18,19 @@ buttons.forEach(button => {
 		delete activeSlide.dataset.active
 	})
 })
+
+
+const xpBtn = document.querySelector(".xp-btn")
+
+xpBtn.addEventListener("click", e => {
+	var parent = xpBtn.closest(".xp-div")
+	var xpText = parent.querySelector(".xp-text")
+
+	xpText.classList.toggle("hide");
+
+	if (xpBtn.innerHTML === "More...") {
+		xpBtn.innerHTML = "Less...";
+	} else {
+		xpBtn.innerHTML = "More...";
+	}
+})
