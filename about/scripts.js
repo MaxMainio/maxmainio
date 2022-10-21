@@ -20,39 +20,6 @@ buttons.forEach(button => {
 })
 
 
-// const xpBtn = document.querySelector(".xp-btn")
-
-// xpBtn.addEventListener("click", e => {
-// 	var parent = xpBtn.closest(".xp-div")
-// 	var xpText = parent.querySelector(".xp-text")
-
-// 	xpText.classList.toggle("hide");
-
-// 	if (xpBtn.innerHTML === "More...") {
-// 		xpBtn.innerHTML = "Less...";
-// 	} else {
-// 		xpBtn.innerHTML = "More...";
-// 	}
-// })
-
-// var allXpBtns = document.getElementsByClassName("xp-btn");
-
-// for (var i = allXpBtns.length-1; i >=0  ; i--) {
-// 	(function () {
-// 		var modal = allXpBtns[i].id + "_modal"
-// 		allXpBtns[i].addEventListener("mouseenter", function() { 
-// 			document.getElementById(modal).style.display = "block"; }, false)
-// 		allXpBtns[i].addEventListener("mouseleave", function() { 
-// 			document.getElementById(modal).style.display = "none"; }, false)
-// 	}()); // immediate invocation
-// 	}
-
-// if (allXpBtns[i].innerHTML === "More..."){
-// 	allXpBtns[i].innerHTML = "Less...";
-// } else {
-// 	allXpBtns[i].innerHTML = "More...";
-// }
-
 var allXpBtns = document.getElementsByClassName("xp-btn");
 
 for (var i = allXpBtns.length-1; i >=0  ; i--) {
@@ -62,4 +29,20 @@ for (var i = allXpBtns.length-1; i >=0  ; i--) {
 			document.getElementById(modal).classList.toggle("hide")		
 		}, false)
 	}());
-	}
+}
+
+
+var elements = document.getElementsByClassName("xp-btn");
+
+for (var i = 0; i < elements.length; i++)
+{
+    elements[i].addEventListener("click", function() {
+		var selected = this.id;
+
+		if (document.getElementById(selected).innerHTML === "More...") {
+			document.getElementById(selected).innerHTML = "Less...";
+		} else {
+			document.getElementById(selected).innerHTML = "More...";
+		}
+    }, true);
+}
