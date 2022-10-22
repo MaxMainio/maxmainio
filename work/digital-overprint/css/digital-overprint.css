@@ -1,0 +1,49 @@
+/* Main */
+
+section{
+    position: fixed;
+}
+
+
+
+
+
+
+
+
+
+/* Content */
+
+.draggable{
+    width: 49%;
+    max-width: 800px;
+    cursor: grab;
+}
+
+.draggable:hover{
+    cursor: grab;
+}
+ 
+.draggable:active{
+    cursor: grabbing;
+}
+
+
+
+
+
+
+
+
+/* Type */
+
+sup, sub {
+    vertical-align: baseline;
+    position: relative;
+    top: -0.4em;
+}
+
+.highlight{
+    background-color: white;
+    box-shadow: 0 0 0 4px white;
+}
