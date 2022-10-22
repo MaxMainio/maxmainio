@@ -18,6 +18,8 @@ section{
     width: 49%;
     max-width: 800px;
     cursor: grab;
+
+    mix-blend-mode: multiply;
 }
 
 .draggable:hover{
