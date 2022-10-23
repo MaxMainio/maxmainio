@@ -6,3 +6,5 @@ const indexSection = document.querySelector("#index-section")
 indexBtn.addEventListener("click", e => {
 	indexSection.classList.toggle("hide")
 })
+
+document.querySelector("#crosswalk-projection").playbackRate = 0.20;
