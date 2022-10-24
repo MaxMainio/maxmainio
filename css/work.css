@@ -97,8 +97,7 @@ html{
 
 .crosswalk-content{
     position: relative;
-    width: 100%;
-    max-width: 2156px;
+    max-height: 100%;
     aspect-ratio: 16 / 9.5;
 }
 
