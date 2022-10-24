@@ -71,6 +71,43 @@ html{
 
 
 
+/* Splash */
+
+#splash{
+    background-image: url(../assets/splash/Green-Bliss.jpg);
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-position: center;
+
+    overflow: hidden;
+    z-index: 10000;
+}
+
+.splash-content{
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+
+.super-header{
+    font-size: 50vh;
+    line-height: 50vh;
+    position: absolute;
+    top: auto;
+    bottom: -14.4vh;
+}
+
+
+
+
+
+
+
+
+
 /* Main */
 
 .buffer{
