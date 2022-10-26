@@ -60,7 +60,7 @@ function myFunction() {
 // Responses Array
 responses = new Array();
 
-responses[0] = "It should be where you last left it";
+responses[0] = "It should be where you last left it.";
 responses[1] = "Just like other human problems in daily life, the first thing to do is to consider lifestyle changes.";
 responses[2] = "Talk about the challenges with your partner and look for common grounds.";
 responses[3] = "Be kind and show understanding, and try to avoid personal confrontation.";
