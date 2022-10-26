@@ -1,5 +1,3 @@
-console.log("https://www.youtube.com/watch?v=NuAKnbIr6TE");
-
 const  buttons = document.querySelectorAll("[data-carousel-button]")
 
 buttons.forEach(button => {
