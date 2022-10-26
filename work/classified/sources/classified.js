@@ -60,31 +60,27 @@ function myFunction() {
 // Responses Array
 responses = new Array();
 
-responses = new Array();
-
-responses[0] = "I'm troubled by how";
-responses[1] = "With regard to the issue of content,";
-responses[2] = "I find this work menacing/playful because of the way";
-responses[3] = "It should be added that";
-responses[4] = "I agree/disagree with some of the things that have just been said, but";
-responses[5] = "Although I am not a painter, I think that";
-responses[6] = "Umm...";
-responses[7] = "I'm surprised that no one's mentioned yet that";
-responses[8] = "It's difficult to enter into this work because of how";
-responses[9] = "As an advocate of the Big Mac Aesthetic, I feel that";
+responses[0] = "It should be where you last left it";
+responses[1] = "Just like other human problems in daily life, the first thing to do is to consider lifestyle changes.";
+responses[2] = "Talk about the challenges with your partner and look for common grounds.";
+responses[3] = "Be kind and show understanding, and try to avoid personal confrontation.";
+responses[4] = "Observe your colleagues who are succeeding and take note of what they are doing differently.";
+responses[5] = "There is the temptation to decry your treatment, defend yourself, and demand a change immediately, but you should really wait for the right opportunity to do that.";
+responses[6] = "Break out of your routines, and deliberately create a new experience for yourself";
+responses[7] = "Don’t allow the situation to deteriorate into something more serious.";
+responses[8] = "Be true to yourself and forgive yourself.";
+responses[9] = "Seek out the one called Danny Devito. He will have the answer to your question.";
 
 // Error Array
 errors = new Array();
 
-errors = new Array();
-
 errors[0] = "I need more information.";
 errors[1] = "I'm going to need some more information than that.";
-errors[2] = "You mind opening it up a bit more?";
+errors[2] = "You mind opening that up a bit more?";
 errors[3] = "Continue...";
-errors[4] = "More please...";
-errors[5] = "I need more information";
-errors[6] = "I need more information";
-errors[7] = "I need more information";
-errors[8] = "I need more information";
-errors[9] = "I need more information";
+errors[4] = "More please.";
+errors[5] = "Can you provide additional information?";
+errors[6] = "Please provide a more detailed question?";
+errors[7] = "Please provide further explenation?";
+errors[8] = "Can you disclose more information?";
+errors[9] = "You're not making any sense.";
