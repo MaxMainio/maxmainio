@@ -71,41 +71,7 @@ document.addEventListener("scroll", event => {
 	})
 })
 
-// const sectionObserver = new IntersectionObserver(entries => {
-// 	entries.forEach(entry => {
-// 		if (entry.isIntersecting === true) {
-// 			var windowScroll = window.scrollY;
-// 			var vh = window.innerHeight;
 
-// 			function parallaxCalc (elementPos, windowPos) {
-// 				var difference = elementPos - windowPos;
-// 				var normalized = (difference - (vh * -1)) / (vh - (vh * -1));
-// 				var normalOffset = (normalized * 2) - 1;
-// 				return normalOffset
-// 			}
-
-// 			var multiplier = parallaxCalc(entry.target.offsetTop, windowScroll)
-// 			// console.log(parallaxCalc(entry.target.offsetTop, windowScroll))
-
-// 			var elements = entry.target.querySelectorAll("[data-rate]");
-// 			var elementsIndex = 0, length = elements.length;
-
-// 			for (elementsIndex; elementsIndex < length; elementsIndex++) {
-// 				elements[elementsIndex].style.transform = "translate3d(0px, -50px, 0px)"
-// 			}
-
-// 			// console.log(elements); // Elements to parallax
-// 			// var elements = entry.target.querySelectorAll("[data-rate]");
-// 			// var parallaxOffset = parallaxCalc(entry.target.offsetTop, windowScroll);
-// 		} else {
-
-// 		}
-// 	})
-// })
-
-// sections.forEach(sections => {
-// 	sectionObserver.observe(sections)
-// })
 
 
 
