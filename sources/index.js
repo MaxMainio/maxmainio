@@ -56,10 +56,6 @@ document.addEventListener("scroll", event => {
 				for (elementsIndex; elementsIndex < length; elementsIndex++) {
 					elements[elementsIndex].style.transform = "translate3d(0px, "+multiplier * elements[elementsIndex].dataset.rate+"px, 0px)"
 				}
-	
-				// console.log(elements); // Elements to parallax
-				// var elements = entry.target.querySelectorAll("[data-rate]");
-				// var parallaxOffset = parallaxCalc(entry.target.offsetTop, windowScroll);
 			} else {
 	
 			}
