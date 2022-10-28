@@ -19,43 +19,93 @@ indexBtn.addEventListener("click", e => {
 	indexSection.classList.toggle("hide")
 })
 
+
+
+
+
+
+
+
+
 // Parallax
 var vh = window.innerHeight;
 console.log(vh);
 
 const sections = document.querySelectorAll("article")
 
-
-const sectionObserver = new IntersectionObserver(entries => {
-	// console.log(entries)
-
-	entries.forEach(entry => {
-		if (entry.isIntersecting === true) {
-			var windowScroll = window.scrollY;
-			var vh = window.innerHeight;
-
-			function parallaxCalc (elementPos, windowPos) {
-				var difference = elementPos - windowPos;
-				var normalized = (difference - (vh * -1)) / (vh - (vh * -1));
-				var normalOffset = (normalized * 2) - 1;
-				return normalOffset
+document.addEventListener("scroll", event => {
+	const sectionObserver = new IntersectionObserver(entries => {
+		entries.forEach(entry => {
+			if (entry.isIntersecting === true) {
+				var windowScroll = window.scrollY;
+				var vh = window.innerHeight;
+	
+				function parallaxCalc (elementPos, windowPos) {
+					var difference = elementPos - windowPos;
+					var normalized = (difference - (vh * -1)) / (vh - (vh * -1));
+					var normalOffset = (normalized * 2) - 1;
+					return normalOffset
+				}
+	
+				var multiplier = parallaxCalc(entry.target.offsetTop, windowScroll)
+				console.log(multiplier);
+	
+				var elements = entry.target.querySelectorAll("[data-rate]");
+				var elementsIndex = 0, length = elements.length;
+	
+				for (elementsIndex; elementsIndex < length; elementsIndex++) {
+					elements[elementsIndex].style.transform = "translate3d(0px, "+multiplier * elements[elementsIndex].dataset.rate+"px, 0px)"
+				}
+	
+				// console.log(elements); // Elements to parallax
+				// var elements = entry.target.querySelectorAll("[data-rate]");
+				// var parallaxOffset = parallaxCalc(entry.target.offsetTop, windowScroll);
+			} else {
+	
 			}
-
-			console.log(parallaxCalc(entry.target.offsetTop, windowScroll))
-			
-			// console.log(entry.target.offsetTop - windowScroll);
-
-			// console.log(entry + "is intersecting " + entry.target.offsetTop + " " + windowScroll);
-		} else {
-			// var windowScroll = window.scrollY;
-			// console.log(entry + "is not intersecting " + entry.target.offsetTop + " " + windowScroll);
-		}
+		})
+	})
+	
+	sections.forEach(sections => {
+		sectionObserver.observe(sections)
 	})
 })
 
-sections.forEach(sections => {
-	sectionObserver.observe(sections)
-})
+// const sectionObserver = new IntersectionObserver(entries => {
+// 	entries.forEach(entry => {
+// 		if (entry.isIntersecting === true) {
+// 			var windowScroll = window.scrollY;
+// 			var vh = window.innerHeight;
+
+// 			function parallaxCalc (elementPos, windowPos) {
+// 				var difference = elementPos - windowPos;
+// 				var normalized = (difference - (vh * -1)) / (vh - (vh * -1));
+// 				var normalOffset = (normalized * 2) - 1;
+// 				return normalOffset
+// 			}
+
+// 			var multiplier = parallaxCalc(entry.target.offsetTop, windowScroll)
+// 			// console.log(parallaxCalc(entry.target.offsetTop, windowScroll))
+
+// 			var elements = entry.target.querySelectorAll("[data-rate]");
+// 			var elementsIndex = 0, length = elements.length;
+
+// 			for (elementsIndex; elementsIndex < length; elementsIndex++) {
+// 				elements[elementsIndex].style.transform = "translate3d(0px, -50px, 0px)"
+// 			}
+
+// 			// console.log(elements); // Elements to parallax
+// 			// var elements = entry.target.querySelectorAll("[data-rate]");
+// 			// var parallaxOffset = parallaxCalc(entry.target.offsetTop, windowScroll);
+// 		} else {
+
+// 		}
+// 	})
+// })
+
+// sections.forEach(sections => {
+// 	sectionObserver.observe(sections)
+// })
 
 
 
