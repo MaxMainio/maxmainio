@@ -19,18 +19,7 @@ indexBtn.addEventListener("click", e => {
 	indexSection.classList.toggle("hide")
 })
 
-
-
-
-
-
-
-
-
 // Parallax
-var vh = window.innerHeight;
-console.log(vh);
-
 const sections = document.querySelectorAll("article")
 
 document.addEventListener("scroll", event => {
@@ -48,16 +37,12 @@ document.addEventListener("scroll", event => {
 				}
 	
 				var multiplier = parallaxCalc(entry.target.offsetTop, windowScroll)
-				console.log(multiplier);
-	
 				var elements = entry.target.querySelectorAll("[data-rate]");
 				var elementsIndex = 0, length = elements.length;
 	
 				for (elementsIndex; elementsIndex < length; elementsIndex++) {
 					elements[elementsIndex].style.transform = "translate3d(0px, "+multiplier * elements[elementsIndex].dataset.rate+"px, 0px)"
 				}
-			} else {
-	
 			}
 		})
 	})
@@ -66,14 +51,6 @@ document.addEventListener("scroll", event => {
 		sectionObserver.observe(sections)
 	})
 })
-
-
-
-
-
-
-
-
 
 // Crosswalk poetics
 document.querySelector("#crosswalk-projection").playbackRate = 0.20;
