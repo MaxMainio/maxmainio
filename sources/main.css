@@ -92,15 +92,14 @@ body{
 
 /* Nav Bar */
 
-nav{
+header{
     position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: auto;
+    inset: 0 0 auto 0;
+    z-index: 10;
+}
 
+nav{
     pointer-events: none;
-    z-index: 10000;
 }
 
 .nav-container{
@@ -137,19 +136,11 @@ nav{
 
 /* Main */
 
-section{
+/* article{
     position: relative;
-    width: 100%;
+    width: 100vw;
     height: 100vh;
-}
-
-.out-container{
-    position: relative;
-    height: 100vh;
-    width: 100%;
-    max-width: 2560px;
-    margin: 0 auto;
-}
+} */
 
 .in-container{
     position: absolute;
@@ -159,6 +150,14 @@ section{
     margin: 0 auto;
     inset: 0;
     pointer-events: none;
+}
+
+.out-container{
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    max-width: 2560px;
+    margin: 0 auto;
 }
 
 
