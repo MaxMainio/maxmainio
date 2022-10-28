@@ -174,7 +174,8 @@ article{
 }
 
 .do-wrapper{
-    height: 20%;
+    height: 28vw;
+    max-height: 20%;
     display: flex;
     align-items: center;
     overflow: hidden;

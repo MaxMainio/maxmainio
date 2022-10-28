@@ -20,31 +20,10 @@ indexBtn.addEventListener("click", e => {
 })
 
 // Parallax
-// const sections = document.querySelectorAll("section")
-
-// document.addEventListener("scroll", (sectionObserver) => {
-// 	var sectionObserver = new IntersectionObserver(entries => {
-// 		entries.forEach(entry => {
-// 			console.log(entry);
-// 		})
-// 	})
-
-// 	sections.forEach(sections => {
-// 		sectionObserver.observe(sections)
-// 	})
-// })
-
-
-
-
-
-
-
-
 var vh = window.innerHeight;
 console.log(vh);
-var vhNeg = vh * -1
-const sections = document.querySelectorAll("section")
+
+const sections = document.querySelectorAll("article")
 
 
 const sectionObserver = new IntersectionObserver(entries => {
@@ -53,34 +32,25 @@ const sectionObserver = new IntersectionObserver(entries => {
 	entries.forEach(entry => {
 		if (entry.isIntersecting === true) {
 			var windowScroll = window.scrollY;
-			console.log("is intersecting " + entry.target.offsetTop + " " + windowScroll);
+			var vh = window.innerHeight;
+
+			function parallaxCalc (elementPos, windowPos) {
+				var difference = elementPos - windowPos;
+				var normalized = (difference - (vh * -1)) / (vh - (vh * -1));
+				var normalOffset = (normalized * 2) - 1;
+				return normalOffset
+			}
+
+			console.log(parallaxCalc(entry.target.offsetTop, windowScroll))
+			
+			// console.log(entry.target.offsetTop - windowScroll);
+
+			// console.log(entry + "is intersecting " + entry.target.offsetTop + " " + windowScroll);
 		} else {
-			var windowScroll = window.scrollY;
-			console.log("is not intersecting " + entry.target.offsetTop + " " + windowScroll);
+			// var windowScroll = window.scrollY;
+			// console.log(entry + "is not intersecting " + entry.target.offsetTop + " " + windowScroll);
 		}
 	})
-
-	// entries.forEach(entry => {
-	// 	document.addEventListener("scroll", () => {
-	// 		var sectionLocation = entry.target.offsetTop;
-	// 		var windowScroll = window.scrollY;
-			
-	// 		var scrollDifference = sectionLocation - windowScroll;
-
-	// 		function limitNumberWithinRange(scrollDifference, min, max){
-	// 			const MIN = min || vhNeg;
-	// 			const MAX = max || vh;
-	// 			var parsed = parseInt(scrollDifference)
-	// 			return Math.min(Math.max(parsed, MIN), MAX)
-	// 		}
-
-	// 		var limited = limitNumberWithinRange (scrollDifference);
-
-	// 		// console.log(limited);
-	// 	})
-		
-	// 	// console.log(entry);
-	// })
 })
 
 sections.forEach(sections => {
