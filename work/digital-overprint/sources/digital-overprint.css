@@ -39,12 +39,6 @@ main{
 
 /* Type */
 
-sup, sub {
-    vertical-align: baseline;
-    position: relative;
-    top: -0.4em;
-}
-
 .highlight{
     background-color: white;
     box-shadow: 0 0 0 4px white;

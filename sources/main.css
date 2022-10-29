@@ -66,7 +66,6 @@
 
 :root{
     --type-color:#333;
-    --active-type: #ccc;
     --green: #00ff00;
 }
 
@@ -128,7 +127,7 @@ nav{
 }
 
 .active{
-    color: var(--active-type);
+    color: rgba(51, 51, 51, 0.25);
 }
 
 
@@ -242,66 +241,8 @@ a:hover{
     cursor: not-allowed;
 }
 
-
-
-
-
-
-
-
-
-/* Image Carousels */
-
-.carousel{
+sup, sub {
+    vertical-align: baseline;
     position: relative;
-    width: 100%;
-    aspect-ratio: auto 5 / 7;
-    /* width: 100%;
-    height: 500px; */
-    overflow: hidden;
-}
-
-.carousel > ul{
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-
-.slide{
-    position: absolute;
-    inset: 0;
-    opacity: 0;
-    /* transition: 200ms ease-in-out; */
-}
-
-.slide > img{
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-}
-
-.slide[data-active]{
-    opacity: 1;
-}
-
-.carousel-button{
-    position: absolute;
-    z-index: 2;
-    background: none;
-    border: none;
-
-    width: 30%;
-    height: 100%;
-}
-
-.carousel-button.prev{
-    left: 0;
-    cursor: w-resize;
-}
-
-.carousel-button.next{
-    right: 0;
-    cursor: e-resize;
+    top: -0.4em;
 }
