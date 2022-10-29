@@ -163,14 +163,15 @@ article{
     height: 100%;
 }
 
-.grid-img-links{
+/* .grid-img-links{
     pointer-events: all;
-}
+} */
 
 .generative-imgs{
     aspect-ratio: 0.8 / 1;
     max-width: 100%;
     max-height: 100%;
+    pointer-events: all;
 }
 
 .generative-flex{
