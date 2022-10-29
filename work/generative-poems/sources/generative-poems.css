@@ -1,0 +1,12 @@
+.content{
+    display: flex;
+    flex-direction: column;
+    overflow: scroll;
+}
+
+.generated-imgs{
+    width: 50%;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-bottom: 33vh;
+}
