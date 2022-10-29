@@ -15,7 +15,6 @@ html{
 
 
 /* Index */
-
 #index-btn{
     grid-column: 6 / 6;
     cursor: pointer;
@@ -66,7 +65,6 @@ html{
 
 
 /* Splash */
-
 #splash{
     background-image: url(../assets/support/splash/green-bliss.jpg);
     -webkit-background-size: cover;
@@ -104,7 +102,6 @@ html{
 
 
 /* Main */
-
 article{
     position: relative;
     width: 100vw;
@@ -128,8 +125,19 @@ article{
 
 
 
-/* Crosswalk Poetics */
+/* Generative? Poems */
+/* Interview */
+/* Playlist Covers */
 
+
+
+
+
+
+
+
+
+/* Crosswalk Poetics */
 .center-flex{
     display: flex;
     flex-direction: column;
@@ -166,7 +174,6 @@ article{
 
 
 /* Digital Overprint */
-
 .vertical-flex{
     display: flex;
     flex-direction: column;
@@ -202,8 +209,71 @@ article{
 
 
 
-/* Footer */
+/* Acetate Melt */
+/* Homo Deus */
 
+
+
+
+
+
+
+
+
+/* Ruotuvaki */
+.rv-juliste{
+    position: absolute;
+    inset: 0 auto auto 0;
+    width: 100%;
+    max-width: 1220px;
+}
+
+.rv-aukeama{
+    position: absolute;
+    inset: auto 0 0 auto;
+    width: 100%;
+    max-width: 67vh;
+}
+
+.invisa-grid{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    padding: 0 1rem;
+
+    position: relative;
+    width: 100%;
+    height: auto;
+    max-width: 1400px;
+    margin: 0 auto 0 auto;
+    top: 10%;
+}
+
+.rv-kalenteri{
+    grid-column: 4 / 5;
+    max-width: 100%;
+}
+
+
+
+
+
+
+
+
+
+/* My Desktop is My Home */
+/* Collages */
+
+
+
+
+
+
+
+
+
+/* Footer */
 .ice{
     position: absolute;
     inset: 0 auto auto 0;
@@ -214,19 +284,6 @@ article{
     position: absolute;
     inset: auto 0 0 auto;
     max-height: 50vh;
-}
-
-.invisa-grid{
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1rem;
-
-    position: relative;
-    width: 100%;
-    height: auto;
-    max-width: 1400px;
-    margin: 0 auto 0 auto;
-    top: 10%;
 }
 
 .pix-prof{

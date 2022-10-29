@@ -66,6 +66,7 @@
 
 :root{
     --type-color:#333;
+    --active-type: #ccc;
     --green: #00ff00;
 }
 
@@ -126,6 +127,10 @@ nav{
     justify-content: space-between;
 }
 
+.active{
+    color: var(--active-type);
+}
+
 
 
 
@@ -152,6 +157,12 @@ nav{
     margin: 0 auto;
     inset: 0;
     pointer-events: none;
+}
+
+a img {
+    padding: 0;
+    margin: 0;
+    display: block;
 }
 
 
