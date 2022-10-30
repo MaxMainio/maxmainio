@@ -408,6 +408,18 @@ article{
 
 
 /* Homo Deus */
+.homodeus-positioning{
+    position: absolute;
+    inset: 0;
+    width: auto;
+    max-width: 100vw;
+    margin: auto auto;
+}
+
+.multiply{
+    mix-blend-mode: multiply;
+    pointer-events: none;
+}
 
 
 
