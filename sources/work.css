@@ -456,11 +456,13 @@ article{
     max-width: 1400px;
     margin: 0 auto 0 auto;
     top: 10%;
+    pointer-events: none;
 }
 
 .rv-kalenteri{
     grid-column: 4 / 5;
     max-width: 100%;
+    pointer-events: all;
 }
 
 
