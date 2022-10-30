@@ -345,6 +345,68 @@ article{
 
 
 /* Acetate Melt */
+.acetate-out-container{
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    max-width: 2560px;
+    margin: 0 auto;
+    inset: 0;
+    
+    pointer-events: none;
+}
+
+.acetate-cattle{
+    position: absolute;
+    inset: auto auto 15% 0;
+    height: 20vh;
+    mix-blend-mode: multiply;
+    pointer-events: all;
+}
+
+.acetate-tape{
+    position: absolute;
+    inset: 15% 0 auto auto;
+    height: 40vh;
+    mix-blend-mode: multiply;
+    pointer-events: all;
+}
+
+.acetate-in-container{
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    max-width: 1400px;
+    margin: 0 auto;
+    inset: 0;
+    
+    pointer-events: none;
+}
+
+.acetate-parot{
+    position: absolute;
+    inset: 0 auto auto -2.5rem;
+    height: 60vh;
+    mix-blend-mode: multiply;
+    pointer-events: all;
+}
+
+.acetate-plane{
+    position: absolute;
+    inset: auto 0 0 auto;
+    height: 50vh;
+    mix-blend-mode: multiply;
+    pointer-events: all;
+}
+
+
+
+
+
+
+
+
+
 /* Homo Deus */
 
 

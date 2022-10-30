@@ -1,0 +1,13 @@
+.content{
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    justify-content: start;
+    overflow: scroll;
+    padding-top: 1rem;
+}
+
+.work-img{
+    height: 50vw;
+    margin-bottom: 33vh;
+}
