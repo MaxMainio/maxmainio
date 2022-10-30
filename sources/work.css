@@ -163,10 +163,6 @@ article{
     height: 100%;
 }
 
-/* .grid-img-links{
-    pointer-events: all;
-} */
-
 .generative-imgs{
     aspect-ratio: 0.8 / 1;
     max-width: 100%;
@@ -210,6 +206,63 @@ article{
 
 /* Interview */
 /* Playlist Covers */
+.playlist-out-grid{
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(8, calc(12.5vh - 1rem));
+    gap: 1rem;
+
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    max-width: 2560px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    inset: 0;
+    
+    pointer-events: none;
+}
+
+.playlist-mid-grid{
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(8, calc(12.5vh - 1rem));
+    gap: 1rem;
+
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    max-width: 1980px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    inset: 0;
+    
+    pointer-events: none;
+}
+
+.playlist-in-grid{
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(8, calc(12.5vh - 1rem));
+    gap: 1rem;
+
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    inset: 0;
+    
+    pointer-events: none;
+}
+
+.playlist-imgs{
+    aspect-ratio: 1 / 1;
+    max-width: 100%;
+    max-height: 100%;
+    pointer-events: all;
+}
 
 
 

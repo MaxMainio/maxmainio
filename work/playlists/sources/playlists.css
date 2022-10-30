@@ -1,0 +1,22 @@
+.content{
+    height: 100vh;
+    overflow: scroll;
+}
+
+.work-div{
+    width: 50%;
+    max-width: 1000px;
+    height: 100vh;
+    margin-left: auto;
+}
+
+.work-img{
+    width: 100%;
+}
+
+.work-title{
+    font-weight: 600;
+    font-size: 2rem;
+    line-height: 2rem;
+    margin-top: 0.8rem;
+}
