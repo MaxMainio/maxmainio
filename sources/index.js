@@ -1,6 +1,6 @@
 console.log("https://www.youtube.com/watch?v=NuAKnbIr6TE");
 
-// Turn on Smooth Scroll
+// Turn on Smooth Scroll after delay
 setTimeout(function() {
 	document.querySelector("html").style.scrollBehavior = "smooth"
 }, 500);
