@@ -100,10 +100,6 @@ header{
     pointer-events: none;
 }
 
-/* nav{
-    pointer-events: none;
-} */
-
 .nav-container{
     max-width: 1400px;
     margin: 0 auto 0 auto;
@@ -141,7 +137,6 @@ header{
 
 
 /* Main */
-
 /* main{
     animation: transitionIn 0.5s;
 }
