@@ -1,0 +1,27 @@
+.content{
+    height: auto;
+    padding: 3rem 1rem 0 0;
+}
+
+.aukeama-container{
+    position: relative;
+    aspect-ratio: 1640 / 1024;
+    width: 50%;
+    margin-left: auto;
+    margin-bottom: 25vh;
+}
+
+.aukeama-img{
+    width: 100%;
+}
+
+.aukeama-shadow{
+    position: absolute;
+    inset: 0;
+    width: 103.66%;
+    mix-blend-mode: multiply;
+}
+
+.context{
+    position: fixed;
+}
