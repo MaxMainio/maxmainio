@@ -97,11 +97,12 @@ header{
     position: fixed;
     inset: 0 0 auto 0;
     z-index: 10;
-}
-
-nav{
     pointer-events: none;
 }
+
+/* nav{
+    pointer-events: none;
+} */
 
 .nav-container{
     max-width: 1400px;
@@ -140,6 +141,19 @@ nav{
 
 
 /* Main */
+
+/* main{
+    animation: transitionIn 0.5s;
+}
+
+@keyframes transitionIn{
+    from{
+        opacity: 0;
+    }
+    top{
+        opacity: 1;
+    }
+} */
 
 .content{
     position: relative;

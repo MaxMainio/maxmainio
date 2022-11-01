@@ -3,7 +3,7 @@
 }
 
 html{
-    scroll-behavior: smooth;
+    scroll-behavior: auto;
 }
 
 
@@ -43,8 +43,16 @@ html{
     grid-column: 1 / 1;
 }
 
+.index-title > a{
+    pointer-events: all;
+}
+
 .index-info{
     grid-column: 2 / 2;
+}
+
+.index-info > a{
+    pointer-events: all;
 }
 
 .index-date{
@@ -72,6 +80,7 @@ html{
     -o-background-size: cover;
     background-size: cover;
     background-position: center;
+    overflow: hidden;
     z-index: 11;
 }
 

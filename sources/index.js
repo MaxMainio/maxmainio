@@ -1,5 +1,10 @@
 console.log("https://www.youtube.com/watch?v=NuAKnbIr6TE");
 
+// Turn on Smooth Scroll
+setTimeout(function() {
+	document.querySelector("html").style.scrollBehavior = "smooth"
+}, 500);
+
 // Splash
 const splash = document.querySelector("#splash")
 
