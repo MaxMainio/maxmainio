@@ -137,19 +137,6 @@ header{
 
 
 /* Main */
-/* main{
-    animation: transitionIn 0.5s;
-}
-
-@keyframes transitionIn{
-    from{
-        opacity: 0;
-    }
-    top{
-        opacity: 1;
-    }
-} */
-
 .content{
     position: relative;
     height: 100vh;
