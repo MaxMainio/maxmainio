@@ -1,9 +1,9 @@
 /* Main */
 .video-div{
     width: 75%;
-    height: calc(80vh - 3rem);
     max-width: 1000px;
     margin-left: auto;
+    margin-bottom: 20vh;
     padding-top: 3rem;
 }
 
@@ -12,13 +12,14 @@
 .work-div{
     width: 50%;
     max-width: 666px;
-    height: 80vh;
     margin-left: auto;
+    margin-bottom: 20vh;
 }
 
 .work-img{
     aspect-ratio: 800 / 1024;
     width: 100%;
+    height: auto;
     margin-left: auto;
 }
 
