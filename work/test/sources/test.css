@@ -1,0 +1,80 @@
+@property --r {
+    syntax: '<percentage>';
+    inherits: false;
+    initial-value: 0%;
+}
+
+@property --b {
+    syntax: '<percentage>';
+    inherits: false;
+    initial-value: 0%;
+}
+
+:root{
+    --transparent: rgba(255, 255, 255, 0);
+    --opaque: #fff;
+}
+
+.fader{
+    position: absolute;
+    inset: 0;
+    z-index: 9;
+
+    background: rgb(2,0,36);
+    background: linear-gradient(white var(--r),rgba(255, 255, 255, 0) var(--b));
+
+    transition: --b 0.5s ease-in-out;
+}
+
+.fader:hover{
+    animation: fade-in 0.5 ease-in-out;
+
+    --b: 100%;
+}
+
+@keyframes fade {
+    from {
+        /* --r: 0%; */
+        --b: 0%;
+    }
+
+    to {
+        /* --r: 0%; */
+        --b: 100%;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.test-div{
+    height: 400px;
+    width: 800px;
+    position: absolute;
+    inset: 50% auto auto 50%;
+    transform: translateX(-50%) translateY(-50%);
+    background-color: red;
+}
