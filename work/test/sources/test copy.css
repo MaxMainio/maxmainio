@@ -1,0 +1,80 @@
+.fader-in{
+    position: fixed;
+    z-index: 9;
+    height: 300vh;
+    width: 100vw;
+    inset: 0 0 auto 0;
+    background: linear-gradient(rgba(255,255,255,1) 33%, rgba(255,255,255,0) 66%);
+}
+
+.fader-in:hover{
+    animation: fade-in 0.25s ease-in-out forwards;
+}
+
+@keyframes fade-in {
+    from{
+        transform: translateY(0);
+    }
+    to{
+        transform: translateY(-200vh);
+    }
+}
+
+
+
+
+
+.fader-out{
+    position: fixed;
+    z-index: 9;
+    height: 300vh;
+    width: 100vw;
+    inset: 0 0 auto 0;
+    background: linear-gradient(rgba(255,255,255,0) 33%, rgba(255,255,255,1) 66%);
+}
+
+.fader-out:hover{
+    animation: fade-out 0.25s ease-in-out forwards;
+}
+
+@keyframes fade-out {
+    from{
+        transform: translateY(0);
+    }
+    to{
+        transform: translateY(-200vh);
+    }
+}
+
+
+
+
+
+a{
+    display: block;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.test-div{
+    height: 400px;
+    width: 800px;
+    position: absolute;
+    inset: 50% auto auto 50%;
+    transform: translateX(-50%) translateY(-50%);
+    background-color: red;
+}
