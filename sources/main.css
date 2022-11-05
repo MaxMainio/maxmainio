@@ -63,7 +63,6 @@
 
 
 /* HTML */
-
 :root{
     --type-color:#333;
     --green: #00ff00;
@@ -92,7 +91,6 @@ body{
 
 
 /* Nav Bar */
-
 header{
     position: fixed;
     inset: 0 0 auto 0;
@@ -239,6 +237,7 @@ a:hover{
 }
 
 .non-active{
+    pointer-events: all;
     cursor: not-allowed;
 }
 
