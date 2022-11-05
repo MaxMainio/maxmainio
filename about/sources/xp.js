@@ -1,5 +1,3 @@
-console.log("https://www.youtube.com/watch?v=NuAKnbIr6TE");
-
 var allXpBtns = document.getElementsByClassName("xp-btn");
 
 for (var i = allXpBtns.length-1; i >=0  ; i--) {

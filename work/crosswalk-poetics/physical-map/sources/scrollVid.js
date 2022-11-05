@@ -1,5 +1,3 @@
-console.log("https://www.youtube.com/watch?v=NuAKnbIr6TE");
-
 var frameNumber = 0, // start video at frame 0
 playbackConst = 500, // lower numbers = faster playback
 setHeight = document.getElementById("set-height"), // get page height from video duration			
