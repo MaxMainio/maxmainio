@@ -17,6 +17,7 @@ window.onload = () => {
             e.preventDefault();
 
             var target = e.target.href;
+            console.log(target);
             const menossaDiv = document.createElement("div");
             menossaDiv.classList.add("fader-out");
 
