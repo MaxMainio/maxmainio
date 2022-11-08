@@ -499,3 +499,19 @@ article{
     grid-column: 4 / 5;
     max-width: 100%;
 }
+
+
+
+
+
+
+
+
+
+@media (max-width: 1200px) {
+    .super-header{
+        font-size: 42vw;
+        line-height: 42vw;
+        bottom: -12vw;
+    }
+}

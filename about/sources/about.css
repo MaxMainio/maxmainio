@@ -190,3 +190,54 @@ address{
     right: 0;
     cursor: e-resize;
 }
+
+
+
+
+
+
+
+
+
+@media (max-width: 1000px) {
+    .about-grid{
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .profile-column{
+        grid-column: 4;
+    }
+
+    .xp-section{
+        grid-column: 2 / 4;
+    }
+
+    .xp-div{
+        display: block;
+    }
+
+    .hide{
+        display: block;
+    }
+
+    .xp-btn{
+        display: none;
+    }
+}
+
+
+@media (max-width: 800px) {
+    .profile-column{
+        display: none;
+    }
+}
+
+@media (max-width: 685px) {
+    .columns-span{
+        grid-column: 2 / 5;
+    }
+
+    .xp-section{
+        grid-column: 2 / 5;
+    }
+}
