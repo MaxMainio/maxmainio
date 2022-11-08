@@ -28,7 +28,6 @@
 
 
 /* HTML */
-
 :root{
     --type-color:#fff;
     --bg: #111;
@@ -61,26 +60,19 @@ body{
 
 
 /* The Thing */
-
 .window{
     position: absolute;
     height: 100vh;
     width: 100vw;
 }
 
-#creature{
-    height: 100vh;
-    width: 100vw;
-    background-image: radial-gradient(white 0%, transparent 40%);
+.cover-up{
+    position: fixed;
+    inset: auto 0 0 auto;
+    height: 100px;
+    width: 200px;
+    background-color: var(--bg);
 }
-
-.mask{
-    width: 600px; 
-    position: absolute; 
-    inset: 50% auto auto 50%;
-    transform: translate(-50%, -50%);
-}
-
 
 
 
@@ -90,7 +82,6 @@ body{
 
 
 /* Chat window */
-
 #chat-field{
     position: absolute;
     height: 100vh;
@@ -121,7 +112,6 @@ body{
 
 
 /* Type */
-
 input{
     font-family: IBM-Plex;
     font-style: normal;
