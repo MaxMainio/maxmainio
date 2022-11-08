@@ -1,9 +1,8 @@
 console.log("https://www.youtube.com/watch?v=NuAKnbIr6TE");
 
 window.onpageshow = () => {
-    const tulossaElement = document.querySelector(".fader-in");
     const innerLinks = document.querySelectorAll('a:not([target="_self"], [target="_blank"])');
-
+    const tulossaElement = document.querySelector(".fader-in");
     tulossaElement.classList.remove("tulossa");
     
     setTimeout(() => {
