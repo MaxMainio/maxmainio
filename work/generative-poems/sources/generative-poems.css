@@ -29,4 +29,22 @@
     .work-img{
         width: 100%;
     }
+
+    .context{
+        position: absolute;
+    }
+}
+
+@media (max-width: 500px) {
+    .title-wrapper{
+        inset: 3rem 0 auto 0;
+    }
+
+    .content{
+        top: 80vh;
+    }
+
+    .work-img{
+        margin-bottom: 25vh;
+    }
 }
