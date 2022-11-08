@@ -15,3 +15,31 @@
     height: 50vw;
     margin-bottom: 33vh;
 }
+
+
+
+
+
+
+
+
+
+/* Media Queries */
+@media (max-width: 500px) {
+    .content{
+        top: 80vh;
+    }
+
+    .work-img{
+        height: auto;
+        width: 100%;
+    }
+
+    .context{
+        position: absolute;
+    }
+
+    .title-wrapper{
+        inset: 3rem 0 auto 0;
+    }
+}

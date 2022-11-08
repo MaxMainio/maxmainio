@@ -13,13 +13,48 @@
     width: 100%;
 }
 
+.work-text{
+    margin-top: 0.8rem;
+    padding: 0 1rem 0 0;
+}
+
 .work-title{
     font-weight: 600;
     font-size: 2rem;
     line-height: 2rem;
-    margin-top: 0.8rem;
 }
 
 .context{
     position: fixed;
+}
+
+
+
+
+
+
+
+
+
+/* Media Queries */
+@media (max-width: 500px) {
+    .content{
+        top: 80vh;
+    }
+
+    .work-div{
+        width: 100%;
+    }
+
+    .work-text{
+        padding: 0 1rem;
+    }
+
+    .context{
+        position: absolute;
+    }
+
+    .title-wrapper{
+        inset: 3rem 0 auto 0;
+    }
 }

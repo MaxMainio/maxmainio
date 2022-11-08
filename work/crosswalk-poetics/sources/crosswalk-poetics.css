@@ -7,7 +7,9 @@
     padding-top: 3rem;
 }
 
-
+.video-text{
+    margin-left: 33.33%;
+}
 
 .work-div{
     width: 50%;
@@ -32,4 +34,43 @@
 
 .context{
     position: fixed;
+}
+
+
+
+
+
+
+
+
+
+/* Media Queries */
+@media (max-width: 500px) {
+    .content{
+        top: 80vh;
+    }
+
+    .video-div{
+        width: 100%;
+    }
+
+    .video-text{
+        margin: 0 1rem;
+    }
+
+    .work-div{
+        width: 100%;
+    }
+
+    .work-text{
+        padding: 0 1rem;
+    }
+
+    .context{
+        position: absolute;
+    }
+
+    .title-wrapper{
+        inset: 3rem 0 auto 0;
+    }
 }

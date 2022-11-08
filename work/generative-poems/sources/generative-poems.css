@@ -26,25 +26,20 @@
 
 /* Media Queries */
 @media (max-width: 500px) {
-    .work-img{
-        width: 100%;
-    }
-
-    .context{
-        position: absolute;
-    }
-}
-
-@media (max-width: 500px) {
-    .title-wrapper{
-        inset: 3rem 0 auto 0;
-    }
-
     .content{
         top: 80vh;
     }
 
     .work-img{
+        width: 100%;
         margin-bottom: 25vh;
+    }
+
+    .context{
+        position: absolute;
+    }
+
+    .title-wrapper{
+        inset: 3rem 0 auto 0;
     }
 }

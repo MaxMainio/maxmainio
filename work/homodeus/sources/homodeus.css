@@ -26,3 +26,30 @@
 .context{
     position: fixed;
 }
+
+
+
+
+
+
+
+
+
+/* Media Queries */
+@media (max-width: 500px) {
+    .content{
+        top: 80vh;
+    }
+
+    .aukeama-container{
+        width: 100%;
+    }
+
+    .context{
+        position: absolute;
+    }
+
+    .title-wrapper{
+        inset: 3rem 0 auto 0;
+    }
+}
