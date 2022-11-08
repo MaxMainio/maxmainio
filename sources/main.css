@@ -309,6 +309,7 @@ sup, sub {
 
 
 
+/* Media Queries */
 @media (max-width: 685px) {
     .desktop-logo{
         display: none;

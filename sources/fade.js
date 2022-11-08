@@ -4,8 +4,6 @@ window.onload = () => {
     const tulossaElement = document.querySelector(".fader-in");
     const innerLinks = document.querySelectorAll('a:not([target="_self"], [target="_blank"])');
 
-    console.log(innerLinks);
-
     tulossaElement.classList.remove("tulossa");
     
     setTimeout(() => {

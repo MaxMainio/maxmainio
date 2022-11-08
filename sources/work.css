@@ -508,6 +508,7 @@ article{
 
 
 
+/* Media Queries */
 @media (max-width: 1200px) {
     .super-header{
         font-size: 42vw;

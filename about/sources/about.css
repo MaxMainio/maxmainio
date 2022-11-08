@@ -199,6 +199,7 @@ address{
 
 
 
+/* Media Queries */
 @media (max-width: 1000px) {
     .about-grid{
         grid-template-columns: repeat(4, 1fr);
