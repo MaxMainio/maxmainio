@@ -516,3 +516,15 @@ article{
         bottom: -12vw;
     }
 }
+
+@media (max-width: 800px) {
+    .acetate-parot{
+        inset: 0 10vh auto 0;
+        height: 50vh;
+    }
+
+    .acetate-plane{
+        inset: auto 0 10vh auto;
+        height: 40vh;
+    }
+}
