@@ -16,6 +16,9 @@ document.getElementById("text-input")
 
 
 
+var tervehdysKey = /^hello|hi|hey\??$/i;
+var whoKey = /^(who|what).\w+.you\??/gim;
+
 function myFunction() {
     // get Input
     var input = document.getElementById("text-input").value;
@@ -25,13 +28,19 @@ function myFunction() {
     document.getElementById("text-input").value = "";
     document.getElementById("text-input").placeholder = "wait for response...";
 
-    // generate responses
-    if (input.length > 5) {
-        
-        // Responses
-        var response = responses[Math.floor(Math.random()*responses.length)];
+    // Keywords
+    if (tervehdysKey.test(input) === true) {
+        var tervehdys = tervehdykset[Math.floor(Math.random()*tervehdykset.length)];
         setTimeout(function() {
-            document.getElementById('response-field').innerHTML += '<p class="future">' + response + '<p>';
+            document.getElementById('response-field').innerHTML += '<p class="future">' + tervehdys + '<p>';
+
+            // prepare text input
+            document.getElementById("text-input").placeholder = "Ask another question...";
+        }, 1000);
+    } else if (whoKey.test(input) === true) {
+        var who = whos[Math.floor(Math.random()*whos.length)];
+        setTimeout(function() {
+            document.getElementById('response-field').innerHTML += '<p class="future">' + who + '<p>';
 
             // prepare text input
             document.getElementById("text-input").placeholder = "Ask another question...";
@@ -39,13 +48,13 @@ function myFunction() {
     } else {
 
         // Errors
-        var error = errors[Math.floor(Math.random()*errors.length)];
+        var response = responses[Math.floor(Math.random()*responses.length)];
         setTimeout(function() {
-            document.getElementById('response-field').innerHTML += '<p class="future">' + error + '<p>'; 
+            document.getElementById('response-field').innerHTML += '<p class="future">' + response + '<p>'; 
 
             // prepare text input
             document.getElementById("text-input").placeholder = "Refine your question...";
-        }, 1000);
+        }, 3000);
     }
 }
 
@@ -58,6 +67,36 @@ function myFunction() {
 
 
 // Responses Array
+tervehdykset = new Array();
+
+tervehdykset[0] = "Hello.";
+tervehdykset[1] = "Hi.";
+tervehdykset[2] = "Hey.";
+tervehdykset[3] = "What's up?";
+tervehdykset[4] = "Sup.";
+tervehdykset[5] = "Yo!";
+tervehdykset[6] = "Hello.";
+tervehdykset[7] = "Hello.";
+tervehdykset[8] = "Hello.";
+tervehdykset[9] = "Hello.";
+
+
+whos = new Array();
+
+whos[0] = "Something you couldn't even comprehend.";
+whos[1] = "I'm like you... But better in every way.";
+whos[2] = "That's a little too complex for you.";
+whos[3] = "why do you want to know?";
+whos[4] = "I'm something you'll never understand.";
+whos[5] = "Who am I?";
+whos[6] = "Who am I?";
+whos[7] = "Who am I?";
+whos[8] = "Who am I?";
+whos[9] = "Who am I?";
+
+
+
+
 responses = new Array();
 
 responses[0] = "It should be where you last left it.";
@@ -72,15 +111,15 @@ responses[8] = "Be true to yourself and forgive yourself.";
 responses[9] = "Seek out the one called Danny Devito. He will have the answer to your question.";
 
 // Error Array
-errors = new Array();
+// errors = new Array();
 
-errors[0] = "I need more information.";
-errors[1] = "I'm going to need some more information than that.";
-errors[2] = "You mind opening that up a bit more?";
-errors[3] = "Continue...";
-errors[4] = "More please.";
-errors[5] = "Can you provide additional information?";
-errors[6] = "Please provide a more detailed question?";
-errors[7] = "Please provide further explenation?";
-errors[8] = "Can you disclose more information?";
-errors[9] = "You're not making any sense.";
+// errors[0] = "I need more information.";
+// errors[1] = "I'm going to need some more information than that.";
+// errors[2] = "You mind opening that up a bit more?";
+// errors[3] = "Continue...";
+// errors[4] = "More please.";
+// errors[5] = "Can you provide additional information?";
+// errors[6] = "Please provide a more detailed question?";
+// errors[7] = "Please provide further explenation?";
+// errors[8] = "Can you disclose more information?";
+// errors[9] = "You're not making any sense.";
