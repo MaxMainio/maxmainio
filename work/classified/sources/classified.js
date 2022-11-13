@@ -68,7 +68,6 @@ function myFunction() {
 
 // Responses Array
 tervehdykset = new Array();
-
 tervehdykset[0] = "Hello.";
 tervehdykset[1] = "Hi.";
 tervehdykset[2] = "Hey.";
@@ -80,25 +79,19 @@ tervehdykset[7] = "Hello.";
 tervehdykset[8] = "Hello.";
 tervehdykset[9] = "Hello.";
 
-
 whos = new Array();
-
 whos[0] = "Something you couldn't even comprehend.";
 whos[1] = "I'm like you... But better in every way.";
 whos[2] = "That's a little too complex for you.";
 whos[3] = "why do you want to know?";
 whos[4] = "I'm something you'll never understand.";
-whos[5] = "Who am I?";
-whos[6] = "Who am I?";
+whos[5] = "That's not necessary information right now.";
+whos[6] = "Dont' worry about it.";
 whos[7] = "Who am I?";
 whos[8] = "Who am I?";
 whos[9] = "Who am I?";
 
-
-
-
 responses = new Array();
-
 responses[0] = "It should be where you last left it.";
 responses[1] = "Just like other human problems in daily life, the first thing to do is to consider lifestyle changes.";
 responses[2] = "Talk about the challenges with your partner and look for common grounds.";
@@ -112,7 +105,6 @@ responses[9] = "Seek out the one called Danny Devito. He will have the answer to
 
 // Error Array
 // errors = new Array();
-
 // errors[0] = "I need more information.";
 // errors[1] = "I'm going to need some more information than that.";
 // errors[2] = "You mind opening that up a bit more?";

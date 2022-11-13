@@ -1,7 +1,6 @@
 console.log("https://www.youtube.com/watch?v=NuAKnbIr6TE");
 
 var vw = window.innerWidth
-console.log(vw);
 
 if (vw > 800) {
     window.onpageshow = () => {
