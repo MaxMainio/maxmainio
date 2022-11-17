@@ -481,6 +481,43 @@ article{
 
 /* My Desktop is My Home */
 /* Collages */
+.content.horizontal-flex{
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0 1rem;
+}
+
+.collages{
+    width: auto;
+    max-width: 683px;
+}
+
+.collages.one{
+    margin-bottom: auto;
+    margin-top: auto;
+}
+
+.collages.two{
+    margin-bottom: auto;
+}
+
+.collages.three{
+    margin-top: auto;
+}
+
+.collage-img{
+    width: 100%;
+}
+
+
+
+
+
+
+
+
+
 /* Footer */
 .ice{
     position: absolute;
