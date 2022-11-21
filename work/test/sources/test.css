@@ -1,43 +1,40 @@
-.fader-in{
-    position: fixed;
-    height: 300vh;
-    width: 100vw;
-    z-index: 9;
+.context{
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 1rem;
+    padding: 3rem 1rem 0 1rem;
 
+    height: auto;
     inset: 0 0 auto 0;
-    background: linear-gradient(rgba(255,255,255,0) 33%, rgba(255,255,255,1) 66%);
-    transform: translateY(0vh);
 
-    pointer-events: none;
-    transition: 0.5s ease-in-out;
+    /* background-color: aqua; */
 }
 
-.fader-in.tulossa{
-    transform: translateY(-200vh);
-    pointer-events: all;
+.title-wrapper{
+    position: relative;
+    grid-column: 1 / 4;
+    margin: 0;
+    inset: 0;
+
+    z-index: 1;
 }
 
-
-
-
-
-.fader-out{
+.title{
     position: fixed;
-    height: 300vh;
-    width: 100vw;
-    z-index: 9;
-
-    inset: 0 0 auto 0;
-    background: linear-gradient(rgba(255,255,255,0) 33%, rgba(255,255,255,1) 66%);
-    transform: translateY(0);
-
-    pointer-events: none;
-    transition: 0.5s ease-in-out;
 }
 
-.fader-out.menossa{
-    transform: translateY(-200vh);
-    pointer-events: all;
+.sub-title{
+    margin-top: 3rem;
+}
+
+.work-p{
+    width: auto;
+}
+
+.work-title{
+    font-weight: 600;
+    font-size: 2rem;
+    line-height: 2rem;
 }
 
 
@@ -48,54 +45,47 @@
 
 
 
+.content{
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 1rem;
+    padding: 3rem 1rem 0 1rem;
+    height: auto;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-a{
-    display: block;
+    /* background-color: aquamarine; */
 }
 
 .test-div{
-    height: 400px;
-    width: 800px;
-    position: absolute;
-    inset: 50% auto auto 50%;
-    transform: translateX(-50%) translateY(-50%);
-    background-color: red;
+    height: auto;
+    width: 100%;
+    z-index: 2;
 }
 
-.test-div-t{
-    height: 300px;
-    width: 600px;
-    position: absolute;
-    inset: 10% auto auto 50%;
-    transform: translateX(-50%);
+.work-img{
+    width: 100%;
+    filter: drop-shadow(0px 0px 50px rgba(0, 0, 0, 0.1));
+}
+
+
+
+
+
+
+
+
+
+.test-div-g{
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    z-index: 2;
+
     background-color: green;
 }
 
 .test-div-b{
-    height: 300px;
-    width: 600px;
-    position: absolute;
-    inset: auto auto 10% 50%;
-    transform: translateX(-50%);
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    z-index: 2;
+
     background-color: blue;
 }
