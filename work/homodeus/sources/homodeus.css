@@ -1,18 +1,10 @@
-.content{
-    height: auto;
-    padding: 3rem 1rem 0 0;
-}
-
 .aukeama-container{
     position: relative;
     aspect-ratio: 1640 / 1024;
-    width: 50%;
-    margin-left: auto;
-    margin-bottom: 25vh;
 }
 
-.aukeama-img{
-    width: 100%;
+.work-img{
+    mix-blend-mode: multiply;
 }
 
 .aukeama-shadow{
@@ -23,8 +15,65 @@
     pointer-events: none;
 }
 
-.context{
-    position: fixed;
+
+
+
+
+
+
+
+
+/* Content */
+.first{
+    grid-column: 5 / 9;
+}
+
+.second{
+    grid-column: 1 / 3;
+}
+
+.third{
+    grid-column: 3 / 6;
+}
+
+.fourth{
+    grid-column: 6 / 9;
+}
+
+.fifth{
+    grid-column: 2 / 5;
+}
+
+.sixth{
+    grid-column: 5 / 9;
+}
+
+.seventh{
+    grid-column: 1 / 2;
+}
+
+.eighth{
+    grid-column: 2 / 4;
+}
+
+.ninth{
+    grid-column: 4 / 9;
+}
+
+.tenth{
+    grid-column: 1 / 4;
+}
+
+.eleventh{
+    grid-column: 4 / 8;
+}
+
+.twelfth{
+    grid-column: 2 / 5;
+}
+
+.thirteenth{
+    grid-column: 5 / 8;
 }
 
 
@@ -36,20 +85,32 @@
 
 
 /* Media Queries */
-@media (max-width: 500px) {
-    .content{
-        top: 80vh;
+@media (max-width: 1200px) {
+    .first{
+        margin-bottom: 8rem;
     }
+}
 
-    .aukeama-container{
-        width: 100%;
-    }
-
-    .context{
-        position: absolute;
-    }
-
+@media (max-width: 1000px) {
     .title-wrapper{
-        inset: 3rem 0 auto 0;
+        grid-column: 1 / 5;
+    }
+}
+
+@media (max-width: 880px) {
+    .first{
+        margin-bottom: 12rem;
+    }
+}
+
+@media (max-width: 740px) {
+    .first{
+        margin-bottom: 16rem;
+    }
+}
+
+@media (max-width: 685px) {
+    .first{
+        margin-bottom: 4rem;
     }
 }

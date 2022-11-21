@@ -51,12 +51,16 @@
 }
 
 @media (max-width: 1000px) {
+    .title-wrapper{
+        grid-column: 1 / 5;
+    }
+
     .title{
         width: 50vw;
     }
 
     .first{
-        margin-bottom: 10rem;
+        margin-bottom: 2rem;
     }
 
     .second{
@@ -98,9 +102,15 @@
     }
 }
 
-@media (max-width: 850px) {
+@media (max-width: 860px) {
     .first{
-        margin-bottom: 16rem;
+        margin-bottom: 8rem;
+    }
+}
+
+@media (max-width: 790px) {
+    .first{
+        margin-bottom: 10rem;
     }
 }
 
