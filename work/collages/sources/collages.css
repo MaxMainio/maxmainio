@@ -1,0 +1,31 @@
+/* Content */
+.first{
+    grid-column: 5 / 9;
+}
+
+.second{
+    grid-column: 2 / 4;
+}
+
+.third{
+    grid-column: 4 / 7;
+}
+
+
+
+
+
+
+
+
+
+/* Media Queries */
+@media (max-width: 1000px) {
+    .second{
+        grid-column: 1 / 4;
+    }
+
+    .third{
+        grid-column: 4 / 9;
+    }
+}

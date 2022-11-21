@@ -1,3 +1,4 @@
+/* Context */
 .context{
     display: grid;
     grid-template-columns: repeat(8, 1fr);
@@ -33,6 +34,7 @@
 
 
 
+/* Content */
 .content{
     display: grid;
     grid-template-columns: repeat(8, 1fr);
@@ -63,4 +65,37 @@
     font-weight: 600;
     font-size: 2rem;
     line-height: 2rem;
+}
+
+
+
+
+
+
+
+
+
+/* Media Queries */
+@media (max-width: 685px) {
+    .context{
+        display: block;
+        position: relative;
+    }
+
+    .title{
+        position: static;
+    }
+
+    .sub-title{
+        margin-top: 0;
+    }
+
+    .content{
+        display: block;
+        padding-top: 4rem;
+    }
+
+    .work-div{
+        margin-bottom: 4rem;
+    }
 }
