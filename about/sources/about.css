@@ -179,6 +179,8 @@ address{
 
     width: 30%;
     height: 100%;
+
+    padding: 0;
 }
 
 .carousel-button.prev{
