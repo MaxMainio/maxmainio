@@ -21,10 +21,6 @@
 
 /* Media Queries */
 @media (max-width: 1000px) {
-    .title-wrapper{
-        grid-column: 1 / 5;
-    }
-    
     .second{
         grid-column: 1 / 4;
     }

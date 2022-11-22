@@ -76,6 +76,16 @@
 
 
 /* Media Queries */
+@media (max-width: 1000px) {
+    .title-wrapper{
+        grid-column: 1 / 5;
+    }
+
+    .title{
+        width: 50vw;
+    }
+}
+
 @media (max-width: 685px) {
     .context{
         display: block;

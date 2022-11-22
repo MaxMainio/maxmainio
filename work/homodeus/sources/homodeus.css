@@ -91,12 +91,6 @@
     }
 }
 
-@media (max-width: 1000px) {
-    .title-wrapper{
-        grid-column: 1 / 5;
-    }
-}
-
 @media (max-width: 880px) {
     .first{
         margin-bottom: 12rem;

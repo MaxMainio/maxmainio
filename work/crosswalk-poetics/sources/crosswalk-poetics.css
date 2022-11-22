@@ -19,16 +19,6 @@
 
 
 /* Media Queries */
-@media (max-width: 1000px) {
-    .title-wrapper{
-        grid-column: 1 / 5;
-    }
-
-    .title{
-        width: 50%;
-    }
-}
-
 @media (max-width: 914px) {
     .sub-title{
         margin-top: 6rem;

@@ -1,3 +1,40 @@
+/* Content */
+.content{
+    mix-blend-mode: multiply;
+}
+
 .first{
     grid-column: 5 / 9;
+}
+
+.second{
+    grid-column: 1 / 4;
+}
+
+.third{
+    grid-column: 4 / 7;
+}
+
+.fourth{
+    grid-column: 7 / 9;
+}
+
+.fifth{
+    grid-column: 2 / 4;
+}
+
+.sixth{
+    grid-column: 5 / 7;
+}
+
+.seventh{
+    grid-column: 1 / 4;
+}
+
+.eighth{
+    grid-column: 4 / 7;
+}
+
+.ninth{
+    grid-column: 8 / 9;
 }

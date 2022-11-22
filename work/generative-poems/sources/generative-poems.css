@@ -51,14 +51,6 @@
 }
 
 @media (max-width: 1000px) {
-    .title-wrapper{
-        grid-column: 1 / 5;
-    }
-
-    .title{
-        width: 50vw;
-    }
-
     .first{
         margin-bottom: 2rem;
     }
