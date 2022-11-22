@@ -94,6 +94,7 @@
 
     .title{
         position: static;
+        width: auto;
     }
 
     .sub-title{

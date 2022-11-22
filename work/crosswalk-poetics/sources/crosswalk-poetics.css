@@ -38,10 +38,6 @@
 }
 
 @media (max-width: 685px) {
-    .title{
-        width: auto;
-    }
-
     .sub-title{
         margin-top: 0;
     }

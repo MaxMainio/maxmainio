@@ -69,3 +69,15 @@
         grid-column: 7 / 9;
     }
 }
+
+@media (max-width: 738px) {
+    .sub-title{
+        margin-top: 6rem;
+    }
+}
+
+@media (max-width: 685px) {
+    .sub-title{
+        margin-top: 0;
+    }
+}

@@ -14,8 +14,14 @@ main{
 
 /* Content */
 
+.content{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0;
+}
+
 .draggable{
-    width: 49%;
+    width: 50%;
     max-width: 800px;
     cursor: grab;
 
@@ -53,21 +59,32 @@ main{
 
 
 /* Media Queries */
-@media (max-width: 500px) {
-    main{
+@media (max-width: 900px) {
+    .content{
+        height: 100vh;
+        padding: 3rem 1rem 1rem 1rem;
+        align-items: flex-end;
+        row-gap: 0;
+    }
+}
+
+@media (max-width: 820px) {
+    .sub-title{
+        margin-top: 6rem;
+    }
+}
+
+@media (max-width: 685px) {
+    .context{
+        display: block;
         position: absolute;
+    }
+
+    .sub-title{
+        margin-top: 0;
     }
 
     .content{
-        top: 80vh;
-        height: auto;
-    }
-
-    .context{
-        position: absolute;
-    }
-
-    .title-wrapper{
-        inset: 3rem 0 auto 0;
+        display: flex;
     }
 }
