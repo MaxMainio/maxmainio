@@ -211,6 +211,22 @@ article{
 
 
 /* Interview */
+.interview-spread{
+    width: 75%;
+}
+
+.interview-spread:hover{
+    background-color: rgba(0, 0, 0, 0);
+}
+
+
+
+
+
+
+
+
+
 /* Playlist Covers */
 .playlist-out-grid{
     display: grid;

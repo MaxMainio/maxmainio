@@ -1,0 +1,42 @@
+.first{
+    grid-column: 5 / 9;
+}
+
+.second{
+    grid-column: 1 / 9;
+}
+
+.third{
+    grid-column: 1 / 5;
+}
+
+
+
+
+
+
+
+
+
+/* Media Queries */
+@media (max-width: 967px) {
+    .sub-title{
+        margin-top: 6rem;
+    }
+}
+
+@media (max-width: 730px) {
+    .first{
+        margin-bottom: 6rem;
+    }
+}
+
+@media (max-width: 685px) {
+    .sub-title{
+        margin-top: 0;
+    }
+
+    .first{
+        margin-bottom: 4rem;
+    }
+}
