@@ -1,5 +1,7 @@
 .context{
     position: fixed;
+    pointer-events: all;
+    z-index: 2;
 }
 
 .content{
