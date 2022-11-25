@@ -1,34 +1,19 @@
-console.log("https://www.youtube.com/watch?v=NuAKnbIr6TE");
+addEventListener("resize", e => {
+    var vw = window.innerWidth
 
-window.onpageshow = () => {
-    const tulossaElement = document.querySelector(".fader-in");
-    const innerLinks = document.querySelectorAll('a:not([target="_self"], [target="_blank"])');
+    console.log("changing");
 
-    tulossaElement.classList.remove("tulossa");
+    if (vw > 685) {
+        var contextHeight = document.querySelector(".title-wrapper").offsetHeight;
+        var titleHeight = document.querySelector(".title").offsetHeight;
     
-    setTimeout(() => {
-        tulossaElement.remove();
-    }, 500);
+        document.querySelector(".first").style.minHeight = contextHeight + "px";
+        document.querySelector(".sub-title").style.marginTop = titleHeight + "px";
 
-    for (let i = 0; i < innerLinks.length; i++) {
-        const innerLink = innerLinks[i];
+        console.log("larger");
+    } else {
+        document.querySelector(".sub-title").style.marginTop = "0px";
 
-        innerLink.addEventListener("click", e => {
-            e.preventDefault();
-
-            var target = e.currentTarget.href;
-            console.log(target);
-            const menossaDiv = document.createElement("div");
-            menossaDiv.classList.add("fader-out");
-
-            document.body.append(menossaDiv);
-            setTimeout(() => {
-                menossaDiv.classList.add("menossa");
-            },1);
-            
-            setTimeout(() => {
-                window.location.href = target;
-            }, 499);
-        });
+        console.log("smaller");
     }
-}
+});

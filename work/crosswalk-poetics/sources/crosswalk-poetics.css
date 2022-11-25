@@ -10,39 +10,3 @@
 .third{
     grid-column: 5 / 8;
 }
-
-
-
-
-
-
-
-
-/* Media Queries */
-@media (max-width: 914px) {
-    .sub-title{
-        margin-top: 6rem;
-    }
-}
-
-@media (max-width: 870px) {
-    .first{
-        margin-bottom: 4rem;
-    }
-}
-
-@media (max-width: 750px) {
-    .first{
-        margin-bottom: 8rem;
-    }
-}
-
-@media (max-width: 685px) {
-    .sub-title{
-        margin-top: 0;
-    }
-
-    .first{
-        margin-bottom: 4rem;
-    }
-}

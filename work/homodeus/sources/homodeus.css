@@ -86,25 +86,51 @@
 
 /* Media Queries */
 @media (max-width: 1200px) {
-    .first{
-        margin-bottom: 8rem;
+    .second{
+        grid-column: 1 / 5;
     }
-}
 
-@media (max-width: 880px) {
-    .first{
-        margin-bottom: 12rem;
+    .third{
+        grid-column: 5 / 9;
     }
-}
 
-@media (max-width: 740px) {
-    .first{
-        margin-bottom: 16rem;
+    .fourth{
+        grid-column: 1 / 5;
     }
-}
 
-@media (max-width: 685px) {
-    .first{
-        margin-bottom: 4rem;
+    .fifth{
+        grid-column: 5 / 9;
+    }
+
+    .sixth{
+        grid-column: 1 / 5;
+    }
+
+    .seventh{
+        grid-column: 5 / 9;
+    }
+
+    .eighth{
+        grid-column: 1 / 5;
+    }
+
+    .ninth{
+        grid-column: 5 / 9;
+    }
+
+    .tenth{
+        grid-column: 1 / 5;
+    }
+
+    .eleventh{
+        grid-column: 5 / 9;
+    }
+
+    .twelfth{
+        grid-column: 1 / 5;
+    }
+
+    .thirteenth{
+        grid-column: 5 / 9;
     }
 }
