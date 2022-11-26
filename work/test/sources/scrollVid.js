@@ -1,8 +1,8 @@
 const canvas = document.getElementById("mossSim");
 const context = canvas.getContext("2d");
 
-// canvas.width = 1158;
-// canvas.height = 770;
+canvas.width = 800;
+canvas.height = 1000;
 
 const frameCount = 60;
 const currentFrame = index => (

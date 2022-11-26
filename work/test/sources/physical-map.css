@@ -1,12 +1,20 @@
+body{
+    height: 5000px;
+}
+
+.context{
+    position: fixed;
+}
+
 .content{
     height: 100vh;
+    position: fixed;
 }
 
 .work-div{
     position: relative;
     height: 100%;
     width: 100%;
-    /* background-color: green; */
 }
 
 .first{
@@ -15,16 +23,63 @@
 
 .work-img{
     position: absolute;
-    inset: auto 0 0 0;
-    width: 100%;
+    inset: auto 0 0 auto;
+
+    height: auto;
+    width: auto;
+    max-width: 100%;
+    max-height: 100%;
     aspect-ratio: 4 / 5;
 }
 
 canvas{
     position: absolute;
-    inset: auto 0 0 0;
+    inset: auto 0 0 auto;
 
-    width: 100%;
+    height: auto;
+    width: auto;
+    max-width: 100%;
+    max-height: 100%;
     aspect-ratio: 4 / 5;
-    /* background-color: red; */
+}
+
+
+
+
+
+
+
+
+
+@media (max-width: 685px) {
+    article{
+        height: 100%;
+        position: relative;
+    }
+
+    .context{
+        display: block;
+        position: relative;
+    }
+
+    .content{
+        padding-top: 4rem;
+        height: 100vh;
+
+        position: -webkit-sticky;
+        position: sticky;
+        top: 0;
+    }
+
+    .work-div{
+        margin-bottom: 0;
+    }
+
+    .work-img{
+        inset: 0;
+    }
+
+    canvas{
+        inset: 0;
+    }
 }
