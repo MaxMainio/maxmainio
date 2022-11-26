@@ -27,7 +27,7 @@ gsap.to(moss, {
   scrollTrigger: {
     scrub: 0.5
   },
-  onUpdate: render // use animation onUpdate instead of scrollTrigger's onUpdate
+  onUpdate: render
 });
 
 images[0].onload = render;

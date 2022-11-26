@@ -1,45 +1,48 @@
+body{
+    height: 5000px;
+}
+
 .context{
     position: fixed;
-    pointer-events: all;
-    z-index: 2;
 }
 
 .content{
-    padding-bottom: 0;
+    height: 100vh;
+    position: fixed;
 }
 
-/* Scroll video */
-.content-container{
+.work-div{
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+.first{
     grid-column: 5 / 9;
-    position: sticky;
-    top: 3rem;
-    height: calc(100vh - 3rem);
 }
 
-.content-frame{
+.work-img{
     position: absolute;
     inset: auto 0 0 auto;
 
-    aspect-ratio: 800 / 1024;
-    width: 50%;
-    max-width: 800px;
+    height: auto;
+    width: auto;
+    max-width: 100%;
+    max-height: 100%;
+    aspect-ratio: 4 / 5;
 }
 
-#bg-img{
-    width: 100%;
-}
-
-#v0{
+canvas{
     position: absolute;
-    inset: 0;
-    aspect-ratio: 800 / 1024;
-    width: 100%;
-    mix-blend-mode: darken;
+    inset: auto 0 0 auto;
+
+    height: auto;
+    width: auto;
+    max-width: 100%;
+    max-height: 100%;
+    aspect-ratio: 4 / 5;
 }
 
-#set-height{
-    display: block;
-}
 
 
 
@@ -47,55 +50,36 @@
 
 
 
-
-
-/* Media Queries */
-@media (max-width: 1000px) {
-    .context{
-        display: block;
-        position: fixed;
-    }
-
-    .title{
-        position: static;
-    }
-
-    .sub-title{
-        margin-top: 0;
-    }
-
-    .content{
-        display: block;
-        padding-top: 3rem;
-    }
-
-    .content-frame{
-        width: 50vh;
-    }
-}
 
 @media (max-width: 685px) {
+    article{
+        height: 100%;
+        position: relative;
+    }
+
     .context{
         display: block;
-        position: fixed;
-    }
-
-    .title{
-        position: static;
-    }
-
-    .sub-title{
-        margin-top: 0;
+        position: relative;
     }
 
     .content{
-        display: block;
-        padding-top: 3rem;
-    }
-}
+        padding-top: 4rem;
+        height: 100vh;
 
-@media (max-width: 530px) {
-    .content-frame{
-        width: 100%;
+        position: -webkit-sticky;
+        position: sticky;
+        top: 0;
+    }
+
+    .work-div{
+        margin-bottom: 0;
+    }
+
+    .work-img{
+        inset: 0;
+    }
+
+    canvas{
+        inset: 0;
     }
 }

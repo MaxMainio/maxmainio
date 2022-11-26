@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="icon" href="../../../assets/support/icons/favicon.png">
+		<link rel="icon" href="../../assets/support/icons/favicon.png">
 		<title>Max Mainio | Moss Growth Simulation</title>
 
 		<link rel="stylesheet" type="text/css" href="../../../sources/main.css"> </link>
@@ -10,6 +10,11 @@
 		<link rel="stylesheet" type="text/css" href="sources/physical-map.css"> </link>
 
 		<script src="../../../sources/fade.js" defer></script>
+		
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js" defer></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js" defer></script>
+		<script src="../../aaa-sources/subpages.js" defer></script>
+
 		<script src="sources/scrollVid.js" defer></script>
 	</head>
 
@@ -53,15 +58,10 @@
 				</div>
 			</section>
 
-			<section class="content" id="set-height">
-				<div class="content-container">
-					<div class="content-frame">
-						<img src="assets/facade.jpg" id="bg-img" class="shadow">
-	
-						<video id="v0" tabindex="0" autobuffer preload>
-							<source src="assets/moss-sim.mp4"></source>
-						</video>
-					</div>
+			<section class="content">
+				<div class="work-div first">
+					<img src="assets/facade.jpg" class="work-img shadow">
+					<canvas id="mossSim"></canvas>
 				</div>
 			</section>
 		</article>
