@@ -4,7 +4,7 @@ const context = canvas.getContext("2d");
 // canvas.width = 1158;
 // canvas.height = 770;
 
-const frameCount = 61;
+const frameCount = 60;
 const currentFrame = index => (
   `https://maxmain.io/work/crosswalk-poetics/physical-map/assets/png-sequence/moss-${(index + 1).toString().padStart( '0')}.png`
 );
@@ -34,5 +34,5 @@ images[0].onload = render;
 
 function render() {
   context.clearRect(0, 0, canvas.width, canvas.height);
-  context.drawImage(images[airpods.frame], 0, 0); 
+  context.drawImage(images[moss.frame], 0, 0); 
 }
