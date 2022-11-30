@@ -552,6 +552,8 @@ article{
 .pix-prof{
     grid-column: 4 / 5;
     max-width: 100%;
+    margin-right: auto;
+    pointer-events: all;
 }
 
 
