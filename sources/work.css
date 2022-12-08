@@ -1,5 +1,7 @@
 /* HTML */
 :root{
+    --type-color:#333;
+    --green: #00ff00;
     --shadow: 0px 0px 50px rgba(0, 0, 0, 0.1);
 }
 
@@ -28,41 +30,33 @@ html{
 #index-container{
     max-width: 1400px;
     margin: 0 auto 0 auto;
-}
-
-#index-grid{
-    width: auto;
-    height: 100%;
-    margin: 0 1rem;
+    padding: 0 1rem;
 
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     column-gap: 1rem;
 }
 
-.index-title{
-    grid-column: 1 / 1;
+.index-row{
+    grid-column: 1;
 }
 
-.index-title > a{
+.index-link{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+
     pointer-events: all;
 }
 
-.index-info{
-    grid-column: 2 / 2;
-}
-
-.index-info > a{
-    pointer-events: all;
-}
-
-.index-date{
-    cursor: default;
-    grid-column: 3 / 3;
+.index-link:hover{
+    background-color: var(--green);
 }
 
 .index-soon{
-    cursor: default;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
 }
 
 
@@ -535,6 +529,106 @@ article{
 
 
 
+/* Drawing */
+.drawing-external{
+    position: absolute;
+    display: none;
+    left: -440px;
+    height: 100vh;
+    width: 100vw;
+    min-width: calc(2560px + 880px);
+
+    pointer-events: none;
+}
+
+.grass{
+    position: absolute;
+    inset: auto auto 0 0;
+    width: 400px;
+    margin-bottom: 2rem;
+
+    pointer-events: all;
+}
+
+.grass:hover{
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.feet{
+    position: absolute;
+    inset: 0 0 auto auto;
+    width: 400px;
+    margin-top: 2rem;
+
+    pointer-events: all;
+}
+
+.feet:hover{
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.drawing-out{
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    max-width: 2560px;
+
+    pointer-events: none;
+}
+
+.history-class{
+    aspect-ratio: 5 / 4;
+    height: 40%;
+    position: absolute;
+    inset: 0 auto auto 0;
+
+    pointer-events: all;
+}
+
+.history-class:hover{
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.balcony{
+    aspect-ratio: 5 / 4;
+    height: 40%;
+    position: absolute;
+    inset: auto 0 0 auto;
+
+    pointer-events: all;
+}
+
+.balcony:hover{
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.drawing-center{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.dumari{
+    aspect-ratio: 4 / 5;
+    max-height: 75%;
+    max-width: 50%;
+}
+
+.dumari:hover{
+    background-color: rgba(0, 0, 0, 0);
+}
+
+
+
+
+
+
+
+
+
 /* Footer */
 .ice{
     position: absolute;
@@ -565,6 +659,18 @@ article{
 
 
 /* Media Queries */
+@media (min-width: 3440px) {
+    .drawing-external{
+        left: calc(calc(100vw - 2560px) / -2);
+    }
+}
+
+@media (min-width: 2560px) {
+    .drawing-external{
+        display: block;
+    }
+}
+
 @media (max-width: 1200px) {
     .super-header{
         font-size: 42vw;
