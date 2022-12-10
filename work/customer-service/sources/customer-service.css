@@ -1,0 +1,11 @@
+/* HTML */
+:root{
+    --type-color:#fff;
+    --bg: #111;
+}
+
+*, *::before, *::after{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
