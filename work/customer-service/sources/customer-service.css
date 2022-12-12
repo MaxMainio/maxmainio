@@ -177,6 +177,10 @@ main{
     height: 100%;
 }
 
+.grid-div:hover{
+    cursor: pointer;
+}
+
 .grid-div > h1{
     font-weight: 300;
     color: var(--primary-color);
@@ -184,7 +188,7 @@ main{
 
 .grid-div > p{
     font-weight: 200;
-    margin-top: 0.5rem;
+    margin-top: 0.25rem;
 }
 
 
