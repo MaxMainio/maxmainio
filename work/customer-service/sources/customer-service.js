@@ -330,3 +330,6 @@ introductionWords[9] = "Together there is no dilemma too hard to handle!";
 introductionWords[10] = "Together there is no issue too hard to fix!";
 introductionWords[11] = "Together there is no problem too hard to fix!";
 introductionWords[12] = "Together there is no dilemma too hard to fix!";
+
+boastingWords = new Array();
+boastingWords[0] = "Luckily I'm an expert in this topic."
