@@ -1,5 +1,9 @@
 /* HTML */
 :root{
+    --primary-color: #007bc7;
+    --secondary-color: #b2d7ee;
+    --tetriary-color: #d9ebf7;
+
     --dark-brown1: #673327;
     --dark-brown2: #d1c1be;
     --dark-brown3: #e8e1df;
@@ -83,7 +87,7 @@ header{
     z-index: 10;
 
     padding: 1rem;
-    background-color: var(--azure1);
+    background-color: var(--primary-color);
     color: white;
 }
 
@@ -116,20 +120,13 @@ nav{
 
 main{
     max-width: 100vw;
-    height: 100vh;
 }
 
 .splash-container{
     width: 100vw;
     height: 40vh;
 
-    /* display: flex;
-    justify-content: center;
-    align-items: center; */
-
-    position: absolute;
-
-    background-image: url(assets/images/outsource-telemarketing-services.jpg);
+    background-image: url(../assets/imgs/outsource-telemarketing-services.jpg);
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -138,21 +135,80 @@ main{
     overflow: hidden;
 }
 
-/* .splash-img{
+.splash-text-container{
+    max-width: 1400px;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.splash-text{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.splash-text > h1{
+    font-size: 3rem;
+}
+
+.splash-text > h2{
+    font-size: 2rem;
+    margin-top: 1rem;
+}
+
+
+
+.help{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin: 3rem 0;
+}
+
+.help-title{
+    grid-column: 1 / 5;
+    margin-bottom: 2rem;
+}
+
+.grid-div{
     width: 100%;
-    min-width: 1200px;
-} */
+    height: 100%;
+}
+
+.grid-div > h1{
+    font-weight: 300;
+    color: var(--primary-color);
+}
+
+.grid-div > p{
+    font-weight: 200;
+    margin-top: 0.5rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 article{
     height: 100%;
     max-width: 1400px;
     margin: 0 auto;
-    padding: 0 1rem;
 }
 
 footer{
     max-width: 100vw;
     height: 100px;
 
-    background-color: var(--azure2);
+    background-color: var(--primary-color);
 }
