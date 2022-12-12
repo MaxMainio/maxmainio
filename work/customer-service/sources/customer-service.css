@@ -160,6 +160,35 @@ main{
 
 
 
+
+
+
+.who{
+    margin: 3rem 0;
+}
+
+.who > h1{
+    font-size: 1.5rem;
+}
+
+.who > p{
+    margin-top: 0.5rem;
+    width: 80ch;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .help{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
