@@ -245,3 +245,98 @@ footer{
 
     background-color: var(--primary-color);
 }
+
+.footer-article{
+    display: flex;
+    gap: 1rem;
+    padding: 1rem;
+    color: white;
+}
+
+
+
+
+
+
+
+
+
+
+
+.chat-container{
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    inset: 0;
+
+    z-index: 11;
+    pointer-events: none;
+}
+
+.chat-box{
+    width: 40%;
+    height: 60%;
+
+    border: 1px solid black;
+
+    display: flex;
+    flex-direction: column;
+
+    position: absolute;
+    inset: auto 0 0 auto;
+
+    pointer-events: all;
+    background-color: white;
+}
+
+.profile-div{
+    width: 100%;
+    height: 100px;
+    padding: 1rem;
+    display: flex;
+    gap: 1rem;
+    background-color: var(--secondary-color);
+}
+
+#profileImg{
+    height: 100%;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+}
+
+
+
+
+
+
+
+
+.response-field{
+    height: 100%;
+    width: 100%;
+    padding: 0 1rem;
+}
+
+
+.input-field{
+    width: 100%;
+    height: 2rem;
+    padding: 0 1rem;
+    background-color: #eee;
+}
+
+
+
+input{
+    border: none;
+    background-color: rgba(0, 0, 0, 0);
+    width: 100%;
+}
+
+input:focus{
+    outline: 0;
+}
+
+button{
+    display: none;
+}
