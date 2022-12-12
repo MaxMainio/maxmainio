@@ -289,6 +289,18 @@ footer{
     background-color: white;
 }
 
+.hidden{
+    display: none;
+}
+
+
+
+
+
+
+
+
+
 .profile-div{
     width: 100%;
     height: 100px;
@@ -315,13 +327,21 @@ footer{
     height: 100%;
     width: 100%;
     padding: 0 1rem;
+
+    display: flex;
+    flex-direction: column;
+    /* flex-direction: column-reverse; */
+    overflow: scroll;
+}
+
+.response-field > p{
+    margin-top: 0.5rem;
 }
 
 
 .input-field{
     width: 100%;
-    height: 2rem;
-    padding: 0 1rem;
+    padding: 1rem;
     background-color: #eee;
 }
 
@@ -339,4 +359,15 @@ input:focus{
 
 button{
     display: none;
+}
+
+
+
+.server{
+    font-style: italic;
+}
+
+.subject{
+    text-align: right;
+    font-weight: 600;
 }

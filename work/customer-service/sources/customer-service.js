@@ -3,6 +3,96 @@ console.log("https://www.youtube.com/watch?v=NuAKnbIr6TE");
 const profileImg = document.getElementById("profileImg")
 const profileName = document.getElementById("profileName")
 
+const chatContainer = document.getElementById("chatContainer");
+var allHelpBtns = document.getElementsByClassName("grid-div");
+const responseField = document.getElementById("responseField");
+const inputField = document.getElementById("text-input");
+
+
+
+
+
+
+
+
+
+
+
+// WHAT TOPIC YOU PICK
+for (var i = allHelpBtns.length-1; i >=0  ; i--) {
+	(function () {
+		var initialHelp = allHelpBtns[i].id
+
+		allHelpBtns[i].addEventListener("click", function() {
+            openChatBox()
+            setTimeout(introduction, 1000);
+
+            setTimeout(function () {
+                responseField.appendChild(document.createElement('p')).innerHTML += '<p class="server">I see you have selected ' + initialTopic[initialHelp] + ' Luckily I am an expert in this topic. A proper solution is only a couple seconds away!</p>';
+            }, 4000)
+
+            setTimeout(firstQuestion, 5000);
+		}, false)
+	}());
+}
+
+function openChatBox(){
+    chatContainer.classList.toggle("hidden")
+}
+
+function introduction() {
+    generateProfile(0)
+    document.getElementById("connectingText").innerHTML = "you are now connected to a professional."
+    setTimeout(firstWords, 1000)
+}
+
+function firstWords() {
+    responseField.appendChild(document.createElement('p')).innerHTML += '<p class="server">Hello! ' + introductionWords[introductionRandomizer(0)]; + '</p>'
+}
+
+function firstQuestion() {
+    responseField.appendChild(document.createElement('p')).innerHTML += '<p class="server">How may I be of assistance?</p>';
+}
+
+
+function introductionRandomizer(){
+    return Math.round(Math.random() * 12)
+}
+
+
+
+
+
+
+
+
+// TYPING INPUT
+document.getElementById("inputField")
+    .addEventListener("keyup", function(event) {
+    event.preventDefault();
+    if (event.keyCode === 13) {
+        document.getElementById("chatBtn").click();
+    }
+});
+
+function inputText(){
+        // get Input
+        var input = inputField.value;
+        responseField.appendChild(document.createElement('p')).innerHTML += '<p class="subject">' + input + '</p>';
+    
+        // reset text input
+        inputField.value = "";
+        inputField.placeholder = "Click here to type...";
+}
+
+
+
+
+
+
+
+
+
 // FIND THE PROFILE GROUP
 function profileGroup(){
     return Math.round(Math.random() * 11)
@@ -31,9 +121,7 @@ function surNameIndex(){
 
 
 
-window.onload = function() {
-    generateProfile();
-}
+
 
 function generateProfile() {
     var profileBucket = profileGroup(0)
@@ -45,9 +133,6 @@ function generateProfile() {
         profileName.innerHTML = maleFirst[manNameIndex(0)] + " " + surName[surNameIndex(0)];
     }
 
-    console.log(profileBucket)
-    console.log(profileImgIndex)
-
     profileImg.src = "assets/profiles/set_" + profileBucket + "/profile_" + profileImgIndex + ".jpg";
 }
 
@@ -55,7 +140,7 @@ function generateProfile() {
 
 
 
-
+// NAME GENERATOR
 maleFirst = new Array();
 maleFirst[0] = "Roman";
 maleFirst[1] = "Montgomery";
@@ -211,3 +296,37 @@ surName[66] = "Fisher";
 surName[67] = "Ross";
 surName[68] = "Wallace";
 surName[69] = "Bryant";
+
+
+
+
+
+// INITIAL RESPONSES
+initialTopic = new Array();
+initialTopic[0] = "Building and housing: Housing, Infractructure ...";
+initialTopic[1] = "Economy: Enterprise and innovation, Brexit ...";
+initialTopic[2] = "Education: School holidays, Freedom of education ...";
+initialTopic[3] = "Family, health and care: Coronavirus Covid-19, Drugs, Health insurance, Abortion, Mental health care, Family law ...";
+initialTopic[4] = "Government and democracy: Public administration, personal data, Police ...";
+initialTopic[5] = "International cooperation: European Union, Human rights, Treaties ...";
+initialTopic[6] = "Justice, security and defence: War in Ukraine, Identification documents, Emergency number 112, Counterterrorism and national security, Cybercrime ...";
+initialTopic[7] = "Migration and travel: Reception of refugees from Ukraine, Visas, Dutch nationality, Immigration, Embassies, consulates and other representations ...";
+initialTopic[8] = "Nature and the environment: Climate change, Environment, water management ...";
+initialTopic[9] = "Taxes, benefits and allowences: Taxation and Business, Grant programmes ...";
+initialTopic[10] = "Transportation: Mobility, public transport and road safety, Drones ...";
+initialTopic[11] = "Work: Minimum wage, Legalising documents, Working conditions ...";
+
+introductionWords = new Array();
+introductionWords[0] = "Lets solve some issues!";
+introductionWords[1] = "It's time to fix some issues!";
+introductionWords[2] = "Lets solve some propblems!";
+introductionWords[3] = "It's time to fix some problems!";
+introductionWords[4] = "Lets solve some dilemmas!";
+introductionWords[5] = "It's time to fix some dilemas!";
+introductionWords[6] = "Together we can solve anything!";
+introductionWords[7] = "Together there is no issue too hard to handle!";
+introductionWords[8] = "Together there is no problem too hard to handle!";
+introductionWords[9] = "Together there is no dilemma too hard to handle!";
+introductionWords[10] = "Together there is no issue too hard to fix!";
+introductionWords[11] = "Together there is no problem too hard to fix!";
+introductionWords[12] = "Together there is no dilemma too hard to fix!";

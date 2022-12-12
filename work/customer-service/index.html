@@ -71,62 +71,62 @@
 				<seciton class="help">
 					<h1 class="help-title">What can we help you with?</h1>
 
-					<a class="grid-div" id="housing">
+					<a class="grid-div" id="0">
 						<h1>Building and housing</h1>
 						<p>Housing, Infractructure ...</p>
 					</a>
 
-					<a class="grid-div" id="economy">
+					<a class="grid-div" id="1">
 						<h1>Economy</h1>
 						<p>Enterprise and innovation, Brexit ...</p>
 					</a>
 
-					<a class="grid-div" id="education">
+					<a class="grid-div" id="2">
 						<h1>Education</h1>
 						<p>School holidays, Freedom of education ...</p>
 					</a>
 
-					<a class="grid-div" id="family">
+					<a class="grid-div" id="3">
 						<h1>Family, health and care</h1>
 						<p>Coronavirus Covid-19, Drugs, Health insurance, Abortion, Mental health care, Family law ...</p>
 					</a>
 
-					<a class="grid-div" id="government">
+					<a class="grid-div" id="4">
 						<h1>Government and democracy</h1>
 						<p>Public administration, personal data, Police ...</p>
 					</a>
 
-					<a class="grid-div" id="international">
+					<a class="grid-div" id="5">
 						<h1>International cooperation</h1>
 						<p>European Union, Human rights, Treaties ...</p>
 					</a>
 
-					<a class="grid-div" id="justice">
+					<a class="grid-div" id="6">
 						<h1>Justice, security and defence</h1>
 						<p>War in Ukraine, Identification documents, Emergency number 112, Counterterrorism and national security, Cybercrime ...</p>
 					</a>
 
-					<a class="grid-div" id="migration">
+					<a class="grid-div" id="7">
 						<h1>Migration and travel</h1>
 						<p>Reception of refugees from Ukraine, Visas, Dutch nationality, Immigration, Embassies, consulates and other representations ...</p>
 					</a>
 
-					<a class="grid-div" id="nature">
+					<a class="grid-div" id="8">
 						<h1>Nature and the environment</h1>
 						<p>Climate change, Environment, water management ...</p>
 					</a>
 
-					<a class="grid-div" id="taxes">
+					<a class="grid-div" id="9">
 						<h1>Taxes, benefits and allowences</h1>
 						<p>Taxation and Business, Grant programmes ...</p>
 					</a>
 
-					<a class="grid-div" id="transport">
+					<a class="grid-div" id="10">
 						<h1>Transport</h1>
 						<p>Mobility, public transport and road safety, Drones ...</p>
 					</a>
 
-					<a class="grid-div" id="work">
+					<a class="grid-div" id="11">
 						<h1>Work</h1>
 						<p>Minimum wage, Legalising documents, Working conditions ...</p>
 					</a>
@@ -144,20 +144,20 @@
 			</article>
 		</footer>
 
-		<article class="chat-container">
+		<article id="chatContainer" class="chat-container hidden">
 			<section class="chat-box">
 				<div class="profile-div">
 					<img id="profileImg">
-					<h1 id="profileName"></h1>
+					<h1 id="profileName">Connecting...</h1>
 				</div>
 
-				<div class="response-field">
-
+				<div id="responseField" class="response-field">
+					<p id="connectingText">Connecting...</p>
 				</div>
 
-				<div class="input-field">
+				<div id="inputField" class="input-field">
 					<input type="text" placeholder="Ask your questions..." id="text-input">
-					<button onclick="myFunction()" id="chat-button">Try it</button>
+					<button onclick="inputText()" id="chatBtn">Try it</button>
 				</div>
 			</section>
 		</article>
