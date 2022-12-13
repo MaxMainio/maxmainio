@@ -28,6 +28,7 @@ function generateProfile() {
     }
 
     profileImg.src = "assets/profiles/set_" + profileBucket + "/profile_" + profileImgIndex + ".jpg";
+    document.getElementById("connectingText").innerHTML = "you are now connected to a professional."
 }
 
 // FIND THE PROFILE GROUP
@@ -228,10 +229,6 @@ surName[69] = "Bryant";
 
 
 
-// Math.random() * 5000
-
-
-
 // GENERATE INITIAL INTRODUCTION
 for (var i = allHelpBtns.length-1; i >=0  ; i--) {
 	(function () {
@@ -239,23 +236,23 @@ for (var i = allHelpBtns.length-1; i >=0  ; i--) {
 
 		allHelpBtns[i].addEventListener("click", function() {
             openChatBox()
-            setTimeout(generateProfile, 0);
-            document.getElementById("connectingText").innerHTML = "you are now connected to a professional."
+            setTimeout(generateProfile, 3000);
+            // document.getElementById("connectingText").innerHTML = "you are now connected to a professional."
 
             // BEGINNING = GREETING + INTRODUCTION
             setTimeout(function () {
-                responseField.appendChild(document.createElement('p')).innerHTML += '<p class="server">' + greeting[Math.round(Math.random() * 9)] + ' ' + introduction[Math.round(Math.random() * 12)]; + '</p>'
-            }, 0)
+                responseField.appendChild(document.createElement('p')).innerHTML += '<p class="server">' + greeting[Math.round(Math.random() * 11)] + ' ' + introduction[Math.round(Math.random() * 12)]; + '</p>'
+            }, 5000)
 
             // MIDDLE = TOPIC-QUERY + TOPIC-RESPONSE + TOPIC-BOAST + CATCHPHRASE
             setTimeout(function () {
-                responseField.appendChild(document.createElement('p')).innerHTML += '<p class="server">' + topicQuery[Math.round(Math.random() * 3)] + '<strong>' + topicResponse[selectedTopic] + '</strong>' + topicBoast[Math.round(Math.random() * 0)] + catchPhrase[Math.round(Math.random() * 0)] + '</p>';
-            }, 10)
+                responseField.appendChild(document.createElement('p')).innerHTML += '<p class="server">' + topicQuery[Math.round(Math.random() * 11)] + '<strong>' + topicResponse[selectedTopic] + '</strong>' + topicBoast[Math.round(Math.random() * 9)] + catchPhrase[Math.round(Math.random() * 9)] + '</p>';
+            }, 8000)
 
             // CONCLUSION = CONTINUATION
             setTimeout(function () {
-                responseField.appendChild(document.createElement('p')).innerHTML += '<p class="server">' + continuation[Math.round(Math.random() * 2)] + '</p>';
-            }, 20)
+                responseField.appendChild(document.createElement('p')).innerHTML += '<p class="server">' + continuation[Math.round(Math.random() * 11)] + '</p>';
+            }, 10000)
 		}, false)
 	}());
 }
@@ -268,27 +265,33 @@ function openChatBox(){
 
 
 
+
+
+
+
 // GREETINGS
 greeting = new Array();
 greeting[0] = "Hello!"
-greeting[1] = "Hello,"
+greeting[1] = "Hello."
 greeting[2] = "Good morning!"
-greeting[3] = "Good morning,"
+greeting[3] = "Good morning."
 greeting[4] = "Good afternoon!"
-greeting[5] = "Good afternoon,"
+greeting[5] = "Good afternoon."
 greeting[6] = "Good evening!"
-greeting[7] = "Good evening,"
+greeting[7] = "Good evening."
 greeting[8] = "Hello there!"
-greeting[9] = "Hello there,"
+greeting[9] = "Hello there."
+greeting[10] = "Salutations!"
+greeting[11] = "Salutations."
 
 // INTODUCTION
 introduction = new Array();
-introduction[0] = "Lets solve some issues!";
+introduction[0] = "Let's solve some issues!";
 introduction[1] = "It's time to fix some issues!";
-introduction[2] = "Lets solve some propblems!";
+introduction[2] = "Let's solve some problems!";
 introduction[3] = "It's time to fix some problems!";
-introduction[4] = "Lets solve some dilemmas!";
-introduction[5] = "It's time to fix some dilemas!";
+introduction[4] = "Let's solve some dilemmas!";
+introduction[5] = "It's time to fix some dilemmas!";
 introduction[6] = "Together we can solve anything!";
 introduction[7] = "Together there is no issue too hard to handle!";
 introduction[8] = "Together there is no problem too hard to handle!";
@@ -303,6 +306,14 @@ topicQuery[0] = "I see you have selected "
 topicQuery[1] = "You selected "
 topicQuery[2] = "I see you have clicked on "
 topicQuery[3] = "You clicked "
+topicQuery[4] = "I see you are interested in "
+topicQuery[5] = "I see you need help with "
+topicQuery[6] = "This is telling me you selected "
+topicQuery[7] = "This is telling me you clicked on "
+topicQuery[8] = "You sent a request for "
+topicQuery[9] = "You have requested assistance in "
+topicQuery[10] = "You say you require assistance in "
+topicQuery[11] = "You say you need help with "
 
 // TOPIC RESPONSE
 topicResponse = new Array();
@@ -324,17 +335,41 @@ topicBoast = new Array();
 topicBoast[0] = "Luckily I'm an expert in this topic. "
 topicBoast[1] = "Luckily for you, I'm an expert in this topic. "
 topicBoast[2] = "I actually wrote my graduate thesis on this exact topic. "
-topicBoast[3] = "This is infact my area of expertise. "
+topicBoast[3] = "This is in fact my area of expertise. "
+topicBoast[4] = "Good thing this topic is my forte. "
+topicBoast[5] = "I'm just the person you need! "
+topicBoast[6] = "I'll definitely be able to help you with this! "
+topicBoast[7] = "I'm willing to bet I'm the best person you could have been connected to. "
+topicBoast[8] = "I practically wrote the book on this! "
+topicBoast[9] = "No one knows their way around this topic better than I! "
 
 // CATCHPHRASE
 catchPhrase = new Array();
 catchPhrase[0] = "A proper solution is only seconds away!"
+catchPhrase[1] = "Let's get to work solving this."
+catchPhrase[2] = "Let's get to work on a solution."
+catchPhrase[3] = "This shouldn't take long."
+catchPhrase[4] = "This shouldn't take long!"
+catchPhrase[5] = "Let's get to work figuring out a solution."
+catchPhrase[6] = "Let's get this show on the road!"
+catchPhrase[7] = "Without further ado:"
+catchPhrase[8] = "Let's get to it!"
+catchPhrase[9] = "We'll be done before you know it!"
 
 // CONTINUATION
 continuation = new Array();
 continuation[0] = "How may I be of assistance?"
 continuation[1] = "How can I be of assistance?"
 continuation[2] = "How can I help you?"
+continuation[3] = "Do you have any preferences on how we should start?"
+continuation[4] = "How would you like to get started?"
+continuation[5] = "How should we get started?"
+continuation[6] = "How can I help you today?"
+continuation[7] = "Please let me know how I can help."
+continuation[8] = "What can I do you for?"
+continuation[9] = "What is the issue today?"
+continuation[10] = "What can I do to help you today?"
+continuation[11] = "What can I do to assist you today?"
 
 
 
@@ -354,11 +389,197 @@ document.getElementById("inputField")
 });
 
 function inputText(){
-        // get Input
-        var input = inputField.value;
-        responseField.appendChild(document.createElement('p')).innerHTML += '<p class="subject">' + input + '</p>';
-    
-        // reset text input
-        inputField.value = "";
-        inputField.placeholder = "Click here to type...";
+    // GET INPUT
+    var input = inputField.value;
+    responseField.appendChild(document.createElement('p')).innerHTML += '<p class="subject">' + input + '</p>';
+
+    // RESET TEXT INPUT
+    inputField.value = "";
+    inputField.placeholder = "Click here to type...";
+
+    // DECRIMENT NUMBER OF MESSAGES
+    messagesNumber -= 1;
+    console.log(messagesNumber);
+
+    // GENERATE A RESPONSE
+    if (messagesNumber == 0) {
+        chaseTheCarrot()
+        messagesNumber += Math.round(Math.random() * 4 + 3)
+        console.log(messagesNumber);
+    } else {
+        setTimeout(function() {
+            responseField.appendChild(document.createElement('p')).innerHTML += '<p class="server">' + responses[Math.round(Math.random() * 20)] + '</p>';
+        }, Math.random() * 5000 + 1000)
+    }
 }
+
+var messagesNumber = Math.round(Math.random() * 4 + 3)
+console.log(messagesNumber);
+
+
+
+
+
+
+
+// RESPONSES
+responses = new Array();
+responses[0] = "I see, could I get some more information?"
+responses[1] = "I see, could you give me some more information?"
+responses[2] = "I see, could I get some more detail?"
+responses[3] = "I'm beginning to understand, but could you give me some more information?"
+responses[4] = "I'm beginning to understand, but could you give me some more details?"
+responses[5] = "I'm sorry, but I'm not quite understanding what exactly you need help with."
+responses[6] = "Could you elaborate?"
+responses[7] = "I see, could you please elaborate more?"
+responses[8] = "I'm beginning to understand, but could you elaborate?"
+responses[9] = "I understand entirely, but I am going to need some more information."
+responses[10] = "Could you open that up a little more?"
+responses[11] = "Can you provide additional information?"
+responses[12] = "Can you disclose anymore information?"
+responses[13] = "Can you provide a more detailed question?"
+responses[14] = "Ok, It's all starting to come together, but can I get some more information?"
+responses[15] = "Alright, a little more please?"
+responses[16] = "I would appreciate it if you could give me a little more information."
+responses[17] = "I would appreciate it if you could get into the details a little more."
+responses[18] = "Could you expand on that?"
+responses[19] = "Great start! Could you continue a little?"
+responses[20] = "Ok, could you provide a little more detail?"
+
+
+
+
+
+
+
+
+
+// CHASE THE CARROT
+function chaseTheCarrot(){
+    setTimeout(function() {
+        responseField.appendChild(document.createElement('p')).innerHTML += '<p class="server">' + apology[Math.round(Math.random() * 7)] + ' But! ' + retort[Math.round(Math.random() * 7)] + '</p>';
+
+        setTimeout(function() {
+            responseField.appendChild(document.createElement('p')).innerHTML += '<p class="server">' + redirection[Math.round(Math.random() * 10)] + '</p>';
+
+            setTimeout(openChatBox, 3000)
+            setTimeout(clearChatBox, 3000)
+        }, 2000)
+    }, Math.random() * 5000 + 1000)
+}
+
+
+
+
+
+
+
+
+
+// APOLOGY
+apology = new Array();
+apology[0] = "Oh, you know what? I'm actually not going to be able to help you with this.";
+apology[1] = "This is getting a little bit out of my area of knowledge.";
+apology[2] = "Actually my area does not deal entirely with that";
+apology[3] = "I'm sorry, but I doubt I will be of any help for this exact issue.";
+apology[4] = "I'm afraid I won't be able to help you with this after all.";
+apology[5] = "I apologize, but I can't help you with this.";
+apology[6] = "I apologize, but my expertise does not extend to that.";
+apology[7] = "I'm afraid I can't actually help with this.";
+
+// RETORT
+retort = new Array();
+retort[0] = "I know someone who can help you!";
+retort[1] = "I know who you should be in contact with.";
+retort[2] = "I know the department you should be talking with.";
+retort[3] = "I know exactly who you should be in contact with.";
+retort[4] = "I know which department you need to speak with.";
+retort[5] = "I know who can help you.";
+retort[6] = "I know just the right person for you to talk to.";
+retort[7] = "I know just the right person for you to talk with.";
+
+// REDIRECTION
+redirection = new Array();
+redirection[0] = "I'll redirect you to them now.";
+redirection[1] = "I'll connect them to you now.";
+redirection[2] = "I'll send you over their way.";
+redirection[3] = "Hold on while I redirect you to them.";
+redirection[4] = "Please hold as I redirect you to them.";
+redirection[5] = "Please wait patiently as I redirect you to them.";
+redirection[6] = "Please wait patiently as I connect you with them.";
+redirection[7] = "Please hold as I connect you with them.";
+redirection[8] = "I'll connect them with you. This will only take a moment.";
+redirection[9] = "I'll you their way. This will only take a moment.";
+redirection[10] = "I'll connect you with them as fast as possible.";
+
+
+
+
+
+
+
+
+
+// CLEAR REOPEN THE CHATBOX
+function clearChatBox(){
+    responseField.innerHTML = '<p id="connectingText">Connecting...</p>'
+    profileName.innerHTML = 'Connecting...'
+    profileImg.removeAttribute('src');
+
+    setTimeout(function() {
+        openChatBox()
+        setTimeout(generateProfile, 3000);
+        // document.getElementById("connectingText").innerHTML = "you are now connected to a professional."
+
+        // BEGINNING = GREETING + INTRODUCTION
+        setTimeout(function () {
+            responseField.appendChild(document.createElement('p')).innerHTML += '<p class="server">' + greeting[Math.round(Math.random() * 11)] + ' ' + introduction[Math.round(Math.random() * 12)]; + '</p>'
+        }, 5000)
+
+        // MIDDLE = REDIRECT-QUERY
+        setTimeout(function () {
+            responseField.appendChild(document.createElement('p')).innerHTML += '<p class="server">' + redirectQuery[Math.round(Math.random() * 10)] + '</p>';
+        }, 8000)
+
+        // CONCLUSION = PICKUP
+        setTimeout(function () {
+            responseField.appendChild(document.createElement('p')).innerHTML += '<p class="server">' + pickup[Math.round(Math.random() * 10)] + '</p>';
+        }, 10000)
+    }, 1)
+}
+
+
+
+
+
+
+
+
+
+// QUERY AFTER REDIRECT
+redirectQuery = new Array();
+redirectQuery[0] = "I hear you couldn't get the help you needed from my coworker, I should be able to help.";
+redirectQuery[1] = "";
+redirectQuery[2] = "";
+redirectQuery[3] = "";
+redirectQuery[4] = "";
+redirectQuery[5] = "";
+redirectQuery[6] = "";
+redirectQuery[7] = "";
+redirectQuery[8] = "";
+redirectQuery[9] = "";
+redirectQuery[10] = "";
+
+// PICKUP
+pickup = new Array();
+pickup[0] = "Do you mind catching me up with what your issue is?";
+pickup[1] = "";
+pickup[2] = "";
+pickup[3] = "";
+pickup[4] = "";
+pickup[5] = "";
+pickup[6] = "";
+pickup[7] = "";
+pickup[8] = "";
+pickup[9] = "";
+pickup[10] = "";
