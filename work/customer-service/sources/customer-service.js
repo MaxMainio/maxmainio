@@ -15,49 +15,46 @@ const inputField = document.getElementById("text-input");
 
 
 
-
-
-
 // WHAT TOPIC YOU PICK
-for (var i = allHelpBtns.length-1; i >=0  ; i--) {
-	(function () {
-		var initialHelp = allHelpBtns[i].id
+// for (var i = allHelpBtns.length-1; i >=0  ; i--) {
+// 	(function () {
+// 		var initialHelp = allHelpBtns[i].id
 
-		allHelpBtns[i].addEventListener("click", function() {
-            openChatBox()
-            setTimeout(introduction, 1000);
+// 		allHelpBtns[i].addEventListener("click", function() {
+//             openChatBox()
+//             setTimeout(generateIntroduction, 1000);
 
-            setTimeout(function () {
-                responseField.appendChild(document.createElement('p')).innerHTML += '<p class="server">I see you have selected ' + initialTopic[initialHelp] + ' Luckily I am an expert in this topic. A proper solution is only a couple seconds away!</p>';
-            }, 4000)
+//             setTimeout(function () {
+//                 responseField.appendChild(document.createElement('p')).innerHTML += '<p class="server">I see you have selected ' + initialTopic[initialHelp] + ' Luckily I am an expert in this topic. A proper solution is only a couple seconds away!</p>';
+//             }, 4000)
 
-            setTimeout(firstQuestion, 5000);
-		}, false)
-	}());
-}
+//             setTimeout(firstQuestion, 5000);
+// 		}, false)
+// 	}());
+// }
 
-function openChatBox(){
-    chatContainer.classList.toggle("hidden")
-}
+// function openChatBox(){
+//     chatContainer.classList.toggle("hidden")
+// }
 
-function introduction() {
-    generateProfile(0)
-    document.getElementById("connectingText").innerHTML = "you are now connected to a professional."
-    setTimeout(firstWords, 1000)
-}
+// function generateIntroduction() {
+//     generateProfile(0)
+//     document.getElementById("connectingText").innerHTML = "you are now connected to a professional."
+//     setTimeout(firstWords, 1000)
+// }
 
-function firstWords() {
-    responseField.appendChild(document.createElement('p')).innerHTML += '<p class="server">Hello! ' + introductionWords[introductionRandomizer(0)]; + '</p>'
-}
+// function firstWords() {
+//     responseField.appendChild(document.createElement('p')).innerHTML += '<p class="server">Hello! ' + introductionWords[introductionRandomizer(0)]; + '</p>'
+// }
 
-function firstQuestion() {
-    responseField.appendChild(document.createElement('p')).innerHTML += '<p class="server">How may I be of assistance?</p>';
-}
+// function firstQuestion() {
+//     responseField.appendChild(document.createElement('p')).innerHTML += '<p class="server">How may I be of assistance?</p>';
+// }
 
 
-function introductionRandomizer(){
-    return Math.round(Math.random() * 12)
-}
+// function introductionRandomizer(){
+//     return Math.round(Math.random() * 12)
+// }
 
 
 
@@ -90,8 +87,19 @@ function inputText(){
 
 
 
+// GENERATE PROFILE
+function generateProfile() {
+    var profileBucket = profileGroup(0)
+    var profileImgIndex = profileIndex(0)
 
+    if(profileBucket > 5) {
+        profileName.innerHTML = femaleFirst[womanNameIndex(0)] + " " + surName[surNameIndex(0)];
+    } else {
+        profileName.innerHTML = maleFirst[manNameIndex(0)] + " " + surName[surNameIndex(0)];
+    }
 
+    profileImg.src = "assets/profiles/set_" + profileBucket + "/profile_" + profileImgIndex + ".jpg";
+}
 
 // FIND THE PROFILE GROUP
 function profileGroup(){
@@ -123,18 +131,7 @@ function surNameIndex(){
 
 
 
-function generateProfile() {
-    var profileBucket = profileGroup(0)
-    var profileImgIndex = profileIndex(0)
 
-    if(profileBucket > 5) {
-        profileName.innerHTML = femaleFirst[womanNameIndex(0)] + " " + surName[surNameIndex(0)];
-    } else {
-        profileName.innerHTML = maleFirst[manNameIndex(0)] + " " + surName[surNameIndex(0)];
-    }
-
-    profileImg.src = "assets/profiles/set_" + profileBucket + "/profile_" + profileImgIndex + ".jpg";
-}
 
 
 
@@ -301,35 +298,130 @@ surName[69] = "Bryant";
 
 
 
-// INITIAL RESPONSES
-initialTopic = new Array();
-initialTopic[0] = "Building and housing: Housing, Infractructure ...";
-initialTopic[1] = "Economy: Enterprise and innovation, Brexit ...";
-initialTopic[2] = "Education: School holidays, Freedom of education ...";
-initialTopic[3] = "Family, health and care: Coronavirus Covid-19, Drugs, Health insurance, Abortion, Mental health care, Family law ...";
-initialTopic[4] = "Government and democracy: Public administration, personal data, Police ...";
-initialTopic[5] = "International cooperation: European Union, Human rights, Treaties ...";
-initialTopic[6] = "Justice, security and defence: War in Ukraine, Identification documents, Emergency number 112, Counterterrorism and national security, Cybercrime ...";
-initialTopic[7] = "Migration and travel: Reception of refugees from Ukraine, Visas, Dutch nationality, Immigration, Embassies, consulates and other representations ...";
-initialTopic[8] = "Nature and the environment: Climate change, Environment, water management ...";
-initialTopic[9] = "Taxes, benefits and allowences: Taxation and Business, Grant programmes ...";
-initialTopic[10] = "Transportation: Mobility, public transport and road safety, Drones ...";
-initialTopic[11] = "Work: Minimum wage, Legalising documents, Working conditions ...";
+// GREETINGS
+greeting = new Array();
+greeting[0] = "Hello!"
+greeting[1] = "Hello,"
+greeting[2] = "Good morning!"
+greeting[3] = "Good morning,"
+greeting[4] = "Good afternoon!"
+greeting[5] = "Good afternoon,"
+greeting[6] = "Good evening!"
+greeting[7] = "Good evening,"
+greeting[8] = "Hello there!"
+greeting[9] = "Hello there,"
 
-introductionWords = new Array();
-introductionWords[0] = "Lets solve some issues!";
-introductionWords[1] = "It's time to fix some issues!";
-introductionWords[2] = "Lets solve some propblems!";
-introductionWords[3] = "It's time to fix some problems!";
-introductionWords[4] = "Lets solve some dilemmas!";
-introductionWords[5] = "It's time to fix some dilemas!";
-introductionWords[6] = "Together we can solve anything!";
-introductionWords[7] = "Together there is no issue too hard to handle!";
-introductionWords[8] = "Together there is no problem too hard to handle!";
-introductionWords[9] = "Together there is no dilemma too hard to handle!";
-introductionWords[10] = "Together there is no issue too hard to fix!";
-introductionWords[11] = "Together there is no problem too hard to fix!";
-introductionWords[12] = "Together there is no dilemma too hard to fix!";
+// INTODUCTION
+introduction = new Array();
+introduction[0] = "Lets solve some issues!";
+introduction[1] = "It's time to fix some issues!";
+introduction[2] = "Lets solve some propblems!";
+introduction[3] = "It's time to fix some problems!";
+introduction[4] = "Lets solve some dilemmas!";
+introduction[5] = "It's time to fix some dilemas!";
+introduction[6] = "Together we can solve anything!";
+introduction[7] = "Together there is no issue too hard to handle!";
+introduction[8] = "Together there is no problem too hard to handle!";
+introduction[9] = "Together there is no dilemma too hard to handle!";
+introduction[10] = "Together there is no issue too hard to fix!";
+introduction[11] = "Together there is no problem too hard to fix!";
+introduction[12] = "Together there is no dilemma too hard to fix!";
 
-boastingWords = new Array();
-boastingWords[0] = "Luckily I'm an expert in this topic."
+// TOPIC QUERY
+topicQuery = new Array();
+topicQuery[0] = "I see you have selected"
+topicQuery[1] = "You selected"
+topicQuery[2] = "I see you have clicked on"
+topicQuery[3] = "You clicked"
+
+// TOPIC RESPONSE
+topicResponse = new Array();
+topicResponse[0] = "Building and housing: Housing, Infractructure ...";
+topicResponse[1] = "Economy: Enterprise and innovation, Brexit ...";
+topicResponse[2] = "Education: School holidays, Freedom of education ...";
+topicResponse[3] = "Family, health and care: Coronavirus Covid-19, Drugs, Health insurance, Abortion, Mental health care, Family law ...";
+topicResponse[4] = "Government and democracy: Public administration, personal data, Police ...";
+topicResponse[5] = "International cooperation: European Union, Human rights, Treaties ...";
+topicResponse[6] = "Justice, security and defence: War in Ukraine, Identification documents, Emergency number 112, Counterterrorism and national security, Cybercrime ...";
+topicResponse[7] = "Migration and travel: Reception of refugees from Ukraine, Visas, Dutch nationality, Immigration, Embassies, consulates and other representations ...";
+topicResponse[8] = "Nature and the environment: Climate change, Environment, water management ...";
+topicResponse[9] = "Taxes, benefits and allowences: Taxation and Business, Grant programmes ...";
+topicResponse[10] = "Transportation: Mobility, public transport and road safety, Drones ...";
+topicResponse[11] = "Work: Minimum wage, Legalising documents, Working conditions ...";
+
+// TOPIC BOAST
+topicBoast = new Array();
+topicBoast[0] = "Luckily I'm an expert in this topic."
+topicBoast[0] = "Luckily for you, I'm an expert in this topic."
+topicBoast[0] = "I actually wrote my graduate thesis on this exact topic."
+
+// CATCHPHRASE
+catchPhrase = new Array();
+catchPhrase[0] = "A proper solution is only seconds away!"
+
+// CONTINUATION
+continuation = new Array();
+continuation[0] = "How may I be of assistance?"
+
+
+
+
+
+
+
+// Math.random() * 5000
+
+
+
+
+for (var i = allHelpBtns.length-1; i >=0  ; i--) {
+	(function () {
+		var selectedTopic = allHelpBtns[i].id
+
+		allHelpBtns[i].addEventListener("click", function() {
+            openChatBox()
+            setTimeout(generateProfile, 0);
+            setTimeout(generateIntroduction, 0);
+
+            setTimeout(function () {
+                responseField.appendChild(document.createElement('p')).innerHTML += '<p class="server">' + topicQuery[Math.round(Math.random() * 3)] + ' ' + topicResponse[selectedTopic] + ' ' + topicBoast[Math.round(Math.random() * 0)] + ' ' + catchPhrase[Math.round(Math.random() * 0)] + '</p>';
+            }, 10)
+
+            // setTimeout(firstQuestion, 0);
+		}, false)
+	}());
+}
+
+function openChatBox(){
+    chatContainer.classList.toggle("hidden")
+}
+
+
+
+
+
+
+
+function generateIntroduction() {
+    document.getElementById("connectingText").innerHTML = "you are now connected to a professional."
+    setTimeout(function () {
+        responseField.appendChild(document.createElement('p')).innerHTML += '<p class="server">' + greeting[Math.round(Math.random() * 9)] + ' ' + introduction[Math.round(Math.random() * 12)]; + '</p>'
+    }, 0)
+}
+
+// function firstWords() {
+//     responseField.appendChild(document.createElement('p')).innerHTML += '<p class="server">' + greeting[Math.round(Math.random() * 12)] + introduction[Math.round(Math.random() * 12)]; + '</p>'
+// }
+
+function firstQuestion() {
+    responseField.appendChild(document.createElement('p')).innerHTML += '<p class="server">How may I be of assistance?</p>';
+}
+
+
+// function introductionRandomizer(){
+//     return Math.round(Math.random() * 12)
+// }
+
+// function greetingRandomizer(){
+//     return Math.round(Math.random() * 12)
+// }
