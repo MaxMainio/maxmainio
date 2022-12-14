@@ -538,12 +538,12 @@ function clearChatBox(){
 
         // MIDDLE = REDIRECT-QUERY
         setTimeout(function () {
-            responseField.appendChild(document.createElement('p')).innerHTML += '<p class="server">' + redirectQuery[Math.round(Math.random() * 10)] + '</p>';
+            responseField.appendChild(document.createElement('p')).innerHTML += '<p class="server">' + redirectQuery[Math.round(Math.random() * 6)] + ' ' + redirectConfirm[Math.round(Math.random() * 6)] + '</p>';
         }, 8000)
 
         // CONCLUSION = PICKUP
         setTimeout(function () {
-            responseField.appendChild(document.createElement('p')).innerHTML += '<p class="server">' + pickup[Math.round(Math.random() * 10)] + '</p>';
+            responseField.appendChild(document.createElement('p')).innerHTML += '<p class="server">' + pickup[Math.round(Math.random() * 5)] + '</p>';
         }, 10000)
     }, 1)
 }
@@ -558,28 +558,29 @@ function clearChatBox(){
 
 // QUERY AFTER REDIRECT
 redirectQuery = new Array();
-redirectQuery[0] = "I hear you couldn't get the help you needed from my coworker, I should be able to help.";
-redirectQuery[1] = "";
-redirectQuery[2] = "";
-redirectQuery[3] = "";
-redirectQuery[4] = "";
-redirectQuery[5] = "";
-redirectQuery[6] = "";
-redirectQuery[7] = "";
-redirectQuery[8] = "";
-redirectQuery[9] = "";
-redirectQuery[10] = "";
+redirectQuery[0] = "I hear you couldn't get the help you needed from my coworker?";
+redirectQuery[1] = "I hear you had some difficulties finding a proper professional to help you?";
+redirectQuery[2] = "I see you couldn't get the help you needed from my coworker?";
+redirectQuery[3] = "I see you had some difficulties finding a proper professional to help you?";
+redirectQuery[4] = "I'm told you couldn't get the help you needed from my coworker?";
+redirectQuery[5] = "I'm told you had some difficulties finding a proper professional to help you?";
+redirectQuery[6] = "I apologize that the last person couldn't help you.";
+
+// REDIRECT CONFIRMATION
+redirectConfirm = new Array();
+redirectConfirm[0] = "I should be able to help you.";
+redirectConfirm[1] = "Look no further I can definitely help you.";
+redirectConfirm[2] = "I will be able to help you where the last person couldn't.";
+redirectConfirm[3] = "Don't worry, now you're talking to the right person.";
+redirectConfirm[4] = "We here in my department are far better suited for handling your issue.";
+redirectConfirm[5] = "We here in my subdivision are better equipped to handle a situation like yours.";
+redirectConfirm[6] = "No worries anymore though! I am the right person to be talking to.";
 
 // PICKUP
 pickup = new Array();
 pickup[0] = "Do you mind catching me up with what your issue is?";
-pickup[1] = "";
-pickup[2] = "";
-pickup[3] = "";
-pickup[4] = "";
-pickup[5] = "";
-pickup[6] = "";
-pickup[7] = "";
-pickup[8] = "";
-pickup[9] = "";
-pickup[10] = "";
+pickup[1] = "Can you tell me where the two of you left off?";
+pickup[2] = "How about we start with you catching me up to date.";
+pickup[3] = "Will you fill me in on your situation so I can help?";
+pickup[4] = "Could you introduce me to your situation?";
+pickup[5] = "I got a little info on your situation, but can you go over it again just to make sure I got evrything?";
