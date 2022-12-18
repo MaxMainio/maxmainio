@@ -68,10 +68,10 @@ window.onload = (event) => {
 		document.querySelectorAll('.footer-div')[0].style.minHeight = standard + "px";
 		document.querySelectorAll('.footer-div')[1].style.minHeight = standard + "px";
     } else {
-		document.querySelector(".footer-ice").setAttribute('data-rate', 25);
-		document.querySelectorAll(".footer-div")[0].setAttribute('data-rate', 50);
-		document.querySelectorAll(".footer-div")[1].setAttribute('data-rate', 50);
-		document.querySelectorAll(".footer-div")[2].setAttribute('data-rate', 50);
+		document.querySelector(".footer-ice").setAttribute('data-rate', 0);
+		document.querySelectorAll(".footer-div")[0].setAttribute('data-rate', 0);
+		document.querySelectorAll(".footer-div")[1].setAttribute('data-rate', 0);
+		document.querySelectorAll(".footer-div")[2].setAttribute('data-rate', 0);
 	}
 };
 
@@ -87,9 +87,9 @@ addEventListener("resize", e => {
 		document.querySelectorAll('.footer-div')[0].style.minHeight = "auto";
 		document.querySelectorAll('.footer-div')[1].style.minHeight = "auto";
 
-		document.querySelector(".footer-ice").setAttribute('data-rate', 25);
-		document.querySelectorAll(".footer-div")[0].setAttribute('data-rate', 50);
-		document.querySelectorAll(".footer-div")[1].setAttribute('data-rate', 50);
-		document.querySelectorAll(".footer-div")[2].setAttribute('data-rate', 50);
+		document.querySelector(".footer-ice").setAttribute('data-rate', 0);
+		document.querySelectorAll(".footer-div")[0].setAttribute('data-rate', 0);
+		document.querySelectorAll(".footer-div")[1].setAttribute('data-rate', 0);
+		document.querySelectorAll(".footer-div")[2].setAttribute('data-rate', 0);
     }
 });
