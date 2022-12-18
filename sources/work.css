@@ -630,24 +630,51 @@ article{
 
 
 /* Footer */
-.ice{
+.footer-section{
+    height: 66%;
+    width: 100%;
+    max-width: 1400px;
     position: absolute;
-    inset: 0 auto auto 0;
-    max-height: 90vh;
-    max-width: 100vw;
+    inset: auto 0 0 0;
+    margin: 0 auto;
+    padding: 0 1rem;
+    display: grid;
+    grid-template-columns: repeat(24, 1fr);
+    gap: 1rem;
 }
 
-.green{
+.footer-div{
+    margin-top: auto;
+    height: 10rem;
+    padding-bottom: 1rem;
+}
+
+.footer-profile{
+    grid-column: 19 / 25;
+    aspect-ratio: 1.5 / 1;
+    width: 100%;
+    margin-top: auto;
+
+    background-image: url(../assets/support/footer/pixel-profile.png);
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.footer-ice{
+    height: 66%;
+    width: calc(50% - 0.5rem);
     position: absolute;
     inset: auto 0 0 auto;
-    max-height: 50vh;
-}
-
-.pix-prof{
-    grid-column: 4 / 5;
-    max-width: 100%;
-    margin-right: auto;
-    pointer-events: all;
+    
+    background-image: url(../assets/support/footer/ice-bliss.jpg);
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    overflow: hidden;
 }
 
 
