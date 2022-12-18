@@ -1,9 +1,9 @@
-// Turn on Smooth Scroll after delay
+// TURN ON SMOOTH SCROLL AFTER DELAY
 setTimeout(function() {
 	document.querySelector("html").style.scrollBehavior = "smooth"
 }, 500);
 
-// Splash
+// SPLASH
 const splash = document.querySelector("#splash")
 
 const splashObserver = new IntersectionObserver(entries => {
@@ -14,7 +14,7 @@ const splashObserver = new IntersectionObserver(entries => {
 
 splashObserver.observe(splash)
 
-// Index
+// INDEX
 const indexBtn = document.querySelector("#index-btn")
 const indexSection = document.querySelector("#index-section")
 
@@ -22,7 +22,7 @@ indexBtn.addEventListener("click", e => {
 	indexSection.classList.toggle("hide")
 })
 
-// Parallax
+// PARALLAX
 const sections = document.querySelectorAll("article")
 
 document.addEventListener("scroll", event => {
@@ -55,5 +55,31 @@ document.addEventListener("scroll", event => {
 	})
 })
 
-// Crosswalk poetics
+// CROSSWALK POETICS
 document.querySelector("#crosswalk-projection").playbackRate = 0.20;
+
+// FOOTER
+window.onload = (event) => {
+	var vw = window.innerWidth
+
+	if (vw > 1000) {
+		var standard = document.getElementById("footerDivStandard").offsetHeight;
+
+		document.querySelectorAll('.footer-div')[0].style.minHeight = standard + "px";
+		document.querySelectorAll('.footer-div')[1].style.minHeight = standard + "px";
+    }
+};
+
+addEventListener("resize", e => {
+    var vw = window.innerWidth
+
+    if (vw > 1000) {
+        var standard = document.getElementById("footerDivStandard").offsetHeight;
+
+		document.querySelectorAll('.footer-div')[0].style.minHeight = standard + "px";
+		document.querySelectorAll('.footer-div')[1].style.minHeight = standard + "px";
+    } else {
+		document.querySelectorAll('.footer-div')[0].style.minHeight = "auto";
+		document.querySelectorAll('.footer-div')[1].style.minHeight = "auto";
+    }
+});
