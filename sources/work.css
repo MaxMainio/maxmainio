@@ -726,18 +726,18 @@ article{
     }
 
     .footer-div.first{
-        grid-column: 1;
+        grid-column: 1 / 3;
         margin-top: auto;
         padding: 0;
     }
 
     .footer-div.second{
-        grid-column: 1;
+        grid-column: 1 / 3;
         padding: 0;
     }
 
     .footer-div.third{
-        grid-column: 1;
+        grid-column: 1 / 3;
     }
 
     .footer-profile{
