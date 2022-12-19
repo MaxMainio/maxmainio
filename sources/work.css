@@ -7,7 +7,7 @@
 
 html{
     scroll-behavior: auto;
-    height: -webkit-fill-available;
+    /* height: -webkit-fill-available; */
 }
 
 
@@ -109,6 +109,7 @@ article{
     position: relative;
     width: 100vw;
     height: 100vh;
+    min-height: -webkit-fill-available;
     /* height: -webkit-fill-available; */
 }
 
