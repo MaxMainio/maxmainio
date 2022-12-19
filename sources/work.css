@@ -719,26 +719,23 @@ article{
 
 @media (max-width: 1000px) {
     .footer-section{
-        display: flex;
-        flex-direction: column;
-    }
-
-    .footer-profile{
-        display: none;
+        grid-template-rows: auto auto auto;
+        align-content: flex-end;
     }
 
     .footer-div.first{
+        grid-column: 1 / 13;
         margin-top: auto;
         padding: 0;
     }
 
     .footer-div.second{
-        margin-top: 0;
+        grid-column: 1 / 13;
         padding: 0;
     }
 
     .footer-div.third{
-        margin-top: 0;
+        grid-column: 1 / 13;
     }
 }
 
