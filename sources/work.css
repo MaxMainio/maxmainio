@@ -76,6 +76,8 @@ html{
     background-size: cover;
     background-position: center;
     overflow: hidden;
+
+    cursor: url(../assets/support/cursors/splash-cursor.svg),auto;    
     z-index: 11;
 }
 
