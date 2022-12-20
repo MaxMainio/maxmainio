@@ -77,8 +77,7 @@ html{
     background-position: center;
     overflow: hidden;
 
-    cursor: url(../assets/support/cursors/splash-cursor-01.svg) 32 32, pointer;
-    /* cursor: url(https://maxmain.io/assets/support/cursors/splash-cursor.svg) 64 64,auto; */
+    cursor: url(https://maxmain.io/assets/support/cursors/splash-cursor.svg) 32 32, pointer;
     z-index: 11;
 }
 
