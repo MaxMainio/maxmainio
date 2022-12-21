@@ -738,13 +738,11 @@ article{
     }
 }
 
-
 @media (min-width: 2560px) {
     .drawing-external{
         display: block;
     }
 }
-
 
 @media (max-width: 1200px) {
     #splash h1{
@@ -753,7 +751,6 @@ article{
         bottom: -11vw;
     }
 }
-
 
 @media (max-width: 1000px) {
     .footer-section{
@@ -783,7 +780,6 @@ article{
     }
 }
 
-
 @media (max-width: 900px) {
     #indexBtn{
         display: none;
@@ -793,7 +789,6 @@ article{
         display: none;
     }
 }
-
 
 @media (max-width: 800px) {
     .acetate-parot{
