@@ -1,33 +1,48 @@
+// STRUCTURE
 window.onload = (event) => {
     var vw = window.innerWidth
+    var titleHeight = document.querySelector('#title').offsetHeight;
+    var firstDivHeight = document.querySelector('.first').offsetHeight;
+    const footerField = document.querySelector('#footerFinal');
 
     if (vw > 685) {
-        var contextHeight = document.querySelector(".title-wrapper").offsetHeight;
-        var titleHeight = document.querySelector(".title").offsetHeight;
-    
-        document.querySelector(".first").style.minHeight = contextHeight + "px";
-        document.querySelector(".sub-title").style.marginTop = titleHeight + "px";
+        document.querySelector('#contextTrack').style.minHeight = firstDivHeight + 'px';
+        document.querySelector('#subTitle').style.paddingTop = titleHeight + 'px';
     } else {
-        document.querySelector(".sub-title").style.marginTop = "0px";
+        document.querySelector('#subTitle').removeAttribute('style');
     }
 
-    var footerHeight = document.querySelector(".footer-section").offsetHeight;
-    document.querySelector("#footer-gradient").style.minHeight = footerHeight + "px";
+    var footerHeight = document.querySelector('.footer-section').offsetHeight;
+    document.querySelector('#footerGradient').style.minHeight = footerHeight + 'px';
+
+    footerField.appendChild(document.createElement('h3')).innerHTML += '<h3>' + footerTxt[Math.round(Math.random() * 1)] + '<h3>';
 };
 
-addEventListener("resize", e => {
+addEventListener('resize', e => {
     var vw = window.innerWidth
+    var titleHeight = document.querySelector('#title').offsetHeight;
+    var firstDivHeight = document.querySelector('.first').offsetHeight;
 
     if (vw > 685) {
-        var contextHeight = document.querySelector(".title-wrapper").offsetHeight;
-        var titleHeight = document.querySelector(".title").offsetHeight;
-    
-        document.querySelector(".first").style.minHeight = contextHeight + "px";
-        document.querySelector(".sub-title").style.marginTop = titleHeight + "px";
+        document.querySelector('#contextTrack').style.minHeight = firstDivHeight + 'px';
+        document.querySelector('#subTitle').style.paddingTop = titleHeight + 'px';
     } else {
-        document.querySelector(".sub-title").style.marginTop = "0px";
+        document.querySelector('#subTitle').removeAttribute('style');
     }
 
-    var footerHeight = document.querySelector(".footer-section").offsetHeight;
-    document.querySelector("#footer-gradient").style.minHeight = footerHeight + "px";
+    var footerHeight = document.querySelector('.footer-section').offsetHeight;
+    document.querySelector('#footerGradient').style.minHeight = footerHeight + 'px';
 });
+
+
+
+
+
+
+
+
+
+// FOOTER CATCHPHRASES
+footerTxt = new Array();
+footerTxt[0] = 'More being added here and there...';
+footerTxt[1] = 'This website is in a constant state of "work in progress."';

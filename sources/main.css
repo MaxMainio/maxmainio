@@ -131,6 +131,10 @@ nav{
     cursor: default;
 }
 
+.nav-work{
+    grid-column: 7;
+}
+
 .nav-flex{
     grid-column: 8;
     display: flex;
@@ -229,7 +233,7 @@ h1{
     margin: 0;
 }
 
-.title-wrapper{
+/* .title-wrapper{
     position: absolute;
     inset: auto auto 0 0;
     margin: 0 1rem 1rem 1rem;
@@ -240,7 +244,7 @@ h1{
     font-weight: 600;
     font-size: 3rem;
     line-height: 3rem;
-}
+} */
 
 h2{
     font-weight: 500;
@@ -269,10 +273,10 @@ p{
     margin: 0;
 }
 
-.work-p{
+/* .work-p{
     margin-top: 0.5rem;
     max-width: 60ch;
-}
+} */
 
 a{
     text-decoration: none;
@@ -306,6 +310,10 @@ sup, sub {
 @media (max-width: 900px) {
     nav{
         grid-template-columns: repeat(4, 1fr);
+    }
+
+    .nav-work{
+        grid-column: 3;
     }
 
     .nav-flex{

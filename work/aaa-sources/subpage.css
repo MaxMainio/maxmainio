@@ -1,28 +1,18 @@
-/* NAV */
-.nav-work{
-    grid-column: 7;
-}
-
-
-
-
-
-
-
-
-
 /* CONTEXT */
 .context{
     display: grid;
     grid-template-columns: repeat(8, 1fr);
     gap: 1rem;
-    padding: 3rem 1rem 0 1rem;
 
-    height: auto;
+    position: absolute;
+    max-width: 1400px;
+
+    margin: 0 auto;
+    padding: 3rem 1rem 0 1rem;
     inset: 0 0 auto 0;
 }
 
-.title-wrapper{
+#contextTrack{
     position: relative;
     grid-column: 1 / 4;
     margin: 0;
@@ -31,12 +21,28 @@
     z-index: 1;
 }
 
-.title{
+#contextWrapper{
+    position: sticky;
+    top: 3rem;
+}
+
+#title{
+    font-weight: 600;
+    font-size: 3rem;
+    line-height: 3rem;
     position: fixed;
 }
 
-.sub-title{
-    margin-top: 3rem;
+#subTitle{
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1rem;
+    letter-spacing: 0.75px;
+}
+
+.work-p{
+    margin-top: 0.5rem;
+    max-width: 60ch;
 }
 
 
@@ -67,17 +73,14 @@
 }
 
 .work-title{
+    font-weight: 600;
+    font-size: 2rem;
+    line-height: 2rem;
     margin-top: 1rem;
 }
 
 .work-p{
     max-width: 60ch;
-}
-
-.work-title{
-    font-weight: 600;
-    font-size: 2rem;
-    line-height: 2rem;
 }
 
 
@@ -96,7 +99,7 @@ footer{
     position: relative;
 }
 
-#footer-gradient{
+#footerGradient{
     width: calc(50% - 0.5rem);
     position: absolute;
     inset: auto 0 0 auto;
@@ -124,14 +127,14 @@ footer{
     z-index: 1;
 }
 
-.footer-final{
+#footerFinal{
     grid-column: 4 / 7;
     display: flex;
     flex-direction: column;
     justify-content: end;
 }
 
-.footer-final > h3{
+#footerFinal > h3{
     text-align: right;
 }
 
@@ -170,13 +173,9 @@ footer{
         position: relative;
     }
 
-    .title{
+    #title{
         position: static;
         width: auto;
-    }
-
-    .sub-title{
-        margin-top: 0;
     }
 
     .content{
