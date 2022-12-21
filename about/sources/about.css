@@ -25,21 +25,21 @@ article{
 
 section{
     grid-column: 2 / 4;
-    /* display: flex;
-    flex-direction: column;
-    gap: 0.5rem; */
 }
 
-.follow-small{
-    margin-top: 0.5rem;
+p + h2{
+    /* LARGE GAP */
+    margin-top: 1.5rem;
 }
 
-.follow-medium{
+address + h2, h2 + p, p + h3{
+    /* MEDIUM GAP */
     margin-top: 0.75rem;
 }
 
-.follow-large{
-    margin-top: 1.5rem;
+p + p{
+    /* SMALL GAP */
+    margin-top: 0.5rem;
 }
 
 
@@ -139,15 +139,15 @@ section{
 
 
 /* Contact Section */
-.contact-grid{
+#contactGrid{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     column-gap: 1rem;
 }
 
-.contact-switch{
+/* .contact-switch{
     grid-column: 2 / 2;
-}
+} */
 
 address{
     font-style: normal;
@@ -179,6 +179,7 @@ address{
     grid-template-columns: repeat(3, 1fr);
     column-gap: 1rem;
     align-items: flex-end;
+    margin-bottom: 0.75rem;
 }
 
 .xp-content{
@@ -230,10 +231,17 @@ address{
     }
 }
 
-
 @media (max-width: 800px) {
     .profile-column{
         display: none;
+    }
+
+    #contactGrid{
+        display: block;
+    }
+
+    #contactSwitch{
+        margin-top: 0.75rem;
     }
 }
 

@@ -307,6 +307,16 @@ sup, sub {
 
 
 /* Media Queries */
+@media (max-width: 1000px) {
+    #desktopLogo{
+        display: none;
+    }
+
+    #mobileLogo{
+        display: block;
+    }
+}
+
 @media (max-width: 900px) {
     nav{
         grid-template-columns: repeat(4, 1fr);
@@ -318,16 +328,5 @@ sup, sub {
 
     .nav-flex{
         grid-column: 4;
-    }
-}
-
-
-@media (max-width: 685px) {
-    #desktopLogo{
-        display: none;
-    }
-
-    #mobileLogo{
-        display: block;
     }
 }
