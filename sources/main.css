@@ -197,24 +197,6 @@ nav h1{
 
 
 /* MAIN */
-.content{
-    position: relative;
-    height: 100vh;
-    width: 100%;
-    max-width: 2560px;
-    margin: 0 auto;
-}
-
-/* .context{
-    position: absolute;
-    height: 100vh;
-    width: 100%;
-    max-width: 1400px;
-    margin: 0 auto;
-    inset: 0;
-    pointer-events: none;
-} */
-
 a img {
     display: block;
     padding: 0;

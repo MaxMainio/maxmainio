@@ -103,6 +103,14 @@ article{
     height: 100vh;
 }
 
+.content{
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    max-width: 2560px;
+    margin: 0 auto;
+}
+
 .context{
     position: absolute;
     height: 100vh;
@@ -114,7 +122,7 @@ article{
     display: flex;
     flex-direction: column;
     justify-content: end;
-    
+
     pointer-events: none;
 }
 
