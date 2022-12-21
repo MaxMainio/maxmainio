@@ -3,24 +3,54 @@ setTimeout(function() {
 	document.querySelector("html").style.scrollBehavior = "smooth"
 }, 500);
 
+
+
+
+
+
+
+
+
 // SPLASH
 const splash = document.querySelector("#splash")
 
 const splashObserver = new IntersectionObserver(entries => {
 	entries.forEach(entry => {
-		entry.target.classList.toggle("hide", entry.isIntersecting === false)
+		if(entry.isIntersecting === false) {
+			entry.target.remove();
+			document.querySelector(".with-splash").className = "";
+		}
 	})
 })
 
 splashObserver.observe(splash)
 
-// INDEX
-const indexBtn = document.querySelector("#index-btn")
-const indexSection = document.querySelector("#index-section")
 
-indexBtn.addEventListener("click", e => {
-	indexSection.classList.toggle("hide")
+
+
+
+
+
+
+
+// INDEX
+document.querySelector("#indexBtn").addEventListener("click", e => {
+	const index = document.querySelector("#index");
+
+	if (index.className === "closed") {
+		index.className = "open";
+	} else {
+		index.className = "closed";
+	}
 })
+
+
+
+
+
+
+
+
 
 // PARALLAX
 const sections = document.querySelectorAll("article")
@@ -55,8 +85,24 @@ document.addEventListener("scroll", event => {
 	})
 })
 
+
+
+
+
+
+
+
+
 // CROSSWALK POETICS
 document.querySelector("#crosswalk-projection").playbackRate = 0.20;
+
+
+
+
+
+
+
+
 
 // FOOTER
 window.onload = (event) => {
@@ -67,12 +113,7 @@ window.onload = (event) => {
 
 		document.querySelectorAll('.footer-div')[0].style.minHeight = standard + "px";
 		document.querySelectorAll('.footer-div')[1].style.minHeight = standard + "px";
-    } else {
-		// document.querySelector(".footer-ice").setAttribute('data-rate', 0);
-		// document.querySelectorAll(".footer-div")[0].setAttribute('data-rate', 0);
-		// document.querySelectorAll(".footer-div")[1].setAttribute('data-rate', 0);
-		// document.querySelectorAll(".footer-div")[2].setAttribute('data-rate', 0);
-	}
+    }
 };
 
 addEventListener("resize", e => {
@@ -86,10 +127,5 @@ addEventListener("resize", e => {
     } else {
 		document.querySelectorAll('.footer-div')[0].style.minHeight = "auto";
 		document.querySelectorAll('.footer-div')[1].style.minHeight = "auto";
-
-		// document.querySelector(".footer-ice").setAttribute('data-rate', 0);
-		// document.querySelectorAll(".footer-div")[0].setAttribute('data-rate', 0);
-		// document.querySelectorAll(".footer-div")[1].setAttribute('data-rate', 0);
-		// document.querySelectorAll(".footer-div")[2].setAttribute('data-rate', 0);
     }
 });

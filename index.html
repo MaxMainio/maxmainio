@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!--
-	Max Beidler's website v2.1
+	Max Beidler's website v2.2
 -->
 <html>
 	<head>
@@ -32,152 +32,116 @@
 	<body onunload="document.getElementsByClassName('.fader-in').style.display='none';">
 		<div class="fader-in tulossa"></div>
 
-		<header>
+		<article id="splash">
+			<h1 data-rate="25">mainio</h1>
+		</article>
+
+		<header class="with-splash">
 			<nav>
-				<div class="nav-container">
-					<div class="nav-grid">
-						<h1 class="desktop-logo" style="grid-column: 1 / 3;">Max Mainio Beidler</h1>
-						<h1 class="mobile-logo" style="grid-column: 1 / 3;">MMB</h1>
-						
-						<h1 id="index-btn"><a target="_self" title="Click here to toggle open or close the index of my work." class="nav-pointer">
-							Index
-						</a></h1>
-						<h1 class="active" style="grid-column: 7 / 7;">
-							Work
-						</h1>
-	
-						<div class="nav-flex">
-							<h1><a href="about/" title="Click here to learn more about who I am." class="nav-pointer">
-								About
-							</a></h1>
-							<h1><a class="non-active" title="Coming soon...">→</a></h1>
-						</div>
-					</div>
+				<h1 id="desktopLogo" class="nav-logo">Max Mainio Beidler</h1>
+				<h1 id="mobileLogo" class="nav-logo">MMB</h1>
+
+				<h1 id="indexBtn"><a target="_self" title="Click here to toggle the index of my work open or closed." style="cursor: pointer;">
+					Index
+				</a></h1>
+
+				<h1 class="nav-active">Work</h1>
+
+				<div class="nav-flex">
+					<h1><a href="about/" title="Click here to learn more about who I am.">
+						About
+					</a></h1>
+					
+					<h1 class="non-active" title="Coming soon...">→</h1>
 				</div>
 			</nav>
 
-			<div id="index-section" class="hide">
-				<div id="index-container">
-					<div class="index-row">
-						<div class="index-soon">
-							<p>Ways of Seeing</p>
-							<p>Web / Rebrand</p>
-							<p>Adding soon...</p>
-						</div>
-					</div>
-
-					<div class="index-row">
-						<a href="#generative-poems" target="_self" title="Click here to be taken to the Generative Poems section of this page." class="index-link">
-							<h3><i>Generative?</i> Poems</h3>
-							<h3>Web & Print</h3>
-							<h3>2022</h3>
-						</a>
-					</div>
-
-					<div class="index-row">
-						<div class="index-soon">
-							<p>Variable Type Exploration</p>
-							<p>Typography</p>
-							<p>Adding soon...</p>
-						</div>
-					</div>
-
-					<div class="index-row">
-						<a href="#ed-brown-interview" target="_self" title="Click here to be taken to the Ed Brown Interview section of this page." class="index-link">
-							<h3>Ed Brown Interview</h3>
-							<h3>Print</h3>
-							<h3>2022</h3>
-						</a>
-					</div>
-
-					<div class="index-row">
-						<a href="#playlist-covers" target="_self" title="Click here to be taken to the Playlist Covers section of this page." class="index-link">
-							<h3>Playlist Covers</h3>
-							<h3>Digital</h3>
-							<h3>2022 &ndash; Present</h3>
-						</a>
-					</div>
-
-					<div class="index-row">
-						<a href="#crosswalk-poetics" target="_self" title="Click here to be taken to the Crosswalk Poetics section of this page." class="index-link">
-							<h3>Crosswalk Poetics</h3>
-							<h3>Installation & Digital</h3>
-							<h3>2021</h3>
-						</a>
-					</div>
-
-					<div class="index-row">
-						<a href="#digital-overprint" target="_self" title="Click here to be taken to the Digital Overprint section of this page." class="index-link">
-							<h3>Digital Overprint</h3>
-							<h3>Print & Digital</h3>
-							<h3>2021</h3>
-						</a>
-					</div>
-
-					<div class="index-row">
-						<div class="index-soon">
-							<p>Type in Flux</p>
-							<p>Typography & Digital</p>
-							<p>Adding soon...</p>
-						</div>
-					</div>
-
-					<div class="index-row">
-						<a href="#acetate-melt" target="_self" title="Click here to be taken to the Acetate Melt section of this page." class="index-link">
-							<h3>Acetate Melt</h3>
-							<h3>Print</h3>
-							<h3>2021</h3>
-						</a>
-					</div>
-
-					<div class="index-row">
-						<a href="#homodeus" target="_self" title="Click here to be taken to the HomoDeus section of this page." class="index-link">
-							<h3>HomoDeus</h3>
-							<h3>Print & Web</h3>
-							<h3>2021</h3>
-						</a>
-					</div>
-
-					<div class="index-row">
-						<a href="#ruotuvaki" target="_self" title="Click here to be taken to the Ruotuväki section of this page." class="index-link">
-							<h3>Ruotuväki</h3>
-							<h3>Print</h3>
-							<h3>2020 &ndash; 2021</h3>
-						</a>
-					</div>
-
-					<div class="index-row">
-						<div class="index-soon">
-							<p>My Desktop <i>is</i> My Home</p>
-							<p>Digital</p>
-							<p>Adding soon...</p>
-						</div>
-					</div>
-
-					<div class="index-row">
-						<a href="#collages" target="_self" title="Click here to be taken to the Collages section of this page." class="index-link">
-							<h3>Collages</h3>
-							<h3>Print</h3>
-							<h3>2019</h3>
-						</a>
-					</div>
-
-					<div class="index-row">
-						<a href="#drawings" target="_self" title="Click here to be taken to the Drawings section of this page." class="index-link">
-							<h3>Drawings</h3>
-							<h3>Traditional & Digital</h3>
-							<h3>2018 &ndash; Present</h3>
-						</a>
-					</div>
+			<section id="index" class="closed">
+				<div class="index-row">
+					<p>Ways of Seeing</p>
+					<p>Web / Rebranding</p>
+					<p>Adding soon...</p>
 				</div>
+
+				<a href="#generative-poems" target="_self" title="Click here to be taken to the Generative Poems section of this page." class="index-row">
+					<h3><i>Generative?</i> Poems</h3>
+					<h3>Web & Print</h3>
+					<h3>2022</h3>
+				</a>
+
+				<div class="index-row">
+					<p>Variable Type Exploration</p>
+					<p>Typography</p>
+					<p>Adding soon...</p>
+				</div>
+
+				<a href="#ed-brown-interview" target="_self" title="Click here to be taken to the Ed Brown Interview section of this page." class="index-row">
+					<h3>Ed Brown Interview</h3>
+					<h3>Print</h3>
+					<h3>2022</h3>
+				</a>
+
+				<a href="#playlist-covers" target="_self" title="Click here to be taken to the Playlist Covers section of this page." class="index-row">
+					<h3>Playlist Covers</h3>
+					<h3>Digital</h3>
+					<h3>2022 &ndash; Present</h3>
+				</a>
+
+				<a href="#crosswalk-poetics" target="_self" title="Click here to be taken to the Crosswalk Poetics section of this page." class="index-row">
+					<h3>Crosswalk Poetics</h3>
+					<h3>Installation & Digital</h3>
+					<h3>2021</h3>
+				</a>
+
+				<a href="#digital-overprint" target="_self" title="Click here to be taken to the Digital Overprint section of this page." class="index-row">
+					<h3>Digital Overprint</h3>
+					<h3>Print & Digital</h3>
+					<h3>2021</h3>
+				</a>
+
+				<div class="index-row">
+					<p>Type in Flux</p>
+					<p>Typography & Digital</p>
+					<p>Adding soon...</p>
+				</div>
+
+				<a href="#acetate-melt" target="_self" title="Click here to be taken to the Acetate Melt section of this page." class="index-row">
+					<h3>Acetate Melt</h3>
+					<h3>Print</h3>
+					<h3>2021</h3>
+				</a>
+
+				<a href="#homodeus" target="_self" title="Click here to be taken to the HomoDeus section of this page." class="index-row">
+					<h3>HomoDeus</h3>
+					<h3>Print & Web</h3>
+					<h3>2021</h3>
+				</a>
+
+				<a href="#ruotuvaki" target="_self" title="Click here to be taken to the Ruotuväki section of this page." class="index-row">
+					<h3>Ruotuväki</h3>
+					<h3>Print</h3>
+					<h3>2020 &ndash; 2021</h3>
+				</a>
+
+				<div class="index-row">
+					<p>My Desktop <i>is</i> My Home</p>
+					<p>Digital</p>
+					<p>Adding soon...</p>
+				</div>
+
+				<a href="#collages" target="_self" title="Click here to be taken to the Collages section of this page." class="index-row">
+					<h3>Collages</h3>
+					<h3>Print</h3>
+					<h3>2019</h3>
+				</a>
+
+				<a href="#drawings" target="_self" title="Click here to be taken to the Drawings section of this page." class="index-row">
+					<h3>Drawings</h3>
+					<h3>Traditional & Digital</h3>
+					<h3>2018 &ndash; Present</h3>
+				</a>
 			</div>
 		</header>
-
-		<article id="splash">
-			<div class="splash-content" data-rate="50">
-				<h1 class="super-header">mainio</h1>
-			</div>
-		</article>
 
 		<main>
 			<div class="buffer"></div>
@@ -272,13 +236,8 @@
 				</section>
 
 				<section class="context">
-					<div class="title-wrapper">
-						<h1 class="title"><a href="work/generative-poems/">
-							<i>Generative?</i> Poems
-						</a></h1>
-
-						<h1>Variable Systems Website / <i>work in progress</i> / 2022</h1>
-					</div>
+					<h1><a href="work/generative-poems/"><i>Generative?</i> Poems</a></h1>
+					<h2>Variable Systems Website / <i>work in progress</i> / 2022</h2>
 				</section>
 			</article>
 
@@ -297,13 +256,8 @@
 				</section>
 
 				<section class="context">
-					<div class="title-wrapper">
-						<h1 class="title"><a href="work/interview/">
-							Ed Brown Interview
-						</a></h1>
-
-						<h1>Interview print and publication / 2022</h1>
-					</div>
+					<h1><a href="work/interview/">Ed Brown Interview</a></h1>
+					<h2>Interview print and publication / 2022</h2>
 				</section>
 			</article>
 
@@ -404,13 +358,8 @@
 				</section>
 
 				<section class="context">
-					<div class="title-wrapper">
-						<h1 class="title"><a href="work/playlist-covers/">
-							Playlist Covers
-						</a></h1>
-
-						<h1>Cover art for my Spotify playlists / 2022 &ndash; Present</h1>
-					</div>
+						<h1><a href="work/playlist-covers/">Playlist Covers</a></h1>
+						<h2>Cover art for my Spotify playlists / 2022 &ndash; Present</h2>
 				</section>
 			</article>
 
@@ -434,13 +383,8 @@
 				</section>
 
 				<section class="context">
-					<div class="title-wrapper">
-						<h1 class="title"><a href="work/crosswalk-poetics/">
-							Crosswalk Poetics
-						</a></h1>
-
-						<h1>Mapping group project / 2021</h1>
-					</div>
+					<h1><a href="work/crosswalk-poetics/">Crosswalk Poetics</a></h1>
+					<h2>Mapping group project / 2021</h2>
 				</section>
 			</article>
 
@@ -490,13 +434,8 @@
 				</section>
 
 				<section class="context">
-					<div class="title-wrapper">
-						<h1 class="title"><a href="work/digital-overprint/">
-							Digital Overprint
-						</a></h1>
-
-						<h1>Print and scan feedback experiment / 2021</h1>
-					</div>
+					<h1><a href="work/digital-overprint/">Digital Overprint</a></h1>
+					<h2>Print and scan feedback experiment / 2021</h2>
 				</section>
 			</article>
 
@@ -546,13 +485,8 @@
 				</section>
 
 				<section class="context">
-					<div class="title-wrapper">
-						<h1 class="title"><a href="work/acetate-melt/">
-							Acetate Melt
-						</a></h1>
-
-						<h1>Experimentation with rubbing alcohol & acetate prints / 2021</h1>
-					</div>
+					<h1><a href="work/acetate-melt/">Acetate Melt</a></h1>
+					<h2>Experimentation with rubbing alcohol & acetate prints / 2021</h2>
 				</section>
 			</article>
 
@@ -595,13 +529,8 @@
 				</section>
 
 				<section class="context">
-					<div class="title-wrapper">
-						<h1 class="title"><a href="work/homodeus/">
-							Homo Deus
-						</a></h1>
-
-						<h1>Print & web publication project / 2021</h1>
-					</div>
+					<h1><a href="work/homodeus/">Homo Deus</a></h1>
+					<h2>Print & web publication project / 2021</h2>
 				</section>
 			</article>
 
@@ -640,13 +569,8 @@
 				</section>
 				
 				<section class="context">
-					<div class="title-wrapper">
-						<h1 class="title"><a href="https://ruotuvaki.fi/etusivu" target="_blank">
-							Ruotuväki
-						</a></h1>
-
-						<h1>Conscript Graphic Designer / 2020 — 2021</h1>
-					</div>
+					<h1><a href="https://ruotuvaki.fi/etusivu" target="_blank">Ruotuväki</a></h1>
+					<h2>Conscript Graphic Designer / 2020 — 2021</h2>
 				</section>
 			</article>
 
@@ -699,13 +623,8 @@
 				</section>
 
 				<section class="context">
-					<div class="title-wrapper">
-						<h1 class="title"><a href="work/collages/">
-							Collages
-						</a></h1>
-
-						<h1>Compositional exploration / 2019</h1>
-					</div>
+					<h1 class="title"><a href="work/collages/">Collages</a></h1>
+					<h2>Compositional exploration / 2019</h2>
 				</section>
 			</article>
 
@@ -766,13 +685,8 @@
 				</section>
 
 				<section class="context">
-					<div class="title-wrapper">
-						<h1 class="title"><a href="work/drawings/">
-							Drawings
-						</a></h1>
-
-						<h1>Just kind of having fun / 2018 &ndash; Present</h1>
-					</div>
+					<h1 class="title"><a href="work/drawings/">Drawings</a></h1>
+					<h2>Just kind of having fun / 2018 &ndash; Present</h2>
 				</section>
 			</article>
 		</main>

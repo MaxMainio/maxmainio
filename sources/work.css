@@ -17,57 +17,7 @@ html{
 
 
 
-/* Index */
-#index-btn{
-    grid-column: 6 / 6;
-    cursor: pointer;
-}
-
-.hide{
-    display: none;
-}
-
-#index-container{
-    max-width: 1400px;
-    margin: 0 auto 0 auto;
-    padding: 0 1rem;
-
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    column-gap: 1rem;
-}
-
-.index-row{
-    grid-column: 1;
-}
-
-.index-link{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
-
-    pointer-events: all;
-}
-
-.index-link:hover{
-    background-color: var(--green);
-}
-
-.index-soon{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
-}
-
-
-
-
-
-
-
-
-
-/* Splash */
+/* SPLASH */
 #splash{
     background-image: url(../assets/support/splash/green-bliss.jpg);
     -webkit-background-size: cover;
@@ -79,22 +29,23 @@ html{
 
     cursor: url(https://maxmain.io/assets/support/cursors/splash-cursor.svg) 32 32, pointer;
     z-index: 11;
-}
 
-.splash-content{
     display: flex;
     justify-content: center;
-    height: 100%;
-    width: 100%;
-    pointer-events: none;
 }
 
-.super-header{
+#splash h1{
     font-size: 50vh;
     line-height: 50vh;
+
     position: absolute;
     top: auto;
     bottom: -14.4vh;
+    
+    -webkit-user-select: none;    
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 
@@ -105,11 +56,85 @@ html{
 
 
 
-/* Main */
+/* INDEX */
+#indexBtn{
+    grid-column: 6;
+}
+
+#index{
+    max-width: 1400px;
+    margin: 0 auto 0 auto;
+    padding: 0 1rem;
+}
+
+.closed{
+    display: none;
+}
+
+.open{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 1rem;
+}
+
+.index-row{
+    grid-column: 1;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+#index a{
+    pointer-events: all;
+}
+
+
+
+
+
+
+
+
+
+/* MAIN */
 article{
     position: relative;
     width: 100vw;
     height: 100vh;
+}
+
+.context{
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    inset: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    
+    pointer-events: none;
+}
+
+.context h1{
+    font-weight: 600;
+    font-size: 3rem;
+    line-height: 3rem;
+
+    margin-left: 1rem;
+    pointer-events: all;
+}
+
+.context h2{
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1rem;
+    letter-spacing: 0.75px;
+
+    margin: 0 0 1rem 1rem;
+    pointer-events: all;
 }
 
 .buffer{
@@ -705,19 +730,22 @@ article{
     }
 }
 
+
 @media (min-width: 2560px) {
     .drawing-external{
         display: block;
     }
 }
 
+
 @media (max-width: 1200px) {
-    .super-header{
-        font-size: 42vw;
-        line-height: 42vw;
-        bottom: -12vw;
+    #splash h1{
+        font-size: 38vw;
+        line-height: 38vw;
+        bottom: -11vw;
     }
 }
+
 
 @media (max-width: 1000px) {
     .footer-section{
@@ -747,11 +775,17 @@ article{
     }
 }
 
+
 @media (max-width: 900px) {
-    #index-btn{
+    #indexBtn{
+        display: none;
+    }
+
+    #index{
         display: none;
     }
 }
+
 
 @media (max-width: 800px) {
     .acetate-parot{

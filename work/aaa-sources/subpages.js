@@ -10,6 +10,9 @@ window.onload = (event) => {
     } else {
         document.querySelector(".sub-title").style.marginTop = "0px";
     }
+
+    var footerHeight = document.querySelector(".footer-section").offsetHeight;
+    document.querySelector("#footer-gradient").style.minHeight = footerHeight + "px";
 };
 
 addEventListener("resize", e => {
@@ -24,4 +27,7 @@ addEventListener("resize", e => {
     } else {
         document.querySelector(".sub-title").style.marginTop = "0px";
     }
+
+    var footerHeight = document.querySelector(".footer-section").offsetHeight;
+    document.querySelector("#footer-gradient").style.minHeight = footerHeight + "px";
 });
