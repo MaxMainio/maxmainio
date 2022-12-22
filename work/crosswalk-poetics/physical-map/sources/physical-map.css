@@ -2,13 +2,14 @@ body{
     height: 5000px;
 }
 
-.context{
+#context{
     position: fixed;
 }
 
-.content{
-    height: 100vh;
+#content{
     position: fixed;
+    height: 100vh;
+    width: 100%;
 }
 
 .work-div{
@@ -55,16 +56,19 @@ canvas{
     article{
         height: 100%;
         position: relative;
+        height: 5000px;
     }
 
-    .context{
+    #context{
         display: block;
         position: relative;
     }
 
-    .content{
+    #content{
         padding-top: 4rem;
         height: 100vh;
+
+        display: block;
 
         position: -webkit-sticky;
         position: sticky;

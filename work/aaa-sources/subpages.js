@@ -3,7 +3,7 @@ window.onload = (event) => {
     var vw = window.innerWidth
     var titleHeight = document.querySelector('#title').offsetHeight;
     var firstDivHeight = document.querySelector('.first').offsetHeight;
-    const footerField = document.querySelector('#footerFinal');
+    const footerField = document.querySelector('#footerFinal'); 
 
     if (vw > 685) {
         document.querySelector('#contextTrack').style.minHeight = firstDivHeight + 'px';
