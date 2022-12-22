@@ -148,11 +148,11 @@ footer{
 
 /* Media Queries */
 @media (max-width: 1000px) {
-    .title-wrapper{
+    #contextWrapper{
         grid-column: 1 / 5;
     }
 
-    .title{
+    #title{
         width: 50vw;
     }
 
@@ -161,14 +161,14 @@ footer{
         flex-direction: column;
     }
 
-    .footer-final{
+    #footer-final{
         display: none;
     }
 }
 
 
 @media (max-width: 685px) {
-    .context{
+    #context{
         display: block;
         position: relative;
     }
@@ -178,7 +178,7 @@ footer{
         width: auto;
     }
 
-    .content{
+    #content{
         display: block;
         padding-top: 4rem;
     }
