@@ -17,49 +17,52 @@
 		<div class="fader-in tulossa"></div>
 		
 		<header>
-			<nav class="navbar">
-				<div class="nav-container">
-					<div class="nav-grid"> 
-						<h1 class="desktop-logo nav-pointer" style="grid-column: 1 / 3;"><a href="../../">Max Mainio Beidler</a></h1>
-						<h1 class="mobile-logo nav-pointer" style="grid-column: 1 / 3;"><a href="../../">MMB</a></h1>
-						
-						<h1 style="grid-column: 7 / 7;"><a href="../../#homodeus" class="nav-pointer">Work</a></h1>
-	
-						<div class="nav-flex">
-							<h1><a href="../../about/" class="nav-pointer">About</a></h1>
-							<h1><a class="non-active nav-pointer" title="Coming soon...">→</a></h1>
-						</div>
-					</div>
+			<nav>
+				<h1 id="desktopLogo" class="nav-logo"><a href="../../" title="Click here to return to the main work page.">
+					Max Mainio Beidler
+				</a></h1>
+				<h1 id="mobileLogo" class="nav-logo"><a href="../../" title="Click here to return to the main work page.">
+					MMB
+				</a></h1>
+
+				<h1 class="nav-work"><a href="../../" title="Click here to return to the main work page.">
+					Work
+				</a></h1>
+
+				<div class="nav-flex">
+					<h1><a href="../../about/" title="Click here to learn more about who I am.">
+						About
+					</a></h1>
+					
+					<h1 class="non-active" title="Coming soon...">→</h1>
 				</div>
 			</nav>
 		</header>
 
 		<main>
 			<article>
-				<section class="context">
-					<div class="title-wrapper">
-						<h1 class="title">Homo Deus</h1>
-						<h1 class="sub-title">Print & web publication project / 2021</h1>
-	
-						<p class="work-p">
-							For this project, I was tasked with designing a cohesive typographic design system, both in digital form as a website and as a print publication. The text could be any article and interview of my choosing.
-						</p>
-
-						<p class="work-p">
-							The outcome of this project: Homo Deus, named after the book by the same name written by <a href="https://www.ynharari.com/book/homo-deus/" target="_blank">Yuval Noah Harari</a>, explores similar themes of technological advancements that are blurring the line between humans and machines. For the texts I chose the <a href="https://www.nathier.com/category/illustration-graphical/adjacent-heather-dewey-hagborg/" target="_blank">Adjacent Interview of Heather Dewey-Hagborg</a> and for my article I chose the <a href="https://reallifemag.com/is-it-my-body/" target="_blank">Real Life Magazine's <i>Is It My Body</i></a> article on tech horror.
-						</p>
-
-						<p class="work-p">
-							The printed publication uses qr-codes, a loading bar inlew of a traditional page numbering system, and other subtle homages to the digital tools we are familiar with, in order to intertwine the physical & natural materiality of the magazine with the ephemeral & digital realm of the machine. While the website prototype's design attempts the opposite, bringing a printerly touch to the digital.
-						</p>
-						
-						<p class="work-p">
-							The website prototype can be accessed temporarily <a href="https://www.figma.com/file/z1TOnsKVyVMwNJkt31S2Iy/Homo-Deus-web?node-id=0%3A1" target="_blank">by clicking here</a> while I find the time to code it all by hand into a fully functioning website.
-						</p>
+				<section id="context">
+					<div id="contextTrack">
+						<div id="contextWrapper">
+							<h1 id="title">HomoDeus</h1>
+							<h2 id="subTitle">Print & web publication project / 2021</h2>
+							<p class="work-p">
+								For this project, I was tasked with designing a cohesive typographic design system, both in digital form as a website and as a print publication. The text could be any article and interview of my choosing.
+							</p>
+							<p class="work-p">
+								The outcome of this project: Homo Deus, named after the book by the same name written by <a href="https://www.ynharari.com/book/homo-deus/" target="_blank">Yuval Noah Harari</a>, explores similar themes of technological advancements that are blurring the line between humans and machines. For the texts I chose the <a href="https://www.nathier.com/category/illustration-graphical/adjacent-heather-dewey-hagborg/" target="_blank">Adjacent Interview of Heather Dewey-Hagborg</a> and for my article I chose the <a href="https://reallifemag.com/is-it-my-body/" target="_blank">Real Life Magazine's <i>Is It My Body</i></a> article on tech horror.
+							</p>
+							<p class="work-p">
+								The printed publication uses qr-codes, a loading bar inlew of a traditional page numbering system, and other subtle homages to the digital tools we are familiar with, in order to intertwine the physical & natural materiality of the magazine with the ephemeral & digital realm of the machine. While the website prototype's design attempts the opposite, bringing a printerly touch to the digital.
+							</p>
+							<p class="work-p">
+								The website prototype can be accessed temporarily <a href="https://www.figma.com/file/z1TOnsKVyVMwNJkt31S2Iy/Homo-Deus-web?node-id=0%3A1" target="_blank">by clicking here</a> while I find the time to code it all by hand into a fully functioning website.
+							</p>
+						</div>
 					</div>
 				</section>
 
-				<section class="content">
+				<section id="content">
 					<div class="work-div first">
 						<div class="aukeama-container">
 							<img src="assets/aukeama-1.webp"
@@ -219,5 +222,47 @@
 				</section>
 			</article>
 		</main>
+
+		<footer>
+			<div id="footerGradient"></div>
+
+			<section class="footer-section">
+				<div>
+					<h2>&#169;2023 MMB</h2>
+				</div>
+
+				<div>
+					<h2>Navigation</h2>
+					<h3><a href="#" target="_self">Back to Top</a></h3>
+					<h3><a href="../../" title="Click here to return to the main work page.">Work</a></h3>
+					<h3><a href="../../about/" title="Click here to learn more about who I am.">About</a></h3>
+				</div>
+
+				<div>
+					<h2>Contact</h2>
+					<h3><a href="mailto:beidler.max@gmail.com" title="Shoot me an email!" target="_self">
+						beidler.max@gmail.com
+					</a></h3>
+					<h3><a href="https://www.are.na/max-mainio" title="This is where I collect resources, for me and anyone else to use." target="_blank">
+						Are.na
+					</a></h3>
+					<h3><a href="https://www.instagram.com/max.mainio/?hl=en" title="I really don't post on here anymore, but I'm still active otherwise." target="_blank">
+						Instagram
+					</a></h3>
+					<h3><a href="https://www.linkedin.com/in/max-beidler-101b111a3/" title="I desperately need a new profile pic..." target="_blank">
+						Linkedin
+					</a></h3>
+					<h3><a href="https://pin.it/571oY2a" title="This is where I collect design inspiration." target="_blank">
+						Pinterest
+					</a></h3>
+					<h3><a href="https://open.spotify.com/user/mliflawsee?si=08f822a9f31e4a12" title="People say ." target="_blank">
+						Spotify
+					</a></h3>
+				</div>
+
+				<div id="footerFinal">
+				</div>
+			</section>
+		</footer>
 	</body>
 </html>
