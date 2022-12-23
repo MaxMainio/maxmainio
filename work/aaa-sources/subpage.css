@@ -22,6 +22,7 @@
 }
 
 #contextWrapper{
+    position: -webkit-sticky; /* Safari */
     position: sticky;
     top: 3rem;
 }
