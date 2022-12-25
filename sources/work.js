@@ -1,7 +1,15 @@
-// TURN ON SMOOTH SCROLL AFTER DELAY
-setTimeout(function() {
-	document.querySelector("html").style.scrollBehavior = "smooth"
-}, 500);
+// SWITCH TO SCROLL SMOOTH WHEN CLICKING ON INTERNAL LINKS
+const internalAnchorLinks = document.querySelectorAll('a:is([target="_self"])')
+
+internalAnchorLinks.forEach(item => {
+	item.addEventListener('click', e => {
+		document.querySelector('html').style.scrollBehavior = 'smooth'
+
+		setTimeout(() => {
+			document.querySelector('html').style.scrollBehavior = 'auto'
+		}, 1)
+	})
+})
 
 
 
@@ -11,14 +19,15 @@ setTimeout(function() {
 
 
 
-// SPLASH
-const splash = document.querySelector("#splash")
+// REMOVE SPLASH WHEN IT EXITS VIEW
+const splash = document.querySelector('#splash')
 
 const splashObserver = new IntersectionObserver(entries => {
 	entries.forEach(entry => {
 		if(entry.isIntersecting === false) {
 			entry.target.remove();
-			document.querySelector(".with-splash").className = "";
+			document.querySelector('.with-splash').className = '';
+			window.scrollTo(0, 0);
 		}
 	})
 })
@@ -33,14 +42,14 @@ splashObserver.observe(splash)
 
 
 
-// INDEX
-document.querySelector("#indexBtn").addEventListener("click", e => {
-	const index = document.querySelector("#index");
+// TOGGLE OPEN AND CLOSED THE INDEX
+document.querySelector('#indexBtn').addEventListener('click', e => {
+	const index = document.querySelector('#index');
 
-	if (index.className === "closed") {
-		index.className = "open";
+	if (index.className === 'closed') {
+		index.className = 'open';
 	} else {
-		index.className = "closed";
+		index.className = 'closed';
 	}
 })
 
@@ -53,9 +62,9 @@ document.querySelector("#indexBtn").addEventListener("click", e => {
 
 
 // PARALLAX
-const sections = document.querySelectorAll("article")
+const sections = document.querySelectorAll('article')
 
-document.addEventListener("scroll", event => {
+document.addEventListener('scroll', event => {
 	const sectionObserver = new IntersectionObserver(entries => {
 		entries.forEach(entry => {
 			if (entry.isIntersecting === true) {
@@ -70,11 +79,11 @@ document.addEventListener("scroll", event => {
 				}
 	
 				var multiplier = parallaxCalc(entry.target.offsetTop, windowScroll)
-				var elements = entry.target.querySelectorAll("[data-rate]");
+				var elements = entry.target.querySelectorAll('[data-rate]');
 				var elementsIndex = 0, length = elements.length;
 	
 				for (elementsIndex; elementsIndex < length; elementsIndex++) {
-					elements[elementsIndex].style.transform = "translate3d(0px, "+multiplier * elements[elementsIndex].dataset.rate+"px, 0px)"
+					elements[elementsIndex].style.transform = 'translate3d(0px, '+multiplier * elements[elementsIndex].dataset.rate+'px, 0px)'
 				}
 			}
 		})
@@ -94,7 +103,7 @@ document.addEventListener("scroll", event => {
 
 
 // CROSSWALK POETICS
-document.querySelector("#crosswalk-projection").playbackRate = 0.20;
+document.querySelector('#crosswalk-projection').playbackRate = 0.20;
 
 
 
@@ -109,23 +118,36 @@ window.onload = (event) => {
 	var vw = window.innerWidth
 
 	if (vw > 1000) {
-		var standard = document.getElementById("footerDivStandard").offsetHeight;
+		var standard = document.getElementById('footerDivStandard').offsetHeight;
 
-		document.querySelectorAll('.footer-div')[0].style.minHeight = standard + "px";
-		document.querySelectorAll('.footer-div')[1].style.minHeight = standard + "px";
+		document.querySelectorAll('.footer-div')[0].style.minHeight = standard + 'px';
+		document.querySelectorAll('.footer-div')[1].style.minHeight = standard + 'px';
     }
 };
 
-addEventListener("resize", e => {
+addEventListener('resize', e => {
     var vw = window.innerWidth
 
     if (vw > 1000) {
-        var standard = document.getElementById("footerDivStandard").offsetHeight;
+        var standard = document.getElementById('footerDivStandard').offsetHeight;
 
-		document.querySelectorAll('.footer-div')[0].style.minHeight = standard + "px";
-		document.querySelectorAll('.footer-div')[1].style.minHeight = standard + "px";
+		document.querySelectorAll('.footer-div')[0].style.minHeight = standard + 'px';
+		document.querySelectorAll('.footer-div')[1].style.minHeight = standard + 'px';
     } else {
-		document.querySelectorAll('.footer-div')[0].style.minHeight = "auto";
-		document.querySelectorAll('.footer-div')[1].style.minHeight = "auto";
+		document.querySelectorAll('.footer-div')[0].style.minHeight = 'auto';
+		document.querySelectorAll('.footer-div')[1].style.minHeight = 'auto';
     }
 });
+
+const backToTop = document.querySelector('#backToTop');
+
+backToTop.addEventListener('click', e => {
+	document.querySelector('html').style.scrollBehavior = 'smooth'
+
+	setTimeout(() => {
+		window.scrollTo(0, 0);
+		setTimeout(() => {
+			document.querySelector('html').style.scrollBehavior = 'instant'
+		}, 1)
+	}, 1)
+})

@@ -1,12 +1,12 @@
-console.log("https://www.youtube.com/watch?v=NuAKnbIr6TE");
+console.log('https://www.youtube.com/watch?v=NuAKnbIr6TE');
 
 var vw = window.innerWidth
 
 if (vw > 800) {
     window.onpageshow = () => {
         const innerLinks = document.querySelectorAll('a:not([target="_self"], [target="_blank"])');
-        const tulossaElement = document.querySelector(".fader-in");
-        tulossaElement.classList.remove("tulossa");
+        const tulossaElement = document.querySelector('.fader-in');
+        tulossaElement.classList.remove('tulossa');
         
         setTimeout(() => {
             tulossaElement.remove();
@@ -15,17 +15,17 @@ if (vw > 800) {
         for (let i = 0; i < innerLinks.length; i++) {
             const innerLink = innerLinks[i];
     
-            innerLink.addEventListener("click", e => {
+            innerLink.addEventListener('click', e => {
                 e.preventDefault();
     
                 var target = e.currentTarget.href;
                 console.log(target);
-                const menossaDiv = document.createElement("div");
-                menossaDiv.classList.add("fader-out");
+                const menossaDiv = document.createElement('div');
+                menossaDiv.classList.add('fader-out');
     
                 document.body.append(menossaDiv);
                 setTimeout(() => {
-                    menossaDiv.classList.add("menossa");
+                    menossaDiv.classList.add('menossa');
                 },1);
                 
                 setTimeout(() => {
@@ -35,8 +35,8 @@ if (vw > 800) {
         }
     }
 } else {
-    const tulossaElement = document.querySelector(".fader-in");
+    const tulossaElement = document.querySelector('.fader-in');
     tulossaElement.remove();
-    const bodyElement = document.querySelector("body");
-    bodyElement.removeAttribute("onunload");
+    const bodyElement = document.querySelector('body');
+    bodyElement.removeAttribute('onunload');
 }

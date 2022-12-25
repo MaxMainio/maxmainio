@@ -1,13 +1,24 @@
+// CONSTANTS
+const rem = (document.getElementsByTagName('header')[0].offsetHeight)/3
+const footerField = document.querySelector('#footerFinal');
+
+
+
+
+
+
+
+
+
 // STRUCTURE
 window.onload = (event) => {
     var vw = window.innerWidth
     var titleHeight = document.querySelector('#title').offsetHeight;
     var firstDivHeight = document.querySelector('.first').offsetHeight;
-    const footerField = document.querySelector('#footerFinal'); 
 
     if (vw > 685) {
         document.querySelector('#contextTrack').style.minHeight = firstDivHeight + 'px';
-        document.querySelector('#subTitle').style.paddingTop = titleHeight + 'px';
+        document.querySelector('#subTitle').style.paddingTop = titleHeight - rem + 'px';
     } else {
         document.querySelector('#subTitle').removeAttribute('style');
     }
@@ -15,7 +26,7 @@ window.onload = (event) => {
     var footerHeight = document.querySelector('.footer-section').offsetHeight;
     document.querySelector('#footerGradient').style.minHeight = footerHeight + 'px';
 
-    footerField.appendChild(document.createElement('h3')).innerHTML += '<h3>' + footerTxt[Math.round(Math.random() * 1)] + '<h3>';
+    footerField.appendChild(document.createElement('h3')).innerHTML += '<h3>' + footerTxt[Math.round(Math.random() * 2)] + '<h3>';
 };
 
 addEventListener('resize', e => {
@@ -25,7 +36,7 @@ addEventListener('resize', e => {
 
     if (vw > 685) {
         document.querySelector('#contextTrack').style.minHeight = firstDivHeight + 'px';
-        document.querySelector('#subTitle').style.paddingTop = titleHeight + 'px';
+        document.querySelector('#subTitle').style.paddingTop = titleHeight - rem + 'px';
     } else {
         document.querySelector('#subTitle').removeAttribute('style');
     }
@@ -33,6 +44,19 @@ addEventListener('resize', e => {
     var footerHeight = document.querySelector('.footer-section').offsetHeight;
     document.querySelector('#footerGradient').style.minHeight = footerHeight + 'px';
 });
+
+const backToTop = document.querySelector('#backToTop');
+
+backToTop.addEventListener('click', e => {
+	document.querySelector('html').style.scrollBehavior = 'smooth'
+
+	setTimeout(() => {
+		window.scrollTo(0, 0);
+		setTimeout(() => {
+			document.querySelector('html').style.scrollBehavior = 'instant'
+		}, 1)
+	}, 1)
+})
 
 
 
@@ -46,3 +70,4 @@ addEventListener('resize', e => {
 footerTxt = new Array();
 footerTxt[0] = 'More being added here and there...';
 footerTxt[1] = 'This website is in a constant state of "work in progress."';
+footerTxt[2] = 'This website is forever in the making.';
