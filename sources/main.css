@@ -154,26 +154,7 @@ nav h1{
 
 
 /* FADER */
-.fader-in{
-    position: fixed;
-    height: 300vh;
-    width: 100vw;
-    z-index: 9;
-
-    inset: 0 0 auto 0;
-    background: linear-gradient(rgba(255,255,255,0) 33%, rgba(255,255,255,1) 66%);
-    transform: translateY(0vh);
-
-    pointer-events: none;
-    transition: 0.5s ease-in-out;
-}
-
-.fader-in.tulossa{
-    transform: translateY(-200vh);
-    pointer-events: all;
-}
-
-.fader-out{
+.fader{
     position: fixed;
     height: 300vh;
     width: 100vw;
@@ -187,7 +168,7 @@ nav h1{
     transition: 0.5s ease-in-out;
 }
 
-.fader-out.menossa{
+.fader.motion{
     transform: translateY(-200vh);
     pointer-events: all;
 }
