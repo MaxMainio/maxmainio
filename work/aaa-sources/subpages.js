@@ -1,6 +1,7 @@
 // CONSTANTS
 const rem = (document.getElementsByTagName('header')[0].offsetHeight)/3
 const footerField = document.querySelector('#footer-final');
+const backToTop = document.querySelector('#top-btn');
 
 
 
@@ -14,7 +15,7 @@ const footerField = document.querySelector('#footer-final');
 window.onload = (event) => {
     var vw = window.innerWidth
     var titleHeight = document.querySelector('#title').offsetHeight;
-    var firstDivHeight = document.querySelector('.first').offsetHeight;
+    var firstDivHeight = document.querySelector('#first').offsetHeight;
 
     if (vw > 685) {
         document.querySelector('#context-track').style.minHeight = firstDivHeight + 'px';
@@ -32,7 +33,7 @@ window.onload = (event) => {
 addEventListener('resize', e => {
     var vw = window.innerWidth
     var titleHeight = document.querySelector('#title').offsetHeight;
-    var firstDivHeight = document.querySelector('.first').offsetHeight;
+    var firstDivHeight = document.querySelector('#first').offsetHeight;
 
     if (vw > 685) {
         document.querySelector('#context-track').style.minHeight = firstDivHeight + 'px';
@@ -45,8 +46,15 @@ addEventListener('resize', e => {
     document.querySelector('#footer-gradient').style.minHeight = footerHeight + 'px';
 });
 
-const backToTop = document.querySelector('#top-btn');
 
+
+
+
+
+
+
+
+// BACK TO TOP BUTTON
 backToTop.addEventListener('click', e => {
 	document.querySelector('html').style.scrollBehavior = 'smooth'
 
