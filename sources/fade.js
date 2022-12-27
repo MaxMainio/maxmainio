@@ -4,6 +4,7 @@ var vw = window.innerWidth
 const innerLinks = document.querySelectorAll('a:not([target="_self"], [target="_blank"])');
 const faderElement = document.querySelector('#fader');
 
+// TRIGGER FADER WHEN ENTERING AND EXITING EACH PAGE
 if (vw > 800) {
     window.onpageshow = () => {
         faderElement.classList.remove('motion');

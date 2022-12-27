@@ -5,9 +5,9 @@ internalAnchorLinks.forEach(item => {
 	item.addEventListener('click', e => {
 		document.querySelector('html').style.scrollBehavior = 'smooth'
 
-		setTimeout(() => {
-			document.querySelector('html').style.scrollBehavior = 'auto'
-		}, 1)
+		// setTimeout(() => {
+		// 	document.querySelector('html').style.scrollBehavior = 'auto'
+		// }, 1)
 	})
 })
 
@@ -24,10 +24,17 @@ const splash = document.querySelector('#splash')
 
 const splashObserver = new IntersectionObserver(entries => {
 	entries.forEach(entry => {
-		if(entry.isIntersecting === false) {
+		if (entry.isIntersecting === false) {
 			entry.target.remove();
 			document.querySelector('.with-splash').className = '';
-			window.scrollTo(0, 0);
+
+			var anchorHash = location.hash
+
+			if (anchorHash === '') {
+				window.scrollTo(0, 0);
+			}
+
+			// window.scrollTo(0, 0);
 		}
 	})
 })
@@ -146,8 +153,9 @@ backToTop.addEventListener('click', e => {
 
 	setTimeout(() => {
 		window.scrollTo(0, 0);
-		setTimeout(() => {
-			document.querySelector('html').style.scrollBehavior = 'instant'
-		}, 1)
+		// setTimeout(() => {
+		// 	document.querySelector('html').style.scrollBehavior = 'instant'
+		// }, 1)
 	}, 1)
 })
+

@@ -214,14 +214,7 @@ h1{
     margin: 0;
 }
 
-/* .title-wrapper{
-    position: absolute;
-    inset: auto auto 0 0;
-    margin: 0 1rem 1rem 1rem;
-    pointer-events: all;
-}
-
-.title{
+/* .title{
     font-weight: 600;
     font-size: 3rem;
     line-height: 3rem;
