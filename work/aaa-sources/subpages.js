@@ -1,6 +1,6 @@
 // CONSTANTS
 const rem = (document.getElementsByTagName('header')[0].offsetHeight)/3
-const footerField = document.querySelector('#footerFinal');
+const footerField = document.querySelector('#footer-final');
 
 
 
@@ -17,14 +17,14 @@ window.onload = (event) => {
     var firstDivHeight = document.querySelector('.first').offsetHeight;
 
     if (vw > 685) {
-        document.querySelector('#contextTrack').style.minHeight = firstDivHeight + 'px';
-        document.querySelector('#subTitle').style.paddingTop = titleHeight - rem + 'px';
+        document.querySelector('#context-track').style.minHeight = firstDivHeight + 'px';
+        document.querySelector('#sub-title').style.paddingTop = titleHeight - rem + 'px';
     } else {
-        document.querySelector('#subTitle').removeAttribute('style');
+        document.querySelector('#sub-title').removeAttribute('style');
     }
 
     var footerHeight = document.querySelector('.footer-section').offsetHeight;
-    document.querySelector('#footerGradient').style.minHeight = footerHeight + 'px';
+    document.querySelector('#footer-gradient').style.minHeight = footerHeight + 'px';
 
     footerField.appendChild(document.createElement('h3')).innerHTML += '<h3>' + footerTxt[Math.round(Math.random() * 2)] + '<h3>';
 };
@@ -35,17 +35,17 @@ addEventListener('resize', e => {
     var firstDivHeight = document.querySelector('.first').offsetHeight;
 
     if (vw > 685) {
-        document.querySelector('#contextTrack').style.minHeight = firstDivHeight + 'px';
-        document.querySelector('#subTitle').style.paddingTop = titleHeight - rem + 'px';
+        document.querySelector('#context-track').style.minHeight = firstDivHeight + 'px';
+        document.querySelector('#sub-title').style.paddingTop = titleHeight - rem + 'px';
     } else {
-        document.querySelector('#subTitle').removeAttribute('style');
+        document.querySelector('#sub-title').removeAttribute('style');
     }
 
     var footerHeight = document.querySelector('.footer-section').offsetHeight;
-    document.querySelector('#footerGradient').style.minHeight = footerHeight + 'px';
+    document.querySelector('#footer-gradient').style.minHeight = footerHeight + 'px';
 });
 
-const backToTop = document.querySelector('#backToTop');
+const backToTop = document.querySelector('#top-btn');
 
 backToTop.addEventListener('click', e => {
 	document.querySelector('html').style.scrollBehavior = 'smooth'
