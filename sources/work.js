@@ -4,10 +4,6 @@ const internalAnchorLinks = document.querySelectorAll('a:is([target="_self"])')
 internalAnchorLinks.forEach(item => {
 	item.addEventListener('click', e => {
 		document.querySelector('html').style.scrollBehavior = 'smooth'
-
-		// setTimeout(() => {
-		// 	document.querySelector('html').style.scrollBehavior = 'auto'
-		// }, 1)
 	})
 })
 
@@ -30,11 +26,10 @@ const splashObserver = new IntersectionObserver(entries => {
 
 			var anchorHash = location.hash
 
+			// INCASE THERE IS A HASH
 			if (anchorHash === '') {
 				window.scrollTo(0, 0);
 			}
-
-			// window.scrollTo(0, 0);
 		}
 	})
 })
@@ -153,9 +148,6 @@ backToTop.addEventListener('click', e => {
 
 	setTimeout(() => {
 		window.scrollTo(0, 0);
-		// setTimeout(() => {
-		// 	document.querySelector('html').style.scrollBehavior = 'instant'
-		// }, 1)
 	}, 1)
 })
 
