@@ -1,5 +1,5 @@
 // SCROLL VID
-const canvas = document.getElementById("mossSim");
+const canvas = document.getElementById("moss-sim");
 const context = canvas.getContext("2d");
 
 canvas.width = 800;
@@ -52,9 +52,9 @@ window.onload = (event) => {
   var titleHeight = document.querySelector('#title').offsetHeight;
 
   if (vw > 685) {
-    document.querySelector('#subTitle').style.paddingTop = titleHeight + 'px';
+    document.querySelector('#sub-title').style.paddingTop = titleHeight + 'px';
   } else {
-    document.querySelector('#subTitle').removeAttribute('style');
+    document.querySelector('#sub-title').removeAttribute('style');
   }
 };
 
@@ -63,8 +63,8 @@ addEventListener('resize', e => {
   var titleHeight = document.querySelector('#title').offsetHeight;
 
   if (vw > 685) {
-    document.querySelector('#subTitle').style.paddingTop = titleHeight + 'px';
+    document.querySelector('#sub-title').style.paddingTop = titleHeight + 'px';
   } else {
-    document.querySelector('#subTitle').removeAttribute('style');
+    document.querySelector('#sub-title').removeAttribute('style');
   }
 });

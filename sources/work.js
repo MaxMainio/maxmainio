@@ -43,7 +43,7 @@ splashObserver.observe(splash)
 
 
 // TOGGLE OPEN AND CLOSED THE INDEX
-document.querySelector('#indexBtn').addEventListener('click', e => {
+document.querySelector('#index-btn').addEventListener('click', e => {
 	const index = document.querySelector('#index');
 
 	if (index.className === 'closed') {
@@ -139,7 +139,7 @@ addEventListener('resize', e => {
     }
 });
 
-const backToTop = document.querySelector('#backToTop');
+const backToTop = document.querySelector('#top-btn');
 
 backToTop.addEventListener('click', e => {
 	document.querySelector('html').style.scrollBehavior = 'smooth'

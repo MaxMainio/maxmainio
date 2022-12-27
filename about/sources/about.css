@@ -51,7 +51,7 @@ p + p{
 
 
 /* PROFILE */
-#profileColumn{
+#profile-column{
     grid-column: 5 / 7;
     grid-row: 1 / 6;
 }
@@ -139,7 +139,7 @@ p + p{
 
 
 /* CONTACT SECTION */
-#contactGrid{
+#contact-grid{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     column-gap: 1rem;
@@ -232,11 +232,11 @@ address{
         display: none;
     }
 
-    #contactGrid{
+    #contact-grid{
         display: block;
     }
 
-    #contactSwitch{
+    #contact-switch{
         margin-top: 0.75rem;
     }
 }

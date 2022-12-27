@@ -57,7 +57,7 @@ html{
 
 
 /* INDEX */
-#indexBtn{
+#index-btn{
     grid-column: 6;
 }
 
@@ -781,7 +781,7 @@ article{
 }
 
 @media (max-width: 900px) {
-    #indexBtn{
+    #index-btn{
         display: none;
     }
 

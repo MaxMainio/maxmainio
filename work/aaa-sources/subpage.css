@@ -14,7 +14,7 @@
     overflow: visible;
 }
 
-#contextTrack{
+#context-track{
     position: relative;
     grid-column: 1 / 4;
     margin: 0;
@@ -24,7 +24,7 @@
     overflow: visible;
 }
 
-#contextWrapper{
+#context-wrapper{
     position: -webkit-sticky; /* Safari */
     position: sticky;
     top: 3rem;
@@ -46,7 +46,7 @@
     overflow: visible;
 }
 
-#subTitle{
+#sub-title{
     font-weight: 400;
     font-size: 1rem;
     line-height: 1rem;
@@ -112,7 +112,7 @@ footer{
     position: relative;
 }
 
-#footerGradient{
+#footer-gradient{
     width: calc(50% - 0.5rem);
     position: absolute;
     inset: auto 0 0 auto;
@@ -140,14 +140,14 @@ footer{
     z-index: 1;
 }
 
-#footerFinal{
+#footer-final{
     grid-column: 4 / 7;
     display: flex;
     flex-direction: column;
     justify-content: end;
 }
 
-#footerFinal > h3{
+#footer-final > h3{
     text-align: right;
 }
 
@@ -161,7 +161,7 @@ footer{
 
 /* Media Queries */
 @media (max-width: 1000px) {
-    #contextWrapper{
+    #context-wrapper{
         grid-column: 1 / 5;
     }
 

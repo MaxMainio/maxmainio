@@ -118,11 +118,11 @@ nav{
     cursor: default;
 }
 
-#desktopLogo{
+#desktop-logo{
     display: block;
 }
 
-#mobileLogo{
+#mobile-logo{
     display: none;
 }
 
@@ -309,11 +309,11 @@ sup, sub {
 
 /* Media Queries */
 @media (max-width: 1000px) {
-    #desktopLogo{
+    #desktop-logo{
         display: none;
     }
 
-    #mobileLogo{
+    #mobile-logo{
         display: block;
     }
 }
