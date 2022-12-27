@@ -1,11 +1,8 @@
-.first{
-    grid-column: 5 / 9;
-}
-
-.second{
+/* MAIN */
+#second{
     grid-column: 1 / 9;
 }
 
-.third{
+#third{
     grid-column: 1 / 5;
 }
