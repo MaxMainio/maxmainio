@@ -4,10 +4,6 @@
     aspect-ratio: 1640 / 1024;
 }
 
-.work-img{
-    mix-blend-mode: multiply;
-}
-
 .aukeama-shadow{
     position: absolute;
     inset: 0;
