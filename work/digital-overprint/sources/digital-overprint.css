@@ -1,18 +1,8 @@
-/* Main */
+/* MAIN */
 
 main{
     position: fixed;
 }
-
-
-
-
-
-
-
-
-
-/* Content */
 
 #content{
     display: flex;
@@ -43,7 +33,7 @@ main{
 
 
 
-/* Type */
+/* TYPE */
 
 .highlight{
     background-color: white;
@@ -58,9 +48,9 @@ main{
 
 
 
-/* Media Queries */
+/* MEEDIA QUERIES */
 @media (max-width: 900px) {
-    .content{
+    #content{
         height: 100vh;
         padding: 3rem 1rem 1rem 1rem;
         align-items: flex-end;
@@ -69,22 +59,22 @@ main{
 }
 
 @media (max-width: 820px) {
-    .sub-title{
+    #sub-title{
         margin-top: 6rem;
     }
 }
 
 @media (max-width: 685px) {
-    .context{
+    #context{
         display: block;
         position: absolute;
     }
 
-    .sub-title{
+    #sub-title{
         margin-top: 0;
     }
 
-    .content{
+    #content{
         display: flex;
     }
 }

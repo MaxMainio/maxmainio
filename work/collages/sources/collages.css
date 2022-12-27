@@ -1,13 +1,9 @@
-/* Content */
-.first{
-    grid-column: 5 / 9;
-}
-
-.second{
+/* CONTENT */
+#second{
     grid-column: 2 / 4;
 }
 
-.third{
+#third{
     grid-column: 4 / 7;
 }
 
@@ -19,13 +15,13 @@
 
 
 
-/* Media Queries */
+/* MEDIA QUERIES */
 @media (max-width: 1000px) {
-    .second{
+    #second{
         grid-column: 1 / 4;
     }
 
-    .third{
+    #third{
         grid-column: 4 / 9;
     }
 }

@@ -1,20 +1,16 @@
-/* Content */
-.first{
-    grid-column: 5 / 9;
-}
-
-.second{
+/* CONTENT */
+#second{
     grid-column: 1 / 5;
 }
 
-.third{
+#third{
     grid-column: 5 / 9;
 }
 
-.fourth{
+#fourth{
     grid-column: 1 / 5;
 }
 
-.fifth{
+#fifth{
     grid-column: 5 / 9;
 }

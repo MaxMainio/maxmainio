@@ -1,40 +1,36 @@
-/* Content */
+/* CONTENT */
 #content{
     mix-blend-mode: multiply;
 }
 
-.first{
-    grid-column: 5 / 9;
-}
-
-.second{
+#second{
     grid-column: 1 / 4;
 }
 
-.third{
+#third{
     grid-column: 4 / 7;
 }
 
-.fourth{
+#fourth{
     grid-column: 7 / 9;
 }
 
-.fifth{
+#fifth{
     grid-column: 2 / 4;
 }
 
-.sixth{
+#sixth{
     grid-column: 5 / 7;
 }
 
-.seventh{
+#seventh{
     grid-column: 1 / 4;
 }
 
-.eighth{
+#eighth{
     grid-column: 4 / 7;
 }
 
-.ninth{
+#ninth{
     grid-column: 8 / 9;
 }

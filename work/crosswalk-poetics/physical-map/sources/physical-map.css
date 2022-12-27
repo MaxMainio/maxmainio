@@ -1,3 +1,4 @@
+/* MAIN */
 body{
     height: 5000px;
 }
@@ -10,19 +11,23 @@ body{
     position: fixed;
     height: 100vh;
     width: 100%;
+
+    pointer-events: none;
 }
 
 .work-div{
     position: relative;
     height: 100%;
     width: 100%;
+
+    pointer-events: all;
 }
 
-.first{
+#first{
     grid-column: 5 / 9;
 }
 
-.work-img{
+img{
     position: absolute;
     inset: auto 0 0 auto;
 
@@ -52,6 +57,7 @@ canvas{
 
 
 
+/* MEDIA QUERIES */
 @media (max-width: 685px) {
     article{
         height: 100%;
@@ -79,7 +85,7 @@ canvas{
         margin-bottom: 0;
     }
 
-    .work-img{
+    img{
         inset: 0;
     }
 
