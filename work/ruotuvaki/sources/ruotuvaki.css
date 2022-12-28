@@ -52,13 +52,11 @@
 
 .carousel-button.prev{
     left: 0;
-    /* cursor: w-resize; */
     cursor: url(https://maxmain.io/assets/support/cursors/left-cursor.svg) 32 32, pointer;
 }
 
 .carousel-button.next{
     right: 0;
-    /* cursor: e-resize; */
     cursor: url(https://maxmain.io/assets/support/cursors/right-cursor.svg) 32 32, pointer;
 }
 
@@ -66,5 +64,5 @@
     font-weight: 600;
     font-size: 2rem;
     line-height: 2rem;
-    margin-top: 1rem;
+    margin-top: 2rem;
 }
