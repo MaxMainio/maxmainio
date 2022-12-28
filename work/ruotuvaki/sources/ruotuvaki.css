@@ -1,27 +1,5 @@
-/* MAIN */
-.aukeama-container{
-    position: relative;
-    aspect-ratio: 1640 / 1024;
-}
-
-.aukeama-varjo{
-    position: absolute;
-    inset: 0;
-    width: 117.1875%;
-    mix-blend-mode: multiply;
-    pointer-events: none;
-}
-
-
-
-
-
-
-
-
-
 /* CONTENT */
-#aukeama-grid{
+#aukeama-container{
     grid-column: 1 / 9;
     width: 100%;
     max-width: 1400px;
@@ -52,6 +30,14 @@
     opacity: 1;
 }
 
+.aukeama-varjo{
+    position: absolute;
+    inset: 0;
+    width: 117.1875%;
+    mix-blend-mode: multiply;
+    pointer-events: none;
+}
+
 .carousel-button{
     position: absolute;
     z-index: 2;
@@ -66,10 +52,19 @@
 
 .carousel-button.prev{
     left: 0;
-    cursor: w-resize;
+    /* cursor: w-resize; */
+    cursor: url(https://maxmain.io/assets/support/cursors/left-cursor.svg) 32 32, pointer;
 }
 
 .carousel-button.next{
     right: 0;
-    cursor: e-resize;
+    /* cursor: e-resize; */
+    cursor: url(https://maxmain.io/assets/support/cursors/right-cursor.svg) 32 32, pointer;
+}
+
+#aukeama-container h1{
+    font-weight: 600;
+    font-size: 2rem;
+    line-height: 2rem;
+    margin-top: 1rem;
 }
