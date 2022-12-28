@@ -1,0 +1,75 @@
+/* MAIN */
+.aukeama-container{
+    position: relative;
+    aspect-ratio: 1640 / 1024;
+}
+
+.aukeama-varjo{
+    position: absolute;
+    inset: 0;
+    width: 117.1875%;
+    mix-blend-mode: multiply;
+    pointer-events: none;
+}
+
+
+
+
+
+
+
+
+
+/* CONTENT */
+#aukeama-grid{
+    grid-column: 1 / 9;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.carousel{
+    position: relative;
+    width: 100%;
+    aspect-ratio: auto 1635 / 1024;
+}
+
+.carousel > ul{
+    inset: 0;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.slide{
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+}
+
+.slide[data-active]{
+    opacity: 1;
+}
+
+.carousel-button{
+    position: absolute;
+    z-index: 2;
+    background: none;
+    border: none;
+
+    width: 30%;
+    height: 100%;
+
+    padding: 0;
+}
+
+.carousel-button.prev{
+    left: 0;
+    cursor: w-resize;
+}
+
+.carousel-button.next{
+    right: 0;
+    cursor: e-resize;
+}
