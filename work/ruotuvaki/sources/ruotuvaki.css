@@ -32,14 +32,6 @@
     opacity: 1;
 }
 
-.aukeama-varjo{
-    position: absolute;
-    inset: 0;
-    width: 117.1875%;
-    mix-blend-mode: multiply;
-    pointer-events: none;
-}
-
 .carousel-button{
     position: absolute;
     z-index: 2;
@@ -75,4 +67,12 @@
     width: calc(100% - 2rem);
     margin-left: 1rem;
     aspect-ratio: auto 1635 / 1024;
+}
+
+.aukeama-varjo{
+    position: absolute;
+    inset: 0;
+    width: 117.1875%;
+    mix-blend-mode: multiply;
+    pointer-events: none;
 }
