@@ -5,12 +5,14 @@
     max-width: 1400px;
     margin: 0 auto;
     padding: 0 1rem;
+    position: relative;
 }
 
 .carousel{
     position: relative;
     width: 100%;
     aspect-ratio: auto 1635 / 1024;
+    z-index: 1;
 }
 
 .carousel > ul{
@@ -65,4 +67,12 @@
     font-size: 2rem;
     line-height: 2rem;
     margin-top: 2rem;
+}
+
+#varjo-container{
+    position: absolute;
+    inset: 0;
+    width: calc(100% - 2rem);
+    margin-left: 1rem;
+    aspect-ratio: auto 1635 / 1024;
 }
