@@ -1,24 +1,24 @@
 /* CONTENT */
 #first > img{
     aspect-ratio: 1024 / 1448;
-    max-height: calc(100vh - 6rem);
     width: auto;
     max-width: 100%;
 }
 
 #aukeama-container{
     grid-column: 1 / 9;
+    position: relative;
     width: 100%;
     max-width: 1400px;
     margin: 0 auto;
     padding: 0 1rem;
-    position: relative;
 }
 
 .carousel{
     position: relative;
-    width: 100%;
     aspect-ratio: auto 1635 / 1024;
+    width: 100%;
+
     z-index: 1;
 }
 
@@ -43,14 +43,14 @@
 
 .carousel-button{
     position: absolute;
-    z-index: 2;
     background: none;
     border: none;
 
     width: 30%;
     height: 100%;
-
     padding: 0;
+
+    z-index: 2;
 }
 
 .carousel-button.prev{
@@ -73,9 +73,9 @@
 #varjo-container{
     position: absolute;
     inset: 0;
+    aspect-ratio: auto 1635 / 1024;
     width: calc(100% - 2rem);
     margin-left: 1rem;
-    aspect-ratio: auto 1635 / 1024;
 }
 
 .aukeama-varjo{
