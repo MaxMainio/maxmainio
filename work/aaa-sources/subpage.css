@@ -157,7 +157,7 @@ footer{
 
 
 
-/* Media Queries */
+/* MEDIA QUERIES */
 @media (max-width: 1000px) {
     #context-wrapper{
         grid-column: 1 / 5;

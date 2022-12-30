@@ -9,9 +9,8 @@
     grid-column: 1 / 9;
     position: relative;
     width: 100%;
-    max-width: 1400px;
+    max-width: calc(1400px - 2rem);
     margin: 0 auto;
-    padding: 0 1rem;
 }
 
 .carousel{
@@ -84,4 +83,17 @@
     width: 117.1875%;
     mix-blend-mode: multiply;
     pointer-events: none;
+}
+
+
+
+
+
+
+
+
+
+/* MEDIA QUERIES */
+@media (max-width: 1000px) {
+
 }
