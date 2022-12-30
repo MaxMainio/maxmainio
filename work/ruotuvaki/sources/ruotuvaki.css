@@ -1,4 +1,17 @@
 /* CONTENT */
+/* #first{
+    height: calc(100vh - 3rem);
+} */
+
+#first > img{
+    aspect-ratio: 1024 / 1448;
+    height: calc(100vh - 6rem);
+    width: auto;
+}
+
+
+
+
 #aukeama-container{
     grid-column: 1 / 9;
     width: 100%;
