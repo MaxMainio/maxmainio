@@ -485,7 +485,7 @@ article{
 .rv-juliste{
     position: absolute;
     inset: 0 auto auto 0;
-    width: 100%;
+    max-height: 100%;
     max-width: 1220px;
 }
 
