@@ -214,12 +214,6 @@ h1{
     margin: 0;
 }
 
-/* .title{
-    font-weight: 600;
-    font-size: 3rem;
-    line-height: 3rem;
-} */
-
 h2{
     font-weight: 500;
     font-size: 0.8rem;
@@ -246,11 +240,6 @@ p{
 
     margin: 0;
 }
-
-/* .work-p{
-    margin-top: 0.5rem;
-    max-width: 60ch;
-} */
 
 a{
     text-decoration: none;
