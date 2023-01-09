@@ -436,7 +436,7 @@ article{
 
 
 
-/* Crosswalk Poetics */
+/* CROSSWALK POETICS */
 .center-flex{
     display: flex;
     flex-direction: column;
@@ -472,32 +472,29 @@ article{
 
 
 
-/* Digital Overprint */
+/* DIGITSL OVERPRINT */
 .vertical-flex{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 
-.do-wrapper{
-    height: 28vw;
-    max-height: 20%;
-    display: flex;
-    align-items: center;
-    overflow: hidden;
+.vertical-flex a:nth-child(2){
+    clip-path: inset(0 12.5% 0 12.5%);
 }
 
-.justify-center{
-    justify-content: center;
+.vertical-flex a:nth-child(3){
+    clip-path: inset(0 0 0 40%);
 }
 
-.justify-end{
-    justify-content: end;
+.vertical-flex a:nth-child(4){
+    clip-path: inset(0 12.5% 0 50%);
 }
 
-.do-img{
-    width: 100vw;
-    max-width: 2560px;
+.vertical-flex img{
+    width: 100%;
+    height: 20vh;
+    object-fit: cover;
 }
 
 
