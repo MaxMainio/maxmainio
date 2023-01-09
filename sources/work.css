@@ -568,7 +568,7 @@ article{
 
 
 
-/* HomoDeus */
+/* HOMODEUS */
 .homodeus-positioning{
     position: absolute;
     inset: 0;
@@ -635,33 +635,32 @@ article{
 
 
 /* My Desktop is My Home */
-/* Collages */
-.content.horizontal-flex{
+/* COLLAGES */
+.horizontal-flex{
     display: flex;
     justify-content: space-between;
     gap: 1rem;
     padding: 0 1rem;
 }
 
-.collages{
-    width: auto;
+.horizontal-flex a{
     max-width: 683px;
 }
 
-.collages.one{
+.horizontal-flex a:nth-child(1){
     margin-bottom: auto;
     margin-top: auto;
 }
 
-.collages.two{
+.horizontal-flex a:nth-child(2){
     margin-bottom: auto;
 }
 
-.collages.three{
+.horizontal-flex a:nth-child(3){
     margin-top: auto;
 }
 
-.collage-img{
+.horizontal-flex img{
     width: 100%;
 }
 
