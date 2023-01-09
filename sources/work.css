@@ -152,6 +152,13 @@ article{
     height: 33vh;
 }
 
+.center-flex{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
 
 
 
@@ -261,24 +268,10 @@ article{
 
 
 
-.generative-flex{
-    position: absolute;
-    height: 100vh;
-    width: 100vw;
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 0 1rem;
-    inset: 0;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    pointer-events: none;
-}
-
 .generative-window{
-    width: 75%;
+    aspect-ratio: 1864 / 1165;
+    max-width: 75%;
+    max-height: 50%;
     pointer-events: all;
 }
 
@@ -437,13 +430,6 @@ article{
 
 
 /* CROSSWALK POETICS */
-.center-flex{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
 .crosswalk-content{
     position: relative;
     max-height: 100%;
@@ -472,7 +458,7 @@ article{
 
 
 
-/* DIGITSL OVERPRINT */
+/* DIGITAL OVERPRINT */
 .vertical-flex{
     display: flex;
     flex-direction: column;
@@ -672,7 +658,7 @@ article{
 
 
 
-/* Drawing */
+/* DRAWING */
 .drawing-external{
     position: absolute;
     display: none;
@@ -684,6 +670,10 @@ article{
     pointer-events: none;
 }
 
+.drawing-external a:hover{
+    background-color: rgba(0, 0, 0, 0);
+}
+
 .grass{
     position: absolute;
     inset: auto auto 0 0;
@@ -691,10 +681,6 @@ article{
     margin-bottom: 2rem;
 
     pointer-events: all;
-}
-
-.grass:hover{
-    background-color: rgba(0, 0, 0, 0);
 }
 
 .feet{
@@ -706,9 +692,7 @@ article{
     pointer-events: all;
 }
 
-.feet:hover{
-    background-color: rgba(0, 0, 0, 0);
-}
+
 
 .drawing-out{
     position: absolute;
@@ -717,6 +701,10 @@ article{
     max-width: 2560px;
 
     pointer-events: none;
+}
+
+.drawing-out a:hover{
+    background-color: rgba(0, 0, 0, 0);
 }
 
 .history-class{
@@ -728,10 +716,6 @@ article{
     pointer-events: all;
 }
 
-.history-class:hover{
-    background-color: rgba(0, 0, 0, 0);
-}
-
 .balcony{
     aspect-ratio: 5 / 4;
     height: 40%;
@@ -741,18 +725,7 @@ article{
     pointer-events: all;
 }
 
-.balcony:hover{
-    background-color: rgba(0, 0, 0, 0);
-}
 
-.drawing-center{
-    height: 100%;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
 
 .dumari{
     aspect-ratio: 4 / 5;
