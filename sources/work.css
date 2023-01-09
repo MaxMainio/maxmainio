@@ -484,7 +484,7 @@ article{
 }
 
 .vertical-flex a:nth-child(3){
-    clip-path: inset(0 0 0 40%);
+    clip-path: inset(0 0 0 33%);
 }
 
 .vertical-flex a:nth-child(4){
