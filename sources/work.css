@@ -59,6 +59,7 @@ html{
 /* INDEX */
 #index-btn{
     grid-column: 6;
+    margin-right: auto;
 }
 
 #index{
