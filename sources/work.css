@@ -532,7 +532,7 @@ article{
 
 .acetate-parot{
     position: absolute;
-    inset: 0 auto auto -2.5rem;
+    inset: 0 auto auto -2%;
     height: 60vh;
     mix-blend-mode: multiply;
     pointer-events: all;
