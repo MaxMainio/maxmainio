@@ -3,34 +3,36 @@
     mix-blend-mode: multiply;
 }
 
-#second{
+
+
+#content div:nth-child(2){
     grid-column: 1 / 4;
 }
 
-#third{
+#content div:nth-child(3){
     grid-column: 4 / 7;
 }
 
-#fourth{
+#content div:nth-child(4){
     grid-column: 7 / 9;
 }
 
-#fifth{
+#content div:nth-child(5){
     grid-column: 2 / 4;
 }
 
-#sixth{
+#content div:nth-child(6){
     grid-column: 5 / 7;
 }
 
-#seventh{
+#content div:nth-child(7){
     grid-column: 1 / 4;
 }
 
-#eighth{
+#content div:nth-child(8){
     grid-column: 4 / 7;
 }
 
-#ninth{
+#content div:nth-child(9){
     grid-column: 8 / 9;
 }
