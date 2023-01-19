@@ -1,16 +1,15 @@
 /* MAIN */
-
-main{
-    position: fixed;
-}
-
 #content{
     display: flex;
     flex-wrap: wrap;
+    height: 100vh;
+    overflow: hidden;
     gap: 0;
+    padding: 3rem 0 0 0;
 }
 
 .draggable{
+    aspect-ratio: 1 / 1;
     width: 50%;
     max-width: 800px;
     cursor: grab;

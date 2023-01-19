@@ -74,6 +74,11 @@ p{
 
 /* CONTENT */
 #content{
+    position: relative;
+    width: 100%;
+    max-width: 2560px;
+    margin: 0 auto 0 auto;
+
     display: grid;
     grid-template-columns: repeat(8, 1fr);
     column-gap: 1rem;
