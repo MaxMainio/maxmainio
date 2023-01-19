@@ -82,6 +82,10 @@ body{
     color: var(--type-color);
 }
 
+::selection{
+    background: var(--green);
+}
+
 
 
 
