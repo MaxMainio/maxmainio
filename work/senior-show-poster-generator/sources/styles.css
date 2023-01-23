@@ -1,0 +1,25 @@
+:root{
+    --color: #00ff00;
+}
+
+*{
+    margin: 0;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+div{
+    height: 100%;
+    background-color: #00ff00;
+}
+
+h1, h2, h3{
+    /* font-size: calc(100vw / 5); */
+    white-space: nowrap;
+}
