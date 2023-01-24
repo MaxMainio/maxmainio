@@ -1,6 +1,6 @@
 @font-face {
     font-family: "stretch";
-    src: url('assets/NewFontVF.woff2') format('woff2');
+    src: url('../assets/NewFontVF.woff2') format('woff2');
 }
 
 *{
@@ -38,7 +38,8 @@ h2{
     font-family: stretch;
     font-style: normal;
     font-size: 20vh;
-    font-weight: 10;
+    font-weight: normal;
+    font-variation-settings: 'wdth' 300;
 }
 
 p{
