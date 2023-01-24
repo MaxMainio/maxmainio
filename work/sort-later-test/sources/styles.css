@@ -1,6 +1,6 @@
 @font-face {
-    font-family: "illegible";
-    src: url('assets/Illegible-VariableVF.woff2') format('woff2');
+    font-family: "stretch";
+    src: url('assets/NewFontVF.woff2') format('woff2');
 }
 
 *{
@@ -28,11 +28,37 @@ body{
 
 
 /* h1{
-    font-family: illegible, snas;
+    font-family: illegible, sans;
     font-style: normal;
     font-size: 8rem;
     font-weight: 10;
 } */
+
+h2{
+    font-family: stretch;
+    font-style: normal;
+    font-size: 20vh;
+    font-weight: 10;
+}
+
+p{
+    letter-spacing: 2px;
+    display: inline-block;
+    font-size: 32px;
+    transform: scaleY(5);
+    transform-origin: 0 0;
+    margin-bottom: -50%;
+}
+
+span{
+    /* transform: scale(2,1); */
+    display: inline-block;
+    -webkit-transform:scale(2,1); /* Safari and Chrome */
+    -moz-transform:scale(2,1); /* Firefox */
+    -ms-transform:scale(2,1); /* IE 9 */
+    -o-transform:scale(2,1); /* Opera */
+    transform:scale(2,1); /* W3C */
+}
 
 
 
