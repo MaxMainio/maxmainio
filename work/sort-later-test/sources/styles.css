@@ -1,3 +1,8 @@
+@font-face {
+    font-family: "illegible";
+    src: url('assets/Illegible-VariableVF.woff2') format('woff2');
+}
+
 *{
     margin: 0;
 }
@@ -18,6 +23,16 @@ body{
     height: 100%;
 } */
 
+
+
+
+
+/* h1{
+    font-family: illegible, snas;
+    font-style: normal;
+    font-size: 8rem;
+    font-weight: 10;
+} */
 
 
 
@@ -84,10 +99,6 @@ img{
     .student-container{
         display: block;
         position: relative;
-
-        /* position: absolute;
-        width: 50%;
-        inset: auto 0 0 auto; */
 
         grid-column: 6 / 9;
         grid-row: 5 / 6;
