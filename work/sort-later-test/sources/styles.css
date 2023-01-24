@@ -11,8 +11,7 @@ body{
 }
 
 div{
-    height: 10%;
-    background-color: green;
+    height: calc(100% / 5);
 }
 
 img{
