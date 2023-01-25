@@ -5,8 +5,12 @@ const innerLinks = document.querySelectorAll('a:not([target="_self"], [target="_
 const faderElement = document.querySelector('#fader');
 
 // TRIGGER FADER WHEN ENTERING AND EXITING EACH PAGE
-document.addEventListener("DOMContentLoaded", ready);
+let userAgentString = navigator.userAgent;
 
-function ready(){
-    console.log('loaded');
-}
+let chromeAgent = userAgentString.indexOf("Chrome") > -1;
+
+console.log(userAgentString);
+
+// function ready(){
+//     console.log('loaded');
+// }
