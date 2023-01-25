@@ -1,7 +1,24 @@
+:root{
+    --out-width: 2560px;
+    --in-width: 1400px;
+    --half-width: calc(1400px / 2);
+}
+
+
+
+
+
+
+
+
+
+
+
+
 article{
     position: relative;
     width: 100%;
-    max-width: 2560px;
+    max-width: var(--out-width);
     margin: 0 auto;
 
     display: grid;
@@ -18,7 +35,7 @@ article{
     position: sticky;
     top: 0;
     width: 100%;
-    max-width: calc(700px - 0.5rem);
+    max-width: calc(var(--half-width) - 0.5rem);
     margin: 0 0 0 auto;
     padding: 3rem 0 0 1rem;
 }
@@ -26,7 +43,8 @@ article{
 .work-div{
     width: 100%;
     z-index: 1;
-    mix-blend-mode: multiply;
+    
+    /* mix-blend-mode: multiply; */
 }
 
 img{
@@ -109,7 +127,7 @@ footer{
     grid-template-columns: repeat(3, 1fr);
 
     width: 100%;
-    max-width: calc(700px - 0.5rem);
+    max-width: calc(var(--half-width) - 0.5rem);
 
     margin: 0 0 0 auto;
     padding: 1rem 0 1rem 1rem;
@@ -122,7 +140,7 @@ footer{
 
 #footer-gradient div{
     width: 100%;
-    max-width: calc(700px - 0.5rem);
+    max-width: calc(var(--half-width) - 0.5rem);
     height: 100%;
     display: flex;
     flex-direction: column;
