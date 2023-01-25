@@ -10,7 +10,7 @@
 
 
 
-main {
+main{
     animation: fadeInAnimation ease 01s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
@@ -22,6 +22,15 @@ main {
     }
     100% {
         opacity: 1;
+     }
+}
+
+@keyframes fadeOutAnimation {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
      }
 }
 
