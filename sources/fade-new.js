@@ -11,7 +11,6 @@ const faderElement = document.querySelector('#fader');
 innerLinks.forEach(item => {
     item.addEventListener('click', e => {
         e.preventDefault();
-
         fadeOut(e);
     })
 })
@@ -25,42 +24,55 @@ innerLinks.forEach(item => {
 
 
 
-
-var t = setInterval(fadeCheck,1);
-
-function fadeCheck() {
-    console.log('hello')
-    if (faderElement.classList.contains('motion')) {
-        fadeIn();
-    } else {
-        clearInterval(t);
-    }
-}
-
-function fadeIn() {
-    faderElement.classList.remove('motion');
-
-    setTimeout(() => {
-        faderElement.remove();
-        clearInterval(t);
-    }, 500);
-}
+const d = new Date();
+let ms = d.getMilliseconds();
+console.log(ms);
+// document.getElementById("demo").innerHTML = ms;
 
 
 
 
 
-function fadeOut(e){
-    var target = e.currentTarget.href;
-    const faderDiv = document.createElement('div');
-    faderDiv.classList.add('fader');
 
-    document.body.append(faderDiv);
-    setTimeout(() => {
-        faderDiv.classList.add('motion');
-    }, 1);
 
-    setTimeout(() => {
-        window.location.href = target;
-    }, 499);
-}
+
+
+// var t = setInterval(fadeCheck,1);
+
+
+// function fadeCheck() {
+//     console.log('hello')
+//     if (faderElement.classList.contains('motion')) {
+//         fadeIn();
+//     } else {
+//         clearInterval(t);
+//     }
+// }
+
+// function fadeIn() {
+//     faderElement.classList.remove('motion');
+
+//     setTimeout(() => {
+//         faderElement.remove();
+//         clearInterval(t);
+//     }, 500);
+// }
+
+
+
+
+
+// function fadeOut(e){
+//     var target = e.currentTarget.href;
+//     const faderDiv = document.createElement('div');
+//     faderDiv.classList.add('fader');
+
+//     document.body.append(faderDiv);
+//     setTimeout(() => {
+//         faderDiv.classList.add('motion');
+//     }, 1);
+
+//     setTimeout(() => {
+//         window.location.href = target;
+//     }, 499);
+// }
