@@ -325,31 +325,24 @@ article{
     pointer-events: none;
 }
 
-.playlist-out-grid a:nth-child(1){
+.attempt-omega{
     grid-area: 1 / 1;
     margin-right: auto;
 }
 
-.playlist-out-grid a:nth-child(2){
+.shitty-music{
     grid-area: 4 / 4;
     margin-left: auto;
 }
 
-.playlist-out-grid a:nth-child(3){
+.no-pants-allowed{
     grid-area: 6 / 8;
     margin-left: auto;
 }
 
-.playlist-out-grid a:nth-child(4){
+.shrigma{
     grid-area: 8 / 6;
     margin-left: auto;
-}
-
-.playlist-out-grid img{
-    aspect-ratio: 1 / 1;
-    max-width: 100%;
-    max-height: 100%;
-    pointer-events: all;
 }
 
 
@@ -371,21 +364,14 @@ article{
     pointer-events: none;
 }
 
-.playlist-mid-grid a:nth-child(1){
+.ineffability{
     grid-area: 2 / 1 / 4 / 3;
     margin-right: auto;
 }
 
-.playlist-mid-grid a:nth-child(2){
+.important-to-the-people{
     grid-area: 7 / 7 / 9 / 9;
     margin-left: auto;
-}
-
-.playlist-mid-grid img{
-    aspect-ratio: 1 / 1;
-    max-width: 100%;
-    max-height: 100%;
-    pointer-events: all;
 }
 
 
@@ -407,17 +393,17 @@ article{
     pointer-events: none;
 }
 
-.playlist-in-grid a:nth-child(1){
+.three-euros{
     grid-area: 5 / 2 / 8 / 5;
     margin-left: auto;
 }
 
-.playlist-in-grid a:nth-child(2){
+.boilingpot{
     grid-area: 3 / 5 / 6 / 8;
     margin-right: auto;
 }
 
-.playlist-in-grid img{
+#playlist-covers img{
     aspect-ratio: 1 / 1;
     max-width: 100%;
     max-height: 100%;
