@@ -481,6 +481,21 @@ article{
 
 
 /* Acetate Melt */
+#acetate-melt a{
+    pointer-events: all;
+}
+
+#acetate-melt a:hover{
+    background-color: rgba(0, 0, 0, 0);
+}
+
+#acetate-melt img{
+    width: 100%;
+    mix-blend-mode: multiply;
+}
+
+
+
 .acetate-out-container{
     position: absolute;
     height: 100vh;
@@ -495,29 +510,14 @@ article{
     pointer-events: none;
 }
 
-.acetate-out-container a{
-    pointer-events: all;
-}
-
-.acetate-out-container a:hover{
-    background-color: rgba(0, 0, 0, 0);
-}
-
-.acetate-out-container a:nth-child(1){
-    /* Cattle */
+.cattle{
     width: 20%;
     margin: auto 0 5% 0;
 }
 
-.acetate-out-container a:nth-child(2){
-    /* Tape */
+.waterfall{
     width: 12%;
     margin: 5% 0 auto 0;
-}
-
-.acetate-out-container img{
-    width: 100%;
-    mix-blend-mode: multiply;
 }
 
 
@@ -537,30 +537,17 @@ article{
     pointer-events: none;
 }
 
-.acetate-in-container a{
-    pointer-events: all;
-}
-
-.acetate-in-container a:hover{
-    background-color: rgba(0, 0, 0, 0);
-}
-
-.acetate-in-container a:nth-child(1){
-    /* Parrot */
+.parrot{
     width: 25%;
     margin: 0 0 auto 0;
 }
 
-.acetate-in-container a:nth-child(2){
-    /* Plane */
+.plane{
     width: 25%;
     margin: auto 0 0 0;
 }
 
-.acetate-in-container img{
-    width: 100%;
-    mix-blend-mode: multiply;
-}
+
 
 .acetate-center{
     display: flex;
@@ -570,18 +557,8 @@ article{
 }
 
 .acetate-center a{
-    /* Gardener */
     pointer-events: all;
     width: 30%;
-}
-
-.acetate-center a:hover{
-    background-color: rgba(0, 0, 0, 0);
-}
-
-.acetate-center img{
-    width: 100%;
-    mix-blend-mode: multiply;
 }
 
 
