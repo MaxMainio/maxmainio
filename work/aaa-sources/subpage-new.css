@@ -1,4 +1,9 @@
 :root{
+    --type-color:#333;
+    --green: #00ff00;
+
+    --shadow: 0px 0px 50px rgba(0, 0, 0, 0.1);
+    
     --out-width: 2560px;
     --in-width: 1400px;
     --half-width: calc(1400px / 2);
@@ -12,11 +17,7 @@
 
 
 
-
-
-
-
-
+/* CONTENT */
 article{
     position: relative;
     width: 100%;
@@ -29,12 +30,13 @@ article{
     row-gap: 4rem;
 }
 
-.context{
+.leftoid{
     grid-column: 1 / 5;
 }
 
-.context-container{
+.context{
     position: sticky;
+    position: -webkit-sticky;
     top: 0;
     width: 100%;
     max-width: calc(var(--half-width) - 0.5rem);
@@ -45,8 +47,6 @@ article{
 .work-div{
     width: 100%;
     z-index: 1;
-
-    /* mix-blend-mode: multiply; */
 }
 
 img{

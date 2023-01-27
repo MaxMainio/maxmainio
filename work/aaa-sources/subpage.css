@@ -171,7 +171,7 @@ footer{
 
 
 /* MEDIA QUERIES */
-@media (max-width: 1000px) {
+/* @media (max-width: 1000px) {
     #context-wrapper{
         grid-column: 1 / 5;
     }
@@ -210,4 +210,4 @@ footer{
     .work-div{
         margin-bottom: 4rem;
     }
-}
+} */

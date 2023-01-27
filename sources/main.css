@@ -67,6 +67,12 @@
 :root{
     --type-color:#333;
     --green: #00ff00;
+
+    --shadow: 0px 0px 50px rgba(0, 0, 0, 0.1);
+
+    --out-width: 2560px;
+    --in-width: 1400px;
+    --half-width: calc(1400px / 2);
 }
 
 *, *::before, *::after{
@@ -108,7 +114,7 @@ header{
 }
 
 nav{
-    max-width: 1400px;
+    max-width: var(--in-width);
     margin: 1rem auto;
     padding: 0 1rem;
 
@@ -193,11 +199,11 @@ a img {
 }
 
 .shadow{
-    box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--shadow);
 }
 
 .drop-shadow{
-    filter: drop-shadow(0px 0px 50px rgba(0, 0, 0, 0.1));
+    filter: drop-shadow(var(--shadow));
 }
 
 
