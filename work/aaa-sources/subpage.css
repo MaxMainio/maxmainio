@@ -1,35 +1,62 @@
-/* CONTEXT */
-#context{
+/* HTML */
+:root{
+    --type-color:#333;
+    --green: #00ff00;
+
+    --shadow: 0px 0px 50px rgba(0, 0, 0, 0.1);
+
+    --out-width: 2560px;
+    --in-width: 1400px;
+    --half-width: calc(1400px / 2);
+}
+
+
+
+
+
+
+
+
+
+/* CONTENT */
+article{
+    position: relative;
+    width: 100%;
+    max-width: var(--out-width);
+    margin: 0 auto;
+
     display: grid;
     grid-template-columns: repeat(8, 1fr);
-    gap: 1rem;
-
-    position: absolute;
-    max-width: 1400px;
-
-    margin: 0 auto;
-    padding: 3rem 1rem 0 1rem;
-    inset: 0 0 auto 0;
-
-    overflow: visible;
+    column-gap: 1rem;
+    row-gap: 4rem;
 }
 
-#context-track{
-    position: relative;
-    grid-column: 1 / 4;
-    margin: 0;
-    inset: 0;
-
-    z-index: 1;
-    overflow: visible;
+.leftoid{
+    grid-column: 1 / 5;
 }
 
-#context-wrapper{
-    position: -webkit-sticky; /* Safari */
+.context{
     position: sticky;
-    top: 3rem;
+    position: -webkit-sticky;
+    top: 0;
+    width: 100%;
+    max-width: calc(var(--half-width) - 0.5rem);
+    margin: 0 0 0 auto;
+    padding: 3rem 0 0 1rem;
+}
 
-    overflow: visible;
+.work-div{
+    width: 100%;
+    z-index: 1;
+}
+
+img{
+    width: 100%;
+}
+
+#first{
+    margin-top: 3rem;
+    grid-column: 5 / 9;
 }
 
 
@@ -57,6 +84,14 @@
     font-size: 1rem;
     line-height: 1rem;
     letter-spacing: 0.75px;
+    margin-top: 3rem;
+}
+
+.work-div h1{
+    font-weight: 600;
+    font-size: 2rem;
+    line-height: 2rem;
+    margin-top: 1rem;
 }
 
 p{
@@ -72,93 +107,48 @@ p{
 
 
 
-/* CONTENT */
-#content{
-    position: relative;
-    width: 100%;
-    max-width: 2560px;
-    margin: 0 auto 0 auto;
-
-    display: grid;
-    grid-template-columns: repeat(8, 1fr);
-    column-gap: 1rem;
-    row-gap: 4rem;
-    padding: 3rem 1rem 1rem 1rem;
-    height: auto;
-}
-
-.work-div{
-    width: 100%;
-    z-index: 1;
-}
-
-img{
-    width: 100%;
-}
-
-.work-div h1{
-    font-weight: 600;
-    font-size: 2rem;
-    line-height: 2rem;
-    margin-top: 1rem;
-}
-
-#first{
-    grid-column: 5 / 9;
-}
-
-
-
-
-
-
-
-
-
 /* FOOTER */
 footer{
     height: 75vh;
+
     display: flex;
     flex-direction: column-reverse;
     position: relative;
 }
 
-#footer-gradient{
-    width: calc(50% - 0.5rem);
-    position: absolute;
-    inset: auto 0 0 auto;
-    
-    background-image: linear-gradient(to top, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1)), url(../../assets/support/footer/ice-bliss.jpg);
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    overflow: hidden;
-
-    z-index: 0;
+#footer{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
 }
 
-.footer-section{
+#footer-nav{
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 1rem;
+    grid-template-columns: repeat(3, 1fr);
 
     width: 100%;
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 1rem;
+    max-width: calc(var(--half-width) - 0.5rem);
 
-    z-index: 1;
+    margin: 0 0 0 auto;
+    padding: 1rem 0 1rem 1rem;
 }
 
-#footer-final{
-    grid-column: 4 / 7;
+#footer-gradient{
+    grid-column: 2 / 3;
+    background-image: linear-gradient(to top, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1)), url(../../assets/support/footer/ice-bliss.jpg);
+}
+
+#footer-gradient div{
+    width: 100%;
+    max-width: calc(var(--half-width) - 0.5rem);
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: end;
+    padding: 0 1rem 1rem 0;
 }
 
-#footer-final > h3{
+#footer-gradient h3{
     text-align: right;
 }
 
@@ -171,15 +161,7 @@ footer{
 
 
 /* MEDIA QUERIES */
-/* @media (max-width: 1000px) {
-    #context-wrapper{
-        grid-column: 1 / 5;
-    }
-
-    #title{
-        width: 50vw;
-    }
-
+@media (max-width: 1000px) {
     .footer-section{
         display: flex;
         flex-direction: column;
@@ -189,25 +171,3 @@ footer{
         display: none;
     }
 }
-
-
-@media (max-width: 685px) {
-    #context{
-        display: block;
-        position: relative;
-    }
-
-    #title{
-        position: static;
-        width: auto;
-    }
-
-    #content{
-        display: block;
-        padding-top: 4rem;
-    }
-
-    .work-div{
-        margin-bottom: 4rem;
-    }
-} */

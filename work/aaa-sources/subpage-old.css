@@ -1,0 +1,213 @@
+/* CONTEXT */
+#context{
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 1rem;
+
+    position: absolute;
+    max-width: 1400px;
+
+    margin: 0 auto;
+    padding: 3rem 1rem 0 1rem;
+    inset: 0 0 auto 0;
+
+    overflow: visible;
+}
+
+#context-track{
+    position: relative;
+    grid-column: 1 / 4;
+    margin: 0;
+    inset: 0;
+
+    z-index: 1;
+    overflow: visible;
+}
+
+#context-wrapper{
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 3rem;
+
+    overflow: visible;
+}
+
+
+
+
+
+
+
+
+
+/* TYPE */
+#title{
+    font-weight: 600;
+    font-size: 3rem;
+
+    line-height: 4rem;
+    margin: -0.5rem 0;
+    position: fixed;
+
+    overflow: visible;
+}
+
+#sub-title{
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1rem;
+    letter-spacing: 0.75px;
+}
+
+p{
+    margin-top: 0.5rem;
+    max-width: 60ch;
+}
+
+
+
+
+
+
+
+
+
+/* CONTENT */
+#content{
+    position: relative;
+    width: 100%;
+    max-width: 2560px;
+    margin: 0 auto 0 auto;
+
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    column-gap: 1rem;
+    row-gap: 4rem;
+    padding: 3rem 1rem 1rem 1rem;
+    height: auto;
+}
+
+.work-div{
+    width: 100%;
+    z-index: 1;
+}
+
+img{
+    width: 100%;
+}
+
+.work-div h1{
+    font-weight: 600;
+    font-size: 2rem;
+    line-height: 2rem;
+    margin-top: 1rem;
+}
+
+#first{
+    grid-column: 5 / 9;
+}
+
+
+
+
+
+
+
+
+
+/* FOOTER */
+footer{
+    height: 75vh;
+    display: flex;
+    flex-direction: column-reverse;
+    position: relative;
+}
+
+#footer-gradient{
+    width: calc(50% - 0.5rem);
+    position: absolute;
+    inset: auto 0 0 auto;
+    
+    background-image: linear-gradient(to top, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1)), url(../../assets/support/footer/ice-bliss.jpg);
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    overflow: hidden;
+
+    z-index: 0;
+}
+
+.footer-section{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 1rem;
+
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 1rem;
+
+    z-index: 1;
+}
+
+#footer-final{
+    grid-column: 4 / 7;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+}
+
+#footer-final > h3{
+    text-align: right;
+}
+
+
+
+
+
+
+
+
+
+/* MEDIA QUERIES */
+/* @media (max-width: 1000px) {
+    #context-wrapper{
+        grid-column: 1 / 5;
+    }
+
+    #title{
+        width: 50vw;
+    }
+
+    .footer-section{
+        display: flex;
+        flex-direction: column;
+    }
+
+    #footer-final{
+        display: none;
+    }
+}
+
+
+@media (max-width: 685px) {
+    #context{
+        display: block;
+        position: relative;
+    }
+
+    #title{
+        position: static;
+        width: auto;
+    }
+
+    #content{
+        display: block;
+        padding-top: 4rem;
+    }
+
+    .work-div{
+        margin-bottom: 4rem;
+    }
+} */

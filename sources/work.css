@@ -674,6 +674,21 @@ article{
 
 
 /* DRAWING */
+#drawings{
+    pointer-events: none;
+}
+
+#drawings a{
+    background-color: rgba(0, 0, 0, 0);
+    pointer-events: all;
+}
+
+#drawings img{
+    width: 100%;
+}
+
+
+
 .drawing-external{
     position: absolute;
     display: none;
@@ -685,17 +700,11 @@ article{
     pointer-events: none;
 }
 
-.drawing-external a:hover{
-    background-color: rgba(0, 0, 0, 0);
-}
-
 .grass{
     position: absolute;
     inset: auto auto 0 0;
     width: 400px;
     margin-bottom: 2rem;
-
-    pointer-events: all;
 }
 
 .feet{
@@ -703,8 +712,6 @@ article{
     inset: 0 0 auto auto;
     width: 400px;
     margin-top: 2rem;
-
-    pointer-events: all;
 }
 
 
@@ -718,17 +725,11 @@ article{
     pointer-events: none;
 }
 
-.drawing-out a:hover{
-    background-color: rgba(0, 0, 0, 0);
-}
-
 .history-class{
     aspect-ratio: 5 / 4;
     height: 40%;
     position: absolute;
     inset: 0 auto auto 0;
-
-    pointer-events: all;
 }
 
 .balcony{
@@ -736,8 +737,6 @@ article{
     height: 40%;
     position: absolute;
     inset: auto 0 0 auto;
-
-    pointer-events: all;
 }
 
 
@@ -746,10 +745,6 @@ article{
     aspect-ratio: 4 / 5;
     max-height: 75%;
     max-width: 50%;
-}
-
-.dumari:hover{
-    background-color: rgba(0, 0, 0, 0);
 }
 
 
@@ -883,17 +878,5 @@ article{
 
     #index{
         display: none;
-    }
-}
-
-@media (max-width: 800px) {
-    .acetate-parot{
-        inset: 0 10vh auto 0;
-        height: 50vh;
-    }
-
-    .acetate-plane{
-        inset: auto 0 10vh auto;
-        height: 40vh;
     }
 }
