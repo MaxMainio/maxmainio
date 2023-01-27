@@ -1,8 +1,8 @@
 /* MAIN */
-#content div:nth-child(2){
+article .work-div:nth-child(3){
     grid-column: 1 / 9;
 }
 
-#content div:nth-child(3){
+article .work-div:nth-child(4){
     grid-column: 1 / 5;
 }
