@@ -1,10 +1,10 @@
 /* CONTENT */
-#content div:nth-child(2){
-    grid-column: 2 / 4;
+article .work-div:nth-child(3){
+    grid-column: 1 / 4;
 }
 
-#content div:nth-child(3){
-    grid-column: 4 / 7;
+article .work-div:nth-child(4){
+    grid-column: 4 / 8;
 }
 
 
@@ -17,11 +17,11 @@
 
 /* MEDIA QUERIES */
 @media (max-width: 1000px) {
-    #content div:nth-child(2){
+    article .work-div:nth-child(3){
         grid-column: 1 / 4;
     }
 
-    #content div:nth-child(3){
+    article .work-div:nth-child(4){
         grid-column: 4 / 9;
     }
 }

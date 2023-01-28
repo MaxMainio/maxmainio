@@ -1,16 +1,16 @@
 /* CONTENT */
-#content div:nth-child(2){
+.skatta{
     grid-column: 1 / 5;
 }
 
-#content div:nth-child(3){
+.dumari{
     grid-column: 5 / 9;
 }
 
-#content div:nth-child(4){
+.balcony{
     grid-column: 1 / 5;
 }
 
-#content div:nth-child(5){
+.history-class{
     grid-column: 5 / 9;
 }
