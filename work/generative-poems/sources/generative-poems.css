@@ -1,8 +1,4 @@
 /* CONTENT */
-article{
-    padding: 0 1rem;
-}
-
 article .work-div:nth-child(3){
     grid-column: 1 / 2;
 }
