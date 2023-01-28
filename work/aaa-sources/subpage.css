@@ -94,10 +94,18 @@ img{
     margin-top: 1rem;
 }
 
+/* h1 + p, h2 + p{
+    margin-top: 0.5rem;
+} */
+
 p{
     margin-top: 0.5rem;
     max-width: 60ch;
 }
+
+/* p + p{
+    text-indent: 2rem;
+} */
 
 
 
