@@ -1,38 +1,46 @@
 /* CONTENT */
-#content{
+.work-div{
     mix-blend-mode: multiply;
 }
 
-
-
-#content div:nth-child(2){
-    grid-column: 1 / 4;
+.gimp{
+    grid-column: 1 / 6;
 }
 
-#content div:nth-child(3){
-    grid-column: 4 / 7;
-}
-
-#content div:nth-child(4){
+.gardener{
     grid-column: 7 / 9;
 }
 
-#content div:nth-child(5){
-    grid-column: 2 / 4;
-}
-
-#content div:nth-child(6){
-    grid-column: 5 / 7;
-}
-
-#content div:nth-child(7){
+.plane{
     grid-column: 1 / 4;
 }
 
-#content div:nth-child(8){
-    grid-column: 4 / 7;
+.mountain{
+    grid-column: 5 / 7;
 }
 
-#content div:nth-child(9){
+.waterfall{
     grid-column: 8 / 9;
+    margin-top: auto;
+}
+
+.parrot-0{
+    grid-column: 2 / 5;
+}
+
+.nature-2{
+    grid-column: 6 / 8;
+}
+
+.cattle-1{
+    grid-column: 1 / 4;
+    margin-top: auto;
+}
+
+.nature-4{
+    grid-column: 5 / 8;
+}
+
+.cattle-2{
+    grid-column: 6 / 9;
 }
