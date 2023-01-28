@@ -3,10 +3,6 @@ article{
     padding: 0 1rem;
 }
 
-.context{
-    padding-left: 0;
-}
-
 article .work-div:nth-child(3){
     grid-column: 1 / 2;
 }
