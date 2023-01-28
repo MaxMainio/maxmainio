@@ -1,6 +1,6 @@
 // SCROLL VID
-const canvas = document.getElementById("moss-sim");
-const context = canvas.getContext("2d");
+const canvas = document.getElementById('moss-sim');
+const context = canvas.getContext('2d');
 
 canvas.width = 800;
 canvas.height = 1000;
@@ -23,8 +23,8 @@ for (let i = 0; i < frameCount; i++) {
 
 gsap.to(moss, {
   frame: frameCount - 1,
-  snap: "frame",
-  ease: "none",
+  snap: 'frame',
+  ease: 'none',
   scrollTrigger: {
     scrub: 0.5
   },
