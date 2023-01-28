@@ -10,6 +10,7 @@
 		<link rel="stylesheet" type="text/css" href="sources/digital-overprint.css"> </link>
 
 		<script src="../../sources/fade.js" defer></script>
+		<script src="../aaa-sources/subpages.js" defer></script>
 		<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 		<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
 		<script src="sources/digital-overprint.js" defer></script>
@@ -43,43 +44,82 @@
 
 		<main>
 			<article>
-				<section id="context">
-					<div id="context-track">
-						<div id="context-wrapper">
-							<h1 id="title">Digital Overprint</h1>
-							<h2 id="sub-title" style="padding-top: 3rem;">Print and scan feedback experiment / 2021</h2>
-							<p>
-								For this experiment I printed out an AI generated face I had made in the past. I printed it at 300<a href="https://99designs.com/blog/tips/ppi-vs-dpi-whats-the-difference/" target="_blank">dpi</a> in four varying sizes: 1in<sup>2</sup>, 2in<sup>2</sup>, 4in<sup>2</sup>, & 8in<sup>2</sup>. I then scanned each at 1200<a href="https://99designs.com/blog/tips/ppi-vs-dpi-whats-the-difference/" target="_blank">ppi</a>, in Photoshop I scaled them all to the same size, overlaid them and used different <a href="https://photoshoptrainingchannel.com/blending-modes-explained/" target="_blank">blending modes</a> to mix them together.
-							</p>
-							<p>
-								I was Intrigued by the fractals that would emerge from the interaction of the varying sized ink <a href="https://smartpress.com/support/printing-basics/dot-patterns" target="_blank">halftone dot patterns</a> of the prints.
-							</p>
-							<p>
-								<span class="highlight">Click & drag around the images above to see how they interact.</span>Sadly the original print scan files are too large (189.6<a href="https://www.techopedia.com/definition/2724/megabyte-mb" target="_blank">MB</a>) to use on this site, so I had to downsize them.
-							</p>
-						</div>
+				<section class="leftoid">
+					<div class="context">
+						<h1 id="title">Digital Overprint</h1>
+						<h2 id="sub-title">Print and scan feedback experiment / 2021</h2>
+						<p>
+							For this experiment I printed out an AI generated face I had made in the past. I printed it at 300<a href="https://99designs.com/blog/tips/ppi-vs-dpi-whats-the-difference/" target="_blank">dpi</a> in four varying sizes: 1in<sup>2</sup>, 2in<sup>2</sup>, 4in<sup>2</sup>, & 8in<sup>2</sup>. I then scanned each at 1200<a href="https://99designs.com/blog/tips/ppi-vs-dpi-whats-the-difference/" target="_blank">ppi</a>, in Photoshop I scaled them all to the same size, overlaid them and used different <a href="https://photoshoptrainingchannel.com/blending-modes-explained/" target="_blank">blending modes</a> to mix them together.
+						</p>
+						<p>
+							I was Intrigued by the fractals that would emerge from the interaction of the varying sized ink <a href="https://smartpress.com/support/printing-basics/dot-patterns" target="_blank">halftone dot patterns</a> of the prints.
+						</p>
+						<p>
+							<span>Click & drag around these images to see how they interact.</span>Sadly the original print scan files are too large (189.6<a href="https://www.techopedia.com/definition/2724/megabyte-mb" target="_blank">MB</a>) to use on this site, so I had to downsize them.
+						</p>
 					</div>
 				</section>
 
-				<section id="content">
-					<img src="assets/1-inch.webp"
-						alt="AI generated face printed out at 1 by 1 inches with a resolution of 300dpi."
-						title="AI generated face printed out at 1 by 1 inches with a resolution of 300dpi. Click and drag to move this, or any other image."
-						class="draggable">
-					<img src="assets/2-inch.webp"
-						alt="AI generated face printed out at 2 by 2 inches with a resolution of 300dpi."
-						title="AI generated face printed out at 2 by 2 inches with a resolution of 300dpi. Click and drag to move this, or any other image."
-						class="draggable">
-					<img src="assets/4-inch.webp"
-						alt="AI generated face printed out at 4 by 4 inches with a resolution of 300dpi."
-						title="AI generated face printed out at 4 by 4 inches with a resolution of 300dpi. Click and drag to move this, or any other image."
-						class="draggable">
-					<img src="assets/8-inch.webp"
-						alt="AI generated face printed out at 8 by 8 inches with a resolution of 300dpi."
-						title="AI generated face printed out at 8 by 8 inches with a resolution of 300dpi. Click and drag to move this, or any other image."
-						class="draggable">
-				</section>
+				<img src="assets/1-inch.webp"
+					alt="AI generated face printed out at 1 by 1 inches with a resolution of 300dpi."
+					title="AI generated face printed out at 1 by 1 inches with a resolution of 300dpi. Click and drag to move this, or any other image."
+					class="draggable">
+				<img src="assets/2-inch.webp"
+					alt="AI generated face printed out at 2 by 2 inches with a resolution of 300dpi."
+					title="AI generated face printed out at 2 by 2 inches with a resolution of 300dpi. Click and drag to move this, or any other image."
+					class="draggable">
+				<img src="assets/4-inch.webp"
+					alt="AI generated face printed out at 4 by 4 inches with a resolution of 300dpi."
+					title="AI generated face printed out at 4 by 4 inches with a resolution of 300dpi. Click and drag to move this, or any other image."
+					class="draggable">
+				<img src="assets/8-inch.webp"
+					alt="AI generated face printed out at 8 by 8 inches with a resolution of 300dpi."
+					title="AI generated face printed out at 8 by 8 inches with a resolution of 300dpi. Click and drag to move this, or any other image."
+					class="draggable">
 			</article>
 		</main>
+
+		<footer>
+			<section id="footer">
+				<div id="footer-nav">
+					<div>
+						<h2>&#169;2023 MMB</h2>
+					</div>
+
+					<div>
+						<h2>Navigation</h2>
+						<h3><a target="_self" id="top-btn" title="Click here to be taken back to the top of this page.">Back to Top</a></h3>
+						<h3><a href="../../#generative-poems" title="Click here to return to the main work page.">Work</a></h3>
+						<h3><a href="../../about/" title="Click here to learn more about who I am.">About</a></h3>
+					</div>
+
+					<div>
+						<h2>Contact</h2>
+						<h3><a href="mailto:beidler.max@gmail.com" title="Shoot me an email!" target="_self">
+							beidler.max@gmail.com
+						</a></h3>
+						<h3><a href="https://www.are.na/max-mainio" title="This is where I collect resources, for me and anyone else to use." target="_blank">
+							Are.na
+						</a></h3>
+						<h3><a href="https://www.instagram.com/max.mainio/?hl=en" title="I really don't post on here anymore, but I'm still active otherwise." target="_blank">
+							Instagram
+						</a></h3>
+						<h3><a href="https://www.linkedin.com/in/max-beidler-101b111a3/" title="I desperately need a new profile pic..." target="_blank">
+							Linkedin
+						</a></h3>
+						<h3><a href="https://pin.it/571oY2a" title="This is where I collect design inspiration." target="_blank">
+							Pinterest
+						</a></h3>
+						<h3><a href="https://open.spotify.com/user/mliflawsee?si=08f822a9f31e4a12" title="People say ." target="_blank">
+							Spotify
+						</a></h3>
+					</div>
+				</div>
+
+				<div id="footer-gradient">
+					<div id="footer-field"></div>
+				</div>
+			</section>
+		</footer>
 	</body>
 </html>
