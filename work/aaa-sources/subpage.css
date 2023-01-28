@@ -138,7 +138,7 @@ footer{
     background-image: linear-gradient(to top, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1)), url(../../assets/support/footer/ice-bliss.jpg);
 }
 
-#footer-gradient div{
+#footer-field{
     width: 100%;
     max-width: calc(var(--half-width) - 0.5rem);
     height: 100%;
@@ -162,12 +162,37 @@ footer{
 
 /* MEDIA QUERIES */
 @media (max-width: 1000px) {
-    .footer-section{
+    #footer-nav{
         display: flex;
         flex-direction: column;
     }
 
-    #footer-final{
+    #footer-field{
         display: none;
+    }
+}
+
+@media (max-width: 685px) {
+    article{
+        display: block;
+        position: relative;
+    }
+
+    #title{
+        position: static;
+        width: auto;
+    }
+
+    #sub-title{
+        margin-top: 0;
+    }
+
+    #content{
+        display: block;
+        padding-top: 4rem;
+    }
+
+    .work-div{
+        margin-bottom: 4rem;
     }
 }
