@@ -1,0 +1,1 @@
+document.querySelector('#moss-vid').playbackRate = 0.20;

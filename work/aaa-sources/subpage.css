@@ -178,6 +178,14 @@ footer{
         position: relative;
     }
 
+    .context{
+        padding-right: 1rem;
+    }
+
+    article h1, p{
+        padding: 0 1rem;
+    }
+
     #title{
         position: static;
         width: auto;

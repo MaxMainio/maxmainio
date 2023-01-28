@@ -1,19 +1,19 @@
 /* MAIN */
-body{
+/* body{
     height: 5000px;
-}
+} */
 
-#context{
+/* #context{
     position: fixed;
-}
+} */
 
-#content{
+/* #content{
     position: fixed;
     height: 100vh;
     width: 100%;
 
     pointer-events: none;
-}
+} */
 
 .work-div{
     position: relative;
@@ -24,12 +24,24 @@ body{
 }
 
 #first{
+    /* position: fixed; */
+    /* height: 100vh; */
+
+    width: 100%;
+    height: 500vh;
+
+    pointer-events: none;
+
     grid-column: 5 / 9;
 }
 
+/* .moss-container{
+
+} */
+
 img{
-    position: absolute;
-    inset: auto 0 0 auto;
+    /* position: absolute;
+    inset: auto 0 0 auto; */
 
     height: auto;
     width: auto;
@@ -39,8 +51,8 @@ img{
 }
 
 canvas{
-    position: absolute;
-    inset: auto 0 0 auto;
+    /* position: absolute;
+    inset: auto 0 0 auto; */
 
     height: auto;
     width: auto;

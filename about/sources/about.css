@@ -1,6 +1,26 @@
+/* HTML */
+:root{
+    --type-color:#333;
+    --green: #00ff00;
+
+    --shadow: 0px 0px 50px rgba(0, 0, 0, 0.1);
+
+    --out-width: 2560px;
+    --in-width: 1400px;
+    --half-width: calc(1400px / 2);
+}
+
+
+
+
+
+
+
+
+
 /* MAIN */
 article{
-    max-width: 1400px;
+    max-width: var(--in-width);
 
     display: grid;
     grid-template-columns: repeat(6, 1fr);
@@ -20,6 +40,7 @@ article{
 
 .title-column h2{
     position: sticky;
+    position: -webkit-sticky;
     top: 3rem;
 }
 
@@ -58,6 +79,7 @@ p + p{
 
 .profile-div{
     position: sticky;
+    position: -webkit-sticky;
     top: 3rem;
 
     display: flex;

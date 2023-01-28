@@ -37,34 +37,3 @@ function render() {
   context.clearRect(0, 0, canvas.width, canvas.height);
   context.drawImage(images[moss.frame], 0, 0); 
 }
-
-
-
-
-
-
-
-
-
-// STRUCTURE
-window.onload = (event) => {
-  var vw = window.innerWidth
-  var titleHeight = document.querySelector('#title').offsetHeight;
-
-  if (vw > 685) {
-    document.querySelector('#sub-title').style.paddingTop = titleHeight + 'px';
-  } else {
-    document.querySelector('#sub-title').removeAttribute('style');
-  }
-};
-
-addEventListener('resize', e => {
-  var vw = window.innerWidth
-  var titleHeight = document.querySelector('#title').offsetHeight;
-
-  if (vw > 685) {
-    document.querySelector('#sub-title').style.paddingTop = titleHeight + 'px';
-  } else {
-    document.querySelector('#sub-title').removeAttribute('style');
-  }
-});
