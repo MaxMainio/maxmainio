@@ -221,6 +221,8 @@ article{
     pointer-events: all;
 }
 
+
+
 .generative-out-grid{
     display: grid;
     grid-template-columns: repeat(6, 1fr);
@@ -278,7 +280,7 @@ article{
     pointer-events: all;
 }
 
-.generative-window:hover{
+#generative-poems a:hover{
     background-color: rgba(0, 0, 0, 0);
 }
 
