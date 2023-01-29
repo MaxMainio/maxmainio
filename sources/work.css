@@ -493,7 +493,7 @@ article{
 
 #acetate-melt img{
     width: 100%;
-    mix-blend-mode: multiply;
+    /* mix-blend-mode: multiply; */
 }
 
 
@@ -508,7 +508,8 @@ article{
 
     display: flex;
     justify-content: space-between;
-    
+
+    mix-blend-mode: multiply;
     pointer-events: none;
 }
 
@@ -536,6 +537,7 @@ article{
     display: flex;
     justify-content: space-between;
     
+    mix-blend-mode: multiply;
     pointer-events: none;
 }
 
@@ -556,6 +558,7 @@ article{
     align-items: center;
     justify-content: center;
     height: 100vh;
+    mix-blend-mode: multiply;
 }
 
 .acetate-center a{
@@ -881,4 +884,30 @@ article{
     #index{
         display: none;
     }
+}
+
+@media (max-width: 685px) {
+    .acetate-out-container{
+        flex-direction: row-reverse;
+    }
+
+    .waterfall{
+        margin-left: 30%;
+    }
+
+    .cattle{
+        margin-right: 30%;
+    }
+
+    .parrot{
+        margin-top: 20%;
+    }
+
+    .plane{
+        margin-bottom: 20%;
+    }
+
+    .acetate-center a{
+        width: 45%;
+    }    
 }
