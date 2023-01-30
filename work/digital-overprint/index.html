@@ -49,13 +49,26 @@
 						<h1 id="title">Digital Overprint</h1>
 						<h2 id="sub-title">Print and scan feedback experiment / 2021</h2>
 						<p>
-							For this experiment I printed out an AI generated face I had made in the past. I printed it at 300<a href="https://99designs.com/blog/tips/ppi-vs-dpi-whats-the-difference/" target="_blank">dpi</a> in four varying sizes: 1in<sup>2</sup>, 2in<sup>2</sup>, 4in<sup>2</sup>, & 8in<sup>2</sup>. I then scanned each at 1200<a href="https://99designs.com/blog/tips/ppi-vs-dpi-whats-the-difference/" target="_blank">ppi</a>, in Photoshop I scaled them all to the same size, overlaid them and used different <a href="https://photoshoptrainingchannel.com/blending-modes-explained/" target="_blank">blending modes</a> to mix them together.
+							For this experiment I printed out a face I had generated with AI. I printed it with a laser printer at 300<a href="https://99designs.com/blog/tips/ppi-vs-dpi-whats-the-difference/" target="_blank">dpi</a> in four varying sizes: 1in<sup>2</sup>, 2in<sup>2</sup>, 4in<sup>2</sup>, & 8in<sup>2</sup>. I then scanned each at 1200<a href="https://99designs.com/blog/tips/ppi-vs-dpi-whats-the-difference/" target="_blank">ppi</a>, a resolution high enough to capture the individual dots of ink produced by the printer.
 						</p>
 						<p>
-							I was Intrigued by the fractals that would emerge from the interaction of the varying sized ink <a href="https://smartpress.com/support/printing-basics/dot-patterns" target="_blank">halftone dot patterns</a> of the prints.
+							In Photoshop I scaled the scans to be the same size, overlaid them, then, by using different <a href="https://photoshoptrainingchannel.com/blending-modes-explained/" target="_blank">blending modes</a> I explored how the differently-sized <a href="https://smartpress.com/support/printing-basics/dot-patterns" target="_blank">halftone dot patterns</a> of the ink would interact with each other. The intricate fractal patterns that would emerge from this interactivity were most exciting to me.
 						</p>
 						<p>
-							<span>Click & drag around these images to see how they interact.</span>Sadly the original print scan files are too large (189.6<a href="https://www.techopedia.com/definition/2724/megabyte-mb" target="_blank">MB</a>) to use on this site, so I had to downsize them.
+							<span>Drag around these four prints to explore how they interact.</span> Or change between these blending modes:
+						</p>
+
+						<p class="radio-button">
+							<input type="radio" id="multiply" name="blend-mode" value="multiply">
+							<label for="multiply">Multiply</label>,
+							<input type="radio" id="overlay" name="blend-mode" value="overlay">
+							<label for="overlay">Overlay</label>,
+							<input type="radio" id="darken" name="blend-mode" value="darken" checked>
+							<label for="darken">Darken</label>,
+							<input type="radio" id="lighten" name="blend-mode" value="lighten">
+							<label for="lighten">Lighten</label>,
+							<input type="radio" id="difference" name="blend-mode" value="difference">
+							<label for="difference">Difference</label>
 						</p>
 					</div>
 				</section>

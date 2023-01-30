@@ -1,3 +1,25 @@
+/* HTML */
+:root{
+    --type-color:#333;
+    --green: #00ff00;
+
+    --shadow: 0px 0px 50px rgba(0, 0, 0, 0.1);
+
+    --out-width: 2560px;
+    --in-width: 1400px;
+    --half-width: calc(1400px / 2);
+
+    --blend-mode: darken;
+}
+
+
+
+
+
+
+
+
+
 /* MAIN */
 article{
     row-gap: 1rem;
@@ -14,16 +36,13 @@ article{
 
 
 
-
-
-
 .draggable{
     aspect-ratio: 1 / 1;
     width: 100%;
     max-width: 800px;
     cursor: grab;
 
-    mix-blend-mode: multiply;
+    mix-blend-mode: var(--blend-mode);
 }
 
 .draggable:hover{
@@ -63,6 +82,22 @@ article img:nth-child(5){
 span{
     background-color: white;
     box-shadow: 0 0 0 4px white;
+}
+
+
+
+.radio-button input[type="radio"] {
+    display: none;
+}
+
+.radio-button label {
+    display: inline-block;
+    background-color: white;
+    cursor: pointer;
+}
+
+.radio-button input[type="radio"]:checked+label {
+    background-color: var(--green);
 }
 
 
