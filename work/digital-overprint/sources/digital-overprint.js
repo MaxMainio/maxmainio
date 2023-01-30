@@ -11,7 +11,6 @@ $( function() {
 
 
 const blends = [].slice.call(document.getElementsByName("blend-mode"));
-
 const docElements = document.querySelectorAll('.draggable');
 
 blends.forEach((radioBtn) => {

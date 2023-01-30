@@ -487,13 +487,8 @@ article{
     pointer-events: all;
 }
 
-#acetate-melt a:hover{
-    background-color: rgba(0, 0, 0, 0);
-}
-
 #acetate-melt img{
     width: 100%;
-    /* mix-blend-mode: multiply; */
 }
 
 
@@ -559,6 +554,7 @@ article{
     justify-content: center;
     height: 100vh;
     mix-blend-mode: multiply;
+    pointer-events: none;
 }
 
 .acetate-center a{
