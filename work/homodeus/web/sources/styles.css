@@ -296,11 +296,56 @@ h4{
 
 #img-column{
     grid-column: 1;
-    grid-row: 1 / 10;
+    grid-row: 1 / 30;
     width: 100%;
     height: 100%;
-    background-color: var(--green);
 }
+
+.img-div{
+    position: relative;
+}
+
+#img-column img{
+    display: block;
+    width: 100%;
+    margin-bottom: 0.5rem;
+}
+
+.arrows-container{
+    display: block;
+    position: absolute;
+    margin-left: -3rem;
+    height: 100%;
+    width: 3rem;
+    overflow: hidden;
+}
+
+.arrows-container p{
+    font-family: IGM-PlexSans;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 0.9rem;
+    line-height: 1rem;
+
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    margin: 0 0.5rem 0 auto;
+
+    color: var(--green);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 .interview-part{
@@ -319,7 +364,7 @@ h4{
     grid-column: 4 / 7;
 }
 
-.interviewee + .interviewee{
+.indent{
     text-indent: 3rem;
 }
 
