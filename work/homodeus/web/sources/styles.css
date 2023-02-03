@@ -154,8 +154,15 @@ section{
     height: 100vh;
     width: 100vw;
     margin-bottom: 4rem;
+    position: relative;
+    z-index: 10;
 
-    background-color: red;
+    background-image: linear-gradient(0deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 20%), url(../assets/support/splash.png);
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    overflow: hidden;
 }
 
 #intro{
