@@ -30,25 +30,14 @@ buttons.forEach(button => {
 var allXpBtns = document.getElementsByClassName('xp-btn');
 
 for (var i = allXpBtns.length-1; i >=0  ; i--) {
-	(function () {
-		var modal = allXpBtns[i].id + '_modal'
-		allXpBtns[i].addEventListener('click', function() { 
-			document.getElementById(modal).classList.toggle('hide')		
-		}, false)
-	}());
-}
+	allXpBtns[i].addEventListener('click', function() {
+		var modal = this.id + '_modal'
+		document.getElementById(modal).classList.toggle('hide')
 
-var elements = document.getElementsByClassName('xp-btn');
-
-for (var i = 0; i < elements.length; i++)
-{
-    elements[i].addEventListener('click', function() {
-		var selected = this.id;
-
-		if (document.getElementById(selected).innerHTML === 'More...') {
-			document.getElementById(selected).innerHTML = 'Less...';
+		if (this.innerHTML === 'More...') {
+			this.innerHTML = 'Less...'
 		} else {
-			document.getElementById(selected).innerHTML = 'More...';
+			this.innerHTML = 'More...'
 		}
-    }, true);
+	})
 }

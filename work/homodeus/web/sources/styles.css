@@ -184,6 +184,16 @@ section{
     justify-content: end;
 }
 
+.footnotes-column p{
+    font-family: IBM-Plex-Mono;
+    font-size: 0.8rem;
+    line-height: 1.05rem;
+    
+    margin-bottom: 5rem;
+
+    color: var(--green);
+}
+
 .footnote{
     font-family: IBM-Plex-Mono;
     font-size: 0.8rem;
