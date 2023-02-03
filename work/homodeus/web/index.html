@@ -11,14 +11,16 @@
 
 	<body>
 		<header>
+			<nav>
 
-		</header>
+			</nav>
 
-		<main>
 			<section id="splash">
 
 			</section>
+		</header>
 
+		<main>
 			<aside>
 				<p class="percentage">100%</p>
 				<p class="percentage">90%</p>
@@ -36,11 +38,11 @@
 
 			<article>
 				<section id="intro">
-					<img src="assets/content/01-intro/introduction.jpg">
-					<div class="footnotes-column">
-						<p>
+					<div id="intro-img-container">
+						<img src="assets/content/01-intro/introduction.jpg">
+						<p class="footnote">
 							Image used in this header artwork are from Heather-Dewey Hagborg and Reuters
-							<br>↲ 
+							<br>↲
 						</p>
 					</div>
 
@@ -48,645 +50,747 @@
 						The Adjacent Interview:
 						<br>Heather Dewey-Hagborg
 					</h1>
-
-					<div id="preface1">
-						<div>
-							<h3>By Adjacent Editors</h3>
-							<h4>
-								Illustrated by Nathier Fernandez 
-								<br>and Azalea Vaseghi
-							</h4>
+					
+					<div id="preface-container">
+						<div id="preface-left">
+							<div id="author">
+								<h3>By Adjacent Editors</h3>
+								<h4>
+									Illustrated by Nathier Fernandez 
+									<br>and Azalea Vaseghi
+								</h4>
+							</div>
+					
+							<p class="interviewer">
+								Adjacent Editors talk to artist and activist Heather Dewey-Hagborg about her idea-driven, research-based, cutting-edge work &mdash; the questions she asks and how she tries to answer them…from Spurious Memories, Chelsea Manning to a love virus.
+							</p>
 						</div>
-
-						<p class="interviewer">
-							Adjacent Editors talk to artist and activist Heather Dewey-Hagborg about her idea-driven, research-based, cutting-edge work &mdash; the questions she asks and how she tries to answer them…from Spurious Memories, Chelsea Manning to a love virus.
-						</p>
-					</div>
-
-					<div id="preface2">
-						<p class="interviewee">
-							<a href="https://deweyhagborg.com/" target="_blank">Heather Dewey-Hagborg</a> is an information and bio artist whose work explores the intersection of art, science, technology, and politics. Her palette includes data and genetic material as well as more raditional sculptural elements. She’s compelled by quintessential questions about identity, humanity, learning, creativity, and aesthetics. She approaches art as research and critical practice. Her work stuns with the precision and curiosity of a scientist and the compassion and attention to beauty and form of a visual artist. She graduated from ITP in 2007 and earned a PhD in Electronic Arts from ensselaer Polytechnic Institute. She is an artist fellow at <a href="https://ainowinstitute.org/" target="_blank">AI Now</a>, an Artist-in-Residence at the <a href="https://www.exploratorium.edu/" target="_blank">Exploratorium</a> and <a href="https://sciencecenter.org/" target="_blank">Science Center</a>, and an affiliate of <a href="https://datasociety.net/" target="_blank">Data & Society</a>. She’s also a co-founder of <a href="https://refreshart.tech/" target="_blank">REFRESH</a>, a Collaborative and politically engaged platform in Art, Science, and Technology.
-						</p>
+					
+						<div id="preface-right">
+							<p class="interviewee">
+								<a href="https://deweyhagborg.com/" target="_blank">Heather Dewey-Hagborg</a> is an information and bio artist whose work explores the intersection of art, science, technology, and politics. Her palette includes data and genetic material as well as more raditional sculptural elements. She’s compelled by quintessential questions about identity, humanity, learning, creativity, and aesthetics. She approaches art as research and critical practice. Her work stuns with the precision and curiosity of a scientist and the compassion and attention to beauty and form of a visual artist. She graduated from ITP in 2007 and earned a PhD in Electronic Arts from ensselaer Polytechnic Institute. She is an artist fellow at <a href="https://ainowinstitute.org/" target="_blank">AI Now</a>, an Artist-in-Residence at the <a href="https://www.exploratorium.edu/" target="_blank">Exploratorium</a> and <a href="https://sciencecenter.org/" target="_blank">Science Center</a>, and an affiliate of <a href="https://datasociety.net/" target="_blank">Data & Society</a>. She’s also a co-founder of <a href="https://refreshart.tech/" target="_blank">REFRESH</a>, a Collaborative and politically engaged platform in Art, Science, and Technology.
+							</p>
+						</div>
 					</div>
 
 					<h2 style="grid-column: 2 / 5;">Interviewer:</h2>
-					<h2 style="grid-column: 5 / 8;">Heather Dewey-Hagborg:</h2>
+    				<h2 style="grid-column: 5 / 8;">Heather Dewey-Hagborg:</h2>
+				</section>
+				
+				<section id="img-column">
+					<div class="img-div">
+						<div id="stranger-vision-arrows" class="arrows-container hidden">
+							<p>→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→</p>
+						</div>
+			
+						<a href="#">
+							<img src="assets/content/02-stranger-visions/stranger-visions1.jpg"
+								alt="Image of 3D printed faces mounted on a gallery wall above a row of black laptops."
+								title="Image of 3D printed faces mounted on a gallery wall above a row of black laptops."
+								loading="lazy">
+						</a>
+						<a href="#">
+							<img src="assets/content/02-stranger-visions/stranger-visions3.jpg"
+								alt="Sample box for NYC sample 4
+								Installation at Clocktower artist residency, January 2013"
+								title="Sample box for NYC sample 4
+								Installation at Clocktower artist residency, January 2013"
+								loading="lazy">
+						</a>
+					</div>
+			
+					<div class="img-div">
+						<div id="spurious-memories-arrows" class="arrows-container hidden">
+							<p>→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→</p>
+						</div>
+			
+						<a href="#">
+							<img src="assets/content/03-spurious-memories/spurious-memories1.gif"
+								alt="Black and white image of a digitally rendered face"
+								title="Black and white image of a digitally rendered face"
+								loading="lazy">
+						</a>
+					</div>
+			
+					<div class="img-div">
+						<div id="orta-therox-arrows" class="arrows-container hidden">
+							<p>→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→</p>
+						</div>
+			
+						<a href="#">
+							<img src="assets/content/04-orta-therox/orta-therox.jpeg"
+								alt="Portrait of Orta Therox, Director of Mobile Engineering at Artsy"
+								title="Portrait of Orta Therox, Director of Mobile Engineering at Artsy"
+								loading="lazy">
+						</a>
+						<a href="#">
+							<img src="assets/content/04-orta-therox/recreated-orta-therox.jpeg"
+								alt="3D Printed image of a male face."
+								title="3D Printed image of a male face."
+								loading="lazy">
+						</a>
+					</div>
+			
+					<div class="img-div">
+						<div id="scifi-crime-arrows" class="arrows-container hidden">
+							<p>→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→</p>
+						</div>
+			
+						<a href="#">
+							<img src="assets/content/05-sci-fi-crime-drama/sci-fi-crime-drama.jpg"
+								alt="The “face space” of Gender and Ancestry as represented in Forensic DNA Phenotyping"
+								title="The “face space” of Gender and Ancestry as represented in Forensic DNA Phenotyping"
+								loading="lazy">
+						</a>
+						<a href="#">
+							<img src="assets/content/05-sci-fi-crime-drama/dna-snapshot-1.jpg"
+								alt="DNA police sketch produced by Parabon Nanolabs"
+								title="DNA police sketch produced by Parabon Nanolabs"
+								loading="lazy">
+						</a>
+					</div>
+			
+					<div class="img-div">
+						<div id="t3511-arrows" class="arrows-container hidden">
+							<p>→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→</p>
+						</div>
+			
+						<a href="#">
+							<img src="assets/content/06-t3511/t3511-1.jpg"
+								alt="Still from the T3511: Introduction (single channel, excerpt) video"
+								title="Still from the T3511: Introduction (single channel, excerpt) video"
+								loading="lazy">
+						</a>
+						<a href="#">
+							<img src="assets/content/06-t3511/t3511-5.jpg"
+								alt="Image of the T3511 installation at MU Eindhoven"
+								title="Image of the T3511 installation at MU Eindhoven"
+								loading="lazy">
+						</a>
+					</div>
+			
+					<div class="img-div">
+						<div id="guangzhou-arrows" class="arrows-container hidden">
+							<p>→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→</p>
+						</div>
+			
+						<a href="#">
+							<img src="assets/content/07-guangzhou-triennial/im-here-to-learn-so-1.jpg"
+								alt="Still from the I'm here to learn so :)))))) video"
+								title="Still from the I'm here to learn so :)))))) video"
+								loading="lazy">
+						</a>
+						<a href="#">
+							<img src="assets/content/07-guangzhou-triennial/im-here-to-learn-so-2.jpg"
+								alt="Still from the I'm here to learn so :)))))) video"
+								title="Still from the I'm here to learn so :)))))) video"
+								loading="lazy">
+						</a>
+					</div>
+			
+					<div class="img-div">
+						<div id="mushon-arrows" class="arrows-container hidden">
+							<p>→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→</p>
+						</div>
+			
+						<a href="#">
+							<img src="assets/content/08-mushon-zer-aviv/mushon-zer-aviv-turing-normalizing-machine.jpg"
+								alt="Mushon Zer-Aviv (2013), The Turing Normalizing Machine."
+								title="Mushon Zer-Aviv (2013), The Turing Normalizing Machine."
+								loading="lazy">
+						</a>
+						<a href="#">
+							<img src="assets/content/08-mushon-zer-aviv/tableau-de-physiometry.jpg"
+								alt="Synoptic table of physiognomic traits: to serve in the study of the “spoken portrait”"
+								title="Synoptic table of physiognomic traits: to serve in the study of the “spoken portrait”"
+								loading="lazy">
+						</a>
+					</div>
+			
+					<div class="img-div">
+						<div id="douglas-arrows" class="arrows-container hidden">
+							<p>→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→</p>
+						</div>
+			
+						<a href="#">
+							<img src="assets/content/09-ruckshoff/team-human-book.jpg"
+								alt="Mushon Zer-Aviv (2013), The Turing Normalizing Machine."
+								title="Mushon Zer-Aviv (2013), The Turing Normalizing Machine."
+								loading="lazy">
+						</a>
+						<a href="#">
+							<img src="assets/content/09-ruckshoff/when-everything-happens-now.jpg"
+								alt="Synoptic table of physiognomic traits: to serve in the study of the “spoken portrait”"
+								title="Synoptic table of physiognomic traits: to serve in the study of the “spoken portrait”"
+								loading="lazy">
+						</a>
+					</div>
+			
+					<div class="img-div">
+						<div id="generative-arrows" class="arrows-container hidden">
+							<p>→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→</p>
+						</div>
+			
+						<a href="#">
+							<img src="assets/content/10-generative-representation/fruit-dataset.jpg"
+								alt="Fruit Training Dataset"
+								title="Fruit Training Dataset"
+								loading="lazy">
+						</a>
+						<a href="#">
+							<img src="assets/content/10-generative-representation/fruit-gif.gif"
+								alt="Fruit Training Dataset"
+								title="Fruit Training Dataset"
+								loading="lazy">
+						</a>
+						<a href="#">
+							<img src="assets/content/10-generative-representation/fruit-gif-2.gif"
+								alt="Fruit Training Dataset"
+								title="Fruit Training Dataset"
+								loading="lazy">
+						</a>
+						<a href="#">
+							<img src="assets/content/10-generative-representation/probably-chelsea.jpg"
+								alt="Probably Chelsea is a collection of thirty different possible portraits of whistleblower Chelsea Manning algorithmically-generated by an analysis of her DNA."
+								title="Probably Chelsea is a collection of thirty different possible portraits of whistleblower Chelsea Manning algorithmically-generated by an analysis of her DNA."
+								loading="lazy">
+						</a>
+					</div>
+			
+					<div class="img-div">
+						<div id="biggan-arrows" class="arrows-container hidden">
+							<p>→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→</p>
+						</div>
+			
+						<a href="#">
+							<img src="assets/content/11-biggan/biggan.jpg"
+								alt="Examples of high-quality images generated by BigGAN."
+								title="Examples of high-quality images generated by BigGAN."
+								loading="lazy">
+						</a>
+						<a href="#">
+							<img src="assets/content/11-biggan/intp.png"
+								alt="Examples of high-quality images generated by BigGAN."
+								title="Examples of high-quality images generated by BigGAN."
+								loading="lazy">
+						</a>
+					</div>
+			
+					<div class="img-div">
+						<div id="addie-arrows" class="arrows-container hidden">
+							<p>→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→</p>
+						</div>
+			
+						<a href="#">
+							<img src="assets/content/12-addie-wagenknecht/asymmetric-love.jpeg"
+								alt="Asymmetric Love is about duality of function. It is a reflection of our current digital infrastructure, as the knowledge and ability to monitor others is defining the hieratic of power. Asymmetric Love was intended to mimic an iconic baroque chandelier. It attempts to be perceived as something familiar in memory by the audience so that the details of the CCTV cameras recording them is overlooked. In that regard the surveillance is not perceived as a direct threat, which becomes the biggest threat of all."
+								title="Asymmetric Love is about duality of function. It is a reflection of our current digital infrastructure, as the knowledge and ability to monitor others is defining the hieratic of power. Asymmetric Love was intended to mimic an iconic baroque chandelier. It attempts to be perceived as something familiar in memory by the audience so that the details of the CCTV cameras recording them is overlooked. In that regard the surveillance is not perceived as a direct threat, which becomes the biggest threat of all."
+								loading="lazy">
+						</a>
+						<a href="#">
+							<img src="assets/content/12-addie-wagenknecht/zoom-paintings-1.jpg"
+								alt="zoom paintings (2019 - ongoing) is a series of paintings which evolved from Addie Wagenknecht’s 2015-2017 dick pic series which utilized images she received via DMs on Instagram to create abstract works of art."
+								title="zoom paintings (2019 - ongoing) is a series of paintings which evolved from Addie Wagenknecht’s 2015-2017 dick pic series which utilized images she received via DMs on Instagram to create abstract works of art."
+								loading="lazy">
+						</a>
+						<a href="#">
+							<img src="assets/content/12-addie-wagenknecht/zoom-paintings-2.jpg"
+								alt="zoom paintings (2019 - ongoing) is a series of paintings which evolved from Addie Wagenknecht’s 2015-2017 dick pic series which utilized images she received via DMs on Instagram to create abstract works of art."
+								title="zoom paintings (2019 - ongoing) is a series of paintings which evolved from Addie Wagenknecht’s 2015-2017 dick pic series which utilized images she received via DMs on Instagram to create abstract works of art."
+								loading="lazy">
+						</a>
+					</div>
 				</section>
 
 				<section id="interview">
-					<div id="img-column">
-						<div class="img-div">
-							<div id="stranger-vision-arrows" class="arrows-container hidden">
-								<p>→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→</p>
-							</div>
-
-							<a href="#">
-								<img src="assets/content/02-stranger-visions/stranger-visions1.jpg"
-									alt="Image of 3D printed faces mounted on a gallery wall above a row of black laptops."
-									title="Image of 3D printed faces mounted on a gallery wall above a row of black laptops."
-									loading="lazy">
-							</a>
-							<a href="#">
-								<img src="assets/content/02-stranger-visions/stranger-visions3.jpg"
-									alt="Sample box for NYC sample 4
-									Installation at Clocktower artist residency, January 2013"
-									title="Sample box for NYC sample 4
-									Installation at Clocktower artist residency, January 2013"
-									loading="lazy">
-							</a>
-						</div>
-
-						<div class="img-div">
-							<div id="spurious-memories-arrows" class="arrows-container hidden">
-								<p>→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→</p>
-							</div>
-
-							<a href="#">
-								<img src="assets/content/03-spurious-memories/spurious-memories1.gif"
-									alt="Black and white image of a digitally rendered face"
-									title="Black and white image of a digitally rendered face"
-									loading="lazy">
-							</a>
-						</div>
-
-						<div class="img-div">
-							<div id="orta-therox-arrows" class="arrows-container hidden">
-								<p>→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→</p>
-							</div>
-
-							<a href="#">
-								<img src="assets/content/04-orta-therox/orta-therox.jpeg"
-									alt="Portrait of Orta Therox, Director of Mobile Engineering at Artsy"
-									title="Portrait of Orta Therox, Director of Mobile Engineering at Artsy"
-									loading="lazy">
-							</a>
-							<a href="#">
-								<img src="assets/content/04-orta-therox/recreated-orta-therox.jpeg"
-									alt="3D Printed image of a male face."
-									title="3D Printed image of a male face."
-									loading="lazy">
-							</a>
-						</div>
-
-						<div class="img-div">
-							<div id="scifi-crime-arrows" class="arrows-container hidden">
-								<p>→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→</p>
-							</div>
-
-							<a href="#">
-								<img src="assets/content/05-sci-fi-crime-drama/sci-fi-crime-drama.jpg"
-									alt="The “face space” of Gender and Ancestry as represented in Forensic DNA Phenotyping"
-									title="The “face space” of Gender and Ancestry as represented in Forensic DNA Phenotyping"
-									loading="lazy">
-							</a>
-							<a href="#">
-								<img src="assets/content/05-sci-fi-crime-drama/dna-snapshot-1.jpg"
-									alt="DNA police sketch produced by Parabon Nanolabs"
-									title="DNA police sketch produced by Parabon Nanolabs"
-									loading="lazy">
-							</a>
-						</div>
-
-						<div class="img-div">
-							<div id="t3511-arrows" class="arrows-container hidden">
-								<p>→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→</p>
-							</div>
-
-							<a href="#">
-								<img src="assets/content/06-t3511/t3511-1.jpg"
-									alt="Still from the T3511: Introduction (single channel, excerpt) video"
-									title="Still from the T3511: Introduction (single channel, excerpt) video"
-									loading="lazy">
-							</a>
-							<a href="#">
-								<img src="assets/content/06-t3511/t3511-5.jpg"
-									alt="Image of the T3511 installation at MU Eindhoven"
-									title="Image of the T3511 installation at MU Eindhoven"
-									loading="lazy">
-							</a>
-						</div>
-
-						<div class="img-div">
-							<div id="guangzhou-arrows" class="arrows-container hidden">
-								<p>→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→</p>
-							</div>
-
-							<a href="#">
-								<img src="assets/content/07-guangzhou-triennial/im-here-to-learn-so-1.jpg"
-									alt="Still from the I'm here to learn so :)))))) video"
-									title="Still from the I'm here to learn so :)))))) video"
-									loading="lazy">
-							</a>
-							<a href="#">
-								<img src="assets/content/07-guangzhou-triennial/im-here-to-learn-so-2.jpg"
-									alt="Still from the I'm here to learn so :)))))) video"
-									title="Still from the I'm here to learn so :)))))) video"
-									loading="lazy">
-							</a>
-						</div>
-
-						<div class="img-div">
-							<div id="mushon-arrows" class="arrows-container hidden">
-								<p>→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→</p>
-							</div>
-
-							<a href="#">
-								<img src="assets/content/08-mushon-zer-aviv/mushon-zer-aviv-turing-normalizing-machine.jpg"
-									alt="Mushon Zer-Aviv (2013), The Turing Normalizing Machine."
-									title="Mushon Zer-Aviv (2013), The Turing Normalizing Machine."
-									loading="lazy">
-							</a>
-							<a href="#">
-								<img src="assets/content/08-mushon-zer-aviv/tableau-de-physiometry.jpg"
-									alt="Synoptic table of physiognomic traits: to serve in the study of the “spoken portrait”"
-									title="Synoptic table of physiognomic traits: to serve in the study of the “spoken portrait”"
-									loading="lazy">
-							</a>
-						</div>
-
-						<div class="img-div">
-							<div id="douglas-arrows" class="arrows-container hidden">
-								<p>→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→</p>
-							</div>
-
-							<a href="#">
-								<img src="assets/content/09-ruckshoff/team-human-book.jpg"
-									alt="Mushon Zer-Aviv (2013), The Turing Normalizing Machine."
-									title="Mushon Zer-Aviv (2013), The Turing Normalizing Machine."
-									loading="lazy">
-							</a>
-							<a href="#">
-								<img src="assets/content/09-ruckshoff/when-everything-happens-now.jpg"
-									alt="Synoptic table of physiognomic traits: to serve in the study of the “spoken portrait”"
-									title="Synoptic table of physiognomic traits: to serve in the study of the “spoken portrait”"
-									loading="lazy">
-							</a>
-						</div>
-
-						<div class="img-div">
-							<div id="generative-arrows" class="arrows-container hidden">
-								<p>→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→</p>
-							</div>
-
-							<a href="#">
-								<img src="assets/content/10-generative-representation/fruit-dataset.jpg"
-									alt="Fruit Training Dataset"
-									title="Fruit Training Dataset"
-									loading="lazy">
-							</a>
-							<a href="#">
-								<img src="assets/content/10-generative-representation/fruit-gif.gif"
-									alt="Fruit Training Dataset"
-									title="Fruit Training Dataset"
-									loading="lazy">
-							</a>
-							<a href="#">
-								<img src="assets/content/10-generative-representation/fruit-gif-2.gif"
-									alt="Fruit Training Dataset"
-									title="Fruit Training Dataset"
-									loading="lazy">
-							</a>
-							<a href="#">
-								<img src="assets/content/10-generative-representation/probably-chelsea.jpg"
-									alt="Probably Chelsea is a collection of thirty different possible portraits of whistleblower Chelsea Manning algorithmically-generated by an analysis of her DNA."
-									title="Probably Chelsea is a collection of thirty different possible portraits of whistleblower Chelsea Manning algorithmically-generated by an analysis of her DNA."
-									loading="lazy">
-							</a>
-						</div>
-
-						<div class="img-div">
-							<div id="biggan-arrows" class="arrows-container hidden">
-								<p>→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→</p>
-							</div>
-
-							<a href="#">
-								<img src="assets/content/11-biggan/biggan.jpg"
-									alt="Examples of high-quality images generated by BigGAN."
-									title="Examples of high-quality images generated by BigGAN."
-									loading="lazy">
-							</a>
-							<a href="#">
-								<img src="assets/content/11-biggan/intp.png"
-									alt="Examples of high-quality images generated by BigGAN."
-									title="Examples of high-quality images generated by BigGAN."
-									loading="lazy">
-							</a>
-						</div>
-
-						<div class="img-div">
-							<div id="addie-arrows" class="arrows-container hidden">
-								<p>→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→</p>
-							</div>
-
-							<a href="#">
-								<img src="assets/content/12-addie-wagenknecht/asymmetric-love.jpeg"
-									alt="Asymmetric Love is about duality of function. It is a reflection of our current digital infrastructure, as the knowledge and ability to monitor others is defining the hieratic of power. Asymmetric Love was intended to mimic an iconic baroque chandelier. It attempts to be perceived as something familiar in memory by the audience so that the details of the CCTV cameras recording them is overlooked. In that regard the surveillance is not perceived as a direct threat, which becomes the biggest threat of all."
-									title="Asymmetric Love is about duality of function. It is a reflection of our current digital infrastructure, as the knowledge and ability to monitor others is defining the hieratic of power. Asymmetric Love was intended to mimic an iconic baroque chandelier. It attempts to be perceived as something familiar in memory by the audience so that the details of the CCTV cameras recording them is overlooked. In that regard the surveillance is not perceived as a direct threat, which becomes the biggest threat of all."
-									loading="lazy">
-							</a>
-							<a href="#">
-								<img src="assets/content/12-addie-wagenknecht/zoom-paintings-1.jpg"
-									alt="zoom paintings (2019 - ongoing) is a series of paintings which evolved from Addie Wagenknecht’s 2015-2017 dick pic series which utilized images she received via DMs on Instagram to create abstract works of art."
-									title="zoom paintings (2019 - ongoing) is a series of paintings which evolved from Addie Wagenknecht’s 2015-2017 dick pic series which utilized images she received via DMs on Instagram to create abstract works of art."
-									loading="lazy">
-							</a>
-							<a href="#">
-								<img src="assets/content/12-addie-wagenknecht/zoom-paintings-2.jpg"
-									alt="zoom paintings (2019 - ongoing) is a series of paintings which evolved from Addie Wagenknecht’s 2015-2017 dick pic series which utilized images she received via DMs on Instagram to create abstract works of art."
-									title="zoom paintings (2019 - ongoing) is a series of paintings which evolved from Addie Wagenknecht’s 2015-2017 dick pic series which utilized images she received via DMs on Instagram to create abstract works of art."
-									loading="lazy">
-							</a>
-						</div>
-					</div>
-
 					<!-- Stranger Vision	------------------------------------------------------------------------------------- -->
 					<div class="interview-part">
-						<p class="interviewer">
-							Let’s start by talking about your process as an artist. Where do you start? Where do you find ideas?
-						</p>
-
-						<p class="interviewee">
-							All of my art starts with an idea. It differs. For “<a href="https://deweyhagborg.com/projects/stranger-visions" target="_blank">Stranger Visions</a>,” I was at my therapist’s office. I noticed a hair stuck above in a glass picture frame above the couch and I wondered who it belonged to. I wondered what that strand of hair could tell me about its owner.
-						</p>
-						<p class="interviewee indent">
-							I was already interested in facial recognition and face generation technologies. My ITP thesis was called “<a href="https://deweyhagborg.com/projects/spurious-memories" target="_blank">Spurious Memories</a>.” It was an experiment in artificial creativity. For the purposes of this project, I defined it as “the generation of an output that was not explicitly taught.” This was years before machine learning became the buzzword it is today. I designed a system that would connect a principal components analysis neural network with a self-organizing map, and I trained it on images of faces. I was inspired by Hopfield neural networks, the concept of content-addressable memories, and facial recognition algorithms.
-						</p>
-
-						<p id="stranger-vision" class="footnote">
-							In “Stranger Visions,” Heather collected hair, chewed gum, and cigarette butts from the streets, public bathrooms, and waiting rooms of New York City. She extracted DNA from them and analyzed it to computationally generate 3D-printed, life-size, full-color portraits representing what those individuals might look like based on genomic research.
-							<br>↲
-						</p>
+						<div class="interviewer-container">
+							<p class="interviewer">
+								Let’s start by talking about your process as an artist. Where do you start? Where do you find ideas?
+							</p>
+						</div>
+	
+						<div class="interviewee-container">
+							<p class="interviewee">
+								All of my art starts with an idea. It differs. For “<a href="https://deweyhagborg.com/projects/stranger-visions" target="_blank">Stranger Visions</a>,” I was at my therapist’s office. I noticed a hair stuck above in a glass picture frame above the couch and I wondered who it belonged to. I wondered what that strand of hair could tell me about its owner.
+							</p>
+							<p class="interviewee">
+								I was already interested in facial recognition and face generation technologies. My ITP thesis was called “<a href="https://deweyhagborg.com/projects/spurious-memories" target="_blank">Spurious Memories</a>.” It was an experiment in artificial creativity. For the purposes of this project, I defined it as “the generation of an output that was not explicitly taught.” This was years before machine learning became the buzzword it is today. I designed a system that would connect a principal components analysis neural network with a self-organizing map, and I trained it on images of faces. I was inspired by Hopfield neural networks, the concept of content-addressable memories, and facial recognition algorithms.
+							</p>
+						</div>
+	
+						<div class="footnote-container">
+							<p id="stranger-vision" class="footnote">
+								In “Stranger Visions,” Heather collected hair, chewed gum, and cigarette butts from the streets, public bathrooms, and waiting rooms of New York City. She extracted DNA from them and analyzed it to computationally generate 3D-printed, life-size, full-color portraits representing what those individuals might look like based on genomic research.
+								<br>↲
+							</p>
+						</div>
 					</div>
 
 					<!-- Spurious Memories	------------------------------------------------------------------------------------- -->
 					<div class="interview-part">
-						<p class="interviewer">
-							Back to “<a href="https://deweyhagborg.com/projects/stranger-visions" target="_blank">Stranger Visions</a>” — you used other people’s DNA for that project without their knowledge. Is that a violation of privacy?
-						</p>
-
-						<p class="interviewee">
-							Technically, yes. And I did get some criticism about it, but I wasn’t using the genetic information in a dangerous way. This was an artwork that shed light on these technologies and on the vulnerability of identity. That is, the fact that someone could use the information in an unethical way. It’s a way to draw attention to the fact that people’s’ information is not protected and could be used against them.
-						</p>
-
-						<p id="spurious-memories" class="footnote poor-fit">
-							Image from Spurious Memories (2007) –an experiment in artificial creativity. For the purposes of this project I defined it as “the generation of an output that was not explicitly learned.” 
-							<br>↲
-						</p>
+						<div class="interviewer-container">
+							<p class="interviewer">
+								Back to “<a href="https://deweyhagborg.com/projects/stranger-visions" target="_blank">Stranger Visions</a>” — you used other people’s DNA for that project without their knowledge. Is that a violation of privacy?
+							</p>
+						</div>
+	
+						<div class="interviewee-container">
+							<p class="interviewee">
+								Technically, yes. And I did get some criticism about it, but I wasn’t using the genetic information in a dangerous way. This was an artwork that shed light on these technologies and on the vulnerability of identity. That is, the fact that someone could use the information in an unethical way. It’s a way to draw attention to the fact that people’s’ information is not protected and could be used against them.
+							</p>
+						</div>
 					</div>
 
 					<div class="interview-part">
-						<p class="interviewer">
-							Can DNA really predict what someone will look like?
-						</p>
+						<div class="interviewer-container">
+							<p class="interviewer">
+								Can DNA really predict what someone will look like?
+							</p>
+						</div>
+	
+						<div class="interviewee-container">
+							<p class="interviewee">
+								To a degree. Overall, you can see how some things are easier to predict than others.  The piece I did with Chelsea Manning, where we see 30 versions, 30 possible expressions of her, addresses the unpredictability of phenotypic expression. It shows how much is up for chance when DNA is actually expressed. When it comes to phenotypes at least, you can’t know exactly how the genes will express themselves, but you can guess some things – the likelihood of the person having brown eyes and the shade of their hair and skin.
+							</p>
+						</div>
 
-						<p class="interviewee">
-							To a degree. Overall, you can see how some things are easier to predict than others.  The piece I did with Chelsea Manning, where we see 30 versions, 30 possible expressions of her, addresses the unpredictability of phenotypic expression. It shows how much is up for chance when DNA is actually expressed. When it comes to phenotypes at least, you can’t know exactly how the genes will express themselves, but you can guess some things – the likelihood of the person having brown eyes and the shade of their hair and skin.
-						</p>
+						<div class="footnote-container" style="grid-row: 1 / 3;">
+							<p id="spurious-memories" class="footnote">
+								Image from Spurious Memories (2007) –an experiment in artificial creativity. For the purposes of this project I defined it as “the generation of an output that was not explicitly learned.”
+								<br>↲
+							</p>
+						</div>
 					</div>
 
 					<!-- Orta Therox	----------------------------------------------------------------------------------------- -->
 					<div class="interview-part">
-						<p class="interviewer">
-							Have you ever met someone you thought you had sampled from and recreated their likeness?
-						</p>
+						<div class="interviewer-container">
+							<p class="interviewer">
+								Have you ever met someone you thought you had sampled from and recreated their likeness?
+							</p>
+						</div>
 
-						<p class="interviewee">
-							Sort of, yeah. <a href="https://orta.io/" target="_blank">Orta Therox</a> came to one of my talks. He gave away his DNA for use publicly via GitHub. Here is the photo of Orta and the image I created of him without seeing him. Not exactly a match, as you can see.<br>(You can find Orta’s DNA <a href="https://github.com/orta" target="_blank">on his github</a>)
-						</p>
+						<div class="interviewee-container">
+							<p class="interviewee">
+								Sort of, yeah. <a href="https://orta.io/" target="_blank">Orta Therox</a> came to one of my talks. He gave away his DNA for use publicly via GitHub. Here is the photo of Orta and the image I created of him without seeing him. Not exactly a match, as you can see.<br>(You can find Orta’s DNA <a href="https://github.com/orta" target="_blank">on his github</a>)
+							</p>
+						</div>
 
-						<p id="orta-therox" class="footnote">
-							Actual photo of Orta Therox giving a talk and a representation of him in Stranger Visions.
-							<br>↲
-						</p>
+						<div class="footnote-container">
+							<p id="orta-therox" class="footnote">
+								Actual photo of Orta Therox giving a talk and a representation of him in Stranger Visions.
+								<br>↲
+							</p>
+						</div>
 					</div>
 
 					<!-- Sci-Fi Crime Drama	------------------------------------------------------------------------------------ -->
 					<div class="interview-part">
-						<p class="interviewer">
-							Your article “<a href="https://thenewinquiry.com/sci-fi-crime-drama-with-a-strong-black-lead/" target="_blank">Sci-Fi Crime Drama with a Strong Black Lead</a>” talks about this sort of algorithmic bias also, and the dangers of that in a police context.
-						</p>
+						<div class="interviewer-container">
+							<p class="interviewer">
+								Your article “<a href="https://thenewinquiry.com/sci-fi-crime-drama-with-a-strong-black-lead/" target="_blank">Sci-Fi Crime Drama with a Strong Black Lead</a>” talks about this sort of algorithmic bias also, and the dangers of that in a police context.
+							</p>
+						</div>
 
-						<p class="interviewee">
-							Yes, it’s about how we need a multifaceted and transdisciplinary approach blending art, science, theory, and hands-on experimentation. The media will talk about how it all works, but to fully understand, to appropriately educate others, to devise suitable policies, and to form strategies of resistance, we need to know how it breaks.
-						</p>
+						<div class="interviewee-container">
+							<p class="interviewee">
+								Yes, it’s about how we need a multifaceted and transdisciplinary approach blending art, science, theory, and hands-on experimentation. The media will talk about how it all works, but to fully understand, to appropriately educate others, to devise suitable policies, and to form strategies of resistance, we need to know how it breaks.
+							</p>
+						</div>
 
-						<p id="scifi-crime" class="footnote">
-							Images from “Sci-Fi Crime Drama with a Strong Black Lead” found in the opposite gutter.
-							<br>↲
-						</p>
+						<div class="footnote-container">
+							<p id="scifi-crime" class="footnote">
+								Images from “Sci-Fi Crime Drama with a Strong Black Lead” found in the opposite gutter.
+								<br>↲
+							</p>
+						</div>
 					</div>
 
 					<!-- T3511	------------------------------------------------------------------------------------------------ -->
 					<div class="interview-part">
-						<p class="interviewer">
-							You also had a project pulled out of a show in China for being too political. Can you tell us a little about that?
-						</p>
+						<div class="interviewer-container">
+							<p class="interviewer">
+								You also had a project pulled out of a show in China for being too political. Can you tell us a little about that?
+							</p>
+						</div>
 
-						<p class="interviewee">
-							I worked on a four-channel video installation called <a href="https://deweyhagborg.com/projects/t3511" target="_blank">T3511</a>. It’s about a biohacker that falls in love with an anonymous saliva donor. It’s a story about my character, the biohacker, buying their saliva online, sending it to 23andMe, becoming kind of obsessed with them from their data, extracting cheek cells from their data, and growing their cheek cells on their own body (using their own bio heat to grow the other’s flesh). From then on it gets increasingly creepy.
-						</p>
+						<div class="interviewee-container">
+							<p class="interviewee">
+								I worked on a four-channel video installation called <a href="https://deweyhagborg.com/projects/t3511" target="_blank">T3511</a>. It’s about a biohacker that falls in love with an anonymous saliva donor. It’s a story about my character, the biohacker, buying their saliva online, sending it to 23andMe, becoming kind of obsessed with them from their data, extracting cheek cells from their data, and growing their cheek cells on their own body (using their own bio heat to grow the other’s flesh). From then on it gets increasingly creepy.
+							</p>
+						</div>
 
-						<p id="t3511" class="footnote">
-							Images from T3511 video installation found in the opposite gutter.
-							<br>↲
-						</p>
+						<div class="footnote-container">
+							<p id="t3511" class="footnote" style="grid-row: 1 / 3;">
+								Images from T3511 video installation found in the opposite gutter.
+								<br>↲
+							</p>
+						</div>
 					</div>
 
 					<div class="interview-part">
-						<p class="interviewer">
-							From the snippet on your website, it seems as though your character writes love letters to the donor. Is that right?
-						</p>
+						<div class="interviewer-container">
+							<p class="interviewer">
+								From the snippet on your website, it seems as though your character writes love letters to the donor. Is that right?
+							</p>
+						</div>
 
-						<p class="interviewee">
-							Well, they write to me actually, because they find me through genomic social networks. It’s a personal story, but it ties into social issues. One of these social issues is around the vulnerabilities of having our genomic data in these systems. I get contacted by the donor — that’s the story in the film — because I am an exact match to the DNA I uploaded to the social genomic platform and they are looking for their relatives and so on — they don’t know that I bought their DNA and they think I must be their relative. I don’t write back to them, but since they wrote to me, I now know who they are. I look up their name and I find out where they live because they have a totally open accessible profile, about a mile away from the company that I bought the saliva from. The company is in St Louis, and I get on the train to St Louis and become a saliva donor myself as a way of getting closer to this person, sitting in the same chair they sat in, going through the same process.
-						</p>
+						<div class="interviewee-container">
+							<p class="interviewee">
+								Well, they write to me actually, because they find me through genomic social networks. It’s a personal story, but it ties into social issues. One of these social issues is around the vulnerabilities of having our genomic data in these systems. I get contacted by the donor — that’s the story in the film — because I am an exact match to the DNA I uploaded to the social genomic platform and they are looking for their relatives and so on — they don’t know that I bought their DNA and they think I must be their relative. I don’t write back to them, but since they wrote to me, I now know who they are. I look up their name and I find out where they live because they have a totally open accessible profile, about a mile away from the company that I bought the saliva from. The company is in St Louis, and I get on the train to St Louis and become a saliva donor myself as a way of getting closer to this person, sitting in the same chair they sat in, going through the same process.
+							</p>
+						</div>
 					</div>
 
 					<!-- Guangzhou	-------------------------------------------------------------------------------------------- -->
 					<div class="interview-part">
-						<p class="interviewer">
-							And how did this come to be banned in China?
-						</p>
+						<div class="interviewer-container">
+							<p class="interviewer">
+								And how did this come to be banned in China?
+							</p>
+						</div>
 
-						<p class="interviewee">
-							This work was supposed to be shown at <a href="https://biennialfoundation.org/biennials/guangzhou-triennial/" target="_blank">Guangzhou Triennial</a>, but the Ministry of Culture rejected the work three days before my flight to China to install my work for the show The curator thought that it was due to the recent news debacle about the Crispr Twins, who were supposedly genetically engineered to be immune to HIV by Dr. He Jiankui.
-							<br>(<a href="https://www.nature.com/articles/d41586-018-07777-0" target="_blank">https://www.nature.com/articles/d41586-018-07777-0</a>)
-						</p>
+						<div class="interviewee-container">
+							<p class="interviewee">
+								This work was supposed to be shown at <a href="https://biennialfoundation.org/biennials/guangzhou-triennial/" target="_blank">Guangzhou Triennial</a>, but the Ministry of Culture rejected the work three days before my flight to China to install my work for the show The curator thought that it was due to the recent news debacle about the Crispr Twins, who were supposedly genetically engineered to be immune to HIV by Dr. He Jiankui.
+								<br>(<a href="https://www.nature.com/articles/d41586-018-07777-0" target="_blank">https://www.nature.com/articles/d41586-018-07777-0</a>)
+							</p>
+							<p class="interviewee">
+								He did this without anyone’s consent, even without the consent of the parents. This news was first celebrated but quickly faced a massive international outcry and skepticism. Crispr Twins had become a media debacle about bioethics and transgressing boundaries. I think T3511 was just too close to dealing with the kind of biopolitical issues that were happening in the news around that time.
+							</p>
+						</div>
 
-						<p id="guangzhou" class="footnote">
-							Images of other works censored in the 2018 Guangzou Triennial found in the opposite gutter.
-							<br>↲
-						</p>
-
-						<p class="interviewee indent">
-							He did this without anyone’s consent, even without the consent of the parents. This news was first celebrated but quickly faced a massive international outcry and skepticism. Crispr Twins had become a media debacle about bioethics and transgressing boundaries. I think T3511 was just too close to dealing with the kind of biopolitical issues that were happening in the news around that time.
-						</p>
+						<div class="footnote-container">
+							<p id="guangzhou" class="footnote">
+								Images of other works censored in the 2018 Guangzou Triennial found in the opposite gutter.
+								<br>↲
+							</p>
+						</div>
 					</div>
 
-					<!-- Mushon Douglas	---------------------------------------------------------------------------------------- -->
-					<div class="interview-part">
-						<p class="interviewer">
-							You said your work starts with an idea. It also seems that from the get-go you are hyper-aware of the viewer, that your intention is to have an impact on a viewer.
-						</p>
+					<!-- Mushon & Douglas	------------------------------------------------------------------------------------ -->
+					<div class="interview-part" style="margin-bottom: 0;">
+						<div class="interviewer-container">
+							<p class="interviewer">
+								You said your work starts with an idea. It also seems that from the get-go you are hyper-aware of the viewer, that your intention is to have an impact on a viewer.
+							</p>
+						</div>
 
-						<p class="interviewee">
-							Yes, working on my thesis around artificial creativity led me into different kinds of neural network algorithms in a deep way, which led me to facial recognition technology. And that led me to make this system that could generate these imaginary faces as a proof-of- concept to demonstrate that there might well be something like an artificial creativity. Inevitably, I had to confront the politics of the algorithms. What are they used for? Maybe it wasn’t inevitable… maybe it was luck, because <a href="https://mushon.com/about/" target="_blank">Mushon Zer-Aviv</a> and Thomas Duc were in my class, and they confronted me always with the politics of these things. But either way, it became clear to me then that it was political to take technology that is designed for the purposes of surveillance and try to transform that.
-						</p>
+						<div class="interviewee-container">
+							<p class="interviewee">
+								Yes, working on my thesis around artificial creativity led me into different kinds of neural network algorithms in a deep way, which led me to facial recognition technology. And that led me to make this system that could generate these imaginary faces as a proof-of- concept to demonstrate that there might well be something like an artificial creativity. Inevitably, I had to confront the politics of the algorithms. What are they used for? Maybe it wasn’t inevitable… maybe it was luck, because <a href="https://mushon.com/about/" target="_blank">Mushon Zer-Aviv</a> and Thomas Duc were in my class, and they confronted me always with the politics of these things. But either way, it became clear to me then that it was political to take technology that is designed for the purposes of surveillance and try to transform that.
+							</p>
+						</div>
 
-						<p id="mushon" class="footnote">
-							Mushon Zer-Aviv’s work can be found in the opposite gutter.
-							<br>↲
-						</p>
-
-						<p class="interviewee indent">
-							I was also taking a class with <a href="https://rushkoff.com/" target="_blank">Douglas Rushkoff</a> around that time and that was interesting because he was going through this disillusionment that the web would free us all. This was early web 2.0 disillusionment among all the early net luminaries, and it was hitting around then. It was interesting to think critically with Doug about how technology was actually coming to manifest itself. I tried to engage more explicitly the political context of the work, with various degrees of success, I would say, but it was very present for me then. And it became a way for me to merge my activism with my art practice.
-						</p>
-
-						<p id="douglas" class="footnote">
-							Douglas Rushkoff’s work can be found in the opposite gutter.
-							<br>↲
-						</p>
-					</div>
-
-					<div class="interview-part">
-						<p class="interviewer">
-							People have very strong visceral and emotional reactions to your work. How do you get from a sophisticated, abstract idea to a work that a viewer can respond to?
-						</p>
-
-						<p class="interviewee">
-							It is inevitably a material process. Even if you are writing code, you are dealing with the materiality of this artificial language. For me, it turned into dealing with DNA, with biotechnology protocols and processes. I needed to understand, hands-on, what this medium might lend itself to. And, of course, there’s always material play and sketching and thinking through the iterations of ideas just like any artist in any medium.
-						</p>
+						<div class="footnote-container">
+							<p id="mushon" class="footnote">
+								Mushon Zer-Aviv’s work can be found in the opposite gutter.
+								<br>↲
+							</p>
+						</div>
 					</div>
 
 					<div class="interview-part">
-						<p class="interviewer">
-							How do you get a viewer to engage with your ideas? Do you test? Do you get input on work in progress?
-						</p>
+						<div class="interviewee-container">
+							<p class="interviewee" style="text-indent: 3rem;">
+								I was also taking a class with <a href="https://rushkoff.com/" target="_blank">Douglas Rushkoff</a> around that time and that was interesting because he was going through this disillusionment that the web would free us all. This was early web 2.0 disillusionment among all the early net luminaries, and it was hitting around then. It was interesting to think critically with Doug about how technology was actually coming to manifest itself. I tried to engage more explicitly the political context of the work, with various degrees of success, I would say, but it was very present for me then. And it became a way for me to merge my activism with my art practice.
+							</p>
+						</div>
 
-						<p class="interviewee">
-							Well, I wouldn’t call it testing, as in user testing. I like to get feedback on work in progress from curators, gallerists, just people who I respect to give me ideas. It’s important to get this critical feedback, to identify those people in your life who would be open and critical, not just clap their hands. Getting critical feedback is invaluable, and not always easy to hear!
-						</p>
+						<div class="footnote-container">
+							<p id="douglas" class="footnote">
+								Douglas Rushkoff’s work can be found in the opposite gutter.
+								<br>↲
+							</p>
+						</div>
 					</div>
 
 					<!-- Generative Representation	--------------------------------------------------------------------------- -->
 					<div class="interview-part">
-						<p class="interviewer">
-							It looks like there might be a shift in your work ‚— you used to be interested in surveillance through biotechnology (“Stranger Visions”), but now it seems like you’re inviting the viewer to question the reality of the images that they are seeing (The Chelsea Manning project that shows the variety of potential interpretations, the essay you wrote on <a href="https://unthinking.photography/articles/generative-representation" target="_blank">generative representation</a>, which also deals with fabricated imagery). It almost seems like you are saying something along the lines of  “In this society, some people hold the power to knowing things about you quite clearly, while also holding the power to obfuscate your perception of reality…”
-						</p>
+						<div class="interviewer-container">
+							<p class="interviewer">
+								It looks like there might be a shift in your work ‚— you used to be interested in surveillance through biotechnology (“Stranger Visions”), but now it seems like you’re inviting the viewer to question the reality of the images that they are seeing (The Chelsea Manning project that shows the variety of potential interpretations, the essay you wrote on <a href="https://unthinking.photography/articles/generative-representation" target="_blank">generative representation</a>, which also deals with fabricated imagery). It almost seems like you are saying something along the lines of  “In this society, some people hold the power to knowing things about you quite clearly, while also holding the power to obfuscate your perception of reality…”
+							</p>
+						</div>
 
-						<p class="interviewee">
-							I love that interpretation. It’s much more interesting to hear what you make of it than telling you what I make of it. But I don’t know if it’s a shift in my work. For example, “<a href="https://unthinking.photography/articles/generative-representation" target="_blank">Generative Representation</a>” was an essay for a photographer’s gallery blog. I wanted to write something that dealt with photography as a medium and that dealt with these questions about representation, both in the sense of visual art and thinking about representation more broadly: political representation, economy, beyond the world of representation that we may or may not be leaving behind. That’s the post-representational shift that I discuss in this essay.
-						</p>
+						<div class="interviewee-container">
+							<p class="interviewee">
+								I love that interpretation. It’s much more interesting to hear what you make of it than telling you what I make of it. But I don’t know if it’s a shift in my work. For example, “<a href="https://unthinking.photography/articles/generative-representation" target="_blank">Generative Representation</a>” was an essay for a photographer’s gallery blog. I wanted to write something that dealt with photography as a medium and that dealt with these questions about representation, both in the sense of visual art and thinking about representation more broadly: political representation, economy, beyond the world of representation that we may or may not be leaving behind. That’s the post-representational shift that I discuss in this essay.
+							</p>
+							<p class="interviewee">
+								When I say “post representational,”… it’s drawing on this data future (or possibly present, which  some postulate is already there or is coming), that there is this shift that’s taking place, away from these modes of modernity and towards something that comes after; if you look at how politics are shifting all over the world, something different seems to be happening, [toward] different systems of politics that might emerge in a non-representational system that’s more like how our data is collected and categorized and how things are tailored to us. What exactly the character of that is is an interesting thing to discuss. So I was throwing into the mix thinking about AI, thinking about data in relation to generative imagery and whether that constitutes a representational practice or a post-representational practice, and then trying to express that it is political because it feels authoritative. These images feel real — and there is no shortage of images like that — but I was talking about these generative images that would feel real even though they actually have no reference. There is nothing representational about them. You know there are a lot of fake images that are stitched together, but this is something different. The article suggests, if it isn’t just collaging things that exist or things that are representational but actually are this in-between space, this true generative image is something that has never existed perhaps.
+							</p>
+						</div>
 
-						<p id="generative" class="footnote">
-							Image from and a link to Heather’s essay “Generative Representation” can be found in the opposite gutter.
-							<br>↲
-						</p>
-
-						<p class="interviewee indent">
-							When I say “post representational,”… it’s drawing on this data future (or possibly present, which  some postulate is already there or is coming), that there is this shift that’s taking place, away from these modes of modernity and towards something that comes after; if you look at how politics are shifting all over the world, something different seems to be happening, [toward] different systems of politics that might emerge in a non-representational system that’s more like how our data is collected and categorized and how things are tailored to us. What exactly the character of that is is an interesting thing to discuss. So I was throwing into the mix thinking about AI, thinking about data in relation to generative imagery and whether that constitutes a representational practice or a post-representational practice, and then trying to express that it is political because it feels authoritative. These images feel real — and there is no shortage of images like that — but I was talking about these generative images that would feel real even though they actually have no reference. There is nothing representational about them. You know there are a lot of fake images that are stitched together, but this is something different. The article suggests, if it isn’t just collaging things that exist or things that are representational but actually are this in-between space, this true generative image is something that has never existed perhaps.
-						</p>
+						<div class="footnote-container">
+							<p id="generative" class="footnote">
+								Image from and a link to Heather’s essay “Generative Representation” can be found in the opposite gutter.
+								<br>↲
+							</p>
+						</div>
 					</div>
 
 					<!-- Big GAN	-------------------------------------------------------------------------------------------- -->
 					<div class="interview-part">
-						<p class="interviewer">
-							Well, your portraits are that.
-						</p>
+						<div class="interviewer-container">
+							<p class="interviewer">
+								Well, your portraits are that.
+							</p>
+						</div>
 
-						<p class="interviewee">
-							Exactly. That’s the jumping-off point. We have these systems that can generate images, and it became then a totally huge thing in the AI community. BigGAN imagery. That’s a neighboring topic that has recently gotten some attention. What the article is arguing is that there is something different happening when we look at generative imagery than when we look at traditional photography, or even digital photography — something much more complex and difficult to pin down.
-						</p>
+						<div class="interviewee-container">
+							<p class="interviewee">
+								Exactly. That’s the jumping-off point. We have these systems that can generate images, and it became then a totally huge thing in the AI community. BigGAN imagery. That’s a neighboring topic that has recently gotten some attention. What the article is arguing is that there is something different happening when we look at generative imagery than when we look at traditional photography, or even digital photography — something much more complex and difficult to pin down.
+							</p>
+							<p class="interviewee">
+								So the <a href="https://medium.com/syncedreview/biggan-a-new-state-of-the-art-in-image-synthesis-cf2ec5694024" target="_blank">BigGAN</a> images borrow the authority of representational imagery and makes us believe it. Even if you know it’s fake, it still feels real, it has the visceral feeling to it.
+							</p>
+						</div>
 
-						<p class="interviewee indent">
-							So the <a href="https://medium.com/syncedreview/biggan-a-new-state-of-the-art-in-image-synthesis-cf2ec5694024" target="_blank">BigGAN</a> images borrow the authority of representational imagery and makes us believe it. Even if you know it’s fake, it still feels real, it has the visceral feeling to it.
-						</p>
-
-						<p id="biggan" class="footnote" style="transform: translateY(0);">
-							Images created using BigGAN can be found in the opposite gutter.
-							<br>↲
-						</p>
+						<div class="footnote-container">
+							<p id="biggan" class="footnote" style="transform: translateY(0);">
+								Images created using BigGAN can be found in the opposite gutter.
+								<br>↲
+							</p>
+						</div>
 					</div>
 
-					<div class="interview-part">
-						<h2 style="grid-column: 1 / 8;">REFRESH and #KissMyArs</h2>
+					<div class="divider">
+						<h2>REFRESH and #KissMyArs</h2>
 					</div>
 
 					<!-- Addie Wagenknecht	------------------------------------------------------------------------------------ -->
 					<div class="interview-part">
-						<p class="interviewer">
-							We’ve talked about a lot of your work, which in itself has a lot of political commentary, but some of your work is purely political. Can we talk a bit about the #KissMyArs Campaign and REFRESH, the Arts Collective you co-founded?
-						</p>
+						<div class="interviewer-container">
+							<p class="interviewer">
+								We’ve talked about a lot of your work, which in itself has a lot of political commentary, but some of your work is purely political. Can we talk a bit about the #KissMyArs Campaign and REFRESH, the Arts Collective you co-founded?
+							</p>
+						</div>
 
-						<p class="interviewee">
-							I had this realization that Ars Electronica has for 30 years given out hundreds of prizes in new media art, and only one was given to a woman — that was Lynn Hershman in the late 90s. So we worked with <a href="https://www.placesiveneverbeen.com/about/" target="_blank">Addie Wagenknecht</a>, another ITP alum, to create a social media campaign #KissMyArs, and the next year this became a <a href="https://www.theguardian.com/science/the-h-word/2016/sep/12/ars-electronica-festival-gender" target="_blank">piece in the Guardian</a>. After that we had a lot of attention, but Ars still wasn’t dealing with it. We started thinking about what we could do to get them to act. Instead of pointing to the problem, we decided to show an alternative.
-						</p>
+						<div class="interviewee-container">
+							<p class="interviewee">
+								I had this realization that Ars Electronica has for 30 years given out hundreds of prizes in new media art, and only one was given to a woman — that was Lynn Hershman in the late 90s. So we worked with <a href="https://www.placesiveneverbeen.com/about/" target="_blank">Addie Wagenknecht</a>, another ITP alum, to create a social media campaign #KissMyArs, and the next year this became a <a href="https://www.theguardian.com/science/the-h-word/2016/sep/12/ars-electronica-festival-gender" target="_blank">piece in the Guardian</a>. After that we had a lot of attention, but Ars still wasn’t dealing with it. We started thinking about what we could do to get them to act. Instead of pointing to the problem, we decided to show an alternative.
+							</p>
+							<p class="interviewee">
+								I recruited some new members to join us, and we started trying to raise money. That took years. I went to foundation meetups and pitching <a href="https://refreshart.tech/" target="_blank">REFRESH</a> I went to lots of other places — curators and museums — and no one was interested really.
+							</p>
+							<p class="interviewee">
+								I have an ongoing relationship with a grant-maker at the MacArthur Foundation. They have something called the Net Gain Challenge, which partners with the Ford Foundation, Open Society, and Mozilla. Their Net Gain challenge last year was around algorithms and bias. And it worked for them to throw money our way. They gave us a grant for 300K, and in partnership with Eyebeam, we were able to accept the money.
+							</p>
+							<p class="interviewee">
+								They were our first responders, but they’re much more than just that. They are really the institutional partner. They’ve done all the administrative work and really supported the whole thing very strongly.
+							</p>
+						</div>
 
-						<p id="addie" class="footnote">
-							Addie Wagenknecht work can be found in the opposite gutter.
-							<br>↲
-						</p>
-
-						<p class="interviewee indent">
-							I recruited some new members to join us, and we started trying to raise money. That took years. I went to foundation meetups and pitching <a href="https://refreshart.tech/" target="_blank">REFRESH</a> I went to lots of other places — curators and museums — and no one was interested really.
-						</p>
-						<p class="interviewee indent">
-							I have an ongoing relationship with a grant-maker at the MacArthur Foundation. They have something called the Net Gain Challenge, which partners with the Ford Foundation, Open Society, and Mozilla. Their Net Gain challenge last year was around algorithms and bias. And it worked for them to throw money our way. They gave us a grant for 300K, and in partnership with Eyebeam, we were able to accept the money.
-						</p>
-						<p class="interviewee indent">
-							They were our first responders, but they’re much more than just that. They are really the institutional partner. They’ve done all the administrative work and really supported the whole thing very strongly.
-						</p>
+						<div class="footnote-container">
+							<p id="addie" class="footnote">
+								Addie Wagenknecht work can be found in the opposite gutter.
+								<br>↲
+							</p>
+						</div>
 					</div>
 
 					<div class="interview-part">
-						<p class="interviewer">
-							Did Ars Electronica ever say, “you’re right”?
-						</p>
+						<div class="interviewer-container">
+							<p class="interviewer">
+								Did Ars Electronica ever say, “you’re right”?
+							</p>
+						</div>
 
-						<p class="interviewee">
-							No, they just stopped replying to my emails! The campaign went on for two years. The first year I was still in communication with the director of Ars Electronica. We — Addie and I — offered our assistance to make sure this doesn’t continue. They said they’d get back to us, but we never heard back from them, and nothing changed. The next year we sent them with the Guardian article, but they never replied to us. What’s even worse is they published a <a href="https://ars.electronica.art/aeblog/en/2017/01/17/prix-ars-electronica-women/" target="_blank">blog post</a> about how more women need to apply. The article has just men talking about women not applying to Ars Electronica, which really was unbelievable.
-						</p>
+						<div class="interviewee-container">
+							<p class="interviewee">
+								No, they just stopped replying to my emails! The campaign went on for two years. The first year I was still in communication with the director of Ars Electronica. We — Addie and I — offered our assistance to make sure this doesn’t continue. They said they’d get back to us, but we never heard back from them, and nothing changed. The next year we sent them with the Guardian article, but they never replied to us. What’s even worse is they published a <a href="https://ars.electronica.art/aeblog/en/2017/01/17/prix-ars-electronica-women/" target="_blank">blog post</a> about how more women need to apply. The article has just men talking about women not applying to Ars Electronica, which really was unbelievable.
+							</p>
+						</div>
 					</div>
 
 					<div class="interview-part">
-						<p class="interviewer">
-							What was your role in REFRESH?
-						</p>
+						<div class="interviewer-container">
+							<p class="interviewer">
+								What was your role in REFRESH?
+							</p>
+						</div>
 
-						<p class="interviewee">
-							I was co-founder of REFRESH and the co-curator of the exhibition. Dorothy Santos, a collective member, and I curated the exhibition, which was my first time really curating something like this. It’s an incredible amount of work. I had no idea what I was getting into!
-						</p>
+						<div class="interviewee-container">
+							<p class="interviewee">
+								I was co-founder of REFRESH and the co-curator of the exhibition. Dorothy Santos, a collective member, and I curated the exhibition, which was my first time really curating something like this. It’s an incredible amount of work. I had no idea what I was getting into!
+							</p>
+						</div>
 					</div>
 
 					<div class="interview-part">
-						<p class="interviewer">
-							Do you have a sort of critical exchange in REFRESH collective? Do you give feedback on each other’s work?
-						</p>
+						<div class="interviewer-container">
+							<p class="interviewer">
+								Do you have a sort of critical exchange in REFRESH collective? Do you give feedback on each other’s work?
+							</p>
+						</div>
 
-						<p class="interviewee">
-							It’s a bit different. I would love it if we got to a place with REFRESH collective where we would get to do studio visits, too, but we are more talking through the sustainable lifestyle of the artist — (or the unsustainable lifestyle of the artist, ha!) — and thinking through the curatorial practices and how to make an impact in the art world and in the art, science, and technology world, how best to go about making that impact, how to intervene and open the discourse that happens there to women, to people of color, queer artists, disabled artists, people who usually don’t have representation. So at REFRESH we are talking through the complexity of identity more than giving studio feedback. Maybe after the exhibition we’ll have a little bit more time.
-						</p>
+						<div class="interviewee-container">
+							<p class="interviewee">
+								It’s a bit different. I would love it if we got to a place with REFRESH collective where we would get to do studio visits, too, but we are more talking through the sustainable lifestyle of the artist — (or the unsustainable lifestyle of the artist, ha!) — and thinking through the curatorial practices and how to make an impact in the art world and in the art, science, and technology world, how best to go about making that impact, how to intervene and open the discourse that happens there to women, to people of color, queer artists, disabled artists, people who usually don’t have representation. So at REFRESH we are talking through the complexity of identity more than giving studio feedback. Maybe after the exhibition we’ll have a little bit more time.
+							</p>
+						</div>
 					</div>
 
 					<div class="interview-part">
-						<p class="interviewer">
-							You are an artist who wants to have impact. How would you describe the impact that you want to make?
-						</p>
+						<div class="interviewer-container">
+							<p class="interviewer">
+								You are an artist who wants to have impact. How would you describe the impact that you want to make?
+							</p>
+						</div>
 
-						<p class="interviewee">
-							It is project specific. In general, I’m trying to think more deeply about technologies that are impacting our lives. The interesting thing about biotechnology is that it’s usually pretty hidden. With electronic tech, we think we know it — we have some sense of it. Biotech is generally hidden in a lab or a doctor’s office, and it isn’t as intuitive to grasp what that is or even that it exists, and what the scope of it is. With this work I’m trying to bring people into that a bit. I want them to see what is happening. To see what the near future is …or maybe what looks like the future is just the present, but it’s a bit inaccessible or obscure.
-						</p>
-						<p class="interviewee indent">
-							In “Stranger Visions,” I was showing this technique called DNA phenotyping that was beginning to happen in different publications. I could tell that was around the corner but was a little bit in the future. And that I was mainly trying to get the discourse around the ethical implications of theses technologies started. What does it mean for this tech to be out there? What does it mean to be out there in a police context? And that was in addition to the questions of a kind of genomic vulnerability. The vulnerability of your body to these new forms of surveillance. The things I’m thinking about now are totally related, but more nuanced…or personal. I came out of writing my dissertation and wrote all about biopolitics. The political side of biotech. But then I thought, what about relationships, family? How are these intimate things changing in this ubiquitous genomic future/present that we are in? From that point on, I started to think about these questions of desire and intimacy and how that shifts, in what kind of ways that might shift. The projects that I’m working on now tangle these things together. Questions around the personal side of genomics and also still these various kinds of vulnerabilities and then also just showing that there are various kinds of technologies that people don’t know exist.
-						</p>
+						<div class="interviewee-container">
+							<p class="interviewee">
+								It is project specific. In general, I’m trying to think more deeply about technologies that are impacting our lives. The interesting thing about biotechnology is that it’s usually pretty hidden. With electronic tech, we think we know it — we have some sense of it. Biotech is generally hidden in a lab or a doctor’s office, and it isn’t as intuitive to grasp what that is or even that it exists, and what the scope of it is. With this work I’m trying to bring people into that a bit. I want them to see what is happening. To see what the near future is …or maybe what looks like the future is just the present, but it’s a bit inaccessible or obscure.
+							</p>
+							<p class="interviewee">
+								In “Stranger Visions,” I was showing this technique called DNA phenotyping that was beginning to happen in different publications. I could tell that was around the corner but was a little bit in the future. And that I was mainly trying to get the discourse around the ethical implications of theses technologies started. What does it mean for this tech to be out there? What does it mean to be out there in a police context? And that was in addition to the questions of a kind of genomic vulnerability. The vulnerability of your body to these new forms of surveillance. The things I’m thinking about now are totally related, but more nuanced…or personal. I came out of writing my dissertation and wrote all about biopolitics. The political side of biotech. But then I thought, what about relationships, family? How are these intimate things changing in this ubiquitous genomic future/present that we are in? From that point on, I started to think about these questions of desire and intimacy and how that shifts, in what kind of ways that might shift. The projects that I’m working on now tangle these things together. Questions around the personal side of genomics and also still these various kinds of vulnerabilities and then also just showing that there are various kinds of technologies that people don’t know exist.
+							</p>
+						</div>
+					</div>
+
+					<div class="divider">
+						<h2>New Work</h2>
 					</div>
 
 					<div class="interview-part">
-						<h2 style="grid-column: 1 / 8;">New Work</h2>
+						<div class="interviewer-container">
+							<p class="interviewer">
+								What projects are you working on now?
+							</p>
+						</div>
+
+						<div class="interviewee-container">
+							<p class="interviewee">
+								The first one is the love virus. It causes cells to produce more oxytocin.
+							</p>
+						</div>
 					</div>
 
 					<div class="interview-part">
-						<p class="interviewer">
-							What projects are you working on now?
-						</p>
+						<div class="interviewer-container">
+							<p class="interviewer">
+								Does it work?
+							</p>
+						</div>
 
-						<p class="interviewee">
-							The first one is the love virus. It causes cells to produce more oxytocin.
-						</p>
+						<div class="interviewee-container">
+							<p class="interviewee">
+								The preliminary results seem to be working. We are just testing on cells. I’m using my cheek cells. I’m infecting them.
+							</p>
+							<p class="interviewee">
+								This project is a reaction to the alienation that technology has brought about. You’re sitting one-on-one with someone, and they’re on their phone and not paying attention, and how difficult that has become in personal relationships. You never have someone’s attention really. So this personal level of isolation and alienation on top of this totally insane political moment that’s filled with hate in the US and Europe, where we are seeing the growth of xenophobia and racism and really hateful politics. So I’m thinking of it as this kind of activist gesture to bond people together.
+							</p>
+							<p class="interviewee">
+								It’s an activist piece in a way because it is politically critical and critical of the effects of technology. But it is also showing that this is possible — that it’s become so easy to engineer viruses now, to do all kinds of things that will literally go in and change your DNA and that you never can undo that really.
+							</p>
+						</div>
 					</div>
 
 					<div class="interview-part">
-						<p class="interviewer">
-							Does it work?
-						</p>
+						<div class="interviewer-container">
+							<p class="interviewer">
+								How do you change someone’s DNA?
+							</p>
+						</div>
 
-						<p class="interviewee">
-							The preliminary results seem to be working. We are just testing on cells. I’m using my cheek cells. I’m infecting them.
-						</p>
-						<p class="interviewee indent">
-							This project is a reaction to the alienation that technology has brought about. You’re sitting one-on-one with someone, and they’re on their phone and not paying attention, and how difficult that has become in personal relationships. You never have someone’s attention really. So this personal level of isolation and alienation on top of this totally insane political moment that’s filled with hate in the US and Europe, where we are seeing the growth of xenophobia and racism and really hateful politics. So I’m thinking of it as this kind of activist gesture to bond people together.
-						</p>
-						<p class="interviewee indent">
-							It’s an activist piece in a way because it is politically critical and critical of the effects of technology. But it is also showing that this is possible — that it’s become so easy to engineer viruses now, to do all kinds of things that will literally go in and change your DNA and that you never can undo that really.
-						</p>
+						<div class="interviewee-container">
+							<p class="interviewee">
+								You use a retrovirus. HIV is an example of that. You can use HIV or another retrovirus as a shell to deliver other sequences of DNA.
+							</p>
+						</div>
 					</div>
 
 					<div class="interview-part">
-						<p class="interviewer">
-							How do you change someone’s DNA?
-						</p>
+						<div class="interviewer-container">
+							<p class="interviewer">
+								And they insert it into your original DNA that you will pass down to your offspring?
+							</p>
+						</div>
 
-						<p class="interviewee">
-							You use a retrovirus. HIV is an example of that. You can use HIV or another retrovirus as a shell to deliver other sequences of DNA.
-						</p>
+						<div class="interviewee-container">
+							<p class="interviewee">
+								Yes —It does go into chromosomal DNA, it is permanent, however it does not get passed on (inherited). It does not modify the germline.
+							</p>
+						</div>
 					</div>
 
 					<div class="interview-part">
-						<p class="interviewer">
-							And they insert it into your original DNA that you will pass down to your offspring?
-						</p>
+						<div class="interviewer-container">
+							<p class="interviewer">
+								Do you work with a lab?
+							</p>
+						</div>
 
-						<p class="interviewee">
-							Yes —It does go into chromosomal DNA, it is permanent, however it does not get passed on (inherited). It does not modify the germline.
-						</p>
+						<div class="interviewee-container">
+							<p class="interviewee">
+								Yeah, I work with <a href="https://www.integralmolecular.com/" target="_blank">Integral Molecular</a> in Philadelphia. They are amazing. They are really great to work with. They make viruses. That’s all they do.
+							</p>
+							<p class="interviewee">
+								Mostly they’re working on trying to find vaccines for things like Ebola and cancers, and against Zika. They are working on fighting these diseases and viruses using other viruses that they create in the lab. They look at antibodies and so forth. The virus is engineered, and it engineers you. It goes both ways.
+							</p>
+						</div>
 					</div>
 
 					<div class="interview-part">
-						<p class="interviewer">
-							Do you work with a lab?
-						</p>
+						<div class="interviewer-container">
+							<p class="interviewer">
+								There’s some reasonable worry around genetic engineering in public spheres, right? People worry about genetically engineered foods and the unintended consequences in the long run. There could be some ramifications that we don’t know about if the anti-Ebola virus goes out into the world. It may cure Ebola, but then something else could go wrong.
+							</p>
+						</div>
 
-						<p class="interviewee">
-							Yeah, I work with <a href="https://www.integralmolecular.com/" target="_blank">Integral Molecular</a> in Philadelphia. They are amazing. They are really great to work with. They make viruses. That’s all they do.
-						</p>
-						<p class="interviewee indent">
-							Mostly they’re working on trying to find vaccines for things like Ebola and cancers, and against Zika. They are working on fighting these diseases and viruses using other viruses that they create in the lab. They look at antibodies and so forth. The virus is engineered, and it engineers you. It goes both ways.
-						</p>
+						<div class="interviewee-container">
+							<p class="interviewee">
+								Absolutely. The human side of it. That’s uncharted territory. This is exactly why the case of the Crispr Twins was so controversial — because it is so unknown and so risky.
+							</p>
+							<p class="interviewee">
+								All the viruses that Intermolecular is creating would be tested before releasing them into the world.
+							</p>
+							<p class="interviewee">
+								There would need to be much more research before they started deploying any viruses on people. This is just basic research.
+							</p>
+						</div>
 					</div>
 
 					<div class="interview-part">
-						<p class="interviewer" style="grid-row: 1 / 3;">
-							There’s some reasonable worry around genetic engineering in public spheres, right? People worry about genetically engineered foods and the unintended consequences in the long run. There could be some ramifications that we don’t know about if the anti-Ebola virus goes out into the world. It may cure Ebola, but then something else could go wrong.
-						</p>
+						<div class="interviewer-container">
+							<p class="interviewer">
+								Where can we see this work?
+							</p>
+						</div>
 
-						<p class="interviewee">
-							Absolutely. The human side of it. That’s uncharted territory. This is exactly why the case of the Crispr Twins was so controversial — because it is so unknown and so risky.
-						</p>
-						<p class="interviewee indent">
-							All the viruses that Intermolecular is creating would be tested before releasing them into the world.
-						</p>
-						<p class="interviewee indent">
-							There would need to be much more research before they started deploying any viruses on people. This is just basic research.
-						</p>
+						<div class="interviewee-container">
+							<p class="interviewee">
+								It will be at <a href="https://www.fridmangallery.com/" target="_blank">Fridman Gallery</a> in New York on June 26th, along with the second project I am working on called “<a href="https://deweyhagborg.com/projects/spirit-molecule" target="_blank">Spirit Molecule</a>.” it’s a collaboration between me and <a href="http://www.phillipandrewlewis.com/" target="_blank">Phillip Andrew Lewis</a>, who is an artist, photographer, and videographer but also a botanist who specializes in the study of psychoactive plants.
+							</p>
+							<p class="interviewee">
+								We started thinking, “What would the intersection of our two practices be?” and came up with the idea of the genetic memorial plant — so literally engineering a psychoactive plant with the DNA of a lost loved one so that you could consume this plant as a last journey of intimacy with the other. We’ll fill the gallery with psychoactive plants and viruses.
+							</p>
+						</div>
 					</div>
 
 					<div class="interview-part">
-						<p class="interviewer">
-							Where can we see this work?
-						</p>
+						<div class="interviewer-container">
+							<p class="interviewer">
+								These psychoactive plants — whose DNA are they infused with?
+							</p>
+						</div>
 
-						<p class="interviewee">
-							It will be at <a href="https://www.fridmangallery.com/" target="_blank">Fridman Gallery</a> in New York on June 26th, along with the second project I am working on called “<a href="https://deweyhagborg.com/projects/spirit-molecule" target="_blank">Spirit Molecule</a>.” it’s a collaboration between me and <a href="http://www.phillipandrewlewis.com/" target="_blank">Phillip Andrew Lewis</a>, who is an artist, photographer, and videographer but also a botanist who specializes in the study of psychoactive plants.
-						</p>
-						<p class="interviewee indent">
-							We started thinking, “What would the intersection of our two practices be?” and came up with the idea of the genetic memorial plant — so literally engineering a psychoactive plant with the DNA of a lost loved one so that you could consume this plant as a last journey of intimacy with the other. We’ll fill the gallery with psychoactive plants and viruses.
-						</p>
+						<div class="interviewee-container">
+							<p class="interviewee">
+								We don’t know yet. I’m going to Michigan to work in a lab there in a week. We’ll just have to see what’s possible. It might be our own to begin with, or maybe it will be someone else that I love! We’ll see.  
+							</p>
+						</div>
 					</div>
 
 					<div class="interview-part">
-						<p class="interviewer">
-							These psychoactive plants — whose DNA are they infused with?
-						</p>
-
-						<p class="interviewee">
-							We don’t know yet. I’m going to Michigan to work in a lab there in a week. We’ll just have to see what’s possible. It might be our own to begin with, or maybe it will be someone else that I love! We’ll see.  
-						</p>
-					</div>
-
-					<div class="interview-part">
-						<p class="interviewer">
-							We have been talking for more than hour and none of us has looked at a device. It’s been a wonderful conversation. Thank you so much.
-						</p>
+						<div class="interviewer-container">
+							<p class="interviewer">
+								We have been talking for more than hour and none of us has looked at a device. It’s been a wonderful conversation. Thank you so much.
+							</p>
+						</div>
 					</div>
 				</section>
 			</article>
