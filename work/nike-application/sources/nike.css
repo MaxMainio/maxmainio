@@ -1,3 +1,23 @@
 video{
+    max-height: 100vh;
+}
+
+.surfer-dude{
+    grid-column: 1 / 9;
+}
+
+.surfer-dude video{
     width: 100%;
+}
+
+.model-1{
+    grid-column: 1 / 5;
+}
+
+.model-2{
+    grid-column: 5 / 9;
+}
+
+.skateboard{
+    grid-column: 1 / 9;
 }
