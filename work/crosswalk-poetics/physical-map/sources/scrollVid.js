@@ -7,7 +7,7 @@ canvas.height = 1000;
 
 const frameCount = 60;
 const currentFrame = index => (
-  `https://maxmain.io/work/crosswalk-poetics/physical-map/assets/png-sequence/moss-${(index + 1).toString().padStart( '0')}.png`
+  `https://maxmain.io/work/crosswalk-poetics/physical-map/assets/moss-sim-${randomIntFromInterval(1, 3).toString()}/moss-${(index + 1).toString().padStart( '0')}.png`
 );
 
 const images = []
@@ -36,4 +36,8 @@ images[0].onload = render;
 function render() {
   context.clearRect(0, 0, canvas.width, canvas.height);
   context.drawImage(images[moss.frame], 0, 0); 
+}
+
+function randomIntFromInterval(min, max) {
+  return Math.floor(Math.random() * (max - min + 1) + min)
 }
