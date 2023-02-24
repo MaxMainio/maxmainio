@@ -5,9 +5,11 @@ const context = canvas.getContext('2d');
 canvas.width = 800;
 canvas.height = 1000;
 
+const bucket = randomIntFromInterval(1, 3).toString();
+
 const frameCount = 60;
 const currentFrame = index => (
-  `https://maxmain.io/work/crosswalk-poetics/physical-map/assets/moss-sim-${randomIntFromInterval(1, 3).toString()}/moss-${(index + 1).toString().padStart( '0')}.png`
+  `https://maxmain.io/work/crosswalk-poetics/physical-map/assets/moss-sim-${bucket}/moss-${(index + 1).toString().padStart( '0')}.png`
 );
 
 const images = []
