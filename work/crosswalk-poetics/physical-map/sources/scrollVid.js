@@ -7,7 +7,7 @@ canvas.height = 1000;
 
 const bucket = randomIntFromInterval(1, 3).toString();
 
-const frameCount = 60;
+const frameCount = 80;
 const currentFrame = index => (
   `https://maxmain.io/work/crosswalk-poetics/physical-map/assets/moss-sim-${bucket}/moss-${(index + 1).toString().padStart( '0')}.png`
 );
