@@ -13,6 +13,9 @@ allTexts.forEach(element => {
 
 
 
+
+
+
     element.innerHTML = element.innerHTML.replace(/(flora)/gi, '<span class="col-1">$1</span>');
     element.innerHTML = element.innerHTML.replace(/(foliage)/gi, '<span class="col-2">$1</span>');
     element.innerHTML = element.innerHTML.replace(/(vegetation)/gi, '<span class="col-3">$1</span>');
@@ -23,8 +26,6 @@ allTexts.forEach(element => {
     element.innerHTML = element.innerHTML.replace(/(verdure)/gi, '<span class="col-8">$1</span>');
     element.innerHTML = element.innerHTML.replace(/(forest)/gi, '<span class="col-9">$1</span>');
     element.innerHTML = element.innerHTML.replace(/(flowers|shrubs)/gi, '<span class="col-10">$1</span>');
-
-
 
     element.innerHTML = element.innerHTML.replace(/(green|leaf)/gi, '<span class="col-11">$1</span>');
     element.innerHTML = element.innerHTML.replace(/(tree)/gi, '<span class="col-12">$1</span>');
@@ -37,8 +38,6 @@ allTexts.forEach(element => {
     element.innerHTML = element.innerHTML.replace(/(shoot|vegetables)/gi, '<span class="col-19">$1</span>');
     element.innerHTML = element.innerHTML.replace(/(frond|nature|needle|stalk|stem|woodland)/gi, '<span class="col-20">$1</span>');
 
-
-
     element.innerHTML = element.innerHTML.replace(/(garden|grasslike|leaves)/gi, '<span class="col-21">$1</span>');
     element.innerHTML = element.innerHTML.replace(/(canopy|earth|flower|jungle|peduncle|terrace|thicket|timberland|undergrowth|vine|yard)/gi, '<span class="col-22">$1</span>');
     element.innerHTML = element.innerHTML.replace(/(bush|fauna|growth|lawns|meadow|pasture|scenery|stock|wilderness)/gi, '<span class="col-23">$1</span>');
@@ -50,3 +49,36 @@ allTexts.forEach(element => {
     element.innerHTML = element.innerHTML.replace(/(agrarian|agrestal|field|foliole|frondescence|grassplot|lawnlike|matted|megacosm|reedy|sedgy|sodded|sowed|tangled|terrain|turfy|unbleached|uncultivated|undomesticated|unmixed|unpolished|unprocessed|wildwood|woodlot)/gi, '<span class="col-29">$1</span>');
     element.innerHTML = element.innerHTML.replace(/(arboretum|commons|crop|fields|glade|greenspace|greensward|lichen|lichens|meadows|moss|mosses|pastures|prairie|prairies|refuge|reserve|runner|savannas|steppes|stolon|sward|tendril|topography|vines)/gi, '<span class="col-30">$1</span>');
 });
+
+
+
+/* JSON FETCH ----------------------------------------------------------------------------------------- */
+fetch('https://maxmain.io/work/lawn-order/sources/data.json')
+    .then((response) => response.json())
+    .then((json) => {
+
+    highlightWords(json);
+});
+
+
+
+function highlightWords(json){
+    json.forEach(element => {
+        
+        let selectedWord = element;
+        let selectCol = getRandomInt(0,30);
+        allTexts.forEach(element => {
+            // console.log(selectedWord);
+            // console.log(element);
+            // console.log(selectCol);
+        });
+    });
+};
+
+
+
+function getRandomInt(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
