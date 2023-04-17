@@ -66,7 +66,7 @@ function highlightWords(json){
         allTexts.forEach(element => {
             var replace = json[i].baseWord;
             const regex = new RegExp('(' + replace + ')', 'gi');
-            element.innerHTML = element.innerHTML.replace(regex, '<span class="col-' + getRandomInt(0,30) + '">$1</span>');
+            element.innerHTML = element.innerHTML.replace(regex, '<span class="col-' + getRandomInt(1,30) + '">$1</span>');
         });
     }
 };
