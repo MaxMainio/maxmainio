@@ -3,6 +3,10 @@
     padding: 0;
 }
 
+span{
+    padding: 0;
+}
+
 span.col-1{
     background-color: #006837;
 }
