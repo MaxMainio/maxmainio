@@ -1,4 +1,5 @@
-const allTexts = document.querySelectorAll("p");
+const allTexts = document.querySelectorAll('p');
+const spaceWidth = document.getElementById('space').offsetWidth;
 
 
 
