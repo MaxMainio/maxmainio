@@ -45,6 +45,30 @@ function wrapRest(){
 
 
 
+window.addEventListener('click', event => {
+    console.log(event.target);
+
+    let selectedWidth = event.target.offsetWidth;
+    let selectedHeight = event.target.offsetHeight;
+
+    let selectedTopEdge = event.target.offsetTop;
+    let selectedBottomEdge = event.target.offsetTop + selectedHeight;
+    let selectedLeftEdge = event.target.offsetLeft;
+    let selectedRightEdge = event.target.offsetLeft + selectedWidth;
+
+
+
+    console.log(document.elementFromPoint(selectedLeftEdge, selectedTopEdge - 10));
+});
+
+
+
+
+
+
+
+
+
 /* SUPPORT -------------------------------------------------------------------------------------------- */
 function getRandomInt(min, max) {
     min = Math.ceil(min);
