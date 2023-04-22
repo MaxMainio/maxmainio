@@ -5,6 +5,7 @@
 
 span{
     padding: 0;
+    cursor: pointer;
 }
 
 span.col-1{

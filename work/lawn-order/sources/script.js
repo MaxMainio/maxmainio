@@ -49,17 +49,34 @@ function wrapRest(){
 window.addEventListener('click', event => {
     console.log(event.target);
 
-    let selectedWidth = event.target.offsetWidth;
-    let selectedHeight = event.target.offsetHeight;
+    let targetX = event.target.offsetLeft;
+    let targetY = event.target.offsetTop;
 
-    let selectedTopEdge = event.target.offsetTop;
-    let selectedBottomEdge = event.target.offsetTop + selectedHeight;
-    let selectedLeftEdge = event.target.offsetLeft;
-    let selectedRightEdge = event.target.offsetLeft + selectedWidth;
+    let targetWidth = event.target.offsetWidth;
+    let targetHeight = event.target.offsetHeight;
 
 
 
-    console.log(document.elementFromPoint(selectedLeftEdge, selectedTopEdge - 10));
+    let leftLine = targetX - (spaceWidth + 5);
+    let centerLine = targetX + (targetWidth / 2);
+    let rightLine = targetX + targetWidth + spaceWidth + 5;
+
+    let topLine = targetY - 1;
+    let midLine = targetY + (targetHeight / 2);
+    let bottomLine = targetY + targetHeight + 1;
+
+    
+    
+    console.log(document.elementFromPoint(leftLine, topLine));
+    console.log(document.elementFromPoint(centerLine, topLine));
+    console.log(document.elementFromPoint(rightLine, topLine));
+
+    console.log(document.elementFromPoint(leftLine, midLine));
+    console.log(document.elementFromPoint(rightLine, midLine));
+
+    console.log(document.elementFromPoint(leftLine, bottomLine));
+    console.log(document.elementFromPoint(centerLine, bottomLine));
+    console.log(document.elementFromPoint(rightLine, bottomLine));
 });
 
 
