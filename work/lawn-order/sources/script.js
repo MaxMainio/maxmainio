@@ -47,17 +47,9 @@ function wrapRest(){
 
 
 window.addEventListener('click', event => {
+    /* CHECK IF COLORED ------------------------------------------------------------------------------- */
     let targetClass = event.target.className;
     let targetCol = targetClass.match(/(\d+)/);
-
-
-    
-    /* CHECK IF COLORED ------------------------------------------------------------------------------- */
-    if (targetClass === '') {
-        console.log('no class');
-    } else {
-        console.log(targetCol[0]);
-    }
 
 
 
@@ -84,7 +76,18 @@ window.addEventListener('click', event => {
     /* SURROUNDING WORDS ------------------------------------------------------------------------------ */
     let surroundingWords = [document.elementFromPoint(leftLine, topLine), document.elementFromPoint(centerLine, topLine), document.elementFromPoint(rightLine, topLine), document.elementFromPoint(leftLine, midLine), document.elementFromPoint(rightLine, midLine), document.elementFromPoint(leftLine, bottomLine), document.elementFromPoint(centerLine, bottomLine), document.elementFromPoint(rightLine, bottomLine)];
 
-    // console.log(surroundingWords);
+
+
+    /* SPREAD ----------------------------------------------------------------------------------------- */
+    for (let i = 0; i < surroundingWords.length; i++) {
+        let currentWord = surroundingWords[i];
+        let currentWordClass = currentWord.className;
+
+        if (currentWordClass === '') {
+            let className = 'col-' + (targetCol[0] - 1);
+            currentWord.classList.add(className);
+        };
+    };
 });
 
 
