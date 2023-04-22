@@ -47,8 +47,21 @@ function wrapRest(){
 
 
 window.addEventListener('click', event => {
-    console.log(event.target);
+    let targetClass = event.target.className;
+    let targetCol = targetClass.match(/(\d+)/);
 
+
+    
+    /* CHECK IF COLORED ------------------------------------------------------------------------------- */
+    if (targetClass === '') {
+        console.log('no class');
+    } else {
+        console.log(targetCol[0]);
+    }
+
+
+
+    /* TARGET INFO ------------------------------------------------------------------------------------ */
     let targetX = event.target.offsetLeft;
     let targetY = event.target.offsetTop;
 
@@ -57,6 +70,7 @@ window.addEventListener('click', event => {
 
 
 
+    /* SELECTION GRID --------------------------------------------------------------------------------- */
     let leftLine = targetX - (spaceWidth + 5);
     let centerLine = targetX + (targetWidth / 2);
     let rightLine = targetX + targetWidth + spaceWidth + 5;
@@ -67,16 +81,10 @@ window.addEventListener('click', event => {
 
     
     
-    console.log(document.elementFromPoint(leftLine, topLine));
-    console.log(document.elementFromPoint(centerLine, topLine));
-    console.log(document.elementFromPoint(rightLine, topLine));
+    /* SURROUNDING WORDS ------------------------------------------------------------------------------ */
+    let surroundingWords = [document.elementFromPoint(leftLine, topLine), document.elementFromPoint(centerLine, topLine), document.elementFromPoint(rightLine, topLine), document.elementFromPoint(leftLine, midLine), document.elementFromPoint(rightLine, midLine), document.elementFromPoint(leftLine, bottomLine), document.elementFromPoint(centerLine, bottomLine), document.elementFromPoint(rightLine, bottomLine)];
 
-    console.log(document.elementFromPoint(leftLine, midLine));
-    console.log(document.elementFromPoint(rightLine, midLine));
-
-    console.log(document.elementFromPoint(leftLine, bottomLine));
-    console.log(document.elementFromPoint(centerLine, bottomLine));
-    console.log(document.elementFromPoint(rightLine, bottomLine));
+    // console.log(surroundingWords);
 });
 
 
