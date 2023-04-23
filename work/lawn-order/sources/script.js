@@ -81,16 +81,9 @@ window.addEventListener('click', event => {
     /* SPREAD ----------------------------------------------------------------------------------------- */
     for (let i = 0; i < surroundingWords.length; i++) {
         let currentWord = surroundingWords[i];
-        let currentWordClass = currentWord.className;
 
-        // if (currentWord === null) {
-        //     console.log('NULL!!!');
-        // } else {
-        //     console.log(currentWord);
-        // }
-
-
-        if (currentWordClass === '' && targetCol[0] > 1 && currentWord.tagName === 'SPAN') {
+        if (currentWord === null) {
+        } else  if (currentWord.className === '' && targetCol[0] > 1 && currentWord.tagName === 'SPAN') {
             currentWord.classList.add('active');
 
             let className = 'col-' + (targetCol[0] - 1);
@@ -108,7 +101,7 @@ window.addEventListener('click', event => {
 
 
 var intervalId = window.setInterval(function(){
-    // spreadLawn();
+    spreadLawn();
 }, 1000);
 
 function spreadLawn(){
@@ -147,13 +140,13 @@ function spreadLawn(){
 
 
         /* SPREAD ----------------------------------------------------------------------------------------- */
-        for (let j = 0; j < surroundingWords.length; j++) {
-            let currentWord = surroundingWords[j];
-            let currentWordClass = currentWord.className;
-
-            if (currentWordClass === '' && targetCol[0] > 1) {
+        for (let i = 0; i < surroundingWords.length; i++) {
+            let currentWord = surroundingWords[i];
+    
+            if (currentWord === null) {
+            } else  if (currentWord.className === '' && targetCol[0] > 1 && currentWord.tagName === 'SPAN') {
                 currentWord.classList.add('active');
-
+    
                 let className = 'col-' + (targetCol[0] - 1);
                 currentWord.classList.add(className);
             };
