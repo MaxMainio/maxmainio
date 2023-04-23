@@ -25,7 +25,7 @@ function highlightWords(json){
         allTexts.forEach(element => {
             var replace = json[i].baseWord;
             const regex = new RegExp('(' + replace + ')', 'gi');
-            element.innerHTML = element.innerHTML.replace(regex, '<span class="col-' + getRandomInt(1,30) + '">$1</span>');
+            element.innerHTML = element.innerHTML.replace(regex, '<span class="active col-' + getRandomInt(1,30) + '">$1</span>');
         });
     };
 };
@@ -83,12 +83,83 @@ window.addEventListener('click', event => {
         let currentWord = surroundingWords[i];
         let currentWordClass = currentWord.className;
 
-        if (currentWordClass === '') {
+        // if (currentWord === null) {
+        //     console.log('NULL!!!');
+        // } else {
+        //     console.log(currentWord);
+        // }
+
+
+        if (currentWordClass === '' && targetCol[0] > 1 && currentWord.tagName === 'SPAN') {
+            currentWord.classList.add('active');
+
             let className = 'col-' + (targetCol[0] - 1);
             currentWord.classList.add(className);
         };
     };
 });
+
+
+
+
+
+
+
+
+
+var intervalId = window.setInterval(function(){
+    // spreadLawn();
+}, 1000);
+
+function spreadLawn(){
+    let turf = document.querySelectorAll('.active');
+
+    for (let i = 0; i < turf.length; i++) {
+        /* CHECK IF COLORED ------------------------------------------------------------------------------- */
+        let targetClass = turf[i].className;
+        let targetCol = targetClass.match(/(\d+)/);
+
+
+
+        /* TARGET INFO ------------------------------------------------------------------------------------ */
+        let targetX = turf[i].offsetLeft;
+        let targetY = turf[i].offsetTop;
+
+        let targetWidth = turf[i].offsetWidth;
+        let targetHeight = turf[i].offsetHeight;
+
+
+
+        /* SELECTION GRID --------------------------------------------------------------------------------- */
+        let leftLine = targetX - (spaceWidth + 5);
+        let centerLine = targetX + (targetWidth / 2);
+        let rightLine = targetX + targetWidth + spaceWidth + 5;
+
+        let topLine = targetY - 1;
+        let midLine = targetY + (targetHeight / 2);
+        let bottomLine = targetY + targetHeight + 1;
+
+        
+        
+        /* SURROUNDING WORDS ------------------------------------------------------------------------------ */
+        let surroundingWords = [document.elementFromPoint(leftLine, topLine), document.elementFromPoint(centerLine, topLine), document.elementFromPoint(rightLine, topLine), document.elementFromPoint(leftLine, midLine), document.elementFromPoint(rightLine, midLine), document.elementFromPoint(leftLine, bottomLine), document.elementFromPoint(centerLine, bottomLine), document.elementFromPoint(rightLine, bottomLine)];
+
+
+
+        /* SPREAD ----------------------------------------------------------------------------------------- */
+        for (let j = 0; j < surroundingWords.length; j++) {
+            let currentWord = surroundingWords[j];
+            let currentWordClass = currentWord.className;
+
+            if (currentWordClass === '' && targetCol[0] > 1) {
+                currentWord.classList.add('active');
+
+                let className = 'col-' + (targetCol[0] - 1);
+                currentWord.classList.add(className);
+            };
+        };
+    };
+};
 
 
 

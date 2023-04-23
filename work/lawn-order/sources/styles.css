@@ -5,6 +5,10 @@
 
 span{
     padding: 0;
+}
+
+span.active{
+    padding: 0;
     cursor: pointer;
 }
 
