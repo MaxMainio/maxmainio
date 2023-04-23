@@ -1,0 +1,137 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+span{
+    padding: 0;
+}
+
+span.active{
+    padding: 0;
+    cursor: pointer;
+}
+
+span.col-1{
+    background-color: #006837;
+}
+
+span.col-2{
+    background-color: #056b37;
+}
+
+span.col-3{
+    background-color: #096e38;
+}
+
+span.col-4{
+    background-color: #0e7138;
+}
+
+span.col-5{
+    background-color: #127438;
+}
+
+span.col-6{
+    background-color: #177738;
+}
+
+span.col-7{
+    background-color: #1b7a39;
+}
+
+span.col-8{
+    background-color: #207d39;
+}
+
+span.col-9{
+    background-color: #248039;
+}
+
+span.col-10{
+    background-color: #298339;
+}
+
+
+
+span.col-11{
+    background-color: #2d863a;
+}
+
+span.col-12{
+    background-color: #32893a;
+}
+
+span.col-13{
+    background-color: #368c3a;
+}
+
+span.col-14{
+    background-color: #3b8f3a;
+}
+
+span.col-15{
+    background-color: #3f923b;
+}
+
+span.col-16{
+    background-color: #44953b;
+}
+
+span.col-17{
+    background-color: #48993b;
+}
+
+span.col-18{
+    background-color: #4d9c3b;
+}
+
+span.col-19{
+    background-color: #519f3c;
+}
+
+span.col-20{
+    background-color: #56a23c;
+}
+
+
+
+span.col-21{
+    background-color: #5aa53c;
+}
+
+span.col-22{
+    background-color: #5fa83c;
+}
+
+span.col-23{
+    background-color: #63ab3d;
+}
+
+span.col-24{
+    background-color: #68ae3d;
+}
+
+span.col-25{
+    background-color: #6cb13d;
+}
+
+span.col-26{
+    background-color: #71b43d;
+}
+
+span.col-27{
+    background-color: #75b73e;
+}
+
+span.col-28{
+    background-color: #7aba3e;
+}
+
+span.col-29{
+    background-color: #7ebd3e;
+}
+
+span.col-30{
+    background-color: #83c03e;
+}
