@@ -11,7 +11,7 @@ const spaceWidth = document.getElementById('space').offsetWidth;
 
 
 /* JSON FETCH ----------------------------------------------------------------------------------------- */
-fetch('https://maxmain.io/work/lawn-order/v3/sources/data.json')
+fetch('https://maxmain.io/work/lawn-order/v2/sources/data.json')
     .then((response) => response.json())
     .then((json) => {
 
