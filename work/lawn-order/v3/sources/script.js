@@ -11,7 +11,5 @@ window.addEventListener('click', event => {
 fetch('https://maxmain.io/work/lawn-order/v3/sources/data.json')
     .then((response) => response.json())
     .then((json) => {
-
-    highlightWords(json);
-    wrapRest();
+        console.log(json);
 });
