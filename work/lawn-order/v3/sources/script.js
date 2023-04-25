@@ -12,4 +12,5 @@ fetch('https://maxmain.io/work/lawn-order/v3/sources/data.json')
     .then((response) => response.json())
     .then((json) => {
         console.log(json);
+        console.log(json[0].plants[0]);
 });

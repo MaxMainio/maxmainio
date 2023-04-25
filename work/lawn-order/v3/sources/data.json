@@ -238,7 +238,9 @@
             {"word": "woods"},
             {"word": "world"},
             {"word": "yard"}
-        ],
+        ]
+    },
+    {
         "flowers": [
             {"word": "bloom"},
             {"word": "blossom"},
@@ -267,7 +269,9 @@
             {"word": "sunflower"},
             {"word": "wallflower"},
             {"word": "floral"}
-        ],
+        ]
+    },
+    {
         "water": [
             {"word": "basin"},
             {"word": "basin"},
