@@ -39,6 +39,7 @@ fetch('https://maxmain.io/work/lawn-order/v3/sources/data.json')
 
         highLightFlowers(flowers, flowerColors);
         highlightLawn(lawn, lawnColors);
+        wrapRest();
 });
 
 
@@ -54,7 +55,6 @@ function highLightFlowers(flowers, flowerColors){
     for (let i = 0; i < flowers.length; i++) {
         textField.forEach(element => {
             let replace = flowers[i];
-            // const regex = new RegExp('(' + replace + ')', 'gi');
             const regex = new RegExp('((?<!<[^>]+>)' + replace + '(?![^<]*>))', 'gi');
 
             element.innerHTML = element.innerHTML.replace(regex, '<span class="iris">$1</span>');
@@ -102,6 +102,21 @@ function highlightLawn(lawn, lawnColors){
             element.innerHTML = element.innerHTML.replace(regex, '<span class="lawn" style="background-color: ' + lawnColors[getRandomInt(0, (lawnColors.length) - 1)] + ';">$1</span>');
         });
     };
+};
+
+
+
+
+
+
+
+
+
+/* WRAP THE REST OF THE TEXT --------------------------------------------------------------------------------- */
+function wrapRest(){
+    textField.forEach(element => {
+        element.innerHTML = element.innerHTML.replace(/((?<!<[^>]+>)\b\w+\b(?![^<]*>))/gi, '<span>$1</span>');
+    });
 };
 
 
