@@ -24,7 +24,7 @@ const spaceWidth = document.getElementById('space').offsetWidth;
 
 
 /* JSON FETCH ----------------------------------------------------------------------------------------- */
-fetch('https://maxmain.io/work/lawn-order/v3/sources/data.json')
+fetch('https://maxmain.io/work/lawn-order/v3/sources/words.json')
     .then((response) => response.json())
     .then((json) => {
         const plants = json[0].plants;
@@ -47,23 +47,23 @@ function highLightFlowers(flowers){
         textField.forEach(element => {
             let replace = flowers[i];
             const regex = new RegExp('(' + replace + ')', 'gi');
-            element.innerHTML = element.innerHTML.replace(regex, '<span class="col-30 iris">$1</span>');
+            element.innerHTML = element.innerHTML.replace(regex, '<span class="iris">$1</span>');
         });
 
         let tagged = document.querySelectorAll('.iris');
-        let currentFlower = flowers[i];
-        let splitName = currentFlower.split('');
 
         tagged.forEach(element => {
+            let replace = flowers[i];
+            const regex = new RegExp('([' + replace + '])', 'gi');
+            let split = element.innerHTML.match(regex);
+            
+            for (let j = 0; j < split.length; j++) {
+                split[j] = '<span class="fcol-' + getRandomInt(0, 7) + '">' + split[j] + '</span>';
+            }
 
+            let newHTML = split.join('');
+            element.innerHTML = newHTML;
         });
-
-
-
-
-        // console.log(tagged);
-        // console.log(flowers[i]);
-        // console.log(splitName);
 
         tagged.forEach(element => {
             element.classList.remove('iris');

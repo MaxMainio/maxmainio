@@ -12,6 +12,14 @@ span.active{
     cursor: pointer;
 }
 
+
+
+
+
+
+
+
+
 span.col-1{
     background-color: #006837;
 }
@@ -174,4 +182,12 @@ span.fcol-6{
 
 span.fcol-7{
     background-color: #622569;
+}
+
+span.fcol-8{
+    background-color: #d6d4e0;
+}
+
+span.fcol-9{
+    background-color: #b8a9c9;
 }
