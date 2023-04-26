@@ -24,15 +24,20 @@ const spaceWidth = document.getElementById('space').offsetWidth;
 
 
 /* JSON FETCH ----------------------------------------------------------------------------------------- */
-// fetch('https://maxmain.io/work/lawn-order/v3/sources/data.json')
-//     .then((response) => response.json())
-//     .then((json) => {
-//         const plants = json[0].plants;
-//         const flowers = json[1].flowers;
-//         const water = json[2].water;
+fetch('https://maxmain.io/work/lawn-order/v3/sources/data.json')
+    .then((response) => response.json())
+    .then((json) => {
+        const plants = json[0].words.plants;
+        const plantColors = json[0].colors.plants;
 
-//         highLightFlowers(flowers);
-// });
+        const flowers = json[0].words.flowers;
+        const flowerColors = json[0].colors.flowers;
+
+        const water = json[0].words.water;
+        const waterColors = json[0].colors.water;
+
+        highLightFlowers(flowers, flowerColors);
+});
 
 
 
@@ -85,17 +90,3 @@ function getRandomInt(min, max) {
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min + 1)) + min;
 };
-
-
-
-
-
-
-
-
-
-fetch('https://maxmain.io/work/lawn-order/v3/sources/words.json')
-    .then((response) => response.json())
-    .then((json) => {
-        console.log(json[0].words.plants);
-});
