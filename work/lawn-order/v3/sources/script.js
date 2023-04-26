@@ -39,6 +39,8 @@ fetch('https://maxmain.io/work/lawn-order/v3/sources/data.json')
 
         highLightFlowers(flowers, flowerColors);
         highlightLawn(lawn, lawnColors);
+        highlightWater(water, waterColors);
+
         wrapRest();
 });
 
@@ -100,6 +102,26 @@ function highlightLawn(lawn, lawnColors){
             const regex = new RegExp('((?<!<[^>]+>)' + replace + '(?![^<]*>))', 'gi');
 
             element.innerHTML = element.innerHTML.replace(regex, '<span class="lawn" style="background-color: ' + lawnColors[getRandomInt(0, (lawnColors.length) - 1)] + ';">$1</span>');
+        });
+    };
+};
+
+
+
+
+
+
+
+
+
+/* HIGHLIGHT WATER ------------------------------------------------------------------------------------------- */
+function highlightWater(water, waterColors){
+    for (let i = 0; i < water.length; i++) {
+        textField.forEach(element => {
+            var replace = water[i];
+            const regex = new RegExp('((?<!<[^>]+>)' + replace + '(?![^<]*>))', 'gi');
+
+            element.innerHTML = element.innerHTML.replace(regex, '<span class="water" style="background-color: ' + waterColors[getRandomInt(0, (waterColors.length) - 1)] + ';">$1</span>');
         });
     };
 };
