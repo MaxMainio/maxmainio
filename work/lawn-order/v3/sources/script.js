@@ -28,8 +28,8 @@ const flowerColorList = ['purples', 'reds', 'yellows'];
 fetch('https://maxmain.io/work/lawn-order/v3/sources/data.json')
     .then((response) => response.json())
     .then((json) => {
-        const plants = json[0].words.plants;
-        const plantColors = json[0].colors.plants;
+        const lawn = json[0].words.plants;
+        const lawnColors = json[0].colors.plants;
 
         const flowers = json[0].words.flowers;
         const flowerColors = json[0].colors.flowers;
@@ -38,6 +38,7 @@ fetch('https://maxmain.io/work/lawn-order/v3/sources/data.json')
         const waterColors = json[0].colors.water;
 
         highLightFlowers(flowers, flowerColors);
+        highlightLawn(lawn, lawnColors);
 });
 
 
@@ -48,6 +49,7 @@ fetch('https://maxmain.io/work/lawn-order/v3/sources/data.json')
 
 
 
+/* HIGHLIGHT FLOWERS ----------------------------------------------------------------------------------------- */
 function highLightFlowers(flowers, flowerColors){
     for (let i = 0; i < flowers.length; i++) {
         textField.forEach(element => {
@@ -65,11 +67,9 @@ function highLightFlowers(flowers, flowerColors){
 
             let flowerType = flowerColorList[getRandomInt(0, 2)];
             let flowerGroup = flowerColors[flowerType];
-
-            console.log(flowerGroup.length);
             
             for (let j = 0; j < split.length; j++) {
-                split[j] = '<span style="background-color: ' + flowerGroup[getRandomInt(0, flowerGroup.length)] + ';">' + split[j] + '</span>';
+                split[j] = '<span style="background-color: ' + flowerGroup[getRandomInt(0, (flowerGroup.length) - 1)] + ';">' + split[j] + '</span>';
             }
 
             let newHTML = split.join('');
@@ -78,6 +78,27 @@ function highLightFlowers(flowers, flowerColors){
 
         tagged.forEach(element => {
             element.classList.remove('iris');
+        });
+    };
+};
+
+
+
+
+
+
+
+
+
+/* HIGHLIGHT FLOWERS ----------------------------------------------------------------------------------------- */
+function highlightLawn(lawn, lawnColors){
+    for (let i = 0; i < lawn.length; i++) {
+        textField.forEach(element => {
+            var replace = lawn[i];
+            const regex = new RegExp('(' + replace + ')', 'gi');
+            
+            // element.innerHTML = element.innerHTML.replace(regex, '<span class="active col-' + getRandomInt(1,30) + '">$1</span>');
+            element.innerHTML = element.innerHTML.replace(regex, '<span style="background-color: ' + lawnColors[0, (lawnColors.length - 1)] + ';">$1</span>');
         });
     };
 };
