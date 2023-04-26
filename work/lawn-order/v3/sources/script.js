@@ -97,5 +97,5 @@ function getRandomInt(min, max) {
 fetch('https://maxmain.io/work/lawn-order/v3/sources/words.json')
     .then((response) => response.json())
     .then((json) => {
-        console.log(json[0].words);
+        console.log(json[0].words.plants);
 });
