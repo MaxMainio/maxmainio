@@ -96,9 +96,8 @@ function highlightLawn(lawn, lawnColors){
         textField.forEach(element => {
             var replace = lawn[i];
             const regex = new RegExp('(' + replace + ')', 'gi');
-            
-            // element.innerHTML = element.innerHTML.replace(regex, '<span class="active col-' + getRandomInt(1,30) + '">$1</span>');
-            element.innerHTML = element.innerHTML.replace(regex, '<span style="background-color: ' + lawnColors[0, (lawnColors.length - 1)] + ';">$1</span>');
+
+            element.innerHTML = element.innerHTML.replace(regex, '<span style="background-color: ' + lawnColors[getRandomInt(0, (lawnColors.length) - 1)] + ';">$1</span>');
         });
     };
 };
