@@ -169,15 +169,8 @@ function spreadWater(){
 /* SPREAD TARGET --------------------------------------------------------------------------------------------- */
 function spreadTarget(target){
     /* CHECK IF COLORED ------------------------------------------------------------------------------- */
-    // let targetClass = target.className;
-    // let targetCol = targetClass.match(/(\d+)/);
     let targetColor = target.dataset.color;
-    console.log(targetColor);
-
-    if (targetColor === 0) {
-        console.log('end');
-        return;
-    };
+    let newColorIndex = (targetColor - 1).toString();
 
 
 
@@ -218,15 +211,18 @@ function spreadTarget(target){
         let currentWord = surroundingWords[i];
 
         if (currentWord === null || currentWord.tagName !== 'SPAN' || currentWord.classList.contains('lawn')) {
-            console.log(currentWord, 'is not worthy');
-
+            // console.log(currentWord, 'is not worthy');
+            
         } else if (currentWord.classList.contains('flower') === true){
-            console.log(currentWord, 'is flower');
+            // console.log(currentWord, 'is flower');
+
+            let currentParent = currentWord.parentElement;
+            currentParent.classList.add('lawn');
+            currentParent.style.backgroundColor = lawnColors[0][newColorIndex];
+            currentParent.setAttribute('data-color', newColorIndex);
 
         } else if (currentWord.className === '' && targetColor > 0){
-            console.log(currentWord, 'is worthy');
-
-            let newColorIndex = (targetColor - 1).toString();
+            // console.log(currentWord, 'is worthy');
 
             currentWord.classList.add('lawn');
             currentWord.style.backgroundColor = lawnColors[0][newColorIndex];
