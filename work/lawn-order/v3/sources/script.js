@@ -12,9 +12,11 @@ const flowerColorList = ['purples', 'reds', 'yellows'];
 
 
 /* POPUP WINDOW --------------------------------------------------------------------------------------- */
-// window.addEventListener('click', event => {
-//     window.open('../v2/index.html', '', 'menubar=no, status=no, height=200, width=400, scrollbars=no');
-// });
+window.addEventListener('click', event => {
+    // window.open('../v2/index.html', '', 'menubar=no, status=no, height=200, width=400, scrollbars=no');
+    // spreadLawn();
+    spreadTarget(event.target);
+});
 
 
 
@@ -88,12 +90,6 @@ function highLightFlowers(flowers, flowerColors){
 
 
 
-
-
-
-
-
-
 /* HIGHLIGHT FLOWERS ----------------------------------------------------------------------------------------- */
 function highlightLawn(lawn, lawnColors){
     for (let i = 0; i < lawn.length; i++) {
@@ -105,12 +101,6 @@ function highlightLawn(lawn, lawnColors){
         });
     };
 };
-
-
-
-
-
-
 
 
 
@@ -128,17 +118,105 @@ function highlightWater(water, waterColors){
 
 
 
-
-
-
-
-
-
 /* WRAP THE REST OF THE TEXT --------------------------------------------------------------------------------- */
 function wrapRest(){
     textField.forEach(element => {
         element.innerHTML = element.innerHTML.replace(/((?<!<[^>]+>)\b\w+\b(?![^<]*>))/gi, '<span>$1</span>');
     });
+};
+
+
+
+
+
+
+
+
+
+/* SPREAD FLOWERS -------------------------------------------------------------------------------------------- */
+function spreadFlowers(){
+    let patches = document.querySelectorAll('.flower');
+    console.log(patches);
+};
+
+
+
+/* SPREAD LAWN ----------------------------------------------------------------------------------------------- */
+function spreadLawn(){
+    let turf = document.querySelectorAll('.lawn');
+    console.log(turf);
+};
+
+
+
+/* SPREAD WATER ---------------------------------------------------------------------------------------------- */
+function spreadWater(){
+    let spring = document.querySelectorAll('.water');
+    console.log(spring);
+};
+
+
+
+/* SPREAD TARGET --------------------------------------------------------------------------------------------- */
+function spreadTarget(target){
+    /* CHECK IF COLORED ------------------------------------------------------------------------------- */
+    let targetClass = target.className;
+    // let targetCol = targetClass.match(/(\d+)/);
+
+
+
+    /* TARGET INFO ------------------------------------------------------------------------------------ */
+    let targetX = target.offsetLeft;
+    let targetY = target.offsetTop;
+
+    let targetWidth = target.offsetWidth;
+    let targetHeight = target.offsetHeight;
+
+
+
+    /* SELECTION GRID --------------------------------------------------------------------------------- */
+    let leftLine = targetX - (spaceWidth + 5);
+    let centerLine = targetX + (targetWidth / 2);
+    let rightLine = targetX + targetWidth + spaceWidth + 5;
+
+    let topLine = targetY - 1;
+    let midLine = targetY + (targetHeight / 2);
+    let bottomLine = targetY + targetHeight + 1;
+
+    
+    
+    /* SURROUNDING WORDS ------------------------------------------------------------------------------ */
+    let surroundingWords = [document.elementFromPoint(leftLine, topLine), 
+                            document.elementFromPoint(centerLine, topLine), 
+                            document.elementFromPoint(rightLine, topLine), 
+                            document.elementFromPoint(leftLine, midLine), 
+                            document.elementFromPoint(rightLine, midLine), 
+                            document.elementFromPoint(leftLine, bottomLine), 
+                            document.elementFromPoint(centerLine, bottomLine), 
+                            document.elementFromPoint(rightLine, bottomLine)];
+
+
+
+    /* SPREAD ----------------------------------------------------------------------------------------- */
+    for (let i = 0; i < surroundingWords.length; i++) {
+        let currentWord = surroundingWords[i];
+
+        if (currentWord === null || currentWord.tagName !== 'SPAN') {
+            console.log(currentWord, 'is not worthy');
+        } else if (currentWord.classList.contains('flower') === true){
+            console.log(currentWord, 'is flower');
+        } else {
+            console.log(currentWord, 'is worthy');
+        };
+
+        // if (currentWord === null) {
+        // } else  if (currentWord.className === '' && targetCol[0] > 1 && currentWord.tagName === 'SPAN') {
+        //     currentWord.classList.add('active');
+
+        //     let className = 'col-' + (targetCol[0] - 1);
+        //     currentWord.classList.add(className);
+        // };
+    };
 };
 
 
