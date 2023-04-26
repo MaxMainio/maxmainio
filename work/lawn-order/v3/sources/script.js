@@ -1,6 +1,7 @@
 /* CONSTANTS ------------------------------------------------------------------------------------------ */
 const textField = document.querySelectorAll('p');
 const spaceWidth = document.getElementById('space').offsetWidth;
+const flowerColorList = ['purples', 'reds', 'yellows'];
 
 
 
@@ -47,7 +48,7 @@ fetch('https://maxmain.io/work/lawn-order/v3/sources/data.json')
 
 
 
-function highLightFlowers(flowers){
+function highLightFlowers(flowers, flowerColors){
     for (let i = 0; i < flowers.length; i++) {
         textField.forEach(element => {
             let replace = flowers[i];
@@ -61,9 +62,14 @@ function highLightFlowers(flowers){
             let replace = flowers[i];
             const regex = new RegExp('([' + replace + '])', 'gi');
             let split = element.innerHTML.match(regex);
+
+            let flowerType = flowerColorList[getRandomInt(0, 2)];
+            let flowerGroup = flowerColors[flowerType];
+
+            console.log(flowerGroup.length);
             
             for (let j = 0; j < split.length; j++) {
-                split[j] = '<span class="fcol-' + getRandomInt(0, 7) + '">' + split[j] + '</span>';
+                split[j] = '<span style="background-color: ' + flowerGroup[getRandomInt(0, flowerGroup.length)] + ';">' + split[j] + '</span>';
             }
 
             let newHTML = split.join('');
