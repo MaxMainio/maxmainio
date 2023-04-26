@@ -69,7 +69,7 @@ function highLightFlowers(flowers, flowerColors){
             let flowerGroup = flowerColors[flowerType];
             
             for (let j = 0; j < split.length; j++) {
-                split[j] = '<span style="background-color: ' + flowerGroup[getRandomInt(0, (flowerGroup.length) - 1)] + ';">' + split[j] + '</span>';
+                split[j] = '<span class="' + flowerType + '" style="background-color: ' + flowerGroup[getRandomInt(0, (flowerGroup.length) - 1)] + ';">' + split[j] + '</span>';
             }
 
             let newHTML = split.join('');
@@ -95,9 +95,9 @@ function highlightLawn(lawn, lawnColors){
     for (let i = 0; i < lawn.length; i++) {
         textField.forEach(element => {
             var replace = lawn[i];
-            const regex = new RegExp('(' + replace + ')', 'gi');
+            const regex = new RegExp('((?<!<[^>]+>)' + replace + '(?![^<]*>))', 'gi');
 
-            element.innerHTML = element.innerHTML.replace(regex, '<span style="background-color: ' + lawnColors[getRandomInt(0, (lawnColors.length) - 1)] + ';">$1</span>');
+            element.innerHTML = element.innerHTML.replace(regex, '<span class="lawn" style="background-color: ' + lawnColors[getRandomInt(0, (lawnColors.length) - 1)] + ';">$1</span>');
         });
     };
 };
