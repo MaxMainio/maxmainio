@@ -54,7 +54,9 @@ function highLightFlowers(flowers, flowerColors){
     for (let i = 0; i < flowers.length; i++) {
         textField.forEach(element => {
             let replace = flowers[i];
-            const regex = new RegExp('(' + replace + ')', 'gi');
+            // const regex = new RegExp('(' + replace + ')', 'gi');
+            const regex = new RegExp('((?<!<[^>]+>)' + replace + '(?![^<]*>))', 'gi');
+
             element.innerHTML = element.innerHTML.replace(regex, '<span class="iris">$1</span>');
         });
 
@@ -69,7 +71,7 @@ function highLightFlowers(flowers, flowerColors){
             let flowerGroup = flowerColors[flowerType];
             
             for (let j = 0; j < split.length; j++) {
-                split[j] = '<span class="' + flowerType + '" style="background-color: ' + flowerGroup[getRandomInt(0, (flowerGroup.length) - 1)] + ';">' + split[j] + '</span>';
+                split[j] = '<span class="flower ' + flowerType + '" style="background-color: ' + flowerGroup[getRandomInt(0, (flowerGroup.length) - 1)] + ';">' + split[j] + '</span>';
             }
 
             let newHTML = split.join('');
