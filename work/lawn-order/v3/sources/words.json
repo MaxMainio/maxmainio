@@ -1,34 +1,34 @@
 [
     {
-        "Words": {
-          "Plants": [
+        "words": {
+          "plants": [
             "Fern",
             "Moss",
             "Ivy"
           ],
-          "Flowers": [
+          "flowers": [
             "Rose",
             "Tulip",
             "Daisy"
           ],
-          "Water": [
+          "water": [
             "Lake",
             "River",
             "Ocean"
           ]
         },
-        "Colors": {
-            "Reds": [
+        "colors": {
+            "reds": [
               "#FF0000",
               "#FF4500",
               "#DC143C"
             ],
-            "Purples": [
+            "purples": [
               "#800080",
               "#8B008B",
               "#9370DB"
             ],
-            "Yellows": [
+            "yellows": [
               "#FFFF00",
               "#FFD700",
               "#F0E68C"
