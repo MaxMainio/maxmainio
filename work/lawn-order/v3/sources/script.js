@@ -174,6 +174,11 @@ function spreadTarget(target){
     let targetColor = target.dataset.color;
     console.log(targetColor);
 
+    if (targetColor === 0) {
+        console.log('end');
+        return;
+    };
+
 
 
     /* TARGET INFO ------------------------------------------------------------------------------------ */
@@ -214,10 +219,13 @@ function spreadTarget(target){
 
         if (currentWord === null || currentWord.tagName !== 'SPAN' || currentWord.classList.contains('lawn')) {
             console.log(currentWord, 'is not worthy');
+
         } else if (currentWord.classList.contains('flower') === true){
             console.log(currentWord, 'is flower');
-        } else {
+
+        } else if (currentWord.className === '' && targetColor > 0){
             console.log(currentWord, 'is worthy');
+
             let newColorIndex = (targetColor - 1).toString();
 
             currentWord.classList.add('lawn');
