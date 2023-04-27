@@ -153,7 +153,70 @@ function spreadFlowers(){
 /* SPREAD LAWN ----------------------------------------------------------------------------------------------- */
 function spreadLawn(){
     let turf = document.querySelectorAll('.lawn');
-    console.log(turf);
+    
+    for (let i = 0; i < turf.length; i++) {
+    /* CHECK IF COLORED ------------------------------------------------------------------------------- */
+    let targetColor = turf[i].dataset.color;
+    let newColorIndex = (targetColor - 1).toString();
+
+
+
+    /* TARGET INFO ------------------------------------------------------------------------------------ */
+    let targetX = turf[i].offsetLeft;
+    let targetY = turf[i].offsetTop;
+
+    let targetWidth = turf[i].offsetWidth;
+    let targetHeight = turf[i].offsetHeight;
+
+
+
+    /* SELECTION GRID --------------------------------------------------------------------------------- */
+    let leftLine = targetX - (spaceWidth + 5);
+    let centerLine = targetX + (targetWidth / 2);
+    let rightLine = targetX + targetWidth + spaceWidth + 5;
+
+    let topLine = targetY - 1;
+    let midLine = targetY + (targetHeight / 2);
+    let bottomLine = targetY + targetHeight + 1;
+
+    
+    
+    /* SURROUNDING WORDS ------------------------------------------------------------------------------ */
+    let surroundingWords = [document.elementFromPoint(leftLine, topLine), 
+                            document.elementFromPoint(centerLine, topLine), 
+                            document.elementFromPoint(rightLine, topLine), 
+                            document.elementFromPoint(leftLine, midLine), 
+                            document.elementFromPoint(rightLine, midLine), 
+                            document.elementFromPoint(leftLine, bottomLine), 
+                            document.elementFromPoint(centerLine, bottomLine), 
+                            document.elementFromPoint(rightLine, bottomLine)];
+
+
+
+    /* SPREAD ----------------------------------------------------------------------------------------- */
+    for (let i = 0; i < surroundingWords.length; i++) {
+        let currentWord = surroundingWords[i];
+
+        if (currentWord === null || currentWord.tagName !== 'SPAN' || currentWord.classList.contains('lawn')) {
+            // console.log(currentWord, 'is not worthy');
+
+        } else if (currentWord.classList.contains('flower') === true){
+            // console.log(currentWord, 'is flower');
+
+            let currentParent = currentWord.parentElement;
+            currentParent.classList.add('lawn');
+            currentParent.style.backgroundColor = lawnColors[0][newColorIndex];
+            currentParent.setAttribute('data-color', newColorIndex);
+
+        } else if (currentWord.className === '' && targetColor > 0){
+            // console.log(currentWord, 'is worthy');
+
+            currentWord.classList.add('lawn');
+            currentWord.style.backgroundColor = lawnColors[0][newColorIndex];
+            currentWord.setAttribute('data-color', newColorIndex);
+        };
+    };
+    };
 };
 
 
@@ -163,6 +226,12 @@ function spreadWater(){
     let spring = document.querySelectorAll('.water');
     console.log(spring);
 };
+
+
+
+
+
+
 
 
 
@@ -212,7 +281,7 @@ function spreadTarget(target){
 
         if (currentWord === null || currentWord.tagName !== 'SPAN' || currentWord.classList.contains('lawn')) {
             // console.log(currentWord, 'is not worthy');
-            
+
         } else if (currentWord.classList.contains('flower') === true){
             // console.log(currentWord, 'is flower');
 
