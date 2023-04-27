@@ -17,7 +17,6 @@ const waterColors = [];
 
 /* POPUP WINDOW --------------------------------------------------------------------------------------- */
 window.addEventListener('click', event => {
-    // window.open('../v2/index.html', '', 'menubar=no, status=no, height=200, width=400, scrollbars=no');
     // spreadLawn();
     spreadTarget(event.target);
 });
@@ -31,7 +30,7 @@ window.addEventListener('click', event => {
 
 
 /* JSON FETCH ----------------------------------------------------------------------------------------- */
-fetch('https://maxmain.io/work/lawn-order/v3/sources/data.json')
+fetch('https://maxmain.io/work/lawn-texture/v3/sources/data.json')
     .then((response) => response.json())
     .then((json) => {
         const lawn = json[0].words.plants;
