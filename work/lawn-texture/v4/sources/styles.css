@@ -1,0 +1,13 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+span{
+    padding: 0;
+}
+
+span.lawn, span.flower, span.water{
+    padding: 0;
+    cursor: pointer;
+}
