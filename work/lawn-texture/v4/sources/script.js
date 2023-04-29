@@ -19,9 +19,13 @@ const waterColors = [];
 window.addEventListener('click', event => {
     // spreadLawn();
 
-    spreadTargetedFlower(event.target);
-
-    // spreadTargetedLawn(event.target);
+    if (event.target.classList.contains('lawn') === true) {
+        spreadTargetedLawn(event.target);
+    } else if (event.target.classList.contains('flower') === true) {
+        spreadTargetedFlower(event.target);
+    } else if (event.target.classList.contains('water') === true) {
+        console.log('water');
+    };
 });
 
 
@@ -63,6 +67,7 @@ fetch('https://maxmain.io/work/lawn-texture/v3/sources/data.json')
 
 
 
+/* INITIAL SETUP ============================================================================================= */
 /* HIGHLIGHT FLOWERS ----------------------------------------------------------------------------------------- */
 function highLightFlowers(flowers, flowerColors){
     for (let i = 0; i < flowers.length; i++) {
@@ -144,6 +149,7 @@ function wrapRest(){
 
 
 
+/* AUTOMATIC SPREAD ========================================================================================== */
 /* SPREAD FLOWERS -------------------------------------------------------------------------------------------- */
 function spreadFlowers(){
     let patches = document.querySelectorAll('.flower');
@@ -237,6 +243,104 @@ function spreadWater(){
 
 
 
+/* TARGETED SPREAD =========================================================================================== */
+/* SPREAD TARGETED FLOWER ------------------------------------------------------------------------------------ */
+function spreadTargetedFlower(target){
+    /* TARGET INFO ------------------------------------------------------------------------------------ */
+    let flowerType = target.dataset.color;
+    let colorGroup = flowerColors[0][flowerType];
+
+    let targetX = target.offsetLeft;
+    let targetY = target.offsetTop;
+
+    let targetWidth = target.offsetWidth;
+    let targetHeight = target.offsetHeight;
+
+
+
+    /* SELECTION GRID --------------------------------------------------------------------------------- */
+    let leftX = targetX - (spaceWidth + 1);
+    let centerX = targetX + (targetWidth / 2);
+    let rightX = targetX + targetWidth + spaceWidth + 1;
+
+    let topY = targetY - 1;
+    let centerY = targetY + (targetHeight / 2);
+    let bottomY = targetY + targetHeight + 1;
+
+
+
+    /* CHECK POINTS ----------------------------------------------------------------------------------- */
+    let coordinates = [centerX, topY,
+                    rightX, centerY,
+                    centerX, bottomY,
+                    leftX, centerY];
+
+    let tagged = getSurroundings(coordinates);
+
+    for (let i = 0; i < tagged.length; i++) {
+        if (tagged[i].tagName !== 'SPAN' || tagged[i].classList.contains('lawn') || tagged[i].classList.contains('water') || tagged[i].classList.contains('flower')) {
+            console.log(tagged[i], 'not worthy of promotion');
+
+        } else if (tagged[i].classList.contains('sprout')) {
+            console.log(tagged[i], 'is worthy of promotion');
+            promoteToFlower(tagged[i], colorGroup);
+
+        } else {
+            console.log(tagged[i], 'needs to be split');
+            splitIntoSprout(tagged[i], flowerType);
+
+            let reCheck = [coordinates[i], coordinates[i + 1]]
+            tagged[i] = getSurroundings(reCheck);
+            
+            promoteToFlower(tagged[i][0]);
+        }
+    };
+};
+
+
+
+function getSurroundings(coordinates) {
+    let surroundings = [];
+
+    for (let i = 0; i < coordinates.length; i = i + 2) {
+        surroundings.push(document.elementFromPoint(coordinates[i], coordinates[i + 1]));
+    }
+
+    return (surroundings);
+};
+
+
+
+function splitIntoSprout(tagged, flowerType){
+    const regex = new RegExp('(.)', 'gi');
+    let split = tagged.innerHTML.match(regex);
+
+    for (let i = 0; i < split.length; i++) {
+        split[i] = '<span class="sprout" data-color="' + flowerType + '">' + split[i] + '</span>';
+    };
+
+    let newHTML = split.join('');
+    tagged.innerHTML = newHTML;
+};
+
+
+
+function promoteToFlower(sprout){
+    let colorGroup = flowerColors[0][sprout.dataset.color];
+
+    sprout.classList.remove('sprout');
+    sprout.classList.add('flower');
+    sprout.style.backgroundColor = colorGroup[getRandomInt(0, (colorGroup.length - 1))];
+};
+
+
+
+
+
+
+
+
+
 /* SPREAD TARGETED LAWN -------------------------------------------------------------------------------------- */
 function spreadTargetedLawn(target){
     let targetColor = target.dataset.color;
@@ -281,10 +385,8 @@ function spreadTargetedLawn(target){
         let currentWord = surroundingWords[i];
 
         if (currentWord === null || currentWord.tagName !== 'SPAN' || currentWord.classList.contains('lawn')) {
-            // console.log(currentWord, 'is not worthy');
 
         } else if (currentWord.classList.contains('flower') === true){
-            // console.log(currentWord, 'is flower');
 
             let currentParent = currentWord.parentElement;
             currentParent.classList.add('lawn');
@@ -292,99 +394,12 @@ function spreadTargetedLawn(target){
             currentParent.setAttribute('data-color', newColorIndex);
 
         } else if (currentWord.className === '' && targetColor > 0){
-            // console.log(currentWord, 'is worthy');
 
             currentWord.classList.add('lawn');
             currentWord.style.backgroundColor = lawnColors[0][newColorIndex];
             currentWord.setAttribute('data-color', newColorIndex);
         };
     };
-};
-
-
-
-
-
-
-
-
-
-/* SPREAD TARGETED FLOWER ------------------------------------------------------------------------------------ */
-function spreadTargetedFlower(target){
-    /* TARGET INFO ------------------------------------------------------------------------------------ */
-    let targetColorGroup = target.dataset.color;
-    let targetColorArray = flowerColors[0][targetColorGroup];
-    console.log(targetColorGroup);
-    console.log(targetColorArray);
-
-    let targetX = target.offsetLeft;
-    let targetY = target.offsetTop;
-
-    let targetWidth = target.offsetWidth;
-    let targetHeight = target.offsetHeight;
-
-
-
-    /* SELECTION GRID --------------------------------------------------------------------------------- */
-    let leftLine = targetX - (spaceWidth + 5);
-    let centerLine = targetX + (targetWidth / 2);
-    let rightLine = targetX + targetWidth + spaceWidth + 5;
-
-    let topLine = targetY - 1;
-    let midLine = targetY + (targetHeight / 2);
-    let bottomLine = targetY + targetHeight + 1;
-
-    
-    
-    /* SURROUNDING WORDS ------------------------------------------------------------------------------ */
-    // let surroundingWords = [document.elementFromPoint(leftLine, topLine), 
-    //                         document.elementFromPoint(centerLine, topLine), 
-    //                         document.elementFromPoint(rightLine, topLine), 
-    //                         document.elementFromPoint(leftLine, midLine), 
-    //                         document.elementFromPoint(rightLine, midLine), 
-    //                         document.elementFromPoint(leftLine, bottomLine), 
-    //                         document.elementFromPoint(centerLine, bottomLine), 
-    //                         document.elementFromPoint(rightLine, bottomLine)];
-    let surroundingWords = document.elementFromPoint(leftLine, topLine);
-
-    if (surroundingWords.tagName !== 'SPAN' && surroundingWords.classList.contains('lawn')) {
-        console.log('skip');
-    } else {
-        // console.log('has');
-        surroundingWords.innerHTML
-        const regex = new RegExp('(.)', 'gi');
-        // let flowerGroup = flowerColors[flowerType];
-
-        target.innerHTML = target.innerHTML.replace(regex, '<span class="flower" style="background-color: ' + targetColorArray[getRandomInt(0, (targetColorArray.length) - 1)] + ';" data-color="' + targetColorGroup + '">$1</span>');
-    }
-
-    // console.log(flowerColors[0][targetColorGroup]);
-
-
-
-    // /* SPREAD ----------------------------------------------------------------------------------------- */
-    // for (let i = 0; i < surroundingWords.length; i++) {
-    //     let currentWord = surroundingWords[i];
-
-    //     if (currentWord === null || currentWord.tagName !== 'SPAN' || currentWord.classList.contains('lawn')) {
-    //         // console.log(currentWord, 'is not worthy');
-
-    //     } else if (currentWord.classList.contains('flower') === true){
-    //         // console.log(currentWord, 'is flower');
-
-    //         let currentParent = currentWord.parentElement;
-    //         currentParent.classList.add('lawn');
-    //         currentParent.style.backgroundColor = lawnColors[0][newColorIndex];
-    //         currentParent.setAttribute('data-color', newColorIndex);
-
-    //     } else if (currentWord.className === '' && targetColor > 0){
-    //         // console.log(currentWord, 'is worthy');
-
-    //         currentWord.classList.add('lawn');
-    //         currentWord.style.backgroundColor = lawnColors[0][newColorIndex];
-    //         currentWord.setAttribute('data-color', newColorIndex);
-    //     };
-    // };
 };
 
 
