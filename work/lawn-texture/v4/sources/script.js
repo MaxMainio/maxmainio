@@ -15,10 +15,13 @@ const waterColors = [];
 
 
 
-/* POPUP WINDOW --------------------------------------------------------------------------------------- */
+/* ON CLICK EVENT ------------------------------------------------------------------------------------- */
 window.addEventListener('click', event => {
     // spreadLawn();
-    spreadTarget(event.target);
+
+    spreadTargetedFlower(event.target);
+
+    // spreadTargetedLawn(event.target);
 });
 
 
@@ -234,9 +237,8 @@ function spreadWater(){
 
 
 
-/* SPREAD TARGET --------------------------------------------------------------------------------------------- */
-function spreadTarget(target){
-    /* CHECK IF COLORED ------------------------------------------------------------------------------- */
+/* SPREAD TARGETED LAWN -------------------------------------------------------------------------------------- */
+function spreadTargetedLawn(target){
     let targetColor = target.dataset.color;
     let newColorIndex = (targetColor - 1).toString();
 
@@ -297,6 +299,92 @@ function spreadTarget(target){
             currentWord.setAttribute('data-color', newColorIndex);
         };
     };
+};
+
+
+
+
+
+
+
+
+
+/* SPREAD TARGETED FLOWER ------------------------------------------------------------------------------------ */
+function spreadTargetedFlower(target){
+    /* TARGET INFO ------------------------------------------------------------------------------------ */
+    let targetColorGroup = target.dataset.color;
+    let targetColorArray = flowerColors[0][targetColorGroup];
+    console.log(targetColorGroup);
+    console.log(targetColorArray);
+
+    let targetX = target.offsetLeft;
+    let targetY = target.offsetTop;
+
+    let targetWidth = target.offsetWidth;
+    let targetHeight = target.offsetHeight;
+
+
+
+    /* SELECTION GRID --------------------------------------------------------------------------------- */
+    let leftLine = targetX - (spaceWidth + 5);
+    let centerLine = targetX + (targetWidth / 2);
+    let rightLine = targetX + targetWidth + spaceWidth + 5;
+
+    let topLine = targetY - 1;
+    let midLine = targetY + (targetHeight / 2);
+    let bottomLine = targetY + targetHeight + 1;
+
+    
+    
+    /* SURROUNDING WORDS ------------------------------------------------------------------------------ */
+    // let surroundingWords = [document.elementFromPoint(leftLine, topLine), 
+    //                         document.elementFromPoint(centerLine, topLine), 
+    //                         document.elementFromPoint(rightLine, topLine), 
+    //                         document.elementFromPoint(leftLine, midLine), 
+    //                         document.elementFromPoint(rightLine, midLine), 
+    //                         document.elementFromPoint(leftLine, bottomLine), 
+    //                         document.elementFromPoint(centerLine, bottomLine), 
+    //                         document.elementFromPoint(rightLine, bottomLine)];
+    let surroundingWords = document.elementFromPoint(leftLine, topLine);
+
+    if (surroundingWords.tagName !== 'SPAN' && surroundingWords.classList.contains('lawn')) {
+        console.log('skip');
+    } else {
+        // console.log('has');
+        surroundingWords.innerHTML
+        const regex = new RegExp('(.)', 'gi');
+        // let flowerGroup = flowerColors[flowerType];
+
+        target.innerHTML = target.innerHTML.replace(regex, '<span class="flower" style="background-color: ' + targetColorArray[getRandomInt(0, (targetColorArray.length) - 1)] + ';" data-color="' + targetColorGroup + '">$1</span>');
+    }
+
+    // console.log(flowerColors[0][targetColorGroup]);
+
+
+
+    // /* SPREAD ----------------------------------------------------------------------------------------- */
+    // for (let i = 0; i < surroundingWords.length; i++) {
+    //     let currentWord = surroundingWords[i];
+
+    //     if (currentWord === null || currentWord.tagName !== 'SPAN' || currentWord.classList.contains('lawn')) {
+    //         // console.log(currentWord, 'is not worthy');
+
+    //     } else if (currentWord.classList.contains('flower') === true){
+    //         // console.log(currentWord, 'is flower');
+
+    //         let currentParent = currentWord.parentElement;
+    //         currentParent.classList.add('lawn');
+    //         currentParent.style.backgroundColor = lawnColors[0][newColorIndex];
+    //         currentParent.setAttribute('data-color', newColorIndex);
+
+    //     } else if (currentWord.className === '' && targetColor > 0){
+    //         // console.log(currentWord, 'is worthy');
+
+    //         currentWord.classList.add('lawn');
+    //         currentWord.style.backgroundColor = lawnColors[0][newColorIndex];
+    //         currentWord.setAttribute('data-color', newColorIndex);
+    //     };
+    // };
 };
 
 
