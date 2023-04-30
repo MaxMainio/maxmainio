@@ -270,23 +270,24 @@ function spreadTargetedFlower(target){
 
 
     /* CHECK POINTS ----------------------------------------------------------------------------------- */
-    let coordinates = [centerX, topY,
-                    rightX, centerY,
-                    centerX, bottomY,
-                    leftX, centerY];
+    let coordinates = [
+        centerX, topY,
+        rightX, centerY,
+        centerX, bottomY,
+        leftX, centerY];
 
     let tagged = getSurroundings(coordinates);
 
     for (let i = 0; i < tagged.length; i++) {
         if (tagged[i].tagName !== 'SPAN' || tagged[i].classList.contains('lawn') || tagged[i].classList.contains('water') || tagged[i].classList.contains('flower')) {
-            console.log(tagged[i], 'not worthy of promotion');
+            // console.log(tagged[i], 'not worthy of promotion');
 
         } else if (tagged[i].classList.contains('sprout')) {
-            console.log(tagged[i], 'is worthy of promotion');
+            // console.log(tagged[i], 'is worthy of promotion');
             promoteToFlower(tagged[i], colorGroup);
 
         } else {
-            console.log(tagged[i], 'needs to be split');
+            // console.log(tagged[i], 'needs to be split');
             splitIntoSprout(tagged[i], flowerType);
 
             let reCheck = [coordinates[i], coordinates[i + 1]]
@@ -358,25 +359,25 @@ function spreadTargetedLawn(target){
 
 
     /* SELECTION GRID --------------------------------------------------------------------------------- */
-    let leftLine = targetX - (spaceWidth + 5);
-    let centerLine = targetX + (targetWidth / 2);
-    let rightLine = targetX + targetWidth + spaceWidth + 5;
+    let leftX = targetX - (spaceWidth + 5);
+    let centerX = targetX + (targetWidth / 2);
+    let rightX = targetX + targetWidth + spaceWidth + 5;
 
-    let topLine = targetY - 1;
-    let midLine = targetY + (targetHeight / 2);
-    let bottomLine = targetY + targetHeight + 1;
+    let topY = targetY - 1;
+    let centerY = targetY + (targetHeight / 2);
+    let bottomY = targetY + targetHeight + 1;
 
     
     
     /* SURROUNDING WORDS ------------------------------------------------------------------------------ */
-    let surroundingWords = [document.elementFromPoint(leftLine, topLine), 
-                            document.elementFromPoint(centerLine, topLine), 
-                            document.elementFromPoint(rightLine, topLine), 
-                            document.elementFromPoint(leftLine, midLine), 
-                            document.elementFromPoint(rightLine, midLine), 
-                            document.elementFromPoint(leftLine, bottomLine), 
-                            document.elementFromPoint(centerLine, bottomLine), 
-                            document.elementFromPoint(rightLine, bottomLine)];
+    let surroundingWords = [document.elementFromPoint(leftX, topY), 
+                            document.elementFromPoint(centerX, topY), 
+                            document.elementFromPoint(rightX, topY), 
+                            document.elementFromPoint(leftX, centerY), 
+                            document.elementFromPoint(rightX, centerY), 
+                            document.elementFromPoint(leftX, bottomY), 
+                            document.elementFromPoint(centerX, bottomY), 
+                            document.elementFromPoint(rightX, bottomY)];
 
 
 
@@ -400,6 +401,24 @@ function spreadTargetedLawn(target){
             currentWord.setAttribute('data-color', newColorIndex);
         };
     };
+
+    /* CHECK POINTS ----------------------------------------------------------------------------------- */
+    // let coordinates = [
+    //     leftX, topY,
+    //     centerX, topY,
+    //     rightX, topY,
+    //     rightX, centerY,
+    //     rightX, bottomY,
+    //     centerX, bottomY,
+    //     leftX, bottomY,
+    //     leftX, centerY];
+
+    // let tagged = getSurroundings(coordinates);
+    // console.log(tagged);
+
+    // for (let i = 0; i < tagged.length; i++) {
+    //     if (tagged[i].tagName !== 'SPAN')
+    // };
 };
 
 
