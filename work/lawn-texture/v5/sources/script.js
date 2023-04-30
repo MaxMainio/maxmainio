@@ -32,14 +32,13 @@ window.addEventListener('click', event => {
 fetch('https://maxmain.io/work/lawn-texture/v5/sources/data.json')
     .then((response) => response.json())
     .then((json) => {
-        const lawn = json.lawn.words;
+        const lawn = json.lawn;
         lawnColors.push(...json.lawn.colors);
-        console.log(json.lawn);
 
-        const water = json.water.words;
+        const water = json.water;
         waterColors.push(...json.water.colors);
 
-        const flowers = json.flowers.words;
+        const flowers = json.flowers;
         const { purples, reds, yellows } = json.flowers.types;
         flowerTypes.purples = purples;
         flowerTypes.reds = reds;
@@ -54,18 +53,36 @@ fetch('https://maxmain.io/work/lawn-texture/v5/sources/data.json')
 
 
 function initialHighLight(lawn, water,flowers) {
-    highlightWords(lawn);
-    highlightWords(water);
-    // highlightGlyphs(flowers);
+    // highlightWords(lawn);
+    // highlightWords(water);
+    highlightGlyphs(flowers);
 
     // wrapWrest();
 };
 
 
 
-function highlightWords(keyWords) {
+function highlightWords(currentPass) {
+    const subject = currentPass.key;
+    const search = currentPass.words;
+    const colors = eval(subject + 'Colors');
 
-}
+    for (let i = 0; i < search.length; i++) {
+        textField.forEach(element => {
+            let replace = search[i];
+            const regex = new RegExp('((?<!<[^>]+>)' + replace + '(?![^<]*>))', 'gi');
+            let colorNum = getRandomInt(0, (colors.length) - 1);
+
+            element.innerHTML = element.innerHTML.replace(regex, '<span class="lawn" style="background-color: ' + colors[colorNum] + ';" data-color="' + colorNum + '">$1</span>');
+        })
+    };
+};
+
+function highlightGlyphs(currentPass) {
+    const subject = currentPass.key;
+    const search = currentPass.words;
+    const types = currentPass.types;
+};
 
 
 
