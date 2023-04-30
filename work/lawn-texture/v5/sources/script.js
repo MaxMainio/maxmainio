@@ -4,7 +4,7 @@ const spaceWidth = document.getElementById('space').offsetWidth;
 const flowerColorList = ['purples', 'reds', 'yellows'];
 
 const lawnColors = [];
-const flowerColors = [];
+const flowerTypes = {};
 const waterColors = [];
 
 
@@ -18,14 +18,6 @@ const waterColors = [];
 /* ON CLICK EVENT ------------------------------------------------------------------------------------- */
 window.addEventListener('click', event => {
     // spreadLawn();
-
-    if (event.target.classList.contains('lawn') === true) {
-        spreadTargetedLawn(event.target);
-    } else if (event.target.classList.contains('flower') === true) {
-        spreadTargetedFlower(event.target);
-    } else if (event.target.classList.contains('water') === true) {
-        console.log('water');
-    };
 });
 
 
@@ -41,23 +33,34 @@ fetch('https://maxmain.io/work/lawn-texture/v5/sources/data.json')
     .then((response) => response.json())
     .then((json) => {
         const lawn = json[0].words.plants;
-        const lawnCol = json[0].colors.plants;
-        lawnColors.push(json[0].colors.plants);
+        lawnColors.push(...json[0].colors.plants);
+        // console.log(lawn);
+        // console.log(lawnColors);
 
         const flowers = json[0].words.flowers;
-        const flowerCol = json[0].colors.flowers;
-        flowerColors.push(json[0].colors.flowers);
+        const { purples, reds, yellows } = json[0].colors.flowers;
+        flowerTypes.purples = purples;
+        flowerTypes.reds = reds;
+        flowerTypes.yellows = yellows;
+        // console.log(flowers);
+        // console.log(flowerTypes);
 
         const water = json[0].words.water;
-        const waterCol = json[0].colors.water;
-        waterColors.push(json[0].colors.water);
+        waterColors.push(...json[0].colors.water);
+        // console.log(water);
+        // console.log(waterColors);
 
-        highLightFlowers(flowers, flowerCol);
-        highlightLawn(lawn, lawnCol);
-        highlightWater(water, waterCol);
 
-        wrapRest();
+
+        initialHighlight(lawn, flowers, water);
 });
+
+
+
+function initialHighlight(lawn, flwoers, water){
+    highlightLawn(lawn);
+    highlightWater(water);
+}
 
 
 

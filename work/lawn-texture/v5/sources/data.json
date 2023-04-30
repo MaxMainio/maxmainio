@@ -1,7 +1,7 @@
 [
     {
-        "words": {
-            "plants": [
+        "lawn": {
+            "words": [
                 "acacia",
                 "ageratum",
                 "alder",
@@ -235,67 +235,7 @@
                 "world",
                 "yard"
             ],
-            "flowers": [
-                "bloom",
-                "blossom",
-                "bud",
-                "calendula",
-                "carpel",
-                "cineraria",
-                "coneflower",
-                "dahlia",
-                "daisy",
-                "floret",
-                "flower",
-                "floweret",
-                "lily",
-                "marigold",
-                "orchid",
-                "peony",
-                "perennial",
-                "perianth",
-                "petal",
-                "pollen",
-                "pompon",
-                "poppy",
-                "posy",
-                "rose",
-                "sunflower",
-                "wallflower",
-                "floral"
-            ],
-            "water": [
-                "basin",
-                "basin",
-                "creek",
-                "lagoon",
-                "lagoon",
-                "lake",
-                "lakelet",
-                "loch",
-                "mere",
-                "millpond",
-                "millpond",
-                "mouth",
-                "ocean",
-                "pond",
-                "pond",
-                "pool",
-                "pool",
-                "puddle",
-                "reservoir",
-                "river",
-                "sea",
-                "sluice",
-                "splash",
-                "spring",
-                "stream",
-                "tarn",
-                "water"
-            ]
-        },
-        "colors": {
-            "plants": [
+            "colors": [
                 "#006837",
                 "#056b37",
                 "#096e38",
@@ -326,8 +266,78 @@
                 "#7aba3e",
                 "#7ebd3e",
                 "#83c03e"
+            ]
+        },
+        "water": {
+            "words": [
+                "basin",
+                "basin",
+                "creek",
+                "lagoon",
+                "lagoon",
+                "lake",
+                "lakelet",
+                "loch",
+                "mere",
+                "millpond",
+                "millpond",
+                "mouth",
+                "ocean",
+                "pond",
+                "pond",
+                "pool",
+                "pool",
+                "puddle",
+                "reservoir",
+                "river",
+                "sea",
+                "sluice",
+                "splash",
+                "spring",
+                "stream",
+                "tarn",
+                "water"
             ],
-            "flowers": {
+            "colors": [
+                "#023373",
+                "#034aa6",
+                "#0476d9",
+                "#5684bf",
+                "#5a90bf",
+                "#b6e1f2"
+            ]
+        },
+        "flowers": {
+            "words": [
+                "bloom",
+                "blossom",
+                "bud",
+                "calendula",
+                "carpel",
+                "cineraria",
+                "coneflower",
+                "dahlia",
+                "daisy",
+                "floret",
+                "flower",
+                "floweret",
+                "lily",
+                "marigold",
+                "orchid",
+                "peony",
+                "perennial",
+                "perianth",
+                "petal",
+                "pollen",
+                "pompon",
+                "poppy",
+                "posy",
+                "rose",
+                "sunflower",
+                "wallflower",
+                "floral"
+            ],
+            "types": {
                 "purples": [
                     "#312f73",
                     "#402b8c",
@@ -360,15 +370,7 @@
                     "#f2c029",
                     "#d98e04"
                 ]
-            },
-            "water": [
-                "#023373",
-                "#034aa6",
-                "#0476d9",
-                "#5684bf",
-                "#5a90bf",
-                "#b6e1f2"
-            ]
-          }
-      }
+            }
+        }
+    }
 ]
