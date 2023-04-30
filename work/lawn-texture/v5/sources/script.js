@@ -1,7 +1,6 @@
 /* CONSTANTS ------------------------------------------------------------------------------------------ */
 const textField = document.querySelectorAll('p');
-const spaceWidth = document.getElementById('space').offsetWidth;
-const flowerColorList = ['purples', 'reds', 'yellows'];
+const spaceWidth = getSpaceWidth();
 
 const lawnColors = [];
 const waterColors = [];
@@ -19,6 +18,27 @@ const flowerTypes = {};
 window.addEventListener('click', event => {
     // spreadLawn();
 });
+
+
+
+
+
+
+
+
+
+function getSpaceWidth() {
+    const regex = new RegExp('( )', '');
+    textField[0].innerHTML = textField[0].innerHTML.replace(regex, '<span id="space">$1</span>');
+    
+    const target = document.getElementById('space');
+    const spaceWidth = target.offsetWidth;
+
+    const newRegex = new RegExp('(<span id="space"> </span>)', '');
+    textField[0].innerHTML = textField[0].innerHTML.replace(newRegex, ' ');
+
+    return spaceWidth;
+};
 
 
 
