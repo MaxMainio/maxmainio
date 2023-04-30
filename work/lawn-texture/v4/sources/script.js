@@ -401,24 +401,6 @@ function spreadTargetedLawn(target){
             currentWord.setAttribute('data-color', newColorIndex);
         };
     };
-
-    /* CHECK POINTS ----------------------------------------------------------------------------------- */
-    // let coordinates = [
-    //     leftX, topY,
-    //     centerX, topY,
-    //     rightX, topY,
-    //     rightX, centerY,
-    //     rightX, bottomY,
-    //     centerX, bottomY,
-    //     leftX, bottomY,
-    //     leftX, centerY];
-
-    // let tagged = getSurroundings(coordinates);
-    // console.log(tagged);
-
-    // for (let i = 0; i < tagged.length; i++) {
-    //     if (tagged[i].tagName !== 'SPAN')
-    // };
 };
 
 
