@@ -1,5 +1,7 @@
 {
     "lawn": {
+        "key": "lawn",
+
         "words": [
             "acacia",
             "ageratum",
@@ -268,6 +270,8 @@
         ]
     },
     "water": {
+        "key": "water",
+
         "words": [
             "basin",
             "basin",
@@ -307,6 +311,8 @@
         ]
     },
     "flowers": {
+        "key": "flowers",
+        
         "words": [
             "bloom",
             "blossom",

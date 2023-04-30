@@ -34,6 +34,7 @@ fetch('https://maxmain.io/work/lawn-texture/v5/sources/data.json')
     .then((json) => {
         const lawn = json.lawn.words;
         lawnColors.push(...json.lawn.colors);
+        console.log(json.lawn);
 
         const water = json.water.words;
         waterColors.push(...json.water.colors);
@@ -43,7 +44,31 @@ fetch('https://maxmain.io/work/lawn-texture/v5/sources/data.json')
         flowerTypes.purples = purples;
         flowerTypes.reds = reds;
         flowerTypes.yellows = yellows;
+
+
+
+        initialHighLight(lawn, water, flowers);
 });
+
+
+
+
+function initialHighLight(lawn, water,flowers) {
+    highlightWords(lawn);
+    highlightWords(water);
+    // highlightGlyphs(flowers);
+
+    // wrapWrest();
+};
+
+
+
+function highlightWords(keyWords) {
+
+}
+
+
+
 
 
 
