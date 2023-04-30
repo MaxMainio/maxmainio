@@ -32,29 +32,17 @@ window.addEventListener('click', event => {
 fetch('https://maxmain.io/work/lawn-texture/v5/sources/data.json')
     .then((response) => response.json())
     .then((json) => {
-        console.log(json);
-        console.log(json[0]);
+        const lawn = json.lawn.words;
+        lawnColors.push(...json.lawn.colors);
 
+        const water = json.water.words;
+        waterColors.push(...json.water.colors);
 
-
-
-        // const lawn = json[0].words.plants;
-        // lawnColors.push(...json[0].colors.plants);
-        // console.log(lawn);
-        // console.log(lawnColors);
-
-        // const flowers = json[0].words.flowers;
-        // const { purples, reds, yellows } = json[0].colors.flowers;
-        // flowerTypes.purples = purples;
-        // flowerTypes.reds = reds;
-        // flowerTypes.yellows = yellows;
-        // console.log(flowers);
-        // console.log(flowerTypes);
-
-        // const water = json[0].words.water;
-        // waterColors.push(...json[0].colors.water);
-        // console.log(water);
-        // console.log(waterColors);
+        const flowers = json.flowers.words;
+        const { purples, reds, yellows } = json.flowers.types;
+        flowerTypes.purples = purples;
+        flowerTypes.reds = reds;
+        flowerTypes.yellows = yellows;
 });
 
 
