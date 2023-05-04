@@ -17,6 +17,7 @@ const flowerTypes = {};
 /* ON CLICK EVENT ------------------------------------------------------------------------------------- */
 window.addEventListener('click', event => {
     spreadLawn();
+    // spreadFlowers();
 });
 
 
@@ -186,6 +187,12 @@ function wrapRest() {
 
 
 /* SPREAD --------------------------------------------------------------------------------------------- */
+function spreadFlowers(){
+    let batch = document.querySelectorAll('flower')
+}
+
+
+
 function spreadLawn(){
     let turf = document.querySelectorAll('.lawn');
     
@@ -202,7 +209,7 @@ function spreadLawn(){
         let coordinates = getLawnCoordinates(target);
         let tagged = getSurroundings(coordinates);
 
-        promoteWord(tagged, newColor);
+        promoteLawn(tagged, newColor);
     };
 };
 
@@ -263,25 +270,31 @@ function getSurroundings(coordinates){
 
         if (tagged !== null && tagged.tagName === 'SPAN') {
             surroundings.push(tagged);
-        } 
+        }
     }
 
     return (surroundings);
-}
+};
 
 
 
-function promoteWord(tagged, newColor){
+function promoteLawn(tagged, newColor){
     for (let i = 0; i < tagged.length; i++) {
-        if (tagged[i].classList.contains('lawn') || tagged[i].classList.contains('flower')) {
+        if (tagged[i].classList.contains('lawn')) {
             continue;
+
+        } else if (tagged[i].classList.contains('flower')) {
+            tagged[i].parentNode.classList.add('lawn');
+            tagged[i].parentNode.style.backgroundColor = lawnColors[newColor];
+            tagged[i].parentNode.setAttribute('data-color', newColor);
+
+        } else {
+            tagged[i].classList.add('lawn');
+            tagged[i].style.backgroundColor = lawnColors[newColor];
+            tagged[i].setAttribute('data-color', newColor);
         }
-        
-        tagged[i].classList.add('lawn');
-        tagged[i].style.backgroundColor = lawnColors[newColor];
-        tagged[i].setAttribute('data-color', newColor);
     }
-}
+};
 
 
 
