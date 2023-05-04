@@ -16,8 +16,8 @@ const flowerTypes = {};
 
 /* ON CLICK EVENT ------------------------------------------------------------------------------------- */
 window.addEventListener('click', event => {
-    spreadLawn();
-    // spreadFlowers();
+    // spreadLawn();
+    spreadFlowers();
 });
 
 
@@ -188,7 +188,21 @@ function wrapRest() {
 
 /* SPREAD --------------------------------------------------------------------------------------------- */
 function spreadFlowers(){
-    let batch = document.querySelectorAll('flower')
+    let flowers = document.querySelectorAll('.flower')
+
+    for (let i = 0; i < flowers.length; i++) {
+        let target = getTargetInfo(flowers[i]);
+
+        let coordinates = getFlowerCoordinates(target);
+        let tagged = getSurroundings(coordinates);
+
+        fertalize(tagged);
+
+        console.log(tagged);
+
+        // console.log(flowers[i]);
+        // console.log(tagged);
+    }
 }
 
 
@@ -200,7 +214,6 @@ function spreadLawn(){
         let target = getTargetInfo(turf[i]);
         
         if (target.color === '0') {
-            console.log('stop')
             continue;
         }
         
@@ -255,6 +268,29 @@ function getLawnCoordinates(target){
 
 
 
+function getFlowerCoordinates(target){
+    let leftX = target.location[0] - (spaceWidth + 1);
+    let centerX = target.location[0] + (target.size[0] / 2);
+    let rightX = target.location[0] + target.size[0] + spaceWidth + 1;
+
+    let topY = target.location[1] - 1;
+    let centerY = target.location[1] + (target.size[1] / 2);
+    let bottomY = target.location[1] + target.size[1] + 1;
+
+    
+
+    let coordinates = [
+        centerX, topY,
+        rightX, centerY,
+        centerX, bottomY,
+        leftX, centerY,
+    ];
+
+    return(coordinates);
+}
+
+
+
 
 
 
@@ -295,6 +331,22 @@ function promoteLawn(tagged, newColor){
         }
     }
 };
+
+
+
+function fertalize(tagged){
+    for (let i = 0; i < tagged.length; i++) {
+        // if (!tagged[i].classList.contains('lawn') && !tagged[i].classList.contains('flower')) {
+        //     console.log(tagged[i]);
+        //     console.log('is viable');
+
+        //     tagged[i] = 'is viable';
+        // }
+        if (tagged[i].classList.contains('lawn') || tagged[i].classList.contains('flower')) {
+            tagged.splice(i, 1);
+        }
+    }
+}
 
 
 
