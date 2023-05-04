@@ -73,7 +73,7 @@ fetch('https://maxmain.io/work/lawn-texture/v5/sources/data.json')
 
 function initialHighLight(lawn, water,flowers) {
     highlightWords(lawn);
-    highlightWords(water);
+    // highlightWords(water);
     highlightGlyphs(flowers);
 
     wrapRest();
@@ -261,9 +261,9 @@ function getSurroundings(coordinates){
     for (let i = 0; i < coordinates.length; i = i + 2) {
         let tagged = document.elementFromPoint(coordinates[i], coordinates[i + 1]);
 
-        if (tagged !== null && tagged.tagName === 'SPAN' && !tagged.classList.contains('lawn')) {
+        if (tagged !== null && tagged.tagName === 'SPAN') {
             surroundings.push(tagged);
-        }
+        } 
     }
 
     return (surroundings);
@@ -273,6 +273,10 @@ function getSurroundings(coordinates){
 
 function promoteWord(tagged, newColor){
     for (let i = 0; i < tagged.length; i++) {
+        if (tagged[i].classList.contains('lawn') || tagged[i].classList.contains('flower')) {
+            continue;
+        }
+        
         tagged[i].classList.add('lawn');
         tagged[i].style.backgroundColor = lawnColors[newColor];
         tagged[i].setAttribute('data-color', newColor);
