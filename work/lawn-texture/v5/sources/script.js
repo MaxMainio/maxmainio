@@ -16,7 +16,7 @@ const flowerTypes = {};
 
 /* ON CLICK EVENT ------------------------------------------------------------------------------------- */
 window.addEventListener('click', event => {
-    // spreadLawn();
+    spreadLawn();
 });
 
 
@@ -176,6 +176,61 @@ function wrapRest() {
         element.innerHTML = element.innerHTML.replace(/((?<!<[^>]+>)\b\w+\b(?![^<]*>))/gi, '<span>$1</span>');
     });
 };
+
+
+
+
+
+
+
+
+
+/* SPREAD --------------------------------------------------------------------------------------------- */
+function spreadLawn(){
+    let turf = document.querySelectorAll('.lawn');
+    
+    for (let i = 0; i < turf.length; i++) {
+        let target = getTargetInfo(turf[i]);
+        let coordinates = getLawnCoordinates(target);
+        console.log(target);
+        console.log(coordinates);
+    };
+};
+
+
+
+function getTargetInfo(turf){
+    let target = {};
+
+    target['color'] = turf.dataset.color;
+    target['location'] = [turf.offsetLeft, turf.offsetTop];
+    target['size'] = [turf.offsetWidth, turf.offsetHeight];
+
+    return(target);
+}
+
+
+
+function getLawnCoordinates(target){
+    let leftX = target.location[0] - (spaceWidth + 1);
+    let centerX = target.location[0] + (target.size[0] / 2);
+    let rightX = target.location[0] + target.size[0] + spaceWidth + 1;
+
+    let topY = target.location[1] - 1;
+    let centerY = target.location[1] + (target.size[1] / 2);
+    let bottomY = target.location[1] + target.size[1] + 1;
+
+    
+
+    let coordinates = [
+        centerX, topY,
+        rightX, centerY,
+        centerX, bottomY,
+        leftX, centerY
+    ];
+
+    return(coordinates);
+}
 
 
 

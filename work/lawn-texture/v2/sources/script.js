@@ -47,60 +47,6 @@ function wrapRest(){
 
 
 
-window.addEventListener('click', event => {
-    /* CHECK IF COLORED ------------------------------------------------------------------------------- */
-    let targetClass = event.target.className;
-    let targetCol = targetClass.match(/(\d+)/);
-
-
-
-    /* TARGET INFO ------------------------------------------------------------------------------------ */
-    let targetX = event.target.offsetLeft;
-    let targetY = event.target.offsetTop;
-
-    let targetWidth = event.target.offsetWidth;
-    let targetHeight = event.target.offsetHeight;
-
-
-
-    /* SELECTION GRID --------------------------------------------------------------------------------- */
-    let leftLine = targetX - (spaceWidth + 5);
-    let centerLine = targetX + (targetWidth / 2);
-    let rightLine = targetX + targetWidth + spaceWidth + 5;
-
-    let topLine = targetY - 1;
-    let midLine = targetY + (targetHeight / 2);
-    let bottomLine = targetY + targetHeight + 1;
-
-    
-    
-    /* SURROUNDING WORDS ------------------------------------------------------------------------------ */
-    let surroundingWords = [document.elementFromPoint(leftLine, topLine), document.elementFromPoint(centerLine, topLine), document.elementFromPoint(rightLine, topLine), document.elementFromPoint(leftLine, midLine), document.elementFromPoint(rightLine, midLine), document.elementFromPoint(leftLine, bottomLine), document.elementFromPoint(centerLine, bottomLine), document.elementFromPoint(rightLine, bottomLine)];
-
-
-
-    /* SPREAD ----------------------------------------------------------------------------------------- */
-    for (let i = 0; i < surroundingWords.length; i++) {
-        let currentWord = surroundingWords[i];
-
-        if (currentWord === null) {
-        } else  if (currentWord.className === '' && targetCol[0] > 1 && currentWord.tagName === 'SPAN') {
-            currentWord.classList.add('active');
-
-            let className = 'col-' + (targetCol[0] - 1);
-            currentWord.classList.add(className);
-        };
-    };
-});
-
-
-
-
-
-
-
-
-
 var intervalId = window.setInterval(function(){
     spreadLawn();
 }, 1000);
