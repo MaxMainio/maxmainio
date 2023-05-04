@@ -191,16 +191,24 @@ function spreadLawn(){
     
     for (let i = 0; i < turf.length; i++) {
         let target = getTargetInfo(turf[i]);
+        
+        if (target.color === '0') {
+            console.log('stop')
+            continue;
+        }
+        
+        let newColor = target.color - 1;
 
         let coordinates = getLawnCoordinates(target);
-
         let tagged = getSurroundings(coordinates);
-        console.log(tagged);
+
+        promoteWord(tagged, newColor);
     };
 };
 
 
 
+// OBJECTIVE
 function getTargetInfo(turf){
     let target = {};
 
@@ -246,18 +254,29 @@ function getLawnCoordinates(target){
 
 
 
+// OBJECTIVE
 function getSurroundings(coordinates){
     let surroundings = [];
 
     for (let i = 0; i < coordinates.length; i = i + 2) {
         let tagged = document.elementFromPoint(coordinates[i], coordinates[i + 1]);
 
-        if (tagged !== null && tagged.tagName === 'SPAN') {
+        if (tagged !== null && tagged.tagName === 'SPAN' && !tagged.classList.contains('lawn')) {
             surroundings.push(tagged);
         }
     }
 
     return (surroundings);
+}
+
+
+
+function promoteWord(tagged, newColor){
+    for (let i = 0; i < tagged.length; i++) {
+        tagged[i].classList.add('lawn');
+        tagged[i].style.backgroundColor = lawnColors[newColor];
+        tagged[i].setAttribute('data-color', newColor);
+    }
 }
 
 
