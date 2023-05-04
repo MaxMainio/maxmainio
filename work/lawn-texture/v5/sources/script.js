@@ -335,13 +335,12 @@ function promoteLawn(tagged, newColor){
 
 
 function fertalize(tagged){
-    for (let i = 0; i < tagged.length; i++) {
-        // if (!tagged[i].classList.contains('lawn') && !tagged[i].classList.contains('flower')) {
-        //     console.log(tagged[i]);
-        //     console.log('is viable');
-
-        //     tagged[i] = 'is viable';
-        // }
+    // for (let i = 0; i < tagged.length; i++) {
+    //     if (tagged[i].classList.contains('lawn') || tagged[i].classList.contains('flower')) {
+    //         tagged.splice(i, 1);
+    //     }
+    // }
+    for (let i = tagged.length - 1; i >= 0; i--) {
         if (tagged[i].classList.contains('lawn') || tagged[i].classList.contains('flower')) {
             tagged.splice(i, 1);
         }
