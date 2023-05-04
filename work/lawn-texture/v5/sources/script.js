@@ -191,9 +191,11 @@ function spreadLawn(){
     
     for (let i = 0; i < turf.length; i++) {
         let target = getTargetInfo(turf[i]);
+
         let coordinates = getLawnCoordinates(target);
-        console.log(target);
-        console.log(coordinates);
+
+        let tagged = getSurroundings(coordinates);
+        console.log(tagged);
     };
 };
 
@@ -212,24 +214,50 @@ function getTargetInfo(turf){
 
 
 function getLawnCoordinates(target){
-    let leftX = target.location[0] - (spaceWidth + 1);
+    let leftX = target.location[0] - (spaceWidth + 5);
     let centerX = target.location[0] + (target.size[0] / 2);
-    let rightX = target.location[0] + target.size[0] + spaceWidth + 1;
+    let rightX = target.location[0] + target.size[0] + spaceWidth + 5;
 
-    let topY = target.location[1] - 1;
+    let topY = target.location[1] - 5;
     let centerY = target.location[1] + (target.size[1] / 2);
-    let bottomY = target.location[1] + target.size[1] + 1;
+    let bottomY = target.location[1] + target.size[1] + 5;
 
     
 
     let coordinates = [
         centerX, topY,
+        rightX, topY,
         rightX, centerY,
+        rightX, bottomY,
         centerX, bottomY,
-        leftX, centerY
+        leftX, bottomY,
+        leftX, centerY,
+        leftX,topY
     ];
 
     return(coordinates);
+}
+
+
+
+
+
+
+
+
+
+function getSurroundings(coordinates){
+    let surroundings = [];
+
+    for (let i = 0; i < coordinates.length; i = i + 2) {
+        let tagged = document.elementFromPoint(coordinates[i], coordinates[i + 1]);
+
+        if (tagged !== null && tagged.tagName === 'SPAN') {
+            surroundings.push(tagged);
+        }
+    }
+
+    return (surroundings);
 }
 
 
