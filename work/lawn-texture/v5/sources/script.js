@@ -196,12 +196,10 @@ function spreadFlowers(){
         let coordinates = getFlowerCoordinates(target);
         let tagged = getSurroundings(coordinates);
 
-        fertalize(tagged);
+        fertalize(tagged, target.color);
 
-        console.log(tagged);
-
-        // console.log(flowers[i]);
-        // console.log(tagged);
+        let promotable = getSurroundings(coordinates);
+        promoteToFlower(promotable, target.color);
     }
 }
 
@@ -334,12 +332,33 @@ function promoteLawn(tagged, newColor){
 
 
 
-function fertalize(tagged){
+function fertalize(tagged, flowerType){
     for (let i = tagged.length - 1; i >= 0; i--) {
-        if (tagged[i].classList.contains('lawn') || tagged[i].classList.contains('flower') || tagged[i].classList.contains('sprout')) {
+        
+        if (tagged[i].classList.contains('lawn') || tagged[i].classList.contains('flower') || tagged[i].classList.contains('sprout') || tagged[i].children.length > 0) {
             tagged.splice(i, 1);
         } else {
-            // tagged[i].classList.add('sprout');
+            const regex = new RegExp('(.)', 'gi');
+            let split = tagged[i].innerHTML.match(regex);
+
+            for (let i = 0; i < split.length; i++) {
+                split[i] = '<span class="sprout" data-color="' + flowerType + '">' + split[i] + '</span>';
+            };
+        
+            let newHTML = split.join('');
+            tagged[i].innerHTML = newHTML;
+        }
+    }
+}
+
+
+
+function promoteToFlower(promotable, color){
+    for (let i = 0; i < promotable.length; i++) {
+        if (promotable[i].classList.contains('sprout')){
+            promotable[i].style.backgroundColor = flowerTypes[color][getRandomInt(0, flowerTypes[color].length)];
+            promotable[i].classList.remove('sprout');
+            promotable[i].classList.add('flower');
         }
     }
 }
