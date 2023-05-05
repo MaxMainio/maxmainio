@@ -14,20 +14,6 @@ const flowerTypes = {};
 
 
 
-/* ON CLICK EVENT ------------------------------------------------------------------------------------- */
-window.addEventListener('click', event => {
-    spreadFlowers();
-    spreadLawn();
-});
-
-
-
-
-
-
-
-
-
 function getSpaceWidth() {
     const regex = new RegExp('( )', '');
     textField[0].innerHTML = textField[0].innerHTML.replace(regex, '<span id="space">$1</span>');
@@ -49,7 +35,7 @@ function getSpaceWidth() {
 
 
 
-/* JSON FETCH ----------------------------------------------------------------------------------------- */
+/* JSON FETCH ======================================================================================================================== */
 fetch('https://maxmain.io/work/lawn-texture/v5/sources/data.json')
     .then((response) => response.json())
     .then((json) => {
@@ -72,6 +58,13 @@ fetch('https://maxmain.io/work/lawn-texture/v5/sources/data.json')
 
 
 
+
+
+
+
+
+
+/* DOCUMENT SETUP ==================================================================================================================== */
 function initialHighLight(lawn, water,flowers) {
     highlightWords(lawn);
     // highlightWords(water);
@@ -88,6 +81,7 @@ function initialHighLight(lawn, water,flowers) {
 
 
 
+/* HIGHLIGHT ENTIRE WORDS ----------------------------------------------------------------------------- */
 function highlightWords(currentPass) {
     const subject = currentPass.key;
     const search = currentPass.words;
@@ -108,10 +102,7 @@ function highlightWords(currentPass) {
 
 
 
-
-
-
-
+/* HIGHLIGHT SINGULAR CHARACTERS ---------------------------------------------------------------------- */
 function highlightGlyphs(currentPass) {
     const subject = currentPass.key;
     const search = currentPass.words;
@@ -131,7 +122,6 @@ function highlightGlyphs(currentPass) {
 };
 
 
-
 function defineClumps(search) {
     for (let i = 0; i < search.length; i++) {
         textField.forEach(element => {
@@ -145,7 +135,6 @@ function defineClumps(search) {
     let clumps = document.querySelectorAll('.clump');
     return (clumps);
 };
-
 
 
 function splitClumps(clump, types, typeKeys) {
@@ -168,10 +157,7 @@ function splitClumps(clump, types, typeKeys) {
 
 
 
-
-
-
-
+/* WRAP THE REST OF THE WORDS ------------------------------------------------------------------------- */
 function wrapRest() {
     textField.forEach(element => {
         element.innerHTML = element.innerHTML.replace(/((?<!<[^>]+>)\b\w+\b(?![^<]*>))/gi, '<span>$1</span>');
@@ -186,7 +172,21 @@ function wrapRest() {
 
 
 
-/* SPREAD --------------------------------------------------------------------------------------------- */
+/* INTERACTIVE / TRIGGER ============================================================================================================= */
+window.addEventListener('click', event => {
+    spreadFlowers();
+    spreadLawn();
+});
+
+
+
+
+
+
+
+
+
+/* SPREAD ============================================================================================================================ */
 function spreadFlowers(){
     let flowers = document.querySelectorAll('.flower')
 
@@ -199,10 +199,9 @@ function spreadFlowers(){
         fertalize(tagged, target.color);
 
         let promotable = getSurroundings(coordinates);
-        promoteToFlower(promotable, target.color);
-    }
-}
-
+        promoteFlower(promotable, target.color);
+    };
+};
 
 
 function spreadLawn(){
@@ -213,7 +212,7 @@ function spreadLawn(){
         
         if (target.color === '0') {
             continue;
-        }
+        };
         
         let newColor = target.color - 1;
 
@@ -226,7 +225,13 @@ function spreadLawn(){
 
 
 
-// OBJECTIVE
+
+
+
+
+
+
+/* SHARED / GLOBAL ------------------------------------------------------------------------------------ */
 function getTargetInfo(turf){
     let target = {};
 
@@ -235,10 +240,90 @@ function getTargetInfo(turf){
     target['size'] = [turf.offsetWidth, turf.offsetHeight];
 
     return(target);
-}
+};
+
+
+function getSurroundings(coordinates){
+    let surroundings = [];
+
+    for (let i = 0; i < coordinates.length; i = i + 2) {
+        let tagged = document.elementFromPoint(coordinates[i], coordinates[i + 1]);
+
+        if (tagged !== null && tagged.tagName === 'SPAN') {
+            surroundings.push(tagged);
+        }
+    };
+
+    return (surroundings);
+};
 
 
 
+
+
+
+
+
+
+/* FLOWER SPECIFICS ----------------------------------------------------------------------------------- */
+function getFlowerCoordinates(target){
+    let leftX = target.location[0] - (spaceWidth + 1);
+    let centerX = target.location[0] + (target.size[0] / 2);
+    let rightX = target.location[0] + target.size[0] + spaceWidth + 1;
+
+    let topY = target.location[1] - 1;
+    let centerY = target.location[1] + (target.size[1] / 2);
+    let bottomY = target.location[1] + target.size[1] + 1;
+
+    
+
+    let coordinates = [
+        centerX, topY,
+        rightX, centerY,
+        centerX, bottomY,
+        leftX, centerY,
+    ];
+
+    return(coordinates);
+};
+
+
+function fertalize(tagged, flowerType){
+    for (let i = 0; i < tagged.length; i++) {
+        if (!tagged[i].classList.contains('lawn') && !tagged[i].classList.contains('flower') && !tagged[i].classList.contains('sprout') && !tagged[i].children.length > 0) {
+            const regex = new RegExp('(.)', 'gi');
+            let split = tagged[i].innerHTML.match(regex);
+
+            for (let i = 0; i < split.length; i++) {
+                split[i] = '<span class="sprout" data-color="' + flowerType + '">' + split[i] + '</span>';
+            };
+        
+            let newHTML = split.join('');
+            tagged[i].innerHTML = newHTML;
+        };
+    };
+};
+
+
+function promoteFlower(promotable, color){
+    for (let i = 0; i < promotable.length; i++) {
+        if (promotable[i].classList.contains('sprout')){
+            promotable[i].style.backgroundColor = flowerTypes[color][getRandomInt(0, flowerTypes[color].length)];
+            promotable[i].classList.remove('sprout');
+            promotable[i].classList.add('flower');
+        };
+    };
+};
+
+
+
+
+
+
+
+
+
+/* LAWN SPECIFICS ------------------------------------------------------------------------------------- */
 function getLawnCoordinates(target){
     let leftX = target.location[0] - (spaceWidth + 5);
     let centerX = target.location[0] + (target.size[0] / 2);
@@ -262,54 +347,7 @@ function getLawnCoordinates(target){
     ];
 
     return(coordinates);
-}
-
-
-
-function getFlowerCoordinates(target){
-    let leftX = target.location[0] - (spaceWidth + 1);
-    let centerX = target.location[0] + (target.size[0] / 2);
-    let rightX = target.location[0] + target.size[0] + spaceWidth + 1;
-
-    let topY = target.location[1] - 1;
-    let centerY = target.location[1] + (target.size[1] / 2);
-    let bottomY = target.location[1] + target.size[1] + 1;
-
-    
-
-    let coordinates = [
-        centerX, topY,
-        rightX, centerY,
-        centerX, bottomY,
-        leftX, centerY,
-    ];
-
-    return(coordinates);
-}
-
-
-
-
-
-
-
-
-
-// OBJECTIVE
-function getSurroundings(coordinates){
-    let surroundings = [];
-
-    for (let i = 0; i < coordinates.length; i = i + 2) {
-        let tagged = document.elementFromPoint(coordinates[i], coordinates[i + 1]);
-
-        if (tagged !== null && tagged.tagName === 'SPAN') {
-            surroundings.push(tagged);
-        }
-    }
-
-    return (surroundings);
 };
-
 
 
 function promoteLawn(tagged, newColor){
@@ -326,49 +364,19 @@ function promoteLawn(tagged, newColor){
             tagged[i].classList.add('lawn');
             tagged[i].style.backgroundColor = lawnColors[newColor];
             tagged[i].setAttribute('data-color', newColor);
-        }
-    }
+        };
+    };
 };
 
 
 
-function fertalize(tagged, flowerType){
-    for (let i = 0; i < tagged.length; i++) {
-        if (!tagged[i].classList.contains('lawn') && !tagged[i].classList.contains('flower') && !tagged[i].classList.contains('sprout') && !tagged[i].children.length > 0) {
-            const regex = new RegExp('(.)', 'gi');
-            let split = tagged[i].innerHTML.match(regex);
-
-            for (let i = 0; i < split.length; i++) {
-                split[i] = '<span class="sprout" data-color="' + flowerType + '">' + split[i] + '</span>';
-            };
-        
-            let newHTML = split.join('');
-            tagged[i].innerHTML = newHTML;
-        }
-    }
-}
-
-
-
-function promoteToFlower(promotable, color){
-    for (let i = 0; i < promotable.length; i++) {
-        if (promotable[i].classList.contains('sprout')){
-            promotable[i].style.backgroundColor = flowerTypes[color][getRandomInt(0, flowerTypes[color].length)];
-            promotable[i].classList.remove('sprout');
-            promotable[i].classList.add('flower');
-        }
-    }
-}
 
 
 
 
 
 
-
-
-
-/* SUPPORT -------------------------------------------------------------------------------------------- */
+/* SUPPORT =========================================================================================================================== */
 function getRandomInt(min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);
