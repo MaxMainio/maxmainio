@@ -16,8 +16,8 @@ const flowerTypes = {};
 
 /* ON CLICK EVENT ------------------------------------------------------------------------------------- */
 window.addEventListener('click', event => {
-    // spreadLawn();
     spreadFlowers();
+    spreadLawn();
 });
 
 
@@ -317,7 +317,7 @@ function promoteLawn(tagged, newColor){
         if (tagged[i].classList.contains('lawn')) {
             continue;
 
-        } else if (tagged[i].classList.contains('flower')) {
+        } else if (tagged[i].classList.contains('flower') || tagged[i].classList.contains('sprout')) {
             tagged[i].parentNode.classList.add('lawn');
             tagged[i].parentNode.style.backgroundColor = lawnColors[newColor];
             tagged[i].parentNode.setAttribute('data-color', newColor);
@@ -333,11 +333,8 @@ function promoteLawn(tagged, newColor){
 
 
 function fertalize(tagged, flowerType){
-    for (let i = tagged.length - 1; i >= 0; i--) {
-        
-        if (tagged[i].classList.contains('lawn') || tagged[i].classList.contains('flower') || tagged[i].classList.contains('sprout') || tagged[i].children.length > 0) {
-            tagged.splice(i, 1);
-        } else {
+    for (let i = 0; i < tagged.length; i++) {
+        if (!tagged[i].classList.contains('lawn') && !tagged[i].classList.contains('flower') && !tagged[i].classList.contains('sprout') && !tagged[i].children.length > 0) {
             const regex = new RegExp('(.)', 'gi');
             let split = tagged[i].innerHTML.match(regex);
 
