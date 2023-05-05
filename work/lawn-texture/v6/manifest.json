@@ -1,0 +1,22 @@
+{
+    "manifest_version": 2,
+    "name": "Lawn Texture",
+    "description": "Grow a  lawn in your browser",
+    "version": "1.0",
+    "icons": {
+        "16": "/icons/lawn-texture-16.png",
+        "48": "/icons/lawn-texture-48.png",
+        "128": "/icons/lawn-texture-128.png"
+    },
+    "page_action": {
+        "default_icon": {
+            "16": "/icons/lawn-texture-16.png",
+            "48": "/icons/lawn-texture-48.png",
+            "128": "/icons/lawn-texture-128.png"
+        }
+    },
+    "content_scripts": [{
+        "matches": ["<all_urls>"],
+        "js": ["script.js"]
+    }]
+}
