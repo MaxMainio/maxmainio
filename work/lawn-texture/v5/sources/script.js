@@ -51,8 +51,6 @@ fetch('https://maxmain.io/work/lawn-texture/v5/sources/data.json')
         flowerTypes.reds = reds;
         flowerTypes.yellows = yellows;
 
-
-
         initialHighLight(lawn, water, flowers);
 });
 
@@ -173,10 +171,10 @@ function wrapRest() {
 
 
 /* INTERACTIVE / TRIGGER ============================================================================================================= */
-window.addEventListener('click', event => {
-    spreadFlowers();
-    spreadLawn();
-});
+// window.addEventListener('click', event => {
+//     spreadFlowers();
+//     spreadLawn();
+// });
 
 
 var intervalId = window.setInterval(function(){

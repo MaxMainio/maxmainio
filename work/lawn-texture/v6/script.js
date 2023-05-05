@@ -1,30 +1,12 @@
 /* CONSTANTS ------------------------------------------------------------------------------------------ */
 const textField = document.querySelectorAll('p');
-const spaceWidth = getSpaceWidth();
+const spaceWidth = 5;
 
 const lawnColors = [];
-const waterColors = [];
 const flowerTypes = {};
 
-
-
-
-
-
-
-
-
-function getSpaceWidth() {
-    const regex = new RegExp('( )', '');
-    textField[0].innerHTML = textField[0].innerHTML.replace(regex, '<span id="space">$1</span>');
-    
-    const target = document.getElementById('space');
-    const spaceWidth = target.offsetWidth;
-
-    const newRegex = new RegExp('(<span id="space"> </span>)', '');
-    textField[0].innerHTML = textField[0].innerHTML.replace(newRegex, ' ');
-
-    return spaceWidth;
+const colorsMapping = {
+    'lawn': lawnColors,
 };
 
 
@@ -42,9 +24,6 @@ fetch('https://maxmain.io/work/lawn-texture/v5/sources/data.json')
         const lawn = json.lawn;
         lawnColors.push(...json.lawn.colors);
 
-        const water = json.water;
-        waterColors.push(...json.water.colors);
-
         const flowers = json.flowers;
         const { purples, reds, yellows } = json.flowers.types;
         flowerTypes.purples = purples;
@@ -53,7 +32,7 @@ fetch('https://maxmain.io/work/lawn-texture/v5/sources/data.json')
 
 
 
-        initialHighLight(lawn, water, flowers);
+        initialHighLight(lawn, flowers);
 });
 
 
@@ -65,9 +44,8 @@ fetch('https://maxmain.io/work/lawn-texture/v5/sources/data.json')
 
 
 /* DOCUMENT SETUP ==================================================================================================================== */
-function initialHighLight(lawn, water,flowers) {
+function initialHighLight(lawn, flowers) {
     highlightWords(lawn);
-    // highlightWords(water);
     highlightGlyphs(flowers);
 
     wrapRest();
@@ -85,7 +63,7 @@ function initialHighLight(lawn, water,flowers) {
 function highlightWords(currentPass) {
     const subject = currentPass.key;
     const search = currentPass.words;
-    const colors = eval(subject + 'Colors');
+    const colors = colorsMapping[subject];
 
     for (let i = 0; i < search.length; i++) {
         textField.forEach(element => {
@@ -179,15 +157,6 @@ window.addEventListener('click', event => {
 });
 
 
-var intervalId = window.setInterval(function(){
-    spreadFlowers();
-}, 1000);
-
-var intervalTwoId = window.setInterval(function(){
-    spreadLawn();
-}, 2000);
-
-
 
 
 
@@ -242,11 +211,17 @@ function spreadLawn(){
 
 /* SHARED / GLOBAL ------------------------------------------------------------------------------------ */
 function getTargetInfo(turf){
+    const style = getComputedStyle(turf);
+    const fontSizeInPx = parseFloat(style.fontSize);
+    const lineHeightValue = style.lineHeight === 'normal' ? fontSizeInPx * 1.2 : parseFloat(style.lineHeight);
+    const letterSpacingValue = style.letterSpacing === 'normal' ? 0 : parseFloat(style.letterSpacing);
+    
     let target = {};
 
     target['color'] = turf.dataset.color;
     target['location'] = [turf.offsetLeft, turf.offsetTop];
     target['size'] = [turf.offsetWidth, turf.offsetHeight];
+    target['type'] = [fontSizeInPx, lineHeightValue, letterSpacingValue];
 
     return(target);
 };
