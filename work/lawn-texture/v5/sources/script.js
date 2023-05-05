@@ -179,6 +179,15 @@ window.addEventListener('click', event => {
 });
 
 
+var intervalId = window.setInterval(function(){
+    spreadFlowers();
+}, 1000);
+
+var intervalTwoId = window.setInterval(function(){
+    spreadLawn();
+}, 2000);
+
+
 
 
 
