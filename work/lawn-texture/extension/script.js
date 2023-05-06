@@ -1,8 +1,8 @@
-/* CONSTANTS ------------------------------------------------------------------------------------------ */
+/* CONSTANTS ========================================================================================================================= */
 const textField = document.querySelectorAll('p');
-const spaceWidth = 5;
 
 const lawnColors = [];
+const waterColors = [];
 const flowerTypes = {};
 
 const colorsMapping = {
@@ -29,8 +29,6 @@ fetch('https://maxmain.io/work/lawn-texture/v5/sources/data.json')
         flowerTypes.purples = purples;
         flowerTypes.reds = reds;
         flowerTypes.yellows = yellows;
-
-
 
         initialHighLight(lawn, flowers);
 });
@@ -221,7 +219,10 @@ function getTargetInfo(turf){
     target['color'] = turf.dataset.color;
     target['location'] = [turf.offsetLeft, turf.offsetTop];
     target['size'] = [turf.offsetWidth, turf.offsetHeight];
-    target['type'] = [fontSizeInPx, lineHeightValue, letterSpacingValue];
+    target['style'] = [fontSizeInPx, lineHeightValue, letterSpacingValue];
+
+    console.log(target);
+    console.log(style);
 
     return(target);
 };
@@ -251,13 +252,13 @@ function getSurroundings(coordinates){
 
 /* FLOWER SPECIFICS ----------------------------------------------------------------------------------- */
 function getFlowerCoordinates(target){
-    let leftX = target.location[0] - (spaceWidth + 1);
+    let leftX = target.location[0] - (target.style[0] / 2);
     let centerX = target.location[0] + (target.size[0] / 2);
-    let rightX = target.location[0] + target.size[0] + spaceWidth + 1;
+    let rightX = target.location[0] + target.size[0] + (target.style[0] / 2);
 
-    let topY = target.location[1] - 1;
+    let topY = target.location[1] + target.size[1] - (target.style[1] + 1);
     let centerY = target.location[1] + (target.size[1] / 2);
-    let bottomY = target.location[1] + target.size[1] + 1;
+    let bottomY = target.location[1] + target.style[1] + 1;
 
     
 
@@ -309,13 +310,13 @@ function promoteFlower(promotable, color){
 
 /* LAWN SPECIFICS ------------------------------------------------------------------------------------- */
 function getLawnCoordinates(target){
-    let leftX = target.location[0] - (spaceWidth + 5);
+    let leftX = target.location[0] - (target.style[0] / 2);
     let centerX = target.location[0] + (target.size[0] / 2);
-    let rightX = target.location[0] + target.size[0] + spaceWidth + 5;
+    let rightX = target.location[0] + target.size[0] + (target.style[0] / 2);
 
-    let topY = target.location[1] - 5;
+    let topY = target.location[1] + target.size[1] - (target.style[1] + 1);
     let centerY = target.location[1] + (target.size[1] / 2);
-    let bottomY = target.location[1] + target.size[1] + 5;
+    let bottomY = target.location[1] + target.style[1] + 1;
 
     
 
