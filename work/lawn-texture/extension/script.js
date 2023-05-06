@@ -294,6 +294,10 @@ function getSurroundingFlower(coordinates, color){
 
         let current = document.elementFromPoint(coordinates[i], coordinates[i + 1]);
 
+        if (!current) {
+            continue;
+        }
+
         if (current.classList.contains('flower')) {
             continue;
         };
