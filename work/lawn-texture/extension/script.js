@@ -20,7 +20,7 @@ const colorsMapping = {
 
 
 /* JSON FETCH ======================================================================================================================== */
-fetch('https://maxmain.io/work/lawn-texture/v5/sources/data.json')
+fetch('https://maxmain.io/work/lawn-texture/v6/sources/data.json')
     .then((response) => response.json())
     .then((json) => {
         const lawn = json.lawn;
@@ -195,7 +195,7 @@ function spreadFlowers(){
     for (let i = 0; i < flowers.length; i++) {
         let target = getTargetInfo(flowers[i]);
 
-        let coordinates = getFlowerCoordinates(target);
+        let coordinates = getCoordinates(target, 'flower');
         let tagged = getSurroundings(coordinates);
 
         fertalize(tagged, target.color);
@@ -218,7 +218,7 @@ function spreadLawn(){
         
         let newColor = target.color - 1;
 
-        let coordinates = getLawnCoordinates(target);
+        let coordinates = getCoordinates(target, 'lawn');
         let tagged = getSurroundings(coordinates);
 
         promoteLawn(tagged, newColor);
@@ -251,6 +251,35 @@ function getTargetInfo(turf){
 };
 
 
+function getCoordinates(target, type) {
+    let leftX = target.location[0] - (target.style[0] / 2);
+    let centerX = target.location[0] + (target.size[0] / 2);
+    let rightX = target.location[0] + target.size[0] + (target.style[0] / 2);
+
+    let topY = target.location[1] + target.size[1] - (target.style[1] + 1);
+    let centerY = target.location[1] + (target.size[1] / 2);
+    let bottomY = target.location[1] + target.style[1] + 1;
+
+    let coordinates = type === 'lawn' ? [
+        centerX, topY,
+        rightX, topY,
+        rightX, centerY,
+        rightX, bottomY,
+        centerX, bottomY,
+        leftX, bottomY,
+        leftX, centerY,
+        leftX,topY
+    ] : [
+        centerX, topY,
+        rightX, centerY,
+        centerX, bottomY,
+        leftX, centerY,
+    ];
+
+    return coordinates;
+}
+
+
 function getSurroundings(coordinates){
     let surroundings = [];
 
@@ -274,28 +303,6 @@ function getSurroundings(coordinates){
 
 
 /* FLOWER SPECIFICS ----------------------------------------------------------------------------------- */
-function getFlowerCoordinates(target){
-    let leftX = target.location[0] - (target.style[0] / 2);
-    let centerX = target.location[0] + (target.size[0] / 2);
-    let rightX = target.location[0] + target.size[0] + (target.style[0] / 2);
-
-    let topY = target.location[1] + target.size[1] - (target.style[1] + 1);
-    let centerY = target.location[1] + (target.size[1] / 2);
-    let bottomY = target.location[1] + target.style[1] + 1;
-
-    
-
-    let coordinates = [
-        centerX, topY,
-        rightX, centerY,
-        centerX, bottomY,
-        leftX, centerY,
-    ];
-
-    return(coordinates);
-};
-
-
 function fertalize(tagged, flowerType){
     for (let i = 0; i < tagged.length; i++) {
         if (!tagged[i].classList.contains('lawn') && !tagged[i].classList.contains('flower') && !tagged[i].classList.contains('sprout') && !tagged[i].children.length > 0) {
@@ -332,32 +339,6 @@ function promoteFlower(promotable, color){
 
 
 /* LAWN SPECIFICS ------------------------------------------------------------------------------------- */
-function getLawnCoordinates(target){
-    let leftX = target.location[0] - (target.style[0] / 2);
-    let centerX = target.location[0] + (target.size[0] / 2);
-    let rightX = target.location[0] + target.size[0] + (target.style[0] / 2);
-
-    let topY = target.location[1] + target.size[1] - (target.style[1] + 1);
-    let centerY = target.location[1] + (target.size[1] / 2);
-    let bottomY = target.location[1] + target.style[1] + 1;
-
-    
-
-    let coordinates = [
-        centerX, topY,
-        rightX, topY,
-        rightX, centerY,
-        rightX, bottomY,
-        centerX, bottomY,
-        leftX, bottomY,
-        leftX, centerY,
-        leftX,topY
-    ];
-
-    return(coordinates);
-};
-
-
 function promoteLawn(tagged, newColor){
     for (let i = 0; i < tagged.length; i++) {
         if (tagged[i].classList.contains('lawn')) {
