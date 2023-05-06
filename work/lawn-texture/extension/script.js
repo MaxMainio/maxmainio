@@ -1,5 +1,7 @@
 /* CONSTANTS ========================================================================================================================= */
-const textField = document.querySelectorAll('p');
+// const textField = document.querySelectorAll('p');
+const textField = document.querySelectorAll('p, h1, h2, h3, h4, h5, h6');
+// const textField = getTextNodes(document.body);
 
 const lawnColors = [];
 const waterColors = [];
@@ -48,6 +50,22 @@ function initialHighLight(lawn, flowers) {
 
     wrapRest();
 };
+
+
+
+// function getTextNodes(element) {
+//     let textNodes = [];
+  
+//     for (const child of element.childNodes) {
+//         if (child.nodeType === Node.TEXT_NODE && child.textContent.trim() !== '') {
+//             textNodes.push(child.parentNode);
+//         } else if (child.nodeType === Node.ELEMENT_NODE) {
+//             textNodes = textNodes.concat(getTextNodes(child));
+//         }
+//     }
+  
+//     return textNodes;
+// }
 
 
 
@@ -149,18 +167,18 @@ function wrapRest() {
 
 
 /* INTERACTIVE / TRIGGER ============================================================================================================= */
-// window.addEventListener('click', event => {
-//     spreadFlowers();
-//     spreadLawn();
-// });
-
-var intervalId = window.setInterval(function(){
+window.addEventListener('click', event => {
     spreadFlowers();
-}, 1000);
-
-var intervalTwoId = window.setInterval(function(){
     spreadLawn();
-}, 2000);
+});
+
+// var intervalId = window.setInterval(function(){
+//     spreadFlowers();
+// }, 1000);
+
+// var intervalTwoId = window.setInterval(function(){
+//     spreadLawn();
+// }, 2000);
 
 
 
