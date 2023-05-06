@@ -149,10 +149,18 @@ function wrapRest() {
 
 
 /* INTERACTIVE / TRIGGER ============================================================================================================= */
-window.addEventListener('click', event => {
+// window.addEventListener('click', event => {
+//     spreadFlowers();
+//     spreadLawn();
+// });
+
+var intervalId = window.setInterval(function(){
     spreadFlowers();
+}, 1000);
+
+var intervalTwoId = window.setInterval(function(){
     spreadLawn();
-});
+}, 2000);
 
 
 
@@ -217,7 +225,7 @@ function getTargetInfo(turf){
     let target = {};
 
     target['color'] = turf.dataset.color;
-    target['location'] = [turf.offsetLeft, turf.offsetTop];
+    target['location'] = [turf.getBoundingClientRect().left, turf.getBoundingClientRect().top];
     target['size'] = [turf.offsetWidth, turf.offsetHeight];
     target['style'] = [fontSizeInPx, lineHeightValue, letterSpacingValue];
 
