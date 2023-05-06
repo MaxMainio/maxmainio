@@ -194,14 +194,10 @@ function spreadFlowers(){
 
     for (let i = 0; i < flowers.length; i++) {
         let target = getTargetInfo(flowers[i]);
-
         let coordinates = getCoordinates(target, 'flower');
-        let tagged = getSurroundings(coordinates);
+        let tagged = getSurroundingFlower(coordinates, target.color);
 
-        fertalize(tagged, target.color);
-
-        let promotable = getSurroundings(coordinates);
-        promoteFlower(promotable, target.color);
+        promoteFlower(tagged, target.color);
     };
 };
 
@@ -219,7 +215,7 @@ function spreadLawn(){
         let newColor = target.color - 1;
 
         let coordinates = getCoordinates(target, 'lawn');
-        let tagged = getSurroundings(coordinates);
+        let tagged = getSurroundingLawn(coordinates);
 
         promoteLawn(tagged, newColor);
     };
@@ -280,21 +276,6 @@ function getCoordinates(target, type) {
 }
 
 
-function getSurroundings(coordinates){
-    let surroundings = [];
-
-    for (let i = 0; i < coordinates.length; i = i + 2) {
-        let tagged = document.elementFromPoint(coordinates[i], coordinates[i + 1]);
-
-        if (tagged !== null && tagged.tagName === 'SPAN') {
-            surroundings.push(tagged);
-        }
-    };
-
-    return (surroundings);
-};
-
-
 
 
 
@@ -303,20 +284,40 @@ function getSurroundings(coordinates){
 
 
 /* FLOWER SPECIFICS ----------------------------------------------------------------------------------- */
-function fertalize(tagged, flowerType){
-    for (let i = 0; i < tagged.length; i++) {
-        if (!tagged[i].classList.contains('lawn') && !tagged[i].classList.contains('flower') && !tagged[i].classList.contains('sprout') && !tagged[i].children.length > 0) {
-            const regex = new RegExp('(.)', 'gi');
-            let split = tagged[i].innerHTML.match(regex);
+function getSurroundingFlower(coordinates, color){
+    let surroundings = [];
 
-            for (let i = 0; i < split.length; i++) {
-                split[i] = '<span class="sprout" data-color="' + flowerType + '">' + split[i] + '</span>';
+    for (let i = 0; i < coordinates.length; i = i + 2) {
+        if (coordinates[i] < 0 || coordinates[i + 1] < 0 || coordinates[i] > window.innerWidth) {
+            continue;
+        }
+
+        let current = document.elementFromPoint(coordinates[i], coordinates[i + 1]);
+
+        if (current.classList.contains('flower')) {
+            continue;
+        };
+
+        if (current.tagName === 'SPAN' && current.classList.length === 0 && current.children.length === 0) {
+            const regex = new RegExp('(.)', 'gi');
+            let split = current.innerHTML.match(regex);
+
+            for (let j = 0; j < split.length; j++) {
+                split[j] = '<span class="sprout" data-color="' + color + '">' + split[j] + '</span>';
             };
-        
+
             let newHTML = split.join('');
-            tagged[i].innerHTML = newHTML;
+            current.innerHTML = newHTML;
+
+            surroundings.push(document.elementFromPoint(coordinates[i], coordinates[i + 1]));
+        };
+
+        if (current.classList.contains('sprout')) {
+            surroundings.push(current);
         };
     };
+
+    return (surroundings);
 };
 
 
@@ -339,6 +340,21 @@ function promoteFlower(promotable, color){
 
 
 /* LAWN SPECIFICS ------------------------------------------------------------------------------------- */
+function getSurroundingLawn(coordinates){
+    let surroundings = [];
+
+    for (let i = 0; i < coordinates.length; i = i + 2) {
+        let tagged = document.elementFromPoint(coordinates[i], coordinates[i + 1]);
+
+        if (tagged !== null && tagged.tagName === 'SPAN') {
+            surroundings.push(tagged);
+        }
+    };
+
+    return (surroundings);
+};
+
+
 function promoteLawn(tagged, newColor){
     for (let i = 0; i < tagged.length; i++) {
         if (tagged[i].classList.contains('lawn')) {
