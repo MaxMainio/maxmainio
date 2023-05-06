@@ -221,9 +221,6 @@ function getTargetInfo(turf){
     target['size'] = [turf.offsetWidth, turf.offsetHeight];
     target['style'] = [fontSizeInPx, lineHeightValue, letterSpacingValue];
 
-    console.log(target);
-    console.log(style);
-
     return(target);
 };
 
