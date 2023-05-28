@@ -138,7 +138,8 @@ article{
     font-size: 3rem;
     line-height: 3rem;
 
-    margin-left: 1rem;
+    margin: 0 auto 0 1rem;
+    pointer-events: all;
 }
 
 .context h2{
@@ -147,10 +148,7 @@ article{
     line-height: 1rem;
     letter-spacing: 0.75px;
 
-    margin: 0 0 1rem 1rem;
-}
-
-.context a {
+    margin: 0 auto 1rem 1rem;
     pointer-events: all;
 }
 
