@@ -139,7 +139,6 @@ article{
     line-height: 3rem;
 
     margin-left: 1rem;
-    pointer-events: all;
 }
 
 .context h2{
@@ -149,6 +148,9 @@ article{
     letter-spacing: 0.75px;
 
     margin: 0 0 1rem 1rem;
+}
+
+.context a {
     pointer-events: all;
 }
 
@@ -280,7 +282,7 @@ article{
     pointer-events: all;
 }
 
-#generative-poems a:hover{
+#generative-poems .content a:hover{
     background-color: rgba(0, 0, 0, 0);
 }
 
@@ -636,7 +638,6 @@ article{
 
 
 
-/* My Desktop is My Home */
 /* COLLAGES */
 .horizontal-flex{
     display: flex;
@@ -679,7 +680,7 @@ article{
     pointer-events: none;
 }
 
-#drawings a{
+#drawings .content a{
     background-color: rgba(0, 0, 0, 0);
     pointer-events: all;
 }
