@@ -24,7 +24,7 @@ html{
 
 /* SPLASH */
 #splash{
-    background-image: url(../assets/support/splash/green-bliss.jpg);
+    background-image: url(/assets/splash/green-bliss.jpg);
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -32,7 +32,7 @@ html{
     background-position: center;
     overflow: hidden;
 
-    cursor: url(https://maxmain.io/assets/support/cursors/splash-cursor.svg) 32 32, pointer;
+    cursor: url(https://maxmain.io/assets/cursors/splash-cursor.svg) 32 32, pointer;
     z-index: 11;
 
     display: flex;
@@ -792,7 +792,7 @@ article{
     width: 100%;
     margin-top: auto;
 
-    background-image: url(../assets/support/footer/pixel-profile.png);
+    background-image: url(/assets//footer/pixel-profile.png);
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -806,7 +806,7 @@ article{
     position: absolute;
     inset: auto 0 0 auto;
     
-    background-image: linear-gradient(to top, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1)), url(../assets/support/footer/ice-bliss.jpg);
+    background-image: linear-gradient(to top, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1)), url(/assets/footer/ice-bliss.jpg);
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
