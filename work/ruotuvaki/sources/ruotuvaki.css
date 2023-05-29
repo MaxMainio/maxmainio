@@ -54,12 +54,12 @@
 
 .carousel-button.prev{
     left: 0;
-    cursor: url(https://maxmain.io/assets/support/cursors/left-cursor.svg) 32 32, pointer;
+    cursor: url(../../../assets/cursors/left-cursor.svg) 32 32, pointer;
 }
 
 .carousel-button.next{
     right: 0;
-    cursor: url(https://maxmain.io/assets/support/cursors/right-cursor.svg) 32 32, pointer;
+    cursor: url(../../../assets/cursors/right-cursor.svg) 32 32, pointer;
 }
 
 #aukeama-container h1{
