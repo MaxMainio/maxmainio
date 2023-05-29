@@ -3,7 +3,7 @@ body{
     width: 100vw;
     position: relative;
     
-    background-image: url(../assets/support/splash/green-bliss.jpg);
+    background-image: url(../assets/splash/green-bliss.jpg);
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
