@@ -1,82 +1,73 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset
-      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
-
-
+<urlset>
 <url>
   <loc>https://maxmain.io/</loc>
-  <lastmod>2023-01-28T03:39:38+00:00</lastmod>
+  <lastmod>2023-05-29T20:05:44+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
   <loc>https://maxmain.io/about/</loc>
-  <lastmod>2023-01-28T03:39:38+00:00</lastmod>
+  <lastmod>2023-05-29T20:05:44+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://maxmain.io/work/generative-poems/</loc>
-  <lastmod>2023-01-28T03:39:38+00:00</lastmod>
+  <lastmod>2023-05-29T20:05:44+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://maxmain.io/work/ed-brown-interview/</loc>
-  <lastmod>2023-01-28T03:39:38+00:00</lastmod>
+  <lastmod>2023-05-29T20:05:44+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://maxmain.io/work/playlist-covers/</loc>
-  <lastmod>2023-01-28T03:39:38+00:00</lastmod>
+  <lastmod>2023-05-29T20:05:44+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://maxmain.io/work/crosswalk-poetics/</loc>
-  <lastmod>2023-01-28T03:39:38+00:00</lastmod>
+  <lastmod>2023-05-29T20:05:44+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://maxmain.io/work/digital-overprint/</loc>
-  <lastmod>2023-01-28T03:39:38+00:00</lastmod>
+  <lastmod>2023-05-29T20:05:44+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://maxmain.io/work/acetate-melt/</loc>
-  <lastmod>2023-01-28T03:39:38+00:00</lastmod>
+  <lastmod>2023-05-29T20:05:44+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://maxmain.io/work/homodeus/</loc>
-  <lastmod>2023-01-28T03:39:38+00:00</lastmod>
+  <lastmod>2023-05-29T20:05:44+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://maxmain.io/work/ruotuvaki/</loc>
-  <lastmod>2023-01-28T03:39:38+00:00</lastmod>
+  <lastmod>2023-05-29T20:05:44+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://maxmain.io/work/collages/</loc>
-  <lastmod>2023-01-28T03:39:38+00:00</lastmod>
+  <lastmod>2023-05-29T20:05:44+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://maxmain.io/work/drawings/</loc>
-  <lastmod>2023-01-28T03:39:38+00:00</lastmod>
+  <lastmod>2023-05-29T20:05:44+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://maxmain.io/work/crosswalk-poetics/physical-map/</loc>
-  <lastmod>2023-01-28T03:39:38+00:00</lastmod>
+  <lastmod>2023-05-29T20:05:44+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://maxmain.io/work/crosswalk-poetics/phenomenal-map/</loc>
-  <lastmod>2023-01-28T03:39:38+00:00</lastmod>
+  <lastmod>2023-05-29T20:05:44+00:00</lastmod>
   <priority>0.64</priority>
 </url>
-
-
 </urlset>
