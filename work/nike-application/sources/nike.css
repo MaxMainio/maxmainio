@@ -21,3 +21,12 @@ video{
 .skateboard{
     grid-column: 1 / 9;
 }
+
+.portfolios{
+    grid-column: 1 / 9;
+    margin: 25vh 0 25vh 0;
+}
+
+.dp{
+    grid-column: 1 / 9;
+}
