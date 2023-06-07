@@ -27,6 +27,10 @@ video{
     margin: 25vh 0 25vh 0;
 }
 
-.dp{
+.dpone{
     grid-column: 1 / 9;
+}
+
+.dptwo{
+    grid-column: 2 / 8;
 }
