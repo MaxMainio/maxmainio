@@ -107,11 +107,11 @@ var intervalId = window.setInterval(function(){
 	counter ++
 
 	if (counter%4 === 0) {
-		nyCarve.src = 'work/seam-carving/assets/nyc-standard.jpg';
+		nyCarve.src = 'work/seam-carving/assets/new-york/nyc-standard.jpg';
 	} else if (counter%4 === 2){
-		nyCarve.src = 'work/seam-carving/assets/nyc-stretched.jpg'
+		nyCarve.src = 'work/seam-carving/assets/new-york/nyc-stretched.jpg'
 	} else {
-		nyCarve.src = 'work/seam-carving/assets/nyc-shrunk.jpg'
+		nyCarve.src = 'work/seam-carving/assets/new-york/nyc-shrunk.jpg'
 	}
 }, 1500);
 
