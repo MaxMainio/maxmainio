@@ -1,0 +1,30 @@
+.centroid{
+    grid-column: 1 / 9;
+    display: flex;
+    justify-content: center;
+}
+
+.content-container{
+    max-width: calc(var(--in-width) - 2rem);
+}
+
+
+
+
+
+
+
+
+
+.radio-button input[type="radio"] {
+    display: none;
+}
+
+.radio-button label {
+    display: inline-block;
+    cursor: pointer;
+}
+
+.radio-button input[type="radio"]:checked+label {
+    background-color: var(--green);
+}
