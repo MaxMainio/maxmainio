@@ -71,13 +71,7 @@ html{
     max-width: var(--in-width);
     margin: 0 auto 0 auto;
     padding: 0 1rem;
-}
 
-.closed{
-    display: none;
-}
-
-.open{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     column-gap: 1rem;
@@ -163,6 +157,28 @@ article{
     justify-content: center;
     height: 100%;
 }
+
+
+
+
+
+
+
+
+
+/* SEAM CARVING */
+.carving-content{
+    width: 100%;
+    max-width: calc(var(--in-width) - 2rem);
+    aspect-ratio: 1440 / 810;
+    display: flex;
+    justify-content: center;
+}
+
+.carving-content img{
+    height: 100%;
+}
+
 
 
 

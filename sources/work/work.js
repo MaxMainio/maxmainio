@@ -1,11 +1,11 @@
 // SWITCH TO SCROLL SMOOTH WHEN CLICKING ON INTERNAL LINKS
-const internalAnchorLinks = document.querySelectorAll('a:is([target="_self"])')
+const internalAnchorLinks = document.querySelectorAll('a:is([target="_self"])');
 
 internalAnchorLinks.forEach(item => {
 	item.addEventListener('click', e => {
 		document.querySelector('html').style.scrollBehavior = 'smooth'
-	})
-})
+	});
+});
 
 
 
@@ -16,7 +16,7 @@ internalAnchorLinks.forEach(item => {
 
 
 // REMOVE SPLASH WHEN IT EXITS VIEW
-const splash = document.querySelector('#splash')
+const splash = document.querySelector('#splash');
 
 const splashObserver = new IntersectionObserver(entries => {
 	entries.forEach(entry => {
@@ -31,8 +31,8 @@ const splashObserver = new IntersectionObserver(entries => {
 				window.scrollTo(0, 0);
 			}
 		}
-	})
-})
+	});
+});
 
 splashObserver.observe(splash)
 
@@ -47,13 +47,8 @@ splashObserver.observe(splash)
 // TOGGLE OPEN AND CLOSED THE INDEX
 document.querySelector('#index-btn').addEventListener('click', e => {
 	const index = document.querySelector('#index');
-
-	if (index.className === 'closed') {
-		index.className = 'open';
-	} else {
-		index.className = 'closed';
-	}
-})
+	index.style.display = index.style.display === 'none' ? '' : 'none';
+});
 
 
 
@@ -95,6 +90,30 @@ document.addEventListener('scroll', event => {
 		sectionObserver.observe(sections)
 	})
 })
+
+
+
+
+
+
+
+
+
+// SEAM CARVING
+const nyCarve = document.querySelector('#nyCarve');
+let counter = 0;
+
+var intervalId = window.setInterval(function(){
+	if (counter%4 === 0) {
+		nyCarve.src = 'work/seam-carving/assets/nyc-standard.jpg';
+	} else if (counter%4 === 2){
+		nyCarve.src = 'work/seam-carving/assets/nyc-stretched.jpg'
+	} else {
+		nyCarve.src = 'work/seam-carving/assets/nyc-shrunk.jpg'
+	}
+
+	counter ++
+}, 1000);
 
 
 
@@ -149,5 +168,4 @@ backToTop.addEventListener('click', e => {
 	setTimeout(() => {
 		window.scrollTo(0, 0);
 	}, 1)
-})
-
+});
