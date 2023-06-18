@@ -104,6 +104,8 @@ const nyCarve = document.querySelector('#nyCarve');
 let counter = 0;
 
 var intervalId = window.setInterval(function(){
+	counter ++
+
 	if (counter%4 === 0) {
 		nyCarve.src = 'work/seam-carving/assets/nyc-standard.jpg';
 	} else if (counter%4 === 2){
@@ -111,9 +113,7 @@ var intervalId = window.setInterval(function(){
 	} else {
 		nyCarve.src = 'work/seam-carving/assets/nyc-shrunk.jpg'
 	}
-
-	counter ++
-}, 1000);
+}, 1500);
 
 
 
