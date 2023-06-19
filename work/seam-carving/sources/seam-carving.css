@@ -46,3 +46,17 @@
 .radio-button input[type="radio"]:checked+label {
     background-color: var(--green);
 }
+
+
+
+
+
+
+
+
+
+@media (max-width: 685px) {
+    .interaction-container{
+        flex-direction: column;
+    }
+}
