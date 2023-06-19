@@ -5,7 +5,20 @@
 }
 
 .content-container{
+    width: 100%;
     max-width: calc(var(--in-width) - 2rem);
+}
+
+.img-container{
+    width: 100%;
+    aspect-ratio: 1440 / 810;
+    display: flex;
+    justify-content: center;
+}
+
+.img-container img{
+    height: 100%;
+    width: auto;
 }
 
 
