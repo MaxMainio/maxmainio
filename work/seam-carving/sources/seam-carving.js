@@ -15,19 +15,15 @@ window.onload = (event) => {
     window.allContainers = initializeObjectList(activeContainers);
 };
 
-// var activeUpdateInterval = window.setInterval(function(){
-// 	counter ++
+var activeUpdateInterval = window.setInterval(function(){
+	counter ++
 
-//     for (let i = 0; i < activeContainers.length; i ++) {
-//         updateActiveImages()
-//     };
+    for (let i = 0; i < activeContainers.length; i ++) {
+        let target = activeContainers[i].children[0].children[0]
 
-
-
-//     // for (let i = 0; i < contents.length; i++) {
-//     //     updateCollectiveImages(counter, i);
-//     // };
-// }, 1500);
+        updateActiveImages(target);
+    };
+}, 1500);
 
 
 
@@ -75,9 +71,31 @@ function initializeObjectList(activeContainers){
 
 
 
+function updateActiveImages(target) {
+    let targetInfo = allContainers[target.id]
+    let priority = targetInfo.priority;
+    let individualCounter = counter + allContainers[target.id].index;
+
+    if (individualCounter % 4 === 0) {
+        target.src = targetInfo.source + '0' + '.jpg';
+    } else if (individualCounter % 4 === 2) {
+        target.src = targetInfo.source + (2 * priority) + '.jpg';
+    } else {
+        target.src = targetInfo.source + (1 * priority) + '.jpg';
+    };
+};
+
+
+
+
+
+
+
+
+
 window.addEventListener('click', function(){
-    console.log(activeContainers);
-    console.log(allContainers);
+    // console.log(activeContainers);
+    // console.log(allContainers);
 });
 
 
