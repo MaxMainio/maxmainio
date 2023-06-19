@@ -1,3 +1,33 @@
+const altTexts = {
+    1: "the transformation the city’s greenery—parks, forests, and other natural areas—seemingly dissolves away as if subtly edged out of existence. This visual shift represents a real-world human mindset: the prioritization of human living space over natural landscapes. When the image expands, revealing newfound space, the instinct isn't to restore nature. Instead, it's seen as room for more urban development, reinforcing the narrative of human dominance and expansion over nature.",
+    10: "this change, the city's urban infrastructure—buildings, streets, and other man-made structures—seemingly vanish as if subtly pushed out of existence. This visual shift represents a counter-narrative to the real-world human mindset: the prioritization of nature over human living space. When the image expands, revealing newfound space, the instinct isn't to fill it with more urban development. Instead, it's seen as an opportunity for nature to reclaim and flourish within the newly opened space, challenging the typical narrative of human dominance and expansion over nature."
+}
+
+var counter = 0;
+
+
+
+
+
+
+window.onload = (event) => {
+    window.activeContainers = initializeActive();
+    window.allContainers = initializeObjectList(activeContainers);
+};
+
+// var activeUpdateInterval = window.setInterval(function(){
+// 	counter ++
+
+//     for (let i = 0; i < activeContainers.length; i ++) {
+//         updateActiveImages()
+//     };
+
+
+
+//     // for (let i = 0; i < contents.length; i++) {
+//     //     updateCollectiveImages(counter, i);
+//     // };
+// }, 1500);
 
 
 
@@ -6,6 +36,49 @@
 
 
 
+
+function initializeActive(){
+    let active = [].slice.call(document.getElementsByClassName('content-container'));
+    return(active);
+}
+
+
+
+function initializeObjectList(activeContainers){
+    const allContainers = {};
+
+    for (let i = 0; i < activeContainers.length; i++) {
+        let current = {
+            location: activeContainers[i].children[1].innerHTML,
+            tag: activeContainers[i].children[1].innerHTML.toLowerCase(),
+            map:  activeContainers[i].children[0].children[0],
+            source: '',
+            altText: '',
+            priority: 1,
+            index: i
+        };
+
+        current.source = 'assets/maps/' + current.tag + '/' + current.tag + '-'
+        current.altText = 'Animated triplet of images, starting with a satellite view of ' + current.id + ', unaltered in the first frame, the image then undergoes a striking transformation, compressing horizontally, and with ' + altTexts[current.priority];
+
+        allContainers[current.tag] = current;
+    };
+
+    return(allContainers);
+};
+
+
+
+
+
+
+
+
+
+window.addEventListener('click', function(){
+    console.log(activeContainers);
+    console.log(allContainers);
+});
 
 
 
