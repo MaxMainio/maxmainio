@@ -1,4 +1,4 @@
-const contents = [].slice.call(document.getElementsByClassName('content-container'));
+var contents = [].slice.call(document.getElementsByClassName('content-container'));
 const contentObjs = [];
 
 const altTexts = {
@@ -6,12 +6,21 @@ const altTexts = {
     10: "this change, the city's urban infrastructure—buildings, streets, and other man-made structures—seemingly vanish as if subtly pushed out of existence. This visual shift represents a counter-narrative to the real-world human mindset: the prioritization of nature over human living space. When the image expands, revealing newfound space, the instinct isn't to fill it with more urban development. Instead, it's seen as an opportunity for nature to reclaim and flourish within the newly opened space, challenging the typical narrative of human dominance and expansion over nature."
 };
 
-const buttons = [].slice.call(document.getElementsByTagName('label'));
+const scaleBtns = [].slice.call(document.getElementsByClassName('scalers'));
+const prioBtns = [].slice.call(document.getElementsByClassName('prioritizors'));
 
-buttons.forEach((btn) => {
-    let element = btn.parentElement.parentElement.children[0].children[0];
-    let value = btn.previousSibling.previousSibling.value;
-    btn.addEventListener('click', () => changePriority(element, value));
+scaleBtns.forEach((button) => {
+    let target = button.parentElement.parentElement.parentElement.children[0].children[0];
+    let value = button.value;
+
+    button.addEventListener('click', () => changeScale(target, value));
+});
+
+prioBtns.forEach((button) => {
+    let target = button.parentElement.parentElement.parentElement.children[0].children[0];
+    let value = button.value;
+
+    button.addEventListener('click', () => changePriority(target, value));
 });
 
 var counter = 0;
@@ -73,12 +82,12 @@ function updateCollectiveImages(counter) {
         if (individualCounter % 4 === 0) {
             var frame = 0;
         } else if (individualCounter % 4 === 2) {
-            var frame = (individualCounter % 4) * contentObjs[i].priority;
+            var frame = (individualCounter % 4) * contentObjs[current.dataset.index].priority;
         } else {
-            var frame = contentObjs[i].priority;
+            var frame = contentObjs[current.dataset.index].priority;
         };
 
-        current.src = contentObjs[i].source + frame + '.jpg';
+        current.src = contentObjs[current.dataset.index].source + frame + '.jpg';
     };
 };
 
@@ -111,4 +120,14 @@ function updateSingleImage(current, info, counter) {
 
     current.src = info.source + frame + '.jpg';
     current.alt = 'Animated triplet of images, starting with a satellite view of ' + info.location + ', unaltered in the first frame, the image then undergoes a striking transformation, compressing horizontally, and with ' + altTexts[info.priority];
+};
+
+
+
+function changeScale(current, value) {
+    console.log(contents);
+
+    contents.splice(current.dataset.index, 1);
+
+    console.log(contents);
 };

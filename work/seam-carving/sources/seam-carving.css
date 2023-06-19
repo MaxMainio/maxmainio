@@ -29,6 +29,11 @@
 
 
 
+.interaction-container{
+    display: flex;
+    justify-content: space-between;
+}
+
 .radio-button input[type="radio"] {
     display: none;
 }
