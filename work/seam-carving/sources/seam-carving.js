@@ -10,10 +10,11 @@ const scaleBtns = [].slice.call(document.getElementsByClassName('scalers'));
 const prioBtns = [].slice.call(document.getElementsByClassName('prioritizors'));
 
 scaleBtns.forEach((button) => {
+    let container = button.parentElement.parentElement.parentElement;
     let target = button.parentElement.parentElement.parentElement.children[0].children[0];
     let value = button.value;
 
-    button.addEventListener('click', () => changeScale(target, value));
+    button.addEventListener('click', () => changeScale(container, target, value));
 });
 
 prioBtns.forEach((button) => {
@@ -41,7 +42,7 @@ var intervalId = window.setInterval(function(){
 	counter ++
 
     for (let i = 0; i < contents.length; i++) {
-        updateCollectiveImages(counter);
+        updateCollectiveImages(counter, i);
     };
 }, 1500);
 
@@ -57,7 +58,7 @@ function prepObjects() {
     for (let i = 0; i < contents.length; i++) {
         let current = contents[i].children[0].children[0];
         let obj = {
-            location: current.id,
+            location: current.dataset.name,
             source: 'assets/maps/' + current.id + '/' + current.id + '-',
             alt: 'Animated triplet of images, starting with a satellite view of ' + current.id + ', unaltered in the first frame, the image then undergoes a striking transformation, compressing horizontally, and with ',
             priority: '1'
@@ -74,21 +75,24 @@ function prepObjects() {
 
 
 
-function updateCollectiveImages(counter) {
-    for (let i = 0; i < contents.length; i++) {
-        let current = contents[i].children[0].children[0];
-        let individualCounter = counter - i;
+function updateCollectiveImages(counter, i) {
+    let container = contents[i];
+    let current = contents[i].children[0].children[0];
+    let info = contentObjs[current.dataset.index];
+    let individualCounter = counter - i;
 
-        if (individualCounter % 4 === 0) {
-            var frame = 0;
-        } else if (individualCounter % 4 === 2) {
-            var frame = (individualCounter % 4) * contentObjs[current.dataset.index].priority;
-        } else {
-            var frame = contentObjs[current.dataset.index].priority;
-        };
-
-        current.src = contentObjs[current.dataset.index].source + frame + '.jpg';
+    if (individualCounter % 4 === 0) {
+        var frame = 0;
+        document.getElementById(info.location.toLowerCase() + 'Original').checked = true;
+    } else if (individualCounter % 4 === 2) {
+        var frame = (individualCounter % 4) * contentObjs[current.dataset.index].priority;
+        document.getElementById(info.location.toLowerCase() + 'Stretch').checked = true;
+    } else {
+        var frame = contentObjs[current.dataset.index].priority;
+        document.getElementById(info.location.toLowerCase() + 'Squeeze').checked = true;
     };
+
+    current.src = contentObjs[current.dataset.index].source + frame + '.jpg';
 };
 
 
@@ -124,10 +128,32 @@ function updateSingleImage(current, info, counter) {
 
 
 
-function changeScale(current, value) {
-    console.log(contents);
+function changeScale(container, current, value) {
 
-    contents.splice(current.dataset.index, 1);
+    if (contents.includes(container) && contents.length > 1) {
+        contents.splice(current.dataset.index, 1);
+    } else if (contents.includes(container) && contents.length <= 1) {
+        contents = [];
+        clearInterval(intervalId);
+    }
 
+
+
+
+
+
+
+
+
+    // if (value === 'original') {
+    //     current.
+    // } else if (value === 'stretch') {
+
+    // } else {
+
+    // };
+
+    console.log(value);
     console.log(contents);
+    console.log(contentObjs);
 };
