@@ -5,6 +5,14 @@ const altTexts = {
     10: "this change, the city's urban infrastructure—buildings, streets, and other man-made structures—seemingly vanish as if subtly pushed out of existence. This visual shift represents a counter-narrative to the real-world human mindset: the prioritization of nature over human living space. When the image expands, revealing newfound space, the instinct isn't to fill it with more urban development. Instead, it's seen as an opportunity for nature to reclaim and flourish within the newly opened space, challenging the typical narrative of human dominance and expansion over nature."
 };
 
+const buttons = [].slice.call(document.getElementsByTagName('label'));
+
+buttons.forEach((btn) => {
+    let element = btn.parentElement.parentElement.children[0].children[0];
+    let value = btn.previousSibling.previousSibling.value;
+    btn.addEventListener('click', () => changePriority(element, value));
+});
+
 var counter = 0;
 
 
@@ -39,7 +47,7 @@ function prepObjects() {
             location: current.id,
             source: 'assets/maps/' + current.id + '/' + current.id + '-',
             alt: 'Starting with a satellite view of ' + current.id + ', unaltered in the first frame, the image then undergoes a striking transformation, compressing horizontally, and with ',
-            priority: '1'
+            priority: '1',
         };
     
         obj.alt = obj.alt + altTexts[obj.priority];
@@ -47,6 +55,7 @@ function prepObjects() {
 
         current.alt = obj.alt;
         current.title = obj.alt;
+        current.dataset.index = i;
     };
 };
 
@@ -68,3 +77,15 @@ function updateImgs(counter) {
         current.src = contentObjs[i].source + frame + '.jpg';
     };
 };
+
+
+
+function changePriority(element, value) {
+    let index = element.dataset.index;
+
+    if (value === 'nature') {
+        contentObjs[index].priority = 10;
+    } else {
+        contentObjs[index].priority = 1;
+    };
+}
