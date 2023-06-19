@@ -168,7 +168,7 @@ article{
 
 /* SEAM CARVING */
 .carving-content{
-    width: 100%;
+    width: calc(100% - 2rem);
     max-width: calc(var(--in-width) - 2rem);
     aspect-ratio: 1440 / 810;
     display: flex;
