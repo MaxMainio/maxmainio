@@ -75,11 +75,12 @@
 					<div class="content-container">
 						<div class="img-container">
 							<img src="assets/maps/boston/boston-0.jpg"
-								alt="Animated triplet of images, starting with a satellite view of Boston, unaltered in the first frame, the image then undergoes a striking transformation, compressing horizontally, and with the transformation the city’s greenery—parks, forests, and other natural areas—seemingly dissolves away as if subtly edged out of existence. This visual shift represents a real-world human mindset: the prioritization of human living space over natural landscapes. When the image expands, revealing newfound space, the instinct isn't to restore nature. Instead, it's seen as room for more urban development, reinforcing the narrative of human dominance and expansion over nature."
-								title="Animated triplet of images, starting with a satellite view of Boston, unaltered in the first frame, the image then undergoes a striking transformation, compressing horizontally, and with the transformation the city’s greenery—parks, forests, and other natural areas—seemingly dissolves away as if subtly edged out of existence. This visual shift represents a real-world human mindset: the prioritization of human living space over natural landscapes. When the image expands, revealing newfound space, the instinct isn't to restore nature. Instead, it's seen as room for more urban development, reinforcing the narrative of human dominance and expansion over nature."
+								alt="Triplet of images, starting with a satellite view of Boston, unaltered in the first frame, the image then undergoes a striking transformation, compressing horizontally, and with the transformation the city’s greenery—parks, forests, and other natural areas—seemingly dissolves away as if subtly edged out of existence. This visual shift represents a real-world human mindset: the prioritization of human living space over natural landscapes. When the image expands, revealing newfound space, the instinct isn't to restore nature. Instead, it's seen as room for more urban development, reinforcing the narrative of human dominance and expansion over nature."
+								title="Triplet of images, starting with a satellite view of Boston, unaltered in the first frame, the image then undergoes a striking transformation, compressing horizontally, and with the transformation the city’s greenery—parks, forests, and other natural areas—seemingly dissolves away as if subtly edged out of existence. This visual shift represents a real-world human mindset: the prioritization of human living space over natural landscapes. When the image expands, revealing newfound space, the instinct isn't to restore nature. Instead, it's seen as room for more urban development, reinforcing the narrative of human dominance and expansion over nature."
 								id="boston"
 								class="shadow"
-								loading="lazy">
+								loading="lazy"
+								data-frame="0">
 						</div>
 
 						<h1>Boston</h1>
@@ -87,23 +88,23 @@
 						<div class="interaction-container">
 							<p class="radio-button">
 								Size:
-								<input type="radio" id="bostonOriginal" class="scalers" name="boston-size" value="original" checked>
-								<label for="bostonOriginal">Original</label>,
+								<input type="radio" id="bostonOriginal" name="boston-scaler" value="original" checked>
+								<label class="scalers" for="bostonOriginal">Original</label>,
 
-								<input type="radio" id="bostonSqueeze" class="scalers" name="boston-size" value="squeeze">
-								<label for="bostonSqueeze">Squeeze</label>,
+								<input type="radio" id="bostonSqueeze" name="boston-scaler" value="squeeze">
+								<label class="scalers" for="bostonSqueeze">Squeeze</label>,
 
-								<input type="radio" id="bostonStretch" class="scalers" name="boston-size" value="stretch">
-								<label for="bostonStretch">Stretch</label>
+								<input type="radio" id="bostonStretch" name="boston-scaler" value="stretch">
+								<label class="scalers" for="bostonStretch">Stretch</label>
 							</p>
 	
 							<p class="radio-button">
 								Prioritize:
-								<input type="radio" id="bostonUrban" class="prioritizors" name="boston-priority" value="urban" checked>
-								<label for="bostonUrban">Urban</label>,
+								<input type="radio" id="bostonUrban" name="boston-priority" value="urban" checked>
+								<label class="prioritizors" for="bostonUrban">Urban</label>,
 
-								<input type="radio" id="bostonNature" class="prioritizors" name="boston-priority" value="nature">
-								<label for="bostonNature">Nature</label>
+								<input type="radio" id="bostonNature" name="boston-priority" value="nature">
+								<label class="prioritizors" for="bostonNature">Nature</label>
 							</p>
 						</div>
 					</div>
@@ -113,11 +114,12 @@
 					<div class="content-container">
 						<div class="img-container">
 							<img src="assets/maps/cairo/cairo-1.jpg"
-								alt="Animated triplet of images, starting with a satellite view of Cairo, unaltered in the first frame, the image then undergoes a striking transformation, compressing horizontally, and with the transformation the city’s greenery—parks, forests, and other natural areas—seemingly dissolves away as if subtly edged out of existence. This visual shift represents a real-world human mindset: the prioritization of human living space over natural landscapes. When the image expands, revealing newfound space, the instinct isn't to restore nature. Instead, it's seen as room for more urban development, reinforcing the narrative of human dominance and expansion over nature."
-								title="Animated triplet of images, starting with a satellite view of Cairo, unaltered in the first frame, the image then undergoes a striking transformation, compressing horizontally, and with the transformation the city’s greenery—parks, forests, and other natural areas—seemingly dissolves away as if subtly edged out of existence. This visual shift represents a real-world human mindset: the prioritization of human living space over natural landscapes. When the image expands, revealing newfound space, the instinct isn't to restore nature. Instead, it's seen as room for more urban development, reinforcing the narrative of human dominance and expansion over nature."
+								alt="Triplet of images, starting with a satellite view of Cairo, unaltered in the first frame, the image then undergoes a striking transformation, compressing horizontally, and with the transformation the city’s greenery—parks, forests, and other natural areas—seemingly dissolves away as if subtly edged out of existence. This visual shift represents a real-world human mindset: the prioritization of human living space over natural landscapes. When the image expands, revealing newfound space, the instinct isn't to restore nature. Instead, it's seen as room for more urban development, reinforcing the narrative of human dominance and expansion over nature."
+								title="Triplet of images, starting with a satellite view of Cairo, unaltered in the first frame, the image then undergoes a striking transformation, compressing horizontally, and with the transformation the city’s greenery—parks, forests, and other natural areas—seemingly dissolves away as if subtly edged out of existence. This visual shift represents a real-world human mindset: the prioritization of human living space over natural landscapes. When the image expands, revealing newfound space, the instinct isn't to restore nature. Instead, it's seen as room for more urban development, reinforcing the narrative of human dominance and expansion over nature."
 								id="cairo"
 								class="shadow"
-								loading="lazy">
+								loading="lazy"
+								data-frame="1">
 						</div>
 
 						<h1>Cairo</h1>
@@ -125,20 +127,24 @@
 						<div class="interaction-container">
 							<p class="radio-button">
 								Size:
-								<input type="radio" id="cairoOriginal" class="scalers" name="cairo-size" value="original" checked>
-								<label for="cairoOriginal">Original</label>,
-								<input type="radio" id="cairoSqueeze" class="scalers" name="cairo-size" value="squeeze">
-								<label for="cairoSqueeze">Squeeze</label>,
-								<input type="radio" id="cairoStretch" class="scalers" name="cairo-size" value="stretch">
-								<label for="cairoStretch">Stretch</label>
+								<input type="radio" id="cairoOriginal" name="cairo-scaler" value="original">
+								<label class="scalers" for="cairoOriginal">Original</label>,
+
+								<input type="radio" id="cairoSqueeze" name="cairo-scaler" value="squeeze" checked>
+								<label class="scalers" for="cairoSqueeze">Squeeze</label>,
+
+								<input type="radio" id="cairoStretch" name="cairo-scaler" value="stretch">
+								<label class="scalers" for="cairoStretch">Stretch</label>
+
 							</p>
 
 							<p class="radio-button">
 								Prioritize:
-								<input type="radio" id="cairoUrban" class="prioritizors" name="cairo-priority" value="urban" checked>
-								<label for="cairoUrban">Urban</label>,
-								<input type="radio" id="cairoNature" class="prioritizors" name="cairo-priority" value="nature">
-								<label for="cairoNature">Nature</label>
+								<input type="radio" id="cairoUrban" name="cairo-priority" value="urban" checked>
+								<label class="prioritizors" for="cairoUrban">Urban</label>,
+
+								<input type="radio" id="cairoNature" name="cairo-priority" value="nature">
+								<label class="prioritizors" for="cairoNature">Nature</label>
 							</p>
 						</div>
 					</div>
