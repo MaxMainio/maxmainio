@@ -1,4 +1,8 @@
 /* CONTENT */
+/* #first{
+    height: calc(100vh - 3rem);
+} */
+
 #first > img{
     aspect-ratio: 1024 / 1448;
     width: auto;
