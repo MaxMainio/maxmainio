@@ -772,62 +772,48 @@ article{
 
 
 /* FOOTER */
-.footer-section{
-    height: 66%;
-    width: 100%;
-    max-width: var(--in-width);
-    position: absolute;
-    inset: auto 0 0 0;
-    margin: 0 auto;
-    padding: 0 1rem;
+footer{
+    height: 75vh;
+
+    display: flex;
+    flex-direction: column-reverse;
+    position: relative;
+}
+
+footer section{
     display: grid;
-    grid-template-columns: repeat(24, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
 }
 
-.footer-div{
-    margin-top: auto;
-    padding-bottom: 1rem;
-}
+#footer-nav{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
 
-.footer-div.first{
-    grid-column: 1 / 5;
-}
-
-.footer-div.second{
-    grid-column: 5 / 9;
-}
-
-.footer-div.third{
-    grid-column: 9 / 13;
-}
-
-.footer-profile{
-    grid-column: 19 / 25;
-    aspect-ratio: 1.5 / 1;
     width: 100%;
-    margin-top: auto;
+    max-width: calc(var(--half-width) - 0.5rem);
 
-    background-image: url(../../assets/footer/pixel-profile.png);
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    overflow: hidden;
+    margin: 0 0 0 auto;
+    padding: 1rem 0 1rem 1rem;
 }
 
-.footer-ice{
-    height: 66%;
-    width: calc(50% - 0.5rem);
-    position: absolute;
-    inset: auto 0 0 auto;
-    
+#footer-gradient{
+    grid-column: 2 / 3;
     background-image: linear-gradient(to top, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1)), url(../../assets/footer/ice-bliss.jpg);
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    overflow: hidden;
+}
+
+#footer-field{
+    width: 100%;
+    max-width: calc(var(--half-width) - 0.5rem);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    padding: 0 1rem 1rem 0;
+}
+
+#footer-gradient h3{
+    text-align: right;
 }
 
 
@@ -860,30 +846,14 @@ article{
 }
 
 @media (max-width: 1000px) {
-    .footer-section{
-        grid-template-rows: auto auto auto;
-        align-content: flex-end;
-
-        grid-template-columns: repeat(4, 1fr);
+    #footer-nav{
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
     }
 
-    .footer-div.first{
-        grid-column: 1 / 3;
-        margin-top: auto;
-        padding: 0;
-    }
-
-    .footer-div.second{
-        grid-column: 1 / 3;
-        padding: 0;
-    }
-
-    .footer-div.third{
-        grid-column: 1 / 3;
-    }
-
-    .footer-profile{
-        grid-column: 4;
+    #footer-field{
+        display: none;
     }
 }
 
