@@ -16,10 +16,10 @@ const altTexts = {
 
 
 // INITIAL SET UP  ------------------------------------------------------------------------------------------------------------
-window.onload = (event) => {
+window.addEventListener('load', function() {
     window.activeContainers = initializeActive();
     window.allContainers = initializeObjectList(activeContainers);
-};
+});
 
 
 

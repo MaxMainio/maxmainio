@@ -1,9 +1,8 @@
-// STRUCTURE
 const footerField = document.getElementById('footer-field');
 
-window.onload = (event) => {
+window.addEventListener('load', function() {
     footerField.appendChild(document.createElement('h3')).innerHTML += '<h3>' + footerTxt[Math.round(Math.random() * (footerTxt.length - 1))] + '<h3>';
-}
+});
 
 
 
@@ -21,8 +20,8 @@ backToTop.addEventListener('click', e => {
 	
     setTimeout(() => {
 		window.scrollTo(0, 0);
-	}, 1)
-})
+	}, 1);
+});
 
 
 
