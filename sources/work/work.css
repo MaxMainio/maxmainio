@@ -211,7 +211,7 @@ article{
     justify-content: space-between;
 
     position: relative;
-    /* left: calc(-1720px + calc(var(--out-width) / 2)); */
+    left: calc(50vw - 1720px);
 }
 
 .sortlater-bg-link{
@@ -237,7 +237,7 @@ article{
 
     aspect-ratio: 1800 / 1125;
 
-    max-width: 100%;
+    max-width: 75%;
     max-height: 66%;
 
     position: relative;
