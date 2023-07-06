@@ -187,6 +187,61 @@ article{
 
 
 
+/* SORT LATER */
+.sortlater-center{
+    display: block;
+
+    aspect-ratio: 1800 / 1125;
+
+    max-width: 100%;
+    max-height: 66%;
+
+    position: relative;
+}
+
+.sortlater-center:hover{
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.sortlater-window{
+    width: 100%;
+    filter: drop-shadow(var(--shadow));
+}
+
+.sortlater-folder{
+    aspect-ratio: 1800 / 1046;
+    width: 100%;
+    position: absolute;
+    inset: auto 0 0 0;
+}
+
+.sortlater-scroll-container{
+    position: absolute;
+    inset: auto 0 0 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    aspect-ratio: 1800 / 1046;
+    width: 100%;
+
+    clip-path: polygon(0% 0%, 97% 0%, 97% 47%, 100% 53%, 100% 100%, 0% 100%);
+    mix-blend-mode: multiply;
+}
+.sortlater-scroll{
+    width: 100%;
+    position: absolute;
+    margin-top: 60%;
+}
+
+
+
+
+
+
+
+
 
 /* GENERATIVE? POEMS */
 .generative-in-grid{
