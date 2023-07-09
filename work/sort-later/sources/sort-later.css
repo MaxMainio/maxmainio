@@ -49,3 +49,30 @@ kbd {
     width: 100%;
     position: absolute;
 }
+
+
+
+
+
+
+
+
+
+.centroid{
+    grid-column: 1 / 9;
+    display: flex;
+    justify-content: center;
+}
+
+.video-container{
+    width: 100%;
+    max-width: calc(var(--in-width) - 2rem);
+}
+
+.video-link:hover{
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.sortlater-video{
+    width: 100%;
+}

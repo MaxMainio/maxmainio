@@ -73,23 +73,23 @@ document.addEventListener('scroll', event => {
 					var normalized = (difference - (vh * -1)) / (vh - (vh * -1));
 					var normalOffset = (normalized * 2) - 1;
 					return normalOffset
-				}
+				};
 	
-				var multiplier = parallaxCalc(entry.target.offsetTop, windowScroll)
+				var multiplier = parallaxCalc(entry.target.offsetTop, windowScroll);
 				var elements = entry.target.querySelectorAll('[data-rate]');
 				var elementsIndex = 0, length = elements.length;
 	
 				for (elementsIndex; elementsIndex < length; elementsIndex++) {
-					elements[elementsIndex].style.transform = 'translate3d(0px, '+multiplier * elements[elementsIndex].dataset.rate+'px, 0px)'
-				}
-			}
-		})
-	})
+					elements[elementsIndex].style.transform = 'translate3d(0px, ' + multiplier * elements[elementsIndex].dataset.rate + 'px, 0px)'
+				};
+			};
+		});
+	});
 	
 	sections.forEach(sections => {
 		sectionObserver.observe(sections)
-	})
-})
+	});
+});
 
 
 
