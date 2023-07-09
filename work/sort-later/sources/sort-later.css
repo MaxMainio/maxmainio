@@ -11,3 +11,37 @@ kbd {
     padding: 2px 4px;
     white-space: nowrap;
 }
+
+
+
+
+
+
+
+
+
+.sortlater-center{
+    display: block;
+    position: relative;
+
+    aspect-ratio: 1800 / 1125;
+    max-width: 100%;
+}
+
+.sortlater-scroll-container{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    inset: auto 0 0 0;
+
+    aspect-ratio: 1800 / 1046;
+    width: 100%;
+
+    clip-path: polygon(0% 0%, 97% 0%, 97% 47%, 100% 53%, 100% 100%, 0% 100%);
+    mix-blend-mode: multiply;
+}
+
+.sortlater-scroll{
+    width: 100%;
+    position: absolute;
+}
