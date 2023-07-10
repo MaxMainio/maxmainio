@@ -896,6 +896,24 @@ article{
     .sortlater-bg-container{
         left: 0;
     }
+
+    #sortlater-print-1{
+        display: none;
+    }
+
+    #sortlater-print-7{
+        display: none;
+    }
+}
+
+@media (max-width: 1500px) {
+    #sortlater-print-2{
+        display: none;
+    }
+
+    #sortlater-print-6{
+        display: none;
+    }
 }
 
 @media (max-width: 1200px) {
