@@ -116,3 +116,19 @@ kbd {
 .work-div:nth-child(11){
     grid-column: 7 / 9;
 }
+
+.work-div:nth-child(12){
+    grid-column: 1 / 3;
+}
+
+.work-div:nth-child(13){
+    grid-column: 3 / 5;
+}
+
+.work-div:nth-child(14){
+    grid-column: 5 / 7;
+}
+
+.work-div:nth-child(15){
+    grid-column: 7 / 9;
+}
