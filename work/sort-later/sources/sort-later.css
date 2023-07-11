@@ -76,3 +76,27 @@ kbd {
 .sortlater-video{
     width: 100%;
 }
+
+
+
+
+
+
+
+
+
+.work-div:nth-child(4){
+    grid-column: 1 / 3;
+}
+
+.work-div:nth-child(5){
+    grid-column: 3 / 5;
+}
+
+.work-div:nth-child(6){
+    grid-column: 5 / 7;
+}
+
+.work-div:nth-child(7){
+    grid-column: 7 / 9;
+}
