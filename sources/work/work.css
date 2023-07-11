@@ -24,7 +24,7 @@ html{
 
 /* SPLASH */
 #splash{
-    background-image: url(../../assets/splash/green-bliss.jpg);
+    background-image: url(../../assets/splash/green-bliss.webp);
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
