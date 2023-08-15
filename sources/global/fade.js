@@ -35,3 +35,67 @@ if (vw > 800) {
 } else {
     faderElement.remove();
 }
+
+
+
+
+
+
+
+
+
+// IMG ZOOM ------------------------------------------------------------------------------------------------------------------------
+const images = document.querySelectorAll('.work-img');
+
+if (vw > 1000) {
+    images.forEach(function (item){
+        item.addEventListener("mousedown", (event) => {
+            let current = event.target;
+            let container = event.target.parentNode.parentNode;
+    
+            current.classList.add('focused');
+            container.classList.add('focusedcontainer');
+    
+            document.body.style.cursor = 'zoom-in';
+    
+    
+    
+            document.addEventListener("mouseup", (event) => {
+                current.classList.remove('focused');
+                container.classList.remove('focusedcontainer');
+    
+                document.body.removeAttribute('style');
+            });
+        });
+    });
+};
+
+
+
+
+
+
+
+
+
+// BLURRY LOAD ---------------------------------------------------------------------------------------------------------------------
+// const blurdivs = document.querySelectorAll('.blur-load');
+
+// blurdivs.forEach(div => {
+//     const img = div.querySelector('img');
+
+//     function loaded() {
+//         div.classList.add('loaded');
+
+//         setInterval(() => {
+//             div.removeAttribute('class');
+//             div.removeAttribute('style');
+//         }, 200);
+//     }
+
+//     if (img.complete) {
+//         loaded();
+//     } else {
+//         img.addEventListener('load', loaded);
+//     };
+// });
