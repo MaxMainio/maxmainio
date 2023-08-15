@@ -1,13 +1,13 @@
 /* CONTENT */
-/* #first{
-    height: calc(100vh - 3rem);
-} */
-
 #first > img{
     aspect-ratio: 1024 / 1448;
+    max-height: calc(100vh - 3rem);
     width: auto;
-    max-width: 100%;
 }
+
+
+
+
 
 #aukeama-container{
     grid-column: 1 / 9;
@@ -87,17 +87,4 @@
     width: 117.1875%;
     mix-blend-mode: multiply;
     pointer-events: none;
-}
-
-
-
-
-
-
-
-
-
-/* MEDIA QUERIES */
-@media (max-width: 1000px) {
-
 }
