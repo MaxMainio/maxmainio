@@ -59,6 +59,10 @@
 
 
 
+.work-img{
+    display: block;
+}
+
 .work-img:hover{
     cursor: zoom-out;
 }
@@ -67,7 +71,9 @@
     cursor: zoom-in;
 }
 
-#focused{
+
+
+.focused{
     position: fixed;
     height: 100vh;
     width: auto;
@@ -83,6 +89,6 @@
     -ms-user-select: none;
 }
 
-#focusedcontainer{
+.focusedcontainer{
     z-index: 1000;
 }
