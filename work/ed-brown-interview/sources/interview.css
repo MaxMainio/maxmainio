@@ -1,6 +1,6 @@
 /* MAIN */
 .work-div{
-    max-height: calc(100vh - 6rem);
+    width: 100%;
 }
 
 
@@ -16,7 +16,7 @@
 
 .work-div:nth-child(2) div{
     aspect-ratio: 1794 / 2328;
-    height: 100%;
+    width: 100%;
 }
 
 
@@ -32,7 +32,7 @@
 
 .work-div:nth-child(3) div{
     aspect-ratio: 3537 / 2332;
-    height: 100%;
+    width: 100%;
 }
 
 
@@ -48,5 +48,41 @@
 
 .work-div:nth-child(4) div{
     aspect-ratio: 1794 / 2328;
-    height: 100%;
+    width: 100%;
+}
+
+
+
+
+
+
+
+
+
+.work-img:hover{
+    cursor: zoom-out;
+}
+
+.work-img:active{
+    cursor: zoom-in;
+}
+
+#focused{
+    position: fixed;
+    height: 100vh;
+    width: auto;
+
+    inset: 0;
+    margin: 0 auto;
+
+    user-drag: none;
+    -webkit-user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+#focusedcontainer{
+    z-index: 1000;
 }
