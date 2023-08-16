@@ -185,7 +185,7 @@ nav h1{
 
 
 
-/* .blur-load{
+.blur-load{
     background-size: cover;
     background-position: center;
 }
@@ -197,7 +197,7 @@ nav h1{
 .blur-load > img{
     opacity: 0;
     transition: opacity 200ms ease-in-out;
-} */
+}
 
 
 

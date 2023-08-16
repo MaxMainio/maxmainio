@@ -79,23 +79,23 @@ if (vw > 1000) {
 
 
 // BLURRY LOAD ---------------------------------------------------------------------------------------------------------------------
-// const blurdivs = document.querySelectorAll('.blur-load');
+const blurdivs = document.querySelectorAll('.blur-load');
 
-// blurdivs.forEach(div => {
-//     const img = div.querySelector('img');
+blurdivs.forEach(div => {
+    const img = div.querySelector('img');
 
-//     function loaded() {
-//         div.classList.add('loaded');
+    function loaded() {
+        div.classList.add('loaded');
 
-//         setInterval(() => {
-//             div.removeAttribute('class');
-//             div.removeAttribute('style');
-//         }, 200);
-//     }
+        setInterval(() => {
+            div.removeAttribute('class');
+            div.removeAttribute('style');
+        }, 200);
+    }
 
-//     if (img.complete) {
-//         loaded();
-//     } else {
-//         img.addEventListener('load', loaded);
-//     };
-// });
+    if (img.complete) {
+        loaded();
+    } else {
+        img.addEventListener('load', loaded);
+    };
+});
