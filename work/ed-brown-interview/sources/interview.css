@@ -59,7 +59,7 @@
 
 
 
-.blur-load{
+/* .blur-load{
     background-size: cover;
     background-position: center;
 }
@@ -71,7 +71,7 @@
 .blur-load > img{
     opacity: 0;
     transition: opacity 200ms ease-in-out;
-}
+} */
 
 
 
@@ -81,15 +81,15 @@
 
 
 
-.work-img{
+/* .zoomable{
     display: block;
 }
 
-.work-img:hover{
+.zoomable:hover{
     cursor: zoom-out;
 }
 
-.work-img:active{
+.zoomable:active{
     cursor: zoom-in;
 }
 
@@ -113,4 +113,4 @@
 
 .focusedcontainer{
     z-index: 1000;
-}
+} */

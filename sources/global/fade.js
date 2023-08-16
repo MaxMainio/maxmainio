@@ -45,10 +45,10 @@ if (vw > 800) {
 
 
 // IMG ZOOM ------------------------------------------------------------------------------------------------------------------------
-const images = document.querySelectorAll('.work-img');
+const zoomable = document.querySelectorAll('.zoomable');
 
 if (vw > 1000) {
-    images.forEach(function (item){
+    zoomable.forEach(function (item){
         item.addEventListener("mousedown", (event) => {
             let current = event.target;
             let container = event.target.parentNode.parentNode;

@@ -64,6 +64,44 @@ img{
 
 
 
+.zoomable{
+    display: block;
+}
+
+.zoomable:hover{
+    cursor: zoom-out;
+}
+
+.zoomable:active{
+    cursor: zoom-in;
+}
+
+
+
+.focused{
+    position: fixed;
+    height: 100vh;
+    width: auto;
+
+    inset: 0;
+    margin: 0 auto;
+
+    user-drag: none;
+    -webkit-user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+.focusedcontainer{
+    z-index: 1000;
+}
+
+
+
+
+
 
 
 
