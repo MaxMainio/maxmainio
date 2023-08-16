@@ -86,7 +86,6 @@ img{
     inset: 0;
     margin: 0 auto;
 
-    user-drag: none;
     -webkit-user-drag: none;
     user-select: none;
     -moz-user-select: none;
