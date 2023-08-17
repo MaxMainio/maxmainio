@@ -1,8 +1,6 @@
 /* CONTENT */
-#first > img{
+.work-div:nth-child(2) div{
     aspect-ratio: 1024 / 1448;
-    max-height: calc(100vh - 3rem);
-    width: auto;
 }
 
 

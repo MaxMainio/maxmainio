@@ -5,13 +5,17 @@ console.log('https://www.youtube.com/watch?v=NuAKnbIr6TE');
 
 
 // CONSTANTS    --------------------------------------------------------------------------------------------------------------------
+// Global
 var vw = window.innerWidth
 
+// Fader
 const innerLinks = document.querySelectorAll('a:not([target="_self"], [target="_blank"])');
 const faderElement = document.querySelector('#fader');
 
+// IMG Carousel
 const  buttons = document.querySelectorAll('[data-carousel-button]')
 
+// Footer
 const footerField = document.getElementById('footer-field');
 
 
