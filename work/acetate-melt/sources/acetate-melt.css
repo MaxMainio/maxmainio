@@ -3,44 +3,113 @@
     mix-blend-mode: multiply;
 }
 
-.gimp{
+
+
+
+
+.work-div:nth-child(2) div{
+    aspect-ratio: 1024 / 1339;
+}
+
+
+
+.work-div:nth-child(3){
     grid-column: 1 / 6;
 }
 
-.gardener{
+.work-div:nth-child(3) div{
+    aspect-ratio: 1209 / 1024;
+}
+
+
+
+.work-div:nth-child(4){
     grid-column: 7 / 9;
 }
 
-.plane{
+.work-div:nth-child(4) div{
+    aspect-ratio: 1024 / 1339;
+}
+
+
+
+.work-div:nth-child(5){
     grid-column: 1 / 4;
 }
 
-.mountain{
+.work-div:nth-child(5) div{
+    aspect-ratio: 1024 / 1605;
+}
+
+
+
+.work-div:nth-child(6){
     grid-column: 5 / 7;
 }
 
-.waterfall{
+.work-div:nth-child(6) div{
+    aspect-ratio: 1024 / 1857;
+}
+
+
+
+.work-div:nth-child(7){
     grid-column: 8 / 9;
     margin-top: auto;
 }
 
-.parrot-0{
+.work-div:nth-child(7) div{
+    aspect-ratio: 1024 / 2031;
+}
+
+
+
+.work-div:nth-child(8){
     grid-column: 2 / 5;
 }
 
-.nature-2{
+.work-div:nth-child(8) div{
+    aspect-ratio: 1024 / 1369;
+}
+
+
+
+.work-div:nth-child(9){
     grid-column: 6 / 8;
 }
 
-.cattle-1{
+.work-div:nth-child(9) div{
+    aspect-ratio: 1024 / 1271;
+}
+
+
+
+.work-div:nth-child(10){
     grid-column: 1 / 4;
     margin-top: auto;
 }
 
-.nature-4{
+.work-div:nth-child(10) div{
+    aspect-ratio: 1335 / 1024;
+}
+
+
+
+.work-div:nth-child(11){
     grid-column: 5 / 8;
 }
 
-.cattle-2{
+.work-div:nth-child(11) div{
+    aspect-ratio: 1024 / 1515;
+}
+
+
+
+.work-div:nth-child(12){
     grid-column: 6 / 9;
 }
+
+.work-div:nth-child(12) div{
+    aspect-ratio: 1357 / 1024;
+}
+
