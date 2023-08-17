@@ -1,4 +1,8 @@
 /* CONTENT */
+.work-div:nth-child(n) div{
+    aspect-ratio: 1 / 1;
+}
+
 .ineffability{
     grid-column: 2 / 6;
 }
