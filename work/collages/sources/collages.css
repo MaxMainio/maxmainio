@@ -1,10 +1,4 @@
 /* CONTENT */
-.work-div{
-    width: 100%;
-}
-
-
-
 .work-div:nth-child(3){
     grid-column: 1 / 4;
 }
