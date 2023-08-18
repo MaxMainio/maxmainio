@@ -1,16 +1,44 @@
 /* CONTENT */
-.skatta{
+.work-div:nth-child(2) div{
+    aspect-ratio: 1024 / 1280;
+}
+
+
+
+.work-div:nth-child(3){
     grid-column: 1 / 5;
 }
 
-.dumari{
+.work-div:nth-child(3) div{
+    aspect-ratio: 1024 / 1280;
+}
+
+
+
+.work-div:nth-child(4){
     grid-column: 5 / 9;
 }
 
-.balcony{
+.work-div:nth-child(4) div{
+    aspect-ratio: 1024 / 1280;
+}
+
+
+
+.work-div:nth-child(5){
     grid-column: 1 / 5;
 }
 
-.history-class{
+.work-div:nth-child(5) div{
+    aspect-ratio: 1280 / 1024;
+}
+
+
+
+.work-div:nth-child(6){
     grid-column: 5 / 9;
+}
+
+.work-div:nth-child(6) div{
+    aspect-ratio: 1280 / 1024;
 }
