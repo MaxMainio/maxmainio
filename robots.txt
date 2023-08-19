@@ -8,3 +8,4 @@ Disallow: /work/generative-poems/assets/no-index/
 Disallow: /work/homodeus/assets/no-index/
 Disallow: /work/playlist-covers/assets/no-index/
 Disallow: /work/ruotuvaki/assets/no-index/
+Disallow: /work/seam-carving/assets/no-index/

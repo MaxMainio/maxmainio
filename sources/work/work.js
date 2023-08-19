@@ -107,11 +107,11 @@ var intervalId = window.setInterval(function(){
 	counter ++
 
 	if (counter%4 === 0) {
-		nyCarve.src = 'work/seam-carving/assets/maps/nyc/nyc-0.jpg';
+		nyCarve.src = 'work/seam-carving/assets/content/maps/nyc/nyc-0.jpg';
 	} else if (counter%4 === 2){
-		nyCarve.src = 'work/seam-carving/assets/maps/nyc/nyc-2.jpg'
+		nyCarve.src = 'work/seam-carving/assets/content/maps/nyc/nyc-2.jpg'
 	} else {
-		nyCarve.src = 'work/seam-carving/assets/maps/nyc/nyc-1.jpg'
+		nyCarve.src = 'work/seam-carving/assets/content/maps/nyc/nyc-1.jpg'
 	};
 }, 1500);
 

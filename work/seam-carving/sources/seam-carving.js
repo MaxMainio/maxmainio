@@ -44,7 +44,7 @@ function initializeObjectList(activeContainers){
             index: i
         };
 
-        current.source = 'assets/maps/' + current.tag + '/' + current.tag + '-'
+        current.source = 'assets/content/maps/' + current.tag + '/' + current.tag + '-'
         current.altText = 'Triplet of images, starting with a satellite view of ' + current.id + ', unaltered in the first frame, the image then undergoes a striking transformation, compressing horizontally, and with ';
 
         allContainers[current.tag] = current;
