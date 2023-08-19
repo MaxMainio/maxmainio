@@ -7,3 +7,4 @@ Disallow: /work/ed-brown-interview/assets/no-index/
 Disallow: /work/generative-poems/assets/no-index/
 Disallow: /work/homodeus/assets/no-index/
 Disallow: /work/playlist-covers/assets/no-index/
+Disallow: /work/ruotuvaki/assets/no-index/
