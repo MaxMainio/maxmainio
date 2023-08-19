@@ -1,0 +1,2 @@
+User-agent: *
+Disallow: /work/acetate-melt/assets/no-index/
