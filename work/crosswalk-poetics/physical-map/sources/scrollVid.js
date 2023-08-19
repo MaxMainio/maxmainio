@@ -9,7 +9,7 @@ const bucket = randomIntFromInterval(1, 3).toString();
 
 const frameCount = 80;
 const currentFrame = index => (
-  `https://maxmain.io/work/crosswalk-poetics/physical-map/assets/moss-sim-${bucket}/moss-${(index + 1).toString().padStart( '0')}.png`
+  `https://maxmain.io/work/crosswalk-poetics/physical-map/assets/content/moss-sim-${bucket}/moss-${(index + 1).toString().padStart( '0')}.png`
 );
 
 const images = []

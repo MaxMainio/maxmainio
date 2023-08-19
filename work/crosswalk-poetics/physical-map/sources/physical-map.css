@@ -26,6 +26,10 @@
     max-height: calc(100vh - 3rem);
 }
 
+.blur-load{
+    aspect-ratio: 1000 / 1250;
+}
+
 img{
     position: absolute;
 }

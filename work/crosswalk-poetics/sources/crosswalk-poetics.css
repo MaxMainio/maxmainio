@@ -9,13 +9,25 @@ video{
     width: 100%;
 }
 
+
+
 .phenomenal-map-1{
     grid-column: 5 / 8;
 }
 
+.phenomenal-map-1 div{
+    aspect-ratio: 1920 / 1080;
+}
+
+
+
 .phenomenal-map-2{
     grid-column: 6 / 9;
     margin-top: auto;
+}
+
+.phenomenal-map-2 div{
+    aspect-ratio: 1920 / 1080;
 }
 
 
