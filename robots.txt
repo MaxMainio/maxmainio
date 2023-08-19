@@ -1,2 +1,4 @@
 User-agent: *
 Disallow: /work/acetate-melt/assets/no-index/
+Disallow: /work/collages/assets/no-index/
+Disallow: /work/digital-overprint/assets/no-index/
