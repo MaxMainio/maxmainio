@@ -120,9 +120,10 @@ if (vw > 1000) {
 
 
 // BLURRY LOAD  --------------------------------------------------------------------------------------------------------------------
-const blurdivs = document.querySelectorAll('.blur-load');
+const blurDivs = document.querySelectorAll('.blur-load');
+const blurDivVideos = document.querySelectorAll('.blur-load-video');
 
-blurdivs.forEach(div => {
+blurDivs.forEach(div => {
     const img = div.querySelector('img');
 
     function loaded() {
@@ -138,6 +139,27 @@ blurdivs.forEach(div => {
         loaded();
     } else {
         img.addEventListener('load', loaded);
+    };
+});
+
+
+
+blurDivVideos.forEach(div => {
+    const vid = div.querySelector('video');
+
+    function videoLoaded() {
+        div.classList.add('loaded');
+
+        setInterval(() => {
+            div.removeAttribute('class');
+            div.removeAttribute('style');
+        }, 200);
+    }
+
+    if (vid.complete) {
+        videoLoaded();
+    } else {
+        vid.addEventListener('loadedmetadata', videoLoaded);
     };
 });
 

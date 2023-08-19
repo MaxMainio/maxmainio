@@ -70,12 +70,17 @@ kbd {
     max-width: calc(var(--in-width) - 2rem);
 }
 
+.video-container div{
+    aspect-ratio: 1920 / 1080;
+}
+
 .video-link:hover{
     background-color: rgba(0, 0, 0, 0);
 }
 
 .sortlater-video{
     width: 100%;
+    display: block;
 }
 
 

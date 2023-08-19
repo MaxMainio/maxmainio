@@ -201,6 +201,22 @@ nav h1{
 
 
 
+.blur-load-video{
+    background-size: cover;
+    background-position: center;
+}
+
+.blur-load-video.loaded > video{
+    opacity: 1;
+}
+
+.blur-load-video > video{
+    opacity: 0;
+    transition: opacity 200ms ease-in-out;
+}
+
+
+
 
 
 
