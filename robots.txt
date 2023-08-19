@@ -9,3 +9,4 @@ Disallow: /work/homodeus/assets/no-index/
 Disallow: /work/playlist-covers/assets/no-index/
 Disallow: /work/ruotuvaki/assets/no-index/
 Disallow: /work/seam-carving/assets/no-index/
+Disallow: /work/sort-later/assets/no-index/
