@@ -1,4 +1,5 @@
 User-agent: *
+Disallow: /about/assets/
 Disallow: /work/acetate-melt/assets/no-index/
 Disallow: /work/collages/assets/no-index/
 Disallow: /work/crosswalk-poetics/assets/no-index/
