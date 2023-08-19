@@ -1,4 +1,4 @@
-// SWITCH TO SCROLL SMOOTH WHEN CLICKING ON INTERNAL LINKS
+// SWITCH TO SCROLL SMOOTH WHEN CLICKING ON INTERNAL LINKS	------------------------------------------------------------------------
 const internalAnchorLinks = document.querySelectorAll('a:is([target="_self"])');
 
 internalAnchorLinks.forEach(item => {
@@ -15,7 +15,7 @@ internalAnchorLinks.forEach(item => {
 
 
 
-// REMOVE SPLASH WHEN IT EXITS VIEW
+// REMOVE SPLASH WHEN IT EXITS VIEW	------------------------------------------------------------------------------------------------
 const splash = document.querySelector('#splash');
 
 const splashObserver = new IntersectionObserver(entries => {
@@ -44,7 +44,7 @@ splashObserver.observe(splash);
 
 
 
-// TOGGLE OPEN AND CLOSED THE INDEX
+// TOGGLE OPEN AND CLOSED THE INDEX	------------------------------------------------------------------------------------------------
 document.querySelector('#index-btn').addEventListener('click', e => {
 	const index = document.querySelector('#index');
 	index.style.display = index.style.display === 'none' ? '' : 'none';
@@ -58,7 +58,7 @@ document.querySelector('#index-btn').addEventListener('click', e => {
 
 
 
-// PARALLAX
+// PARALLAX	------------------------------------------------------------------------------------------------------------------------
 const sections = document.querySelectorAll('article');
 
 document.addEventListener('scroll', event => {
@@ -99,7 +99,7 @@ document.addEventListener('scroll', event => {
 
 
 
-// SEAM CARVING
+// SEAM CARVING	--------------------------------------------------------------------------------------------------------------------
 const nyCarve = document.querySelector('#nycCarve');
 let counter = 0;
 
@@ -123,5 +123,5 @@ var intervalId = window.setInterval(function(){
 
 
 
-// CROSSWALK POETICS
+// CROSSWALK POETICS	------------------------------------------------------------------------------------------------------------
 document.querySelector('#crosswalk-projection').playbackRate = 0.20;

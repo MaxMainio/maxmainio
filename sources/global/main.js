@@ -3,20 +3,8 @@ console.log('https://www.youtube.com/watch?v=NuAKnbIr6TE');
 
 
 
-
-// CONSTANTS    --------------------------------------------------------------------------------------------------------------------
-// Global
+// GLOBAL CONSTANTS    -------------------------------------------------------------------------------------------------------------
 var vw = window.innerWidth
-
-// Fader
-const innerLinks = document.querySelectorAll('a:not([target="_self"], [target="_blank"])');
-const faderElement = document.querySelector('#fader');
-
-// IMG Carousel
-const  buttons = document.querySelectorAll('[data-carousel-button]')
-
-// Footer
-const footerField = document.getElementById('footer-field');
 
 
 
@@ -27,6 +15,9 @@ const footerField = document.getElementById('footer-field');
 
 
 // FADER    ------------------------------------------------------------------------------------------------------------------------
+const innerLinks = document.querySelectorAll('a:not([target="_self"], [target="_blank"])');
+const faderElement = document.querySelector('#fader');
+
 if (vw > 800) {
     window.onpageshow = () => {
         faderElement.classList.remove('motion');
@@ -67,6 +58,8 @@ if (vw > 800) {
 
 
 // IMG CAROUSEL ------------------------------------------------------------------------------------------------------------------------
+const  buttons = document.querySelectorAll('[data-carousel-button]');
+
 buttons.forEach(button => {
 	button.addEventListener('click', () => {
 		const offset = button.dataset.carouselButton === 'next' ? 1 : -1
@@ -157,6 +150,8 @@ blurdivs.forEach(div => {
 
 
 // FOOTER   ------------------------------------------------------------------------------------------------------------------------
+const footerField = document.getElementById('footer-field');
+
 window.addEventListener('load', function() {
     footerField.appendChild(document.createElement('h3')).innerHTML += '<h3>' + footerTxt[Math.round(Math.random() * (footerTxt.length - 1))] + '<h3>';
 });
