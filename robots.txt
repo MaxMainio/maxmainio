@@ -4,3 +4,5 @@ Disallow: /work/collages/assets/no-index/
 Disallow: /work/digital-overprint/assets/no-index/
 Disallow: /work/drawings/assets/no-index/
 Disallow: /work/ed-brown-interview/assets/no-index/
+Disallow: /work/generative-poems/assets/no-index/
+Disallow: /work/homodeus/assets/no-index/
