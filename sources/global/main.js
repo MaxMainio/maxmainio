@@ -91,22 +91,24 @@ const zoomable = document.querySelectorAll('.zoomable');
 if (vw > 1000) {
     zoomable.forEach(function (item){
         item.addEventListener("mousedown", (event) => {
-            let current = event.target;
-            let container = event.target.parentNode.parentNode;
+            if (event.button === 0) {
+                let current = event.target;
+                let container = event.target.parentNode;
+        
+                current.classList.add('focused');
+                container.classList.add('focusedcontainer');
+        
+                document.body.style.cursor = 'zoom-in';
+        
     
-            current.classList.add('focused');
-            container.classList.add('focusedcontainer');
-    
-            document.body.style.cursor = 'zoom-in';
-    
-    
-    
-            document.addEventListener("mouseup", (event) => {
-                current.classList.remove('focused');
-                container.classList.remove('focusedcontainer');
-    
-                document.body.removeAttribute('style');
-            });
+        
+                document.addEventListener("mouseup", (event) => {
+                    current.classList.remove('focused');
+                    container.classList.remove('focusedcontainer');
+        
+                    document.body.removeAttribute('style');
+                });
+            };
         });
     });
 };
@@ -120,18 +122,17 @@ if (vw > 1000) {
 
 
 // BLURRY LOAD  --------------------------------------------------------------------------------------------------------------------
-const blurDivs = document.querySelectorAll('.blur-load');
-const blurDivVideos = document.querySelectorAll('.blur-load-video');
+const blurImg = document.querySelectorAll('.blur-img');
+const blurVid = document.querySelectorAll('.blur-vid');
 
-blurDivs.forEach(div => {
-    const img = div.querySelector('img');
-
+blurImg.forEach(img => {
     function loaded() {
-        div.classList.add('loaded');
+        img.classList.add('loaded');
 
         setInterval(() => {
-            div.removeAttribute('class');
-            div.removeAttribute('style');
+            img.classList.remove('blur-img');
+            img.classList.remove('loaded');
+            img.removeAttribute('style');
         }, 200);
     }
 
@@ -144,15 +145,14 @@ blurDivs.forEach(div => {
 
 
 
-blurDivVideos.forEach(div => {
-    const vid = div.querySelector('video');
-
+blurVid.forEach(vid => {
     function videoLoaded() {
-        div.classList.add('loaded');
+        vid.classList.add('loaded');
 
         setInterval(() => {
-            div.removeAttribute('class');
-            div.removeAttribute('style');
+            vid.classList.remove('blur-vid');
+            vid.classList.remove('loaded');
+            vid.removeAttribute('style');
         }, 200);
     }
 

@@ -63,7 +63,7 @@
 
 
 
-/* HTML */
+/* IMG ZOOM --------------------------------------------------------------------------------------------------------------------- */
 :root{
     --type-color:#333;
     --green: #00ff00;
@@ -100,7 +100,7 @@ body{
 
 
 
-/* NAV */
+/* NAV  ------------------------------------------------------------------------------------------------------------------------- */
 header{
     position: fixed;
     inset: 0 0 auto 0;
@@ -163,7 +163,7 @@ nav h1{
 
 
 
-/* FADER */
+/* FADER    --------------------------------------------------------------------------------------------------------------------- */
 .fader{
     position: fixed;
     height: 300vh;
@@ -185,32 +185,39 @@ nav h1{
 
 
 
-.blur-load{
+
+
+
+
+
+
+/* BLURRY LOAD  ----------------------------------------------------------------------------------------------------------------- */
+.blur-img{
     background-size: cover;
     background-position: center;
 }
 
-.blur-load.loaded > img{
+.blur-img.loaded > img{
     opacity: 1;
 }
 
-.blur-load > img{
+.blur-img > img{
     opacity: 0;
     transition: opacity 200ms ease-in-out;
 }
 
 
 
-.blur-load-video{
+.blur-vid{
     background-size: cover;
     background-position: center;
 }
 
-.blur-load-video.loaded > video{
+.blur-vid.loaded > img{
     opacity: 1;
 }
 
-.blur-load-video > video{
+.blur-vid > img{
     opacity: 0;
     transition: opacity 200ms ease-in-out;
 }
@@ -223,7 +230,7 @@ nav h1{
 
 
 
-/* MAIN */
+/* MAIN ------------------------------------------------------------------------------------------------------------------------- */
 a img {
     display: block;
     padding: 0;
@@ -246,7 +253,7 @@ a img {
 
 
 
-/* TYPE */
+/* TYPE ------------------------------------------------------------------------------------------------------------------------- */
 h1{
     font-weight: 400;
     font-size: 1rem;
@@ -312,7 +319,7 @@ sup, sub {
 
 
 
-/* FOOTER */
+/* FOOTER   --------------------------------------------------------------------------------------------------------------------- */
 footer{
     height: 75vh;
 
@@ -365,7 +372,7 @@ footer section{
 
 
 
-/* Media Queries */
+/* Media Queries    ------------------------------------------------------------------------------------------------------------- */
 @media (max-width: 1000px) {
     #desktop-logo{
         display: none;
