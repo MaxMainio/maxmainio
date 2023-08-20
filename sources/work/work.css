@@ -1,4 +1,4 @@
-/* HTML */
+/* HTML ------------------------------------------------------------------------------------------------------------------------- */
 :root{
     --type-color:#333;
     --green: #00ff00;
@@ -22,7 +22,7 @@ html{
 
 
 
-/* SPLASH */
+/* SPLASH   --------------------------------------------------------------------------------------------------------------------- */
 #splash{
     background-image: url(../../assets/splash/green-bliss.webp);
     -webkit-background-size: cover;
@@ -61,7 +61,7 @@ html{
 
 
 
-/* INDEX */
+/* INDEX    --------------------------------------------------------------------------------------------------------------------- */
 #index-btn{
     grid-column: 6;
     margin-right: auto;
@@ -97,7 +97,7 @@ html{
 
 
 
-/* MAIN */
+/* MAIN ------------------------------------------------------------------------------------------------------------------------- */
 article{
     position: relative;
     width: 100vw;
@@ -166,7 +166,7 @@ article{
 
 
 
-/* SEAM CARVING */
+/* SEAM CARVING ----------------------------------------------------------------------------------------------------------------- */
 .carving-content{
     width: calc(100% - 2rem);
     max-width: calc(var(--in-width) - 2rem);
@@ -188,7 +188,7 @@ article{
 
 
 
-/* SORT LATER */
+/* SORT LATER   ----------------------------------------------------------------------------------------------------------------- */
 .sortlater-bg-container{
     width: 100vw;
     height: 100vh;
@@ -297,7 +297,7 @@ article{
 
 
 
-/* GENERATIVE? POEMS */
+/* GENERATIVE? POEMS    --------------------------------------------------------------------------------------------------------- */
 .generative-in-grid{
     display: grid;
     grid-template-columns: repeat(6, 1fr);
@@ -417,7 +417,7 @@ article{
 
 
 
-/* INTERVIEW */
+/* INTERVIEW    ----------------------------------------------------------------------------------------------------------------- */
 .interview-spread{
     width: 75%;
 }
@@ -434,7 +434,7 @@ article{
 
 
 
-/* PLAYLIST COVERS */
+/* PLAYLIST COVERS  ------------------------------------------------------------------------------------------------------------- */
 .playlist-out-grid{
     display: grid;
     grid-template-columns: repeat(8, 1fr);
@@ -545,7 +545,7 @@ article{
 
 
 
-/* CROSSWALK POETICS */
+/* CROSSWALK POETICS    --------------------------------------------------------------------------------------------------------- */
 .crosswalk-content{
     position: relative;
     max-height: 100%;
@@ -574,7 +574,7 @@ article{
 
 
 
-/* DIGITAL OVERPRINT */
+/* DIGITAL OVERPRINT    --------------------------------------------------------------------------------------------------------- */
 .vertical-flex{
     display: flex;
     flex-direction: column;
@@ -607,7 +607,7 @@ article{
 
 
 
-/* Acetate Melt */
+/* ACETATE MELT ----------------------------------------------------------------------------------------------------------------- */
 #acetate-melt a{
     pointer-events: all;
 }
@@ -695,7 +695,7 @@ article{
 
 
 
-/* HOMODEUS */
+/* HOMODEUS --------------------------------------------------------------------------------------------------------------------- */
 .homodeus-positioning{
     position: absolute;
     inset: 0;
@@ -717,7 +717,7 @@ article{
 
 
 
-/* Ruotuvaki */
+/* RUOTUVAKI    ----------------------------------------------------------------------------------------------------------------- */
 .rv-juliste{
     position: absolute;
     inset: 0 auto auto 0;
@@ -761,7 +761,7 @@ article{
 
 
 
-/* COLLAGES */
+/* COLLAGES --------------------------------------------------------------------------------------------------------------------- */
 .horizontal-flex{
     display: flex;
     justify-content: space-between;
@@ -798,7 +798,7 @@ article{
 
 
 
-/* DRAWING */
+/* DRAWING  --------------------------------------------------------------------------------------------------------------------- */
 #drawings{
     pointer-events: none;
 }
@@ -880,7 +880,7 @@ article{
 
 
 
-/* Media Queries */
+/* Media Queries    ------------------------------------------------------------------------------------------------------------- */
 @media (min-width: 3440px) {
     .drawing-external{
         left: calc(calc(100vw - var(--out-width)) / -2);
