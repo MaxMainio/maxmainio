@@ -11,11 +11,21 @@ video{
 
 
 
+.installation-video{
+    aspect-ratio: 2276 / 1280;
+}
+
+.moss-video{
+    aspect-ratio: 800 / 1000;
+}
+
+
+
 .phenomenal-map-1{
     grid-column: 5 / 8;
 }
 
-.phenomenal-map-1 div{
+.phenomenal-map-1 img{
     aspect-ratio: 1920 / 1080;
 }
 
@@ -26,7 +36,7 @@ video{
     margin-top: auto;
 }
 
-.phenomenal-map-2 div{
+.phenomenal-map-2 img{
     aspect-ratio: 1920 / 1080;
 }
 
