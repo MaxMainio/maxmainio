@@ -1,5 +1,5 @@
 /* CONTENT */
-.work-div:nth-child(n) div{
+.work-div:nth-child(n) img{
     aspect-ratio: 1 / 1;
 }
 
