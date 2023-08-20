@@ -26,7 +26,7 @@
     max-height: calc(100vh - 3rem);
 }
 
-.blur-load{
+.moss-container img{
     aspect-ratio: 1000 / 1250;
 }
 
