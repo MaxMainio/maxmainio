@@ -1,3 +1,7 @@
+video{
+    width: 100%;
+}
+
 .centroid{
     grid-column: 1 / 9;
     display: flex;
