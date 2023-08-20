@@ -33,11 +33,11 @@
 
 
 
-.work-div:nth-child(2) div{
+.work-div:nth-child(2) img{
     aspect-ratio: 1800 / 1125;
 }
 
-.work-div:nth-child(n + 3) div{
+.work-div:nth-child(n + 3) img{
     aspect-ratio: 1024 / 1323;
 }
 
