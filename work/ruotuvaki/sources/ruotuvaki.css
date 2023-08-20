@@ -1,5 +1,5 @@
 /* CONTENT */
-.work-div:nth-child(2) div{
+.work-div:nth-child(2) img{
     aspect-ratio: 1024 / 1448;
 }
 
@@ -40,6 +40,10 @@
 .slide[data-active]{
     opacity: 1;
     pointer-events: all;
+}
+
+.slide img{
+    aspect-ratio: 1635 / 1024;
 }
 
 .carousel-button{
