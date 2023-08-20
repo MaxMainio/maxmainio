@@ -129,12 +129,14 @@ blurImg.forEach(img => {
     function loaded() {
         img.classList.add('loaded');
 
-        setInterval(() => {
+        setTimeout(() => {
             img.classList.remove('blur-img');
             img.classList.remove('loaded');
             img.removeAttribute('style');
         }, 200);
-    }
+
+        img.removeEventListener('load', loaded);
+    };
 
     if (img.complete) {
         loaded();
@@ -149,12 +151,14 @@ blurVid.forEach(vid => {
     function videoLoaded() {
         vid.classList.add('loaded');
 
-        setInterval(() => {
+        setTimeout(() => {
             vid.classList.remove('blur-vid');
             vid.classList.remove('loaded');
             vid.removeAttribute('style');
         }, 200);
-    }
+
+        vid.removeEventListener('load', loaded);
+    };
 
     if (vid.complete) {
         videoLoaded();
