@@ -1,11 +1,7 @@
-#first img{
-    display: block;
-}
-
-.blur-load{
+img{
     aspect-ratio: 1024 / 2048;
 }
 
-.blur-load:nth-child(8){
+img:nth-child(8){
     aspect-ratio: 1024 / 169;
 }
