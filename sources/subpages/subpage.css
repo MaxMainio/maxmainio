@@ -52,6 +52,7 @@ article{
 }
 
 img{
+    display: block;
     width: 100%;
 }
 
@@ -64,9 +65,14 @@ img{
 
 
 
-.zoomable{
+
+
+
+
+/* ZOOMABLE */
+/* .zoomable{
     display: block;
-}
+} */
 
 .zoomable:hover{
     cursor: zoom-out;
