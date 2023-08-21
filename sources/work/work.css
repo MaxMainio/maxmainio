@@ -638,9 +638,19 @@ article{
     margin: auto 0 5% 0;
 }
 
+.cattle img{
+    aspect-ratio: 1357 / 1024;
+}
+
+
+
 .waterfall{
     width: 12%;
     margin: 5% 0 auto 0;
+}
+
+.waterfall img{
+    aspect-ratio: 1024 / 2031;
 }
 
 
@@ -666,9 +676,19 @@ article{
     margin: 0 0 auto 0;
 }
 
+.parrot img{
+    aspect-ratio: 1024 / 1369;
+}
+
+
+
 .plane{
     width: 25%;
     margin: auto 0 0 0;
+}
+
+.plane img{
+    aspect-ratio: 1024 / 1605;
 }
 
 
@@ -685,6 +705,10 @@ article{
 .acetate-center a{
     pointer-events: all;
     width: 30%;
+}
+
+.acetate-center img{
+    aspect-ratio: 1024 / 1327;
 }
 
 
