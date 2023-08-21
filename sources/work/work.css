@@ -405,6 +405,13 @@ article{
     pointer-events: all;
 }
 
+.generative-window img{
+    width: 100%;
+    aspect-ratio: 1800 / 1125;
+}
+
+
+
 #generative-poems .content a:hover{
     background-color: rgba(0, 0, 0, 0);
 }
@@ -424,6 +431,11 @@ article{
 
 .interview-spread:hover{
     background-color: rgba(0, 0, 0, 0);
+}
+
+.interview-spread img{
+    width: 100%;
+    aspect-ratio: 3537 / 2332;
 }
 
 
