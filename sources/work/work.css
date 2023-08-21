@@ -555,6 +555,7 @@ article{
 .crosswalk-book{
     width: 100%;
     height: 100%;
+    aspect-ratio: 2156 / 1280;
 }
 
 #crosswalk-projection{
