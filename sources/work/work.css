@@ -788,6 +788,8 @@ article{
 
 .horizontal-flex img{
     width: 100%;
+    max-width: 683px;
+    aspect-ratio: 683 / 1024;
 }
 
 
