@@ -177,7 +177,11 @@ article{
 
 .carving-content img{
     max-height: 100%;
-    max-width: 100%;;
+    max-width: 100%;
+}
+
+.carving-content .blur-img{
+    aspect-ratio: 1440 / 810;
 }
 
 
