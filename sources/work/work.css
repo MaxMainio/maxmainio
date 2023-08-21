@@ -723,6 +723,8 @@ article{
     inset: 0 auto auto 0;
     width: 100vw;
     max-width: 1220px;
+
+    aspect-ratio: 1400 / 980;
 }
 
 .rv-aukeama{
@@ -730,6 +732,8 @@ article{
     inset: auto 0 0 auto;
     width: 100%;
     max-width: 67vh;
+
+    aspect-ratio: 1400 / 1050;
 }
 
 .invisa-grid{
@@ -751,6 +755,11 @@ article{
     grid-column: 4 / 5;
     max-width: 100%;
     pointer-events: all;
+}
+
+.rv-kalenteri img{
+    width: 100%;
+    aspect-ratio: 1/1;
 }
 
 
