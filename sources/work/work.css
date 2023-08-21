@@ -215,6 +215,8 @@ article{
     left: calc(50vw - 1720px);
 }
 
+
+
 .sortlater-prints{
     aspect-ratio: 216 / 356;
     height: 100%;
@@ -223,6 +225,16 @@ article{
     flex-direction: column;
     justify-content: center;
 }
+
+.sortlater-prints:nth-child(odd) img{
+    aspect-ratio: 971 / 1257;
+}
+
+.sortlater-prints:nth-child(even) img{
+    aspect-ratio: 791 / 1303;
+}
+
+
 
 .sortlater-bg-link{
     max-width: 100%;
@@ -246,6 +258,7 @@ article{
 
     aspect-ratio: 1800 / 1125;
 
+    height: 100%;
     max-width: 75%;
     max-height: 66%;
 
@@ -258,6 +271,7 @@ article{
 
 .sortlater-window{
     width: 100%;
+    aspect-ratio: 1800 / 1125;
     filter: drop-shadow(var(--shadow));
 }
 
@@ -400,6 +414,8 @@ article{
 
 .generative-window{
     aspect-ratio: 1864 / 1165;
+
+    height: 100%;
     max-width: 75%;
     max-height: 50%;
     pointer-events: all;
