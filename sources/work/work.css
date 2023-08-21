@@ -761,6 +761,11 @@ article{
     margin: auto auto;
 }
 
+#homodeus img{
+    height: 100%;
+    aspect-ratio: 1281 / 1024;
+}
+
 .multiply{
     mix-blend-mode: multiply;
     pointer-events: none;
