@@ -27,6 +27,16 @@ video{
 
 
 
+.work-div:nth-child(odd) .blur-img{
+    aspect-ratio: 1440 / 810;
+}
+
+.work-div:nth-child(even) .blur-img{
+    aspect-ratio: 720 / 810;
+}
+
+
+
 
 
 
