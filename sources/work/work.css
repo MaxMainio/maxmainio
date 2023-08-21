@@ -900,11 +900,23 @@ article{
     margin-bottom: 2rem;
 }
 
+.grass img{
+    aspect-ratio: 683 / 1024;
+}
+
+
+
 .feet{
     position: absolute;
     inset: 0 0 auto auto;
     width: 400px;
     margin-top: 2rem;
+
+    transform: rotate(180deg);
+}
+
+.feet img{
+    aspect-ratio: 683 / 1024;
 }
 
 
@@ -925,11 +937,21 @@ article{
     inset: 0 auto auto 0;
 }
 
+.history-class img{
+    aspect-ratio: 1280 / 1024;
+}
+
+
+
 .balcony{
     aspect-ratio: 5 / 4;
     height: 40%;
     position: absolute;
     inset: auto 0 0 auto;
+}
+
+.balcony img{
+    aspect-ratio: 1280 / 1024;
 }
 
 
@@ -938,6 +960,10 @@ article{
     aspect-ratio: 4 / 5;
     max-height: 75%;
     max-width: 50%;
+}
+
+.dumari img{
+    aspect-ratio: 1024 / 1280;
 }
 
 
