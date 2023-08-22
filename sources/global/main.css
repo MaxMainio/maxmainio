@@ -311,6 +311,10 @@ sup, sub {
     top: -0.4em;
 }
 
+.hang-punctuation{
+    text-indent: -0.33rem;
+}
+
 
 
 

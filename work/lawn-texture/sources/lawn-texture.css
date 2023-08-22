@@ -1,0 +1,7 @@
+.title {
+    background-color: var(--green);
+}
+
+.hang-punctuation{
+    text-indent: -0.33rem;
+}
