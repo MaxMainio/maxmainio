@@ -1,3 +1,30 @@
+article{
+    row-gap: 0;
+}
+
 .title {
     background-color: var(--green);
+}
+
+.work-div{
+    grid-column: 1 / 9;
+}
+
+.work-div p{
+    text-indent: calc(calc(100vw - 1400px) / 2);
+    max-width: initial;
+}
+
+
+
+
+
+
+
+
+
+@media (max-width: calc(1400px)) {
+    .work-div p{
+        text-indent: 0;
+    }
 }
