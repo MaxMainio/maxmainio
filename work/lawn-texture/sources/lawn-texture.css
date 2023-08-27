@@ -10,9 +10,14 @@ article{
     grid-column: 1 / 9;
 }
 
+.work-div p:nth-child(n + 2){
+    margin-top: 0;
+}
+
 .work-div p{
     text-indent: calc(calc(100vw - 1400px) / 2);
     max-width: initial;
+    /* margin-top: 0; */
 }
 
 
