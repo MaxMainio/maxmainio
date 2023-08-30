@@ -157,7 +157,7 @@ blurVid.forEach(vid => {
             vid.removeAttribute('style');
         }, 200);
 
-        vid.removeEventListener('load', loaded);
+        vid.removeEventListener('loadedmetadata', videoLoaded);
     };
 
     if (vid.complete) {
