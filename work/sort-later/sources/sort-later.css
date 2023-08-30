@@ -192,6 +192,7 @@ kbd {
 
 .work-div:nth-child(13){
     grid-column: 3 / 5;
+    aspect-ratio: 627 / 2408;
 }
 
 .work-div:nth-child(13) div{
@@ -202,6 +203,7 @@ kbd {
 
 .work-div:nth-child(14){
     grid-column: 5 / 7;
+    aspect-ratio: 627 / 1688;
 }
 
 .work-div:nth-child(14) div{

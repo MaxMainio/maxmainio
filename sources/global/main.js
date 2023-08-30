@@ -200,7 +200,7 @@ backToTop.addEventListener('click', e => {
 // FOOTER CATCHPHRASES
 footerTxt = new Array();
 footerTxt[0] = 'More being added here and there...';
-footerTxt[1] = 'This website is in a constant state of "work in progress."';
+footerTxt[1] = 'This website is in a constant state of &ldquo;work in progress.&rdquo;';
 footerTxt[2] = 'This website is forever in the making.';
 footerTxt[3] = 'A never-ending journey of website enhancement.';
 footerTxt[4] = 'Content blooms here regularly... Keep checking back!';
