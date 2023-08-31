@@ -1,4 +1,9 @@
 /* MAIN */
+body{
+    width: 100vw;
+    overflow: hidden;
+}
+
 .aukeama-container{
     position: relative;
     aspect-ratio: 1640 / 1024;
