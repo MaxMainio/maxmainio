@@ -18,9 +18,16 @@ article{
 .work-div-right p{
     font-weight: 600;
     font-size: 2rem;
+    margin-top: 0;
     line-height: 2rem;
     text-transform: uppercase;
 }
+
+.work-div-right p:nth-child(n + 2){
+    margin-top: 1rem;
+}
+
+
 
 .work-div-left{
     grid-column: 1 / 5;
