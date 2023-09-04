@@ -94,4 +94,8 @@ article{
     .work-div-right{
         display: none;
     }
+
+    .work-div-left p:nth-child(n){
+        max-width: 60ch;
+    }
 }
