@@ -131,25 +131,26 @@ img{
     margin-top: 3rem;
 }
 
-.work-div h1{
+h2{
     font-weight: 600;
     font-size: 2rem;
     line-height: 2rem;
     margin-top: 1rem;
 }
 
-/* h1 + p, h2 + p{
-    margin-top: 0.5rem;
-} */
+footer h2{
+    font-weight: 500;
+    font-size: 0.8rem;
+    line-height: 1.1rem;
+    letter-spacing: 0.75px;
+
+    margin: 0;
+}
 
 p{
     margin-top: 0.5rem;
     max-width: 60ch;
 }
-
-/* p + p{
-    text-indent: 2rem;
-} */
 
 
 
