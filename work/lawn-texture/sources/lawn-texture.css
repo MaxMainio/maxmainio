@@ -124,4 +124,8 @@ article{
     .work-div-left p{
         max-width: 60ch;
     }
+
+    .work-div-right p:nth-child(n + 2){
+        margin-top: 0.5rem;
+    }
 }
