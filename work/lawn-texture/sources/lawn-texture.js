@@ -390,9 +390,11 @@ illegibleBtn.addEventListener('click', event => {
         toWipe.forEach(element => {
             clearSpans(element);
         });
-        illegibleBtn.innerHTML = '<h3>Restart growth!<h3/>';
 
-    } else if (toggleCount % 2 === 0){
+        illegibleBtn.innerHTML = '<h3>Restart growth!<h3/>';
+        illegibleBtn.title = 'If you want to restart the growth simulation you can click this button and it will refresh the page.';
+
+    } else {
         location.reload();
     };
 });
