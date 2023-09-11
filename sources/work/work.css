@@ -166,6 +166,39 @@ article{
 
 
 
+/* Lawn Texture ----------------------------------------------------------------------------------------------------------------- */
+#lawn-texture .content{
+    width: 100%;
+    height: 100%;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#lawn-container{
+    display: block;
+    width: 50vw;
+    max-width: var(--in-width);
+}
+
+#lawn-texture h3{
+    font-weight: 600;
+    font-size: 2rem;
+    margin-top: 0;
+    line-height: 2rem;
+    text-transform: uppercase;
+    display: inline;
+}
+
+
+
+
+
+
+
+
+
 /* SEAM CARVING ----------------------------------------------------------------------------------------------------------------- */
 .carving-content{
     width: calc(100% - 2rem);
@@ -1023,6 +1056,12 @@ article{
         font-size: 38vw;
         line-height: 38vw;
         bottom: -11vw;
+    }
+}
+
+@media (max-width: 1000px) {
+    #lawn-container{
+        width: calc(100% - 2rem);
     }
 }
 
