@@ -91,6 +91,41 @@ article{
 
 
 
+#legibility-btn{
+    position: fixed;
+
+    top: auto;
+    right: calc(calc(calc(100vw - 1400px) / 2) + 1rem);
+    bottom: 3rem;
+    left: auto;
+
+    padding: 1rem 1.2rem;
+
+    background-color: white;
+    box-shadow: var(--shadow);
+
+    z-index: 1;
+}
+
+#legibility-btn:hover{
+    background-color: var(--green);
+    cursor: pointer;
+}
+
+#legibility-btn h3{
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1rem;
+    letter-spacing: 0.75px;
+
+    margin: 0;
+    pointer-events: all;
+}
+
+
+
+
+
 
 
 
@@ -103,6 +138,10 @@ article{
 
     .first-indent{
         text-indent: 0;
+    }
+
+    #legibility-btn{
+        right: 1rem;
     }
 }
 
