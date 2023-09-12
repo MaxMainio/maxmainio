@@ -193,3 +193,16 @@ article{
         margin-top: 0.5rem;
     }
 }
+
+@media (max-width: 518px) {
+    #legibility-btn{
+        max-width: calc(50vw - 2.5rem);
+    }
+
+    #legibility-btn h3{
+        font-weight: 300;
+        font-size: 0.8rem;
+        line-height: 1.1rem;
+        text-transform: none;
+    }
+}
