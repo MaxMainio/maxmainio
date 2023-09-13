@@ -1076,6 +1076,11 @@ article{
 }
 
 @media (max-width: 685px) {
+    #lawn-container h3{
+        font-size: 4.7vw;
+        line-height: 4.7vw;
+    }
+
     .acetate-out-container{
         flex-direction: row-reverse;
     }
@@ -1098,5 +1103,5 @@ article{
 
     .acetate-center a{
         width: 45%;
-    }    
+    }
 }
