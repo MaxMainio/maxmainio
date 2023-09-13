@@ -41,7 +41,7 @@ window.addEventListener('resize', (event) => {
 
 
 /* JSON FETCH ======================================================================================================================== */
-fetch('https://maxmainio.github.io/studio/projects/lawn-texture/v6/sources/data.json')
+fetch('https://maxmain.io/work/lawn-texture/sources/data.jon')
     .then((response) => response.json())
     .then((json) => {
         prepLawnObject(json.lawn);
@@ -82,11 +82,11 @@ function prepFlowerObject(flowersData){
 
 /* DOCUMENT SETUP ==================================================================================================================== */
 function prepTextField(){
-    highlightLawn();
-    // highlightFlowers();
-    wrapRest();
+    // highlightLawn();
+    highlightFlowers();
+    // wrapRest();
     
-    updateLawnArrays();
+    // updateLawnArrays();
 };
 
 
@@ -107,7 +107,32 @@ function highlightLawn(){
     };
 };
 
-function wrapRest() {
+
+
+function highlightFlowers(){
+    const subject = flowersObj.key;
+    const searchFor = flowersObj.words;
+    const colors = flowersObj.colors;
+
+    const clumps = defineClumps(searchFor);
+    console.log(clumps);
+};
+
+function defineClumps(search) {
+    for (let i = 0; i < search.length; i++) {
+        let replace = search[i];
+        const regex = new RegExp('((?<!<[^>]+>)' + replace + '(?![^<]*>))', 'gi');
+
+        textField.innerHTML = textField.innerHTML.replace(regex, '<span class="clump">$1</span>');
+    };
+    
+    let clumps = document.querySelectorAll('.clump');
+    return (clumps);
+};
+
+
+
+function wrapRest(){
     textField.innerHTML = textField.innerHTML.replace(/((?<!<[^>]+>)\b\w+\b(?![^<]*>))/gi, '<span>$1</span>');
 };
 
