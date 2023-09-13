@@ -19,6 +19,7 @@ let activeFlowerPatches = [];
 
 
 
+
 var lawnSpreadInterval = setInterval(runLawnSpread, 2000);
 var flowerSpreadInterval = setInterval(runFlowerSpread, 1000);
 
@@ -61,7 +62,6 @@ const observer = new IntersectionObserver(entries => {
 });
 
 observer.observe(textField);
-
 
 
 

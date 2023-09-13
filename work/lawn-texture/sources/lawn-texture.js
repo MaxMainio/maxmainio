@@ -22,7 +22,7 @@ var toggleCount = 0;
 
 
 /* JSON FETCH ======================================================================================================================== */
-fetch('https://maxmainio.github.io/studio/projects/lawn-texture/v6/sources/data.json')
+fetch('https://maxmain.io/work/lawn-texture/sources/data.json')
     .then((response) => response.json())
     .then((json) => {
         const lawn = json.lawn;
