@@ -5,10 +5,32 @@ const lawnObj = {};
 const flowersObj = {};
 
 let lawnIndex = 0;
+let allLawnPatches = [];
 let activeLawnPatches = [];
 
 let flwoerIndex = 0;
-const flowerPatches = [];
+let allFlowerPatches = [];
+let activeFlowerPatches = [];
+
+
+
+
+
+
+
+
+var lawnSpreadInterval = window.setInterval(function(){
+    lawnSpread();
+    updateLawnArrays();
+}, 2000);
+
+// var flowerSpreadInterval = window.setInterval(function(){
+//     spreadFlowers();
+// }, 1000);
+
+window.addEventListener('resize', (event) => {
+    refreshAllArrays();
+});
 
 
 
@@ -27,6 +49,10 @@ fetch('https://maxmainio.github.io/studio/projects/lawn-texture/v6/sources/data.
 
         prepTextField();
 });
+
+
+
+
 
 
 
@@ -58,6 +84,9 @@ function prepFlowerObject(flowersData){
 function prepTextField(){
     highlightLawn();
     // highlightFlowers();
+    wrapRest();
+    
+    updateLawnArrays();
 };
 
 
@@ -76,18 +105,147 @@ function highlightLawn(){
     
         textField.innerHTML = textField.innerHTML.replace(regex, '<span class="' + subject + '" style="background-color: ' + colors[seedColor] + ';" data-color="' + seedColor + '">$1</span>');
     };
+};
 
-    updateLawnArray();
-    console.log(activeLawnPatches);
+function wrapRest() {
+    textField.innerHTML = textField.innerHTML.replace(/((?<!<[^>]+>)\b\w+\b(?![^<]*>))/gi, '<span>$1</span>');
 };
 
 
 
-function updateLawnArray(){
+
+
+
+
+
+
+function updateLawnArrays(){
+    activeLawnPatches = [];
+
     document.querySelectorAll('.lawn').forEach((element) => {
-        activeLawnPatches.push(element);
-        lawnIndex ++
+        if (!allLawnPatches.includes(element)) {
+            allLawnPatches.push(element);
+            activeLawnPatches.push(element);
+        };
     });
+};
+
+function refreshAllArrays(){
+    activeLawnPatches = [];
+    activeLawnPatches.push(...allLawnPatches);
+};
+
+
+
+
+
+
+
+
+
+function lawnSpread(){
+    for (let i = 0; i < activeLawnPatches.length; i++) {
+        let target = getTargetInfo(activeLawnPatches[i]);
+        
+        if (target.color === '0') {
+            continue;
+        };
+        
+        let newColor = target.color - 1;
+        
+        let coordinates = getCoordinates(target, 'lawn');
+        let tagged = getSurroundingLawn(coordinates);
+
+        promoteLawn(tagged, newColor);
+    };
+};
+
+
+
+
+
+
+
+
+
+function getTargetInfo(current){
+    const style = getComputedStyle(current);
+
+    const fontSizeInPx = parseFloat(style.fontSize);
+    const lineHeightValue = style.lineHeight === 'normal' ? fontSizeInPx * 1.2 : parseFloat(style.lineHeight);
+    const letterSpacingValue = style.letterSpacing === 'normal' ? 0 : parseFloat(style.letterSpacing);
+
+    let target = {};
+
+    target['color'] = current.dataset.color;
+    target['location'] = [current.getBoundingClientRect().left, current.getBoundingClientRect().top];
+    target['size'] = [current.offsetWidth, current.offsetHeight];
+    target['style'] = [fontSizeInPx, lineHeightValue, letterSpacingValue];
+
+    return(target);
+};
+
+
+function getCoordinates(target, type) {
+    let leftX = target.location[0] - (target.style[0] / 2);
+    let centerX = target.location[0] + (target.size[0] / 2);
+    let rightX = target.location[0] + target.size[0] + (target.style[0] / 2);
+
+    let topY = target.location[1] + target.size[1] - (target.style[1] + 1);
+    let centerY = target.location[1] + (target.size[1] / 2);
+    let bottomY = target.location[1] + target.style[1] + 1;
+
+    let coordinates = type === 'lawn' ? [
+        centerX, topY,
+        rightX, topY,
+        rightX, centerY,
+        rightX, bottomY,
+        centerX, bottomY,
+        leftX, bottomY,
+        leftX, centerY,
+        leftX,topY
+    ] : [
+        centerX, topY,
+        rightX, centerY,
+        centerX, bottomY,
+        leftX, centerY,
+    ];
+
+    return coordinates;
+};
+
+function getSurroundingLawn(coordinates){
+    let surroundings = [];
+
+    for (let i = 0; i < coordinates.length; i = i + 2) {
+        let tagged = document.elementFromPoint(coordinates[i], coordinates[i + 1]);
+
+        if (tagged !== null && tagged.tagName === 'SPAN') {
+            surroundings.push(tagged);
+        }
+    };
+
+    return (surroundings);
+};
+
+function promoteLawn(tagged, newColor){
+    for (let i = 0; i < tagged.length; i++) {
+        if (tagged[i].classList.contains('lawn')) {
+            continue;
+
+        } 
+        else if (tagged[i].classList.contains('flower') || tagged[i].classList.contains('sprout')) {
+            tagged[i].parentNode.classList.add('lawn');
+            tagged[i].parentNode.style.backgroundColor = lawnObj.colors[newColor];
+            tagged[i].parentNode.setAttribute('data-color', newColor);
+
+        } 
+        else {
+            tagged[i].classList.add('lawn');
+            tagged[i].style.backgroundColor = lawnObj.colors[newColor];
+            tagged[i].setAttribute('data-color', newColor);
+        };
+    };
 };
 
 
