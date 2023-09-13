@@ -19,18 +19,18 @@ let activeFlowerPatches = [];
 
 
 
-var lawnSpreadInterval = window.setInterval(function(){
-    lawnSpread();
-    updateLawnArrays();
-}, 2000);
+// var lawnSpreadInterval = window.setInterval(function(){
+//     lawnSpread();
+//     updateLawnArrays();
+// }, 2000);
 
 // var flowerSpreadInterval = window.setInterval(function(){
 //     spreadFlowers();
 // }, 1000);
 
-window.addEventListener('resize', (event) => {
-    refreshAllArrays();
-});
+// window.addEventListener('resize', (event) => {
+//     refreshAllArrays();
+// });
 
 
 
@@ -41,7 +41,7 @@ window.addEventListener('resize', (event) => {
 
 
 /* JSON FETCH ======================================================================================================================== */
-fetch('https://maxmain.io/work/lawn-texture/sources/data.jon')
+fetch('https://maxmain.io/work/lawn-texture/sources/data.json')
     .then((response) => response.json())
     .then((json) => {
         prepLawnObject(json.lawn);
@@ -112,22 +112,47 @@ function highlightLawn(){
 function highlightFlowers(){
     const subject = flowersObj.key;
     const searchFor = flowersObj.words;
-    const colors = flowersObj.colors;
+    const types = flowersObj.types;
+    const typeKeys = Object.keys(types);
 
-    const clumps = defineClumps(searchFor);
-    console.log(clumps);
+    const clumps = defineBushes(searchFor, types, typeKeys);
 };
 
-function defineClumps(search) {
-    for (let i = 0; i < search.length; i++) {
-        let replace = search[i];
-        const regex = new RegExp('((?<!<[^>]+>)' + replace + '(?![^<]*>))', 'gi');
+function defineBushes(searchFor, types, typeKeys) {
+    for (let i = 0; i < searchFor.length; i++) {
+        // Iterate through all flower words and look for them in the text.
+        const regex = new RegExp('((?<!<[^>]+>)' + searchFor[i] + '(?![^<]*>))', 'gi');
+        
+        // For each instance found, do the following:
+        textField.innerHTML = textField.innerHTML.replace(regex, function(match) {
+            // Select random color type and assign to variable:
+            let chosenType = typeKeys[getRandomInt(0, (typeKeys.length - 1))];
 
-        textField.innerHTML = textField.innerHTML.replace(regex, '<span class="clump">$1</span>');
+            // Split this word into letters, pass on chosen type:
+            let newHTML = splitBushes(match, chosenType);
+
+            return(newHTML);
+        });
     };
-    
-    let clumps = document.querySelectorAll('.clump');
-    return (clumps);
+};
+
+function splitBushes(match, chosenType){
+    // Collect individual glyph spans in this array:
+    let newHTML = [];
+    const regex = new RegExp('([' + match + '])', 'gi');
+
+    // For every individual glyph in the word:
+    match.replace(regex, function(matched){
+        // Get random color from type and wrap the glyph:
+        flowerColor = flowersObj.types[chosenType][getRandomInt(0, (chosenType.length - 1))];
+        wrappedGlyph = '<span class="flower" style="background-color: ' + flowerColor + '"; data-color="' + chosenType + '">' + matched + '</span>';
+
+        newHTML.push(wrappedGlyph);
+
+        return newHTML;
+    });
+
+    return newHTML.join('');
 };
 
 
