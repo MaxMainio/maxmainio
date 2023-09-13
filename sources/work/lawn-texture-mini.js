@@ -19,18 +19,49 @@ let activeFlowerPatches = [];
 
 
 
-// var lawnSpreadInterval = window.setInterval(function(){
-//     lawnSpread();
-//     updateLawnArrays();
-// }, 2000);
+var lawnSpreadInterval = setInterval(runLawnSpread, 2000);
+var flowerSpreadInterval = setInterval(runFlowerSpread, 1000);
 
-// var flowerSpreadInterval = window.setInterval(function(){
-//     spreadFlowers();
-// }, 1000);
+let isRefreshing = false;
 
-// window.addEventListener('resize', (event) => {
-//     refreshAllArrays();
-// });
+function runLawnSpread(){
+    // console.log('lawn is spreading');
+    spreadLawn();
+    updateLawnArrays();
+
+    stopTrigger(activeLawnPatches, 'lawn');
+};
+
+function runFlowerSpread(){
+    // console.log('flowers are spreading');
+    spreadFlowers();
+    updateFlowerArrays();
+
+    stopTrigger(activeFlowerPatches, 'flower');
+};
+
+window.addEventListener('resize', (event) => {
+    refreshAllArrays();
+});
+
+
+
+
+
+
+
+
+
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            refreshAllArrays();
+        };
+    });
+});
+
+observer.observe(textField);
+
 
 
 
@@ -82,11 +113,12 @@ function prepFlowerObject(flowersData){
 
 /* DOCUMENT SETUP ==================================================================================================================== */
 function prepTextField(){
-    // highlightLawn();
+    highlightLawn();
     highlightFlowers();
-    // wrapRest();
+    wrapRest();
     
-    // updateLawnArrays();
+    updateLawnArrays();
+    updateFlowerArrays();
 };
 
 
@@ -115,7 +147,7 @@ function highlightFlowers(){
     const types = flowersObj.types;
     const typeKeys = Object.keys(types);
 
-    const clumps = defineBushes(searchFor, types, typeKeys);
+    defineBushes(searchFor, types, typeKeys);
 };
 
 function defineBushes(searchFor, types, typeKeys) {
@@ -147,12 +179,17 @@ function splitBushes(match, chosenType){
         flowerColor = flowersObj.types[chosenType][getRandomInt(0, (chosenType.length - 1))];
         wrappedGlyph = '<span class="flower" style="background-color: ' + flowerColor + '"; data-color="' + chosenType + '">' + matched + '</span>';
 
+        // Add newest glyph to the array from above:
         newHTML.push(wrappedGlyph);
 
         return newHTML;
     });
 
-    return newHTML.join('');
+    // Wrap individual glyphs into neat package:
+    newHTML = '<span>' + newHTML.join('') + '</span>';
+
+    // Join the array of HTML into one long string and pass back:
+    return newHTML;
 };
 
 
@@ -180,9 +217,31 @@ function updateLawnArrays(){
     });
 };
 
+function updateFlowerArrays(){
+    activeFlowerPatches = [];
+
+    document.querySelectorAll('.flower').forEach((element) => {
+        if (!allFlowerPatches.includes(element)) {
+            allFlowerPatches.push(element);
+            activeFlowerPatches.push(element);
+        };
+    });
+};
+
 function refreshAllArrays(){
+    isRefreshing = true;
     activeLawnPatches = [];
+    activeFlowerPatches = [];
+    
     activeLawnPatches.push(...allLawnPatches);
+    activeFlowerPatches.push(...allFlowerPatches);
+
+    clearInterval(lawnSpreadInterval);
+    clearInterval(flowerSpreadInterval);
+    lawnSpreadInterval = setInterval(runLawnSpread, 2000);
+    flowerSpreadInterval = setInterval(runFlowerSpread, 1000);
+
+    isRefreshing = false;
 };
 
 
@@ -193,8 +252,26 @@ function refreshAllArrays(){
 
 
 
-function lawnSpread(){
-    for (let i = 0; i < activeLawnPatches.length; i++) {
+function stopTrigger(activeArray, type){
+    if (activeArray.length === 0 && type === 'lawn'){
+        // console.log('lawn is done');
+        clearInterval(lawnSpreadInterval);
+    } else if (activeArray.length === 0 && type === 'flower'){
+        // console.log('flowers are done');
+        clearInterval(flowerSpreadInterval);
+    };
+};
+
+
+
+
+
+
+
+
+
+function spreadLawn(){
+    for (let i = 0; i < activeLawnPatches.length; i++){
         let target = getTargetInfo(activeLawnPatches[i]);
         
         if (target.color === '0') {
@@ -204,9 +281,19 @@ function lawnSpread(){
         let newColor = target.color - 1;
         
         let coordinates = getCoordinates(target, 'lawn');
-        let tagged = getSurroundingLawn(coordinates);
+        let tagged = getSurroundings(coordinates, 'lawn');
 
         promoteLawn(tagged, newColor);
+    };
+};
+
+function spreadFlowers() {
+    for (let i = 0; i < activeFlowerPatches.length; i ++){
+        let target = getTargetInfo(activeFlowerPatches[i]);
+        let coordinates = getCoordinates(target, 'flower');
+        let tagged = getSurroundings(coordinates, 'flower');
+
+        promoteFlowers(tagged, target.color);
     };
 };
 
@@ -234,7 +321,6 @@ function getTargetInfo(current){
 
     return(target);
 };
-
 
 function getCoordinates(target, type) {
     let leftX = target.location[0] - (target.style[0] / 2);
@@ -264,36 +350,96 @@ function getCoordinates(target, type) {
     return coordinates;
 };
 
-function getSurroundingLawn(coordinates){
+function getSurroundings(coordinates, type){
     let surroundings = [];
 
-    for (let i = 0; i < coordinates.length; i = i + 2) {
-        let tagged = document.elementFromPoint(coordinates[i], coordinates[i + 1]);
+    if (type === 'lawn'){
+        for (let i = 0; i < coordinates.length; i = i + 2){
+            if (coordinates[i] < 0 || coordinates[i + 1] < 0 || coordinates[i] > window.innerWidth || coordinates[i + 1] > window.innerHeight){
+                continue;
+            };
+            
+            let tagged = document.elementFromPoint(coordinates[i], coordinates[i + 1]);
+    
+            if (tagged !== null && tagged.tagName === 'SPAN'){
+                surroundings.push(tagged);
+            };
+        };
+    }
+    
+    else if (type === 'flower') {
+        for (let i = 0; i < coordinates.length; i = i + 2){
+            if (coordinates[i] < 0 || coordinates[i + 1] < 0 || coordinates[i] > window.innerWidth || coordinates[i + 1] > window.innerHeight){
+                continue;
+            };
 
-        if (tagged !== null && tagged.tagName === 'SPAN') {
-            surroundings.push(tagged);
-        }
+            let current = document.elementFromPoint(coordinates[i], coordinates[i + 1]);
+
+            if (!current){
+                continue;
+            };
+
+            if (current.classList.contains('flower')){
+                continue;
+            };
+
+            if (current.tagName === 'SPAN' && current.classList.length === 0 && current.children.length === 0){
+                const regex = new RegExp('(.)', 'gi');
+                let split = current.innerHTML.match(regex);
+
+                for (let j = 0; j < split.length; j++) {
+                    split[j] = '<span class="sprout">' + split[j] + '</span>';
+                };
+
+                let newHTML = split.join('');
+                current.innerHTML = newHTML;
+
+                surroundings.push(document.elementFromPoint(coordinates[i], coordinates[i + 1]));
+            };
+
+            if (current.classList.contains('sprout')) {
+                surroundings.push(current);
+            };
+        };
     };
 
     return (surroundings);
 };
+
+
+
+
+
+
+
+
 
 function promoteLawn(tagged, newColor){
     for (let i = 0; i < tagged.length; i++) {
         if (tagged[i].classList.contains('lawn')) {
             continue;
 
-        } 
+        }
         else if (tagged[i].classList.contains('flower') || tagged[i].classList.contains('sprout')) {
             tagged[i].parentNode.classList.add('lawn');
             tagged[i].parentNode.style.backgroundColor = lawnObj.colors[newColor];
             tagged[i].parentNode.setAttribute('data-color', newColor);
-
-        } 
+        }
         else {
             tagged[i].classList.add('lawn');
             tagged[i].style.backgroundColor = lawnObj.colors[newColor];
             tagged[i].setAttribute('data-color', newColor);
+        };
+    };
+};
+
+function promoteFlowers(promotable, colors){
+    for (let i = 0; i < promotable.length; i++) {
+        if (promotable[i].classList.contains('sprout')){
+            promotable[i].style.backgroundColor = flowersObj.types[colors][getRandomInt(0, flowersObj.types[colors].length)];
+            promotable[i].classList.remove('sprout');
+            promotable[i].classList.add('flower');
+            promotable[i].setAttribute('data-color', colors);
         };
     };
 };
