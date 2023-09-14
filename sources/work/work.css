@@ -191,6 +191,10 @@ article{
     display: inline;
 }
 
+#lawn-texture span{
+    box-shadow: var(--shadow);
+}
+
 
 
 

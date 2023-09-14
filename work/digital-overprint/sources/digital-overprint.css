@@ -114,6 +114,10 @@ span{
 
 /* MEEDIA QUERIES */
 @media (max-width: 685px) {
+    .radio-button{
+        display: none;
+    }
+
     .leftoid{
         margin-bottom: 4rem;
     }

@@ -190,7 +190,6 @@ address{
 /* EXPERIENCE SECTION */
 .xp-section{
     grid-column: 2 / 5;
-    min-height: calc(100vh - 3rem);
     padding-bottom: 1rem;
 }
 
@@ -200,6 +199,9 @@ address{
     column-gap: 1rem;
     align-items: flex-end;
     margin-bottom: 0.75rem;
+}
+.xp-div:last-child{
+    margin-bottom: 2rem;
 }
 
 .xp-content{
@@ -214,6 +216,18 @@ address{
     grid-column: 3 / 4;
 
     cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+footer{
+    height: auto;
 }
 
 
@@ -248,6 +262,10 @@ address{
 
     .xp-btn{
         display: none;
+    }
+
+    footer{
+        height: 75vw;
     }
 }
 
