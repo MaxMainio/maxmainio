@@ -34,3 +34,27 @@ video{
 .dptwo{
     grid-column: 2 / 8;
 }
+
+
+
+
+
+
+
+
+
+.classic-width{
+    max-width: calc(60ch + calc(calc(100vw - 1400px) / 2));
+}
+
+.first-indent{
+    text-indent: calc(calc(100vw - 1400px) / 2);
+}
+
+.full-indent{
+    padding-left: calc(calc(100vw - 1400px) / 2);
+}
+
+.full-width{
+    max-width: 100%;
+}
