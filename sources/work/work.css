@@ -191,7 +191,7 @@ article{
     display: inline;
 }
 
-#lawn-texture span{
+span.lawn, span.flower{
     box-shadow: var(--shadow);
 }
 
