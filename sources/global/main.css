@@ -356,6 +356,7 @@ footer section{
 #footer-nav{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
 
     width: 100%;
     max-width: calc(var(--half-width) - 0.5rem);
