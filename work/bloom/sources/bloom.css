@@ -9,7 +9,8 @@
 .carousel{
     position: relative;
     aspect-ratio: 1792 / 1280;
-    width: 100%;
+    width: 104%;
+    left: -2%;
 
     z-index: 1;
 }
