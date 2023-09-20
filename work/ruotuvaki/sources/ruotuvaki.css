@@ -4,6 +4,11 @@ body{
     overflow-x: hidden;
 }
 
+.work-div:nth-child(2) div{
+    aspect-ratio: 1024 / 1448;
+    width: 100%;
+}
+
 .work-div:nth-child(2) img{
     aspect-ratio: 1024 / 1448;
 }
