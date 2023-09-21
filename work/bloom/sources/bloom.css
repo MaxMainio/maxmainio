@@ -72,6 +72,24 @@
 
 
 
+.book-description{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 1rem;
+}
+
+.book-description > h2{
+    grid-column: 1 / 4;
+}
+
+
+
+
+
+
+
+
+
 .work-div:nth-child(n + 3){
     aspect-ratio: 1280 / 1920;
 }
