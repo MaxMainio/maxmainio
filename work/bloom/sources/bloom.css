@@ -269,6 +269,10 @@
         display: block;
     }
 
+    #carousel-container{
+        margin: 4rem 0;
+    }
+
     #carousel-container h2{
         margin-top: 0;
     }
