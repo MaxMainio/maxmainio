@@ -1147,7 +1147,8 @@ span.lawn, span.flower{
     }
 
     .bloom-link:nth-child(2){
-        height: 90%;
+        max-height: 90%;
+        max-width: 100%;
         aspect-ratio: 1280 / 2048;
         margin: auto;
     }
