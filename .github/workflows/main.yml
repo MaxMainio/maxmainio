@@ -11,10 +11,10 @@ jobs:
 
     steps:
     - name: Checkout public repository
-      uses: actions/checkout@v2
+      uses: actions/checkout@v4
 
     - name: Checkout private repository
-      uses: actions/checkout@v2
+      uses: actions/checkout@v4
       with:
         repository: MaxMainio/nike
         token: ${{ secrets.PRIVATE_REPO_ACCESS_TOKEN }}
