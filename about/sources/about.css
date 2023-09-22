@@ -100,57 +100,14 @@ p + p{
 
 /* IMG CAROUSEL */
 .carousel{
-    position: relative;
-    width: 100%;
     aspect-ratio: auto 5 / 7;
-    overflow: hidden;
-}
-
-.carousel > ul{
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-
-.slide{
-    position: absolute;
-    inset: 0;
-    opacity: 0;
-    pointer-events: none;
-}
-
-.slide[data-active]{
-    opacity: 1;
-    pointer-events: all;
-}
-
-.slide > img{
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-}
-
-.carousel-button{
-    position: absolute;
-    z-index: 2;
-    background: none;
-    border: none;
-
-    width: 30%;
-    height: 100%;
-
-    padding: 0;
 }
 
 .carousel-button.prev{
-    left: 0;
     cursor: w-resize;
 }
 
 .carousel-button.next{
-    right: 0;
     cursor: e-resize;
 }
 

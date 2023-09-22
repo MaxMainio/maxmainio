@@ -26,55 +26,16 @@ body{
 }
 
 .carousel{
-    position: relative;
     aspect-ratio: auto 1635 / 1024;
-    width: 100%;
 
     z-index: 1;
 }
 
-.carousel > ul{
-    inset: 0;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-
-.slide{
-    position: absolute;
-    inset: 0;
-    opacity: 0;
-    pointer-events: none;
-}
-
-.slide[data-active]{
-    opacity: 1;
-    pointer-events: all;
-}
-
-.slide img{
-    aspect-ratio: 1635 / 1024;
-}
-
-.carousel-button{
-    position: absolute;
-    background: none;
-    border: none;
-
-    width: 30%;
-    height: 100%;
-    padding: 0;
-
-    z-index: 2;
-}
-
 .carousel-button.prev{
-    left: 0;
     cursor: url(../../../assets/cursors/left-cursor.svg) 32 32, pointer;
 }
 
 .carousel-button.next{
-    right: 0;
     cursor: url(../../../assets/cursors/right-cursor.svg) 32 32, pointer;
 }
 
