@@ -1,0 +1,27 @@
+name: Deploy Website
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout public repository
+      uses: actions/checkout@v2
+
+    - name: Checkout private repository
+      uses: actions/checkout@v2
+      with:
+        repository: MaxMainio/nike
+        token: ${{ secrets.PRIVATE_REPO_ACCESS_TOKEN }}
+        path: nike
+
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./ (or your build directory if you have one)
