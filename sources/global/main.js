@@ -1,10 +1,7 @@
 console.log('https://www.youtube.com/watch?v=NuAKnbIr6TE');
 
-
-
-
 // GLOBAL CONSTANTS    -------------------------------------------------------------------------------------------------------------
-var vw = window.innerWidth
+var vw = window.innerWidth;
 
 
 
@@ -42,12 +39,12 @@ if (vw > 800) {
                 setTimeout(() => {
                     window.location.href = target;
                 }, 499);
-            })
-        })
-    }
+            });
+        });
+    };
 } else {
     faderElement.remove();
-}
+};
 
 
 
@@ -62,20 +59,20 @@ const  buttons = document.querySelectorAll('[data-carousel-button]');
 
 buttons.forEach(button => {
 	button.addEventListener('click', () => {
-		const offset = button.dataset.carouselButton === 'next' ? 1 : -1
+		const offset = button.dataset.carouselButton === 'next' ? 1 : -1;
 		const slides = button
 			.closest('[data-carousel]')
-			.querySelector('[data-slides]')
+			.querySelector('[data-slides]');
 
-		const activeSlide = slides.querySelector('[data-active]')
-		let newIndex = [...slides.children].indexOf(activeSlide) + offset
-		if (newIndex < 0) newIndex = slides.children.length - 1
-		if (newIndex >= slides.children.length) newIndex = 0
+		const activeSlide = slides.querySelector('[data-active]');
+		let newIndex = [...slides.children].indexOf(activeSlide) + offset;
+		if (newIndex < 0) newIndex = slides.children.length - 1;
+		if (newIndex >= slides.children.length) newIndex = 0;
 
-		slides.children[newIndex].dataset.active = true
-		delete activeSlide.dataset.active
-	})
-})
+		slides.children[newIndex].dataset.active = true;
+		delete activeSlide.dataset.active;
+	});
+});
 
 
 
