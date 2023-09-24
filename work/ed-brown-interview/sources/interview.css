@@ -1,35 +1,16 @@
-/* MAIN */
+/* CONTENT  --------------------------------------------------------------------------------------------------------------------- */
 .work-div{
-    width: 100%;
-}
+    &:nth-of-type(1){
+        aspect-ratio: 1794 / 2328;
+    }
 
+    &:nth-of-type(2){
+        grid-column: 1 / 9;
+        aspect-ratio: 3537 / 2332;
+    }
 
-
-
-
-.work-div:nth-child(2) img{
-    aspect-ratio: 1794 / 2328;
-    width: 100%;
-}
-
-
-
-.work-div:nth-child(3){
-    grid-column: 1 / 9;
-}
-
-.work-div:nth-child(3) img{
-    aspect-ratio: 3537 / 2332;
-    width: 100%;
-}
-
-
-
-.work-div:nth-child(4){
-    grid-column: 1 / 5;
-}
-
-.work-div:nth-child(4) img{
-    aspect-ratio: 1794 / 2328;
-    width: 100%;
+    &:nth-of-type(3){
+        grid-column: 1 / 5;
+        aspect-ratio: 1794 / 2328;
+    }
 }
