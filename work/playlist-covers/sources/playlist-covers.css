@@ -1,79 +1,89 @@
-/* CONTENT */
-.work-div:nth-child(n) img{
-    aspect-ratio: 1 / 1;
-}
-
-.ineffability{
-    grid-column: 2 / 6;
-}
-
-.boilingpot{
-    grid-column: 6 / 9;
-}
-
-.no-pants-allowed{
-    grid-column: 1 / 3;
-}
-
-.important-to-the-people{
-    grid-column: 4 / 7;
-}
-
-.shitty-music{
-    grid-column: 2 / 5;
-}
-
-.attempt-omega{
-    grid-column: 5 / 9;
-}
-
-.seductive-doom{
-    grid-column: 1 / 3;
-}
-
-.best-of-weekly{
-    grid-column: 3 / 7;
-}
-
-
-
-
-
-
-
-
-
-/* MEDIA QUERIES */
-@media (max-width: 1000px) {
-    .ineffability{
-        grid-column: 1 / 4;
+/* CONTENT  --------------------------------------------------------------------------------------------------------------------- */
+.work-div{
+    &:nth-of-type(n) img{
+        aspect-ratio: 1 / 1;
     }
 
-    .boilingpot{
-        grid-column: 4 / 9;
+    &:nth-of-type(2){
+        grid-column: 2 / 6;
     }
 
-    .no-pants-allowed{
-        grid-column: 1 / 6;
-    }
-
-    .important-to-the-people{
+    &:nth-of-type(3){
         grid-column: 6 / 9;
     }
 
-    .shitty-music{
+
+
+    &:nth-of-type(4){
         grid-column: 1 / 3;
     }
 
-    .attempt-omega{
+    &:nth-of-type(5){
+        grid-column: 4 / 7;
+    }
+
+
+
+    &:nth-of-type(6){
+        grid-column: 2 / 5;
+    }
+
+    &:nth-of-type(7){
+        grid-column: 5 / 9;
+    }
+
+
+
+    &:nth-of-type(8){
+        grid-column: 1 / 3;
+    }
+    
+    &:nth-of-type(9){
         grid-column: 3 / 7;
     }
+}
 
-    .seductive-doom{
-        grid-column: 7 / 9;
-    }
 
-    .best-of-weekly{
-        grid-column: 1 / 6;
+
+
+
+
+
+
+
+/* Media Queries    ------------------------------------------------------------------------------------------------------------- */
+@media (max-width: 1000px) {
+    .work-div{
+        &:nth-of-type(2){
+            grid-column: 1 / 4;
+        }
+    
+        &:nth-of-type(3){
+            grid-column: 4 / 9;
+        }
+    
+        &:nth-of-type(4){
+            grid-column: 1 / 6;
+        }
+    
+        &:nth-of-type(5){
+            grid-column: 6 / 9;
+        }
+    
+        &:nth-of-type(6){
+            grid-column: 1 / 3;
+        }
+    
+        &:nth-of-type(7){
+            grid-column: 3 / 7;
+        }
+    
+        &:nth-of-type(8){
+            grid-column: 7 / 9;
+        }
+    
+        &:nth-of-type(9){
+            grid-column: 1 / 6;
+        }
     }
 }
