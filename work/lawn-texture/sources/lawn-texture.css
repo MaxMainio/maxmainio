@@ -1,3 +1,4 @@
+/* CONTENT  --------------------------------------------------------------------------------------------------------------------- */
 article{
     row-gap: 0;
     grid-template-rows: auto;
@@ -8,10 +9,10 @@ article{
 .work-div-left{
     grid-column: 1 / 5;
     z-index: 1;
-}
 
-.work-div-left h2 + p{
-    margin-top: 0;
+    & h2 + p{
+        margin-top: 0;
+    }
 }
 
 .work-div-right{
@@ -20,43 +21,33 @@ article{
     grid-row: 1 / 6;
 
     z-index: 1;
+
+    & p{
+        font-weight: 600;
+        font-size: 2rem;
+        margin-top: 0;
+        line-height: 2rem;
+        text-transform: uppercase;
+    }
+
+    & p:nth-of-type(n + 2){
+        margin-top: 1rem;
+    }
+
+    & p:nth-of-type(2){
+        text-indent: -1rem;
+    }
 }
 
-.work-div-right p{
-    font-weight: 600;
-    font-size: 2rem;
-    margin-top: 0;
-    line-height: 2rem;
-    text-transform: uppercase;
-}
 
 
 
-/* .work-div-left h2{
-    padding-left: calc(calc(100vw - 1400px) / 2);
-}
-
-.work-div-left p:first-of-type{
-    max-width: calc(60ch + calc(calc(100vw - 1400px) / 2));
-    padding-left: calc(calc(100vw - 1400px) / 2);
-}
-
-.work-div-left p:nth-of-type(2){
-    max-width: 100%;
-    padding-left: calc(calc(100vw - 1400px) / 2);
-}
-
-.work-div-left p:nth-of-type(3){
-    max-width: 100%;
-    text-indent: calc(calc(100vw - 1400px) / 2);
-}
-
-.work-div-left p:nth-of-type(n + 4){
-    max-width: 100%;
-} */
 
 
 
+
+
+/* TYPE ------------------------------------------------------------------------------------------------------------------------- */
 .classic-width{
     max-width: calc(60ch + calc(calc(100vw - 1400px) / 2));
 }
@@ -75,13 +66,7 @@ article{
 
 
 
-.work-div-right p:nth-child(2){
-    text-indent: -1rem;
-}
 
-.work-div-right p:nth-child(n + 2){
-    margin-top: 1rem;
-}
 
 
 
@@ -101,21 +86,21 @@ article{
     box-shadow: var(--shadow);
 
     z-index: 1;
-}
 
-#legibility-btn:hover{
-    background-color: var(--green);
-    cursor: pointer;
-}
+    &:hover{
+        background-color: var(--green);
+        cursor: pointer;
+    }
 
-#legibility-btn h3{
-    font-weight: 400;
-    font-size: 1rem;
-    line-height: 1rem;
-    letter-spacing: 0.75px;
-
-    margin: 0;
-    pointer-events: all;
+    & h3{
+        font-weight: 400;
+        font-size: 1rem;
+        line-height: 1rem;
+        letter-spacing: 0.75px;
+    
+        margin: 0;
+        pointer-events: all;
+    }
 }
 
 
@@ -141,6 +126,8 @@ article{
     }
 }
 
+
+
 @media (max-width: 685px) {
     article{
         display: grid;
@@ -156,49 +143,49 @@ article{
         grid-column: auto;
         grid-row: 2;
         padding-top: 0.5rem;
-    }
+        
+        &:nth-of-type(2){
+            grid-column: auto;
+            grid-row: 3;
+        }
 
-    .work-div-left:nth-child(2){
-        grid-column: auto;
-        grid-row: 3;
-    }
+        &:nth-of-type(3){
+            grid-column: auto;
+            grid-row: 4;
+        }
 
-    .work-div-left:nth-child(3){
-        grid-column: auto;
-        grid-row: 4;
-    }
+        & p{
+            font-weight: 300;
+            font-size: 0.8rem;
+            line-height: 1.1rem;
+            text-transform: none;
+        }
 
-
-
-    .work-div-right p{
-        font-weight: 300;
-        font-size: 0.8rem;
-        line-height: 1.1rem;
-        text-transform: none;
-    }
-
-    .work-div-right p:nth-child(2){
-        text-indent: -0.33rem;
+        & p:nth-of-type(n + 2){
+            margin-top: 0.5rem;
+        }
+    
+        & p:nth-of-type(2){
+            text-indent: -0.33rem;
+        }
     }
 
     .work-div-left p{
         max-width: 60ch;
     }
-
-    .work-div-right p:nth-child(n + 2){
-        margin-top: 0.5rem;
-    }
 }
+
+
 
 @media (max-width: 518px) {
     #legibility-btn{
         max-width: calc(50vw - 2.5rem);
-    }
 
-    #legibility-btn h3{
-        font-weight: 300;
-        font-size: 0.8rem;
-        line-height: 1.1rem;
-        text-transform: none;
+        & h3{
+            font-weight: 300;
+            font-size: 0.8rem;
+            line-height: 1.1rem;
+            text-transform: none;
+        }
     }
 }
