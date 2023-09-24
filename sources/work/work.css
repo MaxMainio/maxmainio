@@ -1070,11 +1070,15 @@ span.lawn, span.flower{
     }
 }
 
+
+
 @media (min-width: 2560px) {
     .drawing-external{
         display: block;
     }
 }
+
+
 
 @media (max-width: 2560px) {
     .sortlater-bg-container{
@@ -1090,6 +1094,8 @@ span.lawn, span.flower{
     }
 }
 
+
+
 @media (max-width: 1500px) {
     #sortlater-print-2{
         display: none;
@@ -1099,6 +1105,8 @@ span.lawn, span.flower{
         display: none;
     }
 }
+
+
 
 @media (max-width: 1200px) {
     #splash h1{
@@ -1124,11 +1132,15 @@ span.lawn, span.flower{
     }
 }
 
+
+
 @media (max-width: 1000px) {
     #lawn-container{
         width: calc(100% - 2rem);
     }
 }
+
+
 
 @media (max-width: 900px) {
     #index-btn{
@@ -1139,6 +1151,8 @@ span.lawn, span.flower{
         display: none;
     }
 }
+
+
 
 @media (max-width: 685px) {
     #lawn-container h3{
