@@ -1,4 +1,4 @@
-/* CONTENT */
+/* CONTENT  --------------------------------------------------------------------------------------------------------------------- */
 .work-div:nth-of-type(1){
 
     > div{
@@ -13,12 +13,6 @@
 
 
 
-
-
-
-
-
-
 #aukeama-container{
     grid-column: 1 / 9;
     position: relative;
@@ -29,8 +23,6 @@
 
 .carousel{
     aspect-ratio: 1635 / 1024;
-
-    /* z-index: 1; */
 }
 
 .carousel-button.prev{
