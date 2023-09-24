@@ -1,5 +1,5 @@
 /* CONSTANTS ========================================================================================================================= */
-const textField = document.querySelectorAll('p, h1, h2, h3, h4, h5, h6');
+const textField = document.querySelectorAll('p, h1, h2, h3:not(.offlimits), h4, h5, h6');
 
 const lawnColors = [];
 const waterColors = [];
