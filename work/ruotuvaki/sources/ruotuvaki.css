@@ -1,17 +1,19 @@
 /* CONTENT */
-body{
-    max-width: 100vw;
-    overflow-x: hidden;
+.work-div:nth-of-type(1){
+
+    > div{
+        aspect-ratio: 1024 / 1448;
+        width: 100%;
+
+        > img{
+            aspect-ratio: 1024 / 1448;
+        }
+    }
 }
 
-.work-div:nth-child(2) div{
-    aspect-ratio: 1024 / 1448;
-    width: 100%;
-}
 
-.work-div:nth-child(2) img{
-    aspect-ratio: 1024 / 1448;
-}
+
+
 
 
 
@@ -26,9 +28,9 @@ body{
 }
 
 .carousel{
-    aspect-ratio: auto 1635 / 1024;
+    aspect-ratio: 1635 / 1024;
 
-    z-index: 1;
+    /* z-index: 1; */
 }
 
 .carousel-button.prev{
@@ -43,14 +45,13 @@ body{
     position: absolute;
     inset: 0;
     aspect-ratio: auto 1635 / 1024;
-    width: calc(100% - 2rem);
-    margin-left: 1rem;
-}
+    width: 100%;
 
-.aukeama-varjo{
-    position: absolute;
-    inset: 0;
-    width: 117.1875%;
-    mix-blend-mode: multiply;
-    pointer-events: none;
+    & img{
+        position: absolute;
+        inset: 0;
+        width: 117.1875%;
+        mix-blend-mode: multiply;
+        pointer-events: none;
+    }
 }
