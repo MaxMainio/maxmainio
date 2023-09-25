@@ -17,6 +17,7 @@ html{
     z-index: 11;
     display: flex;
     justify-content: center;
+    overflow: hidden;
 
     & img{
         width: 100%;
@@ -1060,10 +1061,12 @@ span.lawn, span.flower{
 
 
 @media (max-width: 1200px) {
-    #splash h1{
-        font-size: 38vw;
-        line-height: 38vw;
-        bottom: -11vw;
+    #splash{
+        & h1{
+            font-size: 38vw;
+            line-height: 38vw;
+            bottom: -11vw;
+        }
     }
 
     .bloom-link:nth-child(1){
