@@ -26,7 +26,6 @@ var flowerSpreadInterval = setInterval(runFlowerSpread, 1000);
 let isRefreshing = false;
 
 function runLawnSpread(){
-    // console.log('lawn is spreading');
     spreadLawn();
     updateLawnArrays();
 
@@ -34,7 +33,6 @@ function runLawnSpread(){
 };
 
 function runFlowerSpread(){
-    // console.log('flowers are spreading');
     spreadFlowers();
     updateFlowerArrays();
 
@@ -152,15 +150,11 @@ function highlightFlowers(){
 
 function defineBushes(searchFor, types, typeKeys) {
     for (let i = 0; i < searchFor.length; i++) {
-        // Iterate through all flower words and look for them in the text.
         const regex = new RegExp('((?<!<[^>]+>)' + searchFor[i] + '(?![^<]*>))', 'gi');
         
-        // For each instance found, do the following:
         textField.innerHTML = textField.innerHTML.replace(regex, function(match) {
-            // Select random color type and assign to variable:
             let chosenType = typeKeys[getRandomInt(0, (typeKeys.length - 1))];
 
-            // Split this word into letters, pass on chosen type:
             let newHTML = splitBushes(match, chosenType);
 
             return(newHTML);
@@ -169,26 +163,20 @@ function defineBushes(searchFor, types, typeKeys) {
 };
 
 function splitBushes(match, chosenType){
-    // Collect individual glyph spans in this array:
     let newHTML = [];
     const regex = new RegExp('([' + match + '])', 'gi');
 
-    // For every individual glyph in the word:
     match.replace(regex, function(matched){
-        // Get random color from type and wrap the glyph:
         flowerColor = flowersObj.types[chosenType][getRandomInt(0, (chosenType.length - 1))];
         wrappedGlyph = '<span class="flower" style="background-color: ' + flowerColor + '"; data-color="' + chosenType + '">' + matched + '</span>';
 
-        // Add newest glyph to the array from above:
         newHTML.push(wrappedGlyph);
 
         return newHTML;
     });
 
-    // Wrap individual glyphs into neat package:
     newHTML = '<span>' + newHTML.join('') + '</span>';
 
-    // Join the array of HTML into one long string and pass back:
     return newHTML;
 };
 
@@ -254,10 +242,8 @@ function refreshAllArrays(){
 
 function stopTrigger(activeArray, type){
     if (activeArray.length === 0 && type === 'lawn'){
-        // console.log('lawn is done');
         clearInterval(lawnSpreadInterval);
     } else if (activeArray.length === 0 && type === 'flower'){
-        // console.log('flowers are done');
         clearInterval(flowerSpreadInterval);
     };
 };
@@ -361,7 +347,7 @@ function getSurroundings(coordinates, type){
             
             let tagged = document.elementFromPoint(coordinates[i], coordinates[i + 1]);
     
-            if (tagged !== null && tagged.tagName === 'SPAN'){
+            if (tagged !== null && tagged.tagName === 'SPAN' && tagged.classList.contains('offlimits') === false){
                 surroundings.push(tagged);
             };
         };
