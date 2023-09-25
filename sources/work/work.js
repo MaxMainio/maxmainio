@@ -82,7 +82,7 @@ document.addEventListener('scroll', event => {
 				var elementsIndex = 0, length = elements.length;
 	
 				for (elementsIndex; elementsIndex < length; elementsIndex++) {
-					elements[elementsIndex].style.transform = 'translate3d(0px, ' + multiplier * elements[elementsIndex].dataset.rate + 'px, 0px)'
+					elements[elementsIndex].style.transform = 'translateY(' + multiplier * elements[elementsIndex].dataset.rate + 'px)'
 				};
 			};
 		});

@@ -126,6 +126,7 @@ article{
         line-height: 3rem;
 
         margin: 0 auto 0 1rem;
+        padding-right: 1rem;
         pointer-events: all;
     }
 
@@ -136,6 +137,7 @@ article{
         letter-spacing: 0.75px;
 
         margin: 0 auto 1rem 1rem;
+        padding-right: 1rem;
         pointer-events: all;
     }
 }
@@ -489,8 +491,25 @@ span.lawn, span.flower{
 
 
 /* INTERVIEW    ----------------------------------------------------------------------------------------------------------------- */
+.interview-container{
+    position: relative;
+    height: 100%;
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    max-width: var(--in-width);
+    margin: 0 1rem;
+}
+
 .interview-spread{
-    width: 75%;
+    display: block;
+    position: relative;
+
+    max-height: calc(100% - 6rem);
+    aspect-ratio: 3537 / 2332;
 
     &:hover{
         background-color: rgba(0, 0, 0, 0);
@@ -498,7 +517,7 @@ span.lawn, span.flower{
 
     & img{
         width: 100%;
-        aspect-ratio: 3537 / 2332;
+        height: 100%;
     }
 }
 
@@ -1016,7 +1035,7 @@ span.lawn, span.flower{
 
 
 /* Media Queries    ------------------------------------------------------------------------------------------------------------- */
-@media (min-width: 3440px) {
+@media (width >= 3440px) {
     .drawing-external{
         left: calc(calc(100vw - var(--out-width)) / -2);
     }
@@ -1024,7 +1043,7 @@ span.lawn, span.flower{
 
 
 
-@media (min-width: 2560px) {
+@media (width >= 2560px) {
     .drawing-external{
         display: block;
     }
@@ -1032,7 +1051,7 @@ span.lawn, span.flower{
 
 
 
-@media (max-width: 2560px) {
+@media (width <= 2560px) {
     .sortlater-bg-container{
         left: 0;
     }
@@ -1048,7 +1067,7 @@ span.lawn, span.flower{
 
 
 
-@media (max-width: 1500px) {
+@media (width <= 1500px) {
     #sortlater-print-2{
         display: none;
     }
@@ -1060,7 +1079,7 @@ span.lawn, span.flower{
 
 
 
-@media (max-width: 1200px) {
+@media (width <= 1200px) {
     #splash{
         & h1{
             font-size: 38vw;
@@ -1090,15 +1109,37 @@ span.lawn, span.flower{
 
 
 
-@media (max-width: 1000px) {
+/* @media (width <= 1290px) {
+    .interview-spread{
+        width: 968px;
+    }
+} */
+
+
+
+@media (width <= 1000px) {
     #lawn-container{
         width: calc(100% - 2rem);
     }
+
+    /* .interview-spread{
+        width: calc(100% - 2rem);
+    } */
 }
 
 
 
-@media (max-width: 900px) {
+/* @media (max-width: 900px) {
+    #index-btn{
+        display: none;
+    }
+
+    #index{
+        display: none;
+    }
+} */
+
+@media (width <= 900px) {
     #index-btn{
         display: none;
     }
@@ -1110,7 +1151,7 @@ span.lawn, span.flower{
 
 
 
-@media (max-width: 775px) {
+@media (width <= 775px) {
     #sortlater-print-3{
         display: none;
     }
@@ -1126,7 +1167,7 @@ span.lawn, span.flower{
 
 
 
-@media (max-width: 685px) {
+@media (width <= 685px) {
     #lawn-texture{
         & h3{
             font-size: 4.7vw;
