@@ -45,8 +45,10 @@ splashObserver.observe(splash);
 
 
 // TOGGLE OPEN AND CLOSED THE INDEX	------------------------------------------------------------------------------------------------
-document.querySelector('#index-btn').addEventListener('click', e => {
-	const index = document.querySelector('#index');
+const indexBtn = document.getElementById('index-btn');
+const index = document.getElementById('index');
+
+indexBtn.addEventListener('click', e => {
 	index.style.display = index.style.display === 'none' ? '' : 'none';
 });
 
