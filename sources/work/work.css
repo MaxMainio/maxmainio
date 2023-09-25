@@ -86,6 +86,11 @@ html{
 
 
 /* MAIN ------------------------------------------------------------------------------------------------------------------------- */
+main > div{
+    width: 100%;
+    height: 33vh;
+}
+
 article{
     position: relative;
     width: 100vw;
@@ -113,36 +118,26 @@ article{
     justify-content: end;
 
     pointer-events: none;
+
+    & h1{
+        font-weight: 600;
+        font-size: 3rem;
+        line-height: 3rem;
+
+        margin: 0 auto 0 1rem;
+        pointer-events: all;
+    }
+
+    & h2{
+        font-weight: 400;
+        font-size: 1rem;
+        line-height: 1rem;
+        letter-spacing: 0.75px;
+
+        margin: 0 auto 1rem 1rem;
+        pointer-events: all;
+    }
 }
-
-.context h1{
-    font-weight: 600;
-    font-size: 3rem;
-    line-height: 3rem;
-
-    margin: 0 auto 0 1rem;
-    pointer-events: all;
-}
-
-.context h2{
-    font-weight: 400;
-    font-size: 1rem;
-    line-height: 1rem;
-    letter-spacing: 0.75px;
-
-    margin: 0 auto 1rem 1rem;
-    pointer-events: all;
-}
-
-main > div{
-    width: 100%;
-    height: 33vh;
-}
-
-/* .buffer{
-    width: 100%;
-    height: 33vh;
-} */
 
 .center-flex{
     display: flex;
@@ -160,28 +155,30 @@ main > div{
 
 
 /* Lawn Texture ----------------------------------------------------------------------------------------------------------------- */
-#lawn-texture .content{
-    width: 100%;
+#lawn-texture{
+    & .content{
+        width: 100%;
     height: 100%;
     
     display: flex;
     justify-content: center;
     align-items: center;
+    }
+
+    & h3{
+        font-weight: 600;
+        font-size: 2rem;
+        margin-top: 0;
+        line-height: 2rem;
+        text-transform: uppercase;
+        display: inline;
+    }
 }
 
 #lawn-container{
     display: block;
     width: 50vw;
     max-width: var(--in-width);
-}
-
-#lawn-texture h3{
-    font-weight: 600;
-    font-size: 2rem;
-    margin-top: 0;
-    line-height: 2rem;
-    text-transform: uppercase;
-    display: inline;
 }
 
 span.lawn, span.flower{
@@ -203,15 +200,15 @@ span.lawn, span.flower{
     aspect-ratio: 1440 / 810;
     display: flex;
     justify-content: center;
-}
 
-.carving-content img{
-    max-height: 100%;
-    max-width: 100%;
-}
+    & img{
+        max-height: 100%;
+        max-width: 100%;
+    }
 
-.carving-content .blur-img{
-    aspect-ratio: 1440 / 810;
+    & .blur-load{
+        aspect-ratio: 1440 / 810;
+    }
 }
 
 
@@ -231,28 +228,32 @@ span.lawn, span.flower{
     padding: 1rem;
 }
 
-.bloom-link:hover{
-    background-color: rgba(0, 0, 0, 0);
-}
+.bloom-link{
+    &:hover{
+        background-color: rgba(0, 0, 0, 0);
+    }
 
-.bloom-link:nth-child(1){
-    margin: 6% 0 auto 0;
-}
+    &:nth-of-type(1){
+        margin: 6% 0 auto 0;
+    }
 
-.bloom-link:nth-child(2){
-    margin: auto 0 0 0;
-}
+    &:nth-of-type(2){
+        margin: auto 0 0 0;
+    }
 
-.bloom-link:nth-child(3){
-    margin: 0 0 auto 0;
-}
+    &:nth-of-type(3){
+        margin: 0 0 auto 0;
+    }
 
-.bloom-link:nth-child(4){
-    margin: auto 0 6% 0;
-}
+    &:nth-of-type(4){
+        margin: auto 0 6% 0;
+    }
 
-.bloom-link img{
-    width: 100%;
+
+
+    & img{
+        width: 100%;
+    }
 }
 
 
@@ -288,73 +289,50 @@ span.lawn, span.flower{
 
     position: relative;
     left: calc(50vw - 1720px);
+
+    & > div{
+        aspect-ratio: 216 / 356;
+        height: 100%;
+    
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        &:nth-of-type(odd) img{
+            aspect-ratio: 971 / 1257;
+        }
+
+        &:nth-of-type(even) img{
+            aspect-ratio: 791 / 1303;
+        }
+    }
+
+    & a{
+        max-width: 100%;
+        max-height: 100%
+    }
+
+    & img{
+        width: 100%;
+        height: 100%;
+    }
 }
-
-
-
-.sortlater-prints{
-    aspect-ratio: 216 / 356;
-    height: 100%;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.sortlater-prints:nth-child(odd) img{
-    aspect-ratio: 971 / 1257;
-}
-
-.sortlater-prints:nth-child(even) img{
-    aspect-ratio: 791 / 1303;
-}
-
-
-
-.sortlater-bg-link{
-    max-width: 100%;
-    max-height: 100%
-}
-
-.sortlater-bg-link:hover{
-    background-color: rgba(0, 0, 0, 0);
-}
-
-.sortlater-stretch img{
-    width: 100%;
-    height: 100%;
-    filter: drop-shadow(var(--shadow));
-}
-
-
 
 .sortlater-center{
     display: block;
-
     aspect-ratio: 1800 / 1125;
-
-    max-height: 100%;
     max-width: 75%;
     max-height: 66%;
-
     position: relative;
-}
 
-.sortlater-center:hover{
-    background-color: rgba(0, 0, 0, 0);
+    &:hover{
+        background-color: rgba(0, 0, 0, 0);
+    }
 }
 
 .sortlater-window{
     width: 100%;
     aspect-ratio: 1800 / 1125;
-    filter: drop-shadow(var(--shadow));
-}
-
-.sortlater-folder{
-    aspect-ratio: 1800 / 1046;
-    width: 100%;
-    position: absolute;
-    inset: auto 0 0 0;
 }
 
 .sortlater-scroll-container{
@@ -370,12 +348,12 @@ span.lawn, span.flower{
 
     clip-path: polygon(0% 0%, 97% 0%, 97% 47%, 100% 53%, 100% 100%, 0% 100%);
     mix-blend-mode: multiply;
-}
 
-.sortlater-scroll{
-    width: 100%;
-    position: absolute;
-    margin-top: 60%;
+    & img{
+        width: 100%;
+        position: absolute;
+        margin-top: 60%;
+    }
 }
 
 
@@ -402,37 +380,35 @@ span.lawn, span.flower{
     inset: 0;
     
     pointer-events: none;
-}
 
-.generative-in-grid a:nth-child(1){
-    grid-column: 2 / 4;
-    grid-row: 1 / 3;
-    margin-right: auto;
-}
+    & a{
+        &:nth-of-type(1){
+            grid-area: 1 / 2 / 3 / 4;
+            margin-right: auto;
+        }
 
-.generative-in-grid a:nth-child(2){
-    grid-column: 3;
-    grid-row: 1;
-    margin-right: auto;
-}
+        &:nth-of-type(2){
+            grid-area: 1 / 3;
+            margin-right: auto;
+        }
 
-.generative-in-grid a:nth-child(3){
-    grid-column: 4;
-    grid-row: 3;
-    margin-right: auto;
-}
+        &:nth-of-type(3){
+            grid-area: 3 / 4;
+            margin-right: auto;
+        }
 
-.generative-in-grid a:nth-child(4){
-    grid-column: 5 / 7;
-    grid-row: 3 / 5;
-    margin-right: auto;
-}
+        &:nth-of-type(4){
+            grid-area: 3 / 5 / 5 / 7;
+            margin-right: auto;
+        }
+    }
 
-.generative-in-grid img{
-    aspect-ratio: 0.8 / 1;
-    max-width: 100%;
-    max-height: 100%;
-    pointer-events: all;
+    & img{
+        aspect-ratio: 0.8 / 1;
+        max-width: 100%;
+        max-height: 100%;
+        pointer-events: all;
+    }
 }
 
 
@@ -452,37 +428,35 @@ span.lawn, span.flower{
     inset: 0;
 
     pointer-events: none;
-}
 
-.generative-out-grid a:nth-child(1){
-    grid-column: 1;
-    grid-row: 2;
-    margin-right: auto;
-}
+    & a{
+        &:nth-of-type(1){
+            grid-area: 2 / 1;
+            margin-right: auto;
+        }
 
-.generative-out-grid a:nth-child(2){
-    grid-column: 5;
-    grid-row: 1;
-    margin-left: auto;
-}
+        &:nth-of-type(2){
+            grid-area: 1 / 5;
+            margin-left: auto;
+        }
 
-.generative-out-grid a:nth-child(3){
-    grid-column: 2;
-    grid-row: 3;
-    margin-right: auto;
-}
+        &:nth-of-type(3){
+            grid-area: 3 / 2;
+            margin-right: auto;
+        }
 
-.generative-out-grid a:nth-child(4){
-    grid-column: 6;
-    grid-row: 4;
-    margin-left: auto;
-}
+        &:nth-of-type(4){
+            grid-area: 4 / 6;
+            margin-left: auto;
+        }
+    }
 
-.generative-out-grid img{
-    aspect-ratio: 0.8 / 1;
-    max-width: 100%;
-    max-height: 100%;
-    pointer-events: all;
+    & img{
+        aspect-ratio: 0.8 / 1;
+        max-width: 100%;
+        max-height: 100%;
+        pointer-events: all;
+    }
 }
 
 
@@ -494,17 +468,15 @@ span.lawn, span.flower{
     max-width: 75%;
     max-height: 50%;
     pointer-events: all;
-}
 
-.generative-window img{
-    width: 100%;
-    aspect-ratio: 1800 / 1125;
-}
+    &:hover{
+        background-color: rgba(0, 0, 0, 0);
+    }
 
-
-
-#generative-poems .content a:hover{
-    background-color: rgba(0, 0, 0, 0);
+    & img{
+        width: 100%;
+        aspect-ratio: 1800 / 1125;
+    }
 }
 
 
@@ -518,15 +490,15 @@ span.lawn, span.flower{
 /* INTERVIEW    ----------------------------------------------------------------------------------------------------------------- */
 .interview-spread{
     width: 75%;
-}
 
-.interview-spread:hover{
-    background-color: rgba(0, 0, 0, 0);
-}
+    &:hover{
+        background-color: rgba(0, 0, 0, 0);
+    }
 
-.interview-spread img{
-    width: 100%;
-    aspect-ratio: 3537 / 2332;
+    & img{
+        width: 100%;
+        aspect-ratio: 3537 / 2332;
+    }
 }
 
 
@@ -538,6 +510,13 @@ span.lawn, span.flower{
 
 
 /* PLAYLIST COVERS  ------------------------------------------------------------------------------------------------------------- */
+#playlist-covers img{
+    aspect-ratio: 1 / 1;
+    max-width: 100%;
+    max-height: 100%;
+    pointer-events: all;
+}
+
 .playlist-out-grid{
     display: grid;
     grid-template-columns: repeat(8, 1fr);
@@ -553,26 +532,28 @@ span.lawn, span.flower{
     inset: 0;
     
     pointer-events: none;
-}
 
-.attempt-omega{
-    grid-area: 1 / 1;
-    margin-right: auto;
-}
+    & a{
+        &:nth-of-type(1){
+            grid-area: 1;
+            margin-right: auto;
+        }
 
-.shitty-music{
-    grid-area: 4 / 4;
-    margin-left: auto;
-}
+        &:nth-of-type(2){
+            grid-area: 4 / 4;
+            margin-left: auto;
+        }
 
-.no-pants-allowed{
-    grid-area: 6 / 8;
-    margin-left: auto;
-}
+        &:nth-of-type(3){
+            grid-area: 6 / 8;
+            margin-left: auto;
+        }
 
-.shrigma{
-    grid-area: 8 / 6;
-    margin-left: auto;
+        &:nth-of-type(4){
+            grid-area: 8 / 6;
+            margin-left: auto;
+        }
+    }
 }
 
 
@@ -592,16 +573,18 @@ span.lawn, span.flower{
     inset: 0;
     
     pointer-events: none;
-}
 
-.ineffability{
-    grid-area: 2 / 1 / 4 / 3;
-    margin-right: auto;
-}
+    & a{
+        &:nth-of-type(1){
+            grid-area: 2 / 1 / 4 / 3;
+            margin-right: auto;
+        }
 
-.important-to-the-people{
-    grid-area: 7 / 7 / 9 / 9;
-    margin-left: auto;
+        &:nth-of-type(2){
+            grid-area: 7 / 7 / 9 / 9;
+            margin-left: auto;
+        }
+    }
 }
 
 
@@ -621,23 +604,18 @@ span.lawn, span.flower{
     inset: 0;
     
     pointer-events: none;
-}
 
-.three-euros{
-    grid-area: 5 / 2 / 8 / 5;
-    margin-left: auto;
-}
+    & a{
+        &:nth-of-type(1){
+            grid-area: 5 / 2 / 8 / 5;
+            margin-left: auto;
+        }
 
-.boilingpot{
-    grid-area: 3 / 5 / 6 / 8;
-    margin-right: auto;
-}
-
-#playlist-covers img{
-    aspect-ratio: 1 / 1;
-    max-width: 100%;
-    max-height: 100%;
-    pointer-events: all;
+        &:nth-of-type(2){
+            grid-area: 3 / 5 / 6 / 8;
+            margin-right: auto;
+        }
+    }
 }
 
 
@@ -653,12 +631,12 @@ span.lawn, span.flower{
     position: relative;
     max-height: 100%;
     aspect-ratio: 16 / 9.5;
-}
 
-.crosswalk-book{
-    width: 100%;
-    height: 100%;
-    aspect-ratio: 2156 / 1280;
+    & img{
+        width: 100%;
+        height: 100%;
+        aspect-ratio: 2156 / 1280;
+    }
 }
 
 #crosswalk-projection{
@@ -683,24 +661,26 @@ span.lawn, span.flower{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-}
 
-.vertical-flex a:nth-child(2){
-    clip-path: inset(0 12.5% 0 12.5%);
-}
+    & a{
+        &:nth-of-type(2){
+            clip-path: inset(0 12.5% 0 12.5%);
+        }
 
-.vertical-flex a:nth-child(3){
-    clip-path: inset(0 0 0 33%);
-}
+        &:nth-of-type(3){
+            clip-path: inset(0 0 0 33%);
+        }
 
-.vertical-flex a:nth-child(4){
-    clip-path: inset(0 12.5% 0 50%);
-}
+        &:nth-of-type(4){
+            clip-path: inset(0 12.5% 0 50%);
+        }
+    }
 
-.vertical-flex img{
-    width: 100%;
-    height: 20vh;
-    object-fit: cover;
+    & img{
+        width: 100%;
+        height: 20vh;
+        object-fit: cover;
+    }
 }
 
 
@@ -712,12 +692,14 @@ span.lawn, span.flower{
 
 
 /* ACETATE MELT ----------------------------------------------------------------------------------------------------------------- */
-#acetate-melt a{
-    pointer-events: all;
-}
+#acetate-melt{
+    & a{
+        pointer-events: all;
+    }
 
-#acetate-melt img{
-    width: 100%;
+    & img{
+        width: 100%;
+    }
 }
 
 
@@ -740,21 +722,19 @@ span.lawn, span.flower{
 .cattle{
     width: 20%;
     margin: auto 0 5% 0;
+
+    & img{
+        aspect-ratio: 1357 / 1024;
+    }
 }
-
-.cattle img{
-    aspect-ratio: 1357 / 1024;
-}
-
-
 
 .waterfall{
     width: 12%;
     margin: 5% 0 auto 0;
-}
 
-.waterfall img{
-    aspect-ratio: 1024 / 2031;
+    & img{
+        aspect-ratio: 1024 / 2031;
+    }
 }
 
 
@@ -778,21 +758,19 @@ span.lawn, span.flower{
 .parrot{
     width: 25%;
     margin: 0 0 auto 0;
+
+    & img{
+        aspect-ratio: 1024 / 1369;
+    }
 }
-
-.parrot img{
-    aspect-ratio: 1024 / 1369;
-}
-
-
 
 .plane{
     width: 25%;
     margin: auto 0 0 0;
-}
 
-.plane img{
-    aspect-ratio: 1024 / 1605;
+    & img{
+        aspect-ratio: 1024 / 1605;
+    }
 }
 
 
@@ -804,15 +782,14 @@ span.lawn, span.flower{
     height: 100vh;
     mix-blend-mode: multiply;
     pointer-events: none;
-}
 
-.acetate-center a{
-    pointer-events: all;
-    width: 30%;
-}
+    & a{
+        width: 30%;
+    }
 
-.acetate-center img{
-    aspect-ratio: 1024 / 1327;
+    & img{
+        aspect-ratio: 1024 / 1327;
+    }
 }
 
 
@@ -824,15 +801,13 @@ span.lawn, span.flower{
 
 
 /* HOMODEUS --------------------------------------------------------------------------------------------------------------------- */
-.homodeus-positioning{
+#homodeus img{
     position: absolute;
     inset: 0;
     width: auto;
     max-width: 100vw;
     margin: auto auto;
-}
 
-#homodeus img{
     max-height: 100%;
     aspect-ratio: 1281 / 1024;
 }
@@ -888,11 +863,11 @@ span.lawn, span.flower{
     grid-column: 4 / 5;
     max-width: 100%;
     pointer-events: all;
-}
 
-.rv-kalenteri img{
-    width: 100%;
-    aspect-ratio: 1/1;
+    & img{
+        width: 100%;
+        aspect-ratio: 1/1;
+    }
 }
 
 
@@ -909,29 +884,29 @@ span.lawn, span.flower{
     justify-content: space-between;
     gap: 1rem;
     padding: 0 1rem;
-}
 
-.horizontal-flex a{
-    max-width: 683px;
-}
+    & a{
+        max-width: 683px;
 
-.horizontal-flex a:nth-child(1){
-    margin-bottom: auto;
-    margin-top: auto;
-}
+        &:nth-of-type(1){
+            margin-bottom: auto;
+            margin-top: auto;
+        }
 
-.horizontal-flex a:nth-child(2){
-    margin-bottom: auto;
-}
+        &:nth-of-type(2){
+            margin-bottom: auto;
+        }
 
-.horizontal-flex a:nth-child(3){
-    margin-top: auto;
-}
+        &:nth-of-type(3){
+            margin-top: auto;
+        }
+    }
 
-.horizontal-flex img{
-    width: 100%;
-    max-width: 683px;
-    aspect-ratio: 683 / 1024;
+    & img{
+        width: 100%;
+        max-width: 683px;
+        aspect-ratio: 683 / 1024;
+    }
 }
 
 
@@ -945,15 +920,15 @@ span.lawn, span.flower{
 /* DRAWING  --------------------------------------------------------------------------------------------------------------------- */
 #drawings{
     pointer-events: none;
-}
 
-#drawings .content a{
-    background-color: rgba(0, 0, 0, 0);
-    pointer-events: all;
-}
+    .content a{
+        background-color: rgba(0, 0, 0, 0);
+        pointer-events: all;
+    }
 
-#drawings img{
-    width: 100%;
+    & img{
+        width: 100%;
+    }
 }
 
 
@@ -967,6 +942,10 @@ span.lawn, span.flower{
     min-width: calc(var(--out-width) + 880px);
 
     pointer-events: none;
+
+    & img{
+        aspect-ratio: 683 / 1024;
+    }
 }
 
 .grass{
@@ -976,23 +955,12 @@ span.lawn, span.flower{
     margin-bottom: 2rem;
 }
 
-.grass img{
-    aspect-ratio: 683 / 1024;
-}
-
-
-
 .feet{
     position: absolute;
     inset: 0 0 auto auto;
     width: 400px;
     margin-top: 2rem;
-
     transform: rotate(180deg);
-}
-
-.feet img{
-    aspect-ratio: 683 / 1024;
 }
 
 
@@ -1004,6 +972,10 @@ span.lawn, span.flower{
     max-width: var(--out-width);
 
     pointer-events: none;
+
+    & img{
+        aspect-ratio: 1280 / 1024;
+    }
 }
 
 .history-class{
@@ -1014,12 +986,6 @@ span.lawn, span.flower{
     inset: 0 auto auto 0;
 }
 
-.history-class img{
-    aspect-ratio: 1280 / 1024;
-}
-
-
-
 .balcony{
     aspect-ratio: 5 / 4;
     height: 40%;
@@ -1028,20 +994,16 @@ span.lawn, span.flower{
     inset: auto 0 0 auto;
 }
 
-.balcony img{
-    aspect-ratio: 1280 / 1024;
-}
-
 
 
 .dumari{
     aspect-ratio: 4 / 5;
     max-height: 75%;
     max-width: 50%;
-}
 
-.dumari img{
-    aspect-ratio: 1024 / 1280;
+    & img{
+        aspect-ratio: 1024 / 1280;
+    }
 }
 
 
