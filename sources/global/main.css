@@ -199,49 +199,17 @@ nav{
 
 
 /* BLURRY LOAD  ----------------------------------------------------------------------------------------------------------------- */
-.blur-img{
+.blur-load{
     background-size: cover;
     background-position: center;
     
-    opacity: 0;
+    /* opacity: 0;
     transition: opacity 200ms ease-in-out;
 
     &.loaded{
         opacity: 1;
-    }
+    } */
 }
-
-/* .blur-img.loaded > img{
-    opacity: 1;
-}
-
-.blur-img > img{
-    opacity: 0;
-    transition: opacity 200ms ease-in-out;
-} */
-
-
-
-.blur-vid{
-    background-size: cover;
-    background-position: center;
-
-    opacity: 0;
-    transition: opacity 200ms ease-in-out;
-
-    &.loaded{
-        opacity: 1;
-    }
-}
-
-/* .blur-vid.loaded > img{
-    opacity: 1;
-}
-
-.blur-vid > img{
-    opacity: 0;
-    transition: opacity 200ms ease-in-out;
-} */
 
 
 
@@ -258,7 +226,7 @@ a img {
     margin: 0;
 }
 
-.shadow{
+.box-shadow{
     box-shadow: var(--shadow);
 }
 

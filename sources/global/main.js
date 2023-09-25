@@ -119,15 +119,15 @@ if (vw > 1000) {
 
 
 // BLURRY LOAD  --------------------------------------------------------------------------------------------------------------------
-const blurImg = document.querySelectorAll('.blur-img');
-const blurVid = document.querySelectorAll('.blur-vid');
+const blurImg = document.querySelectorAll('img.blur-load');
+const blurVid = document.querySelectorAll('video.blur-load');
 
 blurImg.forEach(img => {
     function loaded() {
         img.classList.add('loaded');
 
         setTimeout(() => {
-            img.classList.remove('blur-img');
+            img.classList.remove('blur-load');
             img.classList.remove('loaded');
             img.removeAttribute('style');
         }, 200);
@@ -149,7 +149,7 @@ blurVid.forEach(vid => {
         vid.classList.add('loaded');
 
         setTimeout(() => {
-            vid.classList.remove('blur-vid');
+            vid.classList.remove('blur-load');
             vid.classList.remove('loaded');
             vid.removeAttribute('style');
         }, 200);
