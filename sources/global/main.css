@@ -109,11 +109,11 @@ header{
     max-width: 100vw;
     z-index: 10;
     pointer-events: none;
-}
 
-.with-splash{
-    position: absolute;
-    top: 100vh;
+    &.with-splash{
+        position: absolute;
+        top: 100vh;
+    }
 }
 
 nav{
@@ -124,44 +124,42 @@ nav{
     display: grid;
     grid-template-columns: repeat(8, 1fr);
     gap: 1rem;
-}
 
-nav h3{
-    font-weight: 400;
-    font-size: 1rem;
-    line-height: 1rem;
-    letter-spacing: 0.75px;
+    & h3{
+        font-size: 1rem;
+        line-height: 1rem;
+        pointer-events: all;
+    }
+    
+    .nav-logo{
+        grid-column: 1 / 3;
+        cursor: default;
+    
+        & > span{
+            &:first-child{
+                display: block;
+            }
+    
+            &:last-child{
+                display: none;
+            }
+        }
+    }
+    
+    .nav-work{
+        grid-column: 7;
+    }
+    
+    .nav-flex{
+        grid-column: 8;
+        display: flex;
+        justify-content: space-between;
+    }
 
-    margin: 0;
-    pointer-events: all;
-}
-
-.nav-active{
-    color: rgba(51, 51, 51, 0.25);
-    cursor: default;
-}
-
-#desktop-logo{
-    display: block;
-}
-
-#mobile-logo{
-    display: none;
-}
-
-.nav-logo{
-    grid-column: 1 / 3;
-    cursor: default;
-}
-
-.nav-work{
-    grid-column: 7;
-}
-
-.nav-flex{
-    grid-column: 8;
-    display: flex;
-    justify-content: space-between;
+    .current-page{
+        color: rgba(51, 51, 51, 0.25);
+        cursor: default;
+    }
 }
 
 
@@ -447,6 +445,13 @@ footer section{
     text-align: right;
 }
 
+footer h2{
+    font-variant-ligatures: contextual;
+    -moz-font-feature-settings: "calt";
+    -webkit-font-feature-settings: "calt";
+    font-feature-settings: "calt";
+}
+
 
 
 
@@ -457,14 +462,6 @@ footer section{
 
 /* Media Queries    ------------------------------------------------------------------------------------------------------------- */
 @media (max-width: 1000px) {
-    #desktop-logo{
-        display: none;
-    }
-
-    #mobile-logo{
-        display: block;
-    }
-
     #footer-nav{
         display: flex;
         flex-direction: column;
@@ -476,16 +473,35 @@ footer section{
     }
 }
 
+
+
 @media (max-width: 900px) {
     nav{
         grid-template-columns: repeat(4, 1fr);
-    }
-
-    .nav-work{
-        grid-column: 3;
-    }
-
-    .nav-flex{
-        grid-column: 4;
+        
+        .nav-logo{
+            & > span{
+                &:first-child{
+                    display: none;
+                }
+        
+                &:last-child{
+                    display: block;
+                }
+            }
+        }
+        
+        .nav-work{
+            grid-column: 3;
+        }
+        
+        .nav-flex{
+            grid-column: 4;
+        }
+    
+        .current-page{
+            color: rgba(51, 51, 51, 0.25);
+            cursor: default;
+        }
     }
 }
