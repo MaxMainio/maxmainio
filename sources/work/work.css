@@ -1159,9 +1159,9 @@ span.lawn, span.flower{
         margin-bottom: 20%;
     }
 
-.acetate-center{
-    & a{
-        width: 45%;
-    }
+    .acetate-center{
+        & a{
+            width: 45%;
+        }
     }
 }
