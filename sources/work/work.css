@@ -172,7 +172,7 @@ article{
         margin-top: 0;
         line-height: 2rem;
         text-transform: uppercase;
-        display: inline;
+        display: block;
     }
 }
 
@@ -1104,6 +1104,22 @@ span.lawn, span.flower{
     }
 
     #index{
+        display: none;
+    }
+}
+
+
+
+@media (max-width: 775px) {
+    #sortlater-print-3{
+        display: none;
+    }
+
+    .sortlater-stretch > div:nth-of-type(4){
+        max-width: 50vw;
+    }
+
+    #sortlater-print-5{
         display: none;
     }
 }
