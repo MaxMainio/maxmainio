@@ -1069,20 +1069,22 @@ span.lawn, span.flower{
         }
     }
 
-    .bloom-link:nth-child(1){
-        display: none;
-    }
-
-    .bloom-link:nth-child(2){
-        margin: 20% 0 auto 0;
-    }
-
-    .bloom-link:nth-child(3){
-        margin: auto 0 20% 0;
-    }
-
-    .bloom-link:nth-child(4){
-        margin: 20% 0 auto 0;
+    .bloom-link{
+        &:nth-of-type(1){
+            display: none;
+        }
+    
+        &:nth-of-type(2){
+            margin: 20% 0 auto 0;
+        }
+    
+        &:nth-of-type(3){
+            margin: auto 0 20% 0;
+        }
+    
+        &:nth-of-type(4){
+            margin: 20% 0 auto 0;
+        }
     }
 }
 
@@ -1109,25 +1111,33 @@ span.lawn, span.flower{
 
 
 @media (max-width: 685px) {
-    #lawn-container h3{
-        font-size: 4.7vw;
-        line-height: 4.7vw;
+    #lawn-texture{
+        & h3{
+            font-size: 4.7vw;
+            line-height: 4.7vw;
+        }
     }
 
-    .bloom-link:nth-child(2){
-        max-height: 90%;
-        max-width: 100%;
-        aspect-ratio: 1280 / 2048;
-        margin: auto;
+
+
+    .bloom-link{
+        &:nth-of-type(2){
+            max-height: 90%;
+            max-width: 100%;
+            aspect-ratio: 1280 / 2048;
+            margin: auto;
+        }
+    
+        &:nth-of-type(3){
+            display: none;
+        }
+    
+        &:nth-of-type(4){
+            display: none;
+        }
     }
 
-    .bloom-link:nth-child(3){
-        display: none;
-    }
 
-    .bloom-link:nth-child(4){
-        display: none;
-    }
 
     .acetate-out-container{
         flex-direction: row-reverse;
@@ -1149,7 +1159,9 @@ span.lawn, span.flower{
         margin-bottom: 20%;
     }
 
-    .acetate-center a{
+.acetate-center{
+    & a{
         width: 45%;
+    }
     }
 }
