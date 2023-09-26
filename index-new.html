@@ -1,0 +1,979 @@
+<!DOCTYPE html>
+<!--
+	Max Beidler's website v2.5
+-->
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="icon" href="assets/icons/favicon.png">
+		<title>Max Mainio | Home Page</title>
+		<meta name="author" content="Max Mainio Beidler">
+		<meta name="description" content="The main page of Max Mainio Beidler's personal website.">
+	  
+		<meta property="og:url" content="https://maxmain.io/">
+		<meta property="og:type" content="website">
+		<meta property="og:title" content="Max Mainio | Home Page">
+		<meta property="og:description" content="Max Mainio Beidler's personal website.">
+		<meta property="og:image" content="https://maxmain.io/assets/open-graph/home-og-img.webp">
+	  
+		<meta name="twitter:card" content="summary_large_image">
+		<meta property="twitter:domain" content="maxmain.io">
+		<meta property="twitter:url" content="https://maxmain.io/">
+		<meta name="twitter:title" content="Max Mainio | Home Page">
+		<meta name="twitter:description" content="Max Mainio Beidler's personal website.">
+		<meta name="twitter:image" content="https://maxmain.io/assets/open-graph/home-og-img.webp">
+
+		<link rel="stylesheet" type="text/css" href="sources/global/main.css">
+		<link rel="stylesheet" type="text/css" href="sources/work/work.css">
+		<!-- <link rel="stylesheet" type="text/css" href="sources/work/work-new.css"> -->
+
+		<script src="sources/global/main.js" defer></script>
+		<script src="sources/work/work.js" defer></script>
+		<script src="sources/work/lawn-texture-mini.js" defer></script>
+	</head>
+
+	<body onunload="document.getElementById('fader').style.display='none';">
+		<div id="fader" class="motion"></div>
+
+		<article id="splash">
+			<img src="assets/splash/green-bliss.webp"
+				alt=""
+				class="box-shadow blur-load"
+				style="background-image: url(assets/no-index/green-bliss-small.webp);"
+				loading="lazy">
+			<h1 data-rate="25">mainio</h1>
+		</article>
+
+		<header class="with-splash">
+			<nav>
+				<h3 class="nav-logo">
+					<span class="offlimits">Max Mainio Beidler</span>
+					<span class="offlimits">MMB</span>
+				</h3>
+
+				<h3 id="index-btn"><a target="_self" title="Click here to toggle the index of my work open or closed.">
+					Index
+				</a></h3>
+
+				<h3 class="nav-work current-page" title="You are currently on the work page">Work</h3>
+
+				<div class="nav-flex">
+					<h3><a href="about/" title="Click here to learn more about who I am." style="cursor: help;">About</a></h3>
+					
+					<h3 title="Coming soon..." style="cursor: not-allowed">&rarr;</h3>
+				</div>
+			</nav>
+
+			<section id="index" style="display: none;">
+				<a href="#lawn-texture" target="_self" class="index-row" title="Click here to be taken to the Lawn Texture section of this page.">
+					<h3>Lawn <span class="lawn-title">Text</span>ure</h3>
+					<h3>Digital</h3>
+					<h3>2023</h3>
+				</a>
+
+				<a href="#seam-carving" target="_self" class="index-row" title="Click here to be taken to the Seam Carving section of this page.">
+					<h3>Seam Carving</h3>
+					<h3>Digital</h3>
+					<h3>2023</h3>
+				</a>
+
+				<a href="#bloom" target="_self" class="index-row" title="Click here to be taken to the Bloom section of this page.">
+					<h3>Bloom</h3>
+					<h3>Photography</h3>
+					<h3>2023</h3>
+				</a>
+
+				<a href="#sort-later" target="_self" class="index-row" title="Click here to be taken to the Sort Later section of this page.">
+					<h3>Sort Later</h3>
+					<h3>Web & Exhibition</h3>
+					<h3>2023</h3>
+				</a>
+
+				<a href="#generative-poems" target="_self" class="index-row" title="Click here to be taken to the Generative Poems section of this page.">
+					<h3><i>Generative?</i> Poems</h3>
+					<h3>Web & Print</h3>
+					<h3>2022</h3>
+				</a>
+
+				<a href="#ed-brown-interview" target="_self" class="index-row" title="Click here to be taken to the Ed Brown Interview section of this page.">
+					<h3>Ed Brown Interview</h3>
+					<h3>Print</h3>
+					<h3>2022</h3>
+				</a>
+
+				<a href="#playlist-covers" target="_self" class="index-row" title="Click here to be taken to the Playlist Covers section of this page.">
+					<h3>Playlist Covers</h3>
+					<h3>Digital</h3>
+					<h3>2022</h3>
+				</a>
+
+				<a href="#crosswalk-poetics" target="_self" class="index-row" title="Click here to be taken to the Crosswalk Poetics section of this page.">
+					<h3>Crosswalk Poetics</h3>
+					<h3>Installation & Digital</h3>
+					<h3>2021</h3>
+				</a>
+
+				<a href="#digital-overprint" target="_self" class="index-row" title="Click here to be taken to the Digital Overprint section of this page.">
+					<h3>Digital Overprint</h3>
+					<h3>Print & Digital</h3>
+					<h3>2021</h3>
+				</a>
+
+				<div class="index-row">
+					<p>Type in Flux</p>
+					<p>Typography & Digital</p>
+					<p>Adding soon...</p>
+				</div>
+
+				<a href="#acetate-melt" target="_self" class="index-row" title="Click here to be taken to the Acetate Melt section of this page.">
+					<h3>Acetate Melt</h3>
+					<h3>Print</h3>
+					<h3>2021</h3>
+				</a>
+
+				<div class="index-row">
+					<p>Military Meat</p>
+					<p>Print</p>
+					<p>Adding soon...</p>
+				</div>
+
+				<a href="#homodeus" target="_self" class="index-row" title="Click here to be taken to the HomoDeus section of this page.">
+					<h3>HomoDeus</h3>
+					<h3>Print & Web</h3>
+					<h3>2021</h3>
+				</a>
+
+				<a href="#ruotuvaki" target="_self" class="index-row" title="Click here to be taken to the Ruotuväki section of this page.">
+					<h3>Ruotuväki</h3>
+					<h3>Print</h3>
+					<h3>2020 &ndash; 2021</h3>
+				</a>
+
+				<div class="index-row">
+					<p>My Desktop <i>is</i> My Home</p>
+					<p>Digital</p>
+					<p>Adding soon...</p>
+				</div>
+
+				<a href="#collages" target="_self" class="index-row" title="Click here to be taken to the Collages section of this page.">
+					<h3>Collages</h3>
+					<h3>Print</h3>
+					<h3>2019</h3>
+				</a>
+
+				<a href="#drawings" target="_self" class="index-row" title="Click here to be taken to the Drawings section of this page.">
+					<h3>Drawings</h3>
+					<h3>Traditional & Digital</h3>
+					<h3>2018</h3>
+				</a>
+			</section>
+		</header>
+
+		<main>
+			<div></div>
+
+			<article id="lawn-texture">
+				<section class="content">
+					<div id="lawn-container" data-rate="100">
+						<h3 title="Pompous text, I know...">
+							<a href="work/lawn-texture/" id="lawn1">
+								In this digital ecosystem, plants and flowers don&rsquo;t require rich soil or abundant sunlight&mdash;just the mere mention of them in text sparks their digital life. Seemingly innocuous word fragments become the genesis points for digital flora. From these unlikely nooks and crannies of human communication, the digital orchids and sunflowers spring to life. Their virtual roots are deeply embedded in the syntax and semantics of our language.
+							</a>
+						</h3>
+					</div>
+				</section>
+
+				<section class="context">
+					<h1><a href="work/lawn-texture/">Lawn <span class="lawn-title">Text</span>ure</a></h1>
+					<h2>Experimental Chrome Extension / 2023</h2>
+				</section>
+			</article>
+
+			<div></div>
+
+			<article id="seam-carving">
+				<section class="content center-flex">
+					<div class="carving-content" data-rate="50">
+						<a href="work/seam-carving/">
+							<img src="work/seam-carving/assets/content/maps/nyc/nyc-0.jpg"
+								alt="Starting with a satellite view of Manhattan, the vibrant cityscape unfurls beneath, revealing its concentrated urbanity. The image then transforms, compressing horizontally and seeming to dissolve the city's greenery - parks and forests - as if subtly edged out of existence. This visual shift represents a real-world human mindset: the prioritization of human living space over natural landscapes. When the image expands, revealing newfound space, the instinct isn't to restore nature. Instead, it's seen as room for more urban development, reinforcing the narrative of human dominance and expansion over nature."
+								title="Starting with a satellite view of Manhattan, the vibrant cityscape unfurls beneath, revealing its concentrated urbanity. The image then transforms, compressing horizontally and seeming to dissolve the city's greenery - parks and forests - as if subtly edged out of existence. This visual shift represents a real-world human mindset: the prioritization of human living space over natural landscapes. When the image expands, revealing newfound space, the instinct isn't to restore nature. Instead, it's seen as room for more urban development, reinforcing the narrative of human dominance and expansion over nature."
+								id="nycCarve"
+								class="box-shadow blur-load"
+								style="background-image: url(work/seam-carving/assets/no-index/nyc-small.webp);"
+								loading="lazy">
+						</a>
+					</div>
+				</section>
+
+				<section class="context">
+					<h1><a href="work/seam-carving/">Seam Carving</a></h1>
+					<h2>Digital Image Processing / 2023</h2>
+				</section>
+			</article>
+
+			<div></div>
+
+			<article id="bloom">
+				<section class="content">
+					<a href="work/bloom/" class="bloom-link" data-rate="25">
+						<img src="work/bloom/assets/content/vellum-prints/vellum-blue-bike.webp"
+							alt="This vellum test print for the book I compiled of this experimental photography series is slightly different, it is from another version of my bloom separation system. Where the original version would separate the bloom from the rest of the image based on their RGB values. This version would separate based off of their Hue Saturation and Vibrance. With this added controllability you can easily target any portion of the image to be extracted. This image in particular was of a blue city bike left in front of the Brown gym."
+							title="This vellum test print for the book I compiled of this experimental photography series is slightly different, it is from another version of my bloom separation system. Where the original version would separate the bloom from the rest of the image based on their RGB values. This version would separate based off of their Hue Saturation and Vibrance. With this added controllability you can easily target any portion of the image to be extracted.&#010;This image in particular was of a blue city bike left in front of the Brown gym."
+							class="blur-load drop-shadow"
+							style="background-image: url(work/bloom/assets/no-index/vellum-prints/vellum-blue-bike-small.webp);"
+							loading="lazy">
+					</a>
+
+					<a href="work/bloom/" class="bloom-link" data-rate="50">
+						<img src="work/bloom/assets/content/vellum-prints/vellum-stop-sign.webp"
+							alt="This vellum test print for the book I compiled of this experimental photography series is one of my favorites. Take a second to try and guess what it is… It’s a stop sign!"
+							title="This vellum test print for the book I compiled of this experimental photography series is one of my favorites. Take a second to try and guess what it is…&#010;&#010;&#010;&#010;&#010;&#010;&#010;&#010;&#010;&#010;It’s a stop sign!"
+							class="blur-load drop-shadow"
+							style="background-image: url(work/bloom/assets/no-index/vellum-prints/vellum-stop-sign-small.webp);"
+							loading="lazy">
+					</a>
+
+					<a href="work/bloom/" class="bloom-link" data-rate="50">
+						<img src="work/bloom/assets/content/vellum-prints/vellum-blue-car.webp"
+							alt="This vellum test print for the book I compiled of this experimental photography series is the extracted bloom from an image of the reflection of the sun in the shiny blue roof top of a car I found on College Hill in Providence Rhode Island."
+							title="This vellum test print for the book I compiled of this experimental photography series is the extracted bloom from an image of the reflection of the sun in the shiny blue roof top of a car I found on College Hill in Providence Rhode Island."
+							class="blur-load drop-shadow"
+							style="background-image: url(work/bloom/assets/no-index/vellum-prints/vellum-blue-car-small.webp);"
+							loading="lazy">
+					</a>
+
+					<a href="work/bloom/" class="bloom-link" data-rate="25">
+						<img src="work/bloom/assets/content/vellum-prints/vellum-red-car.webp"
+							alt="This vellum test print for the book I compiled of this experimental photography series is of the rear brake light of a white car. On its side like this, it looks like a tulip or a bouquet of flowers, something floral while saturated and fiery."
+							title="This vellum test print for the book I compiled of this experimental photography series is of the rear brake light of a white car. On its side like this, it looks like a tulip or a bouquet of flowers, something floral while saturated and fiery."
+							class="blur-load drop-shadow"
+							style="background-image: url(work/bloom/assets/no-index/vellum-prints/vellum-red-car-small.webp);"
+							loading="lazy">
+					</a>
+				</section>
+
+				<section class="context">
+					<h1><a href="work/bloom/">Bloom</a></h1>
+					<h2>Experimental Photo Post-Processing / 2023</h2>
+				</section>
+			</article>
+
+			<div></div>
+
+			<article id="sort-later">
+				<section class="content">
+					<div class="sortlater-bg-container">
+						<div class="sortlater-stretch">
+							<div>
+								<a href="work/sort-later/" data-rate="50">
+									<img src="work/sort-later/assets/content/print/iris-on-beginnings-letter.webp"
+										alt="Poster generated on the Sort Later website featuring Iris Xie’s work entitled On Beginnings, printed on a US Letter sized piece of paper. This print failed to load the actual image fast enough causing the poster to display a tiny “missing file” icon in place of the actual work."
+										title="Poster generated on the Sort Later website featuring Iris Xie’s work entitled On Beginnings, printed on a US Letter sized piece of paper. This print failed to load the actual image fast enough causing the poster to display a tiny “missing file” icon in place of the actual work."
+										id="sortlater-print-1"
+										class="box-shadow blur-load"
+										style="background-image: url(work/sort-later/assets/no-index/iris-on-beginnings-letter-small.webp);"
+										loading="lazy">
+								</a>
+							</div>
+
+							<div>
+								<a href="work/sort-later/" data-rate="25">
+									<img src="work/sort-later/assets/content/print/kevin-sick-em-legal.webp"
+										alt="Poster generated on the Sort Later website featuring Kevin Hodgdon’s work entitled Sick Em, printed on a US Legal sized piece of paper."
+										title="Poster generated on the Sort Later website featuring Kevin Hodgdon’s work entitled Sick Em, printed on a US Legal sized piece of paper."
+										id="sortlater-print-2"
+										class="box-shadow blur-load"
+										style="background-image: url(work/sort-later/assets/no-index/kevin-sick-em-legal-small.webp);"
+										loading="lazy">
+								</a>
+							</div>
+
+							<div>
+								<a href="work/sort-later/" data-rate="50">
+									<img src="work/sort-later/assets/content/print/yasemin-on-metal-letter.webp"
+										alt="Poster generated on the Sort Later website featuring Yasemin Sarihan’s work entitled On Metal, printed on a US Letter sized piece of paper."
+										title="Poster generated on the Sort Later website featuring Yasemin Sarihan’s work entitled On Metal, printed on a US Letter sized piece of paper."
+										id="sortlater-print-3"
+										class="box-shadow blur-load"
+										style="background-image: url(work/sort-later/assets/no-index/yasemin-on-metal-letter-small.webp);"
+										loading="lazy">
+								</a>
+							</div>
+
+							<div>
+								<a href="work/sort-later/" data-rate="25">
+									<img src="work/sort-later/assets/content/print/iris-on-beginnings-legal.webp"
+										alt="Poster generated on the Sort Later website featuring Iris Xie’s work entitled On Beginnings, printed on a US Legal sized piece of paper. This print failed to load the actual image fast enough causing the poster to display a tiny “missing file” icon in place of the actual work."
+										title="Poster generated on the Sort Later website featuring Iris Xie’s work entitled On Beginnings, printed on a US Legal sized piece of paper. This print failed to load the actual image fast enough causing the poster to display a tiny “missing file” icon in place of the actual work."
+										id="sortlater-print-4"
+										class="box-shadow blur-load"
+										style="background-image: url(work/sort-later/assets/no-index/iris-on-beginnings-legal-small.webp);"
+										loading="lazy">
+								</a>
+							</div>
+
+							<div>
+								<a href="work/sort-later/" data-rate="50">
+									<img src="work/sort-later/assets/content/print/kevin-something-of-substance-letter.webp"
+										alt="Poster generated on the Sort Later website featuring Kevin Hodgdon’s work entitled Something of Substance, printed on a US Letter sized piece of paper."
+										title="Poster generated on the Sort Later website featuring Kevin Hodgdon’s work entitled Something of Substance, printed on a US Letter sized piece of paper."
+										id="sortlater-print-5"
+										class="box-shadow blur-load"
+										style="background-image: url(work/sort-later/assets/no-index/kevin-something-of-substance-letter-small.webp);"
+										loading="lazy">
+								</a>
+							</div>
+
+							<div>
+								<a href="work/sort-later/" data-rate="25">
+									<img src="work/sort-later/assets/content/print/wayne-controllers-concert-legal.webp"
+										alt="Poster generated on the Sort Later website featuring Wayn Luan’s work entitled Controllers Concert, printed on a US Legal sized piece of paper."
+										title="Poster generated on the Sort Later website featuring Wayn Luan’s work entitled Controllers Concert, printed on a US Legal sized piece of paper."
+										id="sortlater-print-6"
+										class="box-shadow blur-load"
+										style="background-image: url(work/sort-later/assets/no-index/wayne-controllers-concert-legal-small.webp);"
+										loading="lazy">
+								</a>
+							</div>
+
+							<div>
+								<a href="work/sort-later/" data-rate="50">
+									<img src="work/sort-later/assets/content/print/iris-chroma-fest-letter.webp"
+										alt="Poster generated on the Sort Later website featuring Iris Xie’s work entitled Chroma Fest, printed on a US Letter sized piece of paper."
+										title="Poster generated on the Sort Later website featuring Iris Xie’s work entitled Chroma Fest, printed on a US Letter sized piece of paper."
+										id="sortlater-print-7"
+										class="box-shadow blur-load"
+										style="background-image: url(work/sort-later/assets/no-index/iris-chroma-fest-letter-small.webp);"
+										loading="lazy">
+								</a>
+							</div>
+						</div>
+					</div>
+
+					<div class="center-flex">
+						<a href="work/sort-later/" class="sortlater-center" data-rate="75">
+							<img src="work/sort-later/assets/content/web/sortlater-web.png"
+								alt="Screenshot of the Sort Later website"
+								title="Screenshot of the Sort Later website"
+								class="sortlater-window drop-shadow blur-load"
+								style="background-image: url(work/sort-later/assets/no-index/sortlater-web-small.webp);"
+								loading="lazy">
+
+							<div class="sortlater-scroll-container">
+								<img src="work/sort-later/assets/content/web/scroll.png"
+									alt="Screenshot of the Sort Later website"
+									title="Screenshot of the Sort Later website"
+									data-rate="500"
+									class="sortlater-scroll"
+									loading="lazy">
+							</div>
+						</a>
+					</div>
+				</section>
+
+				<section class="context">
+					<h1><a href="work/sort-later/">Sort Later</a></h1>
+					<h2>RISD GD Senior Show / 2023</h2>
+				</section>
+			</article>
+
+			<div></div>
+
+			<article id="generative-poems">
+				<section class="content">
+					<div class="generative-in-grid">
+						<a href="work/generative-poems/" data-rate="25">
+							<img src="work/generative-poems/assets/content/print/generated-poem-5.webp"
+								alt="Poem generated using the Generative? Poems website, printed, and scanned."
+								title="Poem generated using the Generative? Poems website, printed, and scanned."
+								class="box-shadow blur-load"
+								style="background-image: url(work/generative-poems/assets/no-index/generated-poem-5-small.webp);"
+								loading="lazy">
+						</a>
+
+						<a href="work/generative-poems/" data-rate="50">
+							<img src="work/generative-poems/assets/content/print/generated-poem-1.webp"
+								alt="Poem generated using the Generative? Poems website, printed, and scanned."
+								title="Poem generated using the Generative? Poems website, printed, and scanned."
+								class="box-shadow blur-load"
+								style="background-image: url(work/generative-poems/assets/no-index/generated-poem-1-small.webp);"
+								loading="lazy">
+						</a>
+
+						<a href="work/generative-poems/" data-rate="50">
+							<img src="work/generative-poems/assets/content/print/generated-poem-3.webp"
+								alt="Poem generated using the Generative? Poems website, printed, and scanned."
+								title="Poem generated using the Generative? Poems website, printed, and scanned."
+								class="box-shadow blur-load"
+								style="background-image: url(work/generative-poems/assets/no-index/generated-poem-3-small.webp);"
+								loading="lazy">
+						</a>
+
+						<a href="work/generative-poems/" data-rate="25">
+							<img src="work/generative-poems/assets/content/print/generated-poem-6.webp"
+								alt="Poem generated using the Generative? Poems website, printed, and scanned."
+								title="Poem generated using the Generative? Poems website, printed, and scanned."
+								class="box-shadow blur-load"
+								style="background-image: url(work/generative-poems/assets/no-index/generated-poem-6-small.webp);"
+								loading="lazy">
+						</a>
+					</div>
+
+					<div class="generative-out-grid">
+						<a href="work/generative-poems/" data-rate="50">
+							<img src="work/generative-poems/assets/content/print/generated-poem-8.webp"
+								alt="Poem generated using the Generative? Poems website, printed, and scanned."
+								title="Poem generated using the Generative? Poems website, printed, and scanned."
+								class="box-shadow blur-load"
+								style="background-image: url(work/generative-poems/assets/no-index/generated-poem-8-small.webp);"
+								loading="lazy">
+						</a>
+
+						<a href="work/generative-poems/" data-rate="50">
+							<img src="work/generative-poems/assets/content/print/generated-poem-2.webp"
+								alt="Poem generated using the Generative? Poems website, printed, and scanned."
+								title="Poem generated using the Generative? Poems website, printed, and scanned."
+								class="box-shadow blur-load"
+								style="background-image: url(work/generative-poems/assets/no-index/generated-poem-2-small.webp);"
+								loading="lazy">
+						</a>
+
+						<a href="work/generative-poems/" data-rate="50">
+							<img src="work/generative-poems/assets/content/print/generated-poem-4.webp"
+								alt="Poem generated using the Generative? Poems website, printed, and scanned."
+								title="Poem generated using the Generative? Poems website, printed, and scanned."
+								class="box-shadow blur-load"
+								style="background-image: url(work/generative-poems/assets/no-index/generated-poem-4-small.webp);"
+								loading="lazy">
+						</a>
+
+						<a href="work/generative-poems/" data-rate="50">
+							<img src="work/generative-poems/assets/content/print/generated-poem-7.webp"
+								alt="Poem generated using the Generative? Poems website, printed, and scanned."
+								title="Poem generated using the Generative? Poems website, printed, and scanned."
+								class="box-shadow blur-load"
+								style="background-image: url(work/generative-poems/assets/no-index/generated-poem-7-small.webp);"
+								loading="lazy">
+						</a>
+					</div>
+
+					<div class="center-flex">
+						<a href="work/generative-poems/" class="generative-window" data-rate="75">
+							<img src="work/generative-poems/assets/content/generative-web.webp"
+								alt="A screenshot of the Generative? Poems website."
+								title="A screenshot of the Generative? Poems website."
+								class="drop-shadow blur-load"
+								style="background-image: url(work/generative-poems/assets/no-index/generative-web-small.webp);"
+								loading="lazy">
+						</a>
+					</div>
+				</section>
+
+				<section class="context">
+					<h1><a href="work/generative-poems/"><i>Generative?</i> Poems</a></h1>
+					<h2>Variable Systems Website / 2022</h2>
+				</section>
+			</article>
+
+			<div></div>
+
+			<article id="ed-brown-interview">
+				<section class="content center-flex">
+					<div class="interview-container">
+						<a href="work/ed-brown-interview/" class="interview-spread" data-rate="25">
+							<img src="work/ed-brown-interview/assets/content/interview-interior.webp"
+								alt="The center spread of the interview printed publication."
+								title="The center spread of the interview printed publication."
+								class="drop-shadow blur-load"
+								style="background-image: url(work/ed-brown-interview/assets/no-index/interview-interior-small.jpg);"
+								loading="lazy">
+						</a>
+					</div>
+				</section>
+
+				<section class="context">
+					<h1><a href="work/interview/">Ed Brown Interview</a></h1>
+					<h2>Interview print and publication / 2022</h2>
+				</section>
+			</article>
+
+			<div></div>
+
+			<article id="playlist-covers">
+				<section class="content">
+					<div class="playlist-out-grid">
+						<a href="work/playlist-covers/" data-rate="75">
+							<img src="work/playlist-covers/assets/content/attempt.webp"
+								alt="It was yet again high time to start anew..."
+								title="It was yet again high time to start anew..."
+								class="box-shadow blur-load"
+								style="background-image: url(work/playlist-covers/assets/no-index/attempt-small.webp);"
+								loading="lazy">
+						</a>
+
+						<a href="work/playlist-covers/" data-rate="75">
+							<img src="work/playlist-covers/assets/content/shitty.jpg"
+								alt="Only the shittiest for this playlist!"
+								title="Only the shittiest for this playlist!"
+								class="box-shadow blur-load"
+								style="background-image: url(work/playlist-covers/assets/no-index/shitty-small.webp);"
+								loading="lazy">
+						</a>
+
+						<a href="work/playlist-covers/" data-rate="75">
+							<img src="work/playlist-covers/assets/content/no-pants-allowed.webp"
+								alt="The evil alternate to &ldquo;I&rsquo;m Important to the People.&rdquo; Where it is big, this is small, where it creates this destroys, where it rejuvenates this siphons. This makes you rip your pants off and do something incriminating and vile in nature, you will yearn to destroy something beautiful."
+								title="The evil alternate to &ldquo;I&rsquo;m Important to the People.&rdquo; Where it is big, this is small, where it creates this destroys, where it rejuvenates this siphons. This makes you rip your pants off and do something incriminating and vile in nature, you will yearn to destroy something beautiful."
+								class="box-shadow blur-load"
+								style="background-image: url(work/playlist-covers/assets/no-index/no-pants-allowed-small.webp);"
+								loading="lazy">
+						</a>
+
+						<a href="work/playlist-covers/" data-rate="75">
+							<img src="work/playlist-covers/assets/content/shrigma.webp"
+								alt="Placeholder image for a not yet created playlist."
+								title="Placeholder image for a not yet created playlist."
+								class="box-shadow blur-load"
+								style="background-image: url(work/playlist-covers/assets/no-index/shrigma-small.webp);"
+								loading="lazy">
+						</a>
+					</div>
+
+					<div class="playlist-mid-grid">
+						<a href="work/playlist-covers/" data-rate="50">
+							<img src="work/playlist-covers/assets/content/ineffability.webp"
+								alt="Extraterrestrial bliss. Truly cosmic in scale, yet delicate in a way."
+								title="Extraterrestrial bliss. Truly cosmic in scale, yet delicate in a way."
+								class="box-shadow blur-load"
+								style="background-image: url(work/playlist-covers/assets/no-index/ineffability-small.webp);"
+								loading="lazy">
+						</a>
+
+						<a href="work/playlist-covers/" data-rate="50">
+							<img src="work/playlist-covers/assets/content/important-to-the-people.webp"
+								alt="The spiritual successor to the playlist by the same name on Soundcloud. But this will not only live up to the name but surpass it. It will be everything the original could not, and never was."
+								title="The spiritual successor to the playlist by the same name on Soundcloud. But this will not only live up to the name but surpass it. It will be everything the original could not, and never was."
+								class="box-shadow blur-load"
+								style="background-image: url(work/playlist-covers/assets/no-index/important-to-the-people-small.webp);"
+								loading="lazy">
+						</a>
+					</div>
+
+					<div class="playlist-in-grid">
+						<a href="work/playlist-covers/" data-rate="25">
+							<img src="work/playlist-covers/assets/content/three-euros.webp"
+								alt="A temporary playlist. Assembled in the summer of 2021. A panoply for an era that has since passed. As the memories inevitably fade from the mind, this will persist."
+								title="A temporary playlist. Assembled in the summer of 2021. A panoply for an era that has since passed. As the memories inevitably fade from the mind, this will persist."
+								class="box-shadow blur-load"
+								style="background-image: url(work/playlist-covers/assets/no-index/three-euros-small.webp);"
+								loading="lazy">
+						</a>
+
+						<a href="work/playlist-covers/" data-rate="25">
+							<img src="work/playlist-covers/assets/content/boiling-pot.webp"
+								alt="Limbo for music. Like a &ldquo;My Shazam Tracks&rdquo; playlist, this one serves as a waiting room for music I find. Waiting judgment to be assigned eternal damnation into one of my many playlists."
+								title="Limbo for music. Like a &ldquo;My Shazam Tracks&rdquo; playlist, this one serves as a waiting room for music I find. Waiting judgment to be assigned eternal damnation into one of my many playlists."
+								class="box-shadow blur-load"
+								style="background-image: url(work/playlist-covers/assets/no-index/boiling-pot-small.webp);"
+								loading="lazy">
+						</a>
+					</div>
+				</section>
+
+				<section class="context">
+						<h1><a href="work/playlist-covers/">Playlist Covers</a></h1>
+						<h2>Cover art for my Spotify playlists / 2022 &ndash; Present</h2>
+				</section>
+			</article>
+
+			<div></div>
+
+			<article id="crosswalk-poetics">
+				<section class="content center-flex">
+					<div class="crosswalk-content" data-rate="25">
+						<a href="work/crosswalk-poetics/">
+							<img src="work/crosswalk-poetics/assets/content/book/book-base.jpg"
+								alt="Tabloid sized book I made with a chipboard front and back cover. The pages of the book are all empty because the spreads were used as a surface onto which I projected randomly generated image and text poems"
+								title="Tabloid sized book I made with a chipboard front and back cover. The pages of the book are all empty because the spreads were used as a surface onto which I projected randomly generated image and text poems"
+								class="blur-load"
+								style="background-image: url(work/crosswalk-poetics/assets/no-index/book-small.webp);"
+								loading="lazy">
+						</a>
+
+						<video autoplay loop muted playsinline id="crosswalk-projection" data-rate="50">
+							<source src="work/crosswalk-poetics/assets/content/book/book-projection.mp4">
+						</video>
+					</div>
+				</section>
+
+				<section class="context">
+					<h1><a href="work/crosswalk-poetics/">Crosswalk Poetics</a></h1>
+					<h2>Mapping group project / 2021</h2>
+				</section>
+			</article>
+
+			<div></div>
+
+			<article id="digital-overprint">
+				<section class="content vertical-flex">
+					<a href="work/digital-overprint/">
+						<img src="work/digital-overprint/assets/content/slice/slice-1.webp"
+							alt="AI generated face printed out at 8 by 8 inches, 4 by 4 inches, 2 by 2 inches, and 1 by 1 inch. All four with a resolution of 300dpi, then scanned at 1200ppi resolution and composited together in Photoshop with the darker color blending mode."
+							title="AI generated face printed out at 8 by 8 inches, 4 by 4 inches, 2 by 2 inches, and 1 by 1 inch. All four with a resolution of 300dpi, then scanned at 1200ppi resolution and composited together in Photoshop with the darker color blending mode."
+							class="box-shadow blur-load"
+							style="background-image: url(work/digital-overprint/assets/no-index/slice-1-small.webp);"
+							loading="lazy">
+					</a>
+
+					<a href="work/digital-overprint/" data-rate="25">
+						<img src="work/digital-overprint/assets/content/slice/slice-2.webp"
+							alt="AI generated face printed out at 8 by 8 inches, 4 by 4 inches, and 2 by 2 inches. All three were printed at a resolution of 300dpi, then scanned at 1200ppi resolution and composited together in Photoshop with the darker color blending mode."
+							title="AI generated face printed out at 8 by 8 inches, 4 by 4 inches, and 2 by 2 inches. All three were printed at a resolution of 300dpi, then scanned at 1200ppi resolution and composited together in Photoshop with the darker color blending mode."
+							class="box-shadow blur-load"
+							style="background-image: url(work/digital-overprint/assets/no-index/slice-1-small.webp);"
+							loading="lazy">
+					</a>
+
+					<a href="work/digital-overprint/" data-rate="50">
+						<img src="work/digital-overprint/assets/content/slice/slice-4.webp"
+							alt="AI generated face printed out at 8 by 8 inches and 4 by 4 inches, both with a resolution of 300dpi. Both were then scanned with a 1200ppi resolution and composited together in Photoshop with the darker color blending mode."
+							title="AI generated face printed out at 8 by 8 inches and 4 by 4 inches, both with a resolution of 300dpi. Both were then scanned with a 1200ppi resolution and composited together in Photoshop with the darker color blending mode."
+							class="box-shadow blur-load"
+							style="background-image: url(work/digital-overprint/assets/no-index/slice-1-small.webp);"
+							loading="lazy">
+					</a>
+
+					<a href="work/digital-overprint/" data-rate="75">
+						<img src="work/digital-overprint/assets/content/slice/slice-8.webp"
+							alt="AI generated face printed out at 8 by 8 inches with a resolution of 300dpi."
+							title="AI generated face printed out at 8 by 8 inches with a resolution of 300dpi."
+							class="box-shadow blur-load"
+							style="background-image: url(work/digital-overprint/assets/no-index/slice-1-small.webp);"
+							loading="lazy">
+					</a>
+				</section>
+
+				<section class="context">
+					<h1><a href="work/digital-overprint/">Digital Overprint</a></h1>
+					<h2>Print and scan feedback experiment / 2021</h2>
+				</section>
+			</article>
+
+			<div></div>
+
+			<article id="acetate-melt">
+				<section class="content">
+					<div class="acetate-out-container">
+						<a href="work/acetate-melt/" class="cattle" data-rate="75">
+							<img src="work/acetate-melt/assets/content/cattle-2.webp"
+								alt="An image of a grazing cow printed on acetate has been viciously attacked with the sharp flat nib of a calligraphic pen. The red ink from the pen has replaced most of the cow’s hide, and the violent abrasion of the metallic “weapon” has left scars and tears in the bloody mess."
+								title="An image of a grazing cow printed on acetate has been viciously attacked with the sharp flat nib of a calligraphic pen. The red ink from the pen has replaced most of the cow’s hide, and the violent abrasion of the metallic “weapon” has left scars and tears in the bloody mess."
+								class="blur-load"
+								style="background-image: url(work/acetate-melt/assets/no-index/cattle-2-small.webp);"
+								loading="lazy">
+						</a>
+
+						<a href="work/acetate-melt/" class="waterfall" data-rate="75">
+							<img src="work/acetate-melt/assets/content/tape-waterfall.webp"
+								alt="A waterfall in a luscious natural environment printed on acetate, three pieces of transparent scotch tape are masking said waterfall. The disinfectant has washed away everything but what was under the protection of the tape."
+								title="A waterfall in a luscious natural environment printed on acetate, three pieces of transparent scotch tape are masking said waterfall. The disinfectant has washed away everything but what was under the protection of the tape."
+								class="blur-load"
+								style="background-image: url(work/acetate-melt/assets/no-index/tape-waterfall-small.webp);"
+								loading="lazy">
+						</a>
+					</div>
+
+					<div class="acetate-in-container">
+						<a href="work/acetate-melt/" class="parrot" data-rate="50">
+							<img src="work/acetate-melt/assets/content/parrot-0.webp"
+								alt="Image of parrot printed on acetate and melted off using disinfectant spray"
+								title="Image of parrot printed on acetate and melted off using disinfectant spray"
+								class="blur-load"
+								style="background-image: url(work/acetate-melt/assets/no-index/parrot-0-small.webp);"
+								loading="lazy">
+						</a>
+
+						<a href="work/acetate-melt/" class="plane" data-rate="50">
+							<img src="work/acetate-melt/assets/content/plane-fly-by.webp"
+								alt="Image of a person taken from very low to the ground, framing them against the blue sky. A low flying airplane encompasses most of the background. The entire image and the acetate on which it was printed is neatly covered with rows of clear packaging tape. The outline of the airplane has been crudely cut out of the transparent tape with a box cutter which allowed the alcohol wash to completely remove it while leaving the person and the sky untouched."
+								title="Image of a person taken from very low to the ground, framing them against the blue sky. A low flying airplane encompasses most of the background. The entire image and the acetate on which it was printed is neatly covered with rows of clear packaging tape. The outline of the airplane has been crudely cut out of the transparent tape with a box cutter which allowed the alcohol wash to completely remove it while leaving the person and the sky untouched."
+								class="blur-load"
+								style="background-image: url(work/acetate-melt/assets/no-index/plane-fly-by-small.webp);"
+								loading="lazy">
+						</a>
+					</div>
+
+					<div class="acetate-center">
+						<a href="work/acetate-melt/" data-rate="25">
+							<img src="work/acetate-melt/assets/content/gardener-3.webp"
+								alt="A beekeeper is standing aloof in his garden. His face, body, and surroundings are eroding away around him. Machine cut transparent vinyl has been used as a mask for the acetate bath this image has taken, the paper towels used to dry it off have left textured marks on the exposed plotter ink."
+								title="A beekeeper is standing aloof in his garden. His face, body, and surroundings are eroding away around him. Machine cut transparent vinyl has been used as a mask for the acetate bath this image has taken, the paper towels used to dry it off have left textured marks on the exposed plotter ink."
+								class="blur-load"
+								style="background-image: url(work/acetate-melt/assets/no-index/gardener-3-small.webp);"
+								loading="lazy">
+						</a>
+					</div>
+				</section>
+
+				<section class="context">
+					<h1><a href="work/acetate-melt/">Acetate Melt</a></h1>
+					<h2>Inkjet print corrosion experiment / 2021</h2>
+				</section>
+			</article>
+
+			<div></div>
+
+			<article id="homodeus">
+				<section class="content">
+					<img src="work/homodeus/assets/content/mockup/homodeus-background-shadow.jpg"
+						class="multiply blur-load"
+						style="background-image: url(work/homodeus/assets/no-index/homodeus-book-small.webp);"
+						loading="lazy"
+						data-rate="50">
+
+					<img src="work/homodeus/assets/content/mockup/homodeus-bottom-book-shadow.jpg"
+						alt="Homo Deus publication laid closed on a table with an open copy laid on top."
+						title="Homo Deus publication laid closed on a table with an open copy laid on top."
+						class="multiply blur-load"
+						style="background-image: url(work/homodeus/assets/no-index/homodeus-book-small.webp);"
+						loading="lazy"
+						data-rate="25">
+
+					<img src="work/homodeus/assets/content/mockup/homodeus-bottom-book.webp"
+						class="blur-load"
+						style="background-image: url(work/homodeus/assets/no-index/homodeus-book-small.webp);"
+						loading="lazy"
+						data-rate="25">
+
+					<img src="work/homodeus/assets/content/mockup/homodeus-middle-shadow.jpg"
+						class="multiply blur-load"
+						style="background-image: url(work/homodeus/assets/no-index/homodeus-book-small.webp);"
+						loading="lazy"
+						data-rate="25">
+
+					<a href="work/homodeus/">
+						<img src="work/homodeus/assets/content/mockup/homodeus-top-book.webp"
+							alt="Homo Deus publication laid closed on a table with an open copy laid on top."
+							title="Homo Deus publication laid closed on a table with an open copy laid on top."
+							class="blur-load"
+							style="background-image: url(work/homodeus/assets/no-index/homodeus-book-small.webp);"
+							loading="lazy"
+							data-rate="50">
+					</a>
+				</section>
+
+				<section class="context">
+					<h1><a href="work/homodeus/">HomoDeus</a></h1>
+					<h2>Print & web publication project / 2021</h2>
+				</section>
+			</article>
+
+			<div></div>
+
+			<article id="ruotuvaki">
+				<section class="content">
+					<a href="work/ruotuvaki/">
+						<img src="work/ruotuvaki/assets/content/main/juliste.webp"
+							alt="Promotional poster for the Ruotuväki monthly newspaper."
+							title="Promotional poster for the Ruotuväki monthly newspaper."
+							class="rv-juliste box-shadow blur-load"
+							style="background-image: url(work/ruotuvaki/assets/no-index/juliste-small.webp);"
+							loading="lazy"
+							data-rate="50">
+					</a>
+
+					<a href="work/ruotuvaki/">
+						<img src="work/ruotuvaki/assets/content/main/aukeama.jpg"
+							alt="Spread from the 16/20 issue of the Ruotuväki newspaper."
+							title="Spread from the 16/20 issue of the Ruotuväki newspaper."
+							class="rv-aukeama box-shadow blur-load"
+							style="background-image: url(work/ruotuvaki/assets/no-index/aukeama-small.webp);"
+							loading="lazy"
+							data-rate="100">
+					</a>
+
+					<div class="invisa-grid">
+						<a href="work/ruotuvaki/" class="rv-kalenteri" data-rate="150">
+							<img src="work/ruotuvaki/assets/content/main/kalenteri.webp"
+								alt="Image of the Ruotuväki annual calendar, made from compiling the best images from that year."
+								title="Image of the Ruotuväki annual calendar, made from compiling the best images from that year."
+								class="box-shadow blur-load"
+								style="background-image: url(work/ruotuvaki/assets/no-index/kalenteri-small.webp);"
+								loading="lazy">
+						</a>
+					</div>
+				</section>
+				
+				<section class="context">
+					<h1><a href="work/ruotuvaki/" target="_blank">Ruotuväki</a></h1>
+					<h2>Conscript Graphic Designer / 2020 — 2021</h2>
+				</section>
+			</article>
+
+			<div></div>
+
+			<article id="collages">
+				<section class="content collages-flex">
+					<a href="work/collages/" data-rate="50">
+						<img src="work/collages/assets/content/look.webp"
+							alt="Collage almost entirely pink, in the bottom left corner stands a man looking and pointing up towards a floating magical castle above him."
+							title="Collage almost entirely pink, in the bottom left corner stands a man looking and pointing up towards a floating magical castle above him."
+							class="box-shadow blur-load"
+							style="background-image: url(work/collages/assets/no-index/look-small.webp);"
+							loading="lazy">
+					</a>
+
+					<a href="work/collages/" data-rate="25">
+						<img src="work/collages/assets/content/struggle-continues.webp"
+							alt="In the foreground, two farmers are attending to their wheat. In the background are large desert cliffs, behind which are multiple images of the sun setting at the same time on different days of the week."
+							title="In the foreground, two farmers are attending to their wheat. In the background are large desert cliffs, behind which are multiple images of the sun setting at the same time on different days of the week."
+							class="box-shadow blur-load"
+							style="background-image: url(work/collages/assets/no-index/struggle-continues-small.webp);"
+							loading="lazy">
+					</a>
+
+					<a href="work/collages/" data-rate="75">
+						<img src="work/collages/assets/content/devil-monkey.webp"
+							alt="A giant monkey stands tall over a snowy slope where many people are skiing and snowboarding. As the Massive baboon towers over the people watching them, a demon whispers terrible things into its ear."
+							title="A giant monkey stands tall over a snowy slope where many people are skiing and snowboarding. As the Massive baboon towers over the people watching them, a demon whispers terrible things into its ear."
+							class="box-shadow blur-load"
+							style="background-image: url(work/collages/assets/no-index/devil-monkey-small.webp);"
+							loading="lazy">
+					</a>
+				</section>
+
+				<section class="context">
+					<h1 class="title"><a href="work/collages/">Collages</a></h1>
+					<h2>Compositional exploration / 2019</h2>
+				</section>
+			</article>
+
+			<div></div>
+
+			<article id="drawings">
+				<section class="content">
+					<div class="drawing-external">
+						<a href="work/drawings/" class="grass" data-rate="75">
+							<img src="work/drawings/assets/content/stone-notebook/grass-half.webp"
+								alt="A drawing of some plants I saw in Georgia growing in a little creek. The water of the creek I made with little flowers and grass I squished in between the pages."
+								title="A drawing of some plants I saw in Georgia growing in a little creek. The water of the creek I made with little flowers and grass I squished in between the pages."
+								class="drop-shadow blur-load"
+								style="background-image: url(work/drawings/assets/no-index/grass-half-small.webp);"
+								loading="lazy">
+						</a>
+
+						<a href="work/drawings/" class="feet" data-rate="75">
+							<img src="work/drawings/assets/content/stone-notebook/feet-half.webp"
+								alt="A sketch I made of a friend's feet, their toenails I decorated with some gold leaf."
+								title="A sketch I made of a friend's feet, their toenails I decorated with some gold leaf."
+								class="drop-shadow blur-load"
+								style="background-image: url(work/drawings/assets/no-index/feet-half-small.webp);"
+								loading="lazy">
+						</a>
+					</div>
+
+					<div class="drawing-out">
+						<a href="work/drawings/" class="history-class" data-rate="50">
+							<img src="work/drawings/assets/content/stone-notebook/class.webp"
+								alt="Drawing of my professor I had for art history during my freshman year at RISD. The class was drawn by my girlfriend at the time who was also in my class."
+								title="Drawing of my professor I had for art history during my freshman year at RISD. The class was drawn by my girlfriend at the time who was also in my class."
+								class="drop-shadow blur-load"
+								style="background-image: url(work/drawings/assets/no-index/class-small.webp);"
+								loading="lazy">
+						</a>
+
+						<a href="work/drawings/" class="balcony" data-rate="50">
+							<img src="work/drawings/assets/content/stone-notebook/balcony.webp"
+								alt="Spread from one of my drawing notebooks. On the left page is a fireplace with an Iittala coffee cup on a wooden floor. On the right page is a typographic exploration of blackletter font forms superimposed on top of quick sketches of a couple wire lawn chairs."
+								title="Spread from one of my drawing notebooks. On the left page is a fireplace with an Iittala coffee cup on a wooden floor. On the right page is a typographic exploration of blackletter font forms superimposed on top of quick sketches of a couple wire lawn chairs."
+								class="drop-shadow blur-load"
+								style="background-image: url(work/drawings/assets/no-index/balcony-small.webp);"
+								loading="lazy">
+						</a>
+					</div>
+
+					<div class="center-flex">
+						<div class="drawing-hero-container">
+							<a href="work/drawings/" class="dumari" data-rate="25">
+								<img src="work/drawings/assets/content/stone-notebook/dumari.webp"
+									alt="A sketch of the Tuomiokirkko (the Helsinki Cathedral) I made over the summer of 2019."
+									title="A sketch of the Tuomiokirkko (the Helsinki Cathedral) I made over the summer of 2019."
+									class="drop-shadow blur-load"
+									style="background-image: url(work/drawings/assets/no-index/dumari-small.webp);"
+									loading="lazy">
+							</a>
+						</div>
+					</div>
+				</section>
+
+				<section class="context">
+					<h1><a href="work/drawings/">Drawings</a></h1>
+					<h2>Just kind of having fun / 2018 &ndash; Present</h2>
+				</section>
+			</article>
+
+			<div></div>
+
+			<!-- <article id="test">
+				<section class="content">
+					<div class="out-container" data-rate="25"></div>
+					<div class="mid-container" data-rate="50"></div>
+					<div class="in-container" data-rate="75"></div>
+				</section>
+
+				<section class="context">
+					<hgroup>
+						<h1>Test</h1>
+						<h2>Just a test / 2023</h2>
+					</hgroup>
+				</section>
+			</article> -->
+		</main>
+
+		<footer>
+			<section>
+				<div id="footer-nav">
+					<div>
+						<h2>&#169;2023 MMB</h2>
+					</div>
+
+					<div>
+						<h2>Navigation</h2>
+						<h3><a target="_self" id="top-btn" title="Click here to be taken back to the top of this page.">Back to Top</a></h3>
+						<h3><a href="../../about/" title="Click here to learn more about who I am.">About</a></h3>
+					</div>
+
+					<div>
+						<h2>Contact</h2>
+						<h3><a href="mailto:beidler.max@gmail.com" title="Shoot me an email!" target="_self">
+							beidler.max@gmail.com
+						</a></h3>
+						<h3><a href="https://www.are.na/max-mainio" title="This is where I collect resources, for me and anyone else to use." target="_blank">
+							Are.na
+						</a></h3>
+						<h3><a href="https://www.are.na/max-mainio" title="Most of my coding projects and experiments are on here. Feel free to study how I've made this website." target="_blank">
+							Github
+						</a></h3>
+						<h3><a href="https://www.instagram.com/max.mainio/?hl=en" title="I really don't post on here anymore, but I'm still active otherwise." target="_blank">
+							Instagram
+						</a></h3>
+						<h3><a href="https://www.linkedin.com/in/max-beidler-101b111a3/" title="I desperately need a new profile pic..." target="_blank">
+							Linkedin
+						</a></h3>
+						<h3><a href="https://pin.it/571oY2a" title="This is where I collect design inspiration." target="_blank">
+							Pinterest
+						</a></h3>
+						<h3><a href="https://open.spotify.com/user/mliflawsee?si=08f822a9f31e4a12" title="Check out what I'm listening to." target="_blank">
+							Spotify
+						</a></h3>
+					</div>
+				</div>
+
+				<div id="footer-gradient">
+					<div id="footer-field"></div>
+				</div>
+			</section>
+		</footer>
+	</body>
+</html>

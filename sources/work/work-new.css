@@ -120,7 +120,7 @@ article{
 
     pointer-events: none;
 
-    & h1{
+    /* & h1{
         font-weight: 600;
         font-size: 3rem;
         line-height: 3rem;
@@ -139,7 +139,7 @@ article{
         margin: 0 auto 1rem 1rem;
         padding-right: 1rem;
         pointer-events: all;
-    }
+    } */
 }
 
 .center-flex{
@@ -1243,5 +1243,91 @@ span.lawn, span.flower{
                 margin: auto;
             }
         }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.content{
+    position: relative;
+    /* background-color: red; */
+}
+
+.out-container{
+    position: absolute;
+    height: 100%;
+    width: 100vw;
+    left: calc((-100vw + 2560px) / 2);
+
+    background-color: blue;
+}
+
+.mid-container{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    max-width: var(--out-width);
+
+    background-color: green;
+}
+
+.in-container{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    max-width: var(--in-width);
+    margin: 0 auto;
+    inset: 0;
+
+    background-color: blue;
+}
+
+
+
+.context{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    max-width: var(--in-width);
+    margin: 0 auto;
+    inset: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+}
+
+hgroup{
+    padding: 0 1rem 1rem 1rem;
+
+    & h1{
+        font-weight: 600;
+        font-size: 3rem;
+        line-height: 3rem;
+
+        pointer-events: all;
+    }
+    
+    & h2{
+        font-weight: 400;
+        font-size: 1rem;
+        line-height: 1rem;
+        letter-spacing: 0.75px;
+
+        pointer-events: all;
     }
 }
