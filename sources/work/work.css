@@ -246,7 +246,6 @@ hgroup{
 }
 
 #lawn-container{
-    /* background-color: aqua; */
     width: fit-content;
     max-width: calc(100% - 2rem);
 
@@ -263,12 +262,6 @@ hgroup{
     }
 }
 
-/* #lawn-container{
-    display: block;
-    width: 50vw;
-    max-width: var(--in-width);
-} */
-
 span.lawn, span.flower{
     box-shadow: var(--shadow);
 }
@@ -282,23 +275,6 @@ span.lawn, span.flower{
 
 
 /* SEAM CARVING ----------------------------------------------------------------------------------------------------------------- */
-/* .carving-content{
-    width: calc(100% - 2rem);
-    max-width: calc(var(--in-width) - 2rem);
-    aspect-ratio: 1440 / 810;
-    display: flex;
-    justify-content: center;
-
-    & img{
-        max-height: 100%;
-        max-width: 100%;
-    }
-
-    & .blur-load{
-        aspect-ratio: 1440 / 810;
-    }
-} */
-
 #seam-carving .in-container{
     padding: 0 1rem;
     display: flex;
@@ -386,42 +362,6 @@ span.lawn, span.flower{
 #bloom-blue-bike{
     margin: auto;
 }
-
-/* #bloom > .content{
-    height: 100%;
-    width: 100%;
-    display: flex;
-    gap: 1rem;
-    padding: 1rem;
-}
-
-.bloom-link{
-    &:hover{
-        background-color: rgba(0, 0, 0, 0);
-    }
-
-    &:nth-of-type(1){
-        margin: 6% 0 auto 0;
-    }
-
-    &:nth-of-type(2){
-        margin: auto 0 0 0;
-    }
-
-    &:nth-of-type(3){
-        margin: 0 0 auto 0;
-    }
-
-    &:nth-of-type(4){
-        margin: auto 0 6% 0;
-    }
-
-
-
-    & img{
-        width: 100%;
-    }
-} */
 
 
 
