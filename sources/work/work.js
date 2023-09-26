@@ -73,7 +73,6 @@ indexBtn.addEventListener('click', e => {
 
 // PARALLAX	------------------------------------------------------------------------------------------------------------------------
 const articles = document.querySelectorAll('article');
-
 let currentlyVisibleArticles = [];
 
 
@@ -103,12 +102,10 @@ articles.forEach(article => {
 
 // Parallax calculation function
 function parallaxCalc(elementPos, windowPos) {
-    const vh = window.innerHeight;
     const difference = elementPos - windowPos;
-    const normalized = (difference - (vh * -1)) / (vh - (vh * -1));
-    const normalOffset = (normalized * 2) - 1;
-
-    return normalOffset;
+	let multiplier = normalizeBetween(difference, (viewerHeight * -1), viewerHeight, -1, 1);
+	
+	return(multiplier);
 };
 
 // Apply parallax effect
