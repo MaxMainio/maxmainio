@@ -1,3 +1,15 @@
+// GLOBAL VARIABLES	----------------------------------------------------------------------------------------------------------------
+var viewerHeight = window.innerHeight;
+var viewerWidth = window.innerWidth;
+
+
+
+
+
+
+
+
+
 // SWITCH TO SCROLL SMOOTH WHEN CLICKING ON INTERNAL LINKS	------------------------------------------------------------------------
 const internalAnchorLinks = document.querySelectorAll('a:is([target="_self"])');
 
@@ -26,7 +38,6 @@ const splashObserver = new IntersectionObserver(entries => {
 
 			var anchorHash = location.hash
 
-			// INCASE THERE IS A HASH
 			if (anchorHash === '') {
 				window.scrollTo(0, 0);
 			};
@@ -62,13 +73,8 @@ indexBtn.addEventListener('click', e => {
 
 // PARALLAX	------------------------------------------------------------------------------------------------------------------------
 const articles = document.querySelectorAll('article');
-const sortlaterScroll = document.getElementById('sortlater-scroll');
 
 let currentlyVisibleArticles = [];
-let sortlaterVisibility;
-
-var viewerHeight = window.innerHeight;
-var viewerWidth = window.innerWidth;
 
 
 
@@ -95,51 +101,6 @@ articles.forEach(article => {
 
 
 
-
-
-
-
-
-
-const sortlaterObserver = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-			sortlaterVisibility = true;
-
-        } else {
-			sortlaterVisibility = false;
-        };
-    });
-});
-
-sortlaterObserver.observe(sortlaterScroll);
-
-
-
-function applyScroll(){
-	let sortlaterContainer = sortlaterScroll.parentNode;
-	let containerPos = sortlaterContainer.getBoundingClientRect().top;
-	let minThreshold = sortlaterContainer.offsetHeight * -1;
-	
-	let offset = normalizeBetween(containerPos, minThreshold, viewerHeight, -200, 0);
-
-	sortlaterScroll.style.top = offset + '%';
-};
-
-
-
-function normalizeBetween(m, rmin, rmax, tmin, tmax){
-	return(((m - rmin) / (rmax - rmin)) * (tmax - tmin) + tmin);
-};
-
-
-
-
-
-
-
-
-
 // Parallax calculation function
 function parallaxCalc(elementPos, windowPos) {
     const vh = window.innerHeight;
@@ -161,71 +122,6 @@ function applyParallax(windowPos) {
         });
     });
 };
-
-
-
-// Scroll trigger
-document.addEventListener('scroll', event => {
-	const windowPos = window.scrollY;
-
-	applyParallax(windowPos);
-	if(sortlaterVisibility === true){
-		applyScroll();
-	};
-});
-
-window.addEventListener('resize', event => {
-	viewerHeight = window.innerHeight;
-	viewerWidth = window.innerWidth;
-});
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// const sections = document.querySelectorAll('article');
-
-// document.addEventListener('scroll', event => {
-// 	const sectionObserver = new IntersectionObserver(entries => {
-// 		entries.forEach(entry => {
-// 			if (entry.isIntersecting === true) {
-// 				var windowScroll = window.scrollY;
-// 				var vh = window.innerHeight;
-	
-// 				function parallaxCalc (elementPos, windowPos) {
-// 					var difference = elementPos - windowPos;
-// 					var normalized = (difference - (vh * -1)) / (vh - (vh * -1));
-// 					var normalOffset = (normalized * 2) - 1;
-// 					return normalOffset
-// 				};
-	
-// 				var multiplier = parallaxCalc(entry.target.offsetTop, windowScroll);
-// 				var elements = entry.target.querySelectorAll('[data-rate]');
-// 				var elementsIndex = 0, length = elements.length;
-	
-// 				for (elementsIndex; elementsIndex < length; elementsIndex++) {
-// 					elements[elementsIndex].style.transform = 'translateY(' + multiplier * elements[elementsIndex].dataset.rate + 'px)'
-// 				};
-// 			};
-// 		});
-// 	});
-	
-// 	sections.forEach(sections => {
-// 		sectionObserver.observe(sections);
-// 	});
-// });
 
 
 
@@ -259,5 +155,94 @@ var intervalId = window.setInterval(function(){
 
 
 
+// SORT LATER	--------------------------------------------------------------------------------------------------------------------
+const sortlaterScroll = document.getElementById('sortlater-scroll');
+let sortlaterVisibility;
+
+
+
+const sortlaterObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+			sortlaterVisibility = true;
+
+        } else {
+			sortlaterVisibility = false;
+        };
+    });
+});
+
+sortlaterObserver.observe(sortlaterScroll);
+
+
+
+function applyScroll(){
+	let sortlaterContainer = sortlaterScroll.parentNode;
+	let containerPos = sortlaterContainer.getBoundingClientRect().top;
+	let minThreshold = sortlaterContainer.offsetHeight * -1;
+	
+	let offset = normalizeBetween(containerPos, minThreshold, viewerHeight, -200, 0);
+
+	sortlaterScroll.style.top = offset + '%';
+};
+
+
+
+
+
+
+
+
+
 // CROSSWALK POETICS	------------------------------------------------------------------------------------------------------------
 document.querySelector('#crosswalk-projection').playbackRate = 0.20;
+
+
+
+
+
+
+
+
+
+// GLOBAL TRIGGERS	----------------------------------------------------------------------------------------------------------------
+document.addEventListener('load', e => {
+	applyParallax(windowPos);
+	if(sortlaterVisibility === true){
+		applyScroll();
+	};
+});
+
+
+
+document.addEventListener('scroll', e => {
+	const windowPos = window.scrollY;
+
+	applyParallax(windowPos);
+
+	if(sortlaterVisibility === true){
+		applyScroll();
+	};
+});
+
+window.addEventListener('resize', e => {
+	viewerHeight = window.innerHeight;
+	viewerWidth = window.innerWidth;
+
+	if(sortlaterVisibility === true){
+		applyScroll();
+	};
+});
+
+
+
+
+
+
+
+
+
+// GLOBAL FUNCTIONS	----------------------------------------------------------------------------------------------------------------
+function normalizeBetween(m, rmin, rmax, tmin, tmax){
+	return(((m - rmin) / (rmax - rmin)) * (tmax - tmin) + tmin);
+};
