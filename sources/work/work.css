@@ -98,15 +98,15 @@ article{
     height: 100vh;
 }
 
-.content{
+/* .content{
     position: relative;
     height: 100%;
     width: 100%;
-    max-width: var(--out-width);
+    max-width: var(--mid-width);
     margin: 0 auto;
-}
+} */
 
-.context{
+/* .context{
     position: absolute;
     height: 100%;
     width: 100%;
@@ -140,6 +140,87 @@ article{
         padding-right: 1rem;
         pointer-events: all;
     }
+} */
+
+
+
+.content{
+    position: relative;
+    height: 100%;
+    width: 100%;
+    max-width: var(--mid-width);
+    margin: 0 auto;
+
+    pointer-events: none;
+
+    /* background-color: red; */
+}
+
+.out-container{
+    position: absolute;
+    height: 100%;
+    width: 100vw;
+    left: calc((-100vw + 2560px) / 2);
+
+    /* background-color: blue; */
+}
+
+.mid-container{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    max-width: var(--mid-width);
+
+    /* background-color: green; */
+}
+
+.in-container{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    max-width: var(--in-width);
+    margin: 0 auto;
+    inset: 0;
+
+    /* background-color: blue; */
+}
+
+
+
+.context{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    max-width: var(--in-width);
+    margin: 0 auto;
+    inset: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+
+    pointer-events: none;
+}
+
+hgroup{
+    padding: 1rem;
+
+    & h1{
+        font-weight: 600;
+        font-size: 3rem;
+        line-height: 3rem;
+
+        pointer-events: all;
+    }
+    
+    & h2{
+        font-weight: 400;
+        font-size: 1rem;
+        line-height: 1rem;
+        letter-spacing: 0.75px;
+
+        pointer-events: all;
+    }
 }
 
 .center-flex{
@@ -158,15 +239,16 @@ article{
 
 
 /* Lawn Texture ----------------------------------------------------------------------------------------------------------------- */
-#lawn-texture{
-    & .content{
-        width: 100%;
-    height: 100%;
-    
+#lawn-texture .in-container{
     display: flex;
     justify-content: center;
     align-items: center;
-    }
+}
+
+#lawn-container{
+    /* background-color: aqua; */
+    width: fit-content;
+    max-width: calc(100% - 2rem);
 
     & h3{
         font-weight: 600;
@@ -175,14 +257,17 @@ article{
         line-height: 2rem;
         text-transform: uppercase;
         display: block;
+
+        max-width: 46ch;
+        pointer-events: all;
     }
 }
 
-#lawn-container{
+/* #lawn-container{
     display: block;
     width: 50vw;
     max-width: var(--in-width);
-}
+} */
 
 span.lawn, span.flower{
     box-shadow: var(--shadow);
@@ -197,7 +282,7 @@ span.lawn, span.flower{
 
 
 /* SEAM CARVING ----------------------------------------------------------------------------------------------------------------- */
-.carving-content{
+/* .carving-content{
     width: calc(100% - 2rem);
     max-width: calc(var(--in-width) - 2rem);
     aspect-ratio: 1440 / 810;
@@ -212,6 +297,30 @@ span.lawn, span.flower{
     & .blur-load{
         aspect-ratio: 1440 / 810;
     }
+} */
+
+#seam-carving .in-container{
+    padding: 0 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.carving-content{
+    width: 100%;
+    max-height: 100%;
+    aspect-ratio: 1440 / 810;
+    display: flex;
+    justify-content: center;
+
+    & a{
+        display: block;
+        height: 100%;
+        pointer-events: all;
+    }
+}
+
+#nycCarve{
+    height: 100%;
 }
 
 
@@ -223,7 +332,62 @@ span.lawn, span.flower{
 
 
 /* BLOOM ------------------------------------------------------------------------------------------------------------------------ */
-#bloom > .content{
+#bloom .mid-container{
+    padding: 0 1rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.bloom-content{
+    width: 100%;
+    max-width: calc((100% - 3rem) / 4);
+    height: 100%;
+    display: flex;
+
+    &:nth-of-type(1){
+        padding: 5% 0 0 0;
+    }
+
+    &:nth-of-type(4){
+        padding: 0 0 5% 0;
+    }
+}
+
+.bloom-print{
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+    aspect-ratio: 1280 / 2048;
+
+    pointer-events: all;
+
+    &:hover{
+        background-color: rgba(0, 0, 0, 0);
+    }
+
+    & img{
+        width: 100%;
+        height: 100%;
+    }
+}
+
+#bloom-red-car{
+    margin: auto;
+}
+
+#bloom-blue-car{
+    margin: auto auto 0 auto;
+}
+
+#bloom-stop-sign{
+    margin: 0 auto auto auto;
+}
+
+#bloom-blue-bike{
+    margin: auto;
+}
+
+/* #bloom > .content{
     height: 100%;
     width: 100%;
     display: flex;
@@ -257,7 +421,7 @@ span.lawn, span.flower{
     & img{
         width: 100%;
     }
-}
+} */
 
 
 
@@ -273,7 +437,7 @@ span.lawn, span.flower{
     height: 100vh;
 
     position: absolute;
-    left: calc(-50vw + calc(var(--out-width) / 2));
+    left: calc(-50vw + calc(var(--mid-width) / 2));
 
     overflow: hidden;
 
@@ -425,7 +589,7 @@ span.lawn, span.flower{
     position: absolute;
     height: 100vh;
     width: 100vw;
-    max-width: var(--out-width);
+    max-width: var(--mid-width);
     margin: 0 auto;
     padding: 0 1rem;
     inset: 0;
@@ -546,7 +710,7 @@ span.lawn, span.flower{
     position: absolute;
     height: 100vh;
     width: 100vw;
-    max-width: var(--out-width);
+    max-width: var(--mid-width);
     margin: 0 auto;
     padding: 0 1rem;
     inset: 0;
@@ -728,7 +892,7 @@ span.lawn, span.flower{
     position: absolute;
     height: 100vh;
     width: 100vw;
-    max-width: var(--out-width);
+    max-width: var(--mid-width);
     margin: 0 auto;
     inset: 0;
 
@@ -991,7 +1155,7 @@ span.lawn, span.flower{
     left: -440px;
     height: 100vh;
     width: 100vw;
-    min-width: calc(var(--out-width) + 880px);
+    min-width: calc(var(--mid-width) + 880px);
 
     pointer-events: none;
 
@@ -1021,7 +1185,7 @@ span.lawn, span.flower{
     position: absolute;
     height: 100vh;
     width: 100vw;
-    max-width: var(--out-width);
+    max-width: var(--mid-width);
 
     pointer-events: none;
 
@@ -1057,7 +1221,7 @@ span.lawn, span.flower{
 /* Media Queries    ------------------------------------------------------------------------------------------------------------- */
 @media (width >= 3440px) {
     .drawing-external{
-        left: calc(calc(100vw - var(--out-width)) / -2);
+        left: calc(calc(100vw - var(--mid-width)) / -2);
     }
 }
 
@@ -1108,32 +1272,48 @@ span.lawn, span.flower{
         }
     }
 
-    .bloom-link{
+
+
+    .bloom-content{
+        max-width: calc((100% - 2rem) / 3);
+
         &:nth-of-type(1){
             display: none;
         }
-    
+
         &:nth-of-type(2){
-            margin: 20% 0 auto 0;
+            padding: 15% 0 0 0;
         }
-    
+
         &:nth-of-type(3){
-            margin: auto 0 20% 0;
+            padding: 0 0 15% 0;
         }
     
         &:nth-of-type(4){
-            margin: 20% 0 auto 0;
+            padding: 15% 0 0 0;
         }
+    }
+    
+    #bloom-blue-car{
+        margin: 0 auto auto auto;
+    }
+    
+    #bloom-stop-sign{
+        margin: auto auto 0 auto;
+    }
+    
+    #bloom-blue-bike{
+        margin: 0 auto auto auto;
     }
 }
 
 
 
-@media (width <= 1000px) {
+/* @media (width <= 1000px) {
     #lawn-container{
         width: calc(100% - 2rem);
     }
-}
+} */
 
 
 
@@ -1145,6 +1325,31 @@ span.lawn, span.flower{
     #index{
         display: none;
     }
+
+
+
+    .bloom-content{
+        max-width: 100%;
+
+        &:nth-of-type(2){
+            display: none;
+        }
+
+        &:nth-of-type(3){
+            padding: 0;
+        }
+    
+        &:nth-of-type(4){
+            display: none;
+        }
+    }
+
+    #bloom-stop-sign{
+        margin: auto;
+        max-height: 75%;
+    }
+
+
 
     .collages-flex{
         & a{
@@ -1178,25 +1383,6 @@ span.lawn, span.flower{
         & h3{
             font-size: 4.7vw;
             line-height: 4.7vw;
-        }
-    }
-
-
-
-    .bloom-link{
-        &:nth-of-type(2){
-            max-height: 90%;
-            max-width: 100%;
-            aspect-ratio: 1280 / 2048;
-            margin: auto;
-        }
-    
-        &:nth-of-type(3){
-            display: none;
-        }
-    
-        &:nth-of-type(4){
-            display: none;
         }
     }
 

@@ -86,7 +86,7 @@
 
     --shadow: 0px 0px 50px rgba(0, 0, 0, 0.1);
 
-    --out-width: 2560px;
+    --mid-width: 2560px;
     --in-width: 1400px;
     --half-width: calc(1400px / 2);
 }
