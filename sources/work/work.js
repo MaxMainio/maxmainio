@@ -61,37 +61,171 @@ indexBtn.addEventListener('click', e => {
 
 
 // PARALLAX	------------------------------------------------------------------------------------------------------------------------
-const sections = document.querySelectorAll('article');
+const articles = document.querySelectorAll('article');
+const sortlaterScroll = document.getElementById('sortlater-scroll');
 
-document.addEventListener('scroll', event => {
-	const sectionObserver = new IntersectionObserver(entries => {
-		entries.forEach(entry => {
-			if (entry.isIntersecting === true) {
-				var windowScroll = window.scrollY;
-				var vh = window.innerHeight;
-	
-				function parallaxCalc (elementPos, windowPos) {
-					var difference = elementPos - windowPos;
-					var normalized = (difference - (vh * -1)) / (vh - (vh * -1));
-					var normalOffset = (normalized * 2) - 1;
-					return normalOffset
-				};
-	
-				var multiplier = parallaxCalc(entry.target.offsetTop, windowScroll);
-				var elements = entry.target.querySelectorAll('[data-rate]');
-				var elementsIndex = 0, length = elements.length;
-	
-				for (elementsIndex; elementsIndex < length; elementsIndex++) {
-					elements[elementsIndex].style.transform = 'translateY(' + multiplier * elements[elementsIndex].dataset.rate + 'px)'
-				};
-			};
-		});
-	});
-	
-	sections.forEach(sections => {
-		sectionObserver.observe(sections)
-	});
+let currentlyVisibleArticles = [];
+let sortlaterVisibility;
+
+var viewerHeight = window.innerHeight;
+var viewerWidth = window.innerWidth;
+
+
+
+// Articles Observer callback
+const articleObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            currentlyVisibleArticles.push(entry.target);
+
+        } else {
+            const index = currentlyVisibleArticles.indexOf(entry.target);
+
+            if (index !== -1) {
+                currentlyVisibleArticles.splice(index, 1);
+            };
+        };
+    });
 });
+
+// Start observing each article
+articles.forEach(article => {
+    articleObserver.observe(article);
+});
+
+
+
+
+
+
+
+
+
+const sortlaterObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+			sortlaterVisibility = true;
+
+        } else {
+			sortlaterVisibility = false;
+        };
+    });
+});
+
+sortlaterObserver.observe(sortlaterScroll);
+
+
+
+function applyScroll(){
+	let sortlaterContainer = sortlaterScroll.parentNode;
+	let containerPos = sortlaterContainer.getBoundingClientRect().top;
+	let minThreshold = sortlaterContainer.offsetHeight * -1;
+	
+	let offset = normalizeBetween(containerPos, minThreshold, viewerHeight, -200, 0);
+
+	sortlaterScroll.style.top = offset + '%';
+};
+
+
+
+function normalizeBetween(m, rmin, rmax, tmin, tmax){
+	return(((m - rmin) / (rmax - rmin)) * (tmax - tmin) + tmin);
+};
+
+
+
+
+
+
+
+
+
+// Parallax calculation function
+function parallaxCalc(elementPos, windowPos) {
+    const vh = window.innerHeight;
+    const difference = elementPos - windowPos;
+    const normalized = (difference - (vh * -1)) / (vh - (vh * -1));
+    const normalOffset = (normalized * 2) - 1;
+
+    return normalOffset;
+};
+
+// Apply parallax effect
+function applyParallax(windowPos) {
+    currentlyVisibleArticles.forEach(article => {
+        const multiplier = parallaxCalc(article.offsetTop, windowPos);
+        const elements = article.querySelectorAll('[data-rate]');
+
+        elements.forEach(el => {
+            el.style.transform = 'translateY(' + multiplier * el.dataset.rate + 'px)';
+        });
+    });
+};
+
+
+
+// Scroll trigger
+document.addEventListener('scroll', event => {
+	const windowPos = window.scrollY;
+
+	applyParallax(windowPos);
+	if(sortlaterVisibility === true){
+		applyScroll();
+	};
+});
+
+window.addEventListener('resize', event => {
+	viewerHeight = window.innerHeight;
+	viewerWidth = window.innerWidth;
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// const sections = document.querySelectorAll('article');
+
+// document.addEventListener('scroll', event => {
+// 	const sectionObserver = new IntersectionObserver(entries => {
+// 		entries.forEach(entry => {
+// 			if (entry.isIntersecting === true) {
+// 				var windowScroll = window.scrollY;
+// 				var vh = window.innerHeight;
+	
+// 				function parallaxCalc (elementPos, windowPos) {
+// 					var difference = elementPos - windowPos;
+// 					var normalized = (difference - (vh * -1)) / (vh - (vh * -1));
+// 					var normalOffset = (normalized * 2) - 1;
+// 					return normalOffset
+// 				};
+	
+// 				var multiplier = parallaxCalc(entry.target.offsetTop, windowScroll);
+// 				var elements = entry.target.querySelectorAll('[data-rate]');
+// 				var elementsIndex = 0, length = elements.length;
+	
+// 				for (elementsIndex; elementsIndex < length; elementsIndex++) {
+// 					elements[elementsIndex].style.transform = 'translateY(' + multiplier * elements[elementsIndex].dataset.rate + 'px)'
+// 				};
+// 			};
+// 		});
+// 	});
+	
+// 	sections.forEach(sections => {
+// 		sectionObserver.observe(sections);
+// 	});
+// });
 
 
 
