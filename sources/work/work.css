@@ -182,7 +182,7 @@ article{
     margin: 0 auto;
     inset: 0;
 
-    background-color: blue;
+    /* background-color: blue; */
 }
 
 
@@ -372,6 +372,47 @@ span.lawn, span.flower{
 
 
 /* SORT LATER   ----------------------------------------------------------------------------------------------------------------- */
+#sort-later .out-container{
+    width: 3440px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    position: relative;
+    left: calc(((-100vw + 2560px) / 2) - (-50vw + 1720px));
+}
+
+.sortlater-content{
+    aspect-ratio: 216 / 356;
+    height: 100%;
+    max-height: 50%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    & a{
+        width: 100%;
+        pointer-events: all;
+    }
+
+    &:nth-of-type(even) a{
+        aspect-ratio: 791 / 1303;
+    }
+
+    &:nth-of-type(odd) a{
+        aspect-ratio: 971 / 1257;
+    }
+
+    & img{
+        width: 100%;
+        height: 100%;
+    }
+}
+
+
+
 #sort-later .center-flex{
     display: flex;
     align-items: center;
@@ -382,11 +423,13 @@ span.lawn, span.flower{
 .sortlater-center{
     display: block;
     aspect-ratio: 1800 / 1125;
-    max-width: calc(100% - 2rem);
-    max-height: 50%;
+    /* max-width: calc(100% - 8rem);
+    max-height: 50%; */
+    max-width: 75%;
+    max-height: 66%;
     position: relative;
 
-    /* background-color: aquamarine; */
+    pointer-events: all;
 
     &:hover{
         background-color: rgba(0, 0, 0, 0);
@@ -396,23 +439,11 @@ span.lawn, span.flower{
         width: 100%;
         height: 100%;
     }
-
-    pointer-events: all;
 }
-
-/* .sortlater-window{
-    width: 100%;
-    height: 100%;
-} */
 
 .sortlater-scroll-container{
     position: absolute;
     inset: auto 0 0 0;
-
-    /* display: flex;
-    flex-direction: column;
-    justify-content: center; */
-
     aspect-ratio: 1800 / 1046;
     width: 100%;
 
@@ -424,99 +455,6 @@ span.lawn, span.flower{
         position: absolute;
     }
 }
-
-
-
-/* .sortlater-bg-container{
-    width: 100vw;
-    height: 100vh;
-
-    position: absolute;
-    left: calc(-50vw + calc(var(--mid-width) / 2));
-
-    overflow: hidden;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-content: center;
-}
-
-.sortlater-stretch{
-    height: 50%;
-    width: 3440px;
-
-    display: flex;
-    justify-content: space-between;
-
-    position: relative;
-    left: calc(50vw - 1720px);
-
-    & > div{
-        aspect-ratio: 216 / 356;
-        height: 100%;
-    
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-
-        &:nth-of-type(odd) img{
-            aspect-ratio: 971 / 1257;
-        }
-
-        &:nth-of-type(even) img{
-            aspect-ratio: 791 / 1303;
-        }
-    }
-
-    & a{
-        max-width: 100%;
-        max-height: 100%
-    }
-
-    & img{
-        width: 100%;
-        height: 100%;
-    }
-}
-
-.sortlater-center{
-    display: block;
-    aspect-ratio: 1800 / 1125;
-    max-width: 75%;
-    max-height: 66%;
-    position: relative;
-
-    &:hover{
-        background-color: rgba(0, 0, 0, 0);
-    }
-}
-
-.sortlater-window{
-    width: 100%;
-    aspect-ratio: 1800 / 1125;
-}
-
-.sortlater-scroll-container{
-    position: absolute;
-    inset: auto 0 0 0;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-
-    aspect-ratio: 1800 / 1046;
-    width: 100%;
-
-    clip-path: polygon(0% 0%, 97% 0%, 97% 47%, 100% 53%, 100% 100%, 0% 100%);
-    mix-blend-mode: multiply;
-
-    & img{
-        width: 100%;
-        position: absolute;
-        margin-top: 60%;
-    }
-} */
 
 
 
@@ -1231,8 +1169,14 @@ span.lawn, span.flower{
 
 
 @media (width <= 2560px) {
-    .sortlater-bg-container{
+    .out-container{
         left: 0;
+    }
+
+
+
+    #sort-later .out-container{
+        left: calc(50vw - 1720px);
     }
 
     #sortlater-print-1{
@@ -1358,7 +1302,7 @@ span.lawn, span.flower{
 
 
 @media (width <= 775px) {
-    #sortlater-print-3{
+    /* #sortlater-print-3{
         display: none;
     }
 
@@ -1368,7 +1312,7 @@ span.lawn, span.flower{
 
     #sortlater-print-5{
         display: none;
-    }
+    } */
 }
 
 
