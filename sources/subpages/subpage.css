@@ -2,7 +2,7 @@
 article{
     position: relative;
     width: 100%;
-    max-width: var(--out-width);
+    max-width: var(--mid-width);
     margin: 0 auto;
     padding: 0 1rem;
 
