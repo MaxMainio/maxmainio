@@ -1378,34 +1378,6 @@ span.lawn, span.flower{
 
 
 
-    /* .acetate-out-container{
-        flex-direction: row-reverse;
-    }
-
-    .waterfall{
-        margin-left: 30%;
-    }
-
-    .cattle{
-        margin-right: 30%;
-    }
-
-    .parrot{
-        margin-top: 20%;
-    }
-
-    .plane{
-        margin-bottom: 20%;
-    }
-
-    .acetate-center{
-        & a{
-            width: 45%;
-        }
-    } */
-
-
-
     .collages-flex{
         & a{
             &:nth-of-type(2){
