@@ -1020,33 +1020,46 @@ span.lawn, span.flower{
 
 
 /* COLLAGES --------------------------------------------------------------------------------------------------------------------- */
-.collages-flex{
-    display: flex;
-    justify-content: space-between;
-    gap: 1rem;
+#collages .mid-container{
     padding: 0 1rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.collages-content{
+    width: 100%;
+    max-width: calc((100% - 2rem) / 3);
+    max-height: 100%;
+    display: flex;
+    justify-content: center;
+
+
+
+    &:nth-of-type(1) a{
+        margin: auto 0;
+    }
+
+    &:nth-of-type(2) a{
+        margin: 0 0 auto 0;
+    }
+
+    &:nth-of-type(3) a{
+        margin: auto 0 0 0;
+    }
+
+
 
     & a{
-        max-width: 683px;
+        max-width: 100%;
+        max-height: 80%;
+        aspect-ratio: 1280 / 2048;
 
-        &:nth-of-type(1){
-            margin-bottom: auto;
-            margin-top: auto;
-        }
-
-        &:nth-of-type(2){
-            margin-bottom: auto;
-        }
-
-        &:nth-of-type(3){
-            margin-top: auto;
-        }
+        pointer-events: all;
     }
 
     & img{
         width: 100%;
-        max-width: 683px;
-        aspect-ratio: 683 / 1024;
+        height: 100%;
     }
 }
 
@@ -1344,11 +1357,19 @@ span.lawn, span.flower{
 
 
 
-    .collages-flex{
-        & a{
-            &:nth-of-type(1){
-                display: none;
-            }
+    .collages-content{
+        max-width: calc((100% - 1rem) / 2);
+
+        &:nth-of-type(1){
+            display: none;
+        }
+    
+        &:nth-of-type(2) a{
+            margin: 20% 0 auto 0;
+        }
+    
+        &:nth-of-type(3) a{
+            margin: auto 0 20% 0;
         }
     }
 }
@@ -1381,18 +1402,15 @@ span.lawn, span.flower{
 
 
 
-    .collages-flex{
-        & a{
-            &:nth-of-type(2){
-                display: none;
-            }
-
-            &:nth-of-type(3){
-                max-height: 90%;
-                max-width: 100%;
-                aspect-ratio: 1280 / 2048;
-                margin: auto;
-            }
+    .collages-content{
+        max-width: calc(100% - 2rem);
+    
+        &:nth-of-type(2){
+            display: none;
+        }
+    
+        &:nth-of-type(3) a{
+            margin: auto 0;
         }
     }
 }
