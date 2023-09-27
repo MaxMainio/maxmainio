@@ -788,104 +788,107 @@ span.lawn, span.flower{
 
 
 /* ACETATE MELT ----------------------------------------------------------------------------------------------------------------- */
-#acetate-melt{
+#acetate-melt .content{
     & a{
+        display: block;
+        max-width: 100%;
+        max-height: 100%;
+        mix-blend-mode: multiply;
         pointer-events: all;
     }
 
     & img{
         width: 100%;
+        height: 100%;
     }
 }
 
+.acetate-content{
+    mix-blend-mode: multiply;
+}
 
-
-.acetate-out-container{
-    position: absolute;
-    height: 100vh;
-    width: 100vw;
-    max-width: var(--mid-width);
-    margin: 0 auto;
-    inset: 0;
-
+#acetate-melt .mid-container{
     display: flex;
     justify-content: space-between;
 
-    mix-blend-mode: multiply;
-    pointer-events: none;
-}
-
-.cattle{
-    width: 20%;
-    margin: auto 0 5% 0;
-
-    & img{
-        aspect-ratio: 1357 / 1024;
+    & > div{
+        position: relative;
+        width: 100%;
+        height: 100%;
     }
 }
 
-.waterfall{
-    width: 12%;
-    margin: 5% 0 auto 0;
-
-    & img{
-        aspect-ratio: 1024 / 2031;
-    }
-}
-
-
-
-.acetate-in-container{
-    position: absolute;
-    height: 100vh;
-    width: 100vw;
-    max-width: var(--in-width);
-    margin: 0 auto;
-    padding: 0 1rem;
-    inset: 0;
-
+#cattle{
     display: flex;
-    justify-content: space-between;
-    
-    mix-blend-mode: multiply;
-    pointer-events: none;
-}
-
-.parrot{
-    width: 25%;
-    margin: 0 0 auto 0;
-
-    & img{
-        aspect-ratio: 1024 / 1369;
-    }
-}
-
-.plane{
-    width: 25%;
-    margin: auto 0 0 0;
-
-    & img{
-        aspect-ratio: 1024 / 1605;
-    }
-}
-
-
-
-.acetate-center{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    mix-blend-mode: multiply;
-    pointer-events: none;
+    align-items: end;
+    max-width: 20%;
 
     & a{
-        width: 30%;
+        aspect-ratio: 1357 / 1024;
+        margin: auto 0 15% 0;
     }
+}
 
-    & img{
-        aspect-ratio: 1024 / 1327;
+#waterfall{
+    max-width: 12%;
+
+    & a{
+        aspect-ratio: 1024 / 2031;
+        margin: 15% 0 auto 0;
     }
+}
+
+
+
+#acetate-melt .in-container:nth-child(2){
+    display: flex;
+    justify-content: space-between;
+
+    & > div{
+        position: relative;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+#parrot{
+    max-width: 25%;
+
+    & a{
+        aspect-ratio: 1024 / 1369;
+        margin: 0 0 auto 0;
+    }
+}
+
+#plane{
+    display: flex;
+    align-items: end;
+    max-width: 25%;
+    
+    & a{
+        aspect-ratio: 1024 / 1605;
+        margin: auto 0 0 0;
+    }
+}
+
+
+
+#acetate-melt .in-container:last-child{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    & > div{
+        position: relative;
+        display: flex;
+        align-items: center;
+    }
+}
+
+#gardener{
+    max-width: 50%;
+    max-height: 75%;
+    aspect-ratio: 1024 / 1327;
 }
 
 
