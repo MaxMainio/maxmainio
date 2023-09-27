@@ -2,6 +2,8 @@
 var viewerHeight = window.innerHeight;
 var viewerWidth = window.innerWidth;
 
+var windowPos = window.scrollY;
+
 
 
 
@@ -222,7 +224,7 @@ window.addEventListener('pageshow', e => {
 
 
 document.addEventListener('scroll', e => {
-	const windowPos = window.scrollY;
+	windowPos = window.scrollY;
 
 	applyParallax(windowPos);
 
@@ -234,6 +236,7 @@ document.addEventListener('scroll', e => {
 window.addEventListener('resize', e => {
 	viewerHeight = window.innerHeight;
 	viewerWidth = window.innerWidth;
+	windowPos = window.scrollY;
 
 	if(sortlaterVisibility === true){
 		applyScroll();
