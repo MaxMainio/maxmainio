@@ -205,6 +205,7 @@ document.querySelector('#crosswalk-projection').playbackRate = 0.20;
 // GLOBAL TRIGGERS	----------------------------------------------------------------------------------------------------------------
 document.addEventListener('load', e => {
 	applyParallax(windowPos);
+	
 	if(sortlaterVisibility === true){
 		applyScroll();
 	};
