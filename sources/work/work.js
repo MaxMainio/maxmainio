@@ -34,7 +34,7 @@ const splashObserver = new IntersectionObserver(entries => {
 	entries.forEach(entry => {
 		if (entry.isIntersecting === false) {
 			entry.target.remove();
-			document.querySelector('.with-splash').className = '';
+			document.querySelector('.with-splash').removeAttribute('class');
 
 			var anchorHash = location.hash
 

@@ -471,6 +471,11 @@ footer{
         grid-template-columns: repeat(4, 1fr);
         
         .nav-logo{
+            font-variant-ligatures: contextual;
+            -moz-font-feature-settings: "calt";
+            -webkit-font-feature-settings: "calt";
+            font-feature-settings: "calt";
+            
             & > span{
                 &:first-child{
                     display: none;
