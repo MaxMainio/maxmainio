@@ -662,6 +662,7 @@ span.lawn, span.flower{
     gap: 1rem;
 
     max-width: 1980px;
+    max-height: 100%;
     margin: 0 auto;
     padding: 0 1rem;
     inset: 0;
@@ -791,8 +792,6 @@ span.lawn, span.flower{
 #acetate-melt .content{
     & a{
         display: block;
-        max-width: 100%;
-        max-height: 100%;
         mix-blend-mode: multiply;
         pointer-events: all;
     }
@@ -815,6 +814,8 @@ span.lawn, span.flower{
         position: relative;
         width: 100%;
         height: 100%;
+        display: flex;
+        justify-content: center;
     }
 }
 
@@ -824,6 +825,8 @@ span.lawn, span.flower{
     max-width: 20%;
 
     & a{
+        max-width: 100%;
+        max-height: 50%;
         aspect-ratio: 1357 / 1024;
         margin: auto 0 15% 0;
     }
@@ -833,6 +836,8 @@ span.lawn, span.flower{
     max-width: 12%;
 
     & a{
+        max-width: 100%;
+        max-height: 50%;
         aspect-ratio: 1024 / 2031;
         margin: 15% 0 auto 0;
     }
@@ -855,6 +860,8 @@ span.lawn, span.flower{
     max-width: 25%;
 
     & a{
+        max-width: 100%;
+        max-height: 65%;
         aspect-ratio: 1024 / 1369;
         margin: 0 0 auto 0;
     }
@@ -866,6 +873,8 @@ span.lawn, span.flower{
     max-width: 25%;
     
     & a{
+        max-width: 100%;
+        max-height: 65%;
         aspect-ratio: 1024 / 1605;
         margin: auto 0 0 0;
     }
@@ -887,7 +896,7 @@ span.lawn, span.flower{
 
 #gardener{
     max-width: 50%;
-    max-height: 75%;
+    max-height: 80%;
     aspect-ratio: 1024 / 1327;
 }
 
@@ -1230,11 +1239,41 @@ span.lawn, span.flower{
 
 
 
-/* @media (width <= 1000px) {
-    #lawn-container{
-        width: calc(100% - 2rem);
+@media (width <= 1000px) {
+    #acetate-melt .mid-container{
+        flex-direction: row-reverse;
     }
-} */
+
+    #cattle{
+        max-width: 40%;
+    
+        & a{
+            max-width: 40%;
+            margin-right: auto;
+        }
+    }
+    
+    #waterfall{
+        max-width: 40%;
+    
+        & a{
+            max-width: 20%;
+            margin-left: auto;
+        }
+    }
+
+    #parrot{
+        & a{
+            margin-top: 10vh;
+        }
+    }
+    
+    #plane{
+        & a{
+            margin-bottom: 10vh;
+        }
+    }
+}
 
 
 
@@ -1309,7 +1348,7 @@ span.lawn, span.flower{
 
 
 
-    .acetate-out-container{
+    /* .acetate-out-container{
         flex-direction: row-reverse;
     }
 
@@ -1333,7 +1372,7 @@ span.lawn, span.flower{
         & a{
             width: 45%;
         }
-    }
+    } */
 
 
 
