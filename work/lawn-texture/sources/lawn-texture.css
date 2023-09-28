@@ -130,7 +130,7 @@ article{
     }
 }
 
-@media (width >= 1400px) {
+@media (width <= 1400px) {
     .classic-width{
         max-width: 60ch;
     }
