@@ -106,10 +106,6 @@ body{
     color: var(--type-color);
 }
 
-main{
-    overflow: hidden;
-}
-
 ::selection{
     background: var(--green);
 }
