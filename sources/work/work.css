@@ -98,50 +98,6 @@ article{
     height: 100vh;
 }
 
-/* .content{
-    position: relative;
-    height: 100%;
-    width: 100%;
-    max-width: var(--mid-width);
-    margin: 0 auto;
-} */
-
-/* .context{
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    max-width: var(--in-width);
-    margin: 0 auto;
-    inset: 0;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: end;
-
-    pointer-events: none;
-
-    & h1{
-        font-weight: 600;
-        font-size: 3rem;
-        line-height: 3rem;
-
-        margin: 0 auto 0 1rem;
-        padding-right: 1rem;
-        pointer-events: all;
-    }
-
-    & h2{
-        font-weight: 400;
-        font-size: 1rem;
-        line-height: 1rem;
-        letter-spacing: 0.75px;
-
-        margin: 0 auto 1rem 1rem;
-        padding-right: 1rem;
-        pointer-events: all;
-    }
-} */
-
 
 
 .content{
@@ -152,8 +108,6 @@ article{
     margin: 0 auto;
 
     pointer-events: none;
-
-    /* background-color: red; */
 }
 
 .out-container{
@@ -161,8 +115,6 @@ article{
     height: 100%;
     width: 100vw;
     left: calc((-100vw + 2560px) / 2);
-
-    /* background-color: blue; */
 }
 
 .mid-container{
@@ -170,8 +122,6 @@ article{
     height: 100%;
     width: 100%;
     max-width: var(--mid-width);
-
-    /* background-color: green; */
 }
 
 .in-container{
@@ -181,8 +131,6 @@ article{
     max-width: var(--in-width);
     margin: 0 auto;
     inset: 0;
-
-    /* background-color: blue; */
 }
 
 
@@ -577,7 +525,7 @@ span.lawn, span.flower{
     justify-content: center;
     align-items: center;
 
-    & a {
+    & > a{
         display: block;
         position: relative;
     
@@ -1073,42 +1021,13 @@ span.lawn, span.flower{
 
 /* DRAWING  --------------------------------------------------------------------------------------------------------------------- */
 #drawings{
-    pointer-events: none;
-
-    .content a{
-        background-color: rgba(0, 0, 0, 0);
+    & a{
+        display: block;
         pointer-events: all;
-    }
 
-    & img{
-        width: 100%;
-    }
-}
-
-
-.drawing-hero-container{
-    position: relative;
-    height: 100%;
-    width: 100%;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    max-width: calc(var(--in-width) - 2rem);
-    margin: 0 1rem;
-}
-
-.dumari{
-    display: block;
-    position: relative;
-
-    max-height: calc(100% - 6rem);
-    aspect-ratio: 1024 / 1280;
-    
-
-    &:hover{
-        background-color: rgba(0, 0, 0, 0);
+        &:hover{
+            background-color: rgba(0, 0, 0, 0);
+        }
     }
 
     & img{
@@ -1117,67 +1036,77 @@ span.lawn, span.flower{
     }
 }
 
-
-
-.drawing-external{
-    position: absolute;
-    display: none;
+#drawings .out-container{
+    width: calc(var(--mid-width) + 880px);
     left: -440px;
-    height: 100vh;
-    width: 100vw;
-    min-width: calc(var(--mid-width) + 880px);
+    display: flex;
+    justify-content: space-between;
 
-    pointer-events: none;
+    & > div{
+        position: relative;
+        height: 100%;
+        max-width: 440px;
+        display: flex;
+        justify-content: center;
+    }
 
-    & img{
+    & a{
+        max-width: 100%;
+        max-height: 50%;
         aspect-ratio: 683 / 1024;
     }
 }
 
-.grass{
-    position: absolute;
-    inset: auto auto 0 0;
-    width: 400px;
-    margin-bottom: 2rem;
+.drawing-content{
+    display: block;
 }
 
-.feet{
-    position: absolute;
-    inset: 0 0 auto auto;
-    width: 400px;
-    margin-top: 2rem;
-    transform: rotate(180deg);
+#grass{
+    margin: auto 0 2rem 0;
 }
 
-
-
-.drawing-out{
-    position: absolute;
-    height: 100vh;
-    width: 100vw;
-    max-width: var(--mid-width);
-
-    pointer-events: none;
+#feet{
+    margin: 2rem 0 auto 0;
 
     & img{
+        transform: scaleX(-1);
+    }
+}
+
+
+
+#drawings .mid-container{
+    & > a{
+        max-width: 100%;
+        max-height: 50%;
         aspect-ratio: 1280 / 1024;
     }
 }
 
-.history-class{
-    aspect-ratio: 5 / 4;
-    height: 40%;
-    max-width: 100vw;
+#class{
     position: absolute;
     inset: 0 auto auto 0;
 }
 
-.balcony{
-    aspect-ratio: 5 / 4;
-    height: 40%;
-    max-width: 100vw;
+#balcony{
     position: absolute;
     inset: auto 0 0 auto;
+}
+
+
+
+#drawings .in-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    & > a{
+        position: relative;
+    
+        max-width: calc(80% - 6rem);
+        max-height: calc(80% - 6rem);
+        aspect-ratio: 1024 / 1280;
+    }
 }
 
 
@@ -1190,16 +1119,17 @@ span.lawn, span.flower{
 
 /* Media Queries    ------------------------------------------------------------------------------------------------------------- */
 @media (width >= 3440px) {
-    .drawing-external{
+    #drawings .out-container{
+        width: 100vw;
         left: calc(calc(100vw - var(--mid-width)) / -2);
     }
 }
 
 
 
-@media (width >= 2560px) {
-    .drawing-external{
-        display: block;
+@media (width <= 2560px) {
+    #drawings .out-container{
+        display: none;
     }
 }
 
