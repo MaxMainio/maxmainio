@@ -456,7 +456,7 @@ footer{
 
 
 /* Media Queries    ------------------------------------------------------------------------------------------------------------- */
-@media (max-width: 1000px) {
+@media (width <= 1000px) {
     #footer-nav{
         display: flex;
         flex-direction: column;
@@ -470,7 +470,7 @@ footer{
 
 
 
-@media (max-width: 900px) {
+@media (width <= 900px) {
     nav{
         grid-template-columns: repeat(4, 1fr);
         
@@ -508,7 +508,7 @@ footer{
 
 
 
-@media (max-width: 800px) {
+@media (width <= 800px) {
     #fader{
         display: none;
     }

@@ -75,7 +75,7 @@ video{
 
 
 /* Media Queries    ------------------------------------------------------------------------------------------------------------- */
-@media (max-width: 685px) {
+@media (width <= 685px) {
     .interaction-container{
         flex-direction: column;
     }

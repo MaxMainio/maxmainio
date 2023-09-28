@@ -112,7 +112,7 @@ article{
 
 
 /* Media Queries    ------------------------------------------------------------------------------------------------------------- */
-@media (min-width: 2560px) {
+@media (width >= 2560px) {
     .classic-width{
         max-width: calc(60ch + ((2560px - 1400px) / 2));
     }
@@ -146,7 +146,7 @@ article{
 
 
 
-@media (max-width: 685px) {
+@media (width <= 685px) {
     article{
         display: grid;
         grid-template-columns: 1fr;
@@ -195,7 +195,7 @@ article{
 
 
 
-@media (max-width: 518px) {
+@media (width <= 518px) {
     #legibility-btn{
         max-width: calc(50vw - 2.5rem);
 

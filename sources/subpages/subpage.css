@@ -130,7 +130,7 @@ main{
 
 
 /* Media Queries    ------------------------------------------------------------------------------------------------------------- */
-@media (max-width: 685px) {
+@media (width <= 685px) {
     article{
         display: block;
         position: relative;

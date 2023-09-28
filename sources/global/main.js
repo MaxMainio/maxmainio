@@ -15,8 +15,6 @@ var vw = window.innerWidth;
 const innerLinks = document.querySelectorAll('a:not([target="_self"], [target="_blank"])');
 const faderElement = document.querySelector('#fader');
 
-console.log(innerLinks);
-
 if (vw > 800) {
     window.onpageshow = () => {
         faderElement.classList.remove('motion');
