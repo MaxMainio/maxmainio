@@ -320,6 +320,10 @@ span.lawn, span.flower{
 
 
 /* SORT LATER   ----------------------------------------------------------------------------------------------------------------- */
+#sort-later{
+    overflow: hidden;
+}
+
 #sort-later .out-container{
     width: 3440px;
 
