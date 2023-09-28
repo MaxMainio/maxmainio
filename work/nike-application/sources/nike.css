@@ -44,15 +44,15 @@ video{
 
 
 .classic-width{
-    max-width: calc(60ch + calc(calc(100vw - 1400px) / 2));
+    max-width: calc(60ch + calc(calc(100vw - var(--in-width)) / 2));
 }
 
 .first-indent{
-    text-indent: calc(calc(100vw - 1400px) / 2);
+    text-indent: calc(calc(100vw - var(--in-width)) / 2);
 }
 
 .full-indent{
-    padding-left: calc(calc(100vw - 1400px) / 2);
+    padding-left: calc(calc(100vw - var(--in-width)) / 2);
 }
 
 .full-width{

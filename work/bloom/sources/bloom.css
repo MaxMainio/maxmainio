@@ -3,7 +3,7 @@
     grid-column: 1 / 9;
     position: relative;
     width: 100%;
-    max-width: calc(1400px - 2rem);
+    max-width: calc(var(--in-width) - 2rem);
     margin: 0 auto;
 }
 

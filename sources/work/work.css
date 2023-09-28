@@ -328,7 +328,7 @@ span.lawn, span.flower{
     align-items: center;
 
     position: relative;
-    left: calc(((-100vw + 2560px) / 2) - (-50vw + 1720px));
+    left: calc(((-100vw + var(--mid-width)) / 2) - (-50vw + 1720px));
 }
 
 .sortlater-content{
@@ -1128,14 +1128,6 @@ span.lawn, span.flower{
 
 
 @media (width <= 2560px) {
-    #drawings .out-container{
-        display: none;
-    }
-}
-
-
-
-@media (width <= 2560px) {
     .out-container{
         left: 0;
     }
@@ -1151,6 +1143,12 @@ span.lawn, span.flower{
     }
 
     #sortlater-print-7{
+        display: none;
+    }
+
+
+
+    #drawings .out-container{
         display: none;
     }
 }

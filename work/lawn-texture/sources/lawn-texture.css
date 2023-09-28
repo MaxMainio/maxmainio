@@ -49,15 +49,15 @@ article{
 
 /* TYPE ------------------------------------------------------------------------------------------------------------------------- */
 .classic-width{
-    max-width: calc(60ch + ((100vw - 1400px) / 2));
+    max-width: calc(60ch + ((100vw - var(--in-width)) / 2));
 }
 
 .first-indent{
-    text-indent: calc((100vw - 1400px) / 2);
+    text-indent: calc((100vw - var(--in-width)) / 2);
 }
 
 .full-indent{
-    padding-left: calc((100vw - 1400px) / 2);
+    padding-left: calc((100vw - var(--in-width)) / 2);
 }
 
 .full-width{
@@ -76,7 +76,7 @@ article{
     position: fixed;
 
     top: auto;
-    right: calc(((100vw - 1400px) / 2) + 1rem);
+    right: calc(((100vw - var(--in-width)) / 2) + 1rem);
     bottom: 3rem;
     left: auto;
 
@@ -114,15 +114,15 @@ article{
 /* Media Queries    ------------------------------------------------------------------------------------------------------------- */
 @media (width >= 2560px) {
     .classic-width{
-        max-width: calc(60ch + ((2560px - 1400px) / 2));
+        max-width: calc(60ch + ((var(--mid-width) - var(--in-width)) / 2));
     }
     
     .first-indent{
-        text-indent: calc((2560px - 1400px) / 2);
+        text-indent: calc((var(--mid-width) - var(--in-width)) / 2);
     }
     
     .full-indent{
-        padding-left: calc((2560px - 1400px) / 2);
+        padding-left: calc((var(--mid-width) - var(--in-width)) / 2);
     }
     
     .full-width{
@@ -130,7 +130,7 @@ article{
     }
 }
 
-@media (max-width: 1400px) {
+@media (width >= 1400px) {
     .classic-width{
         max-width: 60ch;
     }
