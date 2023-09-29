@@ -932,6 +932,7 @@ a.in-fit{
 
 .homodeus-shadow{
     mix-blend-mode: multiply;
+    box-shadow: inset 1% 1% white;
 }
 
 
