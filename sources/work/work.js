@@ -117,9 +117,48 @@ function applyParallax(windowPos) {
         const elements = article.querySelectorAll('[data-rate]');
 
         elements.forEach(el => {
-            el.style.transform = 'translateY(' + multiplier * el.dataset.rate + 'px)';
+			el.style.setProperty('-webkit-transform', 'translateY(' + multiplier * el.dataset.rate + 'px)');
+			el.style.setProperty('-moz-transform', 'translateY(' + multiplier * el.dataset.rate + 'px)');
+			el.style.setProperty('-o-transform', 'translateY(' + multiplier * el.dataset.rate + 'px)');
+			el.style.setProperty('-ms-transform', 'translateY(' + multiplier * el.dataset.rate + 'px)');
+			el.style.setProperty('transform', 'translateY(' + multiplier * el.dataset.rate + 'px)');
         });
     });
+};
+
+
+
+
+
+
+
+
+
+// PROJECT IVY	--------------------------------------------------------------------------------------------------------------------
+var ivyIndex = 0;
+var ivyText = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Commodo odio aenean sed adipiscing diam donec adipiscing. Sed velit dignissim sodales ut. Ultrices neque ornare aenean euismod. Ipsum a arcu cursus vitae congue. Morbi blandit cursus risus at ultrices mi tempus imperdiet nulla. Egestas erat imperdiet sed euismod nisi. Molestie a iaculis at erat pellentesque adipiscing commodo. Suspendisse faucibus interdum posuere lorem ipsum dolor. Laoreet sit amet cursus sit amet dictum. A cras semper auctor neque vitae tempus quam pellentesque nec. Sed cras ornare arcu dui vivamus arcu. Pellentesque habitant morbi tristique senectus et netus et malesuada fames. Libero id faucibus nisl tincidunt eget nullam non nisi est. Ut eu sem integer vitae justo eget magna fermentum iaculis. Cras semper auctor neque vitae tempus quam pellentesque. Ipsum suspendisse ultrices gravida dictum. Mauris sit amet massa vitae tortor. Mauris a diam maecenas sed. Rhoncus mattis rhoncus urna neque.';
+var speed = 50;
+
+const ivyContainer = document.getElementById('ivy-container');
+var ivyContainerWidth = ivyContainer.offsetWidth;
+var ivyContainerHeight = ivyContainer.offsetHeight;
+
+console.log(ivyContainerWidth, ivyContainerHeight);
+
+window.addEventListener('click', e =>{
+	console.log(ivyContainerWidth, ivyContainerHeight);
+});
+
+function typeWriter() {
+  if (ivyIndex < ivyText.length) {
+    document.getElementById("growth").innerHTML += ivyText.charAt(ivyIndex);
+    ivyIndex++;
+    setTimeout(typeWriter, speed);
+  }
+}
+
+function projectIvy(){
+
 };
 
 
@@ -207,6 +246,7 @@ document.querySelector('#crosswalk-projection').playbackRate = 0.20;
 // GLOBAL TRIGGERS	----------------------------------------------------------------------------------------------------------------
 // document.addEventListener('load', e => {
 // 	applyParallax(windowPos);
+// 	projectIvy();
 
 // 	if(sortlaterVisibility === true){
 // 		applyScroll();
@@ -215,6 +255,8 @@ document.querySelector('#crosswalk-projection').playbackRate = 0.20;
 
 window.addEventListener('pageshow', e => {
 	applyParallax(windowPos);
+	// projectIvy();
+	typeWriter();
 	
 	if(sortlaterVisibility === true){
 		applyScroll();
