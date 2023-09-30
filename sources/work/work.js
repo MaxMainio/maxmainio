@@ -140,25 +140,23 @@ var ivyText = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do e
 var speed = 50;
 
 const ivyContainer = document.getElementById('ivy-container');
-var ivyContainerWidth = ivyContainer.offsetWidth;
-var ivyContainerHeight = ivyContainer.offsetHeight;
+const ivyP = document.getElementById('ivy');
 
-console.log(ivyContainerWidth, ivyContainerHeight);
 
-window.addEventListener('click', e =>{
-	console.log(ivyContainerWidth, ivyContainerHeight);
-});
+
+function projectIvy(){
+	let ivyHeight = ivyContainer.offsetHeight;
+	let lineHeight = ivyHeight / 21;
+	ivyP.style.fontSize = lineHeight + 'px';
+	ivyP.style.lineHeight = lineHeight + 'px';
+};
 
 function typeWriter() {
   if (ivyIndex < ivyText.length) {
     document.getElementById("growth").innerHTML += ivyText.charAt(ivyIndex);
     ivyIndex++;
     setTimeout(typeWriter, speed);
-  }
-}
-
-function projectIvy(){
-
+  };
 };
 
 
@@ -255,7 +253,7 @@ document.querySelector('#crosswalk-projection').playbackRate = 0.20;
 
 window.addEventListener('pageshow', e => {
 	applyParallax(windowPos);
-	// projectIvy();
+	projectIvy();
 	typeWriter();
 	
 	if(sortlaterVisibility === true){
@@ -279,6 +277,8 @@ window.addEventListener('resize', e => {
 	viewerHeight = window.innerHeight;
 	viewerWidth = window.innerWidth;
 	windowPos = window.scrollY;
+
+	projectIvy();
 
 	if(sortlaterVisibility === true){
 		applyScroll();
