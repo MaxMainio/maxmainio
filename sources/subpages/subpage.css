@@ -91,9 +91,7 @@ img{
 #title{
     font-weight: 600;
     font-size: 3rem;
-
-    line-height: 4rem;
-    margin: -0.5rem 0;
+    line-height: 3rem;
     position: fixed;
 
     overflow: visible;
@@ -102,7 +100,7 @@ img{
 #sub-title{
     font-weight: 400;
     font-size: 1rem;
-    line-height: 1rem;
+    line-height: 1.3rem;
     letter-spacing: 0.75px;
     margin-top: 3rem;
 }

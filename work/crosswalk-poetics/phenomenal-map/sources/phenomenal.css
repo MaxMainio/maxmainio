@@ -1,12 +1,6 @@
 /* CONTENT  --------------------------------------------------------------------------------------------------------------------- */
-.context > p{
-    &:nth-last-of-type(2){
-        text-indent: -0.9rem;
-    }
-
-    &:nth-last-of-type(1){
-        margin-top: 0;
-    }
+.context > p:nth-last-of-type(1){
+    margin-top: 0;
 }
 
 img{

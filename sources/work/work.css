@@ -1,9 +1,9 @@
 /* IMPORTS  --------------------------------------------------------------------------------------------------------------------- */
 @font-face {
     font-family: "Project-Ivy";
-    src: url('../../work/hedera/assets/content/fonts/NewIvyChainVF.woff2') format('woff2'),
-        url('../../work/hedera/assets/content/fonts/NewIvyChainVF.woff') format('woff'),
-        url('../../work/hedera/assets/content/fonts/NewIvyChainVF.otf') format('opentype');
+    src: url('../../work/hedera/assets/content/fonts/Hedera-VF.woff2') format('woff2'),
+        url('../../work/hedera/assets/content/fonts/Hedera-VF.woff') format('woff'),
+        url('../../work/hedera/assets/content/fonts/Hedera-VF') format('opentype');
     font-weight: 400;
     font-style: normal;
 }
@@ -526,6 +526,7 @@ span.lawn, span.flower{
     grid-template-columns: repeat(6, calc((100% / 6) - (5rem / 6)));
     grid-template-rows: repeat(4, calc((100% / 4) - (3rem / 4)));
     gap: 1rem;
+    padding: 0 1rem;
 
     & a{
         display: block;
@@ -564,6 +565,7 @@ span.lawn, span.flower{
     grid-template-columns: repeat(6, calc((100% / 6) - (5rem / 6)));
     grid-template-rows: repeat(4, calc((100% / 4) - (3rem / 4)));
     gap: 1rem;
+    padding: 0 1rem;
 
     & a{
         display: block;
@@ -625,6 +627,7 @@ span.lawn, span.flower{
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 0 1rem;
 
     & > a{
         display: block;
