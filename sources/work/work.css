@@ -1,9 +1,9 @@
 /* IMPORTS  --------------------------------------------------------------------------------------------------------------------- */
 @font-face {
     font-family: "Project-Ivy";
-    src: url('../../work/project-ivy/assets/content/fonts/NewIvyChainVF.woff2') format('woff2'),
-        url('../../work/project-ivy/assets/content/fonts/NewIvyChainVF.woff') format('woff'),
-        url('../../work/project-ivy/assets/content/fonts/NewIvyChainVF.otf') format('opentype');
+    src: url('../../work/hedera/assets/content/fonts/NewIvyChainVF.woff2') format('woff2'),
+        url('../../work/hedera/assets/content/fonts/NewIvyChainVF.woff') format('woff'),
+        url('../../work/hedera/assets/content/fonts/NewIvyChainVF.otf') format('opentype');
     font-weight: 400;
     font-style: normal;
 }
@@ -205,7 +205,7 @@ hgroup{
 
 
 /* Project Ivy  ----------------------------------------------------------------------------------------------------------------- */
-#project-ivy .out-container{
+#hedera .out-container{
     display: flex;
     align-items: center;
 }
