@@ -193,6 +193,7 @@ article{
 @media (width <= 518px) {
     #legibility-btn{
         max-width: calc(50vw - 2.5rem);
+        inset: auto 1rem 1rem auto;
 
         & h3{
             font-weight: 300;
