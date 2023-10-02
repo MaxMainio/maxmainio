@@ -3,7 +3,7 @@
     font-family: "Project-Ivy";
     src: url('../../work/hedera/assets/content/fonts/Hedera-VF.woff2') format('woff2'),
         url('../../work/hedera/assets/content/fonts/Hedera-VF.woff') format('woff'),
-        url('../../work/hedera/assets/content/fonts/Hedera-VF') format('opentype');
+        url('../../work/hedera/assets/content/fonts/Hedera-VF.ttf') format('truetype');
     font-weight: 400;
     font-style: normal;
 }
