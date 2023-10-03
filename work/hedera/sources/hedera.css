@@ -26,6 +26,7 @@
     --sampleColor: #333333;
 
     --multiplier: 1.1;
+    --overshoot: 0px;
 }
 
 
@@ -140,6 +141,9 @@
     font-size: 1rem;
     line-height: 1.3rem;
     letter-spacing: 0.75px;
+
+    position: relative;
+    z-index: 1;
 
     & p{
         margin: 0;
@@ -275,102 +279,6 @@ input[type="color"]::-webkit-color-swatch {
 
 
 
-#sample-container{
-    position: relative;
-    height: fit-content;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    
-    font-size: var(--sampleSize);
-    /* line-height: (var(--sampleHeight) * var(--multiplier)); */
-    line-height: var(--sampleHeight);
-}
-
-.scaler{
-    width: 100%;
-    height: calc(var(--sampleSize) * var(--multiplier));
-    /* height: var(--sampleSize); */
-}
-
-
-
-#sample{
-    font-family: Project-Ivy;
-    font-weight: 400;
-    font-size: inherit;
-    line-height: inherit;
-    letter-spacing: 0px;
-    /* font-variation-settings: "OFST" var(--offset); */
-    font-variation-settings: "OFST" 0;
-    color: var(--sampleColor);
-
-    font-variant-ligatures: contextual;
-    -moz-font-feature-settings: "calt" var(--caltToggle);
-    -webkit-font-feature-settings: "calt" var(--caltToggle);
-    font-feature-settings: "calt" var(--caltToggle);
-
-    position: absolute;
-    top: 0;
-    display: block;
-    max-width: var(--in-width);
-    margin: 0 auto;
-}
-
-#sample:focus{
-    outline: none;
-}
-
-
-
-
-hr{
-    margin: 0;
-    width: 100%;
-    position: absolute;
-    z-index: -1;
-
-
-
-    &:nth-of-type(1){
-        border-top: 1px solid var(--typeHeights);
-        border-right: hidden;
-        border-bottom: hidden;
-        border-left: hidden;
-        top: -0.05em;
-    }
-
-    &:nth-of-type(2){
-        border-top: 1px solid var(--typeHeights);
-        border-right: hidden;
-        border-bottom: hidden;
-        border-left: hidden;
-        top: 0.25em;
-    }
-
-    &:nth-of-type(3){
-        border-top: hidden;
-        border-right: hidden;
-        border-left: hidden;
-        border-bottom: 1px solid var(--typeHeights);
-        bottom: 0.25em;
-    }
-
-    &:nth-of-type(4){
-        border-top: hidden;
-        border-right: hidden;
-        border-left: hidden;
-        border-bottom: 1px solid var(--typeHeights);
-        bottom: -0.05em;
-    }
-}
-
-
-
-
-
-
-
 
 
 
@@ -388,20 +296,63 @@ hr{
     /* line-height: (var(--sampleHeight) * var(--multiplier)); */
     line-height: var(--sampleHeight);
 
-    background-color: red;
+    /* background-color: red; */
 }
 
 .text-background{
     width: 100%;
     height: 100%;
 
-    background-color: green;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    /* background-color: green; */
 }
 
 .test-2{
     height: calc(var(--sampleSize) * var(--multiplier));
+    position: relative;
 
-    background-color: aqua;
+    /* background-color: aqua; */
+
+    & > hr{
+        margin: 0;
+        width: 100%;
+        position: absolute;
+
+        &:nth-of-type(1){
+            border-top: 1px solid var(--typeHeights);
+            border-right: hidden;
+            border-bottom: hidden;
+            border-left: hidden;
+            top: 0;
+        }
+    
+        &:nth-of-type(2){
+            border-top: 1px solid var(--typeHeights);
+            border-right: hidden;
+            border-bottom: hidden;
+            border-left: hidden;
+            top: 0.3em;
+        }
+    
+        &:nth-of-type(3){
+            border-top: hidden;
+            border-right: hidden;
+            border-left: hidden;
+            border-bottom: 1px solid var(--typeHeights);
+            bottom: 0.3em;
+        }
+    
+        &:nth-of-type(4){
+            border-top: hidden;
+            border-right: hidden;
+            border-left: hidden;
+            border-bottom: 1px solid var(--typeHeights);
+            bottom: 0;
+        }
+    }
 }
 
 
@@ -411,11 +362,11 @@ hr{
     max-width: var(--in-width);
 
     position: absolute;
-    inset: 0;
+    inset: var(--overshoot) 0 auto 0;
     margin: 0 auto;
     padding: 0 1rem;
 
-    background-color: blue;
+    /* background-color: blue; */
 }
 
 .test-3{
@@ -424,7 +375,7 @@ hr{
     font-size: inherit;
     line-height: inherit;
     letter-spacing: 0px;
-    font-variation-settings: "OFST" 0;
+    font-variation-settings: "OFST" var(--offset);
     color: var(--sampleColor);
 
     font-variant-ligatures: contextual;

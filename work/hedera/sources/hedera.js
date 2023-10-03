@@ -1,6 +1,6 @@
 // GLOBAL TRIGGERS	----------------------------------------------------------------------------------------------------------------
 window.addEventListener('load', e => {
-    // setScaler();
+    setScaler();
 });
 
 window.addEventListener('pageshow', e => {
@@ -87,6 +87,13 @@ const offsetSlider = document.getElementById('offset');
 const contextualCheck = document.getElementById('contextual');
 const colorPicker = document.getElementById('colorizor');
 
+
+
+const sampleBG = document.getElementById('backdrop');
+const textSample = document.getElementById('textSample');
+
+var allScalers = document.querySelectorAll('.test-2');
+
 const rem = parseFloat(getComputedStyle(document.documentElement).fontSize);
 
 
@@ -95,6 +102,9 @@ var sampleFontSize = 10;
 var sampleLineHeight = 1.1;
 var sampleElementSize = sampleFontSize * rem * sampleLineHeight;
 var sampleRenderedSize = sampleFontSize * 1.1 * rem;
+
+var sampleRowsNumber = Math.round(textSample.offsetHeight / sampleElementSize);;
+var overShoot = (sampleElementSize - sampleRenderedSize) / 2;
 
 
 
@@ -139,18 +149,6 @@ colorPicker.oninput = function() {
 
 
 
-
-
-
-
-
-
-const sampleBG = document.getElementById('backdrop');
-const textSample = document.getElementById('textSample');
-
-
-
-
 textSample.addEventListener("input", function() {
     setScaler();
 }, false);
@@ -159,22 +157,60 @@ textSample.addEventListener("input", function() {
 
 
 
+
+
+
+
 function setScaler(){
     let newHeight = textSample.offsetHeight;
-    sampleBG.style.height = newHeight + 'px';
-
+    
     sampleElementSize = sampleFontSize * rem * sampleLineHeight;
     sampleRenderedSize = sampleFontSize * 1.1 * rem;
 
-    let sampleRowsNumber = Math.round(newHeight / sampleElementSize);
-
-
-    let overShoot = (sampleElementSize - sampleRenderedSize) / 2;
+    sampleRowsNumber = Math.round(newHeight / sampleElementSize);
+    overShoot = (sampleElementSize - sampleRenderedSize) / 2;
 
 
 
-    // console.log(sampleRowsNumber);
-    console.log(overShoot);
+    document.documentElement.style.setProperty('--overshoot', (overShoot * -1) + 'px');
+    sampleBG.style.height = newHeight - (overShoot * 2) + 'px';
+
+    let differenceOfRows = sampleRowsNumber - allScalers.length;
+
+    if(differenceOfRows === 0){
+        console.log('same');
+        return;
+    };
+
+    if(differenceOfRows > 0){
+        addScaler(Math.abs(differenceOfRows));
+        return;
+    };
+
+    if(differenceOfRows < 0){
+        removeScaler(Math.abs(differenceOfRows));
+        return;
+    };
+};
+
+
+
+function addScaler(repetitionNumber){
+    for(let i = 0; i < repetitionNumber; i++){
+        console.log('add');
+        sampleBG.innerHTML += '<div class="test-2"><hr><hr><hr><hr></div>';
+    }
+    
+    allScalers = document.querySelectorAll('.test-2');
+};
+
+function removeScaler(repetitionNumber){
+    for(let i = 0; i < repetitionNumber; i++){
+        console.log('remove');
+        allScalers[i].remove();
+    }
+    
+    allScalers = document.querySelectorAll('.test-2');
 };
 
 
