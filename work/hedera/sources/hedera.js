@@ -1,4 +1,8 @@
 // GLOBAL TRIGGERS	----------------------------------------------------------------------------------------------------------------
+window.addEventListener('load', e => {
+    // setScaler();
+});
+
 window.addEventListener('pageshow', e => {
     heroSwap();
     fitHeroIvy();
@@ -81,31 +85,68 @@ const lineHeightSlider = document.getElementById('lineHeight');
 const offsetSlider = document.getElementById('offset');
 
 const contextualCheck = document.getElementById('contextual');
+const colorPicker = document.getElementById('colorizor');
+
+
+
+
+
+
+
 
 
 fontSizeSlider.oninput = function() {
-  console.log(fontSizeSlider.value);
-}
+    document.documentElement.style.setProperty('--sampleSize', (fontSizeSlider.value / 10) + 'rem');
+};
 
+lineHeightSlider.oninput = function() {
+    document.documentElement.style.setProperty('--sampleHeight', (lineHeightSlider.value / 10));
+    // setScaler();
+};
+
+offsetSlider.oninput = function() {
+    document.documentElement.style.setProperty('--offset', offsetSlider.value);
+};
 
 
 
 function contextToggle(){
     if (contextualCheck.checked == true){
-        sample.style.setProperty('font-variant-ligatures', 'contextual');
-        sample.style.setProperty('-moz-font-feature-settings', '"calt" 1');
-        sample.style.setProperty('-webkit-font-feature-settings', '"calt" 1');
-        sample.style.setProperty('font-feature-settings', '"calt" 1');
-
+        document.documentElement.style.setProperty('--caltToggle', 1);
         contextualCheck.nextElementSibling.innerHTML = 'Disconnect';
-    } else {
-        sample.style.setProperty('font-variant-ligatures', 'contextual');
-        sample.style.setProperty('-moz-font-feature-settings', '"calt" 0');
-        sample.style.setProperty('-webkit-font-feature-settings', '"calt" 0');
-        sample.style.setProperty('font-feature-settings', '"calt" 0');
 
+    } else {
+        document.documentElement.style.setProperty('--caltToggle', 0);
         contextualCheck.nextElementSibling.innerHTML = 'Reconnect';
     };
+};
+
+colorPicker.oninput = function() {
+    document.documentElement.style.setProperty('--sampleColor', colorPicker.value);
+};
+
+
+
+
+
+
+
+
+
+var allScalers = document.querySelectorAll('.scaler');
+
+
+
+function setScaler(){
+    var computedFontSize = window.getComputedStyle(sample).fontSize
+
+
+
+    allScalers.forEach((element) => {
+        console.log(parseInt(computedFontSize))
+        element.style.height = parseInt(computedFontSize) * 1.1 + 'px';
+    });
+    sampleContainer.style.height = (sample.offsetHeight * 1.1) + 'px';
 };
 
 
