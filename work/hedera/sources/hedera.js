@@ -87,6 +87,15 @@ const offsetSlider = document.getElementById('offset');
 const contextualCheck = document.getElementById('contextual');
 const colorPicker = document.getElementById('colorizor');
 
+const rem = parseFloat(getComputedStyle(document.documentElement).fontSize);
+
+
+
+var sampleFontSize = 10;
+var sampleLineHeight = 1.1;
+var sampleElementSize = sampleFontSize * rem * sampleLineHeight;
+var sampleRenderedSize = sampleFontSize * 1.1 * rem;
+
 
 
 
@@ -96,12 +105,15 @@ const colorPicker = document.getElementById('colorizor');
 
 
 fontSizeSlider.oninput = function() {
-    document.documentElement.style.setProperty('--sampleSize', (fontSizeSlider.value / 10) + 'rem');
+    sampleFontSize = fontSizeSlider.value / 10;
+    document.documentElement.style.setProperty('--sampleSize', sampleFontSize + 'rem');
+    setScaler();
 };
 
 lineHeightSlider.oninput = function() {
-    document.documentElement.style.setProperty('--sampleHeight', (lineHeightSlider.value / 10));
-    // setScaler();
+    sampleLineHeight = lineHeightSlider.value / (10 / 1.1);
+    document.documentElement.style.setProperty('--sampleHeight', sampleLineHeight);
+    setScaler();
 };
 
 offsetSlider.oninput = function() {
@@ -133,20 +145,36 @@ colorPicker.oninput = function() {
 
 
 
-var allScalers = document.querySelectorAll('.scaler');
+const sampleBG = document.getElementById('backdrop');
+const textSample = document.getElementById('textSample');
+
+
+
+
+textSample.addEventListener("input", function() {
+    setScaler();
+}, false);
+
+
 
 
 
 function setScaler(){
-    var computedFontSize = window.getComputedStyle(sample).fontSize
+    let newHeight = textSample.offsetHeight;
+    sampleBG.style.height = newHeight + 'px';
+
+    sampleElementSize = sampleFontSize * rem * sampleLineHeight;
+    sampleRenderedSize = sampleFontSize * 1.1 * rem;
+
+    let sampleRowsNumber = Math.round(newHeight / sampleElementSize);
+
+
+    let overShoot = (sampleElementSize - sampleRenderedSize) / 2;
 
 
 
-    allScalers.forEach((element) => {
-        console.log(parseInt(computedFontSize))
-        element.style.height = parseInt(computedFontSize) * 1.1 + 'px';
-    });
-    sampleContainer.style.height = (sample.offsetHeight * 1.1) + 'px';
+    // console.log(sampleRowsNumber);
+    console.log(overShoot);
 };
 
 

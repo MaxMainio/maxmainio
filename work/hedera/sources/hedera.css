@@ -20,10 +20,12 @@
 :root{
     --typeHeights: rgba(51, 51, 51, 0.25);
     --sampleSize: 10rem;
-    --sampleHeight: 1;
+    --sampleHeight: 1.1;
     --offset: -100;
     --caltToggle: 1;
     --sampleColor: #333333;
+
+    --multiplier: 1.1;
 }
 
 
@@ -277,12 +279,21 @@ input[type="color"]::-webkit-color-swatch {
     position: relative;
     height: fit-content;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     
     font-size: var(--sampleSize);
+    /* line-height: (var(--sampleHeight) * var(--multiplier)); */
     line-height: var(--sampleHeight);
 }
+
+.scaler{
+    width: 100%;
+    height: calc(var(--sampleSize) * var(--multiplier));
+    /* height: var(--sampleSize); */
+}
+
+
 
 #sample{
     font-family: Project-Ivy;
@@ -299,7 +310,8 @@ input[type="color"]::-webkit-color-swatch {
     -webkit-font-feature-settings: "calt" var(--caltToggle);
     font-feature-settings: "calt" var(--caltToggle);
 
-    position: relative;
+    position: absolute;
+    top: 0;
     display: block;
     max-width: var(--in-width);
     margin: 0 auto;
@@ -351,4 +363,78 @@ hr{
         border-bottom: 1px solid var(--typeHeights);
         bottom: -0.05em;
     }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.test-1{
+    position: relative;
+    width: 100%;
+    height: fit-content;
+
+    font-size: var(--sampleSize);
+    /* line-height: (var(--sampleHeight) * var(--multiplier)); */
+    line-height: var(--sampleHeight);
+
+    background-color: red;
+}
+
+.text-background{
+    width: 100%;
+    height: 100%;
+
+    background-color: green;
+}
+
+.test-2{
+    height: calc(var(--sampleSize) * var(--multiplier));
+
+    background-color: aqua;
+}
+
+
+
+.text-area{
+    width: 100%;
+    max-width: var(--in-width);
+
+    position: absolute;
+    inset: 0;
+    margin: 0 auto;
+    padding: 0 1rem;
+
+    background-color: blue;
+}
+
+.test-3{
+    font-family: Project-Ivy;
+    font-weight: 400;
+    font-size: inherit;
+    line-height: inherit;
+    letter-spacing: 0px;
+    font-variation-settings: "OFST" 0;
+    color: var(--sampleColor);
+
+    font-variant-ligatures: contextual;
+    -moz-font-feature-settings: "calt" var(--caltToggle);
+    -webkit-font-feature-settings: "calt" var(--caltToggle);
+    font-feature-settings: "calt" var(--caltToggle);
+
+    margin: 0;
+}
+
+.test-3:focus{
+    outline: none;
 }
