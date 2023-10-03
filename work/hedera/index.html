@@ -80,6 +80,49 @@
 						</p>
 					</div>
 				</div>
+
+				<div id="alphabet" class="work-div">
+					<div id="sample-container">
+						<div id="scaler">
+							<hr>
+							<hr>
+							<hr>
+							<hr>
+						</div>
+
+						<p id="sample" contentEditable title="Click to input your own text">abjx</p>
+					</div>
+
+					<div id="interactive">
+						<div class="slider-container">
+							<p>Font Size:</p>
+							<input type="range" min="16" max="320" value="160" class="slider" id="fontSize">
+						</div>
+
+						<div class="slider-container">
+							<p>Line Height:</p>
+							<input type="range" min="0" max="10" value="0" class="slider" id="lineHeight">
+						</div>
+
+						<div class="slider-container">
+							<p>Offset Axis:</p>
+							<input type="range" min="-100" max="100" value="0" class="slider" id="offset">
+						</div>
+
+						<div class="box-shadow">
+							<p class="check-container">
+								<input type="checkbox" id="contextual" onclick="contextToggle()" checked/>
+								<label for="contextual">Disconnect</label>
+							</p>
+						</div>
+
+						<div class="box-shadow">
+							<input type="color" id="colorizor" name="colorizor" value="#333333"
+								alt="Click here to set the color of the sample text"
+								title="Click here to set the color of the sample text"/>
+						</div>
+					</div>
+				</div>
 			</article>
 		</main>
 
