@@ -82,6 +82,7 @@ function fitHeroIvy(){
 const sampleContainer = document.getElementById('sample-container');
 const sample = document.getElementById('sample');
 
+const allSliders = document.querySelectorAll('.slider');
 const fontSizeSlider = document.getElementById('fontSize');
 const lineHeightSlider = document.getElementById('lineHeight');
 const offsetSlider = document.getElementById('offset');
@@ -132,6 +133,18 @@ lineHeightSlider.oninput = function() {
 offsetSlider.oninput = function() {
     document.documentElement.style.setProperty('--offset', offsetSlider.value);
 };
+
+
+
+allSliders.forEach((element) => {
+    element.addEventListener('mousedown', e => {
+        document.documentElement.style.setProperty('--sliderCursor', 'grabbing');
+    });
+
+    element.addEventListener('mouseup', e => {
+        document.documentElement.style.setProperty('--sliderCursor', 'grab');
+    });
+});
 
 
 
