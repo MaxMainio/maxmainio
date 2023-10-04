@@ -1,6 +1,6 @@
 /* IMPORTS  --------------------------------------------------------------------------------------------------------------------- */
 @font-face {
-    font-family: "Project-Ivy";
+    font-family: "Hedera";
     src: url('../../work/hedera/assets/content/fonts/Hedera-VF.woff2') format('woff2'),
         url('../../work/hedera/assets/content/fonts/Hedera-VF.woff') format('woff'),
         url('../../work/hedera/assets/content/fonts/Hedera-VF.ttf') format('truetype');
@@ -210,7 +210,7 @@ hgroup{
     align-items: center;
 }
 
-.project-ivy-content{
+.Hedera-content{
     position: relative;
     width: 100%;
     max-height: calc(100% - 6rem);
@@ -247,7 +247,7 @@ hgroup{
 }
 
 #ivy{
-    font-family: Project-Ivy;
+    font-family: Hedera;
     font-weight: 400;
     font-size: 3rem;
     line-height: 3rem;
