@@ -37,22 +37,6 @@
 
 
 
-/* TYPE ------------------------------------------------------------------------------------------------------------------------- */
-#ivy{
-    font-family: Project-Ivy;
-    font-weight: 400;
-    letter-spacing: 0px;
-    font-variation-settings: "OFST" -100;
-}
-
-
-
-
-
-
-
-
-
 /* CONTENT  --------------------------------------------------------------------------------------------------------------------- */
 #first{
     height: fit-content;
@@ -131,9 +115,8 @@
 
 /* Interactive Section */
 .interactive-container{
-    max-width: var(--in-width);
+    max-width: calc(var(--in-width) - 2rem);
     margin: 1rem auto;
-    padding: 0 1rem;
 
     display: grid;
     grid-template-columns: repeat(8, 1fr);
@@ -187,7 +170,7 @@
     appearance: none;
     width: 100%;
     height: 1px;
-    background: #d3d3d3;
+    background: var(--typeHeights);
     outline: none;
 }
 
@@ -218,6 +201,10 @@
         height: 100%;
         background-color: white;
         cursor: pointer;
+
+        &:hover{
+            background-color: var(--green);
+        }
     }
 }
 
@@ -243,9 +230,11 @@ input[type="color"] {
     width: 100%;
     height: 100%;
 }
+
 input[type="color"]::-webkit-color-swatch-wrapper {
 	padding: 0;
 }
+
 input[type="color"]::-webkit-color-swatch {
 	border: none;
 }
@@ -361,7 +350,54 @@ input[type="color"]::-webkit-color-swatch {
 
 
 
+/* Download Section */
+.download-container{
+    max-width: calc(var(--in-width) - 2rem);
+    margin: 1rem auto;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.3rem;
+    letter-spacing: 0.75px;
+
+    position: relative;
+    z-index: 1;
+
+    & > div{
+        grid-column: 4;
+    }
+
+    & p{
+        margin: 0;
+        white-space: nowrap;
+
+        & a{
+            display: block;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
 /* Media Queries    ------------------------------------------------------------------------------------------------------------- */
+@media (width < 1400px) {
+    #first > div{
+        padding: 0 9.47%;
+    }
+}
+
+
+
 @media (width < 900px) {
     .interactive-container{
         grid-template-columns: repeat(4, 1fr);
@@ -390,11 +426,23 @@ input[type="color"]::-webkit-color-swatch {
             grid-row: 2;
         }
     }
+
+    .download-container{
+        grid-template-columns: repeat(2, 1fr);
+    
+        & > div{
+            grid-column: 2;
+        }
+    }
 }
 
 
 
 @media (width < 685px) {
+    #first > div{
+        padding: 0 2rem;
+    }
+
     .interactive-container{
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(4, 1fr);
@@ -416,6 +464,14 @@ input[type="color"]::-webkit-color-swatch {
         & > div:nth-of-type(5){
             grid-column: 2;
             grid-row: 4;
+        }
+    }
+
+    .download-container{
+        grid-template-columns: repeat(1, 1fr);
+    
+        & > div{
+            grid-column: 1;
         }
     }
 }

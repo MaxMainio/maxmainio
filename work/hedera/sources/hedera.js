@@ -181,7 +181,6 @@ function setScaler(){
     let differenceOfRows = sampleRowsNumber - allScalers.length;
 
     if(differenceOfRows === 0){
-        console.log('same');
         return;
     };
 
@@ -200,18 +199,16 @@ function setScaler(){
 
 function addScaler(repetitionNumber){
     for(let i = 0; i < repetitionNumber; i++){
-        console.log('add');
         sampleBG.innerHTML += '<div class="sample-anatomy"><hr><hr><hr><hr></div>';
-    }
+    };
     
     allScalers = document.querySelectorAll('.sample-anatomy');
 };
 
 function removeScaler(repetitionNumber){
     for(let i = 0; i < repetitionNumber; i++){
-        console.log('remove');
         allScalers[i].remove();
-    }
+    };
     
     allScalers = document.querySelectorAll('.sample-anatomy');
 };
