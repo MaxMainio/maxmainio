@@ -337,6 +337,7 @@ input[type="color"]::-webkit-color-swatch {
     font-feature-settings: "calt" var(--caltToggle);
 
     margin: 0;
+    max-width: 100%;
 }
 
 .text-sample:focus{

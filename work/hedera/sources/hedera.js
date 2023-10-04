@@ -1,6 +1,6 @@
 // GLOBAL TRIGGERS	----------------------------------------------------------------------------------------------------------------
 window.addEventListener('load', e => {
-    setScaler();
+    setSampleBG();
 });
 
 window.addEventListener('pageshow', e => {
@@ -12,7 +12,7 @@ window.addEventListener('resize', e => {
     viewerHeight = window.innerHeight;
 	viewerWidth = window.innerWidth;
 
-    setScaler();
+    setSampleBG();
     fitHeroIvy();
 });
 
@@ -80,15 +80,16 @@ function fitHeroIvy(){
 
 // TYPE PREVIEW --------------------------------------------------------------------------------------------------------------------
 const sampleContainer = document.getElementById('sample-container');
-const sample = document.getElementById('sample');
+
+
 
 const allSliders = document.querySelectorAll('.slider');
-const fontSizeSlider = document.getElementById('fontSize');
-const lineHeightSlider = document.getElementById('lineHeight');
-const offsetSlider = document.getElementById('offset');
+const sampleFontSizeSlider = document.getElementById('sampleFontSize');
+const sampleLineHeightSlider = document.getElementById('sampleLineHeight');
+const sampleOffsetSlider = document.getElementById('sampleOffset');
 
-const contextualCheck = document.getElementById('contextual');
-const colorPicker = document.getElementById('colorizor');
+const sampleContextualCheck = document.getElementById('sampleContextual');
+const sampleColorPicker = document.getElementById('sampleColorizor');
 
 
 
@@ -118,20 +119,20 @@ var overShoot = (sampleElementSize - sampleRenderedSize) / 2;
 
 
 // Interactivity
-fontSizeSlider.oninput = function() {
-    sampleFontSize = fontSizeSlider.value / 10;
+sampleFontSizeSlider.oninput = function() {
+    sampleFontSize = sampleFontSizeSlider.value / 10;
     document.documentElement.style.setProperty('--sampleSize', sampleFontSize + 'rem');
-    setScaler();
+    setSampleBG();
 };
 
-lineHeightSlider.oninput = function() {
-    sampleLineHeight = lineHeightSlider.value / (10 / 1.1);
+sampleLineHeightSlider.oninput = function() {
+    sampleLineHeight = sampleLineHeightSlider.value / (10 / 1.1);
     document.documentElement.style.setProperty('--sampleHeight', sampleLineHeight);
-    setScaler();
+    setSampleBG();
 };
 
-offsetSlider.oninput = function() {
-    document.documentElement.style.setProperty('--offset', offsetSlider.value);
+sampleOffsetSlider.oninput = function() {
+    document.documentElement.style.setProperty('--offset', sampleOffsetSlider.value);
 };
 
 
@@ -149,25 +150,20 @@ allSliders.forEach((element) => {
 
 
 function contextToggle(){
-    if (contextualCheck.checked == true){
+    if (sampleContextualCheck.checked == true){
         document.documentElement.style.setProperty('--caltToggle', 1);
-        contextualCheck.nextElementSibling.innerHTML = 'Disconnect';
+        sampleContextualCheck.nextElementSibling.innerHTML = 'Disconnect';
 
     } else {
         document.documentElement.style.setProperty('--caltToggle', 0);
-        contextualCheck.nextElementSibling.innerHTML = 'Reconnect';
+        sampleContextualCheck.nextElementSibling.innerHTML = 'Reconnect';
     };
 };
 
-colorPicker.oninput = function() {
-    document.documentElement.style.setProperty('--sampleColor', colorPicker.value);
+sampleColorPicker.oninput = function() {
+    document.documentElement.style.setProperty('--sampleColor', sampleColorPicker.value);
 };
 
-
-
-textSample.addEventListener("input", function() {
-    setScaler();
-}, false);
 
 
 
@@ -177,7 +173,7 @@ textSample.addEventListener("input", function() {
 
 
 // Auto scale the background
-function setScaler(){
+function setSampleBG(){
     let newHeight = textSample.offsetHeight;
     
     sampleElementSize = sampleFontSize * rem * sampleLineHeight;
@@ -198,19 +194,19 @@ function setScaler(){
     };
 
     if(differenceOfRows > 0){
-        addScaler(Math.abs(differenceOfRows));
+        addSampleScale(Math.abs(differenceOfRows));
         return;
     };
 
     if(differenceOfRows < 0){
-        removeScaler(Math.abs(differenceOfRows));
+        removeSampleScale(Math.abs(differenceOfRows));
         return;
     };
 };
 
 
 
-function addScaler(repetitionNumber){
+function addSampleScale(repetitionNumber){
     for(let i = 0; i < repetitionNumber; i++){
         sampleBG.innerHTML += '<div class="sample-anatomy"><hr><hr><hr><hr></div>';
     };
@@ -218,13 +214,34 @@ function addScaler(repetitionNumber){
     allScalers = document.querySelectorAll('.sample-anatomy');
 };
 
-function removeScaler(repetitionNumber){
+function removeSampleScale(repetitionNumber){
     for(let i = 0; i < repetitionNumber; i++){
         allScalers[i].remove();
     };
     
     allScalers = document.querySelectorAll('.sample-anatomy');
 };
+
+
+
+
+
+
+
+
+
+// Sample area and typing
+textSample.addEventListener('input', function() {
+    setSampleBG();
+}, false);
+
+textSample.addEventListener('paste', function(event){
+    event.preventDefault();
+    var pastedText = event.clipboardData.getData('text/plain');
+    document.execCommand('insertText', false, pastedText);
+
+    setSampleBG();
+});
 
 
 
