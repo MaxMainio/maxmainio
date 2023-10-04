@@ -12,6 +12,7 @@ window.addEventListener('resize', e => {
     viewerHeight = window.innerHeight;
 	viewerWidth = window.innerWidth;
 
+    setScaler();
     fitHeroIvy();
 });
 
@@ -26,6 +27,7 @@ window.addEventListener('resize', e => {
 // GLOBAL ELEMENTS  ----------------------------------------------------------------------------------------------------------------
 var viewerHeight = window.innerHeight;
 var viewerWidth = window.innerWidth;
+
 
 
 
@@ -76,7 +78,7 @@ function fitHeroIvy(){
 
 
 
-// SAMPLE   ------------------------------------------------------------------------------------------------------------------------
+// TYPE PREVIEW --------------------------------------------------------------------------------------------------------------------
 const sampleContainer = document.getElementById('sample-container');
 const sample = document.getElementById('sample');
 
@@ -89,10 +91,10 @@ const colorPicker = document.getElementById('colorizor');
 
 
 
-const sampleBG = document.getElementById('backdrop');
+const sampleBG = document.getElementById('sampleBG');
 const textSample = document.getElementById('textSample');
 
-var allScalers = document.querySelectorAll('.test-2');
+var allScalers = document.querySelectorAll('.sample-anatomy');
 
 const rem = parseFloat(getComputedStyle(document.documentElement).fontSize);
 
@@ -114,6 +116,7 @@ var overShoot = (sampleElementSize - sampleRenderedSize) / 2;
 
 
 
+// Interactivity
 fontSizeSlider.oninput = function() {
     sampleFontSize = fontSizeSlider.value / 10;
     document.documentElement.style.setProperty('--sampleSize', sampleFontSize + 'rem');
@@ -160,7 +163,7 @@ textSample.addEventListener("input", function() {
 
 
 
-
+// Auto scale the background
 function setScaler(){
     let newHeight = textSample.offsetHeight;
     
@@ -198,10 +201,10 @@ function setScaler(){
 function addScaler(repetitionNumber){
     for(let i = 0; i < repetitionNumber; i++){
         console.log('add');
-        sampleBG.innerHTML += '<div class="test-2"><hr><hr><hr><hr></div>';
+        sampleBG.innerHTML += '<div class="sample-anatomy"><hr><hr><hr><hr></div>';
     }
     
-    allScalers = document.querySelectorAll('.test-2');
+    allScalers = document.querySelectorAll('.sample-anatomy');
 };
 
 function removeScaler(repetitionNumber){
@@ -210,7 +213,7 @@ function removeScaler(repetitionNumber){
         allScalers[i].remove();
     }
     
-    allScalers = document.querySelectorAll('.test-2');
+    allScalers = document.querySelectorAll('.sample-anatomy');
 };
 
 
