@@ -136,7 +136,15 @@ function applyParallax(windowPos) {
 
 // PROJECT IVY	--------------------------------------------------------------------------------------------------------------------
 var ivyIndex = 0;
-var ivyText = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Commodo odio aenean sed adipiscing diam donec adipiscing. Sed velit dignissim sodales ut. Ultrices neque ornare aenean euismod. Ipsum a arcu cursus vitae congue. Morbi blandit cursus risus at ultrices mi tempus imperdiet nulla. Egestas erat imperdiet sed euismod nisi. Molestie a iaculis at erat pellentesque adipiscing commodo. Suspendisse faucibus interdum posuere lorem ipsum dolor. Laoreet sit amet cursus sit amet dictum. A cras semper auctor neque vitae tempus quam pellentesque nec. Sed cras ornare arcu dui vivamus arcu. Pellentesque habitant morbi tristique senectus et netus et malesuada fames. Libero id faucibus nisl tincidunt eget nullam non nisi est. Ut eu sem integer vitae justo eget magna fermentum iaculis. Cras semper auctor neque vitae tempus quam pellentesque. Ipsum suspendisse ultrices gravida dictum. Mauris sit amet massa vitae tortor. Mauris a diam maecenas sed. Rhoncus mattis rhoncus urna neque.';
+
+ivyText = new Array();
+ivyText[0] = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sit amet venenatis urna cursus eget nunc scelerisque. Neque vitae tempus quam pellentesque nec. Mauris in aliquam sem fringilla ut morbi. Adipiscing vitae proin sagittis nisl rhoncus mattis rhoncus. Sit amet porttitor eget dolor morbi non arcu risus. Eget est lorem ipsum dolor sit amet consectetur. Arcu non sodales neque sodales ut etiam sit amet. In cursus turpis massa tincidunt dui ut. Tempor orci eu lobortis elementum nibh tellus molestie nunc. Enim diam vulputate ut pharetra sit amet aliquam id diam. Non pulvinar neque laoreet suspendisse interdum consectetur.";
+ivyText[1] = "Vitae auctor eu augue ut lectus. Volutpat lacus laoreet non curabitur. Urna molestie at elementum eu facilisis sed odio morbi quis. Pharetra sit amet aliquam id diam maecenas ultricies mi. Vitae congue eu consequat ac. Ut placerat orci nulla pellentesque dignissim enim. At varius vel pharetra vel turpis nunc eget lorem dolor. Quisque id diam vel quam. Fames ac turpis egestas sed tempus urna et pharetra pharetra. Erat velit scelerisque in dictum. Lectus proin nibh nisl condimentum id venenatis. Varius quam quisque id diam. Amet consectetur adipiscing elit duis. Velit egestas dui id ornare arcu odio ut sem nulla. Suspendisse faucibus interdum posuere lorem ipsum dolor sit. Consequat ac felis donec et odio pellentesque. Laoreet id donec ultrices tincidunt arcu. Odio aenean sed adipiscing diam. Volutpat lacus laoreet non curabitur gravida arcu ac tortor. Et malesuada fames ac turpis.";
+ivyText[2] = "Ligula ullamcorper malesuada proin libero nunc consequat interdum. Morbi enim nunc faucibus a. Neque aliquam vestibulum morbi blandit. Lacinia quis vel eros donec ac odio tempor orci. Mauris sit amet massa vitae tortor condimentum lacinia. Ridiculus mus mauris vitae ultricies. Dis parturient montes nascetur ridiculus. Arcu non sodales neque sodales ut etiam. Nisi est sit amet facilisis. Lacinia quis vel eros donec ac odio tempor orci dapibus. Integer feugiat scelerisque varius morbi enim nunc faucibus. Libero volutpat sed cras ornare arcu dui vivamus arcu. Sem integer vitae justo eget magna fermentum iaculis eu non. A lacus vestibulum sed arcu. Congue quisque egestas diam in arcu cursus euismod quis.";
+ivyText[3] = "Odio tempor orci dapibus ultrices in iaculis. Nisi vitae suscipit tellus mauris a diam. Orci dapibus ultrices in iaculis nunc sed. Cras sed felis eget velit aliquet sagittis id consectetur. Consequat id porta nibh venenatis cras sed felis eget. Ut faucibus pulvinar elementum integer enim neque volutpat ac. Nulla malesuada pellentesque elit eget. Et tortor consequat id porta nibh venenatis cras sed. Semper feugiat nibh sed pulvinar proin. Quis viverra nibh cras pulvinar. Ultricies lacus sed turpis tincidunt id. Est pellentesque elit ullamcorper dignissim cras. Rhoncus urna neque viverra justo nec ultrices dui sapien eget. Varius sit amet mattis vulputate. Lacinia quis vel eros donec ac odio tempor orci. Elementum facilisis leo vel fringilla est. Tristique et egestas quis ipsum suspendisse ultrices gravida. Id porta nibh venenatis cras sed felis eget velit.";
+ivyText[4] = "Mauris nunc congue nisi vitae suscipit tellus mauris. Ultrices dui sapien eget mi proin. Lectus mauris ultrices eros in cursus. Adipiscing elit duis tristique sollicitudin. Amet risus nullam eget felis eget nunc. Eget mauris pharetra et ultrices neque ornare aenean euismod. Tellus integer feugiat scelerisque varius morbi. Accumsan in nisl nisi scelerisque eu ultrices. At ultrices mi tempus imperdiet nulla malesuada. Integer feugiat scelerisque varius morbi. Nunc sed augue lacus viverra vitae congue eu consequat ac. Aliquam nulla facilisi cras fermentum odio eu feugiat pretium. Viverra suspendisse potenti nullam ac tortor vitae purus faucibus ornare. Lorem sed risus ultricies tristique. Sit amet consectetur adipiscing elit ut. A pellentesque sit amet porttitor eget. Aenean sed adipiscing diam donec. Ac feugiat sed lectus vestibulum mattis ullamcorper velit.";
+
+const textNumber = getRandomInt(0, (ivyText.length - 1));
 var speed = 50;
 
 const ivyContainer = document.getElementById('ivy-container');
@@ -152,11 +160,11 @@ function projectIvy(){
 };
 
 function typeWriter() {
-  if (ivyIndex < ivyText.length) {
-    document.getElementById("growth").innerHTML += ivyText.charAt(ivyIndex);
-    ivyIndex++;
-    setTimeout(typeWriter, speed);
-  };
+	if (ivyIndex < ivyText[textNumber].length) {
+		document.getElementById("growth").innerHTML += ivyText[textNumber].charAt(ivyIndex);
+		ivyIndex++;
+		setTimeout(typeWriter, speed);
+	};
 };
 
 
@@ -296,4 +304,10 @@ window.addEventListener('resize', e => {
 // GLOBAL FUNCTIONS	----------------------------------------------------------------------------------------------------------------
 function normalizeBetween(m, rmin, rmax, tmin, tmax){
 	return(((m - rmin) / (rmax - rmin)) * (tmax - tmin) + tmin);
+};
+
+function getRandomInt(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
 };

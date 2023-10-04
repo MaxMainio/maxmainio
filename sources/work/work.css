@@ -217,7 +217,7 @@ hgroup{
     aspect-ratio: 1492 / 1024;
     display: flex;
     justify-content: center;
-    overflow: hidden;
+    /* overflow: hidden; */
 
     & > a{
         display: block;
@@ -1032,7 +1032,6 @@ a.in-fit{
 
 .homodeus-shadow{
     mix-blend-mode: multiply;
-    box-shadow: inset 1% 1% white;
 }
 
 
