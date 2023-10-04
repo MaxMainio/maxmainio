@@ -132,7 +132,7 @@ sampleLineHeightSlider.oninput = function() {
 };
 
 sampleOffsetSlider.oninput = function() {
-    document.documentElement.style.setProperty('--offset', sampleOffsetSlider.value);
+    document.documentElement.style.setProperty('--sampleOffset', sampleOffsetSlider.value);
 };
 
 

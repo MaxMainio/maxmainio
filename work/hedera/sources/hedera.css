@@ -30,7 +30,7 @@
     --typeHeights: rgba(51, 51, 51, 0.25);
     --sampleSize: 10rem;
     --sampleHeight: 1.1;
-    --offset: -100;
+    --sampleOffset: -100;
     --caltToggle: 1;
     --sampleColor: #333333;
 
@@ -86,7 +86,7 @@
     font-size: 2rem;
     line-height: 2rem;
     letter-spacing: 0px;
-    font-variation-settings: "OFST" var(--offset);
+    font-variation-settings: "OFST" var(--sampleOffset);
 
     font-variant-ligatures: contextual;
     -moz-font-feature-settings: "calt";
@@ -337,7 +337,7 @@ input[type="color"]::-webkit-color-swatch {
     font-size: inherit;
     line-height: inherit;
     letter-spacing: 0px;
-    font-variation-settings: "OFST" var(--offset);
+    font-variation-settings: "OFST" var(--sampleOffset);
     color: var(--sampleColor);
 
     font-variant-ligatures: contextual;
@@ -401,28 +401,161 @@ input[type="color"]::-webkit-color-swatch {
 
 
 /* GLYPH SHOWCASE   ------------------------------------------------------------------------------------------------------------- */
-.glyph-showcase{
+.glyph-showcase-container{
     grid-column: 1 / 9;
     width: 100%;
-    height: 100vh;
+    max-width: calc(var(--in-width) - 2rem);
     position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: red;
+    margin: 0 auto;
 }
 
-.test{
+.glyph-showcase{
+    width: 100%;
+
+    /* display: flex;
+    flex-wrap: wrap; */
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(calc(((var(--in-width) - 2rem) / 8) - (7rem / 8)), 1fr));
+    justify-items: center;
+
+    column-gap: 1rem;
+    row-gap: 3rem;
+}
+
+
+
+.test2{
+    width: calc(((var(--in-width) - 2rem) / 8) - (7rem / 8));
+
+    &:nth-of-type(1) .showcase-glyph{
+        font-feature-settings: 'cv01';
+    }
+
+    &:nth-of-type(2) .showcase-glyph{
+        font-feature-settings: 'cv02';
+    }
+
+    &:nth-of-type(3) .showcase-glyph{
+        font-feature-settings: 'cv03';
+    }
+
+    &:nth-of-type(4) .showcase-glyph{
+        font-feature-settings: 'cv04';
+    }
+
+    &:nth-of-type(5) .showcase-glyph{
+        font-feature-settings: 'cv05';
+    }
+
+    &:nth-of-type(6) .showcase-glyph{
+        font-feature-settings: 'cv06';
+    }
+
+    &:nth-of-type(7) .showcase-glyph{
+        font-feature-settings: 'cv07';
+    }
+
+    &:nth-of-type(8) .showcase-glyph{
+        font-feature-settings: 'cv08';
+    }
+
+    &:nth-of-type(9) .showcase-glyph{
+        font-feature-settings: 'cv09';
+    }
+
+    &:nth-of-type(10) .showcase-glyph{
+        font-feature-settings: 'cv10';
+    }
+
+    &:nth-of-type(11) .showcase-glyph{
+        font-feature-settings: 'cv11';
+    }
+
+    &:nth-of-type(12) .showcase-glyph{
+        font-feature-settings: 'cv12';
+    }
+
+    &:nth-of-type(13) .showcase-glyph{
+        font-feature-settings: 'cv13';
+    }
+
+    &:nth-of-type(14) .showcase-glyph{
+        font-feature-settings: 'cv14';
+    }
+
+    &:nth-of-type(15) .showcase-glyph{
+        font-feature-settings: 'cv15';
+    }
+
+    &:nth-of-type(16) .showcase-glyph{
+        font-feature-settings: 'cv16';
+    }
+
+    &:nth-of-type(17) .showcase-glyph{
+        font-feature-settings: 'cv17';
+    }
+
+    &:nth-of-type(18) .showcase-glyph{
+        font-feature-settings: 'cv18';
+    }
+
+    &:nth-of-type(19) .showcase-glyph{
+        font-feature-settings: 'cv19';
+    }
+
+    &:nth-of-type(20) .showcase-glyph{
+        font-feature-settings: 'cv20';
+    }
+
+    &:nth-of-type(21) .showcase-glyph{
+        font-feature-settings: 'cv21';
+    }
+
+    &:nth-of-type(22) .showcase-glyph{
+        font-feature-settings: 'cv22';
+    }
+
+    &:nth-of-type(23) .showcase-glyph{
+        font-feature-settings: 'cv23';
+    }
+
+    &:nth-of-type(24) .showcase-glyph{
+        font-feature-settings: 'cv24';
+    }
+}
+
+.test3{
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+}
+
+p.showcase-glyph{
     font-family: HederaGlyphs;
     font-weight: 400;
     font-size: 10rem;
     line-height: 10rem;
     letter-spacing: 0px;
-    font-variation-settings: "OFST" var(--offset);
-    font-feature-settings: 'cv01';
+    font-variation-settings: "OFST" var(--sampleOffset);
 
     margin: 0;
-    max-width: 100%;
+}
+
+
+
+.test4{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+}
+
+.showcase-title{
+    display: inline;
+    margin: 0;
 }
 
 
