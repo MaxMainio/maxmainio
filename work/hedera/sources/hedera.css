@@ -620,6 +620,8 @@ p.showcase-glyph{
     font-size: 100vh !important;
     line-height: 100vh !important;
     filter: drop-shadow(0 0 100px white);
+    z-index: 1000;
+    cursor: zoom-out !important;
 }
 
 
