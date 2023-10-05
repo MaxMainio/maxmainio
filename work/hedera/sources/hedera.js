@@ -1,3 +1,42 @@
+const sampleContainer = document.getElementById('sample-container');
+
+
+
+const allSliders = document.querySelectorAll('.slider');
+const sampleFontSizeSlider = document.getElementById('sampleFontSize');
+const sampleLineHeightSlider = document.getElementById('sampleLineHeight');
+const sampleOffsetSlider = document.getElementById('sampleOffset');
+
+const sampleContextualCheck = document.getElementById('sampleContextual');
+const sampleColorPicker = document.getElementById('sampleColorizor');
+
+
+
+const sampleBG = document.getElementById('sampleBG');
+const textSample = document.getElementById('textSample');
+
+var allScalers = document.querySelectorAll('.sample-anatomy');
+
+const rem = parseFloat(getComputedStyle(document.documentElement).fontSize);
+
+
+
+var sampleFontSize = 10;
+var sampleLineHeight = 1.1;
+var sampleElementSize = sampleFontSize * rem * sampleLineHeight;
+var sampleRenderedSize = sampleFontSize * 1.1 * rem;
+
+var sampleRowsNumber = Math.round(textSample.offsetHeight / sampleElementSize);;
+var overShoot = (sampleElementSize - sampleRenderedSize) / 2;
+
+
+
+
+
+
+
+
+
 // GLOBAL TRIGGERS	----------------------------------------------------------------------------------------------------------------
 window.addEventListener('load', e => {
     setSampleBG();
@@ -78,47 +117,27 @@ function fitHeroIvy(){
 
 
 
+// GLOBAL   ------------------------------------------------------------------------------------------------------------------------
+allSliders.forEach((element) => {
+    element.addEventListener('mousedown', e => {
+        document.documentElement.style.setProperty('--sliderCursor', 'grabbing');
+    });
+
+    element.addEventListener('mouseup', e => {
+        document.documentElement.style.setProperty('--sliderCursor', 'grab');
+    });
+});
+
+
+
+
+
+
+
+
+
 // TYPE PREVIEW --------------------------------------------------------------------------------------------------------------------
-const sampleContainer = document.getElementById('sample-container');
-
-
-
-const allSliders = document.querySelectorAll('.slider');
-const sampleFontSizeSlider = document.getElementById('sampleFontSize');
-const sampleLineHeightSlider = document.getElementById('sampleLineHeight');
-const sampleOffsetSlider = document.getElementById('sampleOffset');
-
-const sampleContextualCheck = document.getElementById('sampleContextual');
-const sampleColorPicker = document.getElementById('sampleColorizor');
-
-
-
-const sampleBG = document.getElementById('sampleBG');
-const textSample = document.getElementById('textSample');
-
-var allScalers = document.querySelectorAll('.sample-anatomy');
-
-const rem = parseFloat(getComputedStyle(document.documentElement).fontSize);
-
-
-
-var sampleFontSize = 10;
-var sampleLineHeight = 1.1;
-var sampleElementSize = sampleFontSize * rem * sampleLineHeight;
-var sampleRenderedSize = sampleFontSize * 1.1 * rem;
-
-var sampleRowsNumber = Math.round(textSample.offsetHeight / sampleElementSize);;
-var overShoot = (sampleElementSize - sampleRenderedSize) / 2;
-
-
-
-
-
-
-
-
-
-// Interactivity
+// PREVIEW Interactivity
 sampleFontSizeSlider.oninput = function() {
     sampleFontSize = sampleFontSizeSlider.value / 10;
     document.documentElement.style.setProperty('--sampleSize', sampleFontSize + 'rem');
@@ -137,19 +156,8 @@ sampleOffsetSlider.oninput = function() {
 
 
 
-allSliders.forEach((element) => {
-    element.addEventListener('mousedown', e => {
-        document.documentElement.style.setProperty('--sliderCursor', 'grabbing');
-    });
-
-    element.addEventListener('mouseup', e => {
-        document.documentElement.style.setProperty('--sliderCursor', 'grab');
-    });
-});
-
-
-
 function contextToggle(){
+    console.log('clicked');
     if (sampleContextualCheck.checked == true){
         document.documentElement.style.setProperty('--caltToggle', 1);
         sampleContextualCheck.nextElementSibling.innerHTML = 'Disconnect';
@@ -242,6 +250,69 @@ textSample.addEventListener('paste', function(event){
 
     setSampleBG();
 });
+
+
+
+
+
+
+
+
+
+// SHOWCASE ------------------------------------------------------------------------------------------------------------------------
+const showcaseSearch = document.getElementById('showcaseSearch');
+const showcaseOffsetSlider = document.getElementById('showcaseOffset');
+const showcaseColorPicker = document.getElementById('showcaseColorizor');
+
+const allShowcaseContainers = document.querySelectorAll('.test2');
+const allShowcaseGlyphs = document.querySelectorAll('.showcase-glyph');
+
+
+
+// SHOWCASE Interactivity
+showcaseSearch.addEventListener("input", function(event) {
+    const inputValue = event.target.value;
+
+    if (/^[a-zA-ZåäöÅÄÖ]$/.test(inputValue)) {
+        event.target.value = inputValue;
+        validCharacterAction(inputValue);
+    } else {
+        const lastChar = inputValue.charAt(inputValue.length - 1);
+        if (/^[a-zA-ZåäöÅÄÖ]$/.test(lastChar)) {
+            event.target.value = lastChar;
+            validCharacterAction(lastChar);
+        } else {
+            event.target.value = 'ä';
+            validCharacterAction('ä');
+        }
+    }
+});
+
+function validCharacterAction(character) {
+    console.log(character);
+    allShowcaseGlyphs.forEach((element) => {
+        element.innerHTML = character;
+    });
+    console.log(allShowcaseGlyphs);
+}
+
+
+
+
+
+showcaseOffsetSlider.oninput = function(){
+    document.documentElement.style.setProperty('--showcaseOffset', showcaseOffsetSlider.value);
+};
+
+showcaseColorPicker.oninput = function(){
+    document.documentElement.style.setProperty('--showcaseColor', showcaseColorPicker.value);
+};
+
+
+
+
+
+
 
 
 

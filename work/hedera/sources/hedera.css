@@ -34,6 +34,9 @@
     --caltToggle: 1;
     --sampleColor: #333333;
 
+    --showcaseOffset: -100;
+    --showcaseColor: #333333;
+
     --sliderCursor: grab;
     --multiplier: 1.1;
     --overshoot: 0px;
@@ -448,6 +451,10 @@ input[type=text] {
     &:hover{
         background-color: var(--green);
     }
+
+    &:focus{
+        outline: none;
+    }
 }
 
 
@@ -572,7 +579,7 @@ input[type=text] {
     width: 100%;
     aspect-ratio: 1 / 1;
     display: flex;
-    justify-content: center;
+    /* justify-content: center; */
 }
 
 p.showcase-glyph{
@@ -581,7 +588,8 @@ p.showcase-glyph{
     font-size: 10rem;
     line-height: 10rem;
     letter-spacing: 0px;
-    font-variation-settings: "OFST" var(--sampleOffset);
+    font-variation-settings: "OFST" var(--showcaseOffset);
+    color: var(--showcaseColor);
 
     margin: 0;
     cursor: zoom-in;
@@ -593,7 +601,7 @@ p.showcase-glyph{
     width: 100%;
     height: fit-content;
     display: flex;
-    justify-content: center;
+    /* justify-content: center; */
 }
 
 .showcase-title{
