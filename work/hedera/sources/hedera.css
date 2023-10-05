@@ -480,9 +480,6 @@ input[type=text] {
 .glyph-showcase{
     width: 100%;
 
-    /* display: flex;
-    flex-wrap: wrap; */
-
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(calc(((var(--in-width) - 2rem) / 8) - (7rem / 8)), 1fr));
     justify-items: center;
@@ -495,6 +492,9 @@ input[type=text] {
 
 .test2{
     width: calc(((var(--in-width) - 2rem) / 8) - (7rem / 8));
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
 
     &:nth-of-type(1) .showcase-glyph{
         font-feature-settings: 'cv01';
@@ -618,12 +618,6 @@ p.showcase-glyph{
 }
 
 
-
-.test4{
-    width: 100%;
-    height: fit-content;
-    display: flex;
-}
 
 .showcase-title{
     display: inline;
