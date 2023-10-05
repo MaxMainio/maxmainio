@@ -267,6 +267,8 @@ const showcaseColorPicker = document.getElementById('showcaseColorizor');
 const allShowcaseContainers = document.querySelectorAll('.test2');
 const allShowcaseGlyphs = document.querySelectorAll('.showcase-glyph');
 
+const allZoomableGlyphs = document.querySelectorAll('p.showcase-glyph');
+
 
 
 // SHOWCASE Interactivity
@@ -284,17 +286,41 @@ showcaseSearch.addEventListener("input", function(event) {
         } else {
             event.target.value = 'ä';
             validCharacterAction('ä');
-        }
-    }
+        };
+    };
 });
 
 function validCharacterAction(character) {
-    console.log(character);
     allShowcaseGlyphs.forEach((element) => {
         element.innerHTML = character;
     });
-    console.log(allShowcaseGlyphs);
-}
+};
+
+
+
+allZoomableGlyphs.forEach(function (element){
+    element.addEventListener("mousedown", (event) => {
+        if (event.button === 0) {
+            let current = event.target;
+            // let container = event.target.parentNode;
+    
+            current.classList.add('focused-glyph');
+            // container.classList.add('focusedcontainer');
+    
+            document.body.style.cursor = 'zoom-out';
+    
+
+    
+            document.addEventListener("mouseup", (event) => {
+                current.classList.remove('focused-glyph');
+                // container.classList.remove('focusedcontainer');
+    
+                // document.body.removeAttribute('style');
+                document.body.style.cursor = 'auto';
+            });
+        };
+    });
+});
 
 
 

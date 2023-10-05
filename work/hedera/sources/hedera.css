@@ -612,6 +612,19 @@ p.showcase-glyph{
 
 
 
+.focused-glyph{
+    display: block;
+    position: fixed;
+    inset: 0;
+    text-align: center;
+    font-size: 100vh !important;
+    line-height: 100vh !important;
+    filter: drop-shadow(0 0 100px white);
+}
+
+
+
+
 
 
 
