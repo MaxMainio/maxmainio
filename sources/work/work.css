@@ -207,10 +207,11 @@ hgroup{
 /* Project Ivy  ----------------------------------------------------------------------------------------------------------------- */
 #hedera .out-container{
     display: flex;
+    justify-content: center;
     align-items: center;
 }
 
-.Hedera-content{
+.hedera-content{
     position: relative;
     width: 100%;
     max-height: calc(100% - 6rem);
