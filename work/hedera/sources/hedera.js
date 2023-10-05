@@ -157,7 +157,6 @@ sampleOffsetSlider.oninput = function() {
 
 
 function contextToggle(){
-    console.log('clicked');
     if (sampleContextualCheck.checked == true){
         document.documentElement.style.setProperty('--caltToggle', 1);
         sampleContextualCheck.nextElementSibling.innerHTML = 'Disconnect';
