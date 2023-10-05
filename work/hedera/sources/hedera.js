@@ -271,6 +271,16 @@ const allZoomableGlyphs = document.querySelectorAll('p.showcase-glyph');
 
 
 
+const smallSet = [8, 9, 15, 16, 17, 18, 19, 20, 21, 22, 24];
+
+const uSet = [8, 9, 15, 16, 21, 22];
+const uSetPrime = [17, 18, 19, 20, 22];
+
+const ftSet = [9, 16, 22];
+const ftSetPrime = [8, 15, 17, 18,19, 20, 21, 24];
+
+
+
 // SHOWCASE Interactivity
 showcaseSearch.addEventListener("input", function(event) {
     const inputValue = event.target.value;
@@ -294,6 +304,8 @@ function validCharacterAction(character) {
     allShowcaseGlyphs.forEach((element) => {
         element.innerHTML = character;
     });
+
+    handleGlyphVisibility(character);
 };
 
 
@@ -302,27 +314,17 @@ allZoomableGlyphs.forEach(function (element){
     element.addEventListener("mousedown", (event) => {
         if (event.button === 0) {
             let current = event.target;
-            // let container = event.target.parentNode;
-    
-            current.classList.add('focused-glyph');
-            // container.classList.add('focusedcontainer');
-    
-            document.body.style.cursor = 'zoom-out';
-    
 
-    
+            current.classList.add('focused-glyph');
+            document.body.style.cursor = 'zoom-out';
+
             document.addEventListener("mouseup", (event) => {
                 current.classList.remove('focused-glyph');
-                // container.classList.remove('focusedcontainer');
-    
-                // document.body.removeAttribute('style');
                 document.body.style.cursor = 'auto';
             });
         };
     });
 });
-
-
 
 
 
@@ -336,10 +338,34 @@ showcaseColorPicker.oninput = function(){
 
 
 
+function handleGlyphVisibility(character){
+    let glyphsToTurnOff = [];
+    makeAllGlyphsVisible();
 
+    if (['i', 'j', 'ä', 'ö'].includes(character)) {
+        return;
+    } else if (['f', 't'].includes(character)) {
+        glyphsToTurnOff = ftSet;
+    } else if (character === 'u') {
+        glyphsToTurnOff = uSet;
+    } else {
+        glyphsToTurnOff = smallSet;
+    }
+    
+    turnOffGlyphs(glyphsToTurnOff);
+};
 
+function makeAllGlyphsVisible(){
+    for(let i = 0; i < smallSet.length; i++){
+        allShowcaseContainers[smallSet[i] - 1].classList.remove('invalid');
+    };
+};
 
-
+function turnOffGlyphs(remove){
+    for(let i = 0; i < remove.length; i++){
+        allShowcaseContainers[remove[i] - 1].classList.add('invalid');
+    };
+};
 
 
 
