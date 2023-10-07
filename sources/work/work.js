@@ -1,7 +1,7 @@
-// GLOBAL VARIABLES	----------------------------------------------------------------------------------------------------------------
+// GLOBAL VARIABLES & CONSTANTS ====================================================================================================
+// Values & measurements    --------------------------------------------------------------------------------------------------------
 var viewerHeight = window.innerHeight;
 var viewerWidth = window.innerWidth;
-
 var windowPos = window.scrollY;
 
 
@@ -12,7 +12,48 @@ var windowPos = window.scrollY;
 
 
 
-// SWITCH TO SCROLL SMOOTH WHEN CLICKING ON INTERNAL LINKS	------------------------------------------------------------------------
+// INITIALIZERS & EVENT TRIGGERS    ================================================================================================
+window.addEventListener('pageshow', e => {
+	applyParallax(windowPos);
+	hedera();
+	typeWriterEffect();
+	
+	if(sortlaterVisibility === true){
+		applySortLaterScroll();
+	};
+});
+
+document.addEventListener('scroll', e => {
+	windowPos = window.scrollY;
+
+	applyParallax(windowPos);
+
+	if(sortlaterVisibility === true){
+		applySortLaterScroll();
+	};
+});
+
+window.addEventListener('resize', e => {
+	viewerHeight = window.innerHeight;
+	viewerWidth = window.innerWidth;
+	windowPos = window.scrollY;
+
+	hedera();
+
+	if(sortlaterVisibility === true){
+		applySortLaterScroll();
+	};
+});
+
+
+
+
+
+
+
+
+
+// SMOOTH SCROLL FOR INTERNAL LINKS	================================================================================================
 const internalAnchorLinks = document.querySelectorAll('a:is([target="_self"])');
 
 internalAnchorLinks.forEach(item => {
@@ -29,7 +70,7 @@ internalAnchorLinks.forEach(item => {
 
 
 
-// REMOVE SPLASH WHEN IT EXITS VIEW	------------------------------------------------------------------------------------------------
+// REMOVE SPLASH	================================================================================================================
 const splash = document.querySelector('#splash');
 
 const splashObserver = new IntersectionObserver(entries => {
@@ -57,7 +98,7 @@ splashObserver.observe(splash);
 
 
 
-// TOGGLE OPEN AND CLOSED THE INDEX	------------------------------------------------------------------------------------------------
+// INDEX	========================================================================================================================
 const indexBtn = document.getElementById('index-btn');
 const index = document.getElementById('index');
 
@@ -73,13 +114,14 @@ indexBtn.addEventListener('click', e => {
 
 
 
-// PARALLAX	------------------------------------------------------------------------------------------------------------------------
+// PARALLAX	========================================================================================================================
+// Elements	------------------------------------------------------------------------------------------------------------------------
 const articles = document.querySelectorAll('article');
 let currentlyVisibleArticles = [];
 
 
 
-// Articles Observer callback
+// Page section observer	--------------------------------------------------------------------------------------------------------
 const articleObserver = new IntersectionObserver(entries => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -95,13 +137,13 @@ const articleObserver = new IntersectionObserver(entries => {
     });
 });
 
-// Start observing each article
 articles.forEach(article => {
     articleObserver.observe(article);
 });
 
 
 
+// Suplemental functions	--------------------------------------------------------------------------------------------------------
 // Parallax calculation function
 function parallaxCalc(elementPos, windowPos) {
     const difference = elementPos - windowPos;
@@ -110,7 +152,7 @@ function parallaxCalc(elementPos, windowPos) {
 	return(multiplier);
 };
 
-// Apply parallax effect
+// Apply parallax transformations
 function applyParallax(windowPos) {
     currentlyVisibleArticles.forEach(article => {
         const multiplier = parallaxCalc(article.offsetTop, windowPos);
@@ -134,8 +176,10 @@ function applyParallax(windowPos) {
 
 
 
-// PROJECT IVY	--------------------------------------------------------------------------------------------------------------------
+// HEDERA SECTION	================================================================================================================
+// Variables & elements	------------------------------------------------------------------------------------------------------------
 var ivyIndex = 0;
+var speed = 50;
 
 ivyText = new Array();
 ivyText[0] = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sit amet venenatis urna cursus eget nunc scelerisque. Neque vitae tempus quam pellentesque nec. Mauris in aliquam sem fringilla ut morbi. Adipiscing vitae proin sagittis nisl rhoncus mattis rhoncus. Sit amet porttitor eget dolor morbi non arcu risus. Eget est lorem ipsum dolor sit amet consectetur. Arcu non sodales neque sodales ut etiam sit amet. In cursus turpis massa tincidunt dui ut. Tempor orci eu lobortis elementum nibh tellus molestie nunc. Enim diam vulputate ut pharetra sit amet aliquam id diam. Non pulvinar neque laoreet suspendisse interdum consectetur.";
@@ -143,27 +187,26 @@ ivyText[1] = "Vitae auctor eu augue ut lectus. Volutpat lacus laoreet non curabi
 ivyText[2] = "Ligula ullamcorper malesuada proin libero nunc consequat interdum. Morbi enim nunc faucibus a. Neque aliquam vestibulum morbi blandit. Lacinia quis vel eros donec ac odio tempor orci. Mauris sit amet massa vitae tortor condimentum lacinia. Ridiculus mus mauris vitae ultricies. Dis parturient montes nascetur ridiculus. Arcu non sodales neque sodales ut etiam. Nisi est sit amet facilisis. Lacinia quis vel eros donec ac odio tempor orci dapibus. Integer feugiat scelerisque varius morbi enim nunc faucibus. Libero volutpat sed cras ornare arcu dui vivamus arcu. Sem integer vitae justo eget magna fermentum iaculis eu non. A lacus vestibulum sed arcu. Congue quisque egestas diam in arcu cursus euismod quis.";
 ivyText[3] = "Odio tempor orci dapibus ultrices in iaculis. Nisi vitae suscipit tellus mauris a diam. Orci dapibus ultrices in iaculis nunc sed. Cras sed felis eget velit aliquet sagittis id consectetur. Consequat id porta nibh venenatis cras sed felis eget. Ut faucibus pulvinar elementum integer enim neque volutpat ac. Nulla malesuada pellentesque elit eget. Et tortor consequat id porta nibh venenatis cras sed. Semper feugiat nibh sed pulvinar proin. Quis viverra nibh cras pulvinar. Ultricies lacus sed turpis tincidunt id. Est pellentesque elit ullamcorper dignissim cras. Rhoncus urna neque viverra justo nec ultrices dui sapien eget. Varius sit amet mattis vulputate. Lacinia quis vel eros donec ac odio tempor orci. Elementum facilisis leo vel fringilla est. Tristique et egestas quis ipsum suspendisse ultrices gravida. Id porta nibh venenatis cras sed felis eget velit.";
 ivyText[4] = "Mauris nunc congue nisi vitae suscipit tellus mauris. Ultrices dui sapien eget mi proin. Lectus mauris ultrices eros in cursus. Adipiscing elit duis tristique sollicitudin. Amet risus nullam eget felis eget nunc. Eget mauris pharetra et ultrices neque ornare aenean euismod. Tellus integer feugiat scelerisque varius morbi. Accumsan in nisl nisi scelerisque eu ultrices. At ultrices mi tempus imperdiet nulla malesuada. Integer feugiat scelerisque varius morbi. Nunc sed augue lacus viverra vitae congue eu consequat ac. Aliquam nulla facilisi cras fermentum odio eu feugiat pretium. Viverra suspendisse potenti nullam ac tortor vitae purus faucibus ornare. Lorem sed risus ultricies tristique. Sit amet consectetur adipiscing elit ut. A pellentesque sit amet porttitor eget. Aenean sed adipiscing diam donec. Ac feugiat sed lectus vestibulum mattis ullamcorper velit.";
-
 const textNumber = getRandomInt(0, (ivyText.length - 1));
-var speed = 50;
 
 const ivyContainer = document.getElementById('ivy-container');
 const ivyP = document.getElementById('ivy');
 
 
 
-function projectIvy(){
+// Main functions	----------------------------------------------------------------------------------------------------------------
+function hedera(){
 	let ivyHeight = ivyContainer.offsetHeight;
 	let lineHeight = ivyHeight / 21;
 	ivyP.style.fontSize = lineHeight + 'px';
 	ivyP.style.lineHeight = lineHeight + 'px';
 };
 
-function typeWriter() {
+function typeWriterEffect() {
 	if (ivyIndex < ivyText[textNumber].length) {
 		document.getElementById("growth").innerHTML += ivyText[textNumber].charAt(ivyIndex);
 		ivyIndex++;
-		setTimeout(typeWriter, speed);
+		setTimeout(typeWriterEffect, speed);
 	};
 };
 
@@ -175,11 +218,11 @@ function typeWriter() {
 
 
 
-// SEAM CARVING	--------------------------------------------------------------------------------------------------------------------
-const nyCarve = document.querySelector('#nycCarve');
+// SEAM CARVING SECTION	============================================================================================================
 let counter = 0;
+const nyCarve = document.querySelector('#nycCarve');
 
-var intervalId = window.setInterval(function(){
+var sortLaterInterval = window.setInterval(function(){
 	counter ++
 
 	if (counter%4 === 0) {
@@ -199,12 +242,14 @@ var intervalId = window.setInterval(function(){
 
 
 
-// SORT LATER	--------------------------------------------------------------------------------------------------------------------
-const sortlaterScroll = document.getElementById('sortlater-scroll');
+// SORT LATER	====================================================================================================================
+// Variables & elements	------------------------------------------------------------------------------------------------------------
 let sortlaterVisibility;
+const sortlaterScroll = document.getElementById('sortlater-scroll');
 
 
 
+// Page section observer	--------------------------------------------------------------------------------------------------------
 const sortlaterObserver = new IntersectionObserver(entries => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -220,7 +265,8 @@ sortlaterObserver.observe(sortlaterScroll);
 
 
 
-function applyScroll(){
+// Main function	----------------------------------------------------------------------------------------------------------------
+function applySortLaterScroll(){
 	let sortlaterContainer = sortlaterScroll.parentNode;
 	let containerPos = sortlaterContainer.getBoundingClientRect().top;
 	let minThreshold = sortlaterContainer.offsetHeight * -1;
@@ -238,7 +284,7 @@ function applyScroll(){
 
 
 
-// CROSSWALK POETICS	------------------------------------------------------------------------------------------------------------
+// CROSSWALK POETICS	============================================================================================================
 document.querySelector('#crosswalk-projection').playbackRate = 0.20;
 
 
@@ -249,59 +295,7 @@ document.querySelector('#crosswalk-projection').playbackRate = 0.20;
 
 
 
-// GLOBAL TRIGGERS	----------------------------------------------------------------------------------------------------------------
-// document.addEventListener('load', e => {
-// 	applyParallax(windowPos);
-// 	projectIvy();
-
-// 	if(sortlaterVisibility === true){
-// 		applyScroll();
-// 	};
-// });
-
-window.addEventListener('pageshow', e => {
-	applyParallax(windowPos);
-	projectIvy();
-	typeWriter();
-	
-	if(sortlaterVisibility === true){
-		applyScroll();
-	};
-});
-
-
-
-document.addEventListener('scroll', e => {
-	windowPos = window.scrollY;
-
-	applyParallax(windowPos);
-
-	if(sortlaterVisibility === true){
-		applyScroll();
-	};
-});
-
-window.addEventListener('resize', e => {
-	viewerHeight = window.innerHeight;
-	viewerWidth = window.innerWidth;
-	windowPos = window.scrollY;
-
-	projectIvy();
-
-	if(sortlaterVisibility === true){
-		applyScroll();
-	};
-});
-
-
-
-
-
-
-
-
-
-// GLOBAL FUNCTIONS	----------------------------------------------------------------------------------------------------------------
+// GLOBAL FUNCTIONS	================================================================================================================
 function normalizeBetween(m, rmin, rmax, tmin, tmax){
 	return(((m - rmin) / (rmax - rmin)) * (tmax - tmin) + tmin);
 };
