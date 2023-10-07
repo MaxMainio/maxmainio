@@ -1,33 +1,17 @@
-const sampleContainer = document.getElementById('sample-container');
-
-
-
-const allSliders = document.querySelectorAll('.slider');
-const sampleFontSizeSlider = document.getElementById('sampleFontSize');
-const sampleLineHeightSlider = document.getElementById('sampleLineHeight');
-const sampleOffsetSlider = document.getElementById('sampleOffset');
-
-const sampleContextualCheck = document.getElementById('sampleContextual');
-const sampleColorPicker = document.getElementById('sampleColorizor');
-
-
-
-const sampleBG = document.getElementById('sampleBG');
-const textSample = document.getElementById('textSample');
-
-var allScalers = document.querySelectorAll('.sample-anatomy');
-
+// GLOBAL VARIABLES & CONSTANTS ====================================================================================================
+// Values & measurements    --------------------------------------------------------------------------------------------------------
+var viewerHeight = window.innerHeight;
+var viewerWidth = window.innerWidth;
 const rem = parseFloat(getComputedStyle(document.documentElement).fontSize);
-
-
 
 var sampleFontSize = 10;
 var sampleLineHeight = 1.1;
 var sampleElementSize = sampleFontSize * rem * sampleLineHeight;
 var sampleRenderedSize = sampleFontSize * 1.1 * rem;
 
-var sampleRowsNumber = Math.round(textSample.offsetHeight / sampleElementSize);;
-var overShoot = (sampleElementSize - sampleRenderedSize) / 2;
+// Interactive elements ------------------------------------------------------------------------------------------------------------
+const allSliders = document.querySelectorAll('.slider');
+const allZoomableGlyphs = document.querySelectorAll('p.showcased-glyph');
 
 
 
@@ -37,10 +21,8 @@ var overShoot = (sampleElementSize - sampleRenderedSize) / 2;
 
 
 
-// GLOBAL TRIGGERS	----------------------------------------------------------------------------------------------------------------
-window.addEventListener('load', e => {
-    setSampleBG();
-});
+// INITIALIZERS & EVENT TRIGGERS    ================================================================================================
+window.addEventListener('load', setSampleBG);
 
 window.addEventListener('pageshow', e => {
     heroSwap();
@@ -63,23 +45,11 @@ window.addEventListener('resize', e => {
 
 
 
-// GLOBAL ELEMENTS  ----------------------------------------------------------------------------------------------------------------
-var viewerHeight = window.innerHeight;
-var viewerWidth = window.innerWidth;
-
-
-
-
-
-
-
-
-
-// HERO ----------------------------------------------------------------------------------------------------------------------------
+// "HERO" SECTION    ===============================================================================================================
+// HERO elements    ----------------------------------------------------------------------------------------------------------------
 const heroFlower = document.getElementById('hero-flower');
 const heroIvy = document.getElementById('hero-ivy');
 
-// Hero Texts
 heroTxt = new Array();
 heroTxt[0] = "Hedera: A unique typeface blending structured design with organic ivy-inspired dynamics. Experience the fusion of human craftsmanship and nature's unpredictability";
 heroTxt[1] = "Where Ivy truly shines is in its embodiment of a delicate balance. At its core, the typeface is a testament to human design - structured, precise, and meticulously crafted. Yet, it draws its vitality from the capricious patterns of nature. Mirroring the spontaneous growth of ivy plants, the connections between letters don't just follow but intertwine, mimicking the winding tendrils of creeping vines.";
@@ -89,6 +59,7 @@ heroTxt[4] = "The connections between glyphs mimic the intricate and unpredictab
 
 
 
+// Hero functionality   ------------------------------------------------------------------------------------------------------------
 function heroSwap(){
     const selectedIMG = getRandomInt(1, 4);
     const selectedTXT = getRandomInt(0, (heroTxt.length - 1));
@@ -98,8 +69,6 @@ function heroSwap(){
 
     heroIvy.innerHTML = heroTxt[selectedTXT];
 };
-
-
 
 function fitHeroIvy(){
     let width = heroFlower.offsetWidth;
@@ -117,27 +86,25 @@ function fitHeroIvy(){
 
 
 
-// GLOBAL   ------------------------------------------------------------------------------------------------------------------------
-allSliders.forEach((element) => {
-    element.addEventListener('mousedown', e => {
-        document.documentElement.style.setProperty('--sliderCursor', 'grabbing');
-    });
+// SAMPLE SECTION   ================================================================================================================
+// Sample elements  ----------------------------------------------------------------------------------------------------------------
+const sampleFontSizeSlider = document.getElementById('sampleFontSize');
+const sampleLineHeightSlider = document.getElementById('sampleLineHeight');
+const sampleOffsetSlider = document.getElementById('sampleOffset');
 
-    element.addEventListener('mouseup', e => {
-        document.documentElement.style.setProperty('--sliderCursor', 'grab');
-    });
-});
+const sampleContextualCheck = document.getElementById('sampleContextual');
+const sampleColorPicker = document.getElementById('sampleColorizor');
 
+const sampleBG = document.getElementById('sampleBG');
+var allScalers = document.querySelectorAll('.sample-anatomy');
+const textSample = document.getElementById('textSample');
 
-
-
-
-
-
+var sampleRowsNumber = Math.round(textSample.offsetHeight / sampleElementSize);;
+var overShoot = (sampleElementSize - sampleRenderedSize) / 2;
 
 
-// TYPE PREVIEW --------------------------------------------------------------------------------------------------------------------
-// PREVIEW Interactivity
+
+// Sample interactive / inputs  ----------------------------------------------------------------------------------------------------
 sampleFontSizeSlider.oninput = function() {
     sampleFontSize = sampleFontSizeSlider.value / 10;
     document.documentElement.style.setProperty('--sampleSize', sampleFontSize + 'rem');
@@ -153,8 +120,6 @@ sampleLineHeightSlider.oninput = function() {
 sampleOffsetSlider.oninput = function() {
     document.documentElement.style.setProperty('--sampleOffset', sampleOffsetSlider.value);
 };
-
-
 
 function contextToggle(){
     if (sampleContextualCheck.checked == true){
@@ -173,13 +138,7 @@ sampleColorPicker.oninput = function() {
 
 
 
-
-
-
-
-
-
-// Auto scale the background
+// Sample background & scales   ----------------------------------------------------------------------------------------------------
 function setSampleBG(){
     let newHeight = textSample.offsetHeight;
     
@@ -188,8 +147,6 @@ function setSampleBG(){
 
     sampleRowsNumber = Math.round(newHeight / sampleElementSize);
     overShoot = (sampleElementSize - sampleRenderedSize) / 2;
-
-
 
     document.documentElement.style.setProperty('--overshoot', (overShoot * -1) + 'px');
     sampleBG.style.height = newHeight - (overShoot * 2) + 'px';
@@ -231,13 +188,7 @@ function removeSampleScale(repetitionNumber){
 
 
 
-
-
-
-
-
-
-// Sample area and typing
+// Sample typing & pasting  --------------------------------------------------------------------------------------------------------
 textSample.addEventListener('input', function() {
     setSampleBG();
 }, false);
@@ -258,29 +209,22 @@ textSample.addEventListener('paste', function(event){
 
 
 
-// SHOWCASE ------------------------------------------------------------------------------------------------------------------------
+// SHOWCASE SECTION ================================================================================================================
+// Showcase elements    ------------------------------------------------------------------------------------------------------------
 const showcaseSearch = document.getElementById('showcaseSearch');
 const showcaseOffsetSlider = document.getElementById('showcaseOffset');
 const showcaseColorPicker = document.getElementById('showcaseColorizor');
 
-const allShowcaseContainers = document.querySelectorAll('.test2');
-const allShowcaseGlyphs = document.querySelectorAll('.showcase-glyph');
-
-const allZoomableGlyphs = document.querySelectorAll('p.showcase-glyph');
-
-
+const allShowcaseSpotlights = document.querySelectorAll('.spotlight');
+const allShowcasedGlyphs = document.querySelectorAll('.showcased-glyph');
 
 const smallSet = [8, 9, 15, 16, 17, 18, 19, 20, 21, 22, 24];
-
 const uSet = [8, 9, 15, 16, 21, 22];
-const uSetPrime = [17, 18, 19, 20, 22];
-
 const ftSet = [9, 16, 22];
-const ftSetPrime = [8, 15, 17, 18,19, 20, 21, 24];
 
 
 
-// SHOWCASE Interactivity
+// Showcase glyph search    --------------------------------------------------------------------------------------------------------
 showcaseSearch.addEventListener("input", function(event) {
     const inputValue = event.target.value;
 
@@ -300,42 +244,12 @@ showcaseSearch.addEventListener("input", function(event) {
 });
 
 function validCharacterAction(character) {
-    allShowcaseGlyphs.forEach((element) => {
+    allShowcasedGlyphs.forEach((element) => {
         element.innerHTML = character;
     });
 
     handleGlyphVisibility(character);
 };
-
-
-
-allZoomableGlyphs.forEach(function (element){
-    element.addEventListener("mousedown", (event) => {
-        if (event.button === 0) {
-            let current = event.target;
-
-            current.classList.add('focused-glyph');
-            document.body.style.cursor = 'zoom-out';
-
-            document.addEventListener("mouseup", (event) => {
-                current.classList.remove('focused-glyph');
-                document.body.style.cursor = 'auto';
-            });
-        };
-    });
-});
-
-
-
-showcaseOffsetSlider.oninput = function(){
-    document.documentElement.style.setProperty('--showcaseOffset', showcaseOffsetSlider.value);
-};
-
-showcaseColorPicker.oninput = function(){
-    document.documentElement.style.setProperty('--showcaseColor', showcaseColorPicker.value);
-};
-
-
 
 function handleGlyphVisibility(character){
     let glyphsToTurnOff = [];
@@ -356,24 +270,65 @@ function handleGlyphVisibility(character){
 
 function makeAllGlyphsVisible(){
     for(let i = 0; i < smallSet.length; i++){
-        allShowcaseContainers[smallSet[i] - 1].classList.remove('invalid');
+        allShowcaseSpotlights[smallSet[i] - 1].classList.remove('invalid');
     };
 };
 
 function turnOffGlyphs(remove){
     for(let i = 0; i < remove.length; i++){
-        allShowcaseContainers[remove[i] - 1].classList.add('invalid');
+        allShowcaseSpotlights[remove[i] - 1].classList.add('invalid');
     };
 };
 
 
 
+// Showcase interactive / inputs    ------------------------------------------------------------------------------------------------
+showcaseOffsetSlider.oninput = function(){
+    document.documentElement.style.setProperty('--showcaseOffset', showcaseOffsetSlider.value);
+};
+
+showcaseColorPicker.oninput = function(){
+    document.documentElement.style.setProperty('--showcaseColor', showcaseColorPicker.value);
+};
+
+
+
+// Showcase zoomable glyphs --------------------------------------------------------------------------------------------------------
+allZoomableGlyphs.forEach(function (element){
+    element.addEventListener("mousedown", (event) => {
+        if (event.button === 0) {
+            let current = event.target;
+
+            current.classList.add('focused-glyph');
+            document.body.style.cursor = 'zoom-out';
+
+            document.addEventListener("mouseup", (event) => {
+                current.classList.remove('focused-glyph');
+                document.body.style.cursor = 'auto';
+            });
+        };
+    });
+});
 
 
 
 
 
-// GLOBAL FUNCTIONS	----------------------------------------------------------------------------------------------------------------
+
+
+
+
+// GLOBAL FUNCTIONS ================================================================================================================
+allSliders.forEach((element) => {
+    element.addEventListener('mousedown', e => {
+        document.documentElement.style.setProperty('--sliderCursor', 'grabbing');
+    });
+
+    element.addEventListener('mouseup', e => {
+        document.documentElement.style.setProperty('--sliderCursor', 'grab');
+    });
+});
+
 function getRandomInt(min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);
