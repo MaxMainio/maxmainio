@@ -24,10 +24,6 @@
     cursor: url(../../../assets/cursors/right-cursor.svg) 32 32, pointer;
 }
 
-#carousel-container h2{
-    margin-top: -1rem;
-}
-
 
 
 .book-description{
@@ -35,8 +31,12 @@
     grid-template-columns: repeat(3, 1fr);
     column-gap: 1rem;
 
-    > h2{
-        grid-column: 1 / 4;
+    & h2{
+        margin: 0;
+    }
+
+    & p:first-child{
+        margin: 0;
     }
 }
 
@@ -193,6 +193,10 @@
 @media (width <= 685px) {
     .book-description{
         display: block;
+    
+        & p:first-child{
+            margin-top: 0.5rem;
+        }
     }
 
     #carousel-container{
