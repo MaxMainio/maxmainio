@@ -9,6 +9,8 @@ var sampleLineHeight = 1.1;
 var sampleElementSize = sampleFontSize * rem * sampleLineHeight;
 var sampleRenderedSize = sampleFontSize * 1.1 * rem;
 
+var interacted = false;
+
 // Interactive elements ------------------------------------------------------------------------------------------------------------
 const allSliders = document.querySelectorAll('.slider');
 const allZoomableGlyphs = document.querySelectorAll('p.showcased-glyph');
@@ -35,6 +37,12 @@ window.addEventListener('resize', e => {
 
     setSampleBG();
     fitHeroIvy();
+
+    if(viewerWidth < 1000 && interacted === false){
+        setSampleSliders();
+    } else if(viewerWidth > 1000 && interacted === false){
+        sampleFontSizeSlider.value = 100;
+    };
 });
 
 
@@ -104,17 +112,30 @@ var overShoot = (sampleElementSize - sampleRenderedSize) / 2;
 
 
 
+// Sample sliders react to page width   --------------------------------------------------------------------------------------------
+function setSampleSliders(){
+    let newSliderValue = Math.round(viewerWidth / rem);
+
+    sampleFontSizeSlider.value = newSliderValue;
+};
+
+
+
 // Sample interactive / inputs  ----------------------------------------------------------------------------------------------------
 sampleFontSizeSlider.oninput = function() {
     sampleFontSize = sampleFontSizeSlider.value / 10;
     document.documentElement.style.setProperty('--sampleSize', sampleFontSize + 'rem');
     setSampleBG();
+
+    interacted = true;
 };
 
 sampleLineHeightSlider.oninput = function() {
     sampleLineHeight = sampleLineHeightSlider.value / (10 / 1.1);
     document.documentElement.style.setProperty('--sampleHeight', sampleLineHeight);
     setSampleBG();
+
+    interacted = true;
 };
 
 sampleOffsetSlider.oninput = function() {
@@ -162,7 +183,7 @@ function setSampleBG(){
         return;
     };
 
-    if(differenceOfRows < 0){
+    if(differenceOfRows < 0 && sampleRowsNumber != 0){
         removeSampleScale(Math.abs(differenceOfRows));
         return;
     };
