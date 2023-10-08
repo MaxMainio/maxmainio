@@ -204,7 +204,7 @@ hgroup{
 
 
 
-/* Project Ivy  ----------------------------------------------------------------------------------------------------------------- */
+/* Hedera   --------------------------------------------------------------------------------------------------------------------- */
 #hedera .out-container{
     display: flex;
     justify-content: center;
@@ -213,7 +213,7 @@ hgroup{
 
 .hedera-content{
     position: relative;
-    width: 100%;
+    max-width: 100%;
     max-height: calc(100% - 6rem);
     aspect-ratio: 1492 / 1024;
     display: flex;
@@ -222,7 +222,8 @@ hgroup{
 
     & > a{
         display: block;
-        height: 100%;
+        max-width: 100%;
+        max-height: 100%;
         pointer-events: all;
 
         &:hover{

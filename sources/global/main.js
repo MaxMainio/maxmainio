@@ -16,68 +16,75 @@ var vw = window.innerWidth;
 const innerLinks = document.querySelectorAll('a:not([target="_self"], [target="_blank"])');
 const faderElement = document.querySelector('#fader');
 
-if (vw > 800) {
-    window.onpageshow = () => {
-        faderElement.classList.remove('motion');
-
-        setTimeout(() => {
-            faderElement.remove();
-        }, 500);
-
-        innerLinks.forEach(item => {
-            item.addEventListener('click', e => {
-                e.preventDefault();
-
-                var target = e.currentTarget.href;
-                const faderDiv = document.createElement('div');
-                faderDiv.classList.add('fader');
-
-                document.body.append(faderDiv);
-                setTimeout(() => {
-                    faderDiv.classList.add('motion');
-                }, 1);
-
-                setTimeout(() => {
-                    window.location.href = target;
-                }, 499);
-            });
-        });
-    };
-} else {
-    faderElement.remove();
-};
-
-// const innerLinks = document.querySelectorAll('a:not([target="_self"], [target="_blank"])');
-// const faderElement = document.querySelector('#fader');
-
-// function showPageContent() {
-//     faderElement.classList.remove('motion');
-// }
-
-// function initiateFadeTransition(e) {
-//     e.preventDefault();
-
-//     const target = e.currentTarget.href;
-//     faderElement.classList.add('motion');
-    
-//     setTimeout(() => {
-//         window.location.href = target;
-//     }, 500);
-// }
-
 // if (vw > 800) {
-//     window.addEventListener('pageshow', (event) => {
-//         if (event.persisted || (window.performance && window.performance.navigation.type === 2)) {
-//             showPageContent();
-//         }
-//     });
+//     window.onpageshow = () => {
+//         faderElement.classList.remove('motion');
 
-//     innerLinks.forEach(item => {
-//         item.addEventListener('click', initiateFadeTransition);
-//     });
+//         setTimeout(() => {
+//             faderElement.remove();
+//         }, 500);
+
+//         innerLinks.forEach(item => {
+//             item.addEventListener('click', e => {
+//                 e.preventDefault();
+
+//                 var target = e.currentTarget.href;
+//                 const faderDiv = document.createElement('div');
+//                 faderDiv.classList.add('fader');
+
+//                 document.body.append(faderDiv);
+//                 setTimeout(() => {
+//                     faderDiv.classList.add('motion');
+//                 }, 1);
+
+//                 setTimeout(() => {
+//                     window.location.href = target;
+//                 }, 499);
+//             });
+//         });
+//     };
 // } else {
 //     faderElement.remove();
-// }
+// };
+
+
+
+function inFade(){
+    faderElement.classList.remove('motion');
+
+    setTimeout(() => {
+        faderElement.remove();
+    }, 500);
+};
+
+function outFade(e){
+    e.preventDefault();
+
+    const faderDiv = document.createElement('div');
+    faderDiv.classList.add('fader');
+    document.body.append(faderDiv);
+
+    setTimeout(() => {
+        faderDiv.classList.add('motion');
+    }, 1);
+    
+    const targetURL = e.currentTarget.href;
+    setTimeout(() => {
+        window.location.href = targetURL;
+    }, 499);
+};
+
+
+
+window.addEventListener('pageshow', (event) => {
+    inFade();
+});
+
+innerLinks.forEach(item => {
+    item.addEventListener('click', outFade);
+})
+
+
 
 
 
