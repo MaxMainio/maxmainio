@@ -17,11 +17,16 @@ window.addEventListener('pageshow', (event) => {
     inFade();
     setFooterText();
 
-    // Check if the page was loaded from cache (back/forward navigation)
     if (event.persisted || performance.getEntriesByType("navigation")[0].type === 'back_forward') {
         location.reload();
-        return; // Exit early since we're reloading the page
+        return;
     };
+});
+
+document.addEventListener('visibilitychange', function() {
+    if (document.visibilityState === 'visible') {
+        inFade();
+    }
 });
 
 
