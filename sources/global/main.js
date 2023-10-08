@@ -17,8 +17,11 @@ window.addEventListener('pageshow', (event) => {
     inFade();
     setFooterText();
 
-
-    handlePageShow(event);
+    // Check if the page was loaded from cache (back/forward navigation)
+    if (event.persisted || performance.getEntriesByType("navigation")[0].type === 'back_forward') {
+        location.reload();
+        return; // Exit early since we're reloading the page
+    };
 });
 
 
@@ -37,17 +40,6 @@ const faderElement = document.querySelector('#fader');
 innerLinks.forEach(item => {
     item.addEventListener('click', outFade);
 });
-
-
-
-function handlePageShow(event) {
-    if (event.persisted || window.performance.navigation.type === 2) {
-        document.addEventListener("DOMContentLoaded", () => {
-            inFade();
-            setFooterText();
-        });
-    };
-};
 
 
 
