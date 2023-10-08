@@ -121,7 +121,7 @@ sampleOffsetSlider.oninput = function() {
     document.documentElement.style.setProperty('--sampleOffset', sampleOffsetSlider.value);
 };
 
-function contextToggle(){
+sampleContextualCheck.oninput = function(){
     if (sampleContextualCheck.checked == true){
         document.documentElement.style.setProperty('--caltToggle', 1);
         sampleContextualCheck.nextElementSibling.innerHTML = 'Disconnect';

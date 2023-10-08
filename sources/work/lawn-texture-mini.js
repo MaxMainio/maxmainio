@@ -1,4 +1,4 @@
-/* CONSTANTS ========================================================================================================================= */
+// GLOBAL VARIABLES & CONSTANTS ====================================================================================================
 const textField = document.getElementById('lawn1');
 
 const lawnObj = {};
@@ -12,36 +12,8 @@ let flwoerIndex = 0;
 let allFlowerPatches = [];
 let activeFlowerPatches = [];
 
-
-
-
-
-
-
-
-
-var lawnSpreadInterval = setInterval(runLawnSpread, 2000);
-var flowerSpreadInterval = setInterval(runFlowerSpread, 1000);
-
 let isRefreshing = false;
 
-function runLawnSpread(){
-    spreadLawn();
-    updateLawnArrays();
-
-    stopTrigger(activeLawnPatches, 'lawn');
-};
-
-function runFlowerSpread(){
-    spreadFlowers();
-    updateFlowerArrays();
-
-    stopTrigger(activeFlowerPatches, 'flower');
-};
-
-window.addEventListener('resize', (event) => {
-    refreshAllArrays();
-});
 
 
 
@@ -50,26 +22,7 @@ window.addEventListener('resize', (event) => {
 
 
 
-
-const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            refreshAllArrays();
-        };
-    });
-});
-
-observer.observe(textField);
-
-
-
-
-
-
-
-
-
-/* JSON FETCH ======================================================================================================================== */
+// JSON FETCH   ====================================================================================================================
 fetch('https://maxmain.io/work/lawn-texture/sources/data.json')
     .then((response) => response.json())
     .then((json) => {
@@ -87,6 +40,19 @@ fetch('https://maxmain.io/work/lawn-texture/sources/data.json')
 
 
 
+// DOCUMENT SETUP   ================================================================================================================
+function prepTextField(){
+    highlightLawn();
+    highlightFlowers();
+    wrapRest();
+    
+    updateLawnArrays();
+    updateFlowerArrays();
+};
+
+
+
+// Setup flora objects  ------------------------------------------------------------------------------------------------------------
 function prepLawnObject(lawnData){
     const {key, words, colors} = lawnData;
     lawnObj.key = key;
@@ -103,26 +69,7 @@ function prepFlowerObject(flowersData){
 
 
 
-
-
-
-
-
-
-/* DOCUMENT SETUP ==================================================================================================================== */
-function prepTextField(){
-    highlightLawn();
-    highlightFlowers();
-    wrapRest();
-    
-    updateLawnArrays();
-    updateFlowerArrays();
-};
-
-
-
-
-
+// Highlight functions  ------------------------------------------------------------------------------------------------------------
 function highlightLawn(){
     const subject = lawnObj.key;
     const searchFor = lawnObj.words;
@@ -137,8 +84,6 @@ function highlightLawn(){
     };
 };
 
-
-
 function highlightFlowers(){
     const subject = flowersObj.key;
     const searchFor = flowersObj.words;
@@ -148,6 +93,9 @@ function highlightFlowers(){
     defineBushes(searchFor, types, typeKeys);
 };
 
+
+
+// Suplimentary functions   --------------------------------------------------------------------------------------------------------
 function defineBushes(searchFor, types, typeKeys) {
     for (let i = 0; i < searchFor.length; i++) {
         const regex = new RegExp('((?<!<[^>]+>)' + searchFor[i] + '(?![^<]*>))', 'gi');
@@ -182,6 +130,7 @@ function splitBushes(match, chosenType){
 
 
 
+// Wrap wrest function  ------------------------------------------------------------------------------------------------------------
 function wrapRest(){
     textField.innerHTML = textField.innerHTML.replace(/((?<!<[^>]+>)\b\w+\b(?![^<]*>))/gi, '<span>$1</span>');
 };
@@ -194,6 +143,86 @@ function wrapRest(){
 
 
 
+// MAIN FUNCTIONS   ================================================================================================================
+function runLawnSpread(){
+    spreadLawn();
+    updateLawnArrays();
+
+    stopTrigger(activeLawnPatches, 'lawn');
+};
+
+function runFlowerSpread(){
+    spreadFlowers();
+    updateFlowerArrays();
+
+    stopTrigger(activeFlowerPatches, 'flower');
+};
+
+
+// Spread functions ----------------------------------------------------------------------------------------------------------------
+function spreadLawn(){
+    for (let i = 0; i < activeLawnPatches.length; i++){
+        let target = getTargetInfo(activeLawnPatches[i]);
+        
+        if (target.color === '0') {
+            continue;
+        };
+        
+        let newColor = target.color - 1;
+        
+        let coordinates = getCoordinates(target, 'lawn');
+        let tagged = getSurroundings(coordinates, 'lawn');
+
+        promoteLawn(tagged, newColor);
+    };
+};
+
+function spreadFlowers() {
+    for (let i = 0; i < activeFlowerPatches.length; i ++){
+        let target = getTargetInfo(activeFlowerPatches[i]);
+        let coordinates = getCoordinates(target, 'flower');
+        let tagged = getSurroundings(coordinates, 'flower');
+
+        promoteFlowers(tagged, target.color);
+    };
+};
+
+
+
+// Promotion functions  ------------------------------------------------------------------------------------------------------------
+function promoteLawn(tagged, newColor){
+    for (let i = 0; i < tagged.length; i++) {
+        if (tagged[i].classList.contains('lawn')) {
+            continue;
+
+        }
+        else if (tagged[i].classList.contains('flower') || tagged[i].classList.contains('sprout')) {
+            tagged[i].parentNode.classList.add('lawn');
+            tagged[i].parentNode.style.backgroundColor = lawnObj.colors[newColor];
+            tagged[i].parentNode.setAttribute('data-color', newColor);
+        }
+        else {
+            tagged[i].classList.add('lawn');
+            tagged[i].style.backgroundColor = lawnObj.colors[newColor];
+            tagged[i].setAttribute('data-color', newColor);
+        };
+    };
+};
+
+function promoteFlowers(promotable, colors){
+    for (let i = 0; i < promotable.length; i++) {
+        if (promotable[i].classList.contains('sprout')){
+            promotable[i].style.backgroundColor = flowersObj.types[colors][getRandomInt(0, flowersObj.types[colors].length)];
+            promotable[i].classList.remove('sprout');
+            promotable[i].classList.add('flower');
+            promotable[i].setAttribute('data-color', colors);
+        };
+    };
+};
+
+
+
+// Array maintenance    ------------------------------------------------------------------------------------------------------------
 function updateLawnArrays(){
     activeLawnPatches = [];
 
@@ -240,57 +269,7 @@ function refreshAllArrays(){
 
 
 
-function stopTrigger(activeArray, type){
-    if (activeArray.length === 0 && type === 'lawn'){
-        clearInterval(lawnSpreadInterval);
-    } else if (activeArray.length === 0 && type === 'flower'){
-        clearInterval(flowerSpreadInterval);
-    };
-};
-
-
-
-
-
-
-
-
-
-function spreadLawn(){
-    for (let i = 0; i < activeLawnPatches.length; i++){
-        let target = getTargetInfo(activeLawnPatches[i]);
-        
-        if (target.color === '0') {
-            continue;
-        };
-        
-        let newColor = target.color - 1;
-        
-        let coordinates = getCoordinates(target, 'lawn');
-        let tagged = getSurroundings(coordinates, 'lawn');
-
-        promoteLawn(tagged, newColor);
-    };
-};
-
-function spreadFlowers() {
-    for (let i = 0; i < activeFlowerPatches.length; i ++){
-        let target = getTargetInfo(activeFlowerPatches[i]);
-        let coordinates = getCoordinates(target, 'flower');
-        let tagged = getSurroundings(coordinates, 'flower');
-
-        promoteFlowers(tagged, target.color);
-    };
-};
-
-
-
-
-
-
-
-
-
+// UTILITY FUNCTIONS    ============================================================================================================
 function getTargetInfo(current){
     const style = getComputedStyle(current);
 
@@ -307,6 +286,8 @@ function getTargetInfo(current){
 
     return(target);
 };
+
+
 
 function getCoordinates(target, type) {
     let leftX = target.location[0] - (target.style[0] / 2);
@@ -335,6 +316,8 @@ function getCoordinates(target, type) {
 
     return coordinates;
 };
+
+
 
 function getSurroundings(coordinates, type){
     let surroundings = [];
@@ -400,33 +383,15 @@ function getSurroundings(coordinates, type){
 
 
 
-function promoteLawn(tagged, newColor){
-    for (let i = 0; i < tagged.length; i++) {
-        if (tagged[i].classList.contains('lawn')) {
-            continue;
+// METRONOME    ====================================================================================================================
+var lawnSpreadInterval = setInterval(runLawnSpread, 2000);
+var flowerSpreadInterval = setInterval(runFlowerSpread, 1000);
 
-        }
-        else if (tagged[i].classList.contains('flower') || tagged[i].classList.contains('sprout')) {
-            tagged[i].parentNode.classList.add('lawn');
-            tagged[i].parentNode.style.backgroundColor = lawnObj.colors[newColor];
-            tagged[i].parentNode.setAttribute('data-color', newColor);
-        }
-        else {
-            tagged[i].classList.add('lawn');
-            tagged[i].style.backgroundColor = lawnObj.colors[newColor];
-            tagged[i].setAttribute('data-color', newColor);
-        };
-    };
-};
-
-function promoteFlowers(promotable, colors){
-    for (let i = 0; i < promotable.length; i++) {
-        if (promotable[i].classList.contains('sprout')){
-            promotable[i].style.backgroundColor = flowersObj.types[colors][getRandomInt(0, flowersObj.types[colors].length)];
-            promotable[i].classList.remove('sprout');
-            promotable[i].classList.add('flower');
-            promotable[i].setAttribute('data-color', colors);
-        };
+function stopTrigger(activeArray, type){
+    if (activeArray.length === 0 && type === 'lawn'){
+        clearInterval(lawnSpreadInterval);
+    } else if (activeArray.length === 0 && type === 'flower'){
+        clearInterval(flowerSpreadInterval);
     };
 };
 
@@ -438,7 +403,30 @@ function promoteFlowers(promotable, colors){
 
 
 
-/* SUPPORT =========================================================================================================================== */
+// EVENT TRIGGERS & OBSERVERS   ====================================================================================================
+window.addEventListener('resize', refreshAllArrays);
+
+
+
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            refreshAllArrays();
+        };
+    });
+});
+
+observer.observe(textField);
+
+
+
+
+
+
+
+
+
+// GLOBAL FUNCTIONS ================================================================================================================
 function getRandomInt(min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);

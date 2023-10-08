@@ -1,3 +1,4 @@
+// DRAGGABLE INTERACTIVITY WITH JQUERY  ============================================================================================
 $( function() {
     $( ".draggable" ).draggable();
 } );
@@ -10,6 +11,7 @@ $( function() {
 
 
 
+// BLENDING MODE INTERACTIVITY  ====================================================================================================
 const blends = [].slice.call(document.getElementsByName("blend-mode"));
 const docElements = document.querySelectorAll('.draggable');
 

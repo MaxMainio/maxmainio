@@ -1,9 +1,8 @@
-// EXPERIENCE TOGGLES
+// EXPERIENCE SECTION	============================================================================================================
 const allXpBtns = document.getElementsByClassName('xp-btn');
 
 for (var i = allXpBtns.length-1; i >=0  ; i--) {
 	allXpBtns[i].addEventListener('click', function() {
-		var modal = this.id + '_modal';
 		var container = this.parentNode.previousElementSibling;
 		var blocks = container.querySelectorAll('.modal');
 
@@ -26,16 +25,10 @@ for (var i = allXpBtns.length-1; i >=0  ; i--) {
 
 
 
-// FOOTER FIX
+
+// FOOTER FIX	====================================================================================================================
 const footer = document.getElementById('footer-nav').parentNode.parentNode;
 const xpSection = document.querySelector('.xp-section');
-
-window.addEventListener('load', setFooter());
-window.addEventListener('resize', event => {
-	setFooter();
-});
-
-
 
 function setFooter(){
 	let vw = checkVW();
@@ -56,3 +49,17 @@ function getHight(footer){
 	let height = footer.offsetHeight;
 	return(height);
 };
+
+
+
+
+
+
+
+
+
+// INITIALIZERS & EVENT TRIGGERS    ================================================================================================
+window.addEventListener('pageshow', setFooter());
+window.addEventListener('resize', event => {
+	setFooter();
+});

@@ -1,10 +1,9 @@
-/* CONSTANTS ========================================================================================================================= */
+// GLOBAL VARIABLES & CONSTANTS ====================================================================================================
 const textField = document.querySelectorAll('p, h1, h2, h3:not(.offlimits), h4, h5, h6');
 
 const lawnColors = [];
 const waterColors = [];
 const flowerTypes = {};
-
 const colorsMapping = {
     'lawn': lawnColors,
 };
@@ -20,8 +19,7 @@ var toggleCount = 0;
 
 
 
-
-/* JSON FETCH ======================================================================================================================== */
+// JSON FETCH   ====================================================================================================================
 fetch('https://maxmain.io/work/lawn-texture/sources/data.json')
     .then((response) => response.json())
     .then((json) => {
@@ -45,7 +43,7 @@ fetch('https://maxmain.io/work/lawn-texture/sources/data.json')
 
 
 
-/* DOCUMENT SETUP ==================================================================================================================== */
+// DOCUMENT SETUP   ================================================================================================================
 function initialHighLight(lawn, flowers) {
     highlightWords(lawn);
     highlightGlyphs(flowers);
@@ -55,13 +53,7 @@ function initialHighLight(lawn, flowers) {
 
 
 
-
-
-
-
-
-
-/* HIGHLIGHT ENTIRE WORDS ----------------------------------------------------------------------------- */
+// Highlight functions  ------------------------------------------------------------------------------------------------------------
 function highlightWords(currentPass) {
     const subject = currentPass.key;
     const search = currentPass.words;
@@ -78,11 +70,6 @@ function highlightWords(currentPass) {
     };
 };
 
-
-
-
-
-/* HIGHLIGHT SINGULAR CHARACTERS ---------------------------------------------------------------------- */
 function highlightGlyphs(currentPass) {
     const subject = currentPass.key;
     const search = currentPass.words;
@@ -102,6 +89,8 @@ function highlightGlyphs(currentPass) {
 };
 
 
+
+// Suplimentary functions   --------------------------------------------------------------------------------------------------------
 function defineClumps(search) {
     for (let i = 0; i < search.length; i++) {
         textField.forEach(element => {
@@ -135,9 +124,7 @@ function splitClumps(clump, types, typeKeys) {
 
 
 
-
-
-/* WRAP THE REST OF THE WORDS ------------------------------------------------------------------------- */
+// Wrap wrest function  ------------------------------------------------------------------------------------------------------------
 function wrapRest() {
     textField.forEach(element => {
         element.innerHTML = element.innerHTML.replace(/((?<!<[^>]+>)\b\w+\b(?![^<]*>))/gi, '<span>$1</span>');
@@ -152,24 +139,7 @@ function wrapRest() {
 
 
 
-/* INTERACTIVE / TRIGGER ============================================================================================================= */
-var intervalId = window.setInterval(function(){
-    spreadFlowers();
-}, 1000);
-
-var intervalTwoId = window.setInterval(function(){
-    spreadLawn();
-}, 2000);
-
-
-
-
-
-
-
-
-
-/* SPREAD ============================================================================================================================ */
+// SPREAD FUNCTIONS ================================================================================================================
 function spreadFlowers(){
     let flowers = document.querySelectorAll('.flower')
 
@@ -204,13 +174,44 @@ function spreadLawn(){
 
 
 
+// Promotion functions  ------------------------------------------------------------------------------------------------------------
+function promoteLawn(tagged, newColor){
+    for (let i = 0; i < tagged.length; i++) {
+        if (tagged[i].classList.contains('lawn') || tagged[i].classList.contains('offlimits')) {
+            continue;
+
+        } else if (tagged[i].classList.contains('flower') || tagged[i].classList.contains('sprout')) {
+            tagged[i].parentNode.classList.add('lawn');
+            tagged[i].parentNode.style.backgroundColor = lawnColors[newColor];
+            tagged[i].parentNode.setAttribute('data-color', newColor);
+
+        } else {
+            tagged[i].classList.add('lawn');
+            tagged[i].style.backgroundColor = lawnColors[newColor];
+            tagged[i].setAttribute('data-color', newColor);
+        };
+    };
+};
+
+function promoteFlower(promotable, color){
+    for (let i = 0; i < promotable.length; i++) {
+        if (promotable[i].classList.contains('sprout')){
+            promotable[i].style.backgroundColor = flowerTypes[color][getRandomInt(0, flowerTypes[color].length)];
+            promotable[i].classList.remove('sprout');
+            promotable[i].classList.add('flower');
+        };
+    };
+};
 
 
 
 
 
 
-/* SHARED / GLOBAL ------------------------------------------------------------------------------------ */
+
+
+
+// UTILITY FUNCTIONS    ============================================================================================================
 function getTargetInfo(turf){
     const style = getComputedStyle(turf);
     const fontSizeInPx = parseFloat(style.fontSize);
@@ -226,6 +227,7 @@ function getTargetInfo(turf){
 
     return(target);
 };
+
 
 
 function getCoordinates(target, type) {
@@ -258,13 +260,24 @@ function getCoordinates(target, type) {
 
 
 
+// Lawn specific  ------------------------------------------------------------------------------------------------------------
+function getSurroundingLawn(coordinates){
+    let surroundings = [];
+
+    for (let i = 0; i < coordinates.length; i = i + 2) {
+        let tagged = document.elementFromPoint(coordinates[i], coordinates[i + 1]);
+
+        if (tagged !== null && tagged.tagName === 'SPAN') {
+            surroundings.push(tagged);
+        }
+    };
+
+    return (surroundings);
+};
 
 
 
-
-
-
-/* FLOWER SPECIFICS ----------------------------------------------------------------------------------- */
+// Flower specific  ----------------------------------------------------------------------------------------------------------
 function getSurroundingFlower(coordinates, color){
     let surroundings = [];
 
@@ -306,15 +319,21 @@ function getSurroundingFlower(coordinates, color){
 };
 
 
-function promoteFlower(promotable, color){
-    for (let i = 0; i < promotable.length; i++) {
-        if (promotable[i].classList.contains('sprout')){
-            promotable[i].style.backgroundColor = flowerTypes[color][getRandomInt(0, flowerTypes[color].length)];
-            promotable[i].classList.remove('sprout');
-            promotable[i].classList.add('flower');
-        };
-    };
-};
+
+
+
+
+
+
+
+// METRONOME    ====================================================================================================================
+var intervalId = window.setInterval(function(){
+    spreadFlowers();
+}, 1000);
+
+var intervalTwoId = window.setInterval(function(){
+    spreadLawn();
+}, 2000);
 
 
 
@@ -324,64 +343,7 @@ function promoteFlower(promotable, color){
 
 
 
-/* LAWN SPECIFICS ------------------------------------------------------------------------------------- */
-function getSurroundingLawn(coordinates){
-    let surroundings = [];
-
-    for (let i = 0; i < coordinates.length; i = i + 2) {
-        let tagged = document.elementFromPoint(coordinates[i], coordinates[i + 1]);
-
-        if (tagged !== null && tagged.tagName === 'SPAN') {
-            surroundings.push(tagged);
-        }
-    };
-
-    return (surroundings);
-};
-
-
-function promoteLawn(tagged, newColor){
-    for (let i = 0; i < tagged.length; i++) {
-        if (tagged[i].classList.contains('lawn') || tagged[i].classList.contains('offlimits')) {
-            continue;
-
-        } else if (tagged[i].classList.contains('flower') || tagged[i].classList.contains('sprout')) {
-            tagged[i].parentNode.classList.add('lawn');
-            tagged[i].parentNode.style.backgroundColor = lawnColors[newColor];
-            tagged[i].parentNode.setAttribute('data-color', newColor);
-
-        } else {
-            tagged[i].classList.add('lawn');
-            tagged[i].style.backgroundColor = lawnColors[newColor];
-            tagged[i].setAttribute('data-color', newColor);
-        };
-    };
-};
-
-
-
-
-
-
-
-
-
-/* SUPPORT =========================================================================================================================== */
-function getRandomInt(min, max) {
-    min = Math.ceil(min);
-    max = Math.floor(max);
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-};
-
-
-
-
-
-
-
-
-
-/* ILLEGIBILITY ====================================================================================================================== */
+// ILLEGIBILITY ====================================================================================================================
 illegibleBtn.addEventListener('click', event => {
     let toWipe = document.querySelectorAll('.lawn, .flower');
     toggleCount++
@@ -399,10 +361,6 @@ illegibleBtn.addEventListener('click', event => {
     };
 });
 
-
-
-
-
 function clearSpans(toWipe){
     clearInterval(intervalId);
     clearInterval(intervalTwoId);
@@ -411,4 +369,19 @@ function clearSpans(toWipe){
     toWipe.classList.remove('flower');
     toWipe.removeAttribute('style');
     toWipe.removeAttribute('data-color');
+};
+
+
+
+
+
+
+
+
+
+// GLOBAL FUNCTIONS ================================================================================================================
+function getRandomInt(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
 };
