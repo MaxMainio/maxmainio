@@ -17,10 +17,8 @@ window.addEventListener('pageshow', (event) => {
     inFade();
     setFooterText();
 
-    if (event.persisted) {
-        inFade();
-        setFooterText();
-    };
+
+    handlePageShow(event);
 });
 
 
@@ -39,6 +37,17 @@ const faderElement = document.querySelector('#fader');
 innerLinks.forEach(item => {
     item.addEventListener('click', outFade);
 });
+
+
+
+function handlePageShow(event) {
+    if (event.persisted || window.performance.navigation.type === 2) {
+        document.addEventListener("DOMContentLoaded", () => {
+            inFade();
+            setFooterText();
+        });
+    };
+};
 
 
 
