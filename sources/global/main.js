@@ -12,9 +12,63 @@ var vw = window.innerWidth;
 
 
 
+// INITIALIZERS & EVENT TRIGGERS    ================================================================================================
+window.addEventListener('pageshow', (event) => {
+    inFade();
+    setFooterText();
+
+    if (event.persisted) {
+        inFade();
+        setFooterText();
+    };
+});
+
+
+
+
+
+
+
+
+
 // FADER    ========================================================================================================================
 const innerLinks = document.querySelectorAll('a:not([target="_self"], [target="_blank"])');
 const faderElement = document.querySelector('#fader');
+
+// Internal link trigger    --------------------------------------------------------------------------------------------------------
+innerLinks.forEach(item => {
+    item.addEventListener('click', outFade);
+});
+
+
+
+// Fade functions   ----------------------------------------------------------------------------------------------------------------
+function inFade(){
+    faderElement.classList.remove('motion');
+
+    setTimeout(() => {
+        faderElement.remove();
+    }, 500);
+};
+
+function outFade(e){
+    e.preventDefault();
+
+    const faderDiv = document.createElement('div');
+    faderDiv.classList.add('fader');
+    document.body.append(faderDiv);
+
+    setTimeout(() => {
+        faderDiv.classList.add('motion');
+    }, 1);
+    
+    const targetURL = e.currentTarget.href;
+    setTimeout(() => {
+        window.location.href = targetURL;
+    }, 499);
+};
+
+
 
 // if (vw > 800) {
 //     window.onpageshow = () => {
@@ -49,40 +103,60 @@ const faderElement = document.querySelector('#fader');
 
 
 
-function inFade(){
-    faderElement.classList.remove('motion');
 
-    setTimeout(() => {
-        faderElement.remove();
-    }, 500);
-};
 
-function outFade(e){
-    e.preventDefault();
 
-    const faderDiv = document.createElement('div');
-    faderDiv.classList.add('fader');
-    document.body.append(faderDiv);
 
-    setTimeout(() => {
-        faderDiv.classList.add('motion');
-    }, 1);
+
+
+// BLURRY LOAD  ====================================================================================================================
+const blurImg = document.querySelectorAll('img.blur-load');
+const blurVid = document.querySelectorAll('video.blur-load');
+
+
+
+// Blurry IMGs  --------------------------------------------------------------------------------------------------------------------
+blurImg.forEach(img => {
+    function loaded() {
+        img.classList.add('loaded');
+        
+        setTimeout(() => {
+            img.classList.remove('blur-load');
+            img.classList.remove('loaded');
+            img.removeAttribute('style');
+        }, 200);
+        
+        img.removeEventListener('load', loaded);
+    };
     
-    const targetURL = e.currentTarget.href;
-    setTimeout(() => {
-        window.location.href = targetURL;
-    }, 499);
-};
-
-
-
-window.addEventListener('pageshow', (event) => {
-    inFade();
+    if (img.complete) {
+        loaded();
+    } else {
+        img.addEventListener('load', loaded);
+    };
 });
 
-innerLinks.forEach(item => {
-    item.addEventListener('click', outFade);
-})
+
+// Blurry MOVs  --------------------------------------------------------------------------------------------------------------------
+blurVid.forEach(vid => {
+    function videoLoaded() {
+        vid.classList.add('loaded');
+
+        setTimeout(() => {
+            vid.classList.remove('blur-load');
+            vid.classList.remove('loaded');
+            vid.removeAttribute('style');
+        }, 200);
+
+        vid.removeEventListener('loadedmetadata', videoLoaded);
+    };
+
+    if (vid.complete) {
+        videoLoaded();
+    } else {
+        vid.addEventListener('loadedmetadata', videoLoaded);
+    };
+});
 
 
 
@@ -92,47 +166,7 @@ innerLinks.forEach(item => {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// IMG CAROUSEL ------------------------------------------------------------------------------------------------------------------------
+// IMG CAROUSEL ====================================================================================================================
 const  buttons = document.querySelectorAll('[data-carousel-button]');
 
 buttons.forEach(button => {
@@ -160,7 +194,7 @@ buttons.forEach(button => {
 
 
 
-// IMG ZOOM ------------------------------------------------------------------------------------------------------------------------
+// ZOOM IMGs    ====================================================================================================================
 const zoomable = document.querySelectorAll('.zoomable');
 
 if (vw > 1000) {
@@ -196,83 +230,8 @@ if (vw > 1000) {
 
 
 
-// BLURRY LOAD  --------------------------------------------------------------------------------------------------------------------
-const blurImg = document.querySelectorAll('img.blur-load');
-const blurVid = document.querySelectorAll('video.blur-load');
-
-blurImg.forEach(img => {
-    function loaded() {
-        img.classList.add('loaded');
-
-        setTimeout(() => {
-            img.classList.remove('blur-load');
-            img.classList.remove('loaded');
-            img.removeAttribute('style');
-        }, 200);
-
-        img.removeEventListener('load', loaded);
-    };
-
-    if (img.complete) {
-        loaded();
-    } else {
-        img.addEventListener('load', loaded);
-    };
-});
-
-
-
-blurVid.forEach(vid => {
-    function videoLoaded() {
-        vid.classList.add('loaded');
-
-        setTimeout(() => {
-            vid.classList.remove('blur-load');
-            vid.classList.remove('loaded');
-            vid.removeAttribute('style');
-        }, 200);
-
-        vid.removeEventListener('loadedmetadata', videoLoaded);
-    };
-
-    if (vid.complete) {
-        videoLoaded();
-    } else {
-        vid.addEventListener('loadedmetadata', videoLoaded);
-    };
-});
-
-
-
-
-
-
-
-
-
-// FOOTER   ------------------------------------------------------------------------------------------------------------------------
-const footerField = document.getElementById('footer-field');
-
-window.addEventListener('load', function() {
-    footerField.appendChild(document.createElement('h3')).innerHTML += '<h3>' + footerTxt[Math.round(Math.random() * (footerTxt.length - 1))] + '<h3>';
-});
-
-
-
-// BACK TO TOP BUTTON
-const backToTop = document.querySelector('#top-btn');
-
-backToTop.addEventListener('click', e => {
-	document.querySelector('html').style.scrollBehavior = 'smooth'
-	
-    setTimeout(() => {
-		window.scrollTo(0, 0);
-	}, 1);
-});
-
-
-
-// FOOTER CATCHPHRASES
+// FOOTER SECTION   ================================================================================================================
+// FOOTER CATCHPHRASES  ------------------------------------------------------------------------------------------------------------
 footerTxt = new Array();
 footerTxt[0] = 'More being added here and there...';
 footerTxt[1] = 'This website is in a constant state of &ldquo;work in progress.&rdquo;';
@@ -284,3 +243,41 @@ footerTxt[6] = 'Work in progress, masterpiece in making...';
 footerTxt[7] = 'Forever in progress... Enjoy the transformation.';
 footerTxt[8] = 'Always under construction in the pursuit of excellence.';
 footerTxt[9] = 'A personal journey of perpetual web crafting...';
+
+// Elements ------------------------------------------------------------------------------------------------------------------------
+const footerField = document.getElementById('footer-field');
+const backToTop = document.getElementById('top-btn');
+
+
+
+// Set footer text  ----------------------------------------------------------------------------------------------------------------
+function setFooterText(){
+    let newInnerHTML = '<h3>' + footerTxt[getRandomInt(0, (footerTxt.length - 1))] + '</h3>';
+    footerField.appendChild(document.createElement('h3')).innerHTML = newInnerHTML;
+};
+
+
+
+// Back to top button   ------------------------------------------------------------------------------------------------------------
+backToTop.addEventListener('click', e => {
+	document.querySelector('html').style.scrollBehavior = 'smooth'
+	
+    setTimeout(() => {
+		window.scrollTo(0, 0);
+	}, 1);
+});
+
+
+
+
+
+
+
+
+
+// GLOBAL FUNCTIONS	================================================================================================================
+function getRandomInt(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+};
