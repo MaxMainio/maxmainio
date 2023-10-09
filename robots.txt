@@ -2,6 +2,7 @@ User-agent: *
 Disallow: /assets/no-index/
 Disallow: /about/assets/
 Disallow: /work/acetate-melt/assets/no-index/
+Disallow: /work/bloom/assets/no-index/
 Disallow: /work/collages/assets/no-index/
 Disallow: /work/crosswalk-poetics/assets/no-index/
 Disallow: /work/crosswalk-poetics/phenomenal-map/assets/no-index/
@@ -10,7 +11,9 @@ Disallow: /work/digital-overprint/assets/no-index/
 Disallow: /work/drawings/assets/no-index/
 Disallow: /work/ed-brown-interview/assets/no-index/
 Disallow: /work/generative-poems/assets/no-index/
+Disallow: /work/hedera/assets/no-index/
 Disallow: /work/homodeus/assets/no-index/
+Disallow: /work/lawn-texture/assets/no-index/
 Disallow: /work/playlist-covers/assets/no-index/
 Disallow: /work/ruotuvaki/assets/no-index/
 Disallow: /work/seam-carving/assets/no-index/
