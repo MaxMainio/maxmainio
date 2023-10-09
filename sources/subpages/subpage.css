@@ -12,7 +12,7 @@ article{
     row-gap: 4rem;
 }
 
-.leftoid{
+.context-container{
     grid-column: 1 / 5;
 }
 
