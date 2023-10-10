@@ -23,7 +23,7 @@ let isRefreshing = false;
 
 
 // JSON FETCH   ====================================================================================================================
-fetch('https://maxmain.io/work/lawn-texture/sources/data.json')
+fetch('../../work/lawn-texture/sources/data.json')
     .then((response) => response.json())
     .then((json) => {
         prepLawnObject(json.lawn);

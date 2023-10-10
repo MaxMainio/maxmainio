@@ -425,7 +425,7 @@ footer{
 
 #footer-gradient{
     grid-column: 2 / 3;
-    background-image: linear-gradient(to top, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1)), url(../../assets/footer/ice-bliss.jpg);
+    background-image: linear-gradient(to top, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1)), url(../../assets/footer/ice-bliss.webp);
 
     & h3{
         text-align: right;
