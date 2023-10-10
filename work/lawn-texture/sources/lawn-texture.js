@@ -20,7 +20,7 @@ var toggleCount = 0;
 
 
 // JSON FETCH   ====================================================================================================================
-fetch('data.json')
+fetch('../sources/data.json')
     .then((response) => response.json())
     .then((json) => {
         const lawn = json.lawn;
