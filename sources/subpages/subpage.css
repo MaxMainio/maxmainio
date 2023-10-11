@@ -93,8 +93,7 @@ img{
     font-size: 3rem;
     line-height: 3rem;
     position: fixed;
-
-    overflow: visible;
+    top: 3rem;
 }
 
 #sub-title{
