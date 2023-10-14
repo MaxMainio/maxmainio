@@ -1,4 +1,6 @@
 User-agent: *
+Disallow: /assets/cursors/
+Disallow: /assets/icons/
 Disallow: /assets/no-index/
 Disallow: /about/assets/
 Disallow: /work/acetate-melt/assets/no-index/
