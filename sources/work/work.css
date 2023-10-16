@@ -1514,3 +1514,25 @@ a.in-fit{
         width: 100%;
     }
 }
+
+
+
+
+
+
+
+
+
+@media print {
+    #splash{
+        display: none;
+    }
+
+    main > div{
+        display: none;
+    }
+
+    article{
+        break-inside: avoid;
+    }
+}

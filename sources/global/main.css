@@ -525,4 +525,8 @@ footer{
     #fader, #splash, header, footer{
         display: none;
     }
+
+    img, video{
+        background-image: none !important;
+    }
 }
