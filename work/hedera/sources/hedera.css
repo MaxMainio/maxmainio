@@ -797,3 +797,82 @@ p.showcased-glyph{
         }
     }
 }
+
+
+
+
+
+
+
+
+
+@media print {
+    .intermission{
+        break-inside: avoid;
+    }
+
+    .slider{
+        background: rgba(0, 0, 0, 0);
+
+        &::before{
+            content: attr(value);
+        }
+
+        &::-webkit-slider-thumb{
+            display: none;
+        }
+
+        &::-moz-range-thumb{
+            display: none;
+        }
+    }
+
+    .interactive-container{
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .download-container{
+        display: none;
+    }
+
+    #preview-interactive{
+        & > div:nth-of-type(1){
+            grid-column: 1;
+            grid-row: 1;
+        }
+        
+        & > div:nth-of-type(2){
+            grid-column: 2;
+            grid-row: 1;
+        }
+    
+        & > div:nth-of-type(3){
+            grid-column: 3;
+            grid-row: 1;
+        }
+    
+        & > div:nth-of-type(4){
+            display: none;
+        }
+        
+        & > div:nth-of-type(5){
+            display: none;
+        }
+    }
+
+
+
+    #showcase-interactive{
+        & > div:nth-of-type(1){
+            display: none;
+        }
+        
+        & > div:nth-of-type(2){
+            grid-column: 1;
+        }
+    
+        & > div:nth-of-type(3){
+            display: none;
+        }
+    }
+}

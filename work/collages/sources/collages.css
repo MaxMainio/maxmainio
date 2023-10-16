@@ -29,3 +29,21 @@
         grid-column: 4 / 9;
     }
 }
+
+
+
+
+
+
+
+
+
+@media print {
+    .context-container{
+        grid-column: 1 / 8;
+    }
+
+    #first{
+        grid-column: 1 / 6;
+    }
+}

@@ -508,3 +508,21 @@ footer{
         display: none;
     }
 }
+
+
+
+
+
+
+
+
+
+@media print {
+    :root{
+        --shadow: 0px 0px 0px rgba(0, 0, 0, 0);
+    }
+
+    #fader, #splash, header, footer{
+        display: none;
+    }
+}

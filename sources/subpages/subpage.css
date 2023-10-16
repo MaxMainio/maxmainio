@@ -156,3 +156,26 @@ main{
         margin-bottom: 4rem;
     }
 }
+
+
+
+
+
+
+
+
+
+@media print { 
+    .context-container{
+        break-inside: avoid;
+    }
+    
+    #title{
+        position: relative;
+        top: 0;
+    }
+
+    #sub-title{
+        margin-top: 0;
+    }
+}

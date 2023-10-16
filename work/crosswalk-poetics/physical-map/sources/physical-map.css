@@ -48,3 +48,34 @@ canvas{
         height: 5000px;
     }
 }
+
+
+
+
+
+
+
+
+
+@media print {
+    article{
+        row-gap: 1rem;
+    }
+
+    .context-container{
+        grid-column: 1 / 8;
+    }
+    
+    .context br, .context p:nth-last-of-type(-n+2){
+        display: none;
+    }
+
+    .work-div{
+        break-inside: avoid;
+    }
+
+    #first{
+        grid-column: 2 / 8;
+        height: auto;
+    }
+}

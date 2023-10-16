@@ -139,3 +139,21 @@
         }
     }
 }
+
+
+
+
+
+
+
+
+
+@media print {
+    .context-container{
+        grid-column: 1 / 8;
+    }
+
+    #first{
+        grid-column: 2 / 8;
+    }
+}

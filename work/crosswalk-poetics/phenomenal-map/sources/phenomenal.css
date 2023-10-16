@@ -10,3 +10,26 @@ img{
         aspect-ratio: 1024 / 169;
     }
 }
+
+
+
+
+
+
+
+
+
+/* Media Queries    ------------------------------------------------------------------------------------------------------------- */
+@media print {
+    .context-container{
+        grid-column: 1 / 8;
+    }
+
+    .context br, .context p:nth-last-of-type(-n+3){
+        display: none;
+    }
+
+    #first{
+        grid-column: 1 / 5;
+    }
+}

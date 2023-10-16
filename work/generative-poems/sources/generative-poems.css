@@ -91,3 +91,22 @@
         }
     }
 }
+
+
+
+
+
+
+
+
+
+@media print {
+    .context-container{
+        grid-column: 1 / 8;
+    }
+
+    #first{
+        grid-column: 1 / 9;
+        break-inside: avoid;
+    }
+}

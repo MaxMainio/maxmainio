@@ -229,3 +229,31 @@ footer{
         grid-column: 2 / 5;
     }
 }
+
+
+
+
+
+
+
+
+
+@media print { 
+    section{
+        grid-column: 2 / 9;
+        break-inside: avoid;
+    }
+
+    #contact-switch{
+        display: none;
+    }
+
+    .xp-section{
+        grid-column: 2 / 9;
+        break-inside: auto;
+    }
+
+    .xp-div{
+        break-inside: avoid;
+    }
+}

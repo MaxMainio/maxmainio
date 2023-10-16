@@ -203,3 +203,17 @@ article{
         }
     }
 }
+
+
+
+
+
+
+
+
+
+@media print { 
+    #legibility-btn{
+        display: none;
+    }
+}

@@ -38,3 +38,21 @@
         aspect-ratio: 1280 / 1024;
     }
 }
+
+
+
+
+
+
+
+
+
+@media print {
+    .context-container{
+        grid-column: 1 / 8;
+    }
+
+    #first{
+        grid-column: 1 / 9;
+    }
+}

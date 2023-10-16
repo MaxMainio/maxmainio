@@ -85,3 +85,30 @@ video{
         grid-column: 5 / 9;
     }
 }
+
+
+
+
+
+
+
+
+
+@media print {
+    .context-container{
+        grid-column: 1 / 8;
+    }
+
+    .work-div{
+        break-inside: avoid;
+    }
+
+    #first{
+        grid-column: 1 / 9;
+        grid-row: 2;
+    }
+
+    .physical-map{
+        grid-row: 3 / 5;
+    }
+}

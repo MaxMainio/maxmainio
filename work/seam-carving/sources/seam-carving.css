@@ -80,3 +80,25 @@ video{
         flex-direction: column;
     }
 }
+
+
+
+
+
+
+
+
+
+@media print {
+    .context-container{
+        grid-column: 1 / 8;
+    }
+
+    #first{
+        display: none;
+    }
+
+    .work-div{
+        break-inside: avoid;
+    }
+}

@@ -212,3 +212,43 @@
         margin-left: -3%;
     }
 }
+
+
+
+
+
+
+
+
+
+@media print {
+    .context-container{
+        grid-column: 1 / 8;
+    }
+    
+    #carousel-container{
+        margin: 4rem 0;
+    }
+
+    .carousel{
+        display: block;
+        position: relative;
+    }
+    
+    .book-description{
+        display: block;
+    
+        & p:first-child{
+            margin-top: 0.5rem;
+        }
+    }
+
+    #carousel-container h2{
+        margin-top: 0;
+    }
+
+    .work-div > img{
+        width: 106%;
+        margin-left: -3%;
+    }
+}
