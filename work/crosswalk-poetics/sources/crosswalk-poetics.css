@@ -1,27 +1,104 @@
-/* CONTENT  --------------------------------------------------------------------------------------------------------------------- */
+/* IMPORTS  --------------------------------------------------------------------------------------------------------------------- */
+@font-face {
+    font-family: "IBM-Plex_Mono";
+    src: url('../assets/fonts/IBMPlexMono-Text.woff2') format('woff2'),
+        url('../assets/fonts/IBMPlexMono-Text.woff') format('woff'),
+        url('../assets/fonts/IBMPlexMono-Text.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+
+
+
+
+
+
+
+/* GLOBAL   --------------------------------------------------------------------------------------------------------------------- */
 video{
     display: block;
     width: 100%;
 }
 
-
-
 .installation-video{
     aspect-ratio: 2276 / 1280;
 }
 
-.moss-video{
-    aspect-ratio: 800 / 1000;
+
+
+
+
+
+
+
+
+/* SIMULATION   ----------------------------------------------------------------------------------------------------------------- */
+.simulation-container{
+    grid-column: 1 / 9;
+
+    & > div{
+        position: relative;
+        max-width: calc(var(--in-width) - 2rem);
+        margin: 0 auto;
+    }
+}
+
+.simulation-pages{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    inset: 0;
+
+    perspective: 850px;
+}
+
+#simulation-left{
+    height: 100%;
+    width: 50%;
+    position: absolute;
+    inset: 0 auto 0 0;
+
+    padding: 2% 8% 3% 3%;
+
+    transform-origin: center right;
+    transform: rotateX(20deg) scaleX(0.775) scaleY(0.9) translateY(-14%);
+    transform-style: preserve-3d;
+}
+
+#simulation-right{
+    height: 100%;
+    width: 50%;
+    position: absolute;
+    inset: 0 0 0 auto;
+
+    padding: 2% 4% 3% 6%;
+
+    transform-origin: center left;
+    transform: rotateX(20deg) rotateY(-4deg) scaleX(0.775) scaleY(0.94) translateY(-12%);
+    transform-style: preserve-3d;
 }
 
 
 
+
+
+
+
+
+
+/* CONTENT  --------------------------------------------------------------------------------------------------------------------- */
 .physical-map{
     grid-column: 1 / 5;
     grid-row: 2 / 4;
     margin-left: calc((100vw - var(--in-width)) / 2);
     width: auto;
     max-width: 100%;
+}
+
+.moss-video{
+    aspect-ratio: 800 / 1000;
 }
 
 
