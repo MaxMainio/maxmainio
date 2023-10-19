@@ -69,7 +69,7 @@ window.addEventListener('afterprint', (event) => {
 
 leftPage.addEventListener('click', (event) => {
     document.head.innerHTML += '<link rel="stylesheet" media="print" href="sources/print.css">';
-    setTimeout(() => window.print(), 50);
+    setTimeout(() => window.print(), 500);
 });
 
 rightPage.addEventListener('click', (event) => {
