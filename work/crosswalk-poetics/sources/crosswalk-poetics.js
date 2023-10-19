@@ -1,4 +1,6 @@
 // GLOBAL VARIABLES & CONSTANTS ====================================================================================================
+document.getElementById('moss-vid').playbackRate = 0.20;
+
 // Elements ------------------------------------------------------------------------------------------------------------------------
 const simulationPages = document.getElementById('simulation-pages');
 const leftPage = document.getElementById('simulation-left');
@@ -68,8 +70,11 @@ window.addEventListener('afterprint', (event) => {
 });
 
 leftPage.addEventListener('click', (event) => {
-    document.head.innerHTML += '<link rel="stylesheet" media="print" href="sources/print.css">';
-    setTimeout(() => window.print(), 500);
+    if (leftPage.children.length === 0){
+        return
+    } else {
+        addPrintStylesheetAndPrint();
+    };
 });
 
 rightPage.addEventListener('click', (event) => {
@@ -205,6 +210,28 @@ function getTime(){
     let formattedDate = day + '/' + month + '/' + year;
 
     return('Generated: ' + formattedTime + ' ' + formattedDate);
+};
+
+
+
+
+
+
+
+
+
+// PRINTING ========================================================================================================================
+function addPrintStylesheetAndPrint(){
+    var link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.media = 'print';
+    link.href = 'sources/print.css';
+
+    link.onload = function() {
+      window.print();
+    };
+
+    document.head.appendChild(link);
 };
 
 
