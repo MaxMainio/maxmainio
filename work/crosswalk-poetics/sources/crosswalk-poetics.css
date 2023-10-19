@@ -25,6 +25,20 @@
 
 
 
+/* HTML ------------------------------------------------------------------------------------------------------------------------- */
+:root{
+    --simPSize: 1rem;
+    --simH2Size: 0.8rem;
+}
+
+
+
+
+
+
+
+
+
 /* GLOBAL   --------------------------------------------------------------------------------------------------------------------- */
 video{
     display: block;
@@ -60,7 +74,7 @@ video{
     position: absolute;
     inset: 0;
 
-    font-size: 1rem;
+    font-size: var(--simPSize);
     line-height: 3.9em;
 
     perspective: 850px;
@@ -104,7 +118,7 @@ video{
     font-family: IBM-Plex-Mono;
     font-weight: 600;
     font-style: normal;
-    font-size: 0.8rem;
+    font-size: var(--simH2Size);
     line-height: 1.3em;
     margin-bottom: 1em;
 }
@@ -113,7 +127,7 @@ video{
     font-family: IBM-Plex-Mono;
     font-weight: 400;
     font-style: normal;
-    font-size: 1rem;
+    font-size: var(--simPSize);
     line-height: 1.3em;
 
     display: inline-block;
@@ -210,16 +224,21 @@ video{
 
 
 @media (width <= 1400px) {
+    :root{
+        --simPSize: 1.16vw;
+        --simH2Size: 0.933vw;
+    }
+
     #simulation-pages{
-        font-size: 1.16vw;
+        font-size: var(--simPSize);
     }
 
     #simulation-pages p{
-        font-size: 1.16vw;
+        font-size: var(--simPSize);
     }
 
     #simulation-pages h2{
-        font-size: 0.93vw;
+        font-size: var(--simH2Size);
     }
 
     .physical-map{
