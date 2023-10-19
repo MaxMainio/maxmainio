@@ -60,6 +60,7 @@ video{
     position: absolute;
     inset: 0;
 
+    font-size: 1rem;
     line-height: 3.9em;
 
     perspective: 850px;
@@ -78,6 +79,8 @@ video{
     transform-origin: center right;
     transform: rotateX(20deg) scaleX(0.775) scaleY(0.9) translateY(-14%);
     transform-style: preserve-3d;
+
+    cursor: pointer;
 }
 
 #simulation-right{
@@ -91,6 +94,8 @@ video{
     transform-origin: center left;
     transform: rotateX(20deg) rotateY(-4deg) scaleX(0.775) scaleY(0.94) translateY(-12%);
     transform-style: preserve-3d;
+
+    cursor: pointer;
 }
 
 
@@ -101,7 +106,7 @@ video{
     font-style: normal;
     font-size: 0.8rem;
     line-height: 1.3em;
-    margin: -1em 0 1em 0;
+    margin-bottom: 1em;
 }
 
 #simulation-pages p{
@@ -113,7 +118,7 @@ video{
 
     display: inline-block;
     max-height: calc(2 * 1.3em);
-    margin: 0 1.5em 0 0;
+    margin: 0.46em 1.5em 0 0;
     max-width: none;
 }
 
@@ -121,13 +126,14 @@ video{
 
 #simulation-pages img{
     width: auto;
-    margin: 0 0.8em 0 0;
+    margin-right: 0.8em;
 }
 
 #simulation-pages img.xheight{
     display: inline-block;
     vertical-align: baseline;
     height: 2em;
+    margin-top: 0.76em;
 }
 
 #simulation-pages img.ascender{
@@ -141,6 +147,7 @@ video{
     vertical-align: baseline;
     height: 2.75em;
     margin-bottom: -0.75em;
+    margin-top: 0.76em;
 }
 
 
@@ -154,7 +161,7 @@ video{
 /* CONTENT  --------------------------------------------------------------------------------------------------------------------- */
 .physical-map{
     grid-column: 1 / 5;
-    grid-row: 2 / 4;
+    grid-row: 3 / 5;
     margin-left: calc((100vw - var(--in-width)) / 2);
     width: auto;
     max-width: 100%;
@@ -203,6 +210,18 @@ video{
 
 
 @media (width <= 1400px) {
+    #simulation-pages{
+        font-size: 1.16vw;
+    }
+
+    #simulation-pages p{
+        font-size: 1.16vw;
+    }
+
+    #simulation-pages h2{
+        font-size: 0.93vw;
+    }
+
     .physical-map{
         margin-left: 0;
         width: auto;
@@ -213,8 +232,13 @@ video{
 
 
 @media (width <= 1000px) {
+    .simulation-container{
+        display: none;
+    }
+
     .physical-map{
         grid-column: 1 / 5;
+        grid-row: 2 / 4;
     }
 
     .phenomenal-map-1{
@@ -248,7 +272,11 @@ video{
         grid-row: 2;
     }
 
+    .simulation-container{
+        display: block;
+    }
+
     .physical-map{
-        grid-row: 3 / 5;
+        grid-row: 4 / 6;
     }
 }

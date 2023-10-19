@@ -5,6 +5,8 @@ const leftPage = document.getElementById('simulation-left');
 const rightPage = document.getElementById('simulation-right');
 
 // Values & measurements    --------------------------------------------------------------------------------------------------------
+var isGenerating = false;
+
 const horizontalIMGs = 10;
 const verticalIMGs = 17;
 const squareIMGs = 25;
@@ -58,7 +60,19 @@ window.addEventListener('pageshow', (event) => {
     generatePoem();
 });
 
-simulationPages.addEventListener('click', (event) => {
+window.addEventListener('afterprint', (event) => {
+    let printCSS = document.querySelector("link[media~='print']");
+    if (printCSS) {
+        printCSS.remove();
+    };
+});
+
+leftPage.addEventListener('click', (event) => {
+    document.head.innerHTML += '<link rel="stylesheet" media="print" href="sources/print.css">';
+    setTimeout(() => window.print(), 50);
+});
+
+rightPage.addEventListener('click', (event) => {
     generatePoem();
 });
 
@@ -72,9 +86,14 @@ simulationPages.addEventListener('click', (event) => {
 
 // POEM GENERATION  ================================================================================================================
 function generatePoem(){
-    prepTitle();
-    initializeLoop(getRandomInt(10, 20));
-    transportPoem();
+    if(isGenerating === true){
+        return
+    } else {
+        isGenerating = true;
+
+        prepTitle();
+        poemLoop(0);
+    }; 
 };
 
 
@@ -95,18 +114,29 @@ function prepTitle(){
 
 
 // Loop ----------------------------------------------------------------------------------------------------------------------------
-function initializeLoop(initialValue){
-    createElement();
-    poemLoop(initialValue);
+function poemLoop(poemIndex){
+    let stocastronome = getRandomInt(400, 800);
+
+    if(probability(poemIndex)){
+        transportPoem();
+
+    } else {
+        setTimeout(() => lineLoop(0, poemIndex), stocastronome);
+    };
 };
 
-function poemLoop(index){
-    let speed = getRandomInt(1000, 2000);
+function lineLoop(lineIndex, poemIndex){
+    let stocastronome = getRandomInt(400, 800);
+    
+    if(probability(lineIndex)){
+        rightPage.innerHTML = rightPage.innerHTML + '<br>';
+        poemIndex += 0.1;
+        poemLoop(poemIndex);
 
-    if (getRandomInt(1, index) != 1) {
+    } else {
         createElement();
-        index--;
-        setTimeout(poemLoop(index), speed);
+        lineIndex += 0.1;
+        setTimeout(() => lineLoop(lineIndex, poemIndex), stocastronome);
     };
 };
 
@@ -156,8 +186,9 @@ function transportPoem(){
     rightPage.querySelector('h2').innerHTML = getTime();
     let poem = rightPage.innerHTML;
 
-    leftPage.innerHTML = poem;
     rightPage.innerHTML = '';
+    leftPage.innerHTML = poem;
+    isGenerating = false;
 };
 
 function getTime(){
