@@ -8,6 +8,7 @@ const rightPage = document.getElementById('simulation-right');
 
 // Values & measurements    --------------------------------------------------------------------------------------------------------
 var isGenerating = false;
+var firstTransfer = true;
 
 const horizontalIMGs = 10;
 const verticalIMGs = 17;
@@ -70,11 +71,11 @@ window.addEventListener('afterprint', (event) => {
 });
 
 leftPage.addEventListener('click', (event) => {
-    if (leftPage.children.length === 0){
+    if (leftPage.children.length === 0) {
         return
-    } else {
-        addPrintStylesheetAndPrint();
     };
+
+    addPrintStylesheetAndPrint();
 });
 
 rightPage.addEventListener('click', (event) => {
@@ -91,14 +92,13 @@ rightPage.addEventListener('click', (event) => {
 
 // POEM GENERATION  ================================================================================================================
 function generatePoem(){
-    if(isGenerating === true){
+    if (isGenerating === true) {
         return
-    } else {
-        isGenerating = true;
+    };
 
-        prepTitle();
-        poemLoop(0);
-    }; 
+    isGenerating = true;
+    prepTitle();
+    poemLoop(0);
 };
 
 
@@ -114,6 +114,7 @@ function prepTitle(){
     let titleElement = document.createElement('h2');
     titleElement.innerHTML = 'Generating...';
     rightPage.appendChild(titleElement);
+    rightPage.setAttribute('title', 'When this Crosswalk Poem has been generated and transferred over to the left page you can click anywhere here on the right page to generate another.');
 };
 
 
@@ -122,7 +123,7 @@ function prepTitle(){
 function poemLoop(poemIndex){
     let stocastronome = getRandomInt(400, 800);
 
-    if(probability(poemIndex)){
+    if (probability(poemIndex)) {
         transportPoem();
 
     } else {
@@ -133,7 +134,7 @@ function poemLoop(poemIndex){
 function lineLoop(lineIndex, poemIndex){
     let stocastronome = getRandomInt(400, 800);
     
-    if(probability(lineIndex)){
+    if (probability(lineIndex)) {
         rightPage.innerHTML = rightPage.innerHTML + '<br>';
         poemIndex += 0.1;
         poemLoop(poemIndex);
@@ -149,21 +150,21 @@ function lineLoop(lineIndex, poemIndex){
 
 // Generate text or iamge elements  ------------------------------------------------------------------------------------------------
 function createElement(){
-    if(probability(0.4)){
+    if (probability(0.4)) {
         let textElement = document.createElement('p');
         textElement.innerHTML = poemClips[getRandomInt(0, poemClips.length - 1)];
         rightPage.appendChild(textElement);
 
-    } else if (probability(0.4)){
-        if(probability(0.5)){
+    } else if (probability(0.4)) {
+        if (probability(0.5)) {
             createIMG('square-', squareIMGs, 'xheight');
 
         } else {
             createIMG('horizontal-', horizontalIMGs, 'xheight');
 
         };
-    } else{
-        if(probability(0.5)){
+    } else {
+        if (probability(0.5)) {
             createIMG('vertical-', verticalIMGs, 'ascender');
 
         } else {
@@ -192,8 +193,15 @@ function transportPoem(){
     let poem = rightPage.innerHTML;
 
     rightPage.innerHTML = '';
+    rightPage.setAttribute('title', 'Click anywhere here on the right page to generate a new Crosswalk Poem.');
     leftPage.innerHTML = poem;
+
     isGenerating = false;
+
+    if (firstTransfer = true) {
+        leftPage.setAttribute('title', 'Click anywhere here on the left page to print your Crosswalk Poem.');
+        firstTransfer = false;
+    };
 };
 
 function getTime(){
