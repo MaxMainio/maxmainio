@@ -101,3 +101,9 @@ header, footer, .context-container, #first, .physical-map, .phenomenal-map-1, .p
 #simulation-pages p{
     font-size: 1rem;
 }
+
+
+
+.sim-description{
+    display: none;
+}

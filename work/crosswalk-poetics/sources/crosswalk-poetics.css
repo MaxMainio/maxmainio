@@ -59,9 +59,11 @@ video{
 
 /* SIMULATION   ----------------------------------------------------------------------------------------------------------------- */
 .simulation-container{
+    position: relative;
     grid-column: 1 / 9;
+    /* margin-bottom: 10%; */
 
-    & > div{
+    & > div:first-of-type{
         position: relative;
         max-width: calc(var(--in-width) - 2rem);
         margin: 0 auto;
@@ -166,6 +168,19 @@ video{
 
 
 
+.sim-description{
+    position: relative;
+    margin-left: calc((100vw - var(--in-width)) / 2);
+    margin-top: -3rem;
+    z-index: 1;
+
+    & > h2{
+        margin-top: 0;
+    }
+}
+
+
+
 
 
 
@@ -214,6 +229,10 @@ video{
 
 /* Media Queries    ------------------------------------------------------------------------------------------------------------- */
 @media (width >= 2560px) {
+    .sim-description{
+        margin-left: calc((var(--mid-width) - var(--in-width)) / 2);
+    }
+
     .physical-map{
         margin-left: calc((var(--mid-width) - var(--in-width)) / 2);
         width: auto;
@@ -239,6 +258,10 @@ video{
 
     #simulation-pages h2{
         font-size: var(--simH2Size);
+    }
+
+    .sim-description{
+        margin-left: 0;
     }
 
     .physical-map{
