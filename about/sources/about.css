@@ -238,7 +238,12 @@ footer{
 
 
 
-@media print { 
+@media print {
+    .title-column h2{
+        position: relative;
+        top: 0;
+    }
+
     section{
         grid-column: 2 / 9;
         break-inside: avoid;
