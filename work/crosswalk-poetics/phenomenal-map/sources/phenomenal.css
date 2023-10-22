@@ -22,6 +22,8 @@ img{
 /* Media Queries    ------------------------------------------------------------------------------------------------------------- */
 @media print {
     .context-container{
+        -ms-grid-column: 1;
+        -ms-grid-column-span: 7;
         grid-column: 1 / 8;
     }
 
@@ -30,6 +32,8 @@ img{
     }
 
     #first{
+        -ms-grid-column: 1;
+        -ms-grid-column-span: 4;
         grid-column: 1 / 5;
     }
 }
