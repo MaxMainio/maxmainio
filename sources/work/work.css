@@ -16,6 +16,13 @@
 
 
 
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
 /* HTML ------------------------------------------------------------------------------------------------------------------------- */
 html{
     scroll-behavior: auto;
@@ -33,17 +40,17 @@ html{
 #splash{
     cursor: url(../../assets/cursors/splash-cursor.svg) 32 32, pointer;
     z-index: 11;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     overflow: hidden;
 
     & img{
         width: 100%;
         height: 100%;
-
-        -webkit-background-size: cover;
-        -moz-background-size: cover;
-        -o-background-size: cover;
         background-size: cover;
         background-position: center;
         overflow: hidden;
@@ -74,6 +81,7 @@ html{
 
 /* INDEX    --------------------------------------------------------------------------------------------------------------------- */
 #index-btn{
+    -ms-grid-column: 6;
     grid-column: 6;
     margin-right: auto;
 }
@@ -83,13 +91,21 @@ html{
     margin: 0 auto 0 auto;
     padding: 0 1rem;
 
+    display: -ms-grid;
+
     display: grid;
+    -ms-grid-columns: 1fr 1rem 1fr;
     grid-template-columns: repeat(2, 1fr);
-    column-gap: 1rem;
+    -webkit-column-gap: 1rem;
+       -moz-column-gap: 1rem;
+            column-gap: 1rem;
 
     & a, div{
+        -ms-grid-column: 1;
         grid-column: 1;
+        display: -ms-grid;
         display: grid;
+        -ms-grid-columns: 1fr 1rem 1fr 1rem 1fr;
         grid-template-columns: repeat(3, 1fr);
         gap: 1rem;
         pointer-events: all;
@@ -161,9 +177,18 @@ article{
     margin: 0 auto;
     inset: 0;
 
+    display: -webkit-box;
+
+    display: -ms-flexbox;
+
     display: flex;
-    flex-direction: column;
-    justify-content: end;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: end;
 
     pointer-events: none;
 }
@@ -190,9 +215,15 @@ hgroup{
 }
 
 .center-flex{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     height: 100%;
 }
 
@@ -206,9 +237,15 @@ hgroup{
 
 /* Hedera   --------------------------------------------------------------------------------------------------------------------- */
 #hedera .out-container{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 
 .hedera-content{
@@ -216,8 +253,12 @@ hgroup{
     max-width: 100%;
     max-height: calc(100% - 6rem);
     aspect-ratio: 1492 / 1024;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     /* overflow: hidden; */
 
     & > a{
@@ -256,20 +297,29 @@ hgroup{
     letter-spacing: 0px;
     font-variation-settings: "OFST" -100;
 
-    font-variant-ligatures: contextual;
-    -moz-font-feature-settings: "calt";
+    -webkit-font-variant-ligatures: contextual;
+
+            font-variant-ligatures: contextual;
     -webkit-font-feature-settings: "calt";
     font-feature-settings: "calt";
 
     width: 68.66%;
     height: 145.65%;
-    transform: rotate(-90deg);
-    transform-origin: 50% 34.308%;
+    -webkit-transform: rotate(-90deg);
+        -ms-transform: rotate(-90deg);
+            transform: rotate(-90deg);
+    -webkit-transform-origin: 50% 34.308%;
+        -ms-transform-origin: 50% 34.308%;
+            transform-origin: 50% 34.308%;
 
     position: absolute;
     inset: 0;
-    /* display: flex;
-    align-items: center; */
+    /* display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+            align-items: center; */
 }
 
 #growth{
@@ -291,12 +341,20 @@ hgroup{
 
 /* Lawn Texture ----------------------------------------------------------------------------------------------------------------- */
 #lawn-texture .in-container{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 
 #lawn-container{
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
     width: fit-content;
     max-width: calc(100% - 2rem);
 
@@ -314,7 +372,8 @@ hgroup{
 }
 
 span.lawn, span.flower{
-    box-shadow: var(--shadow);
+    -webkit-box-shadow: var(--shadow);
+            box-shadow: var(--shadow);
 }
 
 
@@ -328,16 +387,24 @@ span.lawn, span.flower{
 /* SEAM CARVING ----------------------------------------------------------------------------------------------------------------- */
 #seam-carving .in-container{
     padding: 0 1rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 
 .carving-content{
     width: 100%;
     max-height: 100%;
     aspect-ratio: 1440 / 810;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
 
     & a{
         display: block;
@@ -361,6 +428,8 @@ span.lawn, span.flower{
 /* BLOOM ------------------------------------------------------------------------------------------------------------------------ */
 #bloom .mid-container{
     padding: 0 1rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     gap: 1rem;
 }
@@ -369,6 +438,8 @@ span.lawn, span.flower{
     width: 100%;
     max-width: calc((100% - 3rem) / 4);
     height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
 
     &:nth-of-type(1){
@@ -430,9 +501,17 @@ span.lawn, span.flower{
 #sort-later .out-container{
     width: 3440px;
 
+    display: -webkit-box;
+
+    display: -ms-flexbox;
+
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 
     position: relative;
     left: calc(((-100vw + var(--mid-width)) / 2) - (-50vw + 1720px));
@@ -443,9 +522,18 @@ span.lawn, span.flower{
     height: 100%;
     max-height: 50%;
 
+    display: -webkit-box;
+
+    display: -ms-flexbox;
+
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
 
     & a{
         width: 100%;
@@ -469,9 +557,15 @@ span.lawn, span.flower{
 
 
 #sort-later .center-flex{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     height: 100%;
 }
 
@@ -500,7 +594,8 @@ span.lawn, span.flower{
     aspect-ratio: 1800 / 1046;
     width: 100%;
 
-    clip-path: polygon(0% 0%, 97% 0%, 97% 47%, 100% 53%, 100% 100%, 0% 100%);
+    -webkit-clip-path: polygon(0% 0%, 97% 0%, 97% 47%, 100% 53%, 100% 100%, 0% 100%);
+            clip-path: polygon(0% 0%, 97% 0%, 97% 47%, 100% 53%, 100% 100%, 0% 100%);
     mix-blend-mode: multiply;
 
     pointer-events: none;
@@ -606,9 +701,15 @@ span.lawn, span.flower{
 }
 
 #generative-poems .center-flex{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     height: 100%;
 }
 
@@ -630,9 +731,15 @@ span.lawn, span.flower{
 
 /* INTERVIEW    ----------------------------------------------------------------------------------------------------------------- */
 #ed-brown-interview .in-container{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     padding: 0 1rem;
 
     & > a{
@@ -771,6 +878,8 @@ span.lawn, span.flower{
 
 /* CROSSWALK POETICS    --------------------------------------------------------------------------------------------------------- */
 #crosswalk-poetics .content{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
 }
 
@@ -813,30 +922,41 @@ span.lawn, span.flower{
 
 /* DIGITAL OVERPRINT    --------------------------------------------------------------------------------------------------------- */
 #digital-overprint .content{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
 
     & a{
         pointer-events: all;
 
         &:nth-of-type(2){
-            clip-path: inset(0 12.5% 0 12.5%);
+            -webkit-clip-path: inset(0 12.5% 0 12.5%);
+                    clip-path: inset(0 12.5% 0 12.5%);
         }
 
         &:nth-of-type(3){
-            clip-path: inset(0 0 0 33%);
+            -webkit-clip-path: inset(0 0 0 33%);
+                    clip-path: inset(0 0 0 33%);
         }
 
         &:nth-of-type(4){
-            clip-path: inset(0 12.5% 0 50%);
+            -webkit-clip-path: inset(0 12.5% 0 50%);
+                    clip-path: inset(0 12.5% 0 50%);
         }
     }
 
     & img{
         width: 100%;
         height: 20vh;
-        object-fit: cover;
+        -o-object-fit: cover;
+           object-fit: cover;
     }
 }
 
@@ -867,21 +987,33 @@ span.lawn, span.flower{
 }
 
 #acetate-melt .mid-container{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-between;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
 
     & > div{
         position: relative;
         width: 100%;
         height: 100%;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        justify-content: center;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
     }
 }
 
 #cattle{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: end;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: end;
     max-width: 20%;
 
     & a{
@@ -906,8 +1038,12 @@ span.lawn, span.flower{
 
 
 #acetate-melt .in-container:nth-child(2){
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-between;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
 
     & > div{
         position: relative;
@@ -928,8 +1064,12 @@ span.lawn, span.flower{
 }
 
 #plane{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: end;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: end;
     max-width: 25%;
     
     & a{
@@ -943,14 +1083,24 @@ span.lawn, span.flower{
 
 
 #acetate-melt .in-container:last-child{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 
     & > div{
         position: relative;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        align-items: center;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
     }
 }
 
@@ -970,15 +1120,25 @@ span.lawn, span.flower{
 
 /* HOMODEUS --------------------------------------------------------------------------------------------------------------------- */
 #homodeus .content{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 
 #homodeus .out-container{
     height: 111%;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     overflow-x: hidden;
 
     & img{
@@ -1005,9 +1165,15 @@ span.lawn, span.flower{
 
 
 #homodeus .in-container{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 
     & img{
         width: 100%;
@@ -1103,6 +1269,8 @@ a.in-fit{
 /* COLLAGES --------------------------------------------------------------------------------------------------------------------- */
 #collages .mid-container{
     padding: 0 1rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     gap: 1rem;
 }
@@ -1111,8 +1279,12 @@ a.in-fit{
     width: 100%;
     max-width: calc((100% - 2rem) / 3);
     max-height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
 
 
 
@@ -1172,15 +1344,23 @@ a.in-fit{
 #drawings .out-container{
     width: calc(var(--mid-width) + 880px);
     left: -440px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-between;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
 
     & > div{
         position: relative;
         height: 100%;
         max-width: 440px;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        justify-content: center;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
     }
 
     & a{
@@ -1202,7 +1382,9 @@ a.in-fit{
     margin: 2rem 0 auto 0;
 
     & img{
-        transform: scaleX(-1);
+        -webkit-transform: scaleX(-1);
+            -ms-transform: scaleX(-1);
+                transform: scaleX(-1);
     }
 }
 
@@ -1229,9 +1411,15 @@ a.in-fit{
 
 
 #drawings .in-container{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 
     & > a{
         position: relative;
@@ -1492,10 +1680,18 @@ a.in-fit{
 
 @media (aspect-ratio <= 564 / 901) {
     #drawings .mid-container{
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        align-items: center;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        -ms-flex-pack: distribute;
+            justify-content: space-around;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
 
         & > a{
             position: relative;
@@ -1533,6 +1729,8 @@ a.in-fit{
     }
 
     article{
-        break-inside: avoid;
+        -webkit-column-break-inside: avoid;
+           -moz-column-break-inside: avoid;
+                break-inside: avoid;
     }
 }
