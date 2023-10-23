@@ -180,7 +180,7 @@ main{
     .context-container{
         -webkit-column-break-inside: avoid;
            -moz-column-break-inside: avoid;
-                break-inside: avoid;
+                       break-inside: avoid;
     }
     
     #title{

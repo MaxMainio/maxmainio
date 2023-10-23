@@ -33,14 +33,18 @@ article{
     max-width: 800px;
     position: relative;
 
+    cursor: -webkit-grab;
+
     cursor: grab;
     mix-blend-mode: var(--blend-mode);
 
     &:hover{
+        cursor: -webkit-grab;
         cursor: grab;
     }
 
     &:active{
+        cursor: -webkit-grabbing;
         cursor: grabbing;
     }
 }
@@ -53,10 +57,14 @@ img{
     }
 
     &:nth-of-type(odd){
+        -ms-grid-column: 5;
+        -ms-grid-column-span: 4;
         grid-column: 5 / 9;
     }
 
     &:nth-of-type(even){
+        -ms-grid-column: 1;
+        -ms-grid-column-span: 4;
         grid-column: 1 / 5;
         margin: -50% 0 0 auto;
     }
@@ -73,7 +81,8 @@ img{
 /* TYPE ------------------------------------------------------------------------------------------------------------------------- */
 span{
     background-color: white;
-    box-shadow: 0 0 0 4px white;
+    -webkit-box-shadow: 0 0 0 4px white;
+            box-shadow: 0 0 0 4px white;
 }
 
 
