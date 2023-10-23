@@ -23,6 +23,10 @@ window.addEventListener('pageshow', e => {
 	};
 });
 
+window.addEventListener('DOMContentLoaded', function() {
+	typeWriterEffect();
+});
+
 document.addEventListener('scroll', e => {
 	windowPos = window.scrollY;
 
