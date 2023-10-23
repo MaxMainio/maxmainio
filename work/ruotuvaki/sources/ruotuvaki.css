@@ -14,6 +14,8 @@
 
 
 #aukeama-container{
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 8;
     grid-column: 1 / 9;
     position: relative;
     width: 100%;
@@ -56,18 +58,29 @@
 
 
 
+/* Media Queries    ------------------------------------------------------------------------------------------------------------- */
 @media print {
     .context-container{
+        -ms-grid-column: 1;
+        -ms-grid-column-span: 7;
         grid-column: 1 / 8;
     }
 
     #first{
+        -ms-grid-column: 1;
+        -ms-grid-column-span: 5;
         grid-column: 1 / 6;
-        break-inside: avoid;
+        -webkit-column-break-inside: avoid;
+           -moz-column-break-inside: avoid;
+                       break-inside: avoid;
     }
 
     #aukeama-container{
+        -ms-grid-column: 1;
+        -ms-grid-column-span: 8;
         grid-column: 1 / 9;
-        break-inside: avoid;
+        -webkit-column-break-inside: avoid;
+           -moz-column-break-inside: avoid;
+                       break-inside: avoid;
     }
 }
