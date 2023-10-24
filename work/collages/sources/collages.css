@@ -1,5 +1,5 @@
 /* CONTENT  --------------------------------------------------------------------------------------------------------------------- */
-.work-div:nth-of-type(n) img{
+.work-div:nth-of-type(n), .work-div:nth-of-type(n) img{
     aspect-ratio: 683 / 1024;
 }
 
