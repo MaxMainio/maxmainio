@@ -18,7 +18,7 @@ window.addEventListener('pageshow', e => {
 	hedera();
 	typeWriterEffect();
 	
-	if(sortlaterVisibility === true){
+	if (sortlaterVisibility === true) {
 		applySortLaterScroll();
 	};
 });
@@ -32,7 +32,7 @@ document.addEventListener('scroll', e => {
 
 	applyParallax(windowPos);
 
-	if(sortlaterVisibility === true){
+	if (sortlaterVisibility === true) {
 		applySortLaterScroll();
 	};
 });
@@ -44,7 +44,7 @@ window.addEventListener('resize', e => {
 
 	hedera();
 
-	if(sortlaterVisibility === true){
+	if (sortlaterVisibility === true) {
 		applySortLaterScroll();
 	};
 });
@@ -77,21 +77,24 @@ internalAnchorLinks.forEach(item => {
 // REMOVE SPLASH	================================================================================================================
 const splash = document.querySelector('#splash');
 
-const splashObserver = new IntersectionObserver(entries => {
-	entries.forEach(entry => {
-		if (entry.isIntersecting === false) {
-			entry.target.remove();
-			document.querySelector('.with-splash').removeAttribute('class');
+const handleSplashIntersection = (entries) => {
+    const entry = entries[0];
 
-			var anchorHash = location.hash
+    if (!entry.isIntersecting) {
+        entry.target.remove();
+        
+        const withSplashElement = document.querySelector('.with-splash');
+        if (withSplashElement) {
+            withSplashElement.removeAttribute('class');
+        }
 
-			if (anchorHash === '') {
-				window.scrollTo(0, 0);
-			};
-		};
-	});
-});
+        if (!location.hash) {
+            window.scrollTo(0, 0);
+        }
+    }
+};
 
+const splashObserver = new IntersectionObserver(handleSplashIntersection);
 splashObserver.observe(splash);
 
 

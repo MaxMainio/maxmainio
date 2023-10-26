@@ -97,6 +97,8 @@ function generatePoem(){
     };
 
     isGenerating = true;
+    document.documentElement.style.setProperty('--rightCursor', 'wait');
+
     prepTitle();
     poemLoop(0);
 };
@@ -194,12 +196,14 @@ function transportPoem(){
 
     rightPage.innerHTML = '';
     rightPage.setAttribute('title', 'Click anywhere here on the right page to generate a new Crosswalk Poem.');
+    document.documentElement.style.setProperty('--rightCursor', 'pointer');
     leftPage.innerHTML = poem;
 
     isGenerating = false;
 
     if (firstTransfer = true) {
         leftPage.setAttribute('title', 'Click anywhere here on the left page to print your Crosswalk Poem.');
+        document.documentElement.style.setProperty('--leftCursor', 'pointer');
         firstTransfer = false;
     };
 };

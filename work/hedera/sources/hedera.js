@@ -73,7 +73,7 @@ function heroSwap(){
     const selectedTXT = getRandomInt(0, (heroTxt.length - 1));
 
     heroFlower.src = 'assets/content/flowers/flower-' + selectedIMG + '.webp';
-    heroFlower.style.backgroundImage = 'url(assets/no-index/flower-' + selectedIMG + '-small.webp)';
+    heroFlower.style.backgroundImage = 'url(assets/no-index/flower-' + selectedIMG + '-blurry.webp)';
 
     heroIvy.innerHTML = heroTxt[selectedTXT];
 };

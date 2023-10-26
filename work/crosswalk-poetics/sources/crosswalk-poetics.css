@@ -29,6 +29,9 @@
 :root{
     --simPSize: 1rem;
     --simH2Size: 0.8rem;
+
+    --leftCursor: default;
+    --rightCursor: wait;
 }
 
 
@@ -102,7 +105,7 @@ video{
     -webkit-transform-style: preserve-3d;
             transform-style: preserve-3d;
 
-    cursor: pointer;
+    cursor: var(--leftCursor);
 }
 
 #simulation-right{
@@ -120,7 +123,7 @@ video{
     -webkit-transform-style: preserve-3d;
             transform-style: preserve-3d;
 
-    cursor: pointer;
+    cursor: var(--rightCursor);
 }
 
 

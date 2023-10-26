@@ -13,8 +13,10 @@ var vw = window.innerWidth;
 
 // INITIALIZERS & EVENT TRIGGERS    ================================================================================================
 window.addEventListener('pageshow', (event) => {
-    inFade();
-    setFooterText();
+    if (faderElement) {
+        inFade();
+        setFooterText();
+    };
 
     if (event.persisted || performance.getEntriesByType("navigation")[0].type === 'back_forward') {
         location.reload();
@@ -22,10 +24,17 @@ window.addEventListener('pageshow', (event) => {
     };
 });
 
+document.addEventListener('DOMContentLoaded', () => {
+    if (faderElement) {
+        inFade();
+        setFooterText();
+    };
+});
+
 document.addEventListener('visibilitychange', function() {
     if (document.visibilityState === 'visible') {
         inFade();
-    }
+    };
 });
 
 
@@ -170,29 +179,32 @@ buttons.forEach(button => {
 const zoomable = document.querySelectorAll('.zoomable');
 
 if (vw > 1000) {
-    zoomable.forEach(function (item){
-        item.addEventListener("mousedown", (event) => {
-            if (event.button === 0) {
-                let current = event.target;
-                let container = event.target.parentNode;
-        
-                current.classList.add('focused');
-                container.classList.add('focusedcontainer');
-        
-                document.body.style.cursor = 'zoom-in';
-        
-    
-        
-                document.addEventListener("mouseup", (event) => {
-                    current.classList.remove('focused');
-                    container.classList.remove('focusedcontainer');
-        
-                    document.body.removeAttribute('style');
-                });
-            };
-        });
-    });
-};
+    const handleMouseDown = (event) => {
+        if (event.button !== 0) return;
+
+        let current = event.target;
+        let container = current.parentNode;
+
+        current.classList.add('focused');
+        container.classList.add('focusedcontainer');
+        document.body.style.cursor = 'zoom-in';
+
+        document.addEventListener("mouseup", handleMouseUp);
+    };
+
+    const handleMouseUp = (event) => {
+        let current = document.querySelector('.focused');
+        let container = document.querySelector('.focusedcontainer');
+
+        if (current) current.classList.remove('focused');
+        if (container) container.classList.remove('focusedcontainer');
+
+        document.body.removeAttribute('style');
+        document.removeEventListener("mouseup", handleMouseUp);
+    };
+
+    zoomable.forEach(item => item.addEventListener("mousedown", handleMouseDown));
+}
 
 
 
