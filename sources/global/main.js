@@ -202,7 +202,7 @@ if (vw > 1000) {
     };
 
     zoomable.forEach(item => item.addEventListener("mousedown", handleMouseDown));
-}
+};
 
 
 
