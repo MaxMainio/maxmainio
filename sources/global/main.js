@@ -13,10 +13,7 @@ var vw = window.innerWidth;
 
 // INITIALIZERS & EVENT TRIGGERS    ================================================================================================
 window.addEventListener('pageshow', (event) => {
-    if (faderElement) {
-        inFade();
-        setFooterText();
-    };
+    inFade();
 
     if (event.persisted || performance.getEntriesByType("navigation")[0].type === 'back_forward') {
         location.reload();
@@ -25,10 +22,7 @@ window.addEventListener('pageshow', (event) => {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
-    if (faderElement) {
-        inFade();
-        setFooterText();
-    };
+    setFooterText();
 });
 
 document.addEventListener('visibilitychange', function() {
