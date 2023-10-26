@@ -13,7 +13,9 @@ var vw = window.innerWidth;
 
 // INITIALIZERS & EVENT TRIGGERS    ================================================================================================
 window.addEventListener('pageshow', (event) => {
-    inFade();
+    if (fading === false) {
+        inFade();
+    };
 
     if (event.persisted || performance.getEntriesByType("navigation")[0].type === 'back_forward') {
         location.reload();
@@ -26,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 document.addEventListener('visibilitychange', function() {
-    if (document.visibilityState === 'visible') {
+    if (document.visibilityState === 'visible' && fading == false) {
         inFade();
     };
 });
@@ -42,6 +44,7 @@ document.addEventListener('visibilitychange', function() {
 // FADER    ========================================================================================================================
 const innerLinks = document.querySelectorAll('a:not([target="_self"], [target="_blank"])');
 const faderElement = document.querySelector('#fader');
+let fading = false;
 
 // Internal link trigger    --------------------------------------------------------------------------------------------------------
 innerLinks.forEach(item => {
@@ -53,6 +56,7 @@ innerLinks.forEach(item => {
 // Fade functions   ----------------------------------------------------------------------------------------------------------------
 function inFade(){
     faderElement.classList.remove('motion');
+    fading = true;
 
     setTimeout(() => {
         faderElement.remove();
