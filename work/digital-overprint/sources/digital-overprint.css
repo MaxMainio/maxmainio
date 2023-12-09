@@ -16,7 +16,7 @@ article{
     row-gap: 1rem;
 }
 
-.leftoid{
+.context-container{
     pointer-events: none;
     z-index: 10;
 
@@ -78,15 +78,7 @@ img{
 
 
 
-/* TYPE ------------------------------------------------------------------------------------------------------------------------- */
-span{
-    background-color: white;
-    -webkit-box-shadow: 0 0 0 4px white;
-            box-shadow: 0 0 0 4px white;
-}
-
-
-
+/* INTERACTIVE  ----------------------------------------------------------------------------------------------------------------- */
 .radio-button{
     & label{
         display: inline-block;
