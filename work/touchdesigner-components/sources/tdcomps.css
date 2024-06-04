@@ -34,12 +34,12 @@
 
 
 /* CONTENT  --------------------------------------------------------------------------------------------------------------------- */
-#first{
+#first.bento{
     display: flex;
     flex-wrap: wrap;
-    justify-content: end;
     column-gap: 1rem;
     row-gap: 1rem;
+    width: 135%;
 }
 
 
