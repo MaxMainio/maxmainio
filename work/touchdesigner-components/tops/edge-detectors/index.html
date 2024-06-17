@@ -67,10 +67,20 @@
 						<h1 id="title">Edge Detectors</h1>
 						<h2 id="sub-title"><a href="https://derivative.ca/" target="_blank">TD</a> <a href="https://derivative.ca/UserGuide/Component" target="_blank">COMPs</a> / <a href="https://derivative.ca/tags/tops" target="_blank">TOPs</a> / 2023 &ndash; Present</h2>
 						<p>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim diam vulputate ut pharetra sit amet aliquam. Integer eget aliquet nibh praesent tristique magna sit. Massa id neque aliquam vestibulum. Egestas diam in arcu cursus euismod quis viverra nibh. Ultrices vitae auctor eu augue ut lectus arcu bibendum at. Vel risus commodo viverra maecenas accumsan lacus vel facilisis volutpat. Sit amet cursus sit amet dictum sit. Scelerisque mauris pellentesque pulvinar pellentesque habitant morbi tristique. Rutrum quisque non tellus orci ac.
+							Edge detection is a cornerstone of image processing, playing a crucial role in identifying boundaries within images. By finding edges, you can extract meaningful information about shapes, objects, and their relationships within the scene. This process is essential for tasks ranging from simple feature extraction to more complex applications like object recognition and computer vision.
 						</p>
 						<p>
-							Cras sed felis eget velit. Ipsum a arcu cursus vitae congue. Quis ipsum suspendisse ultrices gravida dictum. Condimentum mattis pellentesque id nibh tortor id aliquet. Magna fermentum iaculis eu non. Massa eget egestas purus viverra accumsan. Lobortis mattis aliquam faucibus purus in massa tempor. Aliquam id diam maecenas ultricies mi. Morbi enim nunc faucibus a pellentesque. Ultricies mi eget mauris pharetra et ultrices neque ornare.
+							Calculating the derivatives of images allows us to delve deeper into the intricacies of image data. By analyzing changes in intensity, edge detectors highlight areas of significant transition, enabling us to identify and isolate key features. This opens up a multitude of possibilities, from enhancing image clarity and detail to facilitating advanced techniques such as texture analysis and motion detection.
+						</p>
+						<p>
+							Index:<br>
+							<a href="#gradient" target="_self">Gradient</a>, <a href="#gradient">Gradient Complex</a>,<br>
+							<a href="#haar-operator" target="_self">Haar Operator</a>, <a href="#haar-operator">Haar Operator Steerable</a>,<br>
+							<a href="#kirsche-operator" target="_self">Kirsche Operator</a>, <a href="#kirsche-operator">Kirsche Operator Steerable</a>,<br>
+							<a href="#laplacian-1d-operator" target="_self">Laplacian 1D</a>, <a href="#laplacian-1d-operator">Laplacian 1D Steerable</a>, <a href="#laplacian-operator" target="_self">Laplacian</a>,<br>
+							<a href="#line-detector" target="_self">Line Detector</a>, <a href="#line-detector">Line Detector Steerable</a>,<br>
+							<a href="#prewitt-operator" target="_self">Prewitt Operator</a>, <a href="#prewitt-operator">Prewitt Operator Steerable</a>,<br>
+							<a href="#sobel-operator" target="_self">Sobel Operator</a>, <a href="#sobel-operator">Sobel Operator Steerable</a>
 						</p>
 					</div>
 				</section>
@@ -106,7 +116,6 @@
 								<div class="viewer">
 									<img src="assets/content/gradient.webp"
 										alt="Example of the gradient of an image."
-										title="Example of the gradient of an image."
 										class="blur-load square"
 										style="background-image: url(assets/no-index/gradient-blurry.webp);"
 										loading="lazy">
@@ -143,7 +152,7 @@
 						</div>
 					</a>
 
-					<a href="#gradient-complex"
+					<a href="#gradient"
 						target="_self"
 						title="Click here to be taken to the Complex Gradient section of this page."
 						class="td-base-comp small">
@@ -173,7 +182,6 @@
 								<div class="viewer">
 									<img src="assets/content/gradient-complex.webp"
 										alt="Example of the gradient of an image."
-										title="Example of the gradient of an image."
 										class="blur-load square"
 										style="background-image: url(assets/no-index/gradient-complex-blurry.webp);"
 										loading="lazy">
@@ -242,7 +250,6 @@
 								<div class="viewer">
 									<img src="assets/content/haar.webp"
 										alt="Example of an image that has been convolved with the Haar Operator."
-										title="Example of an image that has been convolved with the Haar Operator."
 										class="blur-load square"
 										style="background-image: url(assets/no-index/haar-blurry.webp);"
 										loading="lazy">
@@ -279,7 +286,7 @@
 						</div>
 					</a>
 
-					<a href="#haar-operator-steerable"
+					<a href="#haar-operator"
 						target="_self"
 						title="Click here to be taken to the Steerable Haar Operator section of this page."
 						class="td-base-comp medium">
@@ -309,7 +316,6 @@
 								<div class="viewer">
 									<img src="assets/content/haar-steerable.webp"
 										alt="Example of an image that has been convolved with the Haar Operator."
-										title="Example of an image that has been convolved with the Haar Operator."
 										class="blur-load double"
 										style="background-image: url(assets/no-index/haar-steerable-blurry.webp);"
 										loading="lazy">
@@ -378,7 +384,6 @@
 								<div class="viewer">
 									<img src="assets/content/kirsch.webp"
 										alt="Example of an image that has been convolved with the Kirsch Operator."
-										title="Example of an image that has been convolved with the Kirsch Operator."
 										class="blur-load square"
 										style="background-image: url(assets/no-index/kirsch-blurry.webp);"
 										loading="lazy">
@@ -415,7 +420,7 @@
 						</div>
 					</a>
 
-					<a href="#kirsch-operator-steerable"
+					<a href="#kirsch-operator"
 						target="_self"
 						title="Click here to be taken to the Steerable Kirsch Operator section of this page."
 						class="td-base-comp medium">
@@ -445,7 +450,6 @@
 								<div class="viewer">
 									<img src="assets/content/kirsch-steerable.webp"
 										alt="Example of an image that has been convolved with the Kirsch Operator."
-										title="Example of an image that has been convolved with the Kirsch Operator."
 										class="blur-load double"
 										style="background-image: url(assets/no-index/kirsch-steerable-blurry.webp);"
 										loading="lazy">
@@ -484,7 +488,7 @@
 
 
 
-					<a href="#laplacian-1d"
+					<a href="#laplacian-1d-operator"
 						target="_self"
 						title="Click here to be taken to the 1D Laplacian Operator section of this page."
 						class="td-base-comp small">
@@ -514,7 +518,6 @@
 								<div class="viewer">
 									<img src="assets/content/laplacian-1d.webp"
 										alt="Example of an image that has been convolved with the 1D Laplacian Operator."
-										title="Example of an image that has been convolved with the 1D Laplacian Operator."
 										class="blur-load square"
 										style="background-image: url(assets/no-index/laplacian-1d-blurry.webp);"
 										loading="lazy">
@@ -551,7 +554,7 @@
 						</div>
 					</a>
 
-					<a href="#laplacian-1d-steerable"
+					<a href="#laplacian-1d-operator"
 						target="_self"
 						title="Click here to be taken to the Steerable 1D Laplacian Operator section of this page."
 						class="td-base-comp medium">
@@ -581,7 +584,6 @@
 								<div class="viewer">
 									<img src="assets/content/laplacian-1d-steerable.webp"
 										alt="Example of an image that has been convolved with the 1D Laplacian Operator."
-										title="Example of an image that has been convolved with the 1D Laplacian Operator."
 										class="blur-load double"
 										style="background-image: url(assets/no-index/laplacian-1d-steerable-blurry.webp);"
 										loading="lazy">
@@ -648,7 +650,6 @@
 								<div class="viewer">
 									<img src="assets/content/laplacian.webp"
 										alt="Example of an image that has been convolved with the Laplacian Operator."
-										title="Example of an image that has been convolved with the Laplacian Operator."
 										class="blur-load square"
 										style="background-image: url(assets/no-index/laplacian-blurry.webp);"
 										loading="lazy">
@@ -717,7 +718,6 @@
 								<div class="viewer">
 									<img src="assets/content/line-detector.webp"
 										alt="Example of an image that has been convolved with the Line Detector Operator."
-										title="Example of an image that has been convolved with the Line Detector Operator."
 										class="blur-load square"
 										style="background-image: url(assets/no-index/line-detector-blurry.webp);"
 										loading="lazy">
@@ -754,7 +754,7 @@
 						</div>
 					</a>
 
-					<a href="#line-detector-steerable"
+					<a href="#line-detector"
 						target="_self"
 						title="Click here to be taken to the Steerable Line Detector section of this page."
 						class="td-base-comp medium">
@@ -784,7 +784,6 @@
 								<div class="viewer">
 									<img src="assets/content/line-detector-steerable.webp"
 										alt="Example of an image that has been convolved with the Line Detector Operator."
-										title="Example of an image that has been convolved with the Line Detector Operator."
 										class="blur-load double"
 										style="background-image: url(assets/no-index/line-detector-steerable-blurry.webp);"
 										loading="lazy">
@@ -853,7 +852,6 @@
 								<div class="viewer">
 									<img src="assets/content/prewitt.webp"
 										alt="Example of an image that has been convolved with the Prewitt Operator."
-										title="Example of an image that has been convolved with the Prewitt Operator."
 										class="blur-load square"
 										style="background-image: url(assets/no-index/prewitt-blurry.webp);"
 										loading="lazy">
@@ -890,7 +888,7 @@
 						</div>
 					</a>
 
-					<a href="#prewitt-operator-steerable"
+					<a href="#prewitt-operator"
 						target="_self"
 						title="Click here to be taken to the Steerable Prewitt Operator section of this page."
 						class="td-base-comp medium">
@@ -920,7 +918,6 @@
 								<div class="viewer">
 									<img src="assets/content/prewitt-steerable.webp"
 										alt="Example of an image that has been convolved with the Prewitt Operator."
-										title="Example of an image that has been convolved with the Prewitt Operator."
 										class="blur-load double"
 										style="background-image: url(assets/no-index/prewitt-steerable-blurry.webp);"
 										loading="lazy">
@@ -989,7 +986,6 @@
 								<div class="viewer">
 									<img src="assets/content/sobel.webp"
 										alt="Example of an image that has been convolved with the Sobel Operator."
-										title="Example of an image that has been convolved with the Sobel Operator."
 										class="blur-load square"
 										style="background-image: url(assets/no-index/sobel-blurry.webp);"
 										loading="lazy">
@@ -1026,7 +1022,7 @@
 						</div>
 					</a>
 
-					<a href="#sobel-operator-steerable"
+					<a href="#sobel-operator"
 						target="_self"
 						title="Click here to be taken to the Steerable Sobel Operator section of this page."
 						class="td-base-comp medium">
@@ -1056,7 +1052,6 @@
 								<div class="viewer">
 									<img src="assets/content/sobel-steerable.webp"
 										alt="Example of an image that has been convolved with the Sobel Operator."
-										title="Example of an image that has been convolved with the Sobel Operator."
 										class="blur-load double"
 										style="background-image: url(assets/no-index/sobel-steerable-blurry.webp);"
 										loading="lazy">
@@ -1093,6 +1088,1109 @@
 						</div>
 					</a>
 				</div>
+
+				<section id="gradient" class="documentation">
+					<div class="docuinfo">
+						<h2>Gradient</h2>
+						<h3>Standard &amp; Complex</h3>
+						<p>
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim diam vulputate ut pharetra sit amet aliquam. Integer eget aliquet nibh praesent tristique magna sit. Massa id neque aliquam vestibulum. Egestas diam in arcu cursus euismod quis viverra nibh. Ultrices vitae auctor eu augue ut lectus arcu bibendum at. Vel risus commodo viverra maecenas accumsan lacus vel facilisis volutpat. Sit amet cursus sit amet dictum sit. Scelerisque mauris pellentesque pulvinar pellentesque habitant morbi tristique. Rutrum quisque non tellus orci ac.
+						</p>
+					</div>
+
+					<div class="docuviz">
+						<div class="comp-display">
+							<a href="https://github.com/MaxMainio/TD_/blob/main/TOPs/Edge%20Detectors/Gradient.tox"
+								target="_blank"
+								title="Click here to be taken to the Gradient COMP section of the Github repo where you can download all of these components."
+								class="td-base-comp small">
+								<div class="horizontal-bar"></div>
+					
+								<div class="content-bar">
+									<div class="vertical-bar">
+										<div class="vertical-color left"></div>
+					
+										<div class="connector-container">
+											<div class="connector-color top-left"></div>
+											<div class="connector-space"></div>
+											<div class="connector-color bottom-left"></div>
+										</div>
+					
+										<div class="vertical-color left"></div>
+									</div>
+					
+									<div class="flags-bar">
+										<img src="../../assets/content/td-icons/viewer-on.webp" class="td-flag" loading="lazy">
+										<img src="../../assets/content/td-icons/clone-immune-off.webp" class="td-flag" loading="lazy">
+										<img src="../../assets/content/td-icons/no-cook-off.webp" class="td-flag" loading="lazy">
+										<img src="../../assets/content/td-icons/unlocked.webp" class="td-flag" loading="lazy">
+									</div>
+					
+									<div class="viewer-container">
+										<div class="viewer">
+											<img src="assets/content/gradient.webp"
+												alt="Example of the gradient of an image."
+												class="blur-load square"
+												style="background-image: url(assets/no-index/gradient-blurry.webp);"
+												loading="lazy">
+										</div>
+									</div>
+					
+									<div class="vertical-bar">
+										<div class="vertical-color right"></div>
+					
+										<div class="connector-container">
+											<div class="connector-color top-right"></div>
+											<div class="connector-space"></div>
+											<div class="connector-color bottom-right"></div>
+										</div>
+					
+										<div class="vertical-color right"></div>
+									</div>
+								</div>
+					
+								<div class="horizontal-bar"></div>
+					
+								<div class="hairline"></div>
+					
+								<div class="title-bar">
+									<div class="title-section">
+										<p>Gradient</p>
+									</div>
+					
+									<div class="title-divider"></div>
+					
+									<div class="activate-container">
+										<img src="../../assets/content/td-icons/activate-off.webp" class="activate-flag" loading="lazy">
+									</div>
+								</div>
+							</a>
+	
+							<a href="https://github.com/MaxMainio/TD_/blob/main/TOPs/Edge%20Detectors/Gradient_Complex.tox"
+								target="_blank"
+								title="Click here to be taken to the Gradient Complex COMP section of the Github repo where you can download all of these components."
+								class="td-base-comp small">
+								<div class="horizontal-bar"></div>
+					
+								<div class="content-bar">
+									<div class="vertical-bar">
+										<div class="vertical-color left"></div>
+					
+										<div class="connector-container">
+											<div class="connector-color top-left"></div>
+											<div class="connector-space"></div>
+											<div class="connector-color bottom-left"></div>
+										</div>
+					
+										<div class="vertical-color left"></div>
+									</div>
+					
+									<div class="flags-bar">
+										<img src="../../assets/content/td-icons/viewer-on.webp" class="td-flag" loading="lazy">
+										<img src="../../assets/content/td-icons/clone-immune-off.webp" class="td-flag" loading="lazy">
+										<img src="../../assets/content/td-icons/no-cook-off.webp" class="td-flag" loading="lazy">
+										<img src="../../assets/content/td-icons/unlocked.webp" class="td-flag" loading="lazy">
+									</div>
+					
+									<div class="viewer-container">
+										<div class="viewer">
+											<img src="assets/content/gradient-complex.webp"
+												alt="Example of the gradient of an image."
+												class="blur-load square"
+												style="background-image: url(assets/no-index/gradient-complex-blurry.webp);"
+												loading="lazy">
+										</div>
+									</div>
+					
+									<div class="vertical-bar">
+										<div class="vertical-color right"></div>
+					
+										<div class="connector-container">
+											<div class="connector-color top-right"></div>
+											<div class="connector-space"></div>
+											<div class="connector-color bottom-right"></div>
+										</div>
+					
+										<div class="vertical-color right"></div>
+									</div>
+								</div>
+					
+								<div class="horizontal-bar"></div>
+					
+								<div class="hairline"></div>
+					
+								<div class="title-bar">
+									<div class="title-section">
+										<p>Gradient_Complex</p>
+									</div>
+					
+									<div class="title-divider"></div>
+					
+									<div class="activate-container">
+										<img src="../../assets/content/td-icons/activate-off.webp" class="activate-flag" loading="lazy">
+									</div>
+								</div>
+							</a>
+						</div>
+					</div>
+				</section>
+
+				<section id="haar-operator" class="documentation">
+					<div class="docuinfo">
+						<h2>Haar Operator</h2>
+						<h3>Standard &amp; Steerable</h3>
+						<p>
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim diam vulputate ut pharetra sit amet aliquam. Integer eget aliquet nibh praesent tristique magna sit. Massa id neque aliquam vestibulum. Egestas diam in arcu cursus euismod quis viverra nibh. Ultrices vitae auctor eu augue ut lectus arcu bibendum at. Vel risus commodo viverra maecenas accumsan lacus vel facilisis volutpat. Sit amet cursus sit amet dictum sit. Scelerisque mauris pellentesque pulvinar pellentesque habitant morbi tristique. Rutrum quisque non tellus orci ac.
+						</p>
+					</div>
+
+					<div class="docuviz">
+						<div class="comp-display">
+							<a href="https://github.com/MaxMainio/TD_/blob/main/TOPs/Edge%20Detectors/Haar_Operator.tox"
+								target="_blank"
+								title="Click here to be taken to the Haar Operator COMP section of the Github repo where you can download all of these components."
+								class="td-base-comp small">
+								<div class="horizontal-bar"></div>
+					
+								<div class="content-bar">
+									<div class="vertical-bar">
+										<div class="vertical-color left"></div>
+					
+										<div class="connector-container">
+											<div class="connector-color top-left"></div>
+											<div class="connector-space"></div>
+											<div class="connector-color bottom-left"></div>
+										</div>
+					
+										<div class="vertical-color left"></div>
+									</div>
+					
+									<div class="flags-bar">
+										<img src="../../assets/content/td-icons/viewer-on.webp" class="td-flag" loading="lazy">
+										<img src="../../assets/content/td-icons/clone-immune-off.webp" class="td-flag" loading="lazy">
+										<img src="../../assets/content/td-icons/no-cook-off.webp" class="td-flag" loading="lazy">
+										<img src="../../assets/content/td-icons/unlocked.webp" class="td-flag" loading="lazy">
+									</div>
+					
+									<div class="viewer-container">
+										<div class="viewer">
+											<img src="assets/content/haar.webp"
+												alt="Example of an image that has been convolved with the Haar Operator."
+												class="blur-load square"
+												style="background-image: url(assets/no-index/haar-blurry.webp);"
+												loading="lazy">
+										</div>
+									</div>
+					
+									<div class="vertical-bar">
+										<div class="vertical-color right"></div>
+					
+										<div class="connector-container">
+											<div class="connector-color top-right"></div>
+											<div class="connector-space"></div>
+											<div class="connector-color bottom-right"></div>
+										</div>
+					
+										<div class="vertical-color right"></div>
+									</div>
+								</div>
+					
+								<div class="horizontal-bar"></div>
+					
+								<div class="hairline"></div>
+					
+								<div class="title-bar">
+									<div class="title-section">
+										<p>Haar_Operator</p>
+									</div>
+					
+									<div class="title-divider"></div>
+					
+									<div class="activate-container">
+										<img src="../../assets/content/td-icons/activate-off.webp" class="activate-flag" loading="lazy">
+									</div>
+								</div>
+							</a>
+
+							<a href="https://github.com/MaxMainio/TD_/blob/main/TOPs/Edge%20Detectors/Haar_Operator_Steerable.tox"
+								target="_blank"
+								title="Click here to be taken to the Steerable Haar Operator COMP section of the Github repo where you can download all of these components."
+								class="td-base-comp medium">
+								<div class="horizontal-bar"></div>
+					
+								<div class="content-bar">
+									<div class="vertical-bar">
+										<div class="vertical-color left"></div>
+					
+										<div class="connector-container">
+											<div class="connector-color top-left"></div>
+											<div class="connector-space"></div>
+											<div class="connector-color bottom-left"></div>
+										</div>
+					
+										<div class="vertical-color left"></div>
+									</div>
+					
+									<div class="flags-bar">
+										<img src="../../assets/content/td-icons/viewer-on.webp" class="td-flag" loading="lazy">
+										<img src="../../assets/content/td-icons/clone-immune-off.webp" class="td-flag" loading="lazy">
+										<img src="../../assets/content/td-icons/no-cook-off.webp" class="td-flag" loading="lazy">
+										<img src="../../assets/content/td-icons/unlocked.webp" class="td-flag" loading="lazy">
+									</div>
+					
+									<div class="viewer-container">
+										<div class="viewer">
+											<img src="assets/content/haar-steerable.webp"
+												alt="Example of an image that has been convolved with the Haar Operator."
+												class="blur-load double"
+												style="background-image: url(assets/no-index/haar-steerable-blurry.webp);"
+												loading="lazy">
+										</div>
+									</div>
+					
+									<div class="vertical-bar">
+										<div class="vertical-color right"></div>
+					
+										<div class="connector-container">
+											<div class="connector-color top-right"></div>
+											<div class="connector-space"></div>
+											<div class="connector-color bottom-right"></div>
+										</div>
+					
+										<div class="vertical-color right"></div>
+									</div>
+								</div>
+					
+								<div class="horizontal-bar"></div>
+					
+								<div class="hairline"></div>
+					
+								<div class="title-bar">
+									<div class="title-section">
+										<p>Haar_Operator_Steerable</p>
+									</div>
+					
+									<div class="title-divider"></div>
+					
+									<div class="activate-container">
+										<img src="../../assets/content/td-icons/activate-off.webp" class="activate-flag" loading="lazy">
+									</div>
+								</div>
+							</a>
+						</div>
+					</div>
+				</section>
+
+				<section id="kirsche-operator" class="documentation">
+					<div class="docuinfo">
+						<h2>Kirsche Operator</h2>
+						<h3>Standard &amp; Steerable</h3>
+						<p>
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim diam vulputate ut pharetra sit amet aliquam. Integer eget aliquet nibh praesent tristique magna sit. Massa id neque aliquam vestibulum. Egestas diam in arcu cursus euismod quis viverra nibh. Ultrices vitae auctor eu augue ut lectus arcu bibendum at. Vel risus commodo viverra maecenas accumsan lacus vel facilisis volutpat. Sit amet cursus sit amet dictum sit. Scelerisque mauris pellentesque pulvinar pellentesque habitant morbi tristique. Rutrum quisque non tellus orci ac.
+						</p>
+					</div>
+
+					<div class="docuviz">
+						<div class="comp-display">
+							<a href="https://github.com/MaxMainio/TD_/blob/main/TOPs/Edge%20Detectors/Kirsch_Operator.tox"
+								target="_blank"
+								title="Click here to be taken to the Kirsche Operator COMP section of the Github repo where you can download all of these components."
+								class="td-base-comp small">
+								<div class="horizontal-bar"></div>
+			
+								<div class="content-bar">
+									<div class="vertical-bar">
+										<div class="vertical-color left"></div>
+			
+										<div class="connector-container">
+											<div class="connector-color top-left"></div>
+											<div class="connector-space"></div>
+											<div class="connector-color bottom-left"></div>
+										</div>
+			
+										<div class="vertical-color left"></div>
+									</div>
+			
+									<div class="flags-bar">
+										<img src="../../assets/content/td-icons/viewer-on.webp" class="td-flag" loading="lazy">
+										<img src="../../assets/content/td-icons/clone-immune-off.webp" class="td-flag" loading="lazy">
+										<img src="../../assets/content/td-icons/no-cook-off.webp" class="td-flag" loading="lazy">
+										<img src="../../assets/content/td-icons/unlocked.webp" class="td-flag" loading="lazy">
+									</div>
+			
+									<div class="viewer-container">
+										<div class="viewer">
+											<img src="assets/content/kirsch.webp"
+												alt="Example of an image that has been convolved with the Kirsch Operator."
+												class="blur-load square"
+												style="background-image: url(assets/no-index/kirsch-blurry.webp);"
+												loading="lazy">
+										</div>
+									</div>
+			
+									<div class="vertical-bar">
+										<div class="vertical-color right"></div>
+			
+										<div class="connector-container">
+											<div class="connector-color top-right"></div>
+											<div class="connector-space"></div>
+											<div class="connector-color bottom-right"></div>
+										</div>
+			
+										<div class="vertical-color right"></div>
+									</div>
+								</div>
+			
+								<div class="horizontal-bar"></div>
+			
+								<div class="hairline"></div>
+			
+								<div class="title-bar">
+									<div class="title-section">
+										<p>Kirsch_Operator</p>
+									</div>
+			
+									<div class="title-divider"></div>
+			
+									<div class="activate-container">
+										<img src="../../assets/content/td-icons/activate-off.webp" class="activate-flag" loading="lazy">
+									</div>
+								</div>
+							</a	>
+
+							<a href="https://github.com/MaxMainio/TD_/blob/main/TOPs/Edge%20Detectors/Kirsch_Operator_Steerable.tox"
+								target="_blank"
+								title="Click here to be taken to the Steerable Kirsche Operator COMP section of the Github repo where you can download all of these components."
+								class="td-base-comp medium">
+								<div class="horizontal-bar"></div>
+			
+								<div class="content-bar">
+									<div class="vertical-bar">
+										<div class="vertical-color left"></div>
+			
+										<div class="connector-container">
+											<div class="connector-color top-left"></div>
+											<div class="connector-space"></div>
+											<div class="connector-color bottom-left"></div>
+										</div>
+			
+										<div class="vertical-color left"></div>
+									</div>
+			
+									<div class="flags-bar">
+										<img src="../../assets/content/td-icons/viewer-on.webp" class="td-flag" loading="lazy">
+										<img src="../../assets/content/td-icons/clone-immune-off.webp" class="td-flag" loading="lazy">
+										<img src="../../assets/content/td-icons/no-cook-off.webp" class="td-flag" loading="lazy">
+										<img src="../../assets/content/td-icons/unlocked.webp" class="td-flag" loading="lazy">
+									</div>
+			
+									<div class="viewer-container">
+										<div class="viewer">
+											<img src="assets/content/kirsch-steerable.webp"
+												alt="Example of an image that has been convolved with the Kirsch Operator."
+												class="blur-load double"
+												style="background-image: url(assets/no-index/kirsch-steerable-blurry.webp);"
+												loading="lazy">
+										</div>
+									</div>
+			
+									<div class="vertical-bar">
+										<div class="vertical-color right"></div>
+			
+										<div class="connector-container">
+											<div class="connector-color top-right"></div>
+											<div class="connector-space"></div>
+											<div class="connector-color bottom-right"></div>
+										</div>
+			
+										<div class="vertical-color right"></div>
+									</div>
+								</div>
+			
+								<div class="horizontal-bar"></div>
+			
+								<div class="hairline"></div>
+			
+								<div class="title-bar">
+									<div class="title-section">
+										<p>Kirsch_Operator_Steerable</p>
+									</div>
+			
+									<div class="title-divider"></div>
+			
+									<div class="activate-container">
+										<img src="../../assets/content/td-icons/activate-off.webp" class="activate-flag" loading="lazy">
+									</div>
+								</div>
+					</a		>
+						</div>
+					</div>
+				</section>
+
+				<section id="laplacian-1d-operator" class="documentation">
+					<div class="docuinfo">
+						<h2>Laplacian 1D</h2>
+						<h3>Standard &amp; Steerable</h3>
+						<p>
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim diam vulputate ut pharetra sit amet aliquam. Integer eget aliquet nibh praesent tristique magna sit. Massa id neque aliquam vestibulum. Egestas diam in arcu cursus euismod quis viverra nibh. Ultrices vitae auctor eu augue ut lectus arcu bibendum at. Vel risus commodo viverra maecenas accumsan lacus vel facilisis volutpat. Sit amet cursus sit amet dictum sit. Scelerisque mauris pellentesque pulvinar pellentesque habitant morbi tristique. Rutrum quisque non tellus orci ac.
+						</p>
+					</div>
+
+					<div class="docuviz">
+						<div class="comp-display">
+							<a href="https://github.com/MaxMainio/TD_/blob/main/TOPs/Edge%20Detectors/Laplacian_1D.tox"
+								target="_blank"
+								title="Click here to be taken to the One Dimensional Laplacian Operator COMP section of the Github repo where you can download all of these components."
+								class="td-base-comp small">
+								<div class="horizontal-bar"></div>
+					
+								<div class="content-bar">
+									<div class="vertical-bar">
+										<div class="vertical-color left"></div>
+					
+										<div class="connector-container">
+											<div class="connector-color top-left"></div>
+											<div class="connector-space"></div>
+											<div class="connector-color bottom-left"></div>
+										</div>
+					
+										<div class="vertical-color left"></div>
+									</div>
+					
+									<div class="flags-bar">
+										<img src="../../assets/content/td-icons/viewer-on.webp" class="td-flag" loading="lazy">
+										<img src="../../assets/content/td-icons/clone-immune-off.webp" class="td-flag" loading="lazy">
+										<img src="../../assets/content/td-icons/no-cook-off.webp" class="td-flag" loading="lazy">
+										<img src="../../assets/content/td-icons/unlocked.webp" class="td-flag" loading="lazy">
+									</div>
+					
+									<div class="viewer-container">
+										<div class="viewer">
+											<img src="assets/content/laplacian-1d.webp"
+												alt="Example of an image that has been convolved with the 1D Laplacian Operator."
+												class="blur-load square"
+												style="background-image: url(assets/no-index/laplacian-1d-blurry.webp);"
+												loading="lazy">
+										</div>
+									</div>
+					
+									<div class="vertical-bar">
+										<div class="vertical-color right"></div>
+					
+										<div class="connector-container">
+											<div class="connector-color top-right"></div>
+											<div class="connector-space"></div>
+											<div class="connector-color bottom-right"></div>
+										</div>
+					
+										<div class="vertical-color right"></div>
+									</div>
+								</div>
+					
+								<div class="horizontal-bar"></div>
+					
+								<div class="hairline"></div>
+					
+								<div class="title-bar">
+									<div class="title-section">
+										<p>Laplacian_1D</p>
+									</div>
+					
+									<div class="title-divider"></div>
+					
+									<div class="activate-container">
+										<img src="../../assets/content/td-icons/activate-off.webp" class="activate-flag" loading="lazy">
+									</div>
+								</div>
+							</a>
+
+							<a href="https://github.com/MaxMainio/TD_/blob/main/TOPs/Edge%20Detectors/Laplacian_1D_Steerable.tox"
+								target="_blank"
+								title="Click here to be taken to the Steerable One Dimensional Laplacian Operator COMP section of the Github repo where you can download all of these components."
+								class="td-base-comp medium">
+								<div class="horizontal-bar"></div>
+					
+								<div class="content-bar">
+									<div class="vertical-bar">
+										<div class="vertical-color left"></div>
+					
+										<div class="connector-container">
+											<div class="connector-color top-left"></div>
+											<div class="connector-space"></div>
+											<div class="connector-color bottom-left"></div>
+										</div>
+					
+										<div class="vertical-color left"></div>
+									</div>
+					
+									<div class="flags-bar">
+										<img src="../../assets/content/td-icons/viewer-on.webp" class="td-flag" loading="lazy">
+										<img src="../../assets/content/td-icons/clone-immune-off.webp" class="td-flag" loading="lazy">
+										<img src="../../assets/content/td-icons/no-cook-off.webp" class="td-flag" loading="lazy">
+										<img src="../../assets/content/td-icons/unlocked.webp" class="td-flag" loading="lazy">
+									</div>
+					
+									<div class="viewer-container">
+										<div class="viewer">
+											<img src="assets/content/laplacian-1d-steerable.webp"
+												alt="Example of an image that has been convolved with the 1D Laplacian Operator."
+												class="blur-load double"
+												style="background-image: url(assets/no-index/laplacian-1d-steerable-blurry.webp);"
+												loading="lazy">
+										</div>
+									</div>
+					
+									<div class="vertical-bar">
+										<div class="vertical-color right"></div>
+					
+										<div class="connector-container">
+											<div class="connector-color top-right"></div>
+											<div class="connector-space"></div>
+											<div class="connector-color bottom-right"></div>
+										</div>
+					
+										<div class="vertical-color right"></div>
+									</div>
+								</div>
+					
+								<div class="horizontal-bar"></div>
+					
+								<div class="hairline"></div>
+					
+								<div class="title-bar">
+									<div class="title-section">
+										<p>Laplacian_1D_Steerable</p>
+									</div>
+					
+									<div class="title-divider"></div>
+					
+									<div class="activate-container">
+										<img src="../../assets/content/td-icons/activate-off.webp" class="activate-flag" loading="lazy">
+									</div>
+								</div>
+							</a>
+						</div>
+					</div>
+				</section>
+
+				<section id="laplacian-operator" class="documentation">
+					<div class="docuinfo">
+						<h2>Laplacian Operator</h2>
+						<h3>The one and only</h3>
+						<p>
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim diam vulputate ut pharetra sit amet aliquam. Integer eget aliquet nibh praesent tristique magna sit. Massa id neque aliquam vestibulum. Egestas diam in arcu cursus euismod quis viverra nibh. Ultrices vitae auctor eu augue ut lectus arcu bibendum at. Vel risus commodo viverra maecenas accumsan lacus vel facilisis volutpat. Sit amet cursus sit amet dictum sit. Scelerisque mauris pellentesque pulvinar pellentesque habitant morbi tristique. Rutrum quisque non tellus orci ac.
+						</p>
+					</div>
+
+					<div class="docuviz">
+						<div class="comp-display">
+							<a href="https://github.com/MaxMainio/TD_/blob/main/TOPs/Edge%20Detectors/Laplacian_Operator.tox"
+								target="_blank"
+								title="Click here to be taken to the Laplacian Operator COMP section of the Github repo where you can download all of these components."
+								class="td-base-comp small">
+								<div class="horizontal-bar"></div>
+					
+								<div class="content-bar">
+									<div class="vertical-bar">
+										<div class="vertical-color left"></div>
+					
+										<div class="connector-container">
+											<div class="connector-color top-left"></div>
+											<div class="connector-space"></div>
+											<div class="connector-color bottom-left"></div>
+										</div>
+					
+										<div class="vertical-color left"></div>
+									</div>
+					
+									<div class="flags-bar">
+										<img src="../../assets/content/td-icons/viewer-on.webp" class="td-flag" loading="lazy">
+										<img src="../../assets/content/td-icons/clone-immune-off.webp" class="td-flag" loading="lazy">
+										<img src="../../assets/content/td-icons/no-cook-off.webp" class="td-flag" loading="lazy">
+										<img src="../../assets/content/td-icons/unlocked.webp" class="td-flag" loading="lazy">
+									</div>
+					
+									<div class="viewer-container">
+										<div class="viewer">
+											<img src="assets/content/laplacian.webp"
+												alt="Example of an image that has been convolved with the Laplacian Operator."
+												class="blur-load square"
+												style="background-image: url(assets/no-index/laplacian-blurry.webp);"
+												loading="lazy">
+										</div>
+									</div>
+					
+									<div class="vertical-bar">
+										<div class="vertical-color right"></div>
+					
+										<div class="connector-container">
+											<div class="connector-color top-right"></div>
+											<div class="connector-space"></div>
+											<div class="connector-color bottom-right"></div>
+										</div>
+					
+										<div class="vertical-color right"></div>
+									</div>
+								</div>
+					
+								<div class="horizontal-bar"></div>
+					
+								<div class="hairline"></div>
+					
+								<div class="title-bar">
+									<div class="title-section">
+										<p>Laplacian_Operator</p>
+									</div>
+					
+									<div class="title-divider"></div>
+					
+									<div class="activate-container">
+										<img src="../../assets/content/td-icons/activate-off.webp" class="activate-flag" loading="lazy">
+									</div>
+								</div>
+							</a>
+						</div>
+					</div>
+				</section>
+
+				<section id="line-detector" class="documentation">
+					<div class="docuinfo">
+						<h2>Line Detector</h2>
+						<h3>Standard &amp; Steerable</h3>
+						<p>
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim diam vulputate ut pharetra sit amet aliquam. Integer eget aliquet nibh praesent tristique magna sit. Massa id neque aliquam vestibulum. Egestas diam in arcu cursus euismod quis viverra nibh. Ultrices vitae auctor eu augue ut lectus arcu bibendum at. Vel risus commodo viverra maecenas accumsan lacus vel facilisis volutpat. Sit amet cursus sit amet dictum sit. Scelerisque mauris pellentesque pulvinar pellentesque habitant morbi tristique. Rutrum quisque non tellus orci ac.
+						</p>
+					</div>
+
+					<div class="docuviz">
+						<div class="comp-display">
+							<a href="https://github.com/MaxMainio/TD_/blob/main/TOPs/Edge%20Detectors/Haar_Operator.tox"
+								target="_blank"
+								title="Click here to be taken to the Haar Operator COMP section of the Github repo where you can download all of these components."
+								class="td-base-comp small">
+								<div class="horizontal-bar"></div>
+					
+								<div class="content-bar">
+									<div class="vertical-bar">
+										<div class="vertical-color left"></div>
+					
+										<div class="connector-container">
+											<div class="connector-color top-left"></div>
+											<div class="connector-space"></div>
+											<div class="connector-color bottom-left"></div>
+										</div>
+					
+										<div class="vertical-color left"></div>
+									</div>
+					
+									<div class="flags-bar">
+										<img src="../../assets/content/td-icons/viewer-on.webp" class="td-flag" loading="lazy">
+										<img src="../../assets/content/td-icons/clone-immune-off.webp" class="td-flag" loading="lazy">
+										<img src="../../assets/content/td-icons/no-cook-off.webp" class="td-flag" loading="lazy">
+										<img src="../../assets/content/td-icons/unlocked.webp" class="td-flag" loading="lazy">
+									</div>
+					
+									<div class="viewer-container">
+										<div class="viewer">
+											<img src="assets/content/haar.webp"
+												alt="Example of an image that has been convolved with the Haar Operator."
+												class="blur-load square"
+												style="background-image: url(assets/no-index/haar-blurry.webp);"
+												loading="lazy">
+										</div>
+									</div>
+					
+									<div class="vertical-bar">
+										<div class="vertical-color right"></div>
+					
+										<div class="connector-container">
+											<div class="connector-color top-right"></div>
+											<div class="connector-space"></div>
+											<div class="connector-color bottom-right"></div>
+										</div>
+					
+										<div class="vertical-color right"></div>
+									</div>
+								</div>
+					
+								<div class="horizontal-bar"></div>
+					
+								<div class="hairline"></div>
+					
+								<div class="title-bar">
+									<div class="title-section">
+										<p>Haar_Operator</p>
+									</div>
+					
+									<div class="title-divider"></div>
+					
+									<div class="activate-container">
+										<img src="../../assets/content/td-icons/activate-off.webp" class="activate-flag" loading="lazy">
+									</div>
+								</div>
+							</a>
+
+							<a href="https://github.com/MaxMainio/TD_/blob/main/TOPs/Edge%20Detectors/Haar_Operator_Steerable.tox"
+								target="_blank"
+								title="Click here to be taken to the Haar Operator Steerable COMP section of the Github repo where you can download all of these components."
+								class="td-base-comp medium">
+								<div class="horizontal-bar"></div>
+					
+								<div class="content-bar">
+									<div class="vertical-bar">
+										<div class="vertical-color left"></div>
+					
+										<div class="connector-container">
+											<div class="connector-color top-left"></div>
+											<div class="connector-space"></div>
+											<div class="connector-color bottom-left"></div>
+										</div>
+					
+										<div class="vertical-color left"></div>
+									</div>
+					
+									<div class="flags-bar">
+										<img src="../../assets/content/td-icons/viewer-on.webp" class="td-flag" loading="lazy">
+										<img src="../../assets/content/td-icons/clone-immune-off.webp" class="td-flag" loading="lazy">
+										<img src="../../assets/content/td-icons/no-cook-off.webp" class="td-flag" loading="lazy">
+										<img src="../../assets/content/td-icons/unlocked.webp" class="td-flag" loading="lazy">
+									</div>
+					
+									<div class="viewer-container">
+										<div class="viewer">
+											<img src="assets/content/haar-steerable.webp"
+												alt="Example of an image that has been convolved with the Haar Operator."
+												class="blur-load double"
+												style="background-image: url(assets/no-index/haar-steerable-blurry.webp);"
+												loading="lazy">
+										</div>
+									</div>
+					
+									<div class="vertical-bar">
+										<div class="vertical-color right"></div>
+					
+										<div class="connector-container">
+											<div class="connector-color top-right"></div>
+											<div class="connector-space"></div>
+											<div class="connector-color bottom-right"></div>
+										</div>
+					
+										<div class="vertical-color right"></div>
+									</div>
+								</div>
+					
+								<div class="horizontal-bar"></div>
+					
+								<div class="hairline"></div>
+					
+								<div class="title-bar">
+									<div class="title-section">
+										<p>Haar_Operator_Steerable</p>
+									</div>
+					
+									<div class="title-divider"></div>
+					
+									<div class="activate-container">
+										<img src="../../assets/content/td-icons/activate-off.webp" class="activate-flag" loading="lazy">
+									</div>
+								</div>
+							</a>
+						</div>
+					</div>
+				</section>
+
+				<section id="prewitt-operator" class="documentation">
+					<div class="docuinfo">
+						<h2>Prewitt Operator</h2>
+						<h3>Standard &amp; Steerable</h3>
+						<p>
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim diam vulputate ut pharetra sit amet aliquam. Integer eget aliquet nibh praesent tristique magna sit. Massa id neque aliquam vestibulum. Egestas diam in arcu cursus euismod quis viverra nibh. Ultrices vitae auctor eu augue ut lectus arcu bibendum at. Vel risus commodo viverra maecenas accumsan lacus vel facilisis volutpat. Sit amet cursus sit amet dictum sit. Scelerisque mauris pellentesque pulvinar pellentesque habitant morbi tristique. Rutrum quisque non tellus orci ac.
+						</p>
+					</div>
+
+					<div class="docuviz">
+						<div class="comp-display">
+							<a href="https://github.com/MaxMainio/TD_/blob/main/TOPs/Edge%20Detectors/Prewitt_Operator.tox"
+								target="_blank"
+								title="Click here to be taken to the Prewitt Operator COMP section of the Github repo where you can download all of these components."
+								class="td-base-comp small">
+								<div class="horizontal-bar"></div>
+					
+								<div class="content-bar">
+									<div class="vertical-bar">
+										<div class="vertical-color left"></div>
+					
+										<div class="connector-container">
+											<div class="connector-color top-left"></div>
+											<div class="connector-space"></div>
+											<div class="connector-color bottom-left"></div>
+										</div>
+					
+										<div class="vertical-color left"></div>
+									</div>
+					
+									<div class="flags-bar">
+										<img src="../../assets/content/td-icons/viewer-on.webp" class="td-flag" loading="lazy">
+										<img src="../../assets/content/td-icons/clone-immune-off.webp" class="td-flag" loading="lazy">
+										<img src="../../assets/content/td-icons/no-cook-off.webp" class="td-flag" loading="lazy">
+										<img src="../../assets/content/td-icons/unlocked.webp" class="td-flag" loading="lazy">
+									</div>
+					
+									<div class="viewer-container">
+										<div class="viewer">
+											<img src="assets/content/prewitt.webp"
+												alt="Example of an image that has been convolved with the Prewitt Operator."
+												class="blur-load square"
+												style="background-image: url(assets/no-index/prewitt-blurry.webp);"
+												loading="lazy">
+										</div>
+									</div>
+					
+									<div class="vertical-bar">
+										<div class="vertical-color right"></div>
+					
+										<div class="connector-container">
+											<div class="connector-color top-right"></div>
+											<div class="connector-space"></div>
+											<div class="connector-color bottom-right"></div>
+										</div>
+					
+										<div class="vertical-color right"></div>
+									</div>
+								</div>
+					
+								<div class="horizontal-bar"></div>
+					
+								<div class="hairline"></div>
+					
+								<div class="title-bar">
+									<div class="title-section">
+										<p>Prewitt_Operator</p>
+									</div>
+					
+									<div class="title-divider"></div>
+					
+									<div class="activate-container">
+										<img src="../../assets/content/td-icons/activate-off.webp" class="activate-flag" loading="lazy">
+									</div>
+								</div>
+							</a>
+
+							<a href="https://github.com/MaxMainio/TD_/blob/main/TOPs/Edge%20Detectors/Prewitt_Operator_Steerable.tox"
+								target="_blank"
+								title="Click here to be taken to the Steerable Prewitt Operator COMP section of the Github repo where you can download all of these components."
+								class="td-base-comp medium">
+								<div class="horizontal-bar"></div>
+					
+								<div class="content-bar">
+									<div class="vertical-bar">
+										<div class="vertical-color left"></div>
+					
+										<div class="connector-container">
+											<div class="connector-color top-left"></div>
+											<div class="connector-space"></div>
+											<div class="connector-color bottom-left"></div>
+										</div>
+					
+										<div class="vertical-color left"></div>
+									</div>
+					
+									<div class="flags-bar">
+										<img src="../../assets/content/td-icons/viewer-on.webp" class="td-flag" loading="lazy">
+										<img src="../../assets/content/td-icons/clone-immune-off.webp" class="td-flag" loading="lazy">
+										<img src="../../assets/content/td-icons/no-cook-off.webp" class="td-flag" loading="lazy">
+										<img src="../../assets/content/td-icons/unlocked.webp" class="td-flag" loading="lazy">
+									</div>
+					
+									<div class="viewer-container">
+										<div class="viewer">
+											<img src="assets/content/prewitt-steerable.webp"
+												alt="Example of an image that has been convolved with the Prewitt Operator."
+												class="blur-load double"
+												style="background-image: url(assets/no-index/prewitt-steerable-blurry.webp);"
+												loading="lazy">
+										</div>
+									</div>
+					
+									<div class="vertical-bar">
+										<div class="vertical-color right"></div>
+					
+										<div class="connector-container">
+											<div class="connector-color top-right"></div>
+											<div class="connector-space"></div>
+											<div class="connector-color bottom-right"></div>
+										</div>
+					
+										<div class="vertical-color right"></div>
+									</div>
+								</div>
+					
+								<div class="horizontal-bar"></div>
+					
+								<div class="hairline"></div>
+					
+								<div class="title-bar">
+									<div class="title-section">
+										<p>Prewitt_Operator_Steerable</p>
+									</div>
+					
+									<div class="title-divider"></div>
+					
+									<div class="activate-container">
+										<img src="../../assets/content/td-icons/activate-off.webp" class="activate-flag" loading="lazy">
+									</div>
+								</div>
+							</a>
+						</div>
+					</div>
+
+				</section>
+				
+				<section id="sobel-operator" class="documentation">
+					<div class="docuinfo">
+						<h2>Sobel Operator</h2>
+						<h3>Standard &amp; Steerable</h3>
+						<p>
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim diam vulputate ut pharetra sit amet aliquam. Integer eget aliquet nibh praesent tristique magna sit. Massa id neque aliquam vestibulum. Egestas diam in arcu cursus euismod quis viverra nibh. Ultrices vitae auctor eu augue ut lectus arcu bibendum at. Vel risus commodo viverra maecenas accumsan lacus vel facilisis volutpat. Sit amet cursus sit amet dictum sit. Scelerisque mauris pellentesque pulvinar pellentesque habitant morbi tristique. Rutrum quisque non tellus orci ac.
+						</p>
+					</div>
+
+					<div class="docuviz">
+						<div class="comp-display">
+							<a href="https://github.com/MaxMainio/TD_/blob/main/TOPs/Edge%20Detectors/Sobel_Operator.tox"
+								target="_blank"
+								title="Click here to be taken to the Sobel Operator COMP section of the Github repo where you can download all of these components."
+								class="td-base-comp small">
+								<div class="horizontal-bar"></div>
+					
+								<div class="content-bar">
+									<div class="vertical-bar">
+										<div class="vertical-color left"></div>
+					
+										<div class="connector-container">
+											<div class="connector-color top-left"></div>
+											<div class="connector-space"></div>
+											<div class="connector-color bottom-left"></div>
+										</div>
+					
+										<div class="vertical-color left"></div>
+									</div>
+					
+									<div class="flags-bar">
+										<img src="../../assets/content/td-icons/viewer-on.webp" class="td-flag" loading="lazy">
+										<img src="../../assets/content/td-icons/clone-immune-off.webp" class="td-flag" loading="lazy">
+										<img src="../../assets/content/td-icons/no-cook-off.webp" class="td-flag" loading="lazy">
+										<img src="../../assets/content/td-icons/unlocked.webp" class="td-flag" loading="lazy">
+									</div>
+					
+									<div class="viewer-container">
+										<div class="viewer">
+											<img src="assets/content/sobel.webp"
+												alt="Example of an image that has been convolved with the Sobel Operator."
+												class="blur-load square"
+												style="background-image: url(assets/no-index/sobel-blurry.webp);"
+												loading="lazy">
+										</div>
+									</div>
+					
+									<div class="vertical-bar">
+										<div class="vertical-color right"></div>
+					
+										<div class="connector-container">
+											<div class="connector-color top-right"></div>
+											<div class="connector-space"></div>
+											<div class="connector-color bottom-right"></div>
+										</div>
+					
+										<div class="vertical-color right"></div>
+									</div>
+								</div>
+					
+								<div class="horizontal-bar"></div>
+					
+								<div class="hairline"></div>
+					
+								<div class="title-bar">
+									<div class="title-section">
+										<p>Sobel_Operator</p>
+									</div>
+					
+									<div class="title-divider"></div>
+					
+									<div class="activate-container">
+										<img src="../../assets/content/td-icons/activate-off.webp" class="activate-flag" loading="lazy">
+									</div>
+								</div>
+							</a>
+
+							<a href="https://github.com/MaxMainio/TD_/blob/main/TOPs/Edge%20Detectors/Sobel_Operator_Steerable.tox"
+								target="_blank"
+								title="Click here to be taken to the Steerable Sobel Operator COMP section of the Github repo where you can download all of these components."
+								class="td-base-comp medium">
+								<div class="horizontal-bar"></div>
+					
+								<div class="content-bar">
+									<div class="vertical-bar">
+										<div class="vertical-color left"></div>
+					
+										<div class="connector-container">
+											<div class="connector-color top-left"></div>
+											<div class="connector-space"></div>
+											<div class="connector-color bottom-left"></div>
+										</div>
+					
+										<div class="vertical-color left"></div>
+									</div>
+					
+									<div class="flags-bar">
+										<img src="../../assets/content/td-icons/viewer-on.webp" class="td-flag" loading="lazy">
+										<img src="../../assets/content/td-icons/clone-immune-off.webp" class="td-flag" loading="lazy">
+										<img src="../../assets/content/td-icons/no-cook-off.webp" class="td-flag" loading="lazy">
+										<img src="../../assets/content/td-icons/unlocked.webp" class="td-flag" loading="lazy">
+									</div>
+					
+									<div class="viewer-container">
+										<div class="viewer">
+											<img src="assets/content/sobel-steerable.webp"
+												alt="Example of an image that has been convolved with the Sobel Operator."
+												class="blur-load double"
+												style="background-image: url(assets/no-index/sobel-steerable-blurry.webp);"
+												loading="lazy">
+										</div>
+									</div>
+					
+									<div class="vertical-bar">
+										<div class="vertical-color right"></div>
+					
+										<div class="connector-container">
+											<div class="connector-color top-right"></div>
+											<div class="connector-space"></div>
+											<div class="connector-color bottom-right"></div>
+										</div>
+					
+										<div class="vertical-color right"></div>
+									</div>
+								</div>
+					
+								<div class="horizontal-bar"></div>
+					
+								<div class="hairline"></div>
+					
+								<div class="title-bar">
+									<div class="title-section">
+										<p>Sobel_Operator_Steerable</p>
+									</div>
+					
+									<div class="title-divider"></div>
+					
+									<div class="activate-container">
+										<img src="../../assets/content/td-icons/activate-off.webp" class="activate-flag" loading="lazy">
+									</div>
+								</div>
+							</a>
+						</div>
+					</div>
+				</section>
 			</article>
 		</main>
 
