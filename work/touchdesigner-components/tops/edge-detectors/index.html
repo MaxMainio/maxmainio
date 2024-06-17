@@ -32,6 +32,7 @@
 		<link rel="stylesheet" type="text/css" href="sources/FIXME:">
 
 		<script src="../../../../sources/global/main.js" defer></script>
+		<script src="../../sources/tdcomps.js" defer></script>
 	</head>
 
 	<body>
@@ -1101,7 +1102,7 @@
 					</div>
 
 					<div class="docuviz">
-						<div class="comp-display">
+						<div class="comp-display double">
 							<a href="https://github.com/MaxMainio/TD_/blob/main/TOPs/Edge%20Detectors/Gradient.tox"
 								target="_blank"
 								title="Click here to be taken to the Gradient COMP section of the Github repo where you can download all of these components."
@@ -1249,7 +1250,7 @@
 					</div>
 
 					<div class="docuviz">
-						<div class="comp-display">
+						<div class="comp-display double">
 							<a href="https://github.com/MaxMainio/TD_/blob/main/TOPs/Edge%20Detectors/Haar_Operator.tox"
 								target="_blank"
 								title="Click here to be taken to the Haar Operator COMP section of the Github repo where you can download all of these components."
@@ -1397,7 +1398,7 @@
 					</div>
 
 					<div class="docuviz">
-						<div class="comp-display">
+						<div class="comp-display double">
 							<a href="https://github.com/MaxMainio/TD_/blob/main/TOPs/Edge%20Detectors/Kirsch_Operator.tox"
 								target="_blank"
 								title="Click here to be taken to the Kirsche Operator COMP section of the Github repo where you can download all of these components."
@@ -1545,7 +1546,7 @@
 					</div>
 
 					<div class="docuviz">
-						<div class="comp-display">
+						<div class="comp-display double">
 							<a href="https://github.com/MaxMainio/TD_/blob/main/TOPs/Edge%20Detectors/Laplacian_1D.tox"
 								target="_blank"
 								title="Click here to be taken to the One Dimensional Laplacian Operator COMP section of the Github repo where you can download all of these components."
@@ -1688,7 +1689,47 @@
 						<h2>Laplacian Operator</h2>
 						<h3>The one and only</h3>
 						<p>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim diam vulputate ut pharetra sit amet aliquam. Integer eget aliquet nibh praesent tristique magna sit. Massa id neque aliquam vestibulum. Egestas diam in arcu cursus euismod quis viverra nibh. Ultrices vitae auctor eu augue ut lectus arcu bibendum at. Vel risus commodo viverra maecenas accumsan lacus vel facilisis volutpat. Sit amet cursus sit amet dictum sit. Scelerisque mauris pellentesque pulvinar pellentesque habitant morbi tristique. Rutrum quisque non tellus orci ac.
+							The <a href="https://en.wikipedia.org/wiki/Discrete_Laplace_operator#:~:text=with%20iterative%20methods.-,Image%20processing,-%5Bedit%5D" target="_blank">Laplacian Operator</a> is a powerful tool in image processing used to compute the <a href="https://en.wikipedia.org/wiki/Image_derivative" target="_blank">second derivative of the given image</a>. This means it is particularly sensitive to areas where the intensity shifts quickly, such as edges, corners, and other regions of abrupt transition.
+						</p>
+
+						<h4>Parameters:</h4>
+						<p>
+							<b>Kernel</b> &ndash;
+							This menu selects which variant of the Laplacian will be performed on the input image.
+						</p>
+
+						<p>
+							<b>Invert Kernel</b> &ndash;
+							When on, this will invert the sign of the values in each cell of the kernel.
+						</p>
+
+						<p>
+							<b>Monochrome</b> &ndash;
+							When on, the input will be converted to a single channel before the Laplacian convolution.
+						</p>
+
+						<p>
+							<b>RGB</b> &ndash;
+							This menu selects how the monochrome conversion is calculated for the RGB channels.
+						</p>
+
+						<p>
+							<b>Apply to Alpha</b> &ndash;
+							When off, the alpha channel will not be convolved.
+						</p>
+
+						<p>
+							<b>Normalize</b> &ndash;
+							Normalize values in the output image so that they are all scaled and shifted to fall between 0 and 1.
+						</p>
+
+						<h4>In/Outputs:</h4>
+						<p>
+							<b>Input 0</b> &ndash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> image to be <a href="https://en.wikipedia.org/wiki/Convolution" target="_blank">convolved</a> with the <a href="https://en.wikipedia.org/wiki/Discrete_Laplace_operator#:~:text=with%20iterative%20methods.-,Image%20processing,-%5Bedit%5D" target="_blank">Laplacian</a> <a href="https://en.wikipedia.org/wiki/Kernel_(image_processing)" target="_blank">kernel</a>.
+						</p>
+
+						<p>
+							<b>Output 0</b> &ndash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> the <a href="https://en.wikipedia.org/wiki/Discrete_Laplace_operator#:~:text=with%20iterative%20methods.-,Image%20processing,-%5Bedit%5D" target="_blank">Laplacian</a> of input 0.
 						</p>
 					</div>
 
@@ -1775,7 +1816,7 @@
 					</div>
 
 					<div class="docuviz">
-						<div class="comp-display">
+						<div class="comp-display double">
 							<a href="https://github.com/MaxMainio/TD_/blob/main/TOPs/Edge%20Detectors/Line_Detector.tox"
 								target="_blank"
 								title="Click here to be taken to the Line Detector COMP section of the Github repo where you can download all of these components."
@@ -1923,7 +1964,7 @@
 					</div>
 
 					<div class="docuviz">
-						<div class="comp-display">
+						<div class="comp-display double">
 							<a href="https://github.com/MaxMainio/TD_/blob/main/TOPs/Edge%20Detectors/Prewitt_Operator.tox"
 								target="_blank"
 								title="Click here to be taken to the Prewitt Operator COMP section of the Github repo where you can download all of these components."
@@ -2071,7 +2112,7 @@
 					</div>
 
 					<div class="docuviz">
-						<div class="comp-display">
+						<div class="comp-display double">
 							<a href="https://github.com/MaxMainio/TD_/blob/main/TOPs/Edge%20Detectors/Sobel_Operator.tox"
 								target="_blank"
 								title="Click here to be taken to the Sobel Operator COMP section of the Github repo where you can download all of these components."

@@ -23,6 +23,7 @@
     --td-light-color: #272729;
 
     --td-top-color: #594F7C;
+    --td-top-text-color: #959BCE;
 }
 
 
@@ -84,6 +85,7 @@ section.documentation{
 }
 
 .docuinfo{
+    grid-row: 1 / 2;
     grid-column: 1 / 5;
     width: 100%;
     height: fit-content;
@@ -93,7 +95,7 @@ section.documentation{
     margin: 0 0 0 auto;
 
     & > h2{
-        margin-top: 0.5rem;
+        margin-top: 0;
     }
 
     & > h3{
@@ -102,15 +104,35 @@ section.documentation{
         line-height: 1.3rem;
         letter-spacing: 0.75px;
     }
+
+    & > h4{
+        font-weight: 400;
+        font-size: 1rem;
+        line-height: 1.3rem;
+        letter-spacing: 0.75px;
+
+        margin-top: 1rem;
+        margin-bottom: -0.5rem;
+    }
 }
 
 .docuviz{
     grid-column: 5 / 9;
 
-    .comp-display{
-        display: flex;
-        gap: 1rem;
+    & > .comp-display{
+        height: 100%;
+
+        &.double{
+            display: flex;
+            gap: 1rem;
+        }
     }
+
+}
+
+.top-text{
+    padding: 0.2rem 0.1rem 0 0.15rem;
+    background-color: var(--td-top-text-color);
 }
 
 
