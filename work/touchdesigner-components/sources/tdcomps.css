@@ -35,7 +35,7 @@
 
 /* CONTENT  --------------------------------------------------------------------------------------------------------------------- */
 article{
-    gap: calc(25vh - 6rem) 1rem;
+    gap: calc(12.5vh - 3rem) 1rem;
 }
 
 #first.bento{
@@ -48,6 +48,31 @@ article{
     /* width: calc((2560px - 1rem) / 2 + 440px); */
 }
 
+#hidden-divider{
+    height: 1rem;
+}
+
+hr{
+    border: none;
+    border-top: 3px double var(--type-color);
+    color: var(--type-color);
+    overflow: visible;
+    text-align: center;
+
+    grid-column: 1 / 9;
+    height: 1rem;
+    width: 100%;
+    max-width: calc(var(--in-width) - 3rem);
+    
+    &::after{
+        background: #fff;
+        content: '§';
+        padding: 0 0.2rem;
+        position: relative;
+        top: -0.55rem;
+    }
+}
+
 section.documentation{
     min-height: 50vh;
     grid-column: 1 / 9;
@@ -55,13 +80,15 @@ section.documentation{
     display: grid;
     grid-template-columns: repeat(8, 1fr);
     gap: 1rem;
-    padding-top: 6rem;
-    /* background-color: red; */
+    padding: 3rem 0;
 }
 
 .docuinfo{
     grid-column: 1 / 5;
     width: 100%;
+    height: fit-content;
+    position: sticky;
+    top: 6rem;
     max-width: calc((var(--in-width) / 2) - 1.5rem);
     margin: 0 0 0 auto;
 
