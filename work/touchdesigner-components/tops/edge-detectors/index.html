@@ -5,7 +5,7 @@
 		<title>Max Mainio | Edge Detectors</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="author" content="Max Mainio Beidler">
-		<meta name="description" content="FIXME:">
+		<!-- <meta name="description" content="FIXME:"> -->
 		<meta name="theme-color" media="(prefers-color-scheme: light)" content="#00ff00">
 		<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#333333">
 
@@ -17,19 +17,19 @@
 		<meta property="og:type" content="website">
 		<meta property="og:title" content="Max Mainio | Edge Detectors">
 		<meta property="og:description" content="Max Mainio Beidler's personal website.">
-		<meta property="og:image" content="https://maxmain.io/work/FIXME:">
+		<!-- <meta property="og:image" content="https://maxmain.io/work/FIXME:"> -->
 
 		<meta name="twitter:card" content="summary_large_image">
 		<meta property="twitter:domain" content="maxmain.io">
 		<meta property="twitter:url" content="https://maxmain.io/work/touchdesigner-components/tops/edge-detectors/">
 		<meta name="twitter:title" content="Max Mainio | Edge Detectors">
 		<meta name="twitter:description" content="Max Mainio Beidler's personal website.">
-		<meta name="twitter:image" content="https://maxmain.io/work/FIXME:">
+		<!-- <meta name="twitter:image" content="https://maxmain.io/work/FIXME:"> -->
 
 		<link rel="stylesheet" type="text/css" href="../../../../sources/global/main.css">
 		<link rel="stylesheet" type="text/css" href="../../../../sources/subpages/subpage.css">
 		<link rel="stylesheet" type="text/css" href="../../sources/tdcomps.css">
-		<link rel="stylesheet" type="text/css" href="sources/FIXME:">
+		<!-- <link rel="stylesheet" type="text/css" href="sources/FIXME:"> -->
 
 		<script src="../../../../sources/global/main.js" defer></script>
 		<script src="../../sources/tdcomps.js" defer></script>
@@ -1692,38 +1692,38 @@
 							The <a href="https://en.wikipedia.org/wiki/Discrete_Laplace_operator#:~:text=with%20iterative%20methods.-,Image%20processing,-%5Bedit%5D" target="_blank">Laplacian Operator</a> is a powerful tool in image processing used to compute the <a href="https://en.wikipedia.org/wiki/Image_derivative" target="_blank">second derivative of the given image</a>. This means it is particularly sensitive to areas where the intensity shifts quickly, such as edges, corners, and other regions of abrupt transition.
 						</p>
 
-						<h4>Parameters:</h4>
+						<h4>Parameters</h4>
+						<h5>Kernel:</h5>
 						<p>
-							<b>Kernel</b> &ndash;
 							This menu selects which variant of the Laplacian will be performed on the input image.
 						</p>
 
+						<h5>Invert Kernel:</h5>
 						<p>
-							<b>Invert Kernel</b> &ndash;
 							When on, this will invert the sign of the values in each cell of the kernel.
 						</p>
 
+						<h5>Monochrome:</h5>
 						<p>
-							<b>Monochrome</b> &ndash;
 							When on, the input will be converted to a single channel before the Laplacian convolution.
 						</p>
 
+						<h5>RGB:</h5>
 						<p>
-							<b>RGB</b> &ndash;
 							This menu selects how the monochrome conversion is calculated for the RGB channels.
 						</p>
 
+						<h5>Apply to Alpha:</h5>
 						<p>
-							<b>Apply to Alpha</b> &ndash;
 							When off, the alpha channel will not be convolved.
 						</p>
 
+						<h5>Normalize:</h5>
 						<p>
-							<b>Normalize</b> &ndash;
 							Normalize values in the output image so that they are all scaled and shifted to fall between 0 and 1.
 						</p>
 
-						<h4>In/Outputs:</h4>
+						<h4>In- / Outputs</h4>
 						<p>
 							<b>Input 0</b> &ndash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> image to be <a href="https://en.wikipedia.org/wiki/Convolution" target="_blank">convolved</a> with the <a href="https://en.wikipedia.org/wiki/Discrete_Laplace_operator#:~:text=with%20iterative%20methods.-,Image%20processing,-%5Bedit%5D" target="_blank">Laplacian</a> <a href="https://en.wikipedia.org/wiki/Kernel_(image_processing)" target="_blank">kernel</a>.
 						</p>
