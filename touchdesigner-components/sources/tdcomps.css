@@ -236,6 +236,10 @@ h5 + p{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+
+    &.double{
+        height: 80px;
+    }
 }
 
 
@@ -247,22 +251,27 @@ h5 + p{
 
     border-width: 1px;
     border-color: rgba(255, 255, 255, 0.5);
-}
 
-.connector-color.top-left{
-    border-style: none none outset outset;
-}
+    &.top-left{
+        border-style: none none outset outset;
+    }
 
-.connector-color.bottom-left{
-    border-style: outset none none outset;
-}
+    &.bottom-left{
+        border-style: outset none none outset;
+    }
 
-.connector-color.top-right{
-    border-style: none outset outset none;
-}
+    &.top-right{
+        border-style: none outset outset none;
+    }
 
-.connector-color.bottom-right{
-    border-style: outset outset none none;
+    &.bottom-right{
+        border-style: outset outset none none;
+    }
+
+    &.center{
+        height: 12px;
+        border-style: outset outset outset none;
+    }
 }
 
 
