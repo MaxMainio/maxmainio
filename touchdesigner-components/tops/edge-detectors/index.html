@@ -2627,7 +2627,181 @@
 						<h2>Sobel Operator</h2>
 						<h3>Standard &amp; Steerable</h3>
 						<p>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim diam vulputate ut pharetra sit amet aliquam. Integer eget aliquet nibh praesent tristique magna sit. Massa id neque aliquam vestibulum. Egestas diam in arcu cursus euismod quis viverra nibh. Ultrices vitae auctor eu augue ut lectus arcu bibendum at. Vel risus commodo viverra maecenas accumsan lacus vel facilisis volutpat. Sit amet cursus sit amet dictum sit. Scelerisque mauris pellentesque pulvinar pellentesque habitant morbi tristique. Rutrum quisque non tellus orci ac.
+							The Sobel Operator is a versatile tool in image processing used to compute the first derivative of an image. It approximates the gradient of the image intensity function, making it particularly useful for tasks that require gradient magnitude and direction analysis.
+						</p>
+						<p>
+							Calculating the first derivative of images is crucial for tasks such as edge detection and gradient analysis. It is especially effective when working with Signed Distance Functions (SDFs) for calculating slope orientation, providing detailed information about changes in intensity.
+						</p>
+
+						<p>Both Sobel components offer the flexibility to switch between the standard Sobel kernels:</p>
+						
+						<h5>Standard kernel:</h5>
+						<p>
+							The classic choice for general gradient and edge analysis. It balances noise reduction with edge localization and is suitable for most applications.
+						</p>
+						<p class="maths">
+							<math>
+								<mrow>
+									<mo>[</mo>
+									<mtable>
+										<mtr>
+										<mtd><mn>-1</mn></mtd>
+										<mtd><mn>0</mn></mtd>
+										<mtd><mn>+1</mn></mtd>
+										</mtr>
+										<mtr>
+										<mtd><mn>-2</mn></mtd>
+										<mtd><mn>0</mn></mtd>
+										<mtd><mn>+2</mn></mtd>
+										</mtr>
+										<mtr>
+										<mtd><mn>-1</mn></mtd>
+										<mtd><mn>0</mn></mtd>
+										<mtd><mn>+1</mn></mtd>
+										</mtr>
+									</mtable>
+									<mo>]</mo>
+								</mrow>
+							</math>
+
+							<math>
+								<mrow>
+								<mo>[</mo>
+								<mtable>
+									<mtr>
+									<mtd><mn>-1</mn></mtd>
+									<mtd><mn>-2</mn></mtd>
+									<mtd><mn>-1</mn></mtd>
+									</mtr>
+									<mtr>
+									<mtd><mn>0</mn></mtd>
+									<mtd><mn>0</mn></mtd>
+									<mtd><mn>0</mn></mtd>
+									</mtr>
+									<mtr>
+									<mtd><mn>+1</mn></mtd>
+									<mtd><mn>+2</mn></mtd>
+									<mtd><mn>+1</mn></mtd>
+									</mtr>
+								</mtable>
+								<mo>]</mo>
+								</mrow>
+							</math>
+						</p>
+
+						<h5>Feldmann kernel:</h5>
+						<p>
+							Offers variations that can enhance specific edge features. Use this kernel when slight adjustments from the standard Sobel results are needed without increasing computational complexity.
+						</p>
+						<p class="maths">
+							<math>
+								<mrow>
+									<mo>[</mo>
+									<mtable>
+										<mtr>
+										<mtd><mn>-3</mn></mtd>
+										<mtd><mn>0</mn></mtd>
+										<mtd><mn>+3</mn></mtd>
+										</mtr>
+										<mtr>
+										<mtd><mn>-10</mn></mtd>
+										<mtd><mn>0</mn></mtd>
+										<mtd><mn>+10</mn></mtd>
+										</mtr>
+										<mtr>
+										<mtd><mn>-3</mn></mtd>
+										<mtd><mn>0</mn></mtd>
+										<mtd><mn>+3</mn></mtd>
+										</mtr>
+									</mtable>
+									<mo>]</mo>
+								</mrow>
+							</math>
+
+							<math>
+								<mrow>
+								<mo>[</mo>
+								<mtable>
+									<mtr>
+									<mtd><mn>-3</mn></mtd>
+									<mtd><mn>-10</mn></mtd>
+									<mtd><mn>-3</mn></mtd>
+									</mtr>
+									<mtr>
+									<mtd><mn>0</mn></mtd>
+									<mtd><mn>0</mn></mtd>
+									<mtd><mn>0</mn></mtd>
+									</mtr>
+									<mtr>
+									<mtd><mn>+3</mn></mtd>
+									<mtd><mn>+10</mn></mtd>
+									<mtd><mn>+3</mn></mtd>
+									</mtr>
+								</mtable>
+								<mo>]</mo>
+								</mrow>
+							</math>
+						</p>
+
+						<h5>Scharr kernel:</h5>
+						<p>
+							Provides improved rotational symmetry and better performance in high-frequency regions. Ideal for images with fine details requiring precise gradient approximations.
+						</p>
+						<p class="maths">
+							<math>
+								<mrow>
+									<mo>[</mo>
+									<mtable>
+										<mtr>
+										<mtd><mn>-47</mn></mtd>
+										<mtd><mn>0</mn></mtd>
+										<mtd><mn>+47</mn></mtd>
+										</mtr>
+										<mtr>
+										<mtd><mn>-162</mn></mtd>
+										<mtd><mn>0</mn></mtd>
+										<mtd><mn>+162</mn></mtd>
+										</mtr>
+										<mtr>
+										<mtd><mn>-47</mn></mtd>
+										<mtd><mn>0</mn></mtd>
+										<mtd><mn>+47</mn></mtd>
+										</mtr>
+									</mtable>
+									<mo>]</mo>
+								</mrow>
+							</math>
+
+							<math>
+								<mrow>
+								<mo>[</mo>
+								<mtable>
+									<mtr>
+									<mtd><mn>-47</mn></mtd>
+									<mtd><mn>-162</mn></mtd>
+									<mtd><mn>-47</mn></mtd>
+									</mtr>
+									<mtr>
+									<mtd><mn>0</mn></mtd>
+									<mtd><mn>0</mn></mtd>
+									<mtd><mn>0</mn></mtd>
+									</mtr>
+									<mtr>
+									<mtd><mn>+47</mn></mtd>
+									<mtd><mn>+162</mn></mtd>
+									<mtd><mn>+47</mn></mtd>
+									</mtr>
+								</mtable>
+								<mo>]</mo>
+								</mrow>
+							</math>
+						</p>
+
+						<h5>Resources:</h5>
+						<p>
+							<a href="https://github.com/MaxMainio/TD_" target="_blank">Download the .tox files</a><br>
+							<a href="https://en.wikipedia.org/wiki/Sobel_operator" target="_blank">Sobel Operator on wikipedia</a><br>
+							<a href="https://www.youtube.com/watch?v=uihBwtPIBxM" target="_blank">Computerphile's video on the Sobel Operator</a>
 						</p>
 					</div>
 
@@ -2765,6 +2939,56 @@
 								</div>
 							</a>
 						</div>
+
+						<h4>Parameters</h4>
+						<h5>Operator:</h5>
+						<p>
+							Specify which of the 3 standard Sobel kernels to convolve input 0 with.
+						</p>
+
+						<h5>Orientation:</h5>
+						<p>
+							In the Standard Sobel Operator, the orientation is limited to the 8 compass directions. The Steerable Sobel Operator allows for any arbitrary angle within 360&deg;.
+						</p>
+
+						<h5>Edge Handling:</h5>
+						<p>
+							Determines how the edges of the image are treated during convolution. Extends the image to avoid edge artifacts.
+						</p>
+
+						<h5>Monochrome:</h5>
+						<p>
+							When on, the input will be converted to a single channel before the Laplacian convolution.
+						</p>
+
+						<h5>RGB:</h5>
+						<p>
+							This menu selects how the monochrome conversion is calculated for the RGBA channels.
+						</p>
+
+						<h5>Luma:</h5>
+						<p>
+							Defines how the luminance will be calculated when Monochrome is active and the RGB parameter is set to luminance.
+						</p>
+
+						<h5>Apply to Alpha:</h5>
+						<p>
+							When off, the alpha channel will not be convolved.
+						</p>
+
+						<h5>Normalize:</h5>
+						<p>
+							Normalize values in the output image so that they are all scaled and shifted to fall between 0 and 1.
+						</p>
+
+						<h4>In- / Outputs</h4>
+						<p>
+							<b>Input 0</b> &ndash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> image to be processed with the <a href="https://en.wikipedia.org/wiki/Sobel_operator" target="_blank">Sobel Operator</a>.
+						</p>
+
+						<p>
+							<b>Output 0</b> &ndash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> the <a href="https://pyimagesearch.com/2021/05/12/image-gradients-with-opencv-sobel-and-scharr/#:~:text=The%20gradient%20magnitude%20is%20used,change%20in%20intensity%20is%20pointing." target="_blank">gradient magnitude</a> of input 0.
+						</p>
 					</div>
 				</section>
 			</article>
