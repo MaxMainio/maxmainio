@@ -3,6 +3,7 @@ const remToPixels = parseFloat(getComputedStyle(document.documentElement).fontSi
 
 
 
+// CORRECT IRREGULAR SIZING	========================================================================================================
 function adjustHeights() {
     docuvizElements.forEach(docuviz => {
         let sibling = docuviz.previousElementSibling;
@@ -29,4 +30,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
 window.addEventListener("resize", () => {
     adjustHeights();
+});
+
+
+
+
+
+// SMOOTH SCROLL FOR INTERNAL LINKS	================================================================================================
+const internalAnchorLinks = document.querySelectorAll('a:is([target="_self"])');
+
+internalAnchorLinks.forEach(item => {
+	item.addEventListener('click', e => {
+		document.querySelector('html').style.scrollBehavior = 'smooth'
+	});
 });
