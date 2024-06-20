@@ -140,11 +140,18 @@ h5 + p{
     margin-top: 0;
 }
 
+math ~ math{
+    margin-left: 0.5rem;
+}
+
+.maths + p{
+    margin-top: 1.5rem;
+}
+
 .docuviz{
     grid-column: 5 / 9;
 
     & > .comp-display{
-        /* height: 100%; */
         margin-bottom: 1.5rem;
 
         &.double{

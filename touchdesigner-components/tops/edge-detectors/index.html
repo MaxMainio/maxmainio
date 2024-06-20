@@ -81,7 +81,7 @@
 							<a href="#laplacian-1d-operator" target="_self">Laplacian 1D</a>, <a href="#laplacian-1d-operator" target="_self">Laplacian 1D Steerable</a>, <a href="#laplacian-operator" target="_self">Laplacian</a>,<br>
 							<a href="#line-detector" target="_self">Line Detector</a>, <a href="#line-detector" target="_self">Line Detector Steerable</a>,<br>
 							<a href="#prewitt-operator" target="_self">Prewitt Operator</a>, <a href="#prewitt-operator" target="_self">Prewitt Operator Steerable</a>,<br>
-							<a href="#roberts-cross" target="_self">Robert's Cross</a>,<br>
+							<a href="#roberts-cross" target="_self">Robert&rsquo;s Cross</a>,<br>
 							<a href="#sobel-operator" target="_self">Sobel Operator</a>, <a href="#sobel-operator" target="_self">Sobel Operator Steerable</a>
 						</p>
 					</div>
@@ -1824,79 +1824,153 @@
 						<h2>Laplacian Operator</h2>
 						<h3>The one and only</h3>
 						<p>
-							The <a href="https://en.wikipedia.org/wiki/Discrete_Laplace_operator#:~:text=with%20iterative%20methods.-,Image%20processing,-%5Bedit%5D" target="_blank">Laplacian Operator</a> is a powerful tool in image processing used to compute the <a href="https://en.wikipedia.org/wiki/Image_derivative" target="_blank">second derivative of the given image</a>. This means it is particularly sensitive to areas where the intensity shifts quickly, such as edges, corners, and other regions of abrupt transition.
+							The <a href="https://en.wikipedia.org/wiki/Discrete_Laplace_operator#:~:text=with%20iterative%20methods.-,Image%20processing,-%5Bedit%5D" target="_blank">Laplacian Operator</a> is a powerful tool in image processing used to compute the <a href="https://en.wikipedia.org/wiki/Image_derivative" target="_blank">second derivative of the given image</a> unlike gradient-based methods that only consider first-order changes. This means it is particularly sensitive to areas where the intensity shifts quickly, such as edges, corners, and other regions of abrupt transition.
 						</p>
 
 						<p>
+							The Laplacian Operator excels in detecting edges by identifying regions where the intensity changes rapidly. It enhances the visibility of edges, making it an excellent choice for tasks that require precise edge localization.
+						</p>
+
+						<p>
+							Due to its reliance on second derivatives, the Laplacian Operator can be more sensitive to noise. Pre-smoothing the image with a Gaussian filter is often recommended to mitigate this issue and improve performance.
+						</p>
+
+						<h5>Standard kernels:</h5>
+						<p>
+							Two commonly used discrete approximations to the Laplacian filter, the von Neumann kernel <i>&lpar;left&rpar;</i> Moore kernel and the <i>&lpar;right&rpar;</i>:
+						</p>
+
+						<p class="maths">
 							<math>
 								<mrow>
-								<mo>[</mo>
-								<mtable>
-									<mtr>
-									<mtd><mn>-1</mn></mtd>
-									<mtd><mn>-1</mn></mtd>
-									<mtd><mn>-1</mn></mtd>
-									</mtr>
-									<mtr>
-									<mtd><mn>-1</mn></mtd>
-									<mtd><mn>8</mn></mtd>
-									<mtd><mn>-1</mn></mtd>
-									</mtr>
-									<mtr>
-									<mtd><mn>-1</mn></mtd>
-									<mtd><mn>-1</mn></mtd>
-									<mtd><mn>-1</mn></mtd>
-									</mtr>
-								</mtable>
-								<mo>]</mo>
+									<mo>[</mo>
+									<mtable>
+										<mtr>
+											<mtd><mn>0</mn></mtd>
+											<mtd><mn>-1</mn></mtd>
+											<mtd><mn>0</mn></mtd>
+										</mtr>
+										<mtr>
+											<mtd><mn>-1</mn></mtd>
+											<mtd><mn>4</mn></mtd>
+											<mtd><mn>-1</mn></mtd>
+										</mtr>
+										<mtr>
+											<mtd><mn>0</mn></mtd>
+											<mtd><mn>-1</mn></mtd>
+											<mtd><mn>0</mn></mtd>
+										</mtr>
+									</mtable>
+									<mo>]</mo>
 								</mrow>
 							</math>
 
 							<math>
 								<mrow>
-								<mo>[</mo>
-								<mtable>
-									<mtr>
-										<mtd><mn>0</mn></mtd>
-										<mtd><mn>-1</mn></mtd>
-										<mtd><mn>0</mn></mtd>
-									</mtr>
-									<mtr>
-										<mtd><mn>-1</mn></mtd>
-										<mtd><mn>4</mn></mtd>
-										<mtd><mn>-1</mn></mtd>
-									</mtr>
-									<mtr>
-										<mtd><mn>0</mn></mtd>
-										<mtd><mn>-1</mn></mtd>
-										<mtd><mn>0</mn></mtd>
-									</mtr>
-								</mtable>
-								<mo>]</mo>
+									<mo>[</mo>
+									<mtable>
+										<mtr>
+											<mtd><mn>-1</mn></mtd>
+											<mtd><mn>-1</mn></mtd>
+											<mtd><mn>-1</mn></mtd>
+										</mtr>
+										<mtr>
+											<mtd><mn>-1</mn></mtd>
+											<mtd><mn>8</mn></mtd>
+											<mtd><mn>-1</mn></mtd>
+										</mtr>
+										<mtr>
+											<mtd><mn>-1</mn></mtd>
+											<mtd><mn>-1</mn></mtd>
+											<mtd><mn>-1</mn></mtd>
+										</mtr>
+									</mtable>
+									<mo>]</mo>
+								</mrow>
+							</math>
+						</p>
+
+						<h5>Additional kernels:</h5>
+						<p>
+							These kernels offer variations that can enhance specific image features and provide more flexibility in edge detection and image analysis:
+						</p>
+						<p>
+							1. Diagonal variant of the von Neumann kernel,<br>
+							2 &amp; 3. Standard and diagonal variants of a combined Laplacian &amp; Gaussian kernel,<br>
+							4. Emphasizes diagonal edges and transitions in the image,<br>
+							5. Provides a stronger central influence with weighted surrounding pixels for enhanced contrast detection.
+						</p>
+
+						<p class="maths">
+							<math>
+								<mrow>
+									<mo>[</mo>
+									<mtable>
+										<mtr>
+											<mtd><mn>-1</mn></mtd>
+											<mtd><mn>0</mn></mtd>
+											<mtd><mn>-1</mn></mtd>
+										</mtr>
+										<mtr>
+											<mtd><mn>0</mn></mtd>
+											<mtd><mn>4</mn></mtd>
+											<mtd><mn>0</mn></mtd>
+										</mtr>
+										<mtr>
+											<mtd><mn>-1</mn></mtd>
+											<mtd><mn>0</mn></mtd>
+											<mtd><mn>-1</mn></mtd>
+										</mtr>
+									</mtable>
+									<mo>]</mo>
 								</mrow>
 							</math>
 
 							<math>
 								<mrow>
-								<mo>[</mo>
-								<mtable>
-									<mtr>
-										<mtd><mn>0</mn></mtd>
-										<mtd><mn>-1</mn></mtd>
-										<mtd><mn>0</mn></mtd>
-									</mtr>
-									<mtr>
-										<mtd><mn>-1</mn></mtd>
-										<mtd><mn>5</mn></mtd>
-										<mtd><mn>-1</mn></mtd>
-									</mtr>
-									<mtr>
-										<mtd><mn>0</mn></mtd>
-										<mtd><mn>-1</mn></mtd>
-										<mtd><mn>0</mn></mtd>
-									</mtr>
-								</mtable>
-								<mo>]</mo>
+									<mo>[</mo>
+									<mtable>
+										<mtr>
+											<mtd><mn>0</mn></mtd>
+											<mtd><mn>-1</mn></mtd>
+											<mtd><mn>0</mn></mtd>
+										</mtr>
+										<mtr>
+											<mtd><mn>-1</mn></mtd>
+											<mtd><mn>5</mn></mtd>
+											<mtd><mn>-1</mn></mtd>
+										</mtr>
+										<mtr>
+											<mtd><mn>0</mn></mtd>
+											<mtd><mn>-1</mn></mtd>
+											<mtd><mn>0</mn></mtd>
+										</mtr>
+									</mtable>
+									<mo>]</mo>
+								</mrow>
+							</math>
+
+							<math>
+								<mrow>
+									<mo>[</mo>
+									<mtable>
+										<mtr>
+											<mtd><mn>-1</mn></mtd>
+											<mtd><mn>0</mn></mtd>
+											<mtd><mn>-1</mn></mtd>
+										</mtr>
+										<mtr>
+											<mtd><mn>0</mn></mtd>
+											<mtd><mn>5</mn></mtd>
+											<mtd><mn>0</mn></mtd>
+										</mtr>
+										<mtr>
+											<mtd><mn>-1</mn></mtd>
+											<mtd><mn>0</mn></mtd>
+											<mtd><mn>-1</mn></mtd>
+										</mtr>
+									</mtable>
+									<mo>]</mo>
 								</mrow>
 							</math>
 
@@ -1924,8 +1998,42 @@
 								</mrow>
 							</math>
 
-							<br>
+							<math>
+								<mrow>
+								<mo>[</mo>
+								<mtable>
+									<mtr>
+										<mtd><mn>1</mn></mtd>
+										<mtd><mn>2</mn></mtd>
+										<mtd><mn>1</mn></mtd>
+									</mtr>
+									<mtr>
+										<mtd><mn>2</mn></mtd>
+										<mtd><mn>-12</mn></mtd>
+										<mtd><mn>2</mn></mtd>
+									</mtr>
+									<mtr>
+										<mtd><mn>1</mn></mtd>
+										<mtd><mn>2</mn></mtd>
+										<mtd><mn>1</mn></mtd>
+									</mtr>
+								</mtable>
+								<mo>]</mo>
+								</mrow>
+							</math>
+						</p>
 
+						<h5>Extended kernels:</h5>
+						<p>
+							These larger 5x5 kernels offer enhanced edge detection capabilities by considering a broader context within the image:
+						</p>
+						<p>
+							1. Designed for detecting finer details and high-frequency content.<br>
+							2. Provides a broader context for edge detection with uniform influence across the kernel.<br>
+							3. Suitable for detecting edges with less influence from distant pixels, reducing potential noise effects.
+						</p>
+
+						<p class="maths">
 							<math>
 								<mrow>
 								<mo>[</mo>
@@ -2481,23 +2589,122 @@
 
 				<section id="roberts-cross" class="documentation">
 					<div class="docuinfo">
-						<h2>Robert's Cross</h2>
+						<h2>Robert&rsquo;s Cross</h2>
 						<h3>The one and only</h3>
 						<p>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim diam vulputate ut pharetra sit amet aliquam. Integer eget aliquet nibh praesent tristique magna sit. Massa id neque aliquam vestibulum. Egestas diam in arcu cursus euismod quis viverra nibh. Ultrices vitae auctor eu augue ut lectus arcu bibendum at. Vel risus commodo viverra maecenas accumsan lacus vel facilisis volutpat. Sit amet cursus sit amet dictum sit. Scelerisque mauris pellentesque pulvinar pellentesque habitant morbi tristique. Rutrum quisque non tellus orci ac.
+							The Roberts Cross Operator is an early and straightforward edge detection technique used to approximate the gradient of an image. It calculates the differences between diagonally adjacent pixels, making it particularly sensitive to changes in intensity along diagonals.
 						</p>
 
 						<p>
-							<math display="block">
+							The operator uses two 2x2 convolution kernels to compute the gradient in the diagonal directions. These kernels are defined as:
+						</p>
+
+						<p class="maths">
+							<math>
 								<mrow>
-								  <mi>‖∇I(x, y)‖ =</mi>
+									<msub>
+										<mi>g</mi>
+										<mn>x</mn>
+									</msub>
+									<mo>=</mo>
+									<mo>[</mo>
+									<mtable>
+										<mtr>
+											<mtd><mn>1</mn></mtd>
+											<mtd><mn>0</mn></mtd>
+										</mtr>
+										<mtr>
+											<mtd><mn>0</mn></mtd>
+											<mtd><mn>-1</mn></mtd>
+										</mtr>
+									</mtable>
+									<mo>]</mo>
+									<mo>,</mo>
+								</mrow>
+							</math>
+
+							<math>
+								<mrow>
+									<msub>
+										<mi>g</mi>
+										<mn>y</mn>
+									</msub>
+									<mo>=</mo>
+									<mo>[</mo>
+									<mtable>
+										<mtr>
+											<mtd><mn>0</mn></mtd>
+											<mtd><mn>1</mn></mtd>
+										</mtr>
+										<mtr>
+											<mtd><mn>-1</mn></mtd>
+											<mtd><mn>0</mn></mtd>
+										</mtr>
+									</mtable>
+									<mo>]</mo>
+								</mrow>
+							</math>
+						</p>
+						
+						<p>
+							By convolving the image with these kernels, the Roberts Cross Operator computes the gradient magnitude and direction, providing a measure of edge strength and orientation. The gradient magnitude is calculated as:
+						</p>
+						
+						<p class="maths">
+							<math>
+								<mrow>
+									<mi>G</mi>
+									<mo>=</mo>
 									<msqrt>
-											<msubsup><mi>G</mi><mn>x</mn><mn>2</mn></msubsup>
-											<mo>+</mo>
-											<msubsup><mi>G</mi><mn>y</mn><mn>2</mn></msubsup>
+										<msubsup>
+											<mi>g</mi>
+											<mn>x</mn>
+											<mn>2</mn>
+										</msubsup>
+										<mo>+</mo>
+										<msubsup>
+											<mi>g</mi>
+											<mn>y</mn>
+											<mn>2</mn>
+										</msubsup>
 									</msqrt>
 								</mrow>
 							</math>
+						</p>
+
+						<p>
+							and the gradient direction is:
+						</p>
+						
+						<p class="maths">
+							<math>
+								<mrow>
+									<mi>&Theta;</mi>
+									<mi>atan2</mi>
+									<mo>&lpar;</mo>
+									<msub>
+										<mi>g</mi>
+										<mn>y</mn>
+									</msub>
+									<mo>,</mo>
+									<msub>
+										<mi>g</mi>
+										<mn>x</mn>
+									</msub>
+									<mo>&rpar;</mo>
+								</mrow>
+							</math>
+						</p>
+
+						<p>
+							The Roberts Cross Operator is simple and efficient, making it suitable for real&hyphen;time applications and situations where computational resources are limited. However, it is sensitive to noise and may not perform well on images with significant high-frequency content or where precise edge detection is required.
+						</p>
+
+						<h5>Resources:</h5>
+						<p>
+							<a href="https://github.com/MaxMainio/TD_" target="_blank">Download the .tox files</a><br>
+							<a href="https://en.wikipedia.org/wiki/Roberts_cross" target="_blank">Robert&rsquo;s Cross Operator on wikipedia</a><br>
+							<a href="https://medium.com/@wilson.linzhe/digital-image-processing-in-c-chapter-9-thresholding-roberts-prewitt-sobel-and-edge-e7428405ede3#:~:text=Gradient%20and%20Thresholding-,1.1%20Roberts%3A,-The%20Roberts%20edge" target="_blank"><span title="Digital Image Processing">DIP</span> article on Medium</a>
 						</p>
 					</div>
 
@@ -2610,7 +2817,7 @@
 
 						<h4>In- / Outputs</h4>
 						<p>
-							<b>Input 0</b> &ndash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> image to be processed with the <a href="https://en.wikipedia.org/wiki/Roberts_cross" target="_blank">Robert's Cross Operator</a>.
+							<b>Input 0</b> &ndash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> image to be processed with the <a href="https://en.wikipedia.org/wiki/Roberts_cross" target="_blank">Robert&rsquo;s Cross Operator</a>.
 						</p>
 
 						<p>
@@ -2642,49 +2849,60 @@
 						<p class="maths">
 							<math>
 								<mrow>
+									<msub>
+										<mi>g</mi>
+										<mn>x</mn>
+									</msub>
+									<mo>=</mo>
 									<mo>[</mo>
 									<mtable>
 										<mtr>
-										<mtd><mn>-1</mn></mtd>
-										<mtd><mn>0</mn></mtd>
-										<mtd><mn>+1</mn></mtd>
+											<mtd><mn>-1</mn></mtd>
+											<mtd><mn>0</mn></mtd>
+											<mtd><mn>1</mn></mtd>
 										</mtr>
 										<mtr>
-										<mtd><mn>-2</mn></mtd>
-										<mtd><mn>0</mn></mtd>
-										<mtd><mn>+2</mn></mtd>
+											<mtd><mn>-2</mn></mtd>
+											<mtd><mn>0</mn></mtd>
+											<mtd><mn>2</mn></mtd>
 										</mtr>
 										<mtr>
-										<mtd><mn>-1</mn></mtd>
-										<mtd><mn>0</mn></mtd>
-										<mtd><mn>+1</mn></mtd>
+											<mtd><mn>-1</mn></mtd>
+											<mtd><mn>0</mn></mtd>
+											<mtd><mn>1</mn></mtd>
 										</mtr>
 									</mtable>
 									<mo>]</mo>
+									<mo>,</mo>
 								</mrow>
 							</math>
 
 							<math>
 								<mrow>
-								<mo>[</mo>
-								<mtable>
-									<mtr>
-									<mtd><mn>-1</mn></mtd>
-									<mtd><mn>-2</mn></mtd>
-									<mtd><mn>-1</mn></mtd>
-									</mtr>
-									<mtr>
-									<mtd><mn>0</mn></mtd>
-									<mtd><mn>0</mn></mtd>
-									<mtd><mn>0</mn></mtd>
-									</mtr>
-									<mtr>
-									<mtd><mn>+1</mn></mtd>
-									<mtd><mn>+2</mn></mtd>
-									<mtd><mn>+1</mn></mtd>
-									</mtr>
-								</mtable>
-								<mo>]</mo>
+									<msub>
+										<mi>g</mi>
+										<mn>y</mn>
+									</msub>
+									<mo>=</mo>
+									<mo>[</mo>
+									<mtable>
+										<mtr>
+											<mtd><mn>-1</mn></mtd>
+											<mtd><mn>-2</mn></mtd>
+											<mtd><mn>-1</mn></mtd>
+										</mtr>
+										<mtr>
+											<mtd><mn>0</mn></mtd>
+											<mtd><mn>0</mn></mtd>
+											<mtd><mn>0</mn></mtd>
+										</mtr>
+										<mtr>
+											<mtd><mn>1</mn></mtd>
+											<mtd><mn>2</mn></mtd>
+											<mtd><mn>1</mn></mtd>
+										</mtr>
+									</mtable>
+									<mo>]</mo>
 								</mrow>
 							</math>
 						</p>
@@ -2696,49 +2914,60 @@
 						<p class="maths">
 							<math>
 								<mrow>
+									<msub>
+										<mi>g</mi>
+										<mn>x</mn>
+									</msub>
+									<mo>=</mo>
 									<mo>[</mo>
 									<mtable>
 										<mtr>
-										<mtd><mn>-3</mn></mtd>
-										<mtd><mn>0</mn></mtd>
-										<mtd><mn>+3</mn></mtd>
+											<mtd><mn>-3</mn></mtd>
+											<mtd><mn>0</mn></mtd>
+											<mtd><mn>3</mn></mtd>
 										</mtr>
 										<mtr>
-										<mtd><mn>-10</mn></mtd>
-										<mtd><mn>0</mn></mtd>
-										<mtd><mn>+10</mn></mtd>
+											<mtd><mn>-10</mn></mtd>
+											<mtd><mn>0</mn></mtd>
+											<mtd><mn>10</mn></mtd>
 										</mtr>
 										<mtr>
-										<mtd><mn>-3</mn></mtd>
-										<mtd><mn>0</mn></mtd>
-										<mtd><mn>+3</mn></mtd>
+											<mtd><mn>-3</mn></mtd>
+											<mtd><mn>0</mn></mtd>
+											<mtd><mn>3</mn></mtd>
 										</mtr>
 									</mtable>
 									<mo>]</mo>
+									<mo>,</mo>
 								</mrow>
 							</math>
 
 							<math>
 								<mrow>
-								<mo>[</mo>
-								<mtable>
-									<mtr>
-									<mtd><mn>-3</mn></mtd>
-									<mtd><mn>-10</mn></mtd>
-									<mtd><mn>-3</mn></mtd>
-									</mtr>
-									<mtr>
-									<mtd><mn>0</mn></mtd>
-									<mtd><mn>0</mn></mtd>
-									<mtd><mn>0</mn></mtd>
-									</mtr>
-									<mtr>
-									<mtd><mn>+3</mn></mtd>
-									<mtd><mn>+10</mn></mtd>
-									<mtd><mn>+3</mn></mtd>
-									</mtr>
-								</mtable>
-								<mo>]</mo>
+									<msub>
+										<mi>g</mi>
+										<mn>y</mn>
+									</msub>
+									<mo>=</mo>
+									<mo>[</mo>
+									<mtable>
+										<mtr>
+											<mtd><mn>-3</mn></mtd>
+											<mtd><mn>-10</mn></mtd>
+											<mtd><mn>-3</mn></mtd>
+										</mtr>
+										<mtr>
+											<mtd><mn>0</mn></mtd>
+											<mtd><mn>0</mn></mtd>
+											<mtd><mn>0</mn></mtd>
+										</mtr>
+										<mtr>
+											<mtd><mn>3</mn></mtd>
+											<mtd><mn>10</mn></mtd>
+											<mtd><mn>3</mn></mtd>
+										</mtr>
+									</mtable>
+									<mo>]</mo>
 								</mrow>
 							</math>
 						</p>
@@ -2750,49 +2979,60 @@
 						<p class="maths">
 							<math>
 								<mrow>
+									<msub>
+										<mi>g</mi>
+										<mn>x</mn>
+									</msub>
+									<mo>=</mo>
 									<mo>[</mo>
 									<mtable>
 										<mtr>
-										<mtd><mn>-47</mn></mtd>
-										<mtd><mn>0</mn></mtd>
-										<mtd><mn>+47</mn></mtd>
+											<mtd><mn>-47</mn></mtd>
+											<mtd><mn>0</mn></mtd>
+											<mtd><mn>47</mn></mtd>
 										</mtr>
 										<mtr>
-										<mtd><mn>-162</mn></mtd>
-										<mtd><mn>0</mn></mtd>
-										<mtd><mn>+162</mn></mtd>
+											<mtd><mn>-162</mn></mtd>
+											<mtd><mn>0</mn></mtd>
+											<mtd><mn>162</mn></mtd>
 										</mtr>
 										<mtr>
-										<mtd><mn>-47</mn></mtd>
-										<mtd><mn>0</mn></mtd>
-										<mtd><mn>+47</mn></mtd>
+											<mtd><mn>-47</mn></mtd>
+											<mtd><mn>0</mn></mtd>
+											<mtd><mn>47</mn></mtd>
 										</mtr>
 									</mtable>
 									<mo>]</mo>
+									<mo>,</mo>
 								</mrow>
 							</math>
 
 							<math>
 								<mrow>
-								<mo>[</mo>
-								<mtable>
-									<mtr>
-									<mtd><mn>-47</mn></mtd>
-									<mtd><mn>-162</mn></mtd>
-									<mtd><mn>-47</mn></mtd>
-									</mtr>
-									<mtr>
-									<mtd><mn>0</mn></mtd>
-									<mtd><mn>0</mn></mtd>
-									<mtd><mn>0</mn></mtd>
-									</mtr>
-									<mtr>
-									<mtd><mn>+47</mn></mtd>
-									<mtd><mn>+162</mn></mtd>
-									<mtd><mn>+47</mn></mtd>
-									</mtr>
-								</mtable>
-								<mo>]</mo>
+									<msub>
+										<mi>g</mi>
+										<mn>y</mn>
+									</msub>
+									<mo>=</mo>
+									<mo>[</mo>
+									<mtable>
+										<mtr>
+											<mtd><mn>-47</mn></mtd>
+											<mtd><mn>-162</mn></mtd>
+											<mtd><mn>-47</mn></mtd>
+										</mtr>
+										<mtr>
+											<mtd><mn>0</mn></mtd>
+											<mtd><mn>0</mn></mtd>
+											<mtd><mn>0</mn></mtd>
+										</mtr>
+										<mtr>
+											<mtd><mn>47</mn></mtd>
+											<mtd><mn>162</mn></mtd>
+											<mtd><mn>47</mn></mtd>
+										</mtr>
+									</mtable>
+									<mo>]</mo>
 								</mrow>
 							</math>
 						</p>
@@ -2801,7 +3041,7 @@
 						<p>
 							<a href="https://github.com/MaxMainio/TD_" target="_blank">Download the .tox files</a><br>
 							<a href="https://en.wikipedia.org/wiki/Sobel_operator" target="_blank">Sobel Operator on wikipedia</a><br>
-							<a href="https://www.youtube.com/watch?v=uihBwtPIBxM" target="_blank">Computerphile's video on the Sobel Operator</a>
+							<a href="https://www.youtube.com/watch?v=uihBwtPIBxM" target="_blank">Computerphile&rsquo;s video on the Sobel Operator</a>
 						</p>
 					</div>
 
