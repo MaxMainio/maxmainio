@@ -1,5 +1,5 @@
 const docuvizElements = document.querySelectorAll('.docuviz');
-const remToPixels = parseFloat(getComputedStyle(document.documentElement).fontSize) * 3;
+const remToPixels = parseFloat(getComputedStyle(document.documentElement).fontSize);
 
 
 
@@ -14,9 +14,14 @@ function adjustHeights() {
         if (sibling) {
             const siblingHeight = sibling.offsetHeight;
             const docuvizHeight = docuviz.offsetHeight;
+            const difference = docuvizHeight - siblingHeight;
+            const threeRemInPixels = remToPixels * 3;
 
-            if (siblingHeight === docuvizHeight) {
-                docuviz.style.height = siblingHeight + remToPixels + 'px';
+            if (difference <= threeRemInPixels) {
+                const additionalheight = threeRemInPixels - difference;
+                docuviz.style.height = siblingHeight + additionalheight + 'px';
+            } else if (siblingHeight === docuvizHeight) {
+                docuviz.style.height = siblingHeight + threeRemInPixels + 'px';
             }
         }
     });

@@ -140,8 +140,10 @@ h5 + p{
     margin-top: 0;
 }
 
-math ~ math{
-    margin-left: 0.5rem;
+.maths{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
 }
 
 .maths + p{
