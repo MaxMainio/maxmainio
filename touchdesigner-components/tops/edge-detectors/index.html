@@ -1473,10 +1473,10 @@
 						<p class="maths">
 							<math>
 								<mrow>
-									<msup>
+									<msub>
 										<mi>k</mi>
-										<mn>&lpar;N&rpar;</mn>
-									</msup>
+										<mn>N</mn>
+									</msub>
 									<mo>=</mo>
 									<mo>[</mo>
 									<mtable>
@@ -1503,10 +1503,10 @@
 
 							<math>
 								<mrow>
-									<msup>
+									<msub>
 										<mi>k</mi>
-										<mn>&lpar;NE&rpar;</mn>
-									</msup>
+										<mn>NE</mn>
+									</msub>
 									<mo>=</mo>
 									<mo>[</mo>
 									<mtable>
@@ -1533,10 +1533,10 @@
 
 							<math>
 								<mrow>
-									<msup>
+									<msub>
 										<mi>k</mi>
-										<mn>&lpar;E&rpar;</mn>
-									</msup>
+										<mn>E</mn>
+									</msub>
 									<mo>=</mo>
 									<mo>[</mo>
 									<mtable>
@@ -1577,36 +1577,43 @@
 										<mn>N</mn>
 									</msub>
 									<mi>,</mi>
+									<mspace width="0.3rem"></mspace>
 									<msub>
 										<mi>g</mi>
 										<mn>NE</mn>
 									</msub>
 									<mi>,</mi>
+									<mspace width="0.3rem"></mspace>
 									<msub>
 										<mi>g</mi>
 										<mn>E</mn>
 									</msub>
 									<mi>,</mi>
+									<mspace width="0.3rem"></mspace>
 									<msub>
 										<mi>g</mi>
 										<mn>SE</mn>
 									</msub>
 									<mi>,</mi>
+									<mspace width="0.3rem"></mspace>
 									<msub>
 										<mi>g</mi>
 										<mn>S</mn>
 									</msub>
 									<mi>,</mi>
+									<mspace width="0.3rem"></mspace>
 									<msub>
 										<mi>g</mi>
 										<mn>SW</mn>
 									</msub>
 									<mi>,</mi>
+									<mspace width="0.3rem"></mspace>
 									<msub>
 										<mi>g</mi>
 										<mn>W</mn>
 									</msub>
 									<mi>,</mi>
+									<mspace width="0.3rem"></mspace>
 									<msub>
 										<mi>g</mi>
 										<mn>NW</mn>
@@ -2042,11 +2049,7 @@
 						<h2>Laplacian Operator</h2>
 						<h3>The one and only</h3>
 						<p>
-							The <a href="https://en.wikipedia.org/wiki/Discrete_Laplace_operator#:~:text=with%20iterative%20methods.-,Image%20processing,-%5Bedit%5D" target="_blank">Laplacian Operator</a> is a powerful tool in image processing used to compute the <a href="https://en.wikipedia.org/wiki/Image_derivative" target="_blank">second derivative of the given image</a> unlike gradient-based methods that only consider first-order changes. This means it is particularly sensitive to areas where the intensity shifts quickly, such as edges, corners, and other regions of abrupt transition.
-						</p>
-
-						<p>
-							The Laplacian Operator excels in detecting edges by identifying regions where the intensity changes rapidly. It enhances the visibility of edges, making it an excellent choice for tasks that require precise edge localization.
+							The <a href="https://en.wikipedia.org/wiki/Discrete_Laplace_operator#:~:text=with%20iterative%20methods.-,Image%20processing,-%5Bedit%5D" target="_blank">Laplacian Operator</a> is a powerful tool in image processing used to compute the <a href="https://en.wikipedia.org/wiki/Image_derivative" target="_blank">second derivative of the given image</a>, unlike gradient-based methods that only consider first-order changes. This means it is particularly sensitive to areas where the intensity shifts quickly, such as edges, corners, and other regions of abrupt transition.
 						</p>
 
 						<p>
@@ -2888,7 +2891,7 @@
 						</p>
 
 						<p>
-							The operator uses two 2x2 convolution kernels to compute the gradient in the diagonal directions. These kernels are defined as:
+							The operator uses two 2&times;2 convolution kernels to compute the gradient in the diagonal directions. These kernels are defined as:
 						</p>
 
 						<p class="maths">
@@ -2979,6 +2982,7 @@
 										<mn>y</mn>
 									</msub>
 									<mo>,</mo>
+									<mspace width="0.3rem"></mspace>
 									<msub>
 										<mi>g</mi>
 										<mn>x</mn>
