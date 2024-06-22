@@ -1214,7 +1214,7 @@
 			
 						<div class="title-bar">
 							<div class="title-section">
-								<p>Sobel_Dynamic</p>
+								<p>Sobel_Operator_Dynamic</p>
 							</div>
 			
 							<div class="title-divider"></div>
@@ -2952,6 +2952,63 @@
 								</div>
 							</a>
 						</div>
+
+						<div>
+							<h4>Parameters</h4>
+							<h5>Orientation:</h5>
+							<p>
+								In the Standard Prewitt Operator, the orientation is limited to the 8 compass directions. The Steerable Prewitt Operator allows for any arbitrary angle within 360&deg;.
+							</p>
+
+							<h5>Edge Handling:</h5>
+							<p>
+								Determines how the edges of the image are treated during <a href="https://en.wikipedia.org/wiki/Convolution#:~:text=gT.-,Discrete%20convolution,-%5Bedit%5D" target="_blank">convolution</a>. Extends the image to avoid edge artifacts.
+							</p>
+
+							<hr/>
+	
+							<h5>Monochrome:</h5>
+							<p>
+								When on, the input will be converted to a single channel before the Laplacian <a href="https://en.wikipedia.org/wiki/Convolution#:~:text=gT.-,Discrete%20convolution,-%5Bedit%5D" target="_blank">convolution</a>.
+							</p>
+	
+							<h5>RGB:</h5>
+							<p>
+								This menu selects how the monochrome conversion is calculated for the RGBA channels.
+							</p>
+	
+							<h5>Luma:</h5>
+							<p>
+								Defines how the luminance will be calculated when Monochrome is active and the RGB parameter is set to luminance.
+							</p>
+
+							<hr/>
+	
+							<h5>Apply to Alpha:</h5>
+							<p>
+								When off, the alpha channel will not be convolved.
+							</p>
+	
+							<h5>Normalize Gradient:</h5>
+							<p>
+								Normalize values in the output 0, gradient magnitude image, so that they are all scaled and shifted to fall between 0 and 1.
+							</p>
+	
+							<h5>Normalize Rotation:</h5>
+							<p>
+								Normalize values in the output 1, rotation image, so that they are all scaled and shifted to fall between 0 and 1.
+							</p>
+	
+							<h4>In- / Outputs</h4>
+							<p>
+								<b>Input 0</b> &ndash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> image to be processed with the <a href="https://en.wikipedia.org/wiki/Roberts_cross" target="_blank">Robert&rsquo;s Cross Operator</a>.
+							</p>
+	
+							<p>
+								<b>Output 0</b> &ndash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> the <a href="https://pyimagesearch.com/2021/05/12/image-gradients-with-opencv-sobel-and-scharr/#:~:text=The%20gradient%20magnitude%20is%20used,change%20in%20intensity%20is%20pointing." target="_blank">gradient magnitude</a> of input 0.<br>
+								<b>Output 1</b> &ndash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> the direction of the gradient of input 0.
+							</p>
+						</div>
 					</div>
 				</section>
 
@@ -2959,14 +3016,14 @@
 
 				<section id="roberts-cross" class="documentation">
 					<div class="docuinfo">
-						<h2>Robert&rsquo;s Cross</h2>
+						<h2><a href="https://en.wikipedia.org/wiki/Roberts_cross" target="_blank">Robert&rsquo;s Cross</a></h2>
 						<h3>The one and only</h3>
 						<p>
-							The Roberts Cross Operator is an early and straightforward edge detection technique used to approximate the gradient of an image. It calculates the differences between diagonally adjacent pixels, making it particularly sensitive to changes in intensity along diagonals.
+							The <a href="https://en.wikipedia.org/wiki/Roberts_cross" target="_blank">Robert&rsquo;s Cross Operator</a> is an early and straightforward edge detection technique used to approximate the <a href="https://www.analyticsvidhya.com/blog/2022/07/beginners-guide-to-image-gradient/" target="_blank">gradient of an image</a>. It calculates the differences between diagonally adjacent pixels, making it particularly sensitive to changes in intensity along diagonals.
 						</p>
 
 						<p>
-							The operator uses two 2&times;2 convolution kernels to compute the gradient in the diagonal directions. These kernels are defined as:
+							The operator uses two 2&times;2 convolution <a href="https://en.wikipedia.org/wiki/Kernel_(image_processing)" target="_blank">kernels</a> to compute the gradient in the diagonal directions. These <a href="https://en.wikipedia.org/wiki/Kernel_(image_processing)" target="_blank">kernels</a> are defined as:
 						</p>
 
 						<p class="maths">
@@ -3017,7 +3074,7 @@
 						</p>
 						
 						<p>
-							By convolving the image with these kernels, the Roberts Cross Operator computes the gradient magnitude and direction, providing a measure of edge strength and orientation. The gradient magnitude is calculated as:
+							By <a href="https://en.wikipedia.org/wiki/Convolution#:~:text=gT.-,Discrete%20convolution,-%5Bedit%5D" target="_blank">convolving</a> the image with these <a href="https://en.wikipedia.org/wiki/Kernel_(image_processing)" target="_blank">kernels</a>, the <a href="https://en.wikipedia.org/wiki/Roberts_cross" target="_blank">Robert&rsquo;s Cross Operator</a> computes the gradient magnitude and direction, providing a measure of edge strength and orientation. The gradient magnitude is calculated as:
 						</p>
 						
 						<p class="maths">
@@ -3068,7 +3125,7 @@
 						</p>
 
 						<p>
-							The Roberts Cross Operator is simple and efficient, making it suitable for real&hyphen;time applications and situations where computational resources are limited. However, it is sensitive to noise and may not perform well on images with significant high-frequency content or where precise edge detection is required.
+							The <a href="https://en.wikipedia.org/wiki/Roberts_cross" target="_blank">Robert&rsquo;s Cross Operator</a> is simple and efficient, making it suitable for real&hyphen;time applications and situations where computational resources are limited. However, it is sensitive to noise and may not perform well on images with significant high-frequency content or where precise edge detection is required.
 						</p>
 
 						<h5>Resources:</h5>
@@ -3154,14 +3211,14 @@
 							<h4>Parameters</h4>
 							<h5>Edge Handling:</h5>
 							<p>
-								Determines how the edges of the image are treated during convolution. Extends the image to avoid edge artifacts.
+								Determines how the edges of the image are treated during <a href="https://en.wikipedia.org/wiki/Convolution#:~:text=gT.-,Discrete%20convolution,-%5Bedit%5D" target="_blank">convolution</a>. Extends the image to avoid edge artifacts.
 							</p>
 
 							<hr/>
 	
 							<h5>Monochrome:</h5>
 							<p>
-								When on, the input will be converted to a single channel before the Laplacian convolution.
+								When on, the input will be converted to a single channel before the Laplacian <a href="https://en.wikipedia.org/wiki/Convolution#:~:text=gT.-,Discrete%20convolution,-%5Bedit%5D" target="_blank">convolution</a>.
 							</p>
 	
 							<h5>RGB:</h5>
@@ -3208,20 +3265,20 @@
 				
 				<section id="sobel-operator" class="documentation">
 					<div class="docuinfo">
-						<h2>Sobel Operator</h2>
+						<h2><a href="https://en.wikipedia.org/wiki/Sobel_operator" target="_blank">Sobel Operator</a></h2>
 						<h3>Standard &amp; Steerable</h3>
 						<p>
-							The Sobel Operator is a versatile tool in image processing used to compute the first derivative of an image. It approximates the gradient of the image intensity function, making it particularly useful for tasks that require gradient magnitude and direction analysis.
+							The <a href="https://en.wikipedia.org/wiki/Sobel_operator" target="_blank">Sobel Operator</a> is a versatile tool in image processing used to compute the first derivative of an image. It approximates the gradient of the image intensity function, making it particularly useful for tasks that require gradient magnitude and direction analysis.
 						</p>
 						<p>
 							Calculating the first derivative of images is crucial for tasks such as edge detection and gradient analysis. It is especially effective when working with Signed Distance Functions (SDFs) for calculating slope orientation, providing detailed information about changes in intensity.
 						</p>
 
-						<p>Both Sobel components offer the flexibility to switch between the standard Sobel kernels:</p>
+						<p>Both Sobel components offer the flexibility to switch between three standard <a href="https://en.wikipedia.org/wiki/Kernel_(image_processing)" target="_blank">kernels</a>:</p>
 						
-						<h5>Standard kernel:</h5>
+						<h5>Standard <a href="https://en.wikipedia.org/wiki/Kernel_(image_processing)" target="_blank">kernel</a> &lpar;<a href="https://en.wikipedia.org/wiki/Sobel_operator#:~:text=in%20the%20image.-,Formulation,-%5Bedit%5D" target="_blank">Sobel&hyphen;Feldmann kernel</a>&rpar;:</h5>
 						<p>
-							The classic choice for general gradient and edge analysis. It balances noise reduction with edge localization and is suitable for most applications.
+							The classic <a href="https://en.wikipedia.org/wiki/Sobel_operator#:~:text=in%20the%20image.-,Formulation,-%5Bedit%5D" target="_blank">Sobel&hyphen;Feldmann kernel</a> is great for general gradient and edge analysis. It balances noise reduction with edge localization and is suitable for most applications.
 						</p>
 						<p class="maths">
 							<math>
@@ -3284,9 +3341,9 @@
 							</math>
 						</p>
 
-						<h5>Feldmann kernel:</h5>
+						<h5><a href="https://en.wikipedia.org/wiki/Sobel_operator#:~:text=%5D-,Scharr%20operators,-result%20from%20an" target="_blank">Scharr kernel</a>:</h5>
 						<p>
-							Offers variations that can enhance specific edge features. Use this kernel when slight adjustments from the standard Sobel results are needed without increasing computational complexity.
+							This <a href="https://en.wikipedia.org/wiki/Sobel_operator#:~:text=%5D-,Scharr%20operators,-result%20from%20an" target="_blank">Scharr kernel</a> provides improved rotational symmetry and better performance in high-frequency regions. It is ideal for images with fine details requiring precise gradient approximations.
 						</p>
 						<p class="maths">
 							<math>
@@ -3349,9 +3406,9 @@
 							</math>
 						</p>
 
-						<h5>Scharr kernel:</h5>
+						<h5><a href="https://en.wikipedia.org/wiki/Sobel_operator#:~:text=%5D-,Scharr%20operators,-result%20from%20an" target="_blank">Scharr Optimized kernel</a>:</h5>
 						<p>
-							Provides improved rotational symmetry and better performance in high-frequency regions. Ideal for images with fine details requiring precise gradient approximations.
+							This <a href="https://en.wikipedia.org/wiki/Kernel_(image_processing)" target="_blank">kernel</a> results from <a href="https://en.wikipedia.org/wiki/Sobel_operator#:~:text=%5D-,Scharr%20operators,-result%20from%20an" target="_blank">Scharr's theory</a>, optimized for minimal angular error &lpar;about 0.2&deg;&rpar;, making it suitable for applications requiring high precision in gradient calculations.
 						</p>
 						<p class="maths">
 							<math>
@@ -3562,7 +3619,7 @@
 							<h4>Parameters</h4>
 							<h5>Operator:</h5>
 							<p>
-								Specify which of the 3 standard Sobel kernels to convolve input 0 with.
+								Specify which of the 3 standard Sobel <a href="https://en.wikipedia.org/wiki/Kernel_(image_processing)" target="_blank">kernels</a> to <a href="https://en.wikipedia.org/wiki/Convolution#:~:text=gT.-,Discrete%20convolution,-%5Bedit%5D" target="_blank">convolve</a> input 0 with.
 							</p>
 	
 							<h5>Orientation:</h5>
@@ -3572,14 +3629,14 @@
 	
 							<h5>Edge Handling:</h5>
 							<p>
-								Determines how the edges of the image are treated during convolution. Extends the image to avoid edge artifacts.
+								Determines how the edges of the image are treated during <a href="https://en.wikipedia.org/wiki/Convolution#:~:text=gT.-,Discrete%20convolution,-%5Bedit%5D" target="_blank">convolution</a>. Extends the image to avoid edge artifacts.
 							</p>
 
 							<hr/>
 	
 							<h5>Monochrome:</h5>
 							<p>
-								When on, the input will be converted to a single channel before the Laplacian convolution.
+								When on, the input will be converted to a single channel before the Laplacian <a href="https://en.wikipedia.org/wiki/Convolution#:~:text=gT.-,Discrete%20convolution,-%5Bedit%5D" target="_blank">convolution</a>.
 							</p>
 	
 							<h5>RGB:</h5>
@@ -3623,7 +3680,63 @@
 						<h2>Sobel Dynamic</h2>
 						<h3>The one and only</h3>
 						<p>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim diam vulputate ut pharetra sit amet aliquam. Integer eget aliquet nibh praesent tristique magna sit. Massa id neque aliquam vestibulum. Egestas diam in arcu cursus euismod quis viverra nibh. Ultrices vitae auctor eu augue ut lectus arcu bibendum at. Vel risus commodo viverra maecenas accumsan lacus vel facilisis volutpat. Sit amet cursus sit amet dictum sit. Scelerisque mauris pellentesque pulvinar pellentesque habitant morbi tristique. Rutrum quisque non tellus orci ac.
+							The Dynamic Sobel Operator expands on the capabilities of the traditional <a href="#sobel-operator" target="_self">Sobel operator</a>, allowing for a more flexible approach to gradient and edge detection in image processing. Unlike the <a href="#sobel-operator" target="_self">standard and steerable Sobel operators</a>, the Dynamic Sobel Operator can handle arbitrary <a href="https://en.wikipedia.org/wiki/Kernel_(image_processing)" target="_blank">kernel</a> sizes along with angles, making it a powerful tool for advanced image analysis tasks.
+						</p>
+
+						<p>
+							For a more in-depth explanation of how this operator generates each <a href="https://en.wikipedia.org/wiki/Kernel_(image_processing)" target="_blank">kernel</a>, refer to <a href="https://stackoverflow.com/questions/9567882/sobel-filter-kernel-of-large-size#:~:text=Complete%20solution%20for%20arbitrary%20Sobel%20kernel%20sizes%20and%20angles" target="_blank">Daniel's response on Stack Overflow</a> in which they lay out the foundational code used in this operator. 
+						</p>
+
+						<p>
+							An example of a generated <a href="https://en.wikipedia.org/wiki/Kernel_(image_processing)" target="_blank">kernel</a>, as can be seen in the example operator on the right, is a 5&times;5 <a href="https://en.wikipedia.org/wiki/Kernel_(image_processing)" target="_blank">kernel</a> oriented horizontally to the right:
+						</p>
+
+						<p class="maths">
+							<math>
+								<mrow>
+									<mi>k</mi>
+									<mo>=</mo>
+									<mo>[</mo>
+									<mtable>
+										<mtr>
+											<mtd><mn>-0.25</mn></mtd>
+											<mtd><mn>-0.2</mn></mtd>
+											<mtd><mn>0</mn></mtd>
+											<mtd><mn>0.2</mn></mtd>
+											<mtd><mn>0.25</mn></mtd>
+										</mtr>
+										<mtr>
+											<mtd><mn>-0.4</mn></mtd>
+											<mtd><mn>-0.5</mn></mtd>
+											<mtd><mn>0</mn></mtd>
+											<mtd><mn>0.5</mn></mtd>
+											<mtd><mn>0.4</mn></mtd>
+										</mtr>
+										<mtr>
+											<mtd><mn>-0.5</mn></mtd>
+											<mtd><mn>-1</mn></mtd>
+											<mtd><mn>0</mn></mtd>
+											<mtd><mn>1</mn></mtd>
+											<mtd><mn>0.5</mn></mtd>
+										</mtr>
+										<mtr>
+											<mtd><mn>-0.4</mn></mtd>
+											<mtd><mn>-0.5</mn></mtd>
+											<mtd><mn>0</mn></mtd>
+											<mtd><mn>0.5</mn></mtd>
+											<mtd><mn>0.4</mn></mtd>
+										</mtr>
+										<mtr>
+											<mtd><mn>-0.25</mn></mtd>
+											<mtd><mn>-0.2</mn></mtd>
+											<mtd><mn>0</mn></mtd>
+											<mtd><mn>0.2</mn></mtd>
+											<mtd><mn>0.25</mn></mtd>
+										</mtr>
+									</mtable>
+									<mo>]</mo>
+								</mrow>
+							</math>
 						</p>
 
 						<h5>Resources:</h5>
@@ -3693,7 +3806,7 @@
 					
 								<div class="title-bar">
 									<div class="title-section">
-										<p>Sobel_Dynamic</p>
+										<p>Sobel_Operator_Dynamic</p>
 									</div>
 					
 									<div class="title-divider"></div>
@@ -3709,17 +3822,17 @@
 							<h4>Parameters</h4>
 							<h5>Size:</h5>
 							<p>
-								Specify the size of the kernel to be generated...
+								Specify the size of the <a href="https://en.wikipedia.org/wiki/Kernel_(image_processing)" target="_blank">kernel</a> to be generated. Larger <a href="https://en.wikipedia.org/wiki/Kernel_(image_processing)" target="_blank">kernels</a> capture broader edges but may lose fine details. Note that the <a href="https://en.wikipedia.org/wiki/Kernel_(image_processing)" target="_blank">kernel</a> must have a center cell, so the size must be an odd number.
 							</p>
 	
 							<h5>Orientation:</h5>
 							<p>
-								This variant of the Sobel...
+								Unlike the <a href="#sobel-operator" target="_self">Steerable Sobel Operator</a>, this operator will generate a new <a href="https://en.wikipedia.org/wiki/Kernel_(image_processing)" target="_blank">kernel</a> for any given angle.
 							</p>
 
 							<h5>Round to Decimal:</h5>
 							<p>
-								Lorem ipsum...
+								Round the <a href="https://en.wikipedia.org/wiki/Kernel_(image_processing)" target="_blank">kernel</a> values to a specified number of decimal places for precision control in calculations.
 							</p>
 	
 							<h5>Edge Handling:</h5>
