@@ -2811,10 +2811,160 @@
 
 				<section id="prewitt-operator" class="documentation">
 					<div class="docuinfo">
-						<h2>Prewitt Operator</h2>
+						<h2><a href="https://en.wikipedia.org/wiki/Prewitt_operator" target="_blank">Prewitt Operator</a></h2>
 						<h3>Standard &amp; Steerable</h3>
 						<p>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim diam vulputate ut pharetra sit amet aliquam. Integer eget aliquet nibh praesent tristique magna sit. Massa id neque aliquam vestibulum. Egestas diam in arcu cursus euismod quis viverra nibh. Ultrices vitae auctor eu augue ut lectus arcu bibendum at. Vel risus commodo viverra maecenas accumsan lacus vel facilisis volutpat. Sit amet cursus sit amet dictum sit. Scelerisque mauris pellentesque pulvinar pellentesque habitant morbi tristique. Rutrum quisque non tellus orci ac.
+							The <a href="https://en.wikipedia.org/wiki/Prewitt_operator" target="_blank">Prewitt Operator</a> is a widely used edge detection technique that approximates the gradient of an image intensity function. Out of the discrete differentiation operators the <a href="https://en.wikipedia.org/wiki/Prewitt_operator" target="_blank">Prewitt Operator</a> is known for its simplicity and computational efficiency, making it a popular choice in various image processing applications.
+						</p>
+
+						<p>
+							Examples of the Prewitt <a href="https://en.wikipedia.org/wiki/Kernel_(image_processing)" target="_blank">kernel</a> are defined as:
+						</p>
+
+						<p class="maths">
+							<math>
+								<mrow>
+									<msub>
+										<mi>k</mi>
+										<mn>N</mn>
+									</msub>
+									<mo>=</mo>
+									<mo>[</mo>
+									<mtable>
+										<mtr>
+											<mtd><mn>1</mn></mtd>
+											<mtd><mn>1</mn></mtd>
+											<mtd><mn>1</mn></mtd>
+										</mtr>
+										<mtr>
+											<mtd><mn>0</mn></mtd>
+											<mtd><mn>0</mn></mtd>
+											<mtd><mn>0</mn></mtd>
+										</mtr>
+										<mtr>
+											<mtd><mn>-1</mn></mtd>
+											<mtd><mn>-1</mn></mtd>
+											<mtd><mn>-1</mn></mtd>
+										</mtr>
+									</mtable>
+									<mo>]</mo>
+									<mo>,</mo>
+								</mrow>
+							</math>
+
+							<math>
+								<mrow>
+									<msub>
+										<mi>k</mi>
+										<mn>NE</mn>
+									</msub>
+									<mo>=</mo>
+									<mo>[</mo>
+									<mtable>
+										<mtr>
+											<mtd><mn>0</mn></mtd>
+											<mtd><mn>1</mn></mtd>
+											<mtd><mn>1</mn></mtd>
+										</mtr>
+										<mtr>
+											<mtd><mn>-1</mn></mtd>
+											<mtd><mn>0</mn></mtd>
+											<mtd><mn>1</mn></mtd>
+										</mtr>
+										<mtr>
+											<mtd><mn>-1</mn></mtd>
+											<mtd><mn>-1</mn></mtd>
+											<mtd><mn>0</mn></mtd>
+										</mtr>
+									</mtable>
+									<mo>]</mo>
+									<mo>,</mo>
+								</mrow>
+							</math>
+
+							<math>
+								<mrow>
+									<msub>
+										<mi>k</mi>
+										<mn>E</mn>
+									</msub>
+									<mo>=</mo>
+									<mo>[</mo>
+									<mtable>
+										<mtr>
+											<mtd><mn>-1</mn></mtd>
+											<mtd><mn>0</mn></mtd>
+											<mtd><mn>1</mn></mtd>
+										</mtr>
+										<mtr>
+											<mtd><mn>-1</mn></mtd>
+											<mtd><mn>0</mn></mtd>
+											<mtd><mn>1</mn></mtd>
+										</mtr>
+										<mtr>
+											<mtd><mn>-1</mn></mtd>
+											<mtd><mn>0</mn></mtd>
+											<mtd><mn>1</mn></mtd>
+										</mtr>
+									</mtable>
+									<mo>]</mo>
+									<mo>...</mo>
+								</mrow>
+							</math>
+						</p>
+
+						<p>
+							As with other edge detectors that utilize both horizontal and vertical <a href="https://en.wikipedia.org/wiki/Kernel_(image_processing)" target="_blank">kernels</a>, the <a href="https://pyimagesearch.com/2021/05/12/image-gradients-with-opencv-sobel-and-scharr/#:~:text=The-,gradient%20magnitude,-is%20used%20to" target="_blank">gradient magnitude</a> &lpar;<math><mrow><mi>G</mi></mrow></math>&rpar; and <a href="https://pyimagesearch.com/2021/05/12/image-gradients-with-opencv-sobel-and-scharr/#:~:text=The-,gradient%20orientation,-is%20used%20to" target="_blank">edge orientation</a> &lpar;<math><mrow><mi>&Theta;</mi></mrow></math>&rpar; can easily be calculated by taking the horizontal &lpar;<math><mrow><msub><mi>g</mi><mn>x</mn></msub></mrow></math>&rpar; and vertical &lpar;<math><mrow><msub><mi>g</mi><mn>y</mn></msub></mrow></math>&rpar; gradients of the input image. The following formulas, based on the <a href="https://www.google.com/search?q=pythagorean+theorem&oq=Pythagorean+theorem&gs_lcrp=EgZjaHJvbWUqCggAEAAYsQMYgAQyCggAEAAYsQMYgAQyBwgBEAAYgAQyBwgCEAAYgAQyBwgDEAAYgAQyCggEEAAYsQMYgAQyCggFEAAYsQMYgAQyBwgGEAAYgAQyBwgHEAAYgAQyBwgIEAAYgAQyBwgJEAAYjwLSAQc2ODhqMGo5qAIAsAIB&sourceid=chrome&ie=UTF-8" target="_blank">Pythagorean theorem</a> and the <a href="https://en.wikipedia.org/wiki/Inverse_trigonometric_functions#:~:text=%E2%88%98-,arctangent,-%F0%9D%91%A6" target="_blank">arctangent function</a>, can be used:
+						</p>
+
+						<p class="maths">
+							<math>
+								<mrow>
+									<mi>G</mi>
+									<mo>=</mo>
+									<msqrt>
+										<msubsup>
+											<mi>g</mi>
+											<mn>x</mn>
+											<mn>2</mn>
+										</msubsup>
+										<mo>+</mo>
+										<msubsup>
+											<mi>g</mi>
+											<mn>y</mn>
+											<mn>2</mn>
+										</msubsup>
+									</msqrt>
+								</mrow>
+							</math>
+						</p>
+
+						<p class="maths">
+							<math>
+								<mrow>
+									<mi>&Theta;</mi>
+									<mi>atan2</mi>
+									<mo>&lpar;</mo>
+									<msub>
+										<mi>g</mi>
+										<mn>y</mn>
+									</msub>
+									<mo>,</mo>
+									<mspace width="0.3rem"></mspace>
+									<msub>
+										<mi>g</mi>
+										<mn>x</mn>
+									</msub>
+									<mo>&rpar;</mo>
+								</mrow>
+							</math>
+						</p>
+
+						<h5>Resources:</h5>
+						<p>
+							<a href="https://github.com/MaxMainio/TD_" target="_blank">Download the .tox files</a><br>
+							<a href="https://en.wikipedia.org/wiki/Prewitt_operator" target="_blank">Prewitt Operator on wikipedia</a><br>
+							<a href="https://medium.com/@wilson.linzhe/digital-image-processing-in-c-chapter-9-thresholding-roberts-prewitt-sobel-and-edge-e7428405ede3#:~:text=pgm%22)%3B%0A%7D-,1.2%20Prewitt%3A,-The%20Prewitt%20operator" target="_blank"><span title="Digital Image Processing">DIP</span> article on Medium</a>
 						</p>
 					</div>
 
