@@ -162,6 +162,21 @@ h5 + p{
         }
     }
 
+    & hr{
+        height: 1px;
+        border-top: 1px solid #999;
+        margin: 0.75rem auto 0.75rem 0;
+        max-width: 50ch;
+
+        &::after{
+            background: none;
+            content: none;
+            padding: none;
+            position: none;
+            top: 0;
+        }
+    }
+
 }
 
 .top-text{
