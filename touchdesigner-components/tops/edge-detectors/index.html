@@ -2677,14 +2677,14 @@
 
 				<section id="line-detector" class="documentation">
 					<div class="docuinfo">
-						<h2>Line Detector</h2>
+						<h2><a href="https://en.wikipedia.org/wiki/Line_detection" target="_blank">Line Detector</a></h2>
 						<h3>Standard &amp; Steerable</h3>
 						<p>
-							In image processing, the Line Detector Operator is used to identify linear features within an image. A notable distinction from most edge detectors is that the Line Detector kernels are symmetrical. The symmetry of the kernel means it responds equally to positive and negative changes in intensity along the line's direction. While this makes it effective for detecting lines, it also means that the Line Detector Operator cannot be used to calculate the orientation of edges, as it does not provide directional gradient information.
+							In image processing, the <a href="https://en.wikipedia.org/wiki/Line_detection" target="_blank">Line Detector</a> Operator is used to identify linear features within an image. A notable distinction from most edge detectors is that the <a href="https://en.wikipedia.org/wiki/Line_detection" target="_blank">Line Detector</a> <a href="https://en.wikipedia.org/wiki/Kernel_(image_processing)" target="_blank">kernels</a> are symmetrical. The symmetry of the <a href="https://en.wikipedia.org/wiki/Kernel_(image_processing)" target="_blank">kernel</a> means it responds equally to positive and negative changes in intensity along the line's direction. While this makes it effective for detecting lines, it also means that the <a href="https://en.wikipedia.org/wiki/Line_detection" target="_blank">Line Detector</a> Operator cannot be used to calculate the orientation of edges, as it does not provide directional gradient information.
 						</p>
 
 						<p>
-							The four standard kernels are defined as the horizontal &lpar;<math><mrow><mi>R1</mi></mrow></math>&rpar;, Vertical &lpar;<math><mrow><mi>R3</mi></mrow></math>&rpar;, Oblique +45&deg; &lpar;<math><mrow><mi>R2</mi></mrow></math>&rpar;, and Oblique -45&deg; &lpar;<math><mrow><mi>R4</mi></mrow></math>&rpar;:
+							The 4 standard <a href="https://en.wikipedia.org/wiki/Kernel_(image_processing)" target="_blank">kernels</a> are defined as the horizontal &lpar;<math><mrow><mi>R1</mi></mrow></math>&rpar;, Vertical &lpar;<math><mrow><mi>R3</mi></mrow></math>&rpar;, Oblique +45&deg; &lpar;<math><mrow><mi>R2</mi></mrow></math>&rpar;, and Oblique -45&deg; &lpar;<math><mrow><mi>R4</mi></mrow></math>&rpar;:
 						</p>
 
 						<p class="maths">
@@ -2809,7 +2809,7 @@
 						</p>
 
 						<p>
-							In addition to these directions, within the orientation parameter, you can also set the Line Detector to <i>All</i> which will calculate the combined response &lpar;<math><mrow><mi>R</mi></mrow></math>&rpar; from all four directional kernels following this equation:
+							In addition to these directions, within the orientation parameter, you can also set the <a href="https://en.wikipedia.org/wiki/Line_detection" target="_blank">Line Detector</a> to <i>All</i> which will calculate the combined response &lpar;<math><mrow><mi>R</mi></mrow></math>&rpar; from all four directional <a href="https://en.wikipedia.org/wiki/Kernel_(image_processing)" target="_blank">kernels</a> following this equation:
 						</p>
 
 						<p class="maths">
@@ -2968,25 +2968,25 @@
 							<h4>Parameters</h4>
 							<h5>Orientation:</h5>
 							<p>
-								The standard Line Detector is limited to the four directions listed on the left, along with a combination of all four.<br>
-								The Steerable Line Detector allows for any arbitrary angle within 180&deg;.
+								The standard <a href="https://en.wikipedia.org/wiki/Line_detection" target="_blank">Line Detector</a> is limited to the four directions listed on the left, along with a combination of all four.<br>
+								The Steerable <a href="https://en.wikipedia.org/wiki/Line_detection" target="_blank">Line Detector</a> allows for any arbitrary angle within 180&deg;.
 							</p>
 
-							<h5>Invert Kernel:</h5>
+							<h5>Invert <a href="https://en.wikipedia.org/wiki/Kernel_(image_processing)" target="_blank">Kernel</a>:</h5>
 							<p>
-								When on, this will invert the sign of the values in each cell of the kernel.
+								When on, this will invert the sign of the values in each cell of the <a href="https://en.wikipedia.org/wiki/Kernel_(image_processing)" target="_blank">kernel</a>.
 							</p>
 
 							<h5>Edge Handling:</h5>
 							<p>
-								Determines how the edges of the image are treated during convolution. Extends the image to avoid edge artifacts.
+								Determines how the edges of the image are treated during <a href="https://en.wikipedia.org/wiki/Kernel_(image_processing)#:~:text=the%20center%20element.-,Convolution,-%5Bedit%5D" target="_blank">convolution</a>. Extends the image to avoid edge artifacts.
 							</p>
 
 							<hr/>
 
 							<h5>Monochrome:</h5>
 							<p>
-								When on, the input will be converted to a single channel before the Laplacian convolution.
+								When on, the input will be converted to a single channel before the Laplacian <a href="https://en.wikipedia.org/wiki/Kernel_(image_processing)#:~:text=the%20center%20element.-,Convolution,-%5Bedit%5D" target="_blank">convolution</a>.
 							</p>
 
 							<h5>RGB:</h5>
@@ -3013,11 +3013,11 @@
 
 							<h4>In- / Outputs</h4>
 							<p>
-								<b>Input 0</b> &ndash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> image to be passed through the Line Detector.
+								<b>Input 0</b> &ndash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> image to be passed through the <a href="https://en.wikipedia.org/wiki/Line_detection" target="_blank">Line Detector</a>.
 							</p>
 
 							<p>
-								<b>Output 0</b> &ndash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> input 0&rsquo;s response to the Line Detector convolution.
+								<b>Output 0</b> &ndash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> input 0&rsquo;s response to the <a href="https://en.wikipedia.org/wiki/Line_detection" target="_blank">Line Detector</a> <a href="https://en.wikipedia.org/wiki/Kernel_(image_processing)#:~:text=the%20center%20element.-,Convolution,-%5Bedit%5D" target="_blank">convolution</a>.
 							</p>
 						</div>
 					</div>
@@ -4018,7 +4018,7 @@
 	
 							<h5>Apply to Alpha:</h5>
 							<p>
-								When off, the alpha channel will not be convolved.
+								When off, the alpha channel will not be <a href="https://en.wikipedia.org/wiki/Kernel_(image_processing)#:~:text=the%20center%20element.-,Convolution,-%5Bedit%5D" target="_blank">convolved</a>.
 							</p>
 	
 							<h5>Normalize:</h5>
@@ -4202,14 +4202,14 @@
 	
 							<h5>Edge Handling:</h5>
 							<p>
-								Determines how the edges of the image are treated during convolution. Extends the image to avoid edge artifacts.
+								Determines how the edges of the image are treated during <a href="https://en.wikipedia.org/wiki/Kernel_(image_processing)#:~:text=the%20center%20element.-,Convolution,-%5Bedit%5D" target="_blank">convolution</a>. Extends the image to avoid edge artifacts.
 							</p>
 
 							<hr/>
 	
 							<h5>Monochrome:</h5>
 							<p>
-								When on, the input will be converted to a single channel before the Laplacian convolution.
+								When on, the input will be converted to a single channel before the Laplacian <a href="https://en.wikipedia.org/wiki/Kernel_(image_processing)#:~:text=the%20center%20element.-,Convolution,-%5Bedit%5D" target="_blank">convolution</a>.
 							</p>
 	
 							<h5>RGB:</h5>
