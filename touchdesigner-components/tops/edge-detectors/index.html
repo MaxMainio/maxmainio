@@ -1630,13 +1630,16 @@
 						</p>
 
 						<p>
-							The gradient magnitude calculation is:
+							The maximum gradient calculation is:
 						</p>
 
 						<p class="maths">
 							<math>
 								<mrow>
-									<mi>G</mi>
+									<msub>
+										<mi>g</mi>
+										<mn>max</mn>
+									</msub>
 									<mo>=</mo>
 									<mi>max&lpar;</mi>
 									<msub>
@@ -1919,6 +1922,11 @@
 								Kirsch Steerable Operator allows for any arbitrary angle within 360&deg;.
 							</p>
 
+							<h5>Invert Kernel:</h5>
+							<p>
+								When on, this will invert the sign of the values in each cell of the kernel.
+							</p>
+
 							<h5>Edge Handling:</h5>
 							<p>
 								Determines how the edges of the image are treated during convolution. Extends the image to avoid edge artifacts.
@@ -1959,7 +1967,13 @@
 							</p>
 
 							<p>
-								<b>Output 0</b> &ndash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> the <a href="https://pyimagesearch.com/2021/05/12/image-gradients-with-opencv-sobel-and-scharr/#:~:text=The%20gradient%20magnitude%20is%20used,change%20in%20intensity%20is%20pointing." target="_blank">gradient magnitude</a> of input 0.
+								Standard Kirsch Operator:<br>
+								<b>Output 0</b> &ndash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> the <a href="https://pyimagesearch.com/2021/05/12/image-gradients-with-opencv-sobel-and-scharr/#:~:text=The%20gradient%20magnitude%20is%20used,change%20in%20intensity%20is%20pointing." target="_blank">gradient magnitude</a> of input 0.<br>
+							</p>
+
+							<p>
+								Kirsch Compass Operators:<br>
+								<b>Output 0</b> &ndash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> the <a href="https://en.wikipedia.org/wiki/Image_gradient" target="_blank">image gradient</a> of input 0
 							</p>
 						</div>
 					</div>
@@ -2666,7 +2680,152 @@
 						<h2>Line Detector</h2>
 						<h3>Standard &amp; Steerable</h3>
 						<p>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim diam vulputate ut pharetra sit amet aliquam. Integer eget aliquet nibh praesent tristique magna sit. Massa id neque aliquam vestibulum. Egestas diam in arcu cursus euismod quis viverra nibh. Ultrices vitae auctor eu augue ut lectus arcu bibendum at. Vel risus commodo viverra maecenas accumsan lacus vel facilisis volutpat. Sit amet cursus sit amet dictum sit. Scelerisque mauris pellentesque pulvinar pellentesque habitant morbi tristique. Rutrum quisque non tellus orci ac.
+							In image processing, the Line Detector Operator is used to identify linear features within an image. A notable distinction from most edge detectors is that the Line Detector kernels are symmetrical. The symmetry of the kernel means it responds equally to positive and negative changes in intensity along the line's direction. While this makes it effective for detecting lines, it also means that the Line Detector Operator cannot be used to calculate the orientation of edges, as it does not provide directional gradient information.
+						</p>
+
+						<p>
+							The four standard kernels are defined as the horizontal &lpar;<math><mrow><mi>R1</mi></mrow></math>&rpar;, Vertical &lpar;<math><mrow><mi>R3</mi></mrow></math>&rpar;, Oblique +45&deg; &lpar;<math><mrow><mi>R2</mi></mrow></math>&rpar;, and Oblique -45&deg; &lpar;<math><mrow><mi>R4</mi></mrow></math>&rpar;:
+						</p>
+
+						<p class="maths">
+							<math>
+								<mrow>
+									<msup>
+										<mi>k</mi>
+										<mn>&lpar;R1&rpar;</mn>
+									</msup>
+									<mo>=</mo>
+									<mo>[</mo>
+									<mtable>
+										<mtr>
+											<mtd><mn>-1</mn></mtd>
+											<mtd><mn>-1</mn></mtd>
+											<mtd><mn>-1</mn></mtd>
+										</mtr>
+										<mtr>
+											<mtd><mn>2</mn></mtd>
+											<mtd><mn>2</mn></mtd>
+											<mtd><mn>2</mn></mtd>
+										</mtr>
+										<mtr>
+											<mtd><mn>-1</mn></mtd>
+											<mtd><mn>-1</mn></mtd>
+											<mtd><mn>-1</mn></mtd>
+										</mtr>
+									</mtable>
+									<mo>]</mo>
+									<mo>,</mo>
+								</mrow>
+							</math>
+
+							<math>
+								<mrow>
+									<msup>
+										<mi>k</mi>
+										<mn>&lpar;R2&rpar;</mn>
+									</msup>
+									<mo>=</mo>
+									<mo>[</mo>
+									<mtable>
+										<mtr>
+											<mtd><mn>-1</mn></mtd>
+											<mtd><mn>-1</mn></mtd>
+											<mtd><mn>2</mn></mtd>
+										</mtr>
+										<mtr>
+											<mtd><mn>-1</mn></mtd>
+											<mtd><mn>2</mn></mtd>
+											<mtd><mn>-1</mn></mtd>
+										</mtr>
+										<mtr>
+											<mtd><mn>2</mn></mtd>
+											<mtd><mn>-1</mn></mtd>
+											<mtd><mn>-1</mn></mtd>
+										</mtr>
+									</mtable>
+									<mo>]</mo>
+									<mo>,</mo>
+								</mrow>
+							</math>
+
+							<math>
+								<mrow>
+									<msup>
+										<mi>k</mi>
+										<mn>&lpar;R3&rpar;</mn>
+									</msup>
+									<mo>=</mo>
+									<mo>[</mo>
+									<mtable>
+										<mtr>
+											<mtd><mn>-1</mn></mtd>
+											<mtd><mn>2</mn></mtd>
+											<mtd><mn>-1</mn></mtd>
+										</mtr>
+										<mtr>
+											<mtd><mn>-1</mn></mtd>
+											<mtd><mn>2</mn></mtd>
+											<mtd><mn>-1</mn></mtd>
+										</mtr>
+										<mtr>
+											<mtd><mn>-1</mn></mtd>
+											<mtd><mn>2</mn></mtd>
+											<mtd><mn>-1</mn></mtd>
+										</mtr>
+									</mtable>
+									<mo>]</mo>
+									<mo>,</mo>
+								</mrow>
+							</math>
+
+							<math>
+								<mrow>
+									<msup>
+										<mi>k</mi>
+										<mn>&lpar;R4&rpar;</mn>
+									</msup>
+									<mo>=</mo>
+									<mo>[</mo>
+									<mtable>
+										<mtr>
+											<mtd><mn>2</mn></mtd>
+											<mtd><mn>-1</mn></mtd>
+											<mtd><mn>-1</mn></mtd>
+										</mtr>
+										<mtr>
+											<mtd><mn>-1</mn></mtd>
+											<mtd><mn>2</mn></mtd>
+											<mtd><mn>-1</mn></mtd>
+										</mtr>
+										<mtr>
+											<mtd><mn>-1</mn></mtd>
+											<mtd><mn>-1</mn></mtd>
+											<mtd><mn>2</mn></mtd>
+										</mtr>
+									</mtable>
+									<mo>]</mo>
+								</mrow>
+							</math>
+						</p>
+
+						<p>
+							In addition to these directions, within the orientation parameter, you can also set the Line Detector to <i>All</i> which will calculate the combined response &lpar;<math><mrow><mi>R</mi></mrow></math>&rpar; from all four directional kernels following this equation:
+						</p>
+
+						<p class="maths">
+							<math>
+								<mrow>
+									<mi>R</mi>
+									<mo>=</mo>
+									<mi>max&lpar;&vert;R1&vert;,</mi>
+									<mspace width="0.3rem"></mspace>
+									<mi>&vert;R2&vert;,</mi>
+									<mspace width="0.3rem"></mspace>
+									<mi>&vert;R3&vert;,</mi>
+									<mspace width="0.3rem"></mspace>
+									<mi>&vert;R4&vert;&rpar;</mi>
+								</mrow>
+							</math>
 						</p>
 					</div>
 
@@ -2803,6 +2962,63 @@
 									</div>
 								</div>
 							</a>
+						</div>
+
+						<div>
+							<h4>Parameters</h4>
+							<h5>Orientation:</h5>
+							<p>
+								The standard Line Detector is limited to the four directions listed on the left, along with a combination of all four.<br>
+								The Steerable Line Detector allows for any arbitrary angle within 180&deg;.
+							</p>
+
+							<h5>Invert Kernel:</h5>
+							<p>
+								When on, this will invert the sign of the values in each cell of the kernel.
+							</p>
+
+							<h5>Edge Handling:</h5>
+							<p>
+								Determines how the edges of the image are treated during convolution. Extends the image to avoid edge artifacts.
+							</p>
+
+							<hr/>
+
+							<h5>Monochrome:</h5>
+							<p>
+								When on, the input will be converted to a single channel before the Laplacian convolution.
+							</p>
+
+							<h5>RGB:</h5>
+							<p>
+								This menu selects how the monochrome conversion is calculated for the RGBA channels.
+							</p>
+
+							<h5>Luma:</h5>
+							<p>
+								Defines how the luminance will be calculated when Monochrome is active and the RGB parameter is set to luminance.
+							</p>
+
+							<hr/>
+
+							<h5>Apply to Alpha:</h5>
+							<p>
+								When off, the alpha channel will not be convolved.
+							</p>
+
+							<h5>Normalize:</h5>
+							<p>
+								Normalize values in the output image so that they are all scaled and shifted to fall between 0 and 1.
+							</p>
+
+							<h4>In- / Outputs</h4>
+							<p>
+								<b>Input 0</b> &ndash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> image to be passed through the Line Detector.
+							</p>
+
+							<p>
+								<b>Output 0</b> &ndash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> input 0&rsquo;s response to the Line Detector convolution.
+							</p>
 						</div>
 					</div>
 				</section>
@@ -3151,12 +3367,11 @@
 	
 							<h4>In- / Outputs</h4>
 							<p>
-								<b>Input 0</b> &ndash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> image to be processed with the <a href="https://en.wikipedia.org/wiki/Roberts_cross" target="_blank">Robert&rsquo;s Cross Operator</a>.
+								<b>Input 0</b> &ndash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> image to be processed with the <a href="https://en.wikipedia.org/wiki/Prewitt_operator" target="_blank">Prewitt Operator</a>.
 							</p>
 	
 							<p>
-								<b>Output 0</b> &ndash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> the <a href="https://pyimagesearch.com/2021/05/12/image-gradients-with-opencv-sobel-and-scharr/#:~:text=The%20gradient%20magnitude%20is%20used,change%20in%20intensity%20is%20pointing." target="_blank">gradient magnitude</a> of input 0.<br>
-								<b>Output 1</b> &ndash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> the direction of the gradient of input 0.
+								<b>Output 0</b> &ndash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> the <a href="https://en.wikipedia.org/wiki/Image_gradient" target="_blank">image gradient</a> of input 0
 							</p>
 						</div>
 					</div>
@@ -3817,7 +4032,7 @@
 							</p>
 	
 							<p>
-								<b>Output 0</b> &ndash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> the <a href="https://pyimagesearch.com/2021/05/12/image-gradients-with-opencv-sobel-and-scharr/#:~:text=The%20gradient%20magnitude%20is%20used,change%20in%20intensity%20is%20pointing." target="_blank">gradient magnitude</a> of input 0.
+								<b>Output 0</b> &ndash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> the <a href="https://en.wikipedia.org/wiki/Image_gradient" target="_blank">image gradient</a> of input 0
 							</p>
 						</div>
 					</div>
@@ -4025,7 +4240,7 @@
 							</p>
 	
 							<p>
-								<b>Output 0</b> &ndash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> the <a href="https://pyimagesearch.com/2021/05/12/image-gradients-with-opencv-sobel-and-scharr/#:~:text=The%20gradient%20magnitude%20is%20used,change%20in%20intensity%20is%20pointing." target="_blank">gradient magnitude</a> of input 0.
+								<b>Output 0</b> &ndash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> the <a href="https://en.wikipedia.org/wiki/Image_gradient" target="_blank">image gradient</a> of input 0
 							</p>
 						</div>
 					</div>
