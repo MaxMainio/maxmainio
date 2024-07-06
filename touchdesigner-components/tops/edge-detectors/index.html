@@ -1995,9 +1995,13 @@
 							<h4>Parameters</h4>
 							<h5>Orientation:</h5>
 							<p>
-								Standard Kirsch Operator doesn&rsquo;t have this parameter.<br>
-								Kirsch Compass Operator&rsquo;s orientation is limited to the 8 compass directions.<br>
-								Kirsch Steerable Operator allows for any arbitrary angle within 360&deg;.
+								The standard Kirsch Compass Operator&rsquo;s orientation is limited to the 8 compass directions.<br>
+								Where as the Kirsch Steerable Operator allows for any arbitrary angle within 360&deg;.
+							</p>
+
+							<h5><a href="https://www.mdpi.com/2076-3417/11/22/10716#:~:text=Section%203.11.-,2.%20Dilated%20Filters,-In%20order%20to" target="_blank">Dilation</a>:</h5>
+							<p>
+								Increases the distance between the pixels being sampled by adding null rows and columns to the existing kernel.
 							</p>
 
 							<h5>Invert Kernel:</h5>
@@ -2545,6 +2549,11 @@
 							<p>
 								This menu selects which variant of the Laplacian will be performed on the input image.
 							</p>
+
+							<h5><a href="https://www.mdpi.com/2076-3417/11/22/10716#:~:text=Section%203.11.-,2.%20Dilated%20Filters,-In%20order%20to" target="_blank">Dilation</a>:</h5>
+							<p>
+								Increases the distance between the pixels being sampled by adding null rows and columns to the existing kernel.
+							</p>
 	
 							<h5>Invert Kernel:</h5>
 							<p>
@@ -2611,7 +2620,8 @@
 						<p>
 							<a href="https://github.com/MaxMainio/TD_" target="_blank">Download the .tox files</a><br>
 							<a href="https://en.wikipedia.org/wiki/Laplace_operator" target="_blank">Laplacian Operator on wikipedia</a><br>
-							<a href="https://www.youtube.com/watch?v=uNP6ZwQ3r6A" target="_blank">First Principles of Computer Vision video lecture</a>
+							<a href="https://www.youtube.com/watch?v=uNP6ZwQ3r6A" target="_blank">First Principles of Computer Vision video lecture</a><br>
+							<a href="https://homepages.inf.ed.ac.uk/rbf/HIPR2/log.htm#:~:text=is%20shown%20in-,Figure%202,-." target="_blank">Original solution code</a>
 						</p>
 					</div>
 
@@ -2686,11 +2696,26 @@
 
 						<div>
 							<h4>Parameters</h4>
-							<h5>Kernel:</h5>
+							<h5>Size:</h5>
 							<p>
-								This menu selects which variant of the Laplacian will be performed on the input image.
+								Specify the size of the <a href="https://en.wikipedia.org/wiki/Kernel_(image_processing)" target="_blank">kernel</a> to be generated. Larger <a href="https://en.wikipedia.org/wiki/Kernel_(image_processing)" target="_blank">kernels</a> capture broader edges but may lose fine details. Note that the <a href="https://en.wikipedia.org/wiki/Kernel_(image_processing)" target="_blank">kernel</a> must have a center cell, so the size must be an odd number.
+							</p>
+
+							<h5>Sigma:</h5>
+							<p>
+								Lorem ipsum...
 							</p>
 	
+							<h5>Round to Decimal:</h5>
+							<p>
+								Round the <a href="https://en.wikipedia.org/wiki/Kernel_(image_processing)" target="_blank">kernel</a> values to a specified number of decimal places for precision control in calculations.
+							</p>
+
+							<h5><a href="https://www.mdpi.com/2076-3417/11/22/10716#:~:text=Section%203.11.-,2.%20Dilated%20Filters,-In%20order%20to" target="_blank">Dilation</a>:</h5>
+							<p>
+								Increases the distance between the pixels being sampled by adding null rows and columns to the existing kernel.
+							</p>
+
 							<h5>Invert Kernel:</h5>
 							<p>
 								When on, this will invert the sign of the values in each cell of the kernel.
@@ -2698,7 +2723,7 @@
 	
 							<h5>Edge Handling:</h5>
 							<p>
-								Determines how the edges of the image are treated during convolution. Extends the image to avoid edge artifacts.
+								Determines how the edges of the image are treated during <a href="https://en.wikipedia.org/wiki/Kernel_(image_processing)#:~:text=the%20center%20element.-,Convolution,-%5Bedit%5D" target="_blank">convolution</a>. Extends the image to avoid edge artifacts.
 							</p>
 
 							<hr/>
@@ -3039,6 +3064,11 @@
 							<p>
 								The standard <a href="https://en.wikipedia.org/wiki/Line_detection" target="_blank">Line Detector</a> is limited to the four directions listed on the left, along with a combination of all four.<br>
 								The Steerable <a href="https://en.wikipedia.org/wiki/Line_detection" target="_blank">Line Detector</a> allows for any arbitrary angle within 180&deg;.
+							</p>
+
+							<h5><a href="https://www.mdpi.com/2076-3417/11/22/10716#:~:text=Section%203.11.-,2.%20Dilated%20Filters,-In%20order%20to" target="_blank">Dilation</a>:</h5>
+							<p>
+								Increases the distance between the pixels being sampled by adding null rows and columns to the existing kernel.
 							</p>
 
 							<h5>Invert <a href="https://en.wikipedia.org/wiki/Kernel_(image_processing)" target="_blank">Kernel</a>:</h5>
@@ -3395,6 +3425,11 @@
 								In the Standard Prewitt Operator, the orientation is limited to the 8 compass directions. The Steerable Prewitt Operator allows for any arbitrary angle within 360&deg;.
 							</p>
 
+							<h5><a href="https://www.mdpi.com/2076-3417/11/22/10716#:~:text=Section%203.11.-,2.%20Dilated%20Filters,-In%20order%20to" target="_blank">Dilation</a>:</h5>
+							<p>
+								Increases the distance between the pixels being sampled by adding null rows and columns to the existing kernel.
+							</p>
+
 							<h5>Edge Handling:</h5>
 							<p>
 								Determines how the edges of the image are treated during <a href="https://en.wikipedia.org/wiki/Convolution#:~:text=gT.-,Discrete%20convolution,-%5Bedit%5D" target="_blank">convolution</a>. Extends the image to avoid edge artifacts.
@@ -3707,6 +3742,21 @@
 
 						<div>
 							<h4>Parameters</h4>
+							<h5>Orientation:</h5>
+							<p>
+								In the Standard <a href="https://en.wikipedia.org/wiki/Roberts_cross" target="_blank">Robert&rsquo;s Cross</a> Operator, the orientation is limited to the 4 diagonal directions. The Steerable <a href="https://en.wikipedia.org/wiki/Roberts_cross" target="_blank">Robert&rsquo;s Cross</a> Operator allows for any arbitrary angle within 360&deg;.
+							</p>
+
+							<h5><a href="https://www.mdpi.com/2076-3417/11/22/10716#:~:text=Section%203.11.-,2.%20Dilated%20Filters,-In%20order%20to" target="_blank">Dilation</a>:</h5>
+							<p>
+								Increases the distance between the pixels being sampled by adding null rows and columns to the existing kernel.
+							</p>
+
+							<h5>Invert Kernel:</h5>
+							<p>
+								When on, this will invert the sign of the values in each cell of the kernel.
+							</p>
+
 							<h5>Edge Handling:</h5>
 							<p>
 								Determines how the edges of the image are treated during <a href="https://en.wikipedia.org/wiki/Convolution#:~:text=gT.-,Discrete%20convolution,-%5Bedit%5D" target="_blank">convolution</a>. Extends the image to avoid edge artifacts.
@@ -4190,6 +4240,11 @@
 							<p>
 								In the Standard Sobel Operator, the orientation is limited to the 8 compass directions. The Steerable Sobel Operator allows for any arbitrary angle within 360&deg;.
 							</p>
+
+							<h5><a href="https://www.mdpi.com/2076-3417/11/22/10716#:~:text=Section%203.11.-,2.%20Dilated%20Filters,-In%20order%20to" target="_blank">Dilation</a>:</h5>
+							<p>
+								Increases the distance between the pixels being sampled by adding null rows and columns to the existing kernel.
+							</p>
 	
 							<h5>Edge Handling:</h5>
 							<p>
@@ -4397,6 +4452,11 @@
 							<h5>Round to Decimal:</h5>
 							<p>
 								Round the <a href="https://en.wikipedia.org/wiki/Kernel_(image_processing)" target="_blank">kernel</a> values to a specified number of decimal places for precision control in calculations.
+							</p>
+
+							<h5><a href="https://www.mdpi.com/2076-3417/11/22/10716#:~:text=Section%203.11.-,2.%20Dilated%20Filters,-In%20order%20to" target="_blank">Dilation</a>:</h5>
+							<p>
+								Increases the distance between the pixels being sampled by adding null rows and columns to the existing kernel.
 							</p>
 	
 							<h5>Edge Handling:</h5>
