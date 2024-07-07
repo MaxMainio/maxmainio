@@ -1479,7 +1479,7 @@
 
 				<section id="haar-operator" class="documentation">
 					<div class="docuinfo">
-						<h2>Haar Operator</h2>
+						<h2><a href="https://en.wikipedia.org/wiki/Haar_wavelet#Haar_matrix:~:text=is%20also%20continuous.-,Haar%20matrix,-%5Bedit%5D" target="_blank">Haar Operator</a></h2>
 						<h3>Standard &amp; Steerable</h3>
 						<p>
 							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim diam vulputate ut pharetra sit amet aliquam. Integer eget aliquet nibh praesent tristique magna sit. Massa id neque aliquam vestibulum. Egestas diam in arcu cursus euismod quis viverra nibh. Ultrices vitae auctor eu augue ut lectus arcu bibendum at. Vel risus commodo viverra maecenas accumsan lacus vel facilisis volutpat. Sit amet cursus sit amet dictum sit. Scelerisque mauris pellentesque pulvinar pellentesque habitant morbi tristique. Rutrum quisque non tellus orci ac.
@@ -1620,6 +1620,63 @@
 								</div>
 							</a>
 						</div>
+
+						<div>
+							<h4>Parameters</h4>
+							<h5>Orientation:</h5>
+							<p>
+								The standard Haar Operator&rsquo;s orientation is limited to the 4 primary compass directions in addition to two diagonal directions.<br>
+								The Steerable Haar Operator allows for any arbitrary angle within 360&deg;.
+							</p>
+
+							<h5><a href="https://www.mdpi.com/2076-3417/11/22/10716#:~:text=Section%203.11.-,2.%20Dilated%20Filters,-In%20order%20to" target="_blank">Dilation</a>:</h5>
+							<p>
+								Increases the distance between the pixels being sampled by adding null rows and columns to the existing kernel.
+							</p>
+
+							<h5>Edge Handling:</h5>
+							<p>
+								Determines how the edges of the image are treated during convolution. Extends the image to avoid edge artifacts.
+							</p>
+
+							<hr/>
+
+							<h5>Monochrome:</h5>
+							<p>
+								When on, the input will be converted to a single channel before the Laplacian convolution.
+							</p>
+
+							<h5>RGB:</h5>
+							<p>
+								This menu selects how the monochrome conversion is calculated for the RGBA channels.
+							</p>
+
+							<h5>Luma:</h5>
+							<p>
+								Defines how the luminance will be calculated when Monochrome is active and the RGB parameter is set to luminance.
+							</p>
+
+							<hr/>
+
+							<h5>Apply to Alpha:</h5>
+							<p>
+								When off, the alpha channel will not be convolved.
+							</p>
+
+							<h5>Normalize:</h5>
+							<p>
+								Normalize values in the output image so that they are all scaled and shifted to fall between 0 and 1.
+							</p>
+
+							<h4>In- / Outputs</h4>
+							<p>
+								<b>Input 0</b> &ndash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> image to be processed with the <a href="https://en.wikipedia.org/wiki/Haar_wavelet#Haar_matrix:~:text=is%20also%20continuous.-,Haar%20matrix,-%5Bedit%5D" target="_blank">Haar operator</a>.
+							</p>
+
+							<p>
+								<b>Output 0</b> &ndash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> the calculated <a href="https://en.wikipedia.org/wiki/Image_gradient" target="_blank">image gradient</a> of input 0
+							</p>
+						</div>
 					</div>
 				</section>
 
@@ -1627,14 +1684,14 @@
 
 				<section id="kirsch-operator" class="documentation">
 					<div class="docuinfo">
-						<h2>Kirsch Operator</h2>
+						<h2><a href="https://en.wikipedia.org/wiki/Kirsch_operator" target="_blank">Kirsch Operator</a></h2>
 						<h3>Standard calculation</h3>
 						<p>
-							The Kirsch Operator is widely used for detecting edges in various image processing tasks due to its comprehensive directional sensitivity. It is particularly effective in highlighting edges in multiple directions.
+							The <a href="https://en.wikipedia.org/wiki/Kirsch_operator" target="_blank">Kirsch Operator</a> is widely used for detecting edges in various image processing tasks due to its comprehensive directional sensitivity. It is particularly effective in highlighting edges in multiple directions.
 						</p>
 
 						<p>
-							This component is the full Kirsch Operator which is calculated by taking the maximum response from all eight compass direction kernels.
+							This component implements the complete method for calculating the <a href="https://en.wikipedia.org/wiki/Kirsch_operator" target="_blank">Kirsch Operator</a>. It works by convolving the given image with the Kirsch kernel rotated in 45&deg; increments through all 8 compass directions: N, NW, W, SW, S, SE, E, and NE. The final output is then obtained by taking the maximum response from all eight convolutions.
 						</p>
 
 						<p class="maths">
@@ -1730,7 +1787,7 @@
 						</p>
 
 						<p>
-							The maximum gradient calculation is:
+							The <a href="https://en.wikipedia.org/wiki/Kirsch_operator#:~:text=Original-,Maximum%20gradient,-in%20the%208" target="_blank">maximum edge magnitude</a> calculation is:
 						</p>
 
 						<p class="maths">
@@ -1923,7 +1980,7 @@
 							</p>
 
 							<p>
-								<b>Output 0</b> &ndash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> the maximum edge magnitude of input 0.<br>
+								<b>Output 0</b> &ndash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> the <a href="https://en.wikipedia.org/wiki/Kirsch_operator#:~:text=Original-,Maximum%20gradient,-in%20the%208" target="_blank">maximum edge magnitude</a> of input 0.<br>
 							</p>
 						</div>
 					</div>
@@ -1936,12 +1993,12 @@
 						<h2>Kirsch Compass</h2>
 						<h3>Standard &amp; Steerable</h3>
 						<p>
-							The Kirsch Operator is widely used for detecting edges in various image processing tasks due to its comprehensive directional sensitivity. It is particularly effective in highlighting edges in multiple directions.
+							As is mentioned above, for the <a href="#kirsch-operator" target="_blank">Kirsch Operator</a>, the Kirsch Operator is widely used for detecting edges in various image processing tasks due to its comprehensive directional sensitivity. It is particularly effective in highlighting edges in multiple directions.
 						</p>
 
 						<h5>Kirsch Compass:</h5>
 						<p>
-							This variant allows you to select a specific compass direction kernel to convolve with the image, rather than taking the maximum across all directions.
+							This variant allows you to select a specific compass direction kernel to convolve the input image with. This allows you to focus on detecting edges in a particular orientation, rather than taking the maximum across all directions.
 						</p>
 
 						<h5>Kirsch Compass Steerable:</h5>
