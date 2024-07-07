@@ -127,8 +127,10 @@
 							<div class="vertical-bar">
 								<div class="vertical-color right"></div>
 			
-								<div class="connector-container">
+								<div class="connector-container double">
 									<div class="connector-color top-right"></div>
+									<div class="connector-space"></div>
+									<div class="connector-color center"></div>
 									<div class="connector-space"></div>
 									<div class="connector-color bottom-right"></div>
 								</div>
@@ -1343,8 +1345,10 @@
 									<div class="vertical-bar">
 										<div class="vertical-color right"></div>
 					
-										<div class="connector-container">
+										<div class="connector-container double">
 											<div class="connector-color top-right"></div>
+											<div class="connector-space"></div>
+											<div class="connector-color center"></div>
 											<div class="connector-space"></div>
 											<div class="connector-color bottom-right"></div>
 										</div>
@@ -1369,6 +1373,104 @@
 									</div>
 								</div>
 							</a>
+						</div>
+
+						<div>
+							<h4>Parameters</h4>
+							<h5>Gradient:</h5>
+							<p>
+								This parameter selects the method with which to calculate the gradient of the input image in both the x and y axis.<br>
+								<i>Slope</i> will use the built in <a href="https://docs.derivative.ca/index.php?title=Slope_TOP" target="_blank">Slope TOP</a> and <i>Custom</i> will provide a list of kernels that can be used to calculate the gradient of the input image.
+							</p>
+	
+							<hr/>
+	
+							<h5><a href="https://docs.derivative.ca/index.php?title=Slope_TOP#:~:text=horizontally%20or%20vertically.-,Method,-method%C2%A0%2D%20%E2%8A%9E" target="_blank">Method</a>:</h5>
+							<p>
+								Determines what pixels to use when calculating the slope at each pixel in the image.
+							</p>
+	
+							<h5><a href="https://docs.derivative.ca/index.php?title=Slope_TOP#:~:text=in%20the%20image.-,Zero%20Point,-zeropoint%20%2D%20Sets%20the" target="_blank">Zero Point</a>:</h5>
+							<p>
+								Sets the value to output when the slope is zero, similar to a midpoint. Default is .5 since 8-bit pxels are 0 to 1. But with Pixel Format et to 32-bit Float you should set this to 0, and look at the view in Normalized Split mode.
+							</p>
+	
+							<h5><a href="https://docs.derivative.ca/index.php?title=Slope_TOP#:~:text=Normalized%20Split%20mode.-,Strength,-strength%20%2D%20Set%20the" target="_blank">Strength</a>:</h5>
+							<p>
+								Set the strength of the output using this multiplier. Higher values result in higher slope values.
+							</p>
+	
+							<h5><a href="https://docs.derivative.ca/index.php?title=Slope_TOP#:~:text=higher%20slope%20values.-,Sample%20Step,-offset%C2%A0%2D%20%E2%8A%9E" target="_blank">Sample Step</a>:</h5>
+							<p>
+								When sampling the image, this determines the distance from each pixel to the sample pixel. When units are set to pixels, it is the number of pixels away from the current pixel which is sampled to find edges. A Sample Step of 3 would sample pixels 3 pixels away to look for edges.
+							</p>
+	
+							<hr/>
+	
+							<h5>Operator:</h5>
+							<p>
+								Selects the specific operator used for gradient calculation. Options include:<br>
+								<a href="#sobel-operator" target="_self">The Sobel operator</a>, <a href="#prewitt-operator" target="_self">the Prewitt operator</a>, <a href="#haar-operator" target="_self">the Haar operator</a>, and the 1D Laplacian.
+							</p>
+	
+							<h5>Type:</h5>
+							<p>
+								When the <i>Operator</i> parameter is set to <a href="#sobel-operator" target="_self">Sobel</a> this will allow you to specify which variant of the <a href="#sobel-operator" target="_self">Sobel operator</a> to convolve the input image with.
+							</p>
+	
+							<h5><a href="https://www.mdpi.com/2076-3417/11/22/10716#:~:text=Section%203.11.-,2.%20Dilated%20Filters,-In%20order%20to" target="_blank">Dilation</a>:</h5>
+							<p>
+								Increases the distance between the pixels being sampled by adding null rows and columns to the existing kernel.
+							</p>
+	
+							<h5>Edge Handling:</h5>
+							<p>
+								Determines how the edges of the image are treated during convolution. Extends the image to avoid edge artifacts.
+							</p>
+
+							<hr/>
+
+							<h5>Monochrome:</h5>
+							<p>
+								When on, the input will be converted to a single channel before the Laplacian convolution.
+							</p>
+
+							<h5>RGB:</h5>
+							<p>
+								This menu selects how the monochrome conversion is calculated for the RGBA channels.
+							</p>
+
+							<h5>Luma:</h5>
+							<p>
+								Defines how the luminance will be calculated when Monochrome is active and the RGB parameter is set to luminance.
+							</p>
+
+							<hr/>
+
+							<h5>Apply to Alpha:</h5>
+							<p>
+								When off, the alpha channel will not be convolved.
+							</p>
+
+							<h5>Normalize Magnitude:</h5>
+							<p>
+								Normalize values in the calculated <i>Gradient Magnitude</i> image so that all values are scaled and shifted to fall between 0 and 1.
+							</p>
+
+							<h5>Normalize Orientation:</h5>
+							<p>
+								Normalize values in the calculated <i>Edge Orientation</i> image so that all values are scaled and shifted to fall between 0 and 1. By default, the values in the <i>Edge Orientation</i> image will be between 0 and 180.
+							</p>
+
+							<h4>In- / Outputs</h4>
+							<p>
+								<b>Input 0</b> &ndash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> image to be processed.
+							</p>
+
+							<p>
+								<b>Output 0</b> &ndash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> the calculated <a href="https://www.baeldung.com/cs/gradient-orientation-magnitude#:~:text=3.%20What%20Is-,Gradient%20Magnitude,-%3F" target="_blank">gradient magnitude</a> of input 0.<br>
+								<b>Output 1</b> &ndash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> the calculated <a href="https://www.baeldung.com/cs/gradient-orientation-magnitude#:~:text=2.%20What%20Is-,Gradient%20Orientation,-%3F" target="_blank">gradient orientation</a> of input 0.
+							</p>
 						</div>
 					</div>
 				</section>
@@ -1771,7 +1873,7 @@
 
 						<div>
 							<h4>Parameters</h4>
-							<h5>Dilation:</h5>
+							<h5><a href="https://www.mdpi.com/2076-3417/11/22/10716#:~:text=Section%203.11.-,2.%20Dilated%20Filters,-In%20order%20to" target="_blank">Dilation</a>:</h5>
 							<p>
 								Increases the distance between the pixels being sampled by adding null rows and columns to the existing kernel.
 							</p>
