@@ -361,6 +361,10 @@ h5 + p{
     .double{
         aspect-ratio: 2 / 1;
     }
+
+    .triple{
+        aspect-ratio: 3 / 1;
+    }
 }
 
 
