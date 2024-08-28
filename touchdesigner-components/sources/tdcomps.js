@@ -55,7 +55,7 @@ internalAnchorLinks.forEach(item => {
 
 
 // CHEAT SHEET	====================================================================================================================
-const maths = document.querySelectorAll('.maths');
+const maths = document.querySelectorAll('math');
 
 maths.forEach(item => {
     item.addEventListener('contextmenu', e => {
