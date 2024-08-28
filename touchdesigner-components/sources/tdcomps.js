@@ -49,3 +49,17 @@ internalAnchorLinks.forEach(item => {
 		document.querySelector('html').style.scrollBehavior = 'smooth'
 	});
 });
+
+
+
+
+
+// CHEAT SHEET	====================================================================================================================
+const maths = document.querySelectorAll('.maths');
+
+maths.forEach(item => {
+    item.addEventListener('contextmenu', e => {
+        window.open("https://www.maxmain.io/touchdesigner-components/cheat-sheet/", "_blank", "resizable=yes,top=500,left=500,width=400,height=500");
+        // window.open("../../cheat-sheet/", "_blank", "resizable=yes,top=500,left=500,width=400,height=500");
+    });
+});
