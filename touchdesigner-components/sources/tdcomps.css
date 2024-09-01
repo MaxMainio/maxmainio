@@ -24,6 +24,12 @@
 
     --td-top-color: #594F7C;
     --td-top-text-color: #959BCE;
+
+    --td-chop-color: #5e8446;
+    --td-chop-text-color: #8eb874;
+
+    --td-sop-color: #45739f;
+    --td-sop-text-color: #98bbde;
 }
 
 
@@ -182,6 +188,16 @@ h5 + p{
 .top-text{
     padding: 0.2rem 0.1rem 0 0.15rem;
     background-color: var(--td-top-text-color);
+}
+
+.chop-text{
+    padding: 0.2rem 0.1rem 0 0.15rem;
+    background-color: var(--td-chop-text-color);
+}
+
+.sop-text{
+    padding: 0.2rem 0.1rem 0 0.15rem;
+    background-color: var(--td-sop-text-color);
 }
 
 
