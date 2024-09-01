@@ -53,6 +53,10 @@
     &.soon{
         color: var(--anti-type);
     }
+
+    & h3~h3{
+        margin-top: 1rem;
+    }
 }
 
 
