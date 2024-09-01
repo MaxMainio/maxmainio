@@ -22,13 +22,19 @@ article{
     width: 100%;
     height: 100%;
     position: relative;
+
+    & h2{
+        position: sticky;
+        position: -webkit-sticky;
+        top: 3rem;
+    }
 }
 
-.title-column h2{
+/* .title-column h2{
     position: sticky;
     position: -webkit-sticky;
     top: 3rem;
-}
+} */
 
 section{
     -ms-grid-column: 2;

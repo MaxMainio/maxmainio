@@ -7,7 +7,7 @@ Disallow: /about/assets/
 
 Disallow: /touchdesigner-components/assets/no-index/
 Disallow: /touchdesigner-components/cheat-sheet/
-Disallow: /touchdesigner-components/tops/advanced-feature-detectors/assets/no-index/
+Disallow: /touchdesigner-components/tops/advanced-detectors/assets/no-index/
 Disallow: /touchdesigner-components/tops/edge-detectors/assets/no-index/
 Disallow: /touchdesigner-components/tops/fourier-transformers/assets/no-index/
 Disallow: /touchdesigner-components/tops/image-analysis/assets/no-index/
