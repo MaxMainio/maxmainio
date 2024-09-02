@@ -789,7 +789,100 @@
 						<h2>Gradient</h2>
 						<h3>Sub&hyphen;Title</h3>
 						<p>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim diam vulputate ut pharetra sit amet aliquam. Integer eget aliquet nibh praesent tristique magna sit. Massa id neque aliquam vestibulum. Egestas diam in arcu cursus euismod quis viverra nibh. Ultrices vitae auctor eu augue ut lectus arcu bibendum at. Vel risus commodo viverra maecenas accumsan lacus vel facilisis volutpat. Sit amet cursus sit amet dictum sit. Scelerisque mauris pellentesque pulvinar pellentesque habitant morbi tristique. Rutrum quisque non tellus orci ac.
+							This Morphological operation extends the foundational concepts of <a href="https://homepages.inf.ed.ac.uk/rbf/HIPR2/dilate.htm" target="_blank">dilation</a> and <a href="https://homepages.inf.ed.ac.uk/rbf/HIPR2/erode.htm" target="_blank">erosion</a> to provide a nuanced analysis of object boundaries within an image. By measuring the difference between <a href="https://homepages.inf.ed.ac.uk/rbf/HIPR2/dilate.htm" target="_blank">dilation</a> and <a href="https://homepages.inf.ed.ac.uk/rbf/HIPR2/erode.htm" target="_blank">erosion</a> it highlights the edges of objects and enhances the visibility of contours. By focusing on the transitions between <a href="https://medium.com/hackernoon/an-introduction-to-morphological-operations-for-digital-image-text-classification-79cb14bab2d7#:~:text=White%20Pixels%20(1s)%20represent%20the%20foreground." target="_blank">foreground</a> and <a href="https://medium.com/hackernoon/an-introduction-to-morphological-operations-for-digital-image-text-classification-79cb14bab2d7#:~:text=Black%20Pixels%20(0s)%20represent%20the%20background." target="_blank">background regions</a>, the <a href="https://en.wikipedia.org/wiki/Morphological_gradient" target="_blank">Morphological Gradient</a> is particularly useful for tasks such as edge detection, texture analysis, and feature extraction.
+						</p>
+
+						<p>
+							This component offers three distinct methods for calculating <a href="https://en.wikipedia.org/wiki/Morphological_gradient" target="_blank">gradients</a>, each tailored to specific aspects of image structure&colon;
+						</p>
+
+						<h5>
+							<a href="https://en.wikipedia.org/wiki/Morphological_gradient" target="_blank">Gradient</a>&colon;
+						</h5>
+						<p>
+							The standard <a href="https://en.wikipedia.org/wiki/Morphological_gradient" target="_blank">morphological gradient</a> is calculated as the difference between the <a href="https://homepages.inf.ed.ac.uk/rbf/HIPR2/dilate.htm" target="_blank">dilated</a> and <a href="https://homepages.inf.ed.ac.uk/rbf/HIPR2/erode.htm" target="_blank">eroded</a> versions of the input image. This method accentuates the boundaries of objects, making it ideal for general edge detection.
+						</p>
+
+						<p class="maths" title="Right click for a cheat sheet">
+							<math>
+								<mrow>
+									<mi>g</mi>
+									<mo>= &lpar;</mo>
+									<mi>I</mi>
+									<mo>&oplus;</mo>
+									<mi>s</mi>
+									<mo> &rpar; &minus; &lpar;</mo>
+									<mi>I</mi>
+									<mo>&ominus;</mo>
+									<mi>s</mi>
+									<mo> &rpar; =</mo>
+									<mi>&delta;</mi>
+									<mo>&minus;</mo>
+									<mi>&epsilon;</mi>
+								</mrow>
+							</math>
+						</p>
+
+						<h5>
+							Internal <a href="https://en.wikipedia.org/wiki/Morphological_gradient" target="_blank">Gradient</a>&colon;
+						</h5>
+						<p>
+							Computed as the difference between the original image and its <a href="https://homepages.inf.ed.ac.uk/rbf/HIPR2/erode.htm" target="_blank">eroded</a> version, this method emphasizes the inner edges of <a href="https://medium.com/hackernoon/an-introduction-to-morphological-operations-for-digital-image-text-classification-79cb14bab2d7#:~:text=White%20Pixels%20(1s)%20represent%20the%20foreground." target="_blank">foreground objects</a>. It&rsquo;s particularly useful when the goal is to highlight the boundaries within larger structures.
+						</p>
+
+						<p class="maths" title="Right click for a cheat sheet">
+							<math>
+								<mrow>
+									<mi>g</mi>
+									<mo>=</mo>
+									<mi>I</mi>
+									<mo> &minus; &lpar;</mo>
+									<mi>I</mi>
+									<mo>&ominus;</mo>
+									<mi>s</mi>
+									<mo> &rpar;</mo>
+									<mo>=</mo>
+									<mi>I</mi>
+									<mo>&minus;</mo>
+									<mi>&epsilon;</mi>
+								</mrow>
+							</math>
+						</p>
+
+						<h5>
+							External <a href="https://en.wikipedia.org/wiki/Morphological_gradient" target="_blank">Gradient</a>&colon;
+						</h5>
+						<p>
+							Calculated as the difference between the <a href="https://homepages.inf.ed.ac.uk/rbf/HIPR2/dilate.htm" target="_blank">dilated</a> image and the original, this method focuses on the outer edges of <a href="https://medium.com/hackernoon/an-introduction-to-morphological-operations-for-digital-image-text-classification-79cb14bab2d7#:~:text=White%20Pixels%20(1s)%20represent%20the%20foreground." target="_blank">foreground objects</a>. It&rsquo;s effective for enhancing the external contours and separating closely spaced elements.
+						</p>
+
+						<p class="maths" title="Right click for a cheat sheet">
+							<math>
+								<mrow>
+									<mi>g</mi>
+									<mo>= &lpar;</mo>
+									<mi>I</mi>
+									<mo>&oplus;</mo>
+									<mi>s</mi>
+									<mo> &rpar; &minus;</mo>
+									<mi>I</mi>
+									<mo>=</mo>
+									<mi>&delta;</mi>
+									<mo>&minus;</mo>
+									<mi>I</mi>
+								</mrow>
+							</math>
+						</p>
+
+						<p>
+							By selecting the appropriate <a href="https://en.wikipedia.org/wiki/Morphological_gradient" target="_blank">gradient</a> type, the <a href="https://en.wikipedia.org/wiki/Morphological_gradient" target="_blank">Morphological Gradient</a> component allows for precise control over how boundaries are interpreted and emphasized.
+						</p>
+
+						<h5>Resources:</h5>
+						<p>
+							<a href="https://github.com/MaxMainio/TD_" target="_blank">Download the .tox files</a><br>
+							<a href="https://homepages.inf.ed.ac.uk/rbf/HIPR2/morops.htm" target="_blank">HIPR2 Morphology documentation</a><br>
+							<a href="https://en.wikipedia.org/wiki/Morphological_gradient" target="_blank">Morphological Gradient on wikipedia</a>
 						</p>
 					</div>
 
@@ -866,6 +959,11 @@
 
 						<div>
 							<h4>Parameters</h4>
+							<h5>Method:</h5>
+							<p>
+								Selects the type of gradient to compute.
+							</p>
+
 							<h5>Depth:</h5>
 							<p>
 								Specifies the number of iterations that the morphological operation will be applied to the input image.
