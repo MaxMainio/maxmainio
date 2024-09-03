@@ -76,7 +76,7 @@
 						<p>
 							Index:<br>
 							<a href="#dilate-erode" target="_self">Dilate/Erode</a>, <a href="#gradient" target="_self">Gradient</a>, <a href="#hit-or-miss" target="_self">Hit or Miss</a>, <a href="#opening-closing" target="_self">Opening/Closing</a>,<br>
-							<a href="#hit-or-miss" target="_self">Hit or Miss</a>, <a href="#perimeter" target="_self">Perimeter</a>, <a href="#smoothing" target="_self">Smoothing</a>, <a href="#thinning-thickening" target="_self">Thinning/Thickening</a>,<br>
+							<a href="#hit-or-miss" target="_self">Hit&hyphen;or&hyphen;Miss</a>, <a href="#perimeter" target="_self">Perimeter</a>, <a href="#smoothing" target="_self">Smoothing</a>, <a href="#thinning-thickening" target="_self">Thinning/Thickening</a>,<br>
 							<a href="#top-bottom-hat" target="_self">Top/Bottom Hat</a>
 						</p>
 					</div>
@@ -1020,10 +1020,140 @@
 
 				<section id="hit-or-miss" class="documentation">
 					<div class="docuinfo">
-						<h2>Hit or Miss</h2>
+						<h2>Hit&hyphen;or&hyphen;Miss</h2>
 						<h3>Sub&hyphen;Title</h3>
 						<p>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim diam vulputate ut pharetra sit amet aliquam. Integer eget aliquet nibh praesent tristique magna sit. Massa id neque aliquam vestibulum. Egestas diam in arcu cursus euismod quis viverra nibh. Ultrices vitae auctor eu augue ut lectus arcu bibendum at. Vel risus commodo viverra maecenas accumsan lacus vel facilisis volutpat. Sit amet cursus sit amet dictum sit. Scelerisque mauris pellentesque pulvinar pellentesque habitant morbi tristique. Rutrum quisque non tellus orci ac.
+							The <a href="https://homepages.inf.ed.ac.uk/rbf/HIPR2/hitmiss.htm" target="_blank">Hit&hyphen;or&hyphen;Miss transformation</a> offers a nuanced method to detect specific patterns of pixels within an image. Unlike simpler <a href="https://homepages.inf.ed.ac.uk/rbf/HIPR2/morops.htm" target="_blank">morphological operations</a>, the <a href="https://homepages.inf.ed.ac.uk/rbf/HIPR2/hitmiss.htm" target="_blank">Hit&hyphen;or&hyphen;Miss</a> utilizes a more complex <a href="https://www.ni.com/docs/en-US/bundle/ni-vision-concepts-help/page/structuring_elements.html#:~:text=Morphological%20transformations%20use%20a%202D,the%20boundary%20of%20a%20particle." target="_blank">structuring element</a>, one that considers both <a href="https://medium.com/hackernoon/an-introduction-to-morphological-operations-for-digital-image-text-classification-79cb14bab2d7#:~:text=White%20Pixels%20(1s)%20represent%20the%20foreground." target="_blank">foreground</a> and <a href="https://medium.com/hackernoon/an-introduction-to-morphological-operations-for-digital-image-text-classification-79cb14bab2d7#:~:text=Black%20Pixels%20(0s)%20represent%20the%20background." target="_blank">background pixels</a>, often referred to as a <a href="https://en.wikipedia.org/wiki/Structuring_element#:~:text=When%20used%20by%20a%20hit,the%20image%20to%20be%20probed." target="_blank">Composite Structuring Element</a>.
+						</p>
+
+						<p>
+							The operation works by parsing the input image with a chosen set of composite structuring elements. For example, when the component&rsquo;s <i>Mode</i> parameter is set to <i>Corners 1</i>, as shown in the example on the right, the input image will be parsed with the following composite structuring elements&colon;
+						</p>
+
+						<p class="maths" title="Right click for a cheat sheet">
+							<math>
+								<mrow>
+									<msub>
+										<mi>s</mi>
+										<mn>1</mn>
+									</msub>
+									<mo>=</mo>
+									<mo>&lsqb;</mo>
+									<mtable>
+										<mtr>
+											<mtd><mn>0</mn></mtd>
+											<mtd><mn>1</mn></mtd>
+											<mtd><mn>1</mn></mtd>
+										</mtr>
+										<mtr>
+											<mtd><mn>x</mn></mtd>
+											<mtd><mn>1</mn></mtd>
+											<mtd><mn>1</mn></mtd>
+										</mtr>
+										<mtr>
+											<mtd><mn>x</mn></mtd>
+											<mtd><mn>x</mn></mtd>
+											<mtd><mn>0</mn></mtd>
+										</mtr>
+									</mtable>
+									<mo>&rsqb;</mo>
+									<mo>,</mo>
+								</mrow>
+							</math>
+
+							<math>
+								<mrow>
+									<msub>
+										<mi>s</mi>
+										<mn>2</mn>
+									</msub>
+									<mo>=</mo>
+									<mo>&lsqb;</mo>
+									<mtable>
+										<mtr>
+											<mtd><mn>x</mn></mtd>
+											<mtd><mn>x</mn></mtd>
+											<mtd><mn>0</mn></mtd>
+										</mtr>
+										<mtr>
+											<mtd><mn>x</mn></mtd>
+											<mtd><mn>1</mn></mtd>
+											<mtd><mn>1</mn></mtd>
+										</mtr>
+										<mtr>
+											<mtd><mn>0</mn></mtd>
+											<mtd><mn>1</mn></mtd>
+											<mtd><mn>1</mn></mtd>
+										</mtr>
+									</mtable>
+									<mo>&rsqb;</mo>
+									<mo>,</mo>
+								</mrow>
+							</math>
+
+							<math>
+								<mrow>
+									<msub>
+										<mi>s</mi>
+										<mn>3</mn>
+									</msub>
+									<mo>=</mo>
+									<mo>&lsqb;</mo>
+									<mtable>
+										<mtr>
+											<mtd><mn>0</mn></mtd>
+											<mtd><mn>x</mn></mtd>
+											<mtd><mn>x</mn></mtd>
+										</mtr>
+										<mtr>
+											<mtd><mn>1</mn></mtd>
+											<mtd><mn>1</mn></mtd>
+											<mtd><mn>x</mn></mtd>
+										</mtr>
+										<mtr>
+											<mtd><mn>1</mn></mtd>
+											<mtd><mn>1</mn></mtd>
+											<mtd><mn>0</mn></mtd>
+										</mtr>
+									</mtable>
+									<mo>&rsqb;</mo>
+									<mo>, </mo>
+									<mi>&amp;</mi>
+								</mrow>
+							</math>
+
+							<math>
+								<mrow>
+									<msub>
+										<mi>s</mi>
+										<mn>4</mn>
+									</msub>
+									<mo>=</mo>
+									<mo>&lsqb;</mo>
+									<mtable>
+										<mtr>
+											<mtd><mn>1</mn></mtd>
+											<mtd><mn>1</mn></mtd>
+											<mtd><mn>0</mn></mtd>
+										</mtr>
+										<mtr>
+											<mtd><mn>1</mn></mtd>
+											<mtd><mn>1</mn></mtd>
+											<mtd><mn>x</mn></mtd>
+										</mtr>
+										<mtr>
+											<mtd><mn>0</mn></mtd>
+											<mtd><mn>x</mn></mtd>
+											<mtd><mn>x</mn></mtd>
+										</mtr>
+									</mtable>
+									<mo>&rsqb;</mo>
+								</mrow>
+							</math>
+						</p>
+
+						<p>
+							Notice, each consecutive element in the set is the previous one rotated by 90&deg;. This ensures that the operation can detect the desired feature regardless of its orientation in the image.
 						</p>
 					</div>
 
