@@ -40,6 +40,30 @@
 
 
 
+/* TYPE ------------------------------------------------------------------------------------------------------------------------- */
+ol{
+    font-weight: 300;
+    font-size: 0.8rem;
+    line-height: 1.1rem;
+    letter-spacing: 0.5px;
+
+    margin-top: 0.5rem;
+    max-width: 60ch;
+    padding-inline-start: 1rem;
+}
+
+li::marker{
+    text-align: left !important;
+}
+
+
+
+
+
+
+
+
+
 /* CONTENT  --------------------------------------------------------------------------------------------------------------------- */
 article{
     gap: calc(12.5vh - 3rem) 1rem;
