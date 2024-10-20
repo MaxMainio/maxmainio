@@ -75,7 +75,7 @@
 						</p>
 						<p>
 							Index:<br>
-							<a href="#canny" target="_self">Canny</a>, <a href="#gradient" target="_self">Gradient</a>, <a href="#haar-operator" target="_self">Haar Standard</a>, <a href="#haar-operator" target="_self">Haar Steerable</a>, <a href="#kirsch-operator" target="_self">Kirsch Operator</a>, <a href="#kirsch-compass" target="_self">Kirsch Compass</a>, <a href="#kirsch-compass" target="_self">Kirsch Compass Steerable</a>, <a href="#laplacian-operator" target="_self">Laplacian Standard</a>, <a href="#laplacian-superior" target="_self">Laplacian Superior</a>, <a href="#line-detector" target="_self">Line Detector</a>, <a href="#line-detector" target="_self">Line Detector Steerable</a>, <a href="#prewitt-operator" target="_self">Prewitt Standard</a>, <a href="#prewitt-operator" target="_self">Prewitt Steerable</a>, <a href="#roberts-cross" target="_self">Robert&rsquo;s Cross Standard</a>, <a href="#roberts-cross" target="_self">Robert&rsquo;s Cross Steerable</a>, <a href="#sobel-operator" target="_self">Sobel Simple</a>, <a href="#sobel-operator" target="_self">Sobel Standard</a>, <a href="#sobel-operator" target="_self">Sobel Steerable</a>, <a href="#sobel-superior" target="_self">Sobel Superior</a>
+							<a href="#canny" target="_self">Canny</a>, <a href="#gradient" target="_self">Gradient</a>, <a href="#kirsch-operator" target="_self">Kirsch Operator</a>, <a href="#kirsch-compass" target="_self">Kirsch Compass</a>, <a href="#kirsch-compass" target="_self">Kirsch Compass Steerable</a>, <a href="#laplacian-operator" target="_self">Laplacian Standard</a>, <a href="#laplacian-superior" target="_self">Laplacian Superior</a>, <a href="#line-detector" target="_self">Line Detector</a>, <a href="#line-detector" target="_self">Line Detector Steerable</a>, <a href="#prewitt-operator" target="_self">Prewitt Standard</a>, <a href="#prewitt-operator" target="_self">Prewitt Steerable</a>, <a href="#roberts-cross" target="_self">Robert&rsquo;s Cross Standard</a>, <a href="#roberts-cross" target="_self">Robert&rsquo;s Cross Steerable</a>, <a href="#sobel-operator" target="_self">Sobel Simple</a>, <a href="#sobel-operator" target="_self">Sobel Standard</a>, <a href="#sobel-operator" target="_self">Sobel Steerable</a>, <a href="#sobel-superior" target="_self">Sobel Superior</a>
 						</p>
 					</div>
 				</section>
@@ -219,7 +219,7 @@
 
 
 
-					<a href="#haar-operator"
+					<!-- <a href="#haar-operator"
 						target="_self"
 						title="Click here to be taken to the Haar Operators section of this page."
 						class="td-base-comp medium">
@@ -349,7 +349,7 @@
 								<img src="../../assets/content/td-icons/activate-off.webp" class="activate-flag" loading="lazy">
 							</div>
 						</div>
-					</a>
+					</a> -->
 
 
 
@@ -1513,7 +1513,7 @@
 							<h5>Operator:</h5>
 							<p>
 								Selects the specific operator used for gradient calculation. Options include:<br>
-								<a href="#sobel-operator" target="_self">The Sobel operator</a>, <a href="#prewitt-operator" target="_self">the Prewitt operator</a>, <a href="#haar-operator" target="_self">the Haar operator</a>, and the 1D Laplacian.
+								<a href="#sobel-operator" target="_self">The Sobel operator</a>, <a href="#prewitt-operator" target="_self">the Prewitt operator</a>, 2x2 Gradient Kernel, or the 1D Gradient Kernel.
 							</p>
 	
 							<h5>Type:</h5>
@@ -1565,9 +1565,80 @@
 				<section id="gradient" class="documentation">
 					<div class="docuinfo">
 						<h2>Gradient</h2>
-						<h3>Gradient Magnitude &amp; Edge Orientation</h3>
+						<h3><a href="https://pyimagesearch.com/2021/05/12/image-gradients-with-opencv-sobel-and-scharr/#:~:text=The-,gradient%20magnitude,-is%20used%20to" target="_blank">Gradient Magnitude</a> &amp; <a href="https://pyimagesearch.com/2021/05/12/image-gradients-with-opencv-sobel-and-scharr/#:~:text=The-,gradient%20orientation,-is%20used%20to" target="_blank">Edge Orientation</a></h3>
 						<p>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim diam vulputate ut pharetra sit amet aliquam. Integer eget aliquet nibh praesent tristique magna sit. Massa id neque aliquam vestibulum. Egestas diam in arcu cursus euismod quis viverra nibh. Ultrices vitae auctor eu augue ut lectus arcu bibendum at. Vel risus commodo viverra maecenas accumsan lacus vel facilisis volutpat. Sit amet cursus sit amet dictum sit. Scelerisque mauris pellentesque pulvinar pellentesque habitant morbi tristique. Rutrum quisque non tellus orci ac.
+							This component calculates the <a href="https://pyimagesearch.com/2021/05/12/image-gradients-with-opencv-sobel-and-scharr/#:~:text=The-,gradient%20magnitude,-is%20used%20to" target="_blank">Gradient Magnitude</a> &lpar;<math><mrow><mi>G</mi></mrow></math>&rpar; and <a href="https://pyimagesearch.com/2021/05/12/image-gradients-with-opencv-sobel-and-scharr/#:~:text=The-,gradient%20orientation,-is%20used%20to" target="_blank">Edge Orientation</a> &lpar;<math><mrow><mi>&Theta;</mi></mrow></math>&rpar; of the input image, providing crucial information for edge detection and image analysis tasks. By determining how pixel intensity changes across an image, the <a href="https://pyimagesearch.com/2021/05/12/image-gradients-with-opencv-sobel-and-scharr/#:~:text=The-,gradient%20magnitude,-is%20used%20to" target="_blank">Gradient Magnitude</a> &lpar;<math><mrow><mi>G</mi></mrow></math>&rpar; highlights areas with the most significant variations, while the <a href="https://pyimagesearch.com/2021/05/12/image-gradients-with-opencv-sobel-and-scharr/#:~:text=The-,gradient%20orientation,-is%20used%20to" target="_blank">Edge Orientation</a> &lpar;<math><mrow><mi>&Theta;</mi></mrow></math>&rpar; identifies the direction of those changes. These two outputs are essential for processes like edge thinning, feature extraction, and boundary detection.
+						</p>
+
+						<p>
+							The Gradient component allows users to choose which edge detection method will be used in the <a href="https://pyimagesearch.com/2021/05/12/image-gradients-with-opencv-sobel-and-scharr/#:~:text=The-,gradient%20magnitude,-is%20used%20to" target="_blank">Gradient Magnitude</a> &lpar;<math><mrow><mi>G</mi></mrow></math>&rpar; and <a href="https://pyimagesearch.com/2021/05/12/image-gradients-with-opencv-sobel-and-scharr/#:~:text=The-,gradient%20orientation,-is%20used%20to" target="_blank">Edge Orientation</a> &lpar;<math><mrow><mi>&Theta;</mi></mrow></math>&rpar; calculations, from TouchDesigner&rsquo;s built&hyphen;in Slope TOP or any of the following edge detectors&colon;<br>
+							<a href="#sobel-operator" target="_self">Sobel and its 3 main variants</a>, <a href="#prewitt-operator" target="_self">Prewitt</a>, 2x2 Gradient Kernel, or the 1D Gradient Kernel.
+						</p>
+
+						<p>
+							The <a href="https://pyimagesearch.com/2021/05/12/image-gradients-with-opencv-sobel-and-scharr/#:~:text=The-,gradient%20magnitude,-is%20used%20to" target="_blank">Gradient Magnitude</a> &lpar;<math><mrow><mi>G</mi></mrow></math>&rpar; and <a href="https://pyimagesearch.com/2021/05/12/image-gradients-with-opencv-sobel-and-scharr/#:~:text=The-,gradient%20orientation,-is%20used%20to" target="_blank">Edge Orientation</a> &lpar;<math><mrow><mi>&Theta;</mi></mrow></math>&rpar; are derived by calculating the horizontal &lpar;<math><mrow><msub><mi>g</mi><mn>x</mn></msub></mrow></math>&rpar; and vertical &lpar;<math><mrow><msub><mi>g</mi><mn>y</mn></msub></mrow></math>&rpar; <a href="https://en.wikipedia.org/wiki/Image_gradient" target="_blank">gradients</a> of the input image. These <a href="https://en.wikipedia.org/wiki/Image_gradient" target="_blank">gradients</a> represent the rate of change in pixel intensity in both directions, and together they form a complete picture of how edges are distributed across the image.
+						</p>
+
+						<p>
+							The <a href="https://pyimagesearch.com/2021/05/12/image-gradients-with-opencv-sobel-and-scharr/#:~:text=The-,gradient%20magnitude,-is%20used%20to" target="_blank">Gradient Magnitude</a> &lpar;<math><mrow><mi>G</mi></mrow></math>&rpar; is computed using the Pythagorean theorem, measuring the overall intensity of the edge at each pixel&colon;
+						</p>
+
+						<p class="maths" title="Right click for a cheat sheet">
+							<math>
+								<mrow>
+									<mi>G</mi>
+									<mo>=</mo>
+									<msqrt>
+										<msubsup>
+											<mi>g</mi>
+											<mn>x</mn>
+											<mn>2</mn>
+										</msubsup>
+										<mo>+</mo>
+										<msubsup>
+											<mi>g</mi>
+											<mn>y</mn>
+											<mn>2</mn>
+										</msubsup>
+									</msqrt>
+								</mrow>
+							</math>
+						</p>
+
+						<p>
+							The <a href="https://pyimagesearch.com/2021/05/12/image-gradients-with-opencv-sobel-and-scharr/#:~:text=The-,gradient%20orientation,-is%20used%20to" target="_blank">Edge Orientation</a> &lpar;<math><mrow><mi>&Theta;</mi></mrow></math>&rpar; is calculated using the arctangent function, which determines the direction of the edge relative to the horizontal axis&colon;
+						</p>
+
+						<p class="maths" title="Right click for a cheat sheet">
+							<math>
+								<mrow>
+									<mi>&Theta;</mi>
+									<mi>atan2</mi>
+									<mo>&lpar;</mo>
+									<msub>
+										<mi>g</mi>
+										<mn>y</mn>
+									</msub>
+									<mo>,</mo>
+									<mspace width="0.3rem"></mspace>
+									<msub>
+										<mi>g</mi>
+										<mn>x</mn>
+									</msub>
+									<mo>&rpar;</mo>
+								</mrow>
+							</math>
+						</p>
+
+						<p>
+							These formulas provide a robust method for understanding both the strength and direction of edges in an image, critical for edge refinement techniques such as non-maximum suppression and other advanced image processing tasks.
+						</p>
+
+						<h5>Resources:</h5>
+						<p>
+							<a href="https://github.com/MaxMainio/TD_" target="_blank">Download the .tox files</a><br>
+							<a href="https://pyimagesearch.com/2021/05/12/image-gradients-with-opencv-sobel-and-scharr/" target="_blank">pyimagesearch description of image gradients</a><br>
+							<a href="https://theailearner.com/2019/05/11/understanding-image-gradients/" target="_blank">TheAILearner's <i>Understanding Image Gradients</i></a>
 						</p>
 					</div>
 
@@ -1677,7 +1748,7 @@
 							<h5>Operator:</h5>
 							<p>
 								Selects the specific operator used for gradient calculation. Options include:<br>
-								<a href="#sobel-operator" target="_self">The Sobel operator</a>, <a href="#prewitt-operator" target="_self">the Prewitt operator</a>, <a href="#haar-operator" target="_self">the Haar operator</a>, and the 1D Laplacian.
+								<a href="#sobel-operator" target="_self">The Sobel operator</a>, <a href="#prewitt-operator" target="_self">the Prewitt operator</a>, 2x2 Gradient Kernel, or the 1D Gradient Kernel.
 							</p>
 	
 							<h5>Type:</h5>
@@ -1744,7 +1815,7 @@
 
 				<hr/>
 
-				<section id="haar-operator" class="documentation">
+				<!-- <section id="haar-operator" class="documentation">
 					<div class="docuinfo">
 						<h2><a href="https://en.wikipedia.org/wiki/Haar_wavelet#Haar_matrix:~:text=is%20also%20continuous.-,Haar%20matrix,-%5Bedit%5D" target="_blank">Haar Operator</a></h2>
 						<h3>Standard &amp; Steerable</h3>
@@ -1947,7 +2018,7 @@
 					</div>
 				</section>
 
-				<hr/>
+				<hr/> -->
 
 				<section id="kirsch-operator" class="documentation">
 					<div class="docuinfo">
@@ -2487,10 +2558,6 @@
 					<div class="docuinfo">
 						<h2>Laplacian Operator</h2>
 						<h3>Standard kernel set</h3>
-						<p>
-							Lorem ipsum
-						</p>
-
 						<p>
 							Due to its reliance on second derivatives, the Laplacian Operator can be more sensitive to noise. Pre-smoothing the image with a Gaussian filter is often recommended to mitigate this issue and improve performance.
 						</p>
