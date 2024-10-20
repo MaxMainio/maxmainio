@@ -28,11 +28,11 @@
 
 		<link rel="stylesheet" type="text/css" href="../../../../sources/global/main.css">
 		<link rel="stylesheet" type="text/css" href="../../../../sources/subpages/subpage.css">
-		<link rel="stylesheet" type="text/css" href="../../sources/tdcomps.css">
+		<link rel="stylesheet" type="text/css" href="../sources/tdcomps.css">
 		<!-- <link rel="stylesheet" type="text/css" href="sources/cheat-sheet.css"> -->
 
-		<script src="../../../../sources/global/main.js" defer></script>
-		<script src="../../sources/tdcomps.js" defer></script>
+		<script src="../../sources/global/main.js" defer></script>
+		<script src="../sources/tdcomps.js" defer></script>
 	</head>
 
 	<body>
@@ -66,12 +66,178 @@
 				<section class="context-container">
 					<div class="context">
 						<h1 id="title">Cheat Sheet</h1>
-						<h id="sub-title">TD Pseudomathematical Notation</h2>
+						<h2 id="sub-title">TD Pseudomathematical Notation</h2>
 						<p>
-							This is where I will be gathering a user guide &sol; manual to the pseudo mathematical notation I'll be using to describe image processing concepts.
+							This is where I will be gathering a user guide &sol; manual &sol; cheat sheet of &amp; for the pseudo mathematical notation I'll be using to describe image processing concepts.
 						</p>
-						<p>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim diam vulputate ut pharetra sit amet aliquam. Integer eget aliquet nibh praesent tristique magna sit. Massa id neque aliquam vestibulum. Egestas diam in arcu cursus euismod quis viverra nibh. Ultrices vitae auctor eu augue ut lectus arcu bibendum at. Vel risus commodo viverra maecenas accumsan lacus vel facilisis volutpat. Sit amet cursus sit amet dictum sit. Scelerisque mauris pellentesque pulvinar pellentesque habitant morbi tristique. Rutrum quisque non tellus orci ac.
+					</div>
+				</section>
+
+				<div id="hidden-divider"></div>
+
+				<section class="notation-category">
+					<h3>General Notation:</h3>
+
+					<div class="notation-entry">
+						<span class="notation-symbol"><math><mrow><mi>I</mi></mrow></math> &mdash;</span>
+
+						<p class="notation-description">
+							<span class="notation-title">Image</span>
+						</p>
+					</div>
+				</section>
+
+				<hr/>
+
+				<section class="notation-category">
+					<h3>Edge Detection:</h3>
+
+					<div class="notation-entry">
+						<span class="notation-symbol"><math><mrow><mi>g</mi></mrow></math> &mdash;</span>
+						
+						<p class="notation-description">
+							<span class="notation-title">Gradient:</span><br>
+							Represents the image gradient, which measures the change in pixel intensity between neighboring pixels.<br>
+							Sub&hyphen;scripts indicate the orientation of the calculated gradient, e.g.<br>
+							<math><mrow><msub><mi>g</mi><mn>x</mn></msub><mo>=</mo></mrow></math> gradient along the x&hyphen;axis, <math><mrow><msub><mi>g</mi><mn>y</mn></msub><mo>=</mo></mrow></math> gradient along the y&hyphen;axis,
+							<math><mrow><msub><mi>g</mi><mn>N</mn></msub><mo>=</mo></mrow></math> gradient oriented towards the North,
+							<math><mrow><msub><mi>g</mi><mn>NE</mn></msub><mo>=</mo></mrow></math> gradient oriented towards the Northeast, etc...<br>
+							The outlier <math><mrow><msub><mi>g</mi><mn>max</mn></msub><mo>=</mo></mrow></math> represents the maximum response from all directional gradients, identifying the strongest edge detected across all orientations.
+						</p>
+					</div>
+
+					<div class="notation-entry">
+						<span class="notation-symbol"><math><mrow><mi>G</mi></mrow></math> &mdash;</span>
+						
+						<p class="notation-description">
+							<span class="notation-title">Gradient Magnitude:</span><br>
+							The overall strength of the gradient at a pixel, calculated using the Pythagorean theorem and the images horizontal and vertical gradients.<br>
+
+							<math class="outline">
+								<mrow>
+									<mi>G</mi>
+									<mo>=</mo>
+									<msqrt>
+										<msubsup>
+											<mi>g</mi>
+											<mn>x</mn>
+											<mn>2</mn>
+										</msubsup>
+										<mo>+</mo>
+										<msubsup>
+											<mi>g</mi>
+											<mn>y</mn>
+											<mn>2</mn>
+										</msubsup>
+									</msqrt>
+								</mrow>
+							</math>
+						</p>
+					</div>
+
+					<div class="notation-entry">
+						<span class="notation-symbol"><math><mrow><mi>&Theta;</mi></mrow></math> &mdash;</span>
+						
+						<p class="notation-description">
+							<span class="notation-title">Edge Orientation:</span><br>
+							The direction of the gradient relative to the x-axis, indicating the angle or orientation of an edge. It is computed using the arctangent function and the images horizontal and vertical gradients.<br>
+
+							<math>
+								<mrow>
+									<mi>&Theta;</mi>
+									<mi>atan2</mi>
+									<mo>&lpar;</mo>
+									<msub>
+										<mi>g</mi>
+										<mn>y</mn>
+									</msub>
+									<mo>,</mo>
+									<mspace width="0.3rem"></mspace>
+									<msub>
+										<mi>g</mi>
+										<mn>x</mn>
+									</msub>
+									<mo>&rpar;</mo>
+								</mrow>
+							</math>
+						</p>
+					</div>
+
+					<div class="notation-entry">
+						<span class="notation-symbol"><math><mrow><mi>k</mi></mrow></math> &mdash;</span>
+						
+						<p class="notation-description">
+							<span class="notation-title">Kernel:</span><br>
+							A matrix applied to an image during convolution, used for tasks such as blurring, sharpening, embossing, and edge detection. Each pixel in the output image is a function of the nearby pixels in the input image, and the kernel defines how this function operates.
+						</p>
+					</div>
+				</section>
+
+				<hr/>
+
+				<section class="notation-category">
+					<h3>Morphology:</h3>
+
+					<div class="notation-entry">
+						<span class="notation-symbol"><math><mrow><mi>&oplus;</mi></mrow></math> &mdash;</span>
+						
+						<p class="notation-description">
+							<span class="notation-title">Dialation:</span><br>
+							Lorem ipsum...
+						</p>
+					</div>
+
+					<div class="notation-entry">
+						<span class="notation-symbol"><math><mrow><mi>&ominus;</mi></mrow></math> &mdash;</span>
+						
+						<p class="notation-description">
+							<span class="notation-title">Erosion:</span><br>
+							Lorem ipsum...
+						</p>
+					</div>
+
+					<div class="notation-entry">
+						<span class="notation-symbol"><math><mrow><mi>&delta;</mi></mrow></math> &mdash;</span>
+						
+						<p class="notation-description">
+							<span class="notation-title">Dialated Image:</span><br>
+							Lorem ipsum...
+						</p>
+					</div>
+
+					<div class="notation-entry">
+						<span class="notation-symbol"><math><mrow><mi>&epsilon;</mi></mrow></math> &mdash;</span>
+						
+						<p class="notation-description">
+							<span class="notation-title">Eroded Image:</span><br>
+							Lorem ipsum...
+						</p>
+					</div>
+
+					<div class="notation-entry">
+						<span class="notation-symbol"><math><mrow><mi>&gamma;</mi></mrow></math> &mdash;</span>
+						
+						<p class="notation-description">
+							<span class="notation-title">Opened Image:</span><br>
+							Lorem ipsum...
+						</p>
+					</div>
+
+					<div class="notation-entry">
+						<span class="notation-symbol"><math><mrow><mi>&phi;</mi></mrow></math> &mdash;</span>
+						
+						<p class="notation-description">
+							<span class="notation-title">Closed Image:</span><br>
+							Lorem ipsum...
+						</p>
+					</div>
+
+					<div class="notation-entry">
+						<span class="notation-symbol"><math><mrow><mi>s</mi></mrow></math> &mdash;</span>
+						
+						<p class="notation-description">
+							<span class="notation-title">Structuring Element:</span><br>
+							Lorem ipsum...
 						</p>
 					</div>
 				</section>
