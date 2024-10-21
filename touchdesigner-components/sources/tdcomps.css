@@ -513,7 +513,11 @@ h5 + p{
     text-align: left;
 
     & > math.outline{
-        margin: 0.5rem 0 0.25rem 0;
+        margin: 0.5rem 0;
+    }
+
+    & > math.underline{
+        margin: 0 0 0.5rem 0;
     }
 }
 
