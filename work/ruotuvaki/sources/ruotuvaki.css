@@ -28,11 +28,13 @@
 }
 
 .carousel-button.prev{
-    cursor: url(../../../assets/cursors/left-cursor.svg) 32 32, pointer;
+    cursor: w-resize;
+    /* cursor: url(../../../assets/cursors/left-cursor.svg) 32 32, pointer; */
 }
 
 .carousel-button.next{
-    cursor: url(../../../assets/cursors/right-cursor.svg) 32 32, pointer;
+    cursor: e-resize;
+    /* cursor: url(../../../assets/cursors/right-cursor.svg) 32 32, pointer; */
 }
 
 #varjo-container{

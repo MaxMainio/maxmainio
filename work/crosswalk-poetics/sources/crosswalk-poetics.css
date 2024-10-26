@@ -105,6 +105,7 @@ video{
     -webkit-transform-style: preserve-3d;
             transform-style: preserve-3d;
 
+    pointer-events: all;
     cursor: var(--leftCursor);
 }
 
@@ -123,6 +124,7 @@ video{
     -webkit-transform-style: preserve-3d;
             transform-style: preserve-3d;
 
+    pointer-events: all;
     cursor: var(--rightCursor);
 }
 
