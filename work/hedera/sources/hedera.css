@@ -227,15 +227,14 @@
     -webkit-appearance: none;
     appearance: none;
     width: 100%;
-    height: 1px;
-    background: var(--typeHeights);
+    background: linear-gradient(90deg, var(--type-color) 0%, rgba(51, 51, 51, 0) 100%);
     outline: none;
 }
 
 .slider::-webkit-slider-thumb{
     -webkit-appearance: none;
     appearance: none;
-    width: 1rem;
+    width: 0.5rem;
     height: 1rem;
     background: var(--green);
     cursor: var(--sliderCursor);
