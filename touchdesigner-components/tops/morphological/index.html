@@ -75,9 +75,7 @@
 						</p>
 						<p>
 							Index:<br>
-							<a href="#dilate-erode" target="_self">Dilate/Erode</a>, <a href="#gradient" target="_self">Gradient</a>, <a href="#hit-or-miss" target="_self">Hit&hyphen;or&hyphen;Miss</a>, <a href="#opening-closing" target="_self">Opening/Closing</a>,<br>
-							<a href="#perimeter" target="_self">Perimeter</a>, <a href="#smoothing" target="_self">Smoothing</a>, <a href="#thinning-thickening" target="_self">Thinning/Thickening</a>,<br>
-							<a href="#top-bottom-hat" target="_self">Top/Bottom Hat</a>
+							<a href="#dilate-erode" target="_self">Dilate/Erode</a>, <a href="#dynamic-dilate-erode" target="_self">Dynamic Dilate/Erode</a>, <a href="#gradient" target="_self">Gradient</a>, <a href="#hit-or-miss" target="_self">Hit&hyphen;or&hyphen;Miss</a>, <a href="#opening-closing" target="_self">Opening/Closing</a>, <a href="#perimeter" target="_self">Perimeter</a>, <a href="#smoothing" target="_self">Smoothing</a>, <a href="#thinning-thickening" target="_self">Thinning/Thickening</a>, <a href="#top-bottom-hat" target="_self">Top/Bottom Hat</a>
 						</p>
 					</div>
 				</section>
@@ -701,11 +699,11 @@
 						</p>
 						<p>
 							<a href="https://homepages.inf.ed.ac.uk/rbf/HIPR2/dilate.htm" target="_blank">Dilation</a> 
-							<span title="Right click for a cheat sheet">&lpar; <math><mi>&delta;</mi><mo>=</mo><mi>I</mi><mo>&oplus;</mo><mi>s</mi></math> &rpar;</span> expands the boundaries of regions containing <a href="https://medium.com/hackernoon/an-introduction-to-morphological-operations-for-digital-image-text-classification-79cb14bab2d7#:~:text=White%20Pixels%20(1s)%20represent%20the%20foreground." target="_blank">foreground pixels</a> (typically white pixels), effectively enlarging objects in the image. This operation is useful for <a href="https://homepages.inf.ed.ac.uk/rbf/HIPR2/dilate.htm#:~:text=fill%20in%20small%20spurious%20holes" target="_blank">closing small holes</a> and connecting disjointed elements within the image, making it ideal for tasks like filling gaps or enhancing specific features.
+							<span title="Right click for a cheat sheet">&lpar; <math><mi>I</mi><mi>&delta;</mi><mo>=</mo><mi>I</mi><mo>&oplus;</mo><mi>s</mi></math> &rpar;</span> expands the boundaries of regions containing <a href="https://medium.com/hackernoon/an-introduction-to-morphological-operations-for-digital-image-text-classification-79cb14bab2d7#:~:text=White%20Pixels%20(1s)%20represent%20the%20foreground." target="_blank">foreground pixels</a> (typically white pixels), effectively enlarging objects in the image. This operation is useful for <a href="https://homepages.inf.ed.ac.uk/rbf/HIPR2/dilate.htm#:~:text=fill%20in%20small%20spurious%20holes" target="_blank">closing small holes</a> and connecting disjointed elements within the image, making it ideal for tasks like filling gaps or enhancing specific features.
 						</p>
 						<p>
 							<a href="https://homepages.inf.ed.ac.uk/rbf/HIPR2/erode.htm" target="_blank">Erosion</a> 
-							<span title="Right click for a cheat sheet">&lpar; <math><mi>&epsilon;</mi><mo>=</mo><mi>I</mi><mo>&ominus;</mo><mi>s</mi></math> &rpar;</span>, on the other hand, contracts the boundaries of regions containing <a href="https://medium.com/hackernoon/an-introduction-to-morphological-operations-for-digital-image-text-classification-79cb14bab2d7#:~:text=White%20Pixels%20(1s)%20represent%20the%20foreground." target="_blank">foreground pixels</a>. This operation is used to shrink objects, <a href="https://homepages.inf.ed.ac.uk/rbf/HIPR2/erode.htm#:~:text=remove%20small%20spurious%20bright%20spots" target="_blank">remove small noise</a>, and <a href="https://homepages.inf.ed.ac.uk/rbf/HIPR2/erode.htm#:~:text=segment%20this%20region%20into%20separate%20coins" target="_blank">separate connected elements</a>, making it particularly useful for refining object boundaries and eliminating minor imperfections.
+							<span title="Right click for a cheat sheet">&lpar; <math><mi>I</mi><mi>&epsilon;</mi><mo>=</mo><mi>I</mi><mo>&ominus;</mo><mi>s</mi></math> &rpar;</span>, on the other hand, contracts the boundaries of regions containing <a href="https://medium.com/hackernoon/an-introduction-to-morphological-operations-for-digital-image-text-classification-79cb14bab2d7#:~:text=White%20Pixels%20(1s)%20represent%20the%20foreground." target="_blank">foreground pixels</a>. This operation is used to shrink objects, <a href="https://homepages.inf.ed.ac.uk/rbf/HIPR2/erode.htm#:~:text=remove%20small%20spurious%20bright%20spots" target="_blank">remove small noise</a>, and <a href="https://homepages.inf.ed.ac.uk/rbf/HIPR2/erode.htm#:~:text=segment%20this%20region%20into%20separate%20coins" target="_blank">separate connected elements</a>, making it particularly useful for refining object boundaries and eliminating minor imperfections.
 						</p>
 						<p>
 							In conjunction, the <a href="https://homepages.inf.ed.ac.uk/rbf/HIPR2/dilate.htm" target="_blank">Dilate</a>&sol;<a href="https://homepages.inf.ed.ac.uk/rbf/HIPR2/erode.htm" target="_blank">Erode</a> component allows for precise control over the structure and features within an image, making it indispensable for tasks such as feature extraction, noise reduction, and image pre-processing.
@@ -1028,8 +1026,10 @@
 									<mo>&ominus;</mo>
 									<mi>s</mi>
 									<mo> &rpar; =</mo>
+									<mi>I</mi>
 									<mi>&delta;</mi>
 									<mo>&minus;</mo>
+									<mi>I</mi>
 									<mi>&epsilon;</mi>
 								</mrow>
 							</math>
@@ -1045,7 +1045,10 @@
 						<p class="maths" title="Right click for a cheat sheet">
 							<math>
 								<mrow>
-									<mi>g</mi>
+									<msub>
+										<mi>g</mi>
+										<mi>int</mi>
+									</msub>
 									<mo>=</mo>
 									<mi>I</mi>
 									<mo> &minus; &lpar;</mo>
@@ -1056,6 +1059,7 @@
 									<mo>=</mo>
 									<mi>I</mi>
 									<mo>&minus;</mo>
+									<mi>I</mi>
 									<mi>&epsilon;</mi>
 								</mrow>
 							</math>
@@ -1071,7 +1075,10 @@
 						<p class="maths" title="Right click for a cheat sheet">
 							<math>
 								<mrow>
-									<mi>g</mi>
+									<msub>
+										<mi>g</mi>
+										<mi>ext</mi>
+									</msub>
 									<mo>= &lpar;</mo>
 									<mi>I</mi>
 									<mo>&oplus;</mo>
@@ -1079,6 +1086,7 @@
 									<mo> &rpar; &minus;</mo>
 									<mi>I</mi>
 									<mo>=</mo>
+									<mi>I</mi>
 									<mi>&delta;</mi>
 									<mo>&minus;</mo>
 									<mi>I</mi>
@@ -1479,12 +1487,12 @@
 
 						<p>
 							<a href="https://homepages.inf.ed.ac.uk/rbf/HIPR2/open.htm" target="_blank">Opening</a> 
-							<span title="Right click for a cheat sheet">&lpar; <math><mi>&gamma;</mi><mo>= &lpar;</mo><mi>I</mi><mo>&ominus;</mo><mi>s</mi><mo>&rpar; &oplus;</mo><mi>s</mi><mo>=</mo><mi>&epsilon;</mi><mo>&oplus;</mo><mi>s</mi></math> &rpar;</span> is the process of first <a href="https://homepages.inf.ed.ac.uk/rbf/HIPR2/erode.htm" target="_blank">eroding</a> and then <a href="https://homepages.inf.ed.ac.uk/rbf/HIPR2/dilate.htm" target="_blank">dilating</a> an image. This sequence is particularly effective at removing small objects or noise while preserving the overall shape and size of larger objects. <a href="https://homepages.inf.ed.ac.uk/rbf/HIPR2/open.htm" target="_blank">Opening</a> is ideal for tasks such as eliminating minor imperfections, separating closely spaced objects, and preparing images for further analysis by removing extraneous details.
+							<span title="Right click for a cheat sheet">&lpar; <math><mi>I</mi><mi>&gamma;</mi><mo>= &lpar;</mo><mi>I</mi><mo>&ominus;</mo><mi>s</mi><mo>&rpar; &oplus;</mo><mi>s</mi><mo>=</mo><mi>I</mi><mi>&epsilon;</mi><mo>&oplus;</mo><mi>s</mi></math> &rpar;</span> is the process of first <a href="https://homepages.inf.ed.ac.uk/rbf/HIPR2/erode.htm" target="_blank">eroding</a> and then <a href="https://homepages.inf.ed.ac.uk/rbf/HIPR2/dilate.htm" target="_blank">dilating</a> an image. This sequence is particularly effective at removing small objects or noise while preserving the overall shape and size of larger objects. <a href="https://homepages.inf.ed.ac.uk/rbf/HIPR2/open.htm" target="_blank">Opening</a> is ideal for tasks such as eliminating minor imperfections, separating closely spaced objects, and preparing images for further analysis by removing extraneous details.
 						</p>
 
 						<p>
 							<a href="https://homepages.inf.ed.ac.uk/rbf/HIPR2/close.htm" target="_blank">Closing</a> 
-							<span title="Right click for a cheat sheet">&lpar; <math><mi>&phi;</mi><mo>= &lpar;</mo><mi>I</mi><mo>&oplus;</mo><mi>s</mi><mo>&rpar; &ominus;</mo><mi>s</mi><mo>=</mo><mi>&delta;</mi><mo>&ominus;</mo><mi>s</mi></math> &rpar;</span> reverses this process by first <a href="https://homepages.inf.ed.ac.uk/rbf/HIPR2/dilate.htm" target="_blank">dilating</a> and then <a href="https://homepages.inf.ed.ac.uk/rbf/HIPR2/erode.htm" target="_blank">eroding</a> an image. This operation is especially useful for filling small holes and gaps within objects, smoothing contours, and connecting adjacent elements that should be unified. <a href="https://homepages.inf.ed.ac.uk/rbf/HIPR2/close.htm" target="_blank">Closing</a> is commonly used in scenarios where it's necessary to enhance the continuity of object structures while still retaining their general form.
+							<span title="Right click for a cheat sheet">&lpar; <math><mi>I</mi><mi>&phi;</mi><mo>= &lpar;</mo><mi>I</mi><mo>&oplus;</mo><mi>s</mi><mo>&rpar; &ominus;</mo><mi>s</mi><mo>=</mo><mi>I</mi><mi>&delta;</mi><mo>&ominus;</mo><mi>s</mi></math> &rpar;</span> reverses this process by first <a href="https://homepages.inf.ed.ac.uk/rbf/HIPR2/dilate.htm" target="_blank">dilating</a> and then <a href="https://homepages.inf.ed.ac.uk/rbf/HIPR2/erode.htm" target="_blank">eroding</a> an image. This operation is especially useful for filling small holes and gaps within objects, smoothing contours, and connecting adjacent elements that should be unified. <a href="https://homepages.inf.ed.ac.uk/rbf/HIPR2/close.htm" target="_blank">Closing</a> is commonly used in scenarios where it's necessary to enhance the continuity of object structures while still retaining their general form.
 						</p>
 
 						<h5>Resources:</h5>
