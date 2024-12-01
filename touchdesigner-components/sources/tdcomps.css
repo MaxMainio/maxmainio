@@ -67,18 +67,12 @@ ul{
     & > li:before{
         content: "_";
         margin: 0 0.3rem 0 -1rem;
-        /* margin-left: -1rem; */
     }
 }
 
 li::marker{
     text-align: left !important;
 }
-
-/* li:before {
-    content: "+";
-    padding-right: 5px;
-} */
 
 
 
