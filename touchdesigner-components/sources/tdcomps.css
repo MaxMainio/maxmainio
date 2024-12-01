@@ -514,6 +514,7 @@ h5 + p{
 .notation-entry {
     display: flex;
     align-items: flex-start;
+    margin-bottom: 1.5rem;
 }
 
 .notation-symbol {

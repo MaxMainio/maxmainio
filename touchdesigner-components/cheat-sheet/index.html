@@ -81,8 +81,10 @@
 					<div id="image" class="notation-entry">
 						<span class="notation-symbol"><math><mrow><mi>I</mi></mrow></math> &mdash;</span>
 
-						<p class="notation-description">
-							<span class="notation-title">Image</span>
+						<p id="img" class="notation-description">
+							<span class="notation-title">Image:</span><br>
+							Represents the input image currently being processed.<br>
+							Depending on the context, <math><mi>I</mi></math> can refer to binary, grayscale, or color images.
 						</p>
 					</div>
 				</section>
@@ -98,10 +100,13 @@
 						<p class="notation-description">
 							<span class="notation-title">Gradient:</span><br>
 							Represents the image gradient, which measures the change in pixel intensity between neighboring pixels.<br>
-							Sub&hyphen;scripts indicate the orientation of the calculated gradient, e.g. <math><mrow><msub><mi>g</mi><mn>x</mn></msub><mo>=</mo></mrow></math> gradient along the x&hyphen;axis, <math><mrow><msub><mi>g</mi><mn>y</mn></msub><mo>=</mo></mrow></math> gradient along the y&hyphen;axis,
-							<math><mrow><msub><mi>g</mi><mn>N</mn></msub><mo>=</mo></mrow></math> gradient oriented towards the North,
-							<math><mrow><msub><mi>g</mi><mn>NE</mn></msub><mo>=</mo></mrow></math> gradient oriented towards the Northeast, etc...<br>
-							The outlier <math><mrow><msub><mi>g</mi><mn>max</mn></msub><mo>=</mo></mrow></math> represents the maximum response from all directional gradients, identifying the strongest edge detected across all orientations.
+							Subscripts are used to specify defining attributes of the gradient in question, such as the orientation:<br>
+							<math class="outline"><mrow><msub><mi>g</mi><mn>x</mn></msub><mi>,</mi></mrow></math> <math><mrow><msub><mi>g</mi><mn>y</mn></msub><mi>,</mi></mrow></math> <math><mrow><msub><mi>g</mi><mn>z</mn></msub></mrow></math> are gradients along the x, y, &amp; z axis respectively,<br>
+							<math class="outline"><mrow><msub><mi>g</mi><mn>N</mn></msub><mi>,</mi></mrow></math> <math><mrow><msub><mi>g</mi><mn>NE</mn></msub><mi>...</mi></mrow></math> are gradients oriented towards compass directions.<br>
+							Whether a gradient is a composite of multiple gradients:<br>
+							<math class="outline"><mrow><msub><mi>g</mi><mn>max</mn></msub><mi>,</mi></mrow></math> <math><mrow><msub><mi>g</mi><mn>avg</mn></msub><mi>...</mi></mrow></math> are the maximum or average response from multiple gradients.<br>
+							Other attributes for example:<br>
+							<math class="outline"><mrow><msub><mi>g</mi><mn>int</mn></msub><mi>,</mi></mrow></math> <math><mrow><msub><mi>g</mi><mn>ext</mn></msub><mi>...</mi></mrow></math> which refer to the interior or exterior gradients of an object&rsquo;s boundaries...
 						</p>
 					</div>
 
@@ -227,21 +232,21 @@
 						</p>
 					</div>
 
-					<div id="erosion" class="notation-entry">
-						<span class="notation-symbol"><math><mrow><mi>&ominus;</mi></mrow></math> &mdash;</span>
-						
-						<p class="notation-description">
-							<span class="notation-title">Erosion:</span><br>
-							Contracts the boundaries of <a href="https://medium.com/hackernoon/an-introduction-to-morphological-operations-for-digital-image-text-classification-79cb14bab2d7#:~:text=White%20Pixels%20(1s)%20represent%20the%20foreground." target="_blank">foreground regions</a> (typically white pixels) in an image
-						</p>
-					</div>
-
 					<div id="dilated-img" class="notation-entry">
 						<span class="notation-symbol"><math><mrow><mi>&delta;</mi></mrow></math> &mdash;</span>
 						
 						<p class="notation-description">
 							<span class="notation-title">Dilated Image:</span><br>
 							The resulting image after applying <a href="#dilation" target="_self">dilation</a>. Objects are enlarged, gaps are filled, and disjointed components are connected based on the shape and size of the <a href="#structuring-element" target="_self">structuring element</a>.
+						</p>
+					</div>
+
+					<div id="erosion" class="notation-entry">
+						<span class="notation-symbol"><math><mrow><mi>&ominus;</mi></mrow></math> &mdash;</span>
+						
+						<p class="notation-description">
+							<span class="notation-title">Erosion:</span><br>
+							Contracts the boundaries of <a href="https://medium.com/hackernoon/an-introduction-to-morphological-operations-for-digital-image-text-classification-79cb14bab2d7#:~:text=White%20Pixels%20(1s)%20represent%20the%20foreground." target="_blank">foreground regions</a> (typically white pixels) in an image
 						</p>
 					</div>
 
@@ -271,6 +276,24 @@
 							<span class="notation-title">Closed Image:</span><br>
 							The resulting image after having been closed which involves first applying <a href="#dilation" target="_self">dilation</a> followed by <a href="#erosion" target="_self">erosion</a>.<br>
 							<math class="underline"><mi>&phi;</mi><mo>= &lpar;</mo><mi>I</mi><mo>&oplus;</mo><mi>s</mi><mo>&rpar; &ominus;</mo><mi>s</mi></math>
+						</p>
+					</div>
+
+					<div id="hit-or-miss" class="notation-entry">
+						<span class="notation-symbol"><math><mrow><mi>&odot;</mi></mrow></math> &mdash;</span>
+						
+						<p class="notation-description">
+							<span class="notation-title">Hit&hyphen;or&hyphen;Miss:</span><br>
+							Detects specific patterns of pixels in an image by comparing foreground and background pixels to a <a href="composite-structuring-element">composite structuring element</a> &lpar; <math><mi>S</mi></math> &rpar;.
+						</p>
+					</div>
+
+					<div id="hit-or-miss-img" class="notation-entry">
+						<span class="notation-symbol"><math><mrow><mi>&eta;</mi></mrow></math> &mdash;</span>
+						
+						<p class="notation-description">
+							<span class="notation-title">Hit&hyphen;or&hyphen;Miss Result:</span><br>
+							The output of the <a href="../tops/morphological/#hit-or-miss">Hit&hyphen;or&hyphen;Miss transformation</a>. Pixels are active only where the specified <a href="composite-structuring-element">composite structuring element</a>&rsquo;s pattern matches the input image exactly.
 						</p>
 					</div>
 
@@ -307,6 +330,165 @@
 									<mo>&rsqb;</mo>
 								</mrow>
 							</math>
+						</p>
+					</div>
+
+					<div id="composite-structuring-element" class="notation-entry">
+						<span class="notation-symbol"><math><mrow><mi>S</mi></mrow></math> &mdash;</span>
+						
+						<p class="notation-description">
+							<span class="notation-title">Structuring Element:</span><br>
+							A collection of <a href="#structuring-element">structuring element</a>, typically used in the <a href="../tops/morphological/#hit-or-miss">Hit&hyphen;or&hyphen;Miss transformation</a>, that usually include multiple rotations or variations of a base <a href="#structuring-element">structuring element</a>. This ensures that patterns can be detected regardless of their orientation within the input image. For example, in a Concave Corner mode:<br>
+							<math class="outline">
+								<mrow>
+									<mi>S</mi>
+									<mo>=</mo>
+									<mo>&lbrace;</mo>
+									<msub>
+										<mi>s</mi>
+										<mn>1</mn>
+									</msub>
+									<mi>,</mi>
+									<msub>
+										<mi>s</mi>
+										<mn>2</mn>
+									</msub>
+									<mi>,</mi>
+									<msub>
+										<mi>s</mi>
+										<mn>3</mn>
+									</msub>
+									<mi>,</mi>
+									<msub>
+										<mi>s</mi>
+										<mn>4</mn>
+									</msub>
+									<mo>&rbrace;</mo>
+								</mrow>
+							</math><br>
+
+							Where<br>
+
+							<math class="outline">
+								<mrow>
+									<msub>
+										<mi>s</mi>
+										<mn>1</mn>
+									</msub>
+									<mo>=</mo>
+									<mo>&lsqb;</mo>
+									<mtable>
+										<mtr>
+											<mtd><mn>0</mn></mtd>
+											<mtd><mn>1</mn></mtd>
+											<mtd><mn>1</mn></mtd>
+										</mtr>
+										<mtr>
+											<mtd><mn>x</mn></mtd>
+											<mtd><mn>1</mn></mtd>
+											<mtd><mn>1</mn></mtd>
+										</mtr>
+										<mtr>
+											<mtd><mn>x</mn></mtd>
+											<mtd><mn>x</mn></mtd>
+											<mtd><mn>0</mn></mtd>
+										</mtr>
+									</mtable>
+									<mo>&rsqb;</mo>
+									<mo>,</mo>
+								</mrow>
+							</math>
+
+							<math>
+								<mrow>
+									<msub>
+										<mi>s</mi>
+										<mn>2</mn>
+									</msub>
+									<mo>=</mo>
+									<mo>&lsqb;</mo>
+									<mtable>
+										<mtr>
+											<mtd><mn>x</mn></mtd>
+											<mtd><mn>x</mn></mtd>
+											<mtd><mn>0</mn></mtd>
+										</mtr>
+										<mtr>
+											<mtd><mn>x</mn></mtd>
+											<mtd><mn>1</mn></mtd>
+											<mtd><mn>1</mn></mtd>
+										</mtr>
+										<mtr>
+											<mtd><mn>0</mn></mtd>
+											<mtd><mn>1</mn></mtd>
+											<mtd><mn>1</mn></mtd>
+										</mtr>
+									</mtable>
+									<mo>&rsqb;</mo>
+									<mo>,</mo>
+								</mrow>
+							</math>
+
+							<math>
+								<mrow>
+									<msub>
+										<mi>s</mi>
+										<mn>3</mn>
+									</msub>
+									<mo>=</mo>
+									<mo>&lsqb;</mo>
+									<mtable>
+										<mtr>
+											<mtd><mn>0</mn></mtd>
+											<mtd><mn>x</mn></mtd>
+											<mtd><mn>x</mn></mtd>
+										</mtr>
+										<mtr>
+											<mtd><mn>1</mn></mtd>
+											<mtd><mn>1</mn></mtd>
+											<mtd><mn>x</mn></mtd>
+										</mtr>
+										<mtr>
+											<mtd><mn>1</mn></mtd>
+											<mtd><mn>1</mn></mtd>
+											<mtd><mn>0</mn></mtd>
+										</mtr>
+									</mtable>
+									<mo>&rsqb;</mo>
+									<mo>, </mo>
+									<mi>&amp;</mi>
+								</mrow>
+							</math>
+
+							<math>
+								<mrow>
+									<msub>
+										<mi>s</mi>
+										<mn>4</mn>
+									</msub>
+									<mo>=</mo>
+									<mo>&lsqb;</mo>
+									<mtable>
+										<mtr>
+											<mtd><mn>1</mn></mtd>
+											<mtd><mn>1</mn></mtd>
+											<mtd><mn>0</mn></mtd>
+										</mtr>
+										<mtr>
+											<mtd><mn>1</mn></mtd>
+											<mtd><mn>1</mn></mtd>
+											<mtd><mn>x</mn></mtd>
+										</mtr>
+										<mtr>
+											<mtd><mn>0</mn></mtd>
+											<mtd><mn>x</mn></mtd>
+											<mtd><mn>x</mn></mtd>
+										</mtr>
+									</mtable>
+									<mo>&rsqb;</mo>
+								</mrow>
+							</math>
+
 						</p>
 					</div>
 				</section>
