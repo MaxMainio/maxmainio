@@ -52,9 +52,33 @@ ol{
     padding-inline-start: 1rem;
 }
 
+ul{
+    font-weight: 300;
+    font-size: 0.8rem;
+    line-height: 1.1rem;
+    letter-spacing: 0.5px;
+
+    margin-top: 0.5rem;
+    max-width: 60ch;
+    padding-inline-start: 1rem;
+
+    list-style: none;
+
+    & > li:before{
+        content: "_";
+        margin: 0 0.3rem 0 -1rem;
+        /* margin-left: -1rem; */
+    }
+}
+
 li::marker{
     text-align: left !important;
 }
+
+/* li:before {
+    content: "+";
+    padding-right: 5px;
+} */
 
 
 

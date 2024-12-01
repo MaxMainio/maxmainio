@@ -695,7 +695,7 @@
 						<h2>Dilate&sol;Erode</h2>
 						<h3>Sub&hyphen;Title</h3>
 						<p>
-							<a href="https://homepages.inf.ed.ac.uk/rbf/HIPR2/dilate.htm" target="_blank">Dilation</a> and <a href="https://homepages.inf.ed.ac.uk/rbf/HIPR2/erode.htm" target="_blank">Erosion</a> are the two fundamental operations in <a href="https://en.wikipedia.org/wiki/Mathematical_morphology" target="_blank">mathematical morphology</a>. These operations are primarily used on <a href="https://en.wikipedia.org/wiki/Binary_image" target="_blank">binary images</a> but can also be applied to <a href="https://en.wikipedia.org/wiki/Grayscale" target="_blank">grayscale</a> or even color images, providing a versatile solution for a range of image processing tasks.
+							<a href="https://homepages.inf.ed.ac.uk/rbf/HIPR2/dilate.htm" target="_blank">Dilation</a> and <a href="https://homepages.inf.ed.ac.uk/rbf/HIPR2/erode.htm" target="_blank">Erosion</a> are the two fundamental operations in <a href="https://en.wikipedia.org/wiki/Mathematical_morphology" target="_blank">mathematical morphology</a>. These operations are primarily used on <a href="https://en.wikipedia.org/wiki/Binary_image" target="_blank">binary images</a> but can also be applied to <a href="https://en.wikipedia.org/wiki/Grayscale" target="_blank">grayscale</a> or even <a href="https://en.wikipedia.org/wiki/Color_photography" target="_blank">color images</a>, providing a versatile solution for a range of image processing tasks.
 						</p>
 						<p>
 							<a href="https://homepages.inf.ed.ac.uk/rbf/HIPR2/dilate.htm" target="_blank">Dilation</a> 
@@ -855,7 +855,35 @@
 						<h2>Dynamic Dilate&sol;Erode</h2>
 						<h3>Sub&hyphen;Title</h3>
 						<p>
-							Lorem ipsum odor amet, consectetuer adipiscing elit. Rhoncus nullam sed diam senectus ac quam. Neque pharetra dignissim dictum urna netus convallis ante. Netus morbi cras pretium dui justo libero praesent. Elit ligula donec suscipit non nam duis in lectus ad. Quisque pulvinar ligula consectetur felis quisque penatibus tempus nunc curabitur. Finibus nisl euismod pulvinar pellentesque ridiculus taciti.
+							This component expands on the functionality of traditional <a href="https://homepages.inf.ed.ac.uk/rbf/HIPR2/dilate.htm" target="_blank">dilation</a> and <a href="https://homepages.inf.ed.ac.uk/rbf/HIPR2/erode.htm" target="_blank">erosion</a> by combining both <a href="https://en.wikipedia.org/wiki/Mathematical_morphology" target="_blank">morphological</a> operations into a single component while providing fine-grained control over how much to <a href="https://homepages.inf.ed.ac.uk/rbf/HIPR2/dilate.htm" target="_blank">dilate</a> or <a href="https://homepages.inf.ed.ac.uk/rbf/HIPR2/erode.htm" target="_blank">erode</a> the input image at each pixel.
+						</p>
+
+						<p>
+							The first input, as is the case with the other <a href="https://en.wikipedia.org/wiki/Mathematical_morphology" target="_blank">morphological</a> operators, is the image to be transformed, whether <a href="https://en.wikipedia.org/wiki/Binary_image" target="_blank">binary</a>, <a href="https://en.wikipedia.org/wiki/Grayscale" target="_blank">grayscale</a>, or <a href="https://en.wikipedia.org/wiki/Color_photography" target="_blank">color</a>. The second input, however, sets this component apart. Instead of applying a uniform <a href="https://homepages.inf.ed.ac.uk/rbf/HIPR2/dilate.htm" target="_blank">dilation</a> or <a href="https://homepages.inf.ed.ac.uk/rbf/HIPR2/erode.htm" target="_blank">erosion</a>, a <a href="https://derivative.ca/UserGuide/Pixel_Formats#:~:text=range%20%5B0%2D1%5D.-,16%2Dbit%20float,-(R)%20%2D%20Has" target="_blank">16&hyphen;bit</a> or <a href="https://derivative.ca/UserGuide/Pixel_Formats#:~:text=negative%20and%20positive.-,32%2Dbit%20float,-(R)%20%2D%20Has" target="_blank">32&hyphen;bit</a> <a href="https://derivative.ca/UserGuide/Pixel_Formats#:~:text=FIXED%20POINT%20VS.-,FLOATING%20POINT,-Fixed%20point%20formats" target="_blank">float</a> <a href="https://derivative.ca/UserGuide/Pixel_Formats#:~:text=FORMATS%20WITHOUT%20ALL%20RGBA%20CHANNELS" target="_blank">monochrome</a> <a href="https://en.wikipedia.org/wiki/Mathematical_morphology" target="_blank">morphology</a> mask dictates the operation.
+						</p>
+
+						<p>
+							Notice&colon; The provided <a href="https://en.wikipedia.org/wiki/Mathematical_morphology" target="_blank">morphology</a> mask will be automatically <a href="https://en.wikipedia.org/wiki/Normalization_(statistics)" target="_blank">normalized</a> between &minus;1 and &plus;1 to ensure it does not exceed the maximum <a href="https://en.wikipedia.org/wiki/Mathematical_morphology" target="_blank">morphological</a> radius defined by the user. The <a href="https://en.wikipedia.org/wiki/Normalization_(statistics)" target="_blank">normalized</a> value of each pixel in the mask determines the intensity of the operation:
+						</p>
+
+						<p>
+							<ul>
+								<li>
+									Positive values: Indicate <a href="https://homepages.inf.ed.ac.uk/rbf/HIPR2/dilate.htm" target="_blank">dilation</a>, with the magnitude scaling the effect relative to the maximum radius.
+								</li>
+
+								<li>
+									Negative values: Indicate <a href="https://homepages.inf.ed.ac.uk/rbf/HIPR2/erode.htm" target="_blank">erosion</a>, similarly, with the magnitude scaling the effect relative to the maximum radius.
+								</li>
+
+								<li>
+									Zero values: Leave the pixel unchanged.
+								</li>
+							</ul>
+						</p>
+
+						<p>
+							This dynamic approach enables localized <a href="https://docs.opencv.org/4.x/d9/d61/tutorial_py_morphological_ops.html#:~:text=Theory-,Morphological%20transformations,-are%20some%20simple" target="_blank">morphological transformations</a>, blending <a href="https://homepages.inf.ed.ac.uk/rbf/HIPR2/dilate.htm" target="_blank">dilation</a> and <a href="https://homepages.inf.ed.ac.uk/rbf/HIPR2/erode.htm" target="_blank">erosion</a> across an image seamlessly. The Dynamic Dilate/Erode component is an essential tool for applications requiring region-specific enhancements, noise reduction, or feature refinement, offering unparalleled precision and adaptability in the <a href="https://en.wikipedia.org/wiki/Mathematical_morphology" target="_blank">morphological</a> suite.
 						</p>
 
 						<h5>Resources:</h5>
@@ -982,7 +1010,7 @@
 							<h4>In&hyphen; &sol; Outputs</h4>
 							<p>
 								<b>Input 0</b> &ndash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> image to be processed.<br>
-								<b>Input 1</b> &ndash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> binary image to be used as the <a href="https://www.ni.com/docs/en-US/bundle/ni-vision-concepts-help/page/structuring_elements.html#:~:text=Morphological%20transformations%20use%20a%202D,the%20boundary%20of%20a%20particle." target="_blank">structuring element</a>.
+								<b>Input 1</b> &ndash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> <a href="https://derivative.ca/UserGuide/Pixel_Formats#:~:text=range%20%5B0%2D1%5D.-,16%2Dbit%20float,-(R)%20%2D%20Has" target="_blank">16&hyphen;bit</a> or <a href="https://derivative.ca/UserGuide/Pixel_Formats#:~:text=negative%20and%20positive.-,32%2Dbit%20float,-(R)%20%2D%20Has" target="_blank">32&hyphen;bit</a> <a href="https://derivative.ca/UserGuide/Pixel_Formats#:~:text=FIXED%20POINT%20VS.-,FLOATING%20POINT,-Fixed%20point%20formats" target="_blank">float</a> <a href="https://derivative.ca/UserGuide/Pixel_Formats#:~:text=FORMATS%20WITHOUT%20ALL%20RGBA%20CHANNELS" target="_blank">monochrome image</a> used to define the amount of <a href="https://homepages.inf.ed.ac.uk/rbf/HIPR2/dilate.htm" target="_blank">dilation</a> and <a href="https://homepages.inf.ed.ac.uk/rbf/HIPR2/erode.htm" target="_blank">erosion</a>.
 							</p>
 
 							<p>
