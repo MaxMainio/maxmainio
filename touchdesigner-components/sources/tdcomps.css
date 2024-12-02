@@ -181,6 +181,10 @@ p + h5{
     margin-top: 0.75rem;
 }
 
+math.outline{
+    margin: 0.5rem 0;
+}
+
 .maths + h5{
     margin-top: 1.5rem;
 }
@@ -514,7 +518,7 @@ h5 + p{
 .notation-entry {
     display: flex;
     align-items: flex-start;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
 }
 
 .notation-symbol {

@@ -1201,7 +1201,136 @@
 						<h2>Feature Detector</h2>
 						<h3>Sub&hyphen;Title</h3>
 						<p>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim diam vulputate ut pharetra sit amet aliquam. Integer eget aliquet nibh praesent tristique magna sit. Massa id neque aliquam vestibulum. Egestas diam in arcu cursus euismod quis viverra nibh. Ultrices vitae auctor eu augue ut lectus arcu bibendum at. Vel risus commodo viverra maecenas accumsan lacus vel facilisis volutpat. Sit amet cursus sit amet dictum sit. Scelerisque mauris pellentesque pulvinar pellentesque habitant morbi tristique. Rutrum quisque non tellus orci ac.
+							This Morphological Feature Detector component leverages grayscale morphological operations to distinguish and analyze different types of edges in an image, separating smooth "ramp" edges from "texture" edges caused by ripples or noise. This capability makes it an advanced tool for detecting and classifying features with precision.
+						</p>
+
+						<p>
+							This component supports three modes of edge detection:<br>
+						</p>
+
+						<p>
+							<ol>
+								<li>
+									Dynamic Edges: This operation produces results similar to a linear <a href="../edge-detectors/#laplacian-opreator">Laplacian filter</a>, highlighting prominent transitions in intensity.<br>
+									<span title="Right click for a cheat sheet">
+										<!-- <math class="outline">
+											<mrow>
+												<mi>DYL</mi>
+												<mo>&lpar;</mo>
+												<mi>I</mi>
+												<mo>&rpar;</mo>
+												<mo>=</mo>
+												<mi>min</mi>
+												<mo>&lpar;&lpar;</mo>
+												<mi>I</mi>
+												<mo>&oplus;</mo>
+												<mi>s</mi>
+												<mo>&rpar;&minus;</mo>
+												<mi>I</mi>
+												<mo>,</mo>
+												<mo> </mo>
+												<mi>I</mi>
+												<mo>&minus;&lpar;</mo>
+												<mi>I</mi>
+												<mo>&ominus;</mo>
+												<mi>s</mi>
+												<mo>&rpar;&rpar;</mo>
+											</mrow>
+										</math> -->
+
+										<math class="outline">
+											<mrow>
+												<mi>DYL</mi>
+												<mo>&lpar;</mo>
+												<mi>I</mi>
+												<mo>&rpar;</mo>
+												<mo>=</mo>
+												<mi>min</mi>
+												<mo>&lpar;</mo>
+												<mi>I</mi>
+												<mi>&delta;</mi>
+												<mo>&minus;</mo>
+												<mi>I</mi>
+												<mo>,</mo>
+												<mo> </mo>
+												<mi>I</mi>
+												<mo>&minus;</mo>
+												<mi>I</mi>
+												<mo>&epsilon;</mo>
+												<mo>&rpar;</mo>
+											</mrow>
+										</math>
+									</span>
+								</li>
+
+								<li>
+									Texture Edges: Emphasizes high-frequency details and noise by analyzing the transitions that remain after morphological <i>smoothing</i> (<a href="#opening-closing" target="_self">opening</a>) and <i>sharpening</i> (<a href="#opening-closing" target="_self">closing</a>).<br>
+									<span title="Right click for a cheat sheet">
+										<math class="outline">
+											<mrow>
+												<mi>TEL</mi>
+												<mo>&lpar;</mo>
+												<mi>I</mi>
+												<mo>&rpar;</mo>
+												<mo>=</mo>
+												<mi>min</mi>
+												<mo>&lpar;</mo>
+												<mi>I</mi>
+												<mi>&#632;</mi>
+												<mo>&minus;</mo>
+												<mi>I</mi>
+												<mo>,</mo>
+												<mo> </mo>
+												<mi>I</mi>
+												<mo>&minus;</mo>
+												<mi>I</mi>
+												<mo>&gamma;</mo>
+												<mo>&rpar;</mo>
+											</mrow>
+										</math>
+									</span>
+								</li>
+
+								<li>
+									Ramp Edges: Emphasizes smooth gradients by analyzing the morphological transitions between dilation, erosion, opening, and closing.<br>
+									<span title="Right click for a cheat sheet">
+										<math class="outline">
+											<mrow>
+												<mi>RAL</mi>
+												<mo>&lpar;</mo>
+												<mi>I</mi>
+												<mo>&rpar;</mo>
+												<mo>=</mo>
+												<mi>min</mi>
+												<mo>&lpar;</mo>
+												<mi>I</mi>
+												<mi>&delta;</mi>
+												<mo>&minus;</mo>
+												<mi>I</mi>
+												<mi>&#632;</mi>
+												<mo>,</mo>
+												<mo> </mo>
+												<mi>I</mi>
+												<mo>&gamma;</mo>
+												<mo>&minus;</mo>
+												<mi>I</mi>
+												<mo>&epsilon;</mo>
+												<mo>&rpar;</mo>
+											</mrow>
+										</math>
+									</span>
+								</li>
+							</ol>
+						</p>
+
+						<p>
+							The Morphological Feature Detector is ideal for identifying and separating textures from smooth gradients, enhancing specific edge types for image analysis and preprocessing, or noise reduction and feature enhancement in complex images.
+						</p>
+
+						<h5>Resources:</h5>
+						<p>
+							<a href="https://github.com/MaxMainio/TD_" target="_blank">Download the .tox files</a><br>
+							<a href="http://www.cyto.purdue.edu/cdroms/micro2/content/education/wirth08.pdf" target="_blank">Grayscale Morphological Analysis</a>
 						</p>
 					</div>
 
@@ -1280,12 +1409,12 @@
 							<h4>Parameters</h4>
 							<h5>Mode:</h5>
 							<p>
-								Specify the type of smoothing to be performed on the input image.
+								Selects the type of features to detect in the input image
 							</p>
 
 							<h5>Output Format:</h5>
 							<p>
-								Lorem ipsum...
+								Defines the pixel format of the output image.
 							</p>
 
 							<h5>Depth:</h5>
@@ -1332,7 +1461,21 @@
 						<h2>Geodesic Dilate&sol;Erode</h2>
 						<h3>Sub&hyphen;Title</h3>
 						<p>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim diam vulputate ut pharetra sit amet aliquam. Integer eget aliquet nibh praesent tristique magna sit. Massa id neque aliquam vestibulum. Egestas diam in arcu cursus euismod quis viverra nibh. Ultrices vitae auctor eu augue ut lectus arcu bibendum at. Vel risus commodo viverra maecenas accumsan lacus vel facilisis volutpat. Sit amet cursus sit amet dictum sit. Scelerisque mauris pellentesque pulvinar pellentesque habitant morbi tristique. Rutrum quisque non tellus orci ac.
+							This component performs iterative morphological transformations constrained by a mask image &lpar;input 1&rpar;, enabling precise control over the extent and boundaries of the <a href="https://homepages.inf.ed.ac.uk/rbf/HIPR2/dilate.htm" target="_blank">dilation</a> or <a href="https://homepages.inf.ed.ac.uk/rbf/HIPR2/erode.htm" target="_blank">erosion</a>. This operation is foundational in more complex morphological operations like reconstruction and feature isolation.
+						</p>
+
+						<p>
+							In this context, &ldquo;<a href="https://en.wikipedia.org/wiki/Geodesic#:~:text=is%20a%20curve%20representing%20in%20some%20sense%20the%20shortest%5Ba%5D%20path%20(arc)%20between%20two%20points" target="_blank">geodesic</a>&rdquo; refers to transformations that are guided by a mask image &lpar;input 1&rpar;, which restricts where the <a href="https://homepages.inf.ed.ac.uk/rbf/HIPR2/dilate.htm" target="_blank">dilation</a> or <a href="https://homepages.inf.ed.ac.uk/rbf/HIPR2/erode.htm" target="_blank">erosion</a> can occur. The mask serves as a constraint, ensuring the operation is confined to specific regions of the image. This makes <a href="https://en.wikipedia.org/wiki/Geodesic#:~:text=is%20a%20curve%20representing%20in%20some%20sense%20the%20shortest%5Ba%5D%20path%20(arc)%20between%20two%20points" target="_blank">geodesic</a> transformations particularly useful for preserving structure while refining details.
+						</p>
+
+						<p>
+							Notice: A <a href="https://docs.derivative.ca/Feedback_TOP" target="_blank">Feedback TOP</a> is used to propagate the iterative <a href="https://homepages.inf.ed.ac.uk/rbf/HIPR2/dilate.htm" target="_blank">dilation</a>&sol;<a href="https://homepages.inf.ed.ac.uk/rbf/HIPR2/erode.htm" target="_blank">erosion</a> throughout the provided mask. As a result, you will need to let the calculation run over multiple frames for the <a href="https://homepages.inf.ed.ac.uk/rbf/HIPR2/dilate.htm" target="_blank">dilation</a>&sol;<a href="https://homepages.inf.ed.ac.uk/rbf/HIPR2/erode.htm" target="_blank">erosion</a> process to fully complete.
+						</p>
+
+						<h5>Resources:</h5>
+						<p>
+							<a href="https://github.com/MaxMainio/TD_" target="_blank">Download the .tox files</a><br>
+							<a href="https://homes.di.unimi.it/ferrari/MethImageProc2014_15/MIP2014_15_14_morphology_2_double.pdf" target="_blank">Advanced morphological processing</a>
 						</p>
 					</div>
 
@@ -1425,7 +1568,7 @@
 	
 							<h5>Dimensions:</h5>
 							<p>
-								Defines the width and height of the <a href="https://www.ni.com/docs/en-US/bundle/ni-vision-concepts-help/page/structuring_elements.html#:~:text=Morphological%20transformations%20use%20a%202D,the%20boundary%20of%20a%20particle." target="_blank">structuring element</a> to be used in the morphological operation, directly affecting the scope of the operation on the image.
+								Defines the width and height of the <a href="https://www.ni.com/docs/en-US/bundle/ni-vision-concepts-help/page/structuring_elements.html#:~:text=Morphological%20transformations%20use%20a%202D,the%20boundary%20of%20a%20particle." target="_blank">structuring element</a> to be used in the morphological operation. Larger values increase the scope of the operation but may cause the iterative process to jump across small borders in the mask image. Keeping the <a href="https://www.ni.com/docs/en-US/bundle/ni-vision-concepts-help/page/structuring_elements.html#:~:text=Morphological%20transformations%20use%20a%202D,the%20boundary%20of%20a%20particle." target="_blank">structuring element</a> small ensures better control.
 							</p>
 
 							<h5>Edge Handling:</h5>
@@ -1442,13 +1585,13 @@
 
 							<h5>Reset:</h5>
 							<p>
-								Lorem ipsum...
+								Resets the feedback loop, restarting the transformation from the initial state.
 							</p>
 
 							<h4>In&hyphen; &sol; Outputs</h4>
 							<p>
 								<b>Input 0</b> &ndash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> image to be processed.<br>
-								<b>Input 1</b> &ndash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> Lorem ipsum...<br>
+								<b>Input 1</b> &ndash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> mask image that constrains where the <a href="https://homepages.inf.ed.ac.uk/rbf/HIPR2/dilate.htm" target="_blank">dilation</a> or <a href="https://homepages.inf.ed.ac.uk/rbf/HIPR2/erode.htm" target="_blank">erosion</a> is allowed to occur.<br>
 								<b>Input 2</b> &ndash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> binary image to be used as the <a href="https://www.ni.com/docs/en-US/bundle/ni-vision-concepts-help/page/structuring_elements.html#:~:text=Morphological%20transformations%20use%20a%202D,the%20boundary%20of%20a%20particle." target="_blank">structuring element</a>.
 							</p>
 
