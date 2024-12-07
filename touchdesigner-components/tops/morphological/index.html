@@ -68,10 +68,10 @@
 						<h1 id="title">Morphological</h1>
 						<h2 id="sub-title"><a href="https://derivative.ca/" target="_blank">TD</a> <a href="https://derivative.ca/UserGuide/Component" target="_blank">COMPs</a> / <a href="https://derivative.ca/tags/tops" target="_blank">TOPs</a> / 2023 &ndash; Present</h2>
 						<p>
-							Morphological operations form the backbone of many image processing tasks, offering a powerful set of tools to manipulate the structure of images. These operations focus on the shape and structure within an image, enabling you to enhance or extract features, remove noise, and perform shape analysis.
+							<a href="https://en.wikipedia.org/wiki/Mathematical_morphology" target="_blank">Morphological</a> operations form the backbone of many image processing tasks, offering a powerful set of tools to manipulate the structure of images. These operations focus on the shape and structure within an image, enabling you to enhance or extract features, remove noise, and perform shape analysis.
 						</p>
 						<p>
-							By applying morphological operations they allow you to modify image regions based on their spatial form. These tools are essential for refining the structure of objects, isolating specific features, and preparing images for more advanced analysis like segmentation, object detection, and pattern recognition.
+							By applying <a href="https://en.wikipedia.org/wiki/Mathematical_morphology" target="_blank">morphological</a> operations they allow you to modify image regions based on their spatial form. These tools are essential for refining the structure of objects, isolating specific features, and preparing images for more advanced analysis like segmentation, object detection, and pattern recognition.
 						</p>
 						<p>
 							Index:<br>
@@ -1055,27 +1055,25 @@
 							Notice&colon; The provided <a href="https://en.wikipedia.org/wiki/Mathematical_morphology" target="_blank">morphology</a> mask will be automatically <a href="https://en.wikipedia.org/wiki/Normalization_(statistics)" target="_blank">normalized</a> between &minus;1 and &plus;1 to ensure it does not exceed the maximum <a href="https://en.wikipedia.org/wiki/Mathematical_morphology" target="_blank">morphological</a> radius defined by the user. The <a href="https://en.wikipedia.org/wiki/Normalization_(statistics)" target="_blank">normalized</a> value of each pixel in the mask determines the intensity of the operation:
 						</p>
 
-						<p>
-							<ul>
-								<li>
-									Positive values: Indicate <a href="https://homepages.inf.ed.ac.uk/rbf/HIPR2/dilate.htm" target="_blank">dilation</a>, with the magnitude scaling the effect relative to the maximum radius.
-								</li>
+						<ul>
+							<li>
+								Positive values&colon; Indicate <a href="https://homepages.inf.ed.ac.uk/rbf/HIPR2/dilate.htm" target="_blank">dilation</a>, with the magnitude scaling the effect relative to the maximum radius.
+							</li>
 
-								<li>
-									Negative values: Indicate <a href="https://homepages.inf.ed.ac.uk/rbf/HIPR2/erode.htm" target="_blank">erosion</a>, similarly, with the magnitude scaling the effect relative to the maximum radius.
-								</li>
+							<li>
+								Negative values&colon; Indicate <a href="https://homepages.inf.ed.ac.uk/rbf/HIPR2/erode.htm" target="_blank">erosion</a>, similarly, with the magnitude scaling the effect relative to the maximum radius.
+							</li>
 
-								<li>
-									Zero values: Leave the pixel unchanged.
-								</li>
-							</ul>
-						</p>
+							<li>
+								Zero values&colon; Leave the pixel unchanged.
+							</li>
+						</ul>
 
 						<p>
 							This dynamic approach enables localized <a href="https://docs.opencv.org/4.x/d9/d61/tutorial_py_morphological_ops.html#:~:text=Theory-,Morphological%20transformations,-are%20some%20simple" target="_blank">morphological transformations</a>, blending <a href="https://homepages.inf.ed.ac.uk/rbf/HIPR2/dilate.htm" target="_blank">dilation</a> and <a href="https://homepages.inf.ed.ac.uk/rbf/HIPR2/erode.htm" target="_blank">erosion</a> across an image seamlessly. The Dynamic Dilate/Erode component is an essential tool for applications requiring region-specific enhancements, noise reduction, or feature refinement, offering unparalleled precision and adaptability in the <a href="https://en.wikipedia.org/wiki/Mathematical_morphology" target="_blank">morphological</a> suite.
 						</p>
 
-						<h5>Resources:</h5>
+						<h5>Resources&colon;</h5>
 						<p>
 							<a href="https://github.com/MaxMainio/TD_" target="_blank">Download the .tox files</a><br>
 							<a href="https://homepages.inf.ed.ac.uk/rbf/HIPR2/morops.htm" target="_blank">HIPR2 Morphology documentation</a><br>
@@ -1157,26 +1155,26 @@
 
 						<div>
 							<h4>Parameters</h4>
-							<h5>Depth:</h5>
+							<h5>Depth&colon;</h5>
 							<p>
 								Specifies the number of iterations that the morphological operation will be applied to the input image.
 							</p>
 	
 							<hr/>
 	
-							<h5>Dimensions:</h5>
+							<h5>Dimensions&colon;</h5>
 							<p>
 								Defines the width and height of the <a href="https://www.ni.com/docs/en-US/bundle/ni-vision-concepts-help/page/structuring_elements.html#:~:text=Morphological%20transformations%20use%20a%202D,the%20boundary%20of%20a%20particle." target="_blank">structuring element</a> to be used in the morphological operation, directly affecting the scope of the operation on the image.
 							</p>
 
-							<h5>Edge Handling:</h5>
+							<h5>Edge Handling&colon;</h5>
 							<p>
 								Determines how the edges of the image are treated during the <a href="https://docs.opencv.org/4.x/d9/d61/tutorial_py_morphological_ops.html#:~:text=Theory-,Morphological%20transformations,-are%20some%20simple" target="_blank">morphological transformation</a>. Extends the image to avoid edge artifacts.
 							</p>
 
 							<hr/>
 	
-							<h5>Roundness:</h5>
+							<h5>Roundness&colon;</h5>
 							<p>
 								Adjusts the shape of the default <a href="https://www.ni.com/docs/en-US/bundle/ni-vision-concepts-help/page/structuring_elements.html#:~:text=Morphological%20transformations%20use%20a%202D,the%20boundary%20of%20a%20particle." target="_blank">structuring element</a>. A value of 0 creates a square element, while a value of 1 produces a circular element.
 							</p>
@@ -1208,120 +1206,133 @@
 							This component supports three modes of edge detection:<br>
 						</p>
 
-						<p>
-							<ol>
-								<li>
-									Dynamic Edges: This operation produces results similar to a linear <a href="../edge-detectors/#laplacian-opreator">Laplacian filter</a>, highlighting prominent transitions in intensity.<br>
-									<span title="Right click for a cheat sheet">
-										<!-- <math class="outline">
-											<mrow>
-												<mi>DYL</mi>
-												<mo>&lpar;</mo>
-												<mi>I</mi>
-												<mo>&rpar;</mo>
-												<mo>=</mo>
-												<mi>min</mi>
-												<mo>&lpar;&lpar;</mo>
-												<mi>I</mi>
-												<mo>&oplus;</mo>
-												<mi>s</mi>
-												<mo>&rpar;&minus;</mo>
-												<mi>I</mi>
-												<mo>,</mo>
-												<mo> </mo>
-												<mi>I</mi>
-												<mo>&minus;&lpar;</mo>
-												<mi>I</mi>
-												<mo>&ominus;</mo>
-												<mi>s</mi>
-												<mo>&rpar;&rpar;</mo>
-											</mrow>
-										</math> -->
+						<ol>
+							<li>
+								<h5>Dynamic Edges&colon;</h5>
+								
+								<p>
+									This operation produces results similar to a linear <a href="../edge-detectors/#laplacian-opreator">Laplacian filter</a>, highlighting prominent transitions in intensity.<br>
+								</p>
 
-										<math class="outline">
-											<mrow>
-												<mi>DYL</mi>
-												<mo>&lpar;</mo>
-												<mi>I</mi>
-												<mo>&rpar;</mo>
-												<mo>=</mo>
-												<mi>min</mi>
-												<mo>&lpar;</mo>
-												<mi>I</mi>
-												<mi>&delta;</mi>
-												<mo>&minus;</mo>
-												<mi>I</mi>
-												<mo>,</mo>
-												<mo> </mo>
-												<mi>I</mi>
-												<mo>&minus;</mo>
-												<mi>I</mi>
-												<mo>&epsilon;</mo>
-												<mo>&rpar;</mo>
-											</mrow>
-										</math>
-									</span>
-								</li>
+								<span title="Right click for a cheat sheet">
+									<!-- <math class="outline">
+										<mrow>
+											<mi>DYL</mi>
+											<mo>&lpar;</mo>
+											<mi>I</mi>
+											<mo>&rpar;</mo>
+											<mo>=</mo>
+											<mi>min</mi>
+											<mo>&lpar;&lpar;</mo>
+											<mi>I</mi>
+											<mo>&oplus;</mo>
+											<mi>s</mi>
+											<mo>&rpar;&minus;</mo>
+											<mi>I</mi>
+											<mo>,</mo>
+											<mo> </mo>
+											<mi>I</mi>
+											<mo>&minus;&lpar;</mo>
+											<mi>I</mi>
+											<mo>&ominus;</mo>
+											<mi>s</mi>
+											<mo>&rpar;&rpar;</mo>
+										</mrow>
+									</math> -->
 
-								<li>
-									Texture Edges: Emphasizes high-frequency details and noise by analyzing the transitions that remain after morphological <i>smoothing</i> (<a href="#opening-closing" target="_self">opening</a>) and <i>sharpening</i> (<a href="#opening-closing" target="_self">closing</a>).<br>
-									<span title="Right click for a cheat sheet">
-										<math class="outline">
-											<mrow>
-												<mi>TEL</mi>
-												<mo>&lpar;</mo>
-												<mi>I</mi>
-												<mo>&rpar;</mo>
-												<mo>=</mo>
-												<mi>min</mi>
-												<mo>&lpar;</mo>
-												<mi>I</mi>
-												<mi>&#632;</mi>
-												<mo>&minus;</mo>
-												<mi>I</mi>
-												<mo>,</mo>
-												<mo> </mo>
-												<mi>I</mi>
-												<mo>&minus;</mo>
-												<mi>I</mi>
-												<mo>&gamma;</mo>
-												<mo>&rpar;</mo>
-											</mrow>
-										</math>
-									</span>
-								</li>
+									<math class="outline">
+										<mrow>
+											<mi>DYL</mi>
+											<mo>&lpar;</mo>
+											<mi>I</mi>
+											<mo>&rpar;</mo>
+											<mo>=</mo>
+											<mi>min</mi>
+											<mo>&lpar;</mo>
+											<mi>I</mi>
+											<mi>&delta;</mi>
+											<mo>&minus;</mo>
+											<mi>I</mi>
+											<mo>,</mo>
+											<mo> </mo>
+											<mi>I</mi>
+											<mo>&minus;</mo>
+											<mi>I</mi>
+											<mo>&epsilon;</mo>
+											<mo>&rpar;</mo>
+										</mrow>
+									</math>
+								</span><br><br>
+							</li>
 
-								<li>
-									Ramp Edges: Emphasizes smooth gradients by analyzing the morphological transitions between dilation, erosion, opening, and closing.<br>
-									<span title="Right click for a cheat sheet">
-										<math class="outline">
-											<mrow>
-												<mi>RAL</mi>
-												<mo>&lpar;</mo>
-												<mi>I</mi>
-												<mo>&rpar;</mo>
-												<mo>=</mo>
-												<mi>min</mi>
-												<mo>&lpar;</mo>
-												<mi>I</mi>
-												<mi>&delta;</mi>
-												<mo>&minus;</mo>
-												<mi>I</mi>
-												<mi>&#632;</mi>
-												<mo>,</mo>
-												<mo> </mo>
-												<mi>I</mi>
-												<mo>&gamma;</mo>
-												<mo>&minus;</mo>
-												<mi>I</mi>
-												<mo>&epsilon;</mo>
-												<mo>&rpar;</mo>
-											</mrow>
-										</math>
-									</span>
-								</li>
-							</ol>
-						</p>
+							<li>
+								<h5>Texture Edges&colon;</h5>
+
+								<p>
+									Emphasizes high-frequency details and noise by analyzing the transitions that remain after morphological <i>smoothing</i> (<a href="#opening-closing" target="_self">opening</a>) and <i>sharpening</i> (<a href="#opening-closing" target="_self">closing</a>).<br>
+								</p>
+
+								<span title="Right click for a cheat sheet">
+									<math class="outline">
+										<mrow>
+											<mi>TEL</mi>
+											<mo>&lpar;</mo>
+											<mi>I</mi>
+											<mo>&rpar;</mo>
+											<mo>=</mo>
+											<mi>min</mi>
+											<mo>&lpar;</mo>
+											<mi>I</mi>
+											<mi>&#632;</mi>
+											<mo>&minus;</mo>
+											<mi>I</mi>
+											<mo>,</mo>
+											<mo> </mo>
+											<mi>I</mi>
+											<mo>&minus;</mo>
+											<mi>I</mi>
+											<mo>&gamma;</mo>
+											<mo>&rpar;</mo>
+										</mrow>
+									</math>
+								</span><br><br>
+							</li>
+
+							<li>
+								<h5>Ramp Edges&colon;</h5>
+
+								<p>
+									Emphasizes smooth gradients by analyzing the morphological transitions between dilation, erosion, opening, and closing.<br>
+								</p>
+
+								<span title="Right click for a cheat sheet">
+									<math class="outline">
+										<mrow>
+											<mi>RAL</mi>
+											<mo>&lpar;</mo>
+											<mi>I</mi>
+											<mo>&rpar;</mo>
+											<mo>=</mo>
+											<mi>min</mi>
+											<mo>&lpar;</mo>
+											<mi>I</mi>
+											<mi>&delta;</mi>
+											<mo>&minus;</mo>
+											<mi>I</mi>
+											<mi>&#632;</mi>
+											<mo>,</mo>
+											<mo> </mo>
+											<mi>I</mi>
+											<mo>&gamma;</mo>
+											<mo>&minus;</mo>
+											<mi>I</mi>
+											<mo>&epsilon;</mo>
+											<mo>&rpar;</mo>
+										</mrow>
+									</math>
+								</span>
+							</li>
+						</ol>
 
 						<p>
 							The Morphological Feature Detector is ideal for identifying and separating textures from smooth gradients, enhancing specific edge types for image analysis and preprocessing, or noise reduction and feature enhancement in complex images.
@@ -1616,93 +1627,104 @@
 							This component offers three distinct methods for calculating <a href="https://en.wikipedia.org/wiki/Morphological_gradient" target="_blank">gradients</a>, each tailored to specific aspects of image structure&colon;
 						</p>
 
-						<h5>
-							<a href="https://en.wikipedia.org/wiki/Morphological_gradient" target="_blank">Gradient</a>&colon;
-						</h5>
-						<p>
-							The standard <a href="https://en.wikipedia.org/wiki/Morphological_gradient" target="_blank">morphological gradient</a> is calculated as the difference between the <a href="https://homepages.inf.ed.ac.uk/rbf/HIPR2/dilate.htm" target="_blank">dilated</a> and <a href="https://homepages.inf.ed.ac.uk/rbf/HIPR2/erode.htm" target="_blank">eroded</a> versions of the input image. This method accentuates the boundaries of objects, making it ideal for general edge detection.
-						</p>
+						<ol>
+							<li>
+								<h5>
+									<a href="https://en.wikipedia.org/wiki/Morphological_gradient" target="_blank">Gradient</a>&colon;
+								</h5>
 
-						<p class="maths" title="Right click for a cheat sheet">
-							<math>
-								<mrow>
-									<mi>g</mi>
-									<mo>= &lpar;</mo>
-									<mi>I</mi>
-									<mo>&oplus;</mo>
-									<mi>s</mi>
-									<mo> &rpar; &minus; &lpar;</mo>
-									<mi>I</mi>
-									<mo>&ominus;</mo>
-									<mi>s</mi>
-									<mo> &rpar; =</mo>
-									<mi>I</mi>
-									<mi>&delta;</mi>
-									<mo>&minus;</mo>
-									<mi>I</mi>
-									<mi>&epsilon;</mi>
-								</mrow>
-							</math>
-						</p>
+								<p>
+									The standard <a href="https://en.wikipedia.org/wiki/Morphological_gradient" target="_blank">morphological gradient</a> is calculated as the difference between the <a href="https://homepages.inf.ed.ac.uk/rbf/HIPR2/dilate.htm" target="_blank">dilated</a> and <a href="https://homepages.inf.ed.ac.uk/rbf/HIPR2/erode.htm" target="_blank">eroded</a> versions of the input image. This method accentuates the boundaries of objects, making it ideal for general edge detection.<br>
+								</p>
 
-						<h5>
-							Internal <a href="https://en.wikipedia.org/wiki/Morphological_gradient" target="_blank">Gradient</a>&colon;
-						</h5>
-						<p>
-							Computed as the difference between the original image and its <a href="https://homepages.inf.ed.ac.uk/rbf/HIPR2/erode.htm" target="_blank">eroded</a> version, this method emphasizes the inner edges of <a href="https://medium.com/hackernoon/an-introduction-to-morphological-operations-for-digital-image-text-classification-79cb14bab2d7#:~:text=White%20Pixels%20(1s)%20represent%20the%20foreground." target="_blank">foreground objects</a>. It&rsquo;s particularly useful when the goal is to highlight the boundaries within larger structures.
-						</p>
+								<span title="Right click for a cheat sheet">
+									<math class="outline">
+										<mrow>
+											<mi>g</mi>
+											<mo>= &lpar;</mo>
+											<mi>I</mi>
+											<mo>&oplus;</mo>
+											<mi>s</mi>
+											<mo> &rpar; &minus; &lpar;</mo>
+											<mi>I</mi>
+											<mo>&ominus;</mo>
+											<mi>s</mi>
+											<mo> &rpar; =</mo>
+											<mi>I</mi>
+											<mi>&delta;</mi>
+											<mo>&minus;</mo>
+											<mi>I</mi>
+											<mi>&epsilon;</mi>
+										</mrow>
+									</math>
+								</span><br><br>
+							</li>
 
-						<p class="maths" title="Right click for a cheat sheet">
-							<math>
-								<mrow>
-									<msub>
-										<mi>g</mi>
-										<mi>int</mi>
-									</msub>
-									<mo>=</mo>
-									<mi>I</mi>
-									<mo> &minus; &lpar;</mo>
-									<mi>I</mi>
-									<mo>&ominus;</mo>
-									<mi>s</mi>
-									<mo> &rpar;</mo>
-									<mo>=</mo>
-									<mi>I</mi>
-									<mo>&minus;</mo>
-									<mi>I</mi>
-									<mi>&epsilon;</mi>
-								</mrow>
-							</math>
-						</p>
+							<li>
+								<h5>
+									Internal <a href="https://en.wikipedia.org/wiki/Morphological_gradient" target="_blank">Gradient</a>&colon;
+								</h5>
+								
+								<p>
+									Computed as the difference between the original image and its <a href="https://homepages.inf.ed.ac.uk/rbf/HIPR2/erode.htm" target="_blank">eroded</a> version, this method emphasizes the inner edges of <a href="https://medium.com/hackernoon/an-introduction-to-morphological-operations-for-digital-image-text-classification-79cb14bab2d7#:~:text=White%20Pixels%20(1s)%20represent%20the%20foreground." target="_blank">foreground objects</a>. It&rsquo;s particularly useful when the goal is to highlight the boundaries within larger structures.<br>
+								</p>
 
-						<h5>
-							External <a href="https://en.wikipedia.org/wiki/Morphological_gradient" target="_blank">Gradient</a>&colon;
-						</h5>
-						<p>
-							Calculated as the difference between the <a href="https://homepages.inf.ed.ac.uk/rbf/HIPR2/dilate.htm" target="_blank">dilated</a> image and the original, this method focuses on the outer edges of <a href="https://medium.com/hackernoon/an-introduction-to-morphological-operations-for-digital-image-text-classification-79cb14bab2d7#:~:text=White%20Pixels%20(1s)%20represent%20the%20foreground." target="_blank">foreground objects</a>. It&rsquo;s effective for enhancing the external contours and separating closely spaced elements.
-						</p>
+								<span title="Right click for a cheat sheet">
+									<math class="outline">
+										<mrow>
+											<msub>
+												<mi>g</mi>
+												<mi>int</mi>
+											</msub>
+											<mo>=</mo>
+											<mi>I</mi>
+											<mo> &minus; &lpar;</mo>
+											<mi>I</mi>
+											<mo>&ominus;</mo>
+											<mi>s</mi>
+											<mo> &rpar;</mo>
+											<mo>=</mo>
+											<mi>I</mi>
+											<mo>&minus;</mo>
+											<mi>I</mi>
+											<mi>&epsilon;</mi>
+										</mrow>
+									</math>
+								</span><br><br>
+							</li>
 
-						<p class="maths" title="Right click for a cheat sheet">
-							<math>
-								<mrow>
-									<msub>
-										<mi>g</mi>
-										<mi>ext</mi>
-									</msub>
-									<mo>= &lpar;</mo>
-									<mi>I</mi>
-									<mo>&oplus;</mo>
-									<mi>s</mi>
-									<mo> &rpar; &minus;</mo>
-									<mi>I</mi>
-									<mo>=</mo>
-									<mi>I</mi>
-									<mi>&delta;</mi>
-									<mo>&minus;</mo>
-									<mi>I</mi>
-								</mrow>
-							</math>
-						</p>
+							<li>
+								<h5>
+									External <a href="https://en.wikipedia.org/wiki/Morphological_gradient" target="_blank">Gradient</a>&colon;
+								</h5>
+
+								<p>
+									Calculated as the difference between the <a href="https://homepages.inf.ed.ac.uk/rbf/HIPR2/dilate.htm" target="_blank">dilated</a> image and the original, this method focuses on the outer edges of <a href="https://medium.com/hackernoon/an-introduction-to-morphological-operations-for-digital-image-text-classification-79cb14bab2d7#:~:text=White%20Pixels%20(1s)%20represent%20the%20foreground." target="_blank">foreground objects</a>. It&rsquo;s effective for enhancing the external contours and separating closely spaced elements.<br>
+								</p>
+
+								<span title="Right click for a cheat sheet">
+									<math class="outline">
+										<mrow>
+											<msub>
+												<mi>g</mi>
+												<mi>ext</mi>
+											</msub>
+											<mo>= &lpar;</mo>
+											<mi>I</mi>
+											<mo>&oplus;</mo>
+											<mi>s</mi>
+											<mo> &rpar; &minus;</mo>
+											<mi>I</mi>
+											<mo>=</mo>
+											<mi>I</mi>
+											<mi>&delta;</mi>
+											<mo>&minus;</mo>
+											<mi>I</mi>
+										</mrow>
+									</math>
+								</span>
+							</li>
+						</ol>
 
 						<p>
 							By selecting the appropriate <a href="https://en.wikipedia.org/wiki/Morphological_gradient" target="_blank">gradient</a> type, the <a href="https://en.wikipedia.org/wiki/Morphological_gradient" target="_blank">Morphological Gradient</a> component allows for precise control over how boundaries are interpreted and emphasized.
@@ -2258,66 +2280,64 @@
 							The <i>Method</i> parameter determines how the perimeter is calculated&colon;
 						</p>
 
-						<p>
-							<ul>
-								<li>
-									Outline&colon; Extracts the outer boundary of objects by subtracting the dilated image from the input.
-									<span title="Right click for a cheat sheet">
-										<math>
-											<mrow>
-												<msub>
-													<mi>g</mi>
-													<mi>ext</mi>
-												</msub>
-												<mo>= &lpar;</mo>
-												<mi>I</mi>
-												<mo>&oplus;</mo>
-												<mi>s</mi>
-												<mo> &rpar; &minus;</mo>
-												<mi>I</mi>
-												<mo>=</mo>
-												<mi>I</mi>
-												<mi>&delta;</mi>
-												<mo>&minus;</mo>
-												<mi>I</mi>
-											</mrow>
-										</math>
-									</span>
-								</li>
+						<ul>
+							<li>
+								Outline&colon; Extracts the outer boundary of objects by subtracting the dilated image from the input.
+								<span title="Right click for a cheat sheet">
+									<math>
+										<mrow>
+											<msub>
+												<mi>g</mi>
+												<mi>ext</mi>
+											</msub>
+											<mo>= &lpar;</mo>
+											<mi>I</mi>
+											<mo>&oplus;</mo>
+											<mi>s</mi>
+											<mo> &rpar; &minus;</mo>
+											<mi>I</mi>
+											<mo>=</mo>
+											<mi>I</mi>
+											<mi>&delta;</mi>
+											<mo>&minus;</mo>
+											<mi>I</mi>
+										</mrow>
+									</math>
+								</span>
+							</li>
 
-								<li>
-									Inline&colon; Extracts the inner boundary of objects by subtracting the input from the eroded image.
-									<span title="Right click for a cheat sheet">
-										<math>
-											<mrow>
-												<msub>
-													<mi>g</mi>
-													<mi>int</mi>
-												</msub>
-												<mo>=</mo>
-												<mi>I</mi>
-												<mo> &minus; &lpar;</mo>
-												<mi>I</mi>
-												<mo>&ominus;</mo>
-												<mi>s</mi>
-												<mo> &rpar;</mo>
-												<mo>=</mo>
-												<mi>I</mi>
-												<mo>&minus;</mo>
-												<mi>I</mi>
-												<mi>&epsilon;</mi>
-											</mrow>
-										</math>
-									</span>
-								</li>
-							</ul>
-						</p>
+							<li>
+								Inline&colon; Extracts the inner boundary of objects by subtracting the input from the eroded image.
+								<span title="Right click for a cheat sheet">
+									<math>
+										<mrow>
+											<msub>
+												<mi>g</mi>
+												<mi>int</mi>
+											</msub>
+											<mo>=</mo>
+											<mi>I</mi>
+											<mo> &minus; &lpar;</mo>
+											<mi>I</mi>
+											<mo>&ominus;</mo>
+											<mi>s</mi>
+											<mo> &rpar;</mo>
+											<mo>=</mo>
+											<mi>I</mi>
+											<mo>&minus;</mo>
+											<mi>I</mi>
+											<mi>&epsilon;</mi>
+										</mrow>
+									</math>
+								</span>
+							</li>
+						</ul>
 
 						<p>
 							This component is ideal for tasks that require a clean, precise boundary of objects, such as contour detection, shape analysis, and segmentation refinement. For more advanced or nuanced edge detection, the Gradient component provides additional flexibility and detail.
 						</p>
 
-						<h5>Resources:</h5>
+						<h5>Resources&colon;</h5>
 						<p>
 							<a href="https://github.com/MaxMainio/TD_" target="_blank">Download the .tox files</a><br>
 							<a href="https://homepages.inf.ed.ac.uk/rbf/HIPR2/morops.htm" target="_blank">HIPR2 Morphology documentation</a><br>
@@ -2396,7 +2416,7 @@
 
 						<div>
 							<h4>Parameters</h4>
-							<h5>Method:</h5>
+							<h5>Method&colon;</h5>
 							<p>
 								Determines the type of perimeter to generate. 
 								<!-- Outline creates a perimeter around <a href="https://medium.com/hackernoon/an-introduction-to-morphological-operations-for-digital-image-text-classification-79cb14bab2d7#:~:text=White%20Pixels%20(1s)%20represent%20the%20foreground." target="_blank">foreground objects</a>, while Inline generates the perimeter within them. -->
@@ -2407,12 +2427,12 @@
 								Specifies the <a href="https://www.ni.com/docs/en-US/bundle/ni-vision-concepts-help/page/structuring_elements.html#:~:text=Morphological%20transformations%20use%20a%202D,the%20boundary%20of%20a%20particle." target="_blank">structuring element</a> used to define the perimeter. The choice of element influences the detail and characteristics of the generated perimeter.
 							</p>
 
-							<h5>Depth:</h5>
+							<h5>Depth&colon;</h5>
 							<p>
 								Specifies the number of iterations that the morphological operation will be applied to the input image.
 							</p>
 	
-							<h5>Edge Handling:</h5>
+							<h5>Edge Handling&colon;</h5>
 							<p>
 								Determines how the edges of the image are treated during the <a href="https://docs.opencv.org/4.x/d9/d61/tutorial_py_morphological_ops.html#:~:text=Theory-,Morphological%20transformations,-are%20some%20simple" target="_blank">morphological transformation</a>. Extends the image to avoid edge artifacts.
 							</p>
@@ -2600,9 +2620,119 @@
 				<section id="smoothing" class="documentation">
 					<div class="docuinfo">
 						<h2>Smoothing</h2>
-						<h3>Morphological Surface Refinement</h3>
+						<h3><a href="https://en.wikipedia.org/wiki/Mathematical_morphology" target="_blank">Morphological</a> Surface Refinement</h3>
 						<p>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim diam vulputate ut pharetra sit amet aliquam. Integer eget aliquet nibh praesent tristique magna sit. Massa id neque aliquam vestibulum. Egestas diam in arcu cursus euismod quis viverra nibh. Ultrices vitae auctor eu augue ut lectus arcu bibendum at. Vel risus commodo viverra maecenas accumsan lacus vel facilisis volutpat. Sit amet cursus sit amet dictum sit. Scelerisque mauris pellentesque pulvinar pellentesque habitant morbi tristique. Rutrum quisque non tellus orci ac.
+							From <a href="#dilate-erode" target="_self">dilation</a> and <a href="#dilate-erode" target="_self">erosion</a> to <a href="#opening-closing" target="_self">opening</a> and <a href="#opening-closing" target="_self">closing</a>, this smoothing operation&rsquo;s standard method serves as the natural next step in this progression. Defined as an <a href="#opening-closing" target="_self">opening</a> followed or preceded by a <a href="#opening-closing" target="_self">closing</a> <span title="Right click for a cheat sheet">
+								<math>
+									<mrow>
+										<mi>&lpar;</mi>
+										<mi>&#632;</mi>
+										<mi>&lpar;</mi>
+										<mi>&gamma;</mi>
+										<mi>&lpar;</mi>
+										<mi>I</mi>
+										<mi>&rpar;</mi>
+										<mi>&rpar;</mi>
+									</mrow>
+								</math>
+								or
+								<math>
+									<mrow>
+										<mi>&gamma;</mi>
+										<mi>&lpar;</mi>
+										<mi>&#632;</mi>
+										<mi>&lpar;</mi>
+										<mi>I</mi>
+										<mi>&rpar;</mi>
+										<mi>&rpar;</mi>
+										<mi>&rpar;</mi>
+									</mrow>
+								</math>
+							</span>, this <a href="https://docs.opencv.org/4.x/d9/d61/tutorial_py_morphological_ops.html#:~:text=Theory-,Morphological%20transformations,-are%20some%20simple" target="_blank">morphological transformation</a> reduces noise and smooths both the textures and overall shapes of the input image.
+						</p>
+
+						<p>
+							In addition to the standard method, this component includes two other <a href="https://docs.opencv.org/4.x/d9/d61/tutorial_py_morphological_ops.html#:~:text=Theory-,Morphological%20transformations,-are%20some%20simple" target="_blank">transformations</a> with smoothing properties&colon;
+						</p>
+
+						<ol>
+							<li>
+								<h5>
+									Image Smoothing&colon;
+								</h5>
+
+								<p>
+									Defined as the average of the <a href="#dilate-erode" target="_self">eroded</a> and <a href="#dilate-erode" target="_self">dilated</a> input image. This <a href="https://docs.opencv.org/4.x/d9/d61/tutorial_py_morphological_ops.html#:~:text=Theory-,Morphological%20transformations,-are%20some%20simple" target="_blank">transformation</a> is effective for reducing sharp transitions while maintaining the general intensity gradient.
+								</p>
+
+								<span title="Right click for a cheat sheet">
+									<math class="outline">
+										<mrow>
+											<msub>
+												<mi>I</mi>
+												<mi>smoothed</mi>
+											</msub>
+											<mo>=</mo>
+											<mfrac>
+												<mrow>
+													<mi>I</mi>
+													<mi>&delta;</mi>
+													<mo>+</mo>
+													<mi>I</mi>
+													<mi>&epsilon;</mi>
+												</mrow>
+												<mrow>
+													<mi>2</mi>
+												</mrow>
+											</mfrac>
+										</mrow>
+									</math>
+								</span><br><br>
+							</li>
+
+							<li>
+								<h5>
+									Texture Smoothing&colon;
+								</h5>
+
+								<p>
+									Defined as the average of the <a href="#opening-closing" target="_self">opened</a> and <a href="#opening-closing" target="_self">closed</a> images. This <a href="https://docs.opencv.org/4.x/d9/d61/tutorial_py_morphological_ops.html#:~:text=Theory-,Morphological%20transformations,-are%20some%20simple" target="_blank">transformation</a> is useful for blending textures and reducing high-frequency details without significant loss of structural information.
+								</p>
+
+								<span title="Right click for a cheat sheet">
+									<math class="outline">
+										<mrow>
+											<msub>
+												<mi>I</mi>
+												<mi>smoothed</mi>
+											</msub>
+											<mo>=</mo>
+											<mfrac>
+												<mrow>
+													<mi>I</mi>
+													<mi>&gamma;</mi>
+													<mo>+</mo>
+													<mi>I</mi>
+													<mi>&#632;</mi>
+												</mrow>
+												<mrow>
+													<mi>2</mi>
+												</mrow>
+											</mfrac>
+										</mrow>
+									</math>
+								</span>
+							</li>
+						</ol>
+
+						<p>
+							These methods provide flexible and robust options for refining image content, whether you're focusing on reducing noise, softening textures, or preserving structural integrity. The Morphological Smoothing component is a versatile tool for preprocessing images, enhancing visual clarity, and preparing data for advanced analysis or visualization.
+						</p>
+
+						<h5>Resources:</h5>
+						<p>
+							<a href="https://github.com/MaxMainio/TD_" target="_blank">Download the .tox files</a><br>
+							<a href="http://www.cyto.purdue.edu/cdroms/micro2/content/education/wirth08.pdf" target="_blank">Grayscale Morphological Analysis</a>
 						</p>
 					</div>
 
