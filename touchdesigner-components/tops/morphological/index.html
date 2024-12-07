@@ -1214,55 +1214,57 @@
 									This operation produces results similar to a linear <a href="../edge-detectors/#laplacian-opreator">Laplacian filter</a>, highlighting prominent transitions in intensity.<br>
 								</p>
 
-								<span title="Right click for a cheat sheet">
-									<!-- <math class="outline">
-										<mrow>
-											<mi>DYL</mi>
-											<mo>&lpar;</mo>
-											<mi>I</mi>
-											<mo>&rpar;</mo>
-											<mo>=</mo>
-											<mi>min</mi>
-											<mo>&lpar;&lpar;</mo>
-											<mi>I</mi>
-											<mo>&oplus;</mo>
-											<mi>s</mi>
-											<mo>&rpar;&minus;</mo>
-											<mi>I</mi>
-											<mo>,</mo>
-											<mo> </mo>
-											<mi>I</mi>
-											<mo>&minus;&lpar;</mo>
-											<mi>I</mi>
-											<mo>&ominus;</mo>
-											<mi>s</mi>
-											<mo>&rpar;&rpar;</mo>
-										</mrow>
-									</math> -->
-
-									<math class="outline">
-										<mrow>
-											<mi>DYL</mi>
-											<mo>&lpar;</mo>
-											<mi>I</mi>
-											<mo>&rpar;</mo>
-											<mo>=</mo>
-											<mi>min</mi>
-											<mo>&lpar;</mo>
-											<mi>I</mi>
-											<mi>&delta;</mi>
-											<mo>&minus;</mo>
-											<mi>I</mi>
-											<mo>,</mo>
-											<mo> </mo>
-											<mi>I</mi>
-											<mo>&minus;</mo>
-											<mi>I</mi>
-											<mo>&epsilon;</mo>
-											<mo>&rpar;</mo>
-										</mrow>
-									</math>
-								</span><br><br>
+								<p class="maths">
+									<span title="Right click for a cheat sheet">
+										<!-- <math class="outline">
+											<mrow>
+												<mi>DYL</mi>
+												<mo>&lpar;</mo>
+												<mi>I</mi>
+												<mo>&rpar;</mo>
+												<mo>=</mo>
+												<mi>min</mi>
+												<mo>&lpar;&lpar;</mo>
+												<mi>I</mi>
+												<mo>&oplus;</mo>
+												<mi>s</mi>
+												<mo>&rpar;&minus;</mo>
+												<mi>I</mi>
+												<mo>,</mo>
+												<mo> </mo>
+												<mi>I</mi>
+												<mo>&minus;&lpar;</mo>
+												<mi>I</mi>
+												<mo>&ominus;</mo>
+												<mi>s</mi>
+												<mo>&rpar;&rpar;</mo>
+											</mrow>
+										</math> -->
+	
+										<math class="outline">
+											<mrow>
+												<mi>DYL</mi>
+												<mo>&lpar;</mo>
+												<mi>I</mi>
+												<mo>&rpar;</mo>
+												<mo>=</mo>
+												<mi>min</mi>
+												<mo>&lpar;</mo>
+												<mi>I</mi>
+												<mi>&delta;</mi>
+												<mo>&minus;</mo>
+												<mi>I</mi>
+												<mo>,</mo>
+												<mo> </mo>
+												<mi>I</mi>
+												<mo>&minus;</mo>
+												<mi>I</mi>
+												<mo>&epsilon;</mo>
+												<mo>&rpar;</mo>
+											</mrow>
+										</math>
+									</span>
+								</p><br>
 							</li>
 
 							<li>
@@ -1272,30 +1274,32 @@
 									Emphasizes high-frequency details and noise by analyzing the transitions that remain after morphological <i>smoothing</i> (<a href="#opening-closing" target="_self">opening</a>) and <i>sharpening</i> (<a href="#opening-closing" target="_self">closing</a>).<br>
 								</p>
 
-								<span title="Right click for a cheat sheet">
-									<math class="outline">
-										<mrow>
-											<mi>TEL</mi>
-											<mo>&lpar;</mo>
-											<mi>I</mi>
-											<mo>&rpar;</mo>
-											<mo>=</mo>
-											<mi>min</mi>
-											<mo>&lpar;</mo>
-											<mi>I</mi>
-											<mi>&#632;</mi>
-											<mo>&minus;</mo>
-											<mi>I</mi>
-											<mo>,</mo>
-											<mo> </mo>
-											<mi>I</mi>
-											<mo>&minus;</mo>
-											<mi>I</mi>
-											<mo>&gamma;</mo>
-											<mo>&rpar;</mo>
-										</mrow>
-									</math>
-								</span><br><br>
+								<p class="maths">
+									<span title="Right click for a cheat sheet">
+										<math class="outline">
+											<mrow>
+												<mi>TEL</mi>
+												<mo>&lpar;</mo>
+												<mi>I</mi>
+												<mo>&rpar;</mo>
+												<mo>=</mo>
+												<mi>min</mi>
+												<mo>&lpar;</mo>
+												<mi>I</mi>
+												<mi>&#632;</mi>
+												<mo>&minus;</mo>
+												<mi>I</mi>
+												<mo>,</mo>
+												<mo> </mo>
+												<mi>I</mi>
+												<mo>&minus;</mo>
+												<mi>I</mi>
+												<mo>&gamma;</mo>
+												<mo>&rpar;</mo>
+											</mrow>
+										</math>
+									</span>
+								</p><br>
 							</li>
 
 							<li>
@@ -1305,32 +1309,34 @@
 									Emphasizes smooth gradients by analyzing the morphological transitions between dilation, erosion, opening, and closing.<br>
 								</p>
 
-								<span title="Right click for a cheat sheet">
-									<math class="outline">
-										<mrow>
-											<mi>RAL</mi>
-											<mo>&lpar;</mo>
-											<mi>I</mi>
-											<mo>&rpar;</mo>
-											<mo>=</mo>
-											<mi>min</mi>
-											<mo>&lpar;</mo>
-											<mi>I</mi>
-											<mi>&delta;</mi>
-											<mo>&minus;</mo>
-											<mi>I</mi>
-											<mi>&#632;</mi>
-											<mo>,</mo>
-											<mo> </mo>
-											<mi>I</mi>
-											<mo>&gamma;</mo>
-											<mo>&minus;</mo>
-											<mi>I</mi>
-											<mo>&epsilon;</mo>
-											<mo>&rpar;</mo>
-										</mrow>
-									</math>
-								</span>
+								<p class="maths">
+									<span title="Right click for a cheat sheet">
+										<math class="outline">
+											<mrow>
+												<mi>RAL</mi>
+												<mo>&lpar;</mo>
+												<mi>I</mi>
+												<mo>&rpar;</mo>
+												<mo>=</mo>
+												<mi>min</mi>
+												<mo>&lpar;</mo>
+												<mi>I</mi>
+												<mi>&delta;</mi>
+												<mo>&minus;</mo>
+												<mi>I</mi>
+												<mi>&#632;</mi>
+												<mo>,</mo>
+												<mo> </mo>
+												<mi>I</mi>
+												<mo>&gamma;</mo>
+												<mo>&minus;</mo>
+												<mi>I</mi>
+												<mo>&epsilon;</mo>
+												<mo>&rpar;</mo>
+											</mrow>
+										</math>
+									</span>
+								</p>
 							</li>
 						</ol>
 
@@ -1637,27 +1643,29 @@
 									The standard <a href="https://en.wikipedia.org/wiki/Morphological_gradient" target="_blank">morphological gradient</a> is calculated as the difference between the <a href="https://homepages.inf.ed.ac.uk/rbf/HIPR2/dilate.htm" target="_blank">dilated</a> and <a href="https://homepages.inf.ed.ac.uk/rbf/HIPR2/erode.htm" target="_blank">eroded</a> versions of the input image. This method accentuates the boundaries of objects, making it ideal for general edge detection.<br>
 								</p>
 
-								<span title="Right click for a cheat sheet">
-									<math class="outline">
-										<mrow>
-											<mi>g</mi>
-											<mo>= &lpar;</mo>
-											<mi>I</mi>
-											<mo>&oplus;</mo>
-											<mi>s</mi>
-											<mo> &rpar; &minus; &lpar;</mo>
-											<mi>I</mi>
-											<mo>&ominus;</mo>
-											<mi>s</mi>
-											<mo> &rpar; =</mo>
-											<mi>I</mi>
-											<mi>&delta;</mi>
-											<mo>&minus;</mo>
-											<mi>I</mi>
-											<mi>&epsilon;</mi>
-										</mrow>
-									</math>
-								</span><br><br>
+								<p class="maths">
+									<span title="Right click for a cheat sheet">
+										<math class="outline">
+											<mrow>
+												<mi>g</mi>
+												<mo>= &lpar;</mo>
+												<mi>I</mi>
+												<mo>&oplus;</mo>
+												<mi>s</mi>
+												<mo> &rpar; &minus; &lpar;</mo>
+												<mi>I</mi>
+												<mo>&ominus;</mo>
+												<mi>s</mi>
+												<mo> &rpar; =</mo>
+												<mi>I</mi>
+												<mi>&delta;</mi>
+												<mo>&minus;</mo>
+												<mi>I</mi>
+												<mi>&epsilon;</mi>
+											</mrow>
+										</math>
+									</span>
+								</p><br>
 							</li>
 
 							<li>
@@ -1669,28 +1677,30 @@
 									Computed as the difference between the original image and its <a href="https://homepages.inf.ed.ac.uk/rbf/HIPR2/erode.htm" target="_blank">eroded</a> version, this method emphasizes the inner edges of <a href="https://medium.com/hackernoon/an-introduction-to-morphological-operations-for-digital-image-text-classification-79cb14bab2d7#:~:text=White%20Pixels%20(1s)%20represent%20the%20foreground." target="_blank">foreground objects</a>. It&rsquo;s particularly useful when the goal is to highlight the boundaries within larger structures.<br>
 								</p>
 
-								<span title="Right click for a cheat sheet">
-									<math class="outline">
-										<mrow>
-											<msub>
-												<mi>g</mi>
-												<mi>int</mi>
-											</msub>
-											<mo>=</mo>
-											<mi>I</mi>
-											<mo> &minus; &lpar;</mo>
-											<mi>I</mi>
-											<mo>&ominus;</mo>
-											<mi>s</mi>
-											<mo> &rpar;</mo>
-											<mo>=</mo>
-											<mi>I</mi>
-											<mo>&minus;</mo>
-											<mi>I</mi>
-											<mi>&epsilon;</mi>
-										</mrow>
-									</math>
-								</span><br><br>
+								<p class="maths">
+									<span title="Right click for a cheat sheet">
+										<math class="outline">
+											<mrow>
+												<msub>
+													<mi>g</mi>
+													<mi>int</mi>
+												</msub>
+												<mo>=</mo>
+												<mi>I</mi>
+												<mo> &minus; &lpar;</mo>
+												<mi>I</mi>
+												<mo>&ominus;</mo>
+												<mi>s</mi>
+												<mo> &rpar;</mo>
+												<mo>=</mo>
+												<mi>I</mi>
+												<mo>&minus;</mo>
+												<mi>I</mi>
+												<mi>&epsilon;</mi>
+											</mrow>
+										</math>
+									</span>
+								</p><br>
 							</li>
 
 							<li>
@@ -1702,27 +1712,30 @@
 									Calculated as the difference between the <a href="https://homepages.inf.ed.ac.uk/rbf/HIPR2/dilate.htm" target="_blank">dilated</a> image and the original, this method focuses on the outer edges of <a href="https://medium.com/hackernoon/an-introduction-to-morphological-operations-for-digital-image-text-classification-79cb14bab2d7#:~:text=White%20Pixels%20(1s)%20represent%20the%20foreground." target="_blank">foreground objects</a>. It&rsquo;s effective for enhancing the external contours and separating closely spaced elements.<br>
 								</p>
 
-								<span title="Right click for a cheat sheet">
-									<math class="outline">
-										<mrow>
-											<msub>
-												<mi>g</mi>
-												<mi>ext</mi>
-											</msub>
-											<mo>= &lpar;</mo>
-											<mi>I</mi>
-											<mo>&oplus;</mo>
-											<mi>s</mi>
-											<mo> &rpar; &minus;</mo>
-											<mi>I</mi>
-											<mo>=</mo>
-											<mi>I</mi>
-											<mi>&delta;</mi>
-											<mo>&minus;</mo>
-											<mi>I</mi>
-										</mrow>
-									</math>
-								</span>
+								<p class="maths">
+									<span title="Right click for a cheat sheet">
+										<math class="outline">
+											<mrow>
+												<msub>
+													<mi>g</mi>
+													<mi>ext</mi>
+												</msub>
+												<mo>= &lpar;</mo>
+												<mi>I</mi>
+												<mo>&oplus;</mo>
+												<mi>s</mi>
+												<mo> &rpar; &minus;</mo>
+												<mi>I</mi>
+												<mo>=</mo>
+												<mi>I</mi>
+												<mi>&delta;</mi>
+												<mo>&minus;</mo>
+												<mi>I</mi>
+											</mrow>
+										</math>
+									</span>
+								</p>
+
 							</li>
 						</ol>
 
@@ -2665,29 +2678,32 @@
 									Defined as the average of the <a href="#dilate-erode" target="_self">eroded</a> and <a href="#dilate-erode" target="_self">dilated</a> input image. This <a href="https://docs.opencv.org/4.x/d9/d61/tutorial_py_morphological_ops.html#:~:text=Theory-,Morphological%20transformations,-are%20some%20simple" target="_blank">transformation</a> is effective for reducing sharp transitions while maintaining the general intensity gradient.
 								</p>
 
-								<span title="Right click for a cheat sheet">
-									<math class="outline">
-										<mrow>
-											<msub>
-												<mi>I</mi>
-												<mi>smoothed</mi>
-											</msub>
-											<mo>=</mo>
-											<mfrac>
-												<mrow>
+								<p class="maths">
+									<span title="Right click for a cheat sheet">
+										<math class="outline">
+											<mrow>
+												<msub>
 													<mi>I</mi>
-													<mi>&delta;</mi>
-													<mo>+</mo>
-													<mi>I</mi>
-													<mi>&epsilon;</mi>
-												</mrow>
-												<mrow>
-													<mi>2</mi>
-												</mrow>
-											</mfrac>
-										</mrow>
-									</math>
-								</span><br><br>
+													<mi>smoothed</mi>
+												</msub>
+												<mo>=</mo>
+												<mfrac>
+													<mrow>
+														<mi>I</mi>
+														<mi>&delta;</mi>
+														<mo>+</mo>
+														<mi>I</mi>
+														<mi>&epsilon;</mi>
+													</mrow>
+													<mrow>
+														<mi>2</mi>
+													</mrow>
+												</mfrac>
+											</mrow>
+										</math>
+									</span>
+								</p><br>
+
 							</li>
 
 							<li>
@@ -2699,29 +2715,31 @@
 									Defined as the average of the <a href="#opening-closing" target="_self">opened</a> and <a href="#opening-closing" target="_self">closed</a> images. This <a href="https://docs.opencv.org/4.x/d9/d61/tutorial_py_morphological_ops.html#:~:text=Theory-,Morphological%20transformations,-are%20some%20simple" target="_blank">transformation</a> is useful for blending textures and reducing high-frequency details without significant loss of structural information.
 								</p>
 
-								<span title="Right click for a cheat sheet">
-									<math class="outline">
-										<mrow>
-											<msub>
-												<mi>I</mi>
-												<mi>smoothed</mi>
-											</msub>
-											<mo>=</mo>
-											<mfrac>
-												<mrow>
+								<p class="maths">
+									<span title="Right click for a cheat sheet">
+										<math class="outline">
+											<mrow>
+												<msub>
 													<mi>I</mi>
-													<mi>&gamma;</mi>
-													<mo>+</mo>
-													<mi>I</mi>
-													<mi>&#632;</mi>
-												</mrow>
-												<mrow>
-													<mi>2</mi>
-												</mrow>
-											</mfrac>
-										</mrow>
-									</math>
-								</span>
+													<mi>smoothed</mi>
+												</msub>
+												<mo>=</mo>
+												<mfrac>
+													<mrow>
+														<mi>I</mi>
+														<mi>&gamma;</mi>
+														<mo>+</mo>
+														<mi>I</mi>
+														<mi>&#632;</mi>
+													</mrow>
+													<mrow>
+														<mi>2</mi>
+													</mrow>
+												</mfrac>
+											</mrow>
+										</math>
+									</span>
+								</p>
 							</li>
 						</ol>
 
@@ -2970,10 +2988,68 @@
 
 				<section id="top-bottom-hat" class="documentation">
 					<div class="docuinfo">
-						<h2>Top&sol;Bottom Hat</h2>
+						<h2>Top&sol;Bottom&hyphen;Hat</h2>
 						<h3>Contrast Enhancement</h3>
 						<p>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim diam vulputate ut pharetra sit amet aliquam. Integer eget aliquet nibh praesent tristique magna sit. Massa id neque aliquam vestibulum. Egestas diam in arcu cursus euismod quis viverra nibh. Ultrices vitae auctor eu augue ut lectus arcu bibendum at. Vel risus commodo viverra maecenas accumsan lacus vel facilisis volutpat. Sit amet cursus sit amet dictum sit. Scelerisque mauris pellentesque pulvinar pellentesque habitant morbi tristique. Rutrum quisque non tellus orci ac.
+							By leveraging <a href="#opening-closing" target="_self">opening</a> and <a href="#opening-closing" target="_self">closing</a> <a href="https://docs.opencv.org/4.x/d9/d61/tutorial_py_morphological_ops.html#:~:text=Theory-,Morphological%20transformations,-are%20some%20simple" target="_blank">transformations</a>, this component is particularly useful for detecting bright or dark regions relative to their surroundings.
+						</p>
+
+						<p>
+							The <a href="https://en.wikipedia.org/wiki/Top-hat_transform#:~:text=Applied%20top%2Dhat%20transform" target="_blank">Top&hyphen;Hat</a> and <a href="https://www.mathworks.com/help/images/morphological-dilation-and-erosion.html#:~:text=in%20an%20image.-,imbothat,-Perform%20a%20morphological" target="_blank">Bottom&hyphen;Hat</a> <a href="https://docs.opencv.org/4.x/d9/d61/tutorial_py_morphological_ops.html#:~:text=Theory-,Morphological%20transformations,-are%20some%20simple" target="_blank">transformations</a> are often referred to as White&hyphen;Hat and Black&hyphen;Hat <a href="https://docs.opencv.org/4.x/d9/d61/tutorial_py_morphological_ops.html#:~:text=Theory-,Morphological%20transformations,-are%20some%20simple" target="_blank">transformations</a>, respectively, in some literature. These terms come from the idea of isolating light &lpar;<a href="https://www.google.com/search?q=%23FFFFFF&oq=%23FFFFFF&gs_lcrp=EgZjaHJvbWUyBggAEEUYOdIBCDIzMzZqMGo3qAIAsAIA&sourceid=chrome&ie=UTF-8" target="_blank">white</a>&rpar; or dark &lpar;<a href="https://www.google.com/search?q=%23000000&sca_esv=2e484b4e376f015d&sxsrf=ADLYWILW851YEJ_RwA256Uj_omnVsAaX9A%3A1733606727545&ei=R71UZ4iAIZqC0PEPiL-6-A0&ved=0ahUKEwjIv7OpzJaKAxUaATQIHYifDt8Q4dUDCA8&uact=5&oq=%23000000&gs_lp=Egxnd3Mtd2l6LXNlcnAiByMwMDAwMDAyCBAAGIAEGKIEMggQABiABBiiBDIIEAAYgAQYogQyCBAAGIAEGKIESO4YUJUMWKETcAJ4AZABAJgBjQGgAdcFqgEDMC42uAEDyAEA-AEBmAIIoALwBcICChAAGLADGNYEGEfCAggQABiABBixA8ICBRAAGIAEmAMAiAYBkAYIkgcDMi42oAfpFg&sclient=gws-wiz-serp" target="_blank">black</a>&rpar; features in an image. However, the terms &ldquo;<a href="https://en.wikipedia.org/wiki/Top-hat_transform#:~:text=Applied%20top%2Dhat%20transform" target="_blank">Top&hyphen;Hat</a>&rdquo; and &ldquo;<a href="https://www.mathworks.com/help/images/morphological-dilation-and-erosion.html#:~:text=in%20an%20image.-,imbothat,-Perform%20a%20morphological" target="_blank">Bottom&hyphen;Hat</a>&rdquo; are more widely accepted and recognized in image processing.
+						</p>
+
+						<p>
+							The <a href="https://en.wikipedia.org/wiki/Top-hat_transform#:~:text=Applied%20top%2Dhat%20transform" target="_blank">Top&hyphen;Hat</a> <a href="https://docs.opencv.org/4.x/d9/d61/tutorial_py_morphological_ops.html#:~:text=Theory-,Morphological%20transformations,-are%20some%20simple" target="_blank">transformation</a> highlights small, bright features in an image. Essentially isolating bright objects smaller than the <a href="https://www.ni.com/docs/en-US/bundle/ni-vision-concepts-help/page/structuring_elements.html#:~:text=Morphological%20transformations%20use%20a%202D,the%20boundary%20of%20a%20particle." target="_blank">structuring element</a>, such as small blobs or peaks in intensity. This is achieved by subtracting the morphologically opened image <span title="Right click for a cheat sheet"><math><mi>&lpar;</mi><mi>I</mi><mi>&gamma;</mi><mi>&rpar;</mi></math></span> from the original&colon;
+						</p>
+
+						<p class="maths" title="Right click for a cheat sheet">
+							<math>
+								<mrow>
+									<mi>T</mi>
+									<mi>w</mi>
+									<mo>&lpar;</mo>
+									<mi>I</mi>
+									<mo>&rpar;</mo>
+									<mo>=</mo>
+									<mi>I</mi>
+									<mo>&minus;</mo>
+									<mi>I</mi>
+									<mi>&gamma;</mi>
+								</mrow>
+							</math>
+						</p>
+
+						<p>
+							The <a href="https://www.mathworks.com/help/images/morphological-dilation-and-erosion.html#:~:text=in%20an%20image.-,imbothat,-Perform%20a%20morphological" target="_blank">Bottom&hyphen;Hat</a> <a href="https://docs.opencv.org/4.x/d9/d61/tutorial_py_morphological_ops.html#:~:text=Theory-,Morphological%20transformations,-are%20some%20simple" target="_blank">transformation</a>, on the other hand, enhances dark features in an image. Effectively finding intensity troughs or isolating darker regions smaller than the structuring element. This is achieved by subtracting the original image from its morphologically closed version <span title="Right click for a cheat sheet"><math><mi>&lpar;</mi><mi>I</mi><mi>&#632;</mi><mi>&rpar;</mi></math></span> from the original&colon;
+						</p>
+
+						<p class="maths" title="Right click for a cheat sheet">
+							<math>
+								<mrow>
+									<mi>T</mi>
+									<mi>b</mi>
+									<mo>&lpar;</mo>
+									<mi>I</mi>
+									<mo>&rpar;</mo>
+									<mo>=</mo>
+									<mi>I</mi>
+									<mi>&#632;</mi>
+									<mo>&minus;</mo>
+									<mi>I</mi>
+								</mrow>
+							</math>
+						</p>
+
+						<p>
+							These <a href="https://docs.opencv.org/4.x/d9/d61/tutorial_py_morphological_ops.html#:~:text=Theory-,Morphological%20transformations,-are%20some%20simple" target="_blank">transformations</a> make the Top&sol;Bottom&hyphen;Hat component ideal for identifying small objects or elements based on their brightness or darkness relative to their surroundings, correcting nonuniform illumination in grayscale images for better segmentation or thresholding, enhancing contrast and visibility of subtle features, such as small bright spots or dark pits.
+						</p>
+
+						<h5>Resources&colon;</h5>
+						<p>
+							<a href="https://github.com/MaxMainio/TD_" target="_blank">Download the .tox files</a><br>
+							<a href="https://www.mathworks.com/help/images/morphological-dilation-and-erosion.html#:~:text=top%20and%20right.-,imtophat,-Perform%20a%20morphological" target="_blank">Top&hyphen;Hat on Math Works,</a><br>
+							<a href="https://www.mathworks.com/help/images/morphological-dilation-and-erosion.html#:~:text=in%20an%20image.-,imbothat,-Perform%20a%20morphological" target="_blank">Bottom&hyphen;Hat on Math Works,</a><br>
+							<a href="https://en.wikipedia.org/wiki/Top-hat_transform" target="_blank">Top&hyphen;Hat on Wikipedia</a>
 						</p>
 					</div>
 
@@ -3050,31 +3126,31 @@
 
 						<div>
 							<h4>Parameters</h4>
-							<h5>Mode:</h5>
+							<h5>Mode&colon;</h5>
 							<p>
 								Determines the operation to be performed. <a href="https://www.geeksforgeeks.org/top-hat-and-black-hat-transform-using-python-opencv/#:~:text=Example%201%3A%20Top%2DHat%20Transform" target="_blank">Top-Hat</a> highlights small elements in the <a href="https://medium.com/hackernoon/an-introduction-to-morphological-operations-for-digital-image-text-classification-79cb14bab2d7#:~:text=White%20Pixels%20(1s)%20represent%20the%20foreground." target="_blank">foreground</a>, or <a href="https://www.geeksforgeeks.org/top-hat-and-black-hat-transform-using-python-opencv/#:~:text=Example%202%3A%20Black%20Hat%20transform" target="_blank">Bottom-Hat</a> that emphasizes dark regions.
 							</p>
 
-							<h5>Depth:</h5>
+							<h5>Depth&colon;</h5>
 							<p>
 								Specifies the number of iterations that the morphological operation will be applied to the input image.
 							</p>
 	
 							<hr/>
 	
-							<h5>Dimensions:</h5>
+							<h5>Dimensions&colon;</h5>
 							<p>
 								Defines the width and height of the <a href="https://www.ni.com/docs/en-US/bundle/ni-vision-concepts-help/page/structuring_elements.html#:~:text=Morphological%20transformations%20use%20a%202D,the%20boundary%20of%20a%20particle." target="_blank">structuring element</a> to be used in the morphological operation, directly affecting the scope of the operation on the image.
 							</p>
 
-							<h5>Edge Handling:</h5>
+							<h5>Edge Handling&colon;</h5>
 							<p>
 								Determines how the edges of the image are treated during the <a href="https://docs.opencv.org/4.x/d9/d61/tutorial_py_morphological_ops.html#:~:text=Theory-,Morphological%20transformations,-are%20some%20simple" target="_blank">morphological transformation</a>. Extends the image to avoid edge artifacts.
 							</p>
 
 							<hr/>
 	
-							<h5>Roundness:</h5>
+							<h5>Roundness&colon;</h5>
 							<p>
 								Adjusts the shape of the default <a href="https://www.ni.com/docs/en-US/bundle/ni-vision-concepts-help/page/structuring_elements.html#:~:text=Morphological%20transformations%20use%20a%202D,the%20boundary%20of%20a%20particle." target="_blank">structuring element</a>. A value of 0 creates a square element, while a value of 1 produces a circular element.
 							</p>
