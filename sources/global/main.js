@@ -44,12 +44,15 @@ document.addEventListener('visibilitychange', function() {
 // FADER    ========================================================================================================================
 const innerLinks = document.querySelectorAll('a:not([target="_self"], [target="_blank"])');
 const faderElement = document.querySelector('#fader');
+const isMobile = /Mobi|Android/i.test(navigator.userAgent);
 let fading = false;
 
 // Internal link trigger    --------------------------------------------------------------------------------------------------------
-innerLinks.forEach(item => {
-    item.addEventListener('click', outFade);
-});
+if (!isMobile) {
+	innerLinks.forEach(item => {
+		item.addEventListener('click', outFade);
+	});
+}
 
 
 
@@ -64,21 +67,24 @@ function inFade(){
 };
 
 function outFade(e){
-    e.preventDefault();
+	e.preventDefault();
 
-    const faderDiv = document.createElement('div');
-    faderDiv.classList.add('fader');
-    document.body.append(faderDiv);
+	if (document.querySelector('.fader')) return;
 
-    setTimeout(() => {
-        faderDiv.classList.add('motion');
-    }, 1);
-    
-    const targetURL = e.currentTarget.href;
-    setTimeout(() => {
-        window.location.href = targetURL;
-    }, 499);
-};
+	const faderDiv = document.createElement('div');
+	faderDiv.classList.add('fader');
+	document.body.append(faderDiv);
+
+	setTimeout(() => {
+		faderDiv.classList.add('motion');
+	}, 1);
+
+	const targetURL = e.currentTarget.href;
+	setTimeout(() => {
+		window.location.href = targetURL;
+	}, 499);
+}
+
 
 
 
@@ -148,22 +154,24 @@ blurVid.forEach(vid => {
 // IMG CAROUSEL ====================================================================================================================
 const  buttons = document.querySelectorAll('[data-carousel-button]');
 
-buttons.forEach(button => {
-	button.addEventListener('click', () => {
-		const offset = button.dataset.carouselButton === 'next' ? 1 : -1;
-		const slides = button
-			.closest('[data-carousel]')
-			.querySelector('[data-slides]');
-
-		const activeSlide = slides.querySelector('[data-active]');
-		let newIndex = [...slides.children].indexOf(activeSlide) + offset;
-		if (newIndex < 0) newIndex = slides.children.length - 1;
-		if (newIndex >= slides.children.length) newIndex = 0;
-
-		slides.children[newIndex].dataset.active = true;
-		delete activeSlide.dataset.active;
-	});
-});
+if (buttons.length) {
+	buttons.forEach(button => {
+        button.addEventListener('click', () => {
+            const offset = button.dataset.carouselButton === 'next' ? 1 : -1;
+            const slides = button
+                .closest('[data-carousel]')
+                .querySelector('[data-slides]');
+    
+            const activeSlide = slides.querySelector('[data-active]');
+            let newIndex = [...slides.children].indexOf(activeSlide) + offset;
+            if (newIndex < 0) newIndex = slides.children.length - 1;
+            if (newIndex >= slides.children.length) newIndex = 0;
+    
+            slides.children[newIndex].dataset.active = true;
+            delete activeSlide.dataset.active;
+        });
+    });
+};
 
 
 
@@ -176,7 +184,7 @@ buttons.forEach(button => {
 // ZOOM IMGs    ====================================================================================================================
 const zoomable = document.querySelectorAll('.zoomable');
 
-if (vw > 1000) {
+if (zoomable.length && vw > 1000) {
     const handleMouseDown = (event) => {
         if (event.button !== 0) return;
 
@@ -233,10 +241,11 @@ const backToTop = document.getElementById('top-btn');
 
 
 // Set footer text  ----------------------------------------------------------------------------------------------------------------
-function setFooterText(){
-    let newInnerHTML = '<h3>' + footerTxt[getRandomInt(0, (footerTxt.length - 1))] + '</h3>';
-    footerField.appendChild(document.createElement('h3')).innerHTML = newInnerHTML;
-};
+function setFooterText() {
+    const h3 = document.createElement('h3');
+    h3.innerHTML = footerTxt[getRandomInt(0, footerTxt.length - 1)];
+    footerField.appendChild(h3);
+}
 
 
 

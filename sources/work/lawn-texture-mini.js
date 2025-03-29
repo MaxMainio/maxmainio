@@ -77,7 +77,11 @@ function highlightLawn(){
 
     for (let i = 0; i < searchFor.length; i++) {
         let replace = searchFor[i];
-        const regex = new RegExp('((?<!<[^>]+>)' + replace + '(?![^<]*>))', 'gi');
+
+        let escaped = replace.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        const regex = new RegExp('((?<!<[^>]+>)' + escaped + '(?![^<]*>))', 'gi');
+
+        // const regex = new RegExp('((?<!<[^>]+>)' + replace + '(?![^<]*>))', 'gi');
         let seedColor = getRandomInt(0, (colors.length) - 1);
     
         textField.innerHTML = textField.innerHTML.replace(regex, '<span class="' + subject + '" style="background-color: ' + colors[seedColor] + ';" data-color="' + seedColor + '">$1</span>');
@@ -98,7 +102,11 @@ function highlightFlowers(){
 // Suplimentary functions   --------------------------------------------------------------------------------------------------------
 function defineBushes(searchFor, types, typeKeys) {
     for (let i = 0; i < searchFor.length; i++) {
-        const regex = new RegExp('((?<!<[^>]+>)' + searchFor[i] + '(?![^<]*>))', 'gi');
+        const escaped = searchFor[i].replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        const regex = new RegExp('((?<!<[^>]+>)' + escaped + '(?![^<]*>))', 'gi');
+
+
+        // const regex = new RegExp('((?<!<[^>]+>)' + searchFor[i] + '(?![^<]*>))', 'gi');
         
         textField.innerHTML = textField.innerHTML.replace(regex, function(match) {
             let chosenType = typeKeys[getRandomInt(0, (typeKeys.length - 1))];
@@ -115,7 +123,10 @@ function splitBushes(match, chosenType){
     const regex = new RegExp('([' + match + '])', 'gi');
 
     match.replace(regex, function(matched){
-        flowerColor = flowersObj.types[chosenType][getRandomInt(0, (chosenType.length - 1))];
+        const palette = flowersObj.types[chosenType];
+        const flowerColor = palette[getRandomInt(0, palette.length - 1)];
+
+        // flowerColor = flowersObj.types[chosenType][getRandomInt(0, (chosenType.length - 1))];
         wrappedGlyph = '<span class="flower" style="background-color: ' + flowerColor + '"; data-color="' + chosenType + '">' + matched + '</span>';
 
         newHTML.push(wrappedGlyph);

@@ -16,37 +16,49 @@ var windowPos = window.scrollY;
 window.addEventListener('pageshow', e => {
 	applyParallax(windowPos);
 	hedera();
-	typeWriterEffect();
-	
-	if (sortlaterVisibility === true) {
+
+	if (isSortlaterVisible) {
 		applySortLaterScroll();
-	};
+	}
 });
 
-window.addEventListener('DOMContentLoaded', function() {
-	typeWriterEffect();
-});
 
-document.addEventListener('scroll', e => {
+
+let ticking = false;
+
+document.addEventListener('scroll', () => {
 	windowPos = window.scrollY;
 
-	applyParallax(windowPos);
+	if (!ticking) {
+		window.requestAnimationFrame(() => {
+			applyParallax(windowPos);
 
-	if (sortlaterVisibility === true) {
-		applySortLaterScroll();
-	};
+			if (isSortlaterVisible) {
+				applySortLaterScroll();
+			}
+
+			ticking = false;
+		});
+		ticking = true;
+	}
 });
 
-window.addEventListener('resize', e => {
-	viewerHeight = window.innerHeight;
-	viewerWidth = window.innerWidth;
-	windowPos = window.scrollY;
 
-	hedera();
 
-	if (sortlaterVisibility === true) {
-		applySortLaterScroll();
-	};
+let resizeTimeout;
+
+window.addEventListener('resize', () => {
+	clearTimeout(resizeTimeout);
+	resizeTimeout = setTimeout(() => {
+		viewerHeight = window.innerHeight;
+		viewerWidth = window.innerWidth;
+		windowPos = window.scrollY;
+
+		hedera();
+		if (isSortlaterVisible) {
+			applySortLaterScroll();
+		}
+	}, 150);
 });
 
 
@@ -60,11 +72,17 @@ window.addEventListener('resize', e => {
 // SMOOTH SCROLL FOR INTERNAL LINKS	================================================================================================
 const internalAnchorLinks = document.querySelectorAll('a:is([target="_self"])');
 
+let smoothScrollEnabled = false;
+
 internalAnchorLinks.forEach(item => {
 	item.addEventListener('click', e => {
-		document.querySelector('html').style.scrollBehavior = 'smooth'
+		if (!smoothScrollEnabled) {
+			document.querySelector('html').style.scrollBehavior = 'smooth';
+			smoothScrollEnabled = true;
+		}
 	});
 });
+
 
 
 
@@ -77,25 +95,29 @@ internalAnchorLinks.forEach(item => {
 // REMOVE SPLASH	================================================================================================================
 const splash = document.querySelector('#splash');
 
-const handleSplashIntersection = (entries) => {
-    const entry = entries[0];
+const handleSplashIntersection = (entries, observer) => {
+	const entry = entries[0];
 
-    if (!entry.isIntersecting) {
-        entry.target.remove();
-        
-        const withSplashElement = document.querySelector('.with-splash');
-        if (withSplashElement) {
-            withSplashElement.removeAttribute('class');
-        }
+	if (!entry.isIntersecting) {
+		observer.unobserve(entry.target);
+		
+		entry.target.remove();
 
-        if (!location.hash) {
-            window.scrollTo(0, 0);
-        }
-    }
+		const withSplashElement = document.querySelector('.with-splash');
+		if (withSplashElement) {
+			withSplashElement.removeAttribute('class');
+		}
+
+		if (!location.hash) {
+			window.scrollTo(0, 0);
+		}
+	}
 };
 
-const splashObserver = new IntersectionObserver(handleSplashIntersection);
-splashObserver.observe(splash);
+if (splash) {
+	const splashObserver = new IntersectionObserver(handleSplashIntersection);
+	splashObserver.observe(splash);
+}
 
 
 
@@ -125,6 +147,7 @@ indexBtn.addEventListener('click', e => {
 // Elements	------------------------------------------------------------------------------------------------------------------------
 const articles = document.querySelectorAll('article');
 let currentlyVisibleArticles = [];
+const articleData = new Map();
 
 
 
@@ -145,25 +168,33 @@ const articleObserver = new IntersectionObserver(entries => {
 });
 
 articles.forEach(article => {
-    articleObserver.observe(article);
+	const parallaxEls = article.querySelectorAll('[data-rate]');
+	articleData.set(article, parallaxEls);
+	articleObserver.observe(article);
 });
+
 
 
 
 // Suplemental functions	--------------------------------------------------------------------------------------------------------
 // Parallax calculation function
-function parallaxCalc(elementPos, windowPos) {
-    const difference = elementPos - windowPos;
-	let multiplier = normalizeBetween(difference, (viewerHeight * -1), viewerHeight, -1, 1);
-	
-	return(multiplier);
-};
+function parallaxCalc(article, windowPos) {
+	const elementTop = article.getBoundingClientRect().top + window.scrollY;
+	const difference = elementTop - windowPos;
+
+	let multiplier = normalizeBetween(difference, -viewerHeight, viewerHeight, -1, 1);
+	multiplier = Math.max(-1, Math.min(1, multiplier));
+
+	return multiplier;
+}
 
 // Apply parallax transformations
 function applyParallax(windowPos) {
     currentlyVisibleArticles.forEach(article => {
-        const multiplier = parallaxCalc(article.offsetTop, windowPos);
-        const elements = article.querySelectorAll('[data-rate]');
+		const multiplier = parallaxCalc(article, windowPos);
+
+		const elements = articleData.get(article);
+
 
         elements.forEach(el => {
 			el.style.setProperty('-webkit-transform', 'translateY(' + multiplier * el.dataset.rate + 'px)');
@@ -171,6 +202,8 @@ function applyParallax(windowPos) {
 			el.style.setProperty('-o-transform', 'translateY(' + multiplier * el.dataset.rate + 'px)');
 			el.style.setProperty('-ms-transform', 'translateY(' + multiplier * el.dataset.rate + 'px)');
 			el.style.setProperty('transform', 'translateY(' + multiplier * el.dataset.rate + 'px)');
+			
+			el.style.transform = `translateY(${multiplier * el.dataset.rate}px)`;
         });
     });
 };
@@ -184,6 +217,23 @@ function applyParallax(windowPos) {
 
 
 // HEDERA SECTION	================================================================================================================
+// Trigger	------------------------------------------------------------------------------------------------------------------------
+let hasTyped = false;
+
+const ivyObserver = new IntersectionObserver(entries => {
+	entries.forEach(entry => {
+		if (entry.isIntersecting && !hasTyped) {
+			typeWriterEffect();
+			hasTyped = true;
+			ivyObserver.unobserve(entry.target);
+		}
+	});
+}, { threshold: 0.2 });
+
+ivyObserver.observe(document.getElementById('ivy-container'));
+
+
+
 // Variables & elements	------------------------------------------------------------------------------------------------------------
 var ivyIndex = 0;
 var speed = 50;
@@ -226,20 +276,44 @@ function typeWriterEffect() {
 
 
 // SEAM CARVING SECTION	============================================================================================================
-let counter = 0;
+// Variables & elements	------------------------------------------------------------------------------------------------------------
 const nyCarve = document.querySelector('#nycCarve');
 
-var sortLaterInterval = window.setInterval(function(){
-	counter ++
+if (nyCarve) {
+	const frames = [
+		'work/seam-carving/assets/content/maps/nyc/nyc-0.jpg',
+		'work/seam-carving/assets/content/maps/nyc/nyc-1.jpg',
+		'work/seam-carving/assets/content/maps/nyc/nyc-2.jpg'
+	];
 
-	if (counter%4 === 0) {
-		nyCarve.src = 'work/seam-carving/assets/content/maps/nyc/nyc-0.jpg';
-	} else if (counter%4 === 2){
-		nyCarve.src = 'work/seam-carving/assets/content/maps/nyc/nyc-2.jpg'
-	} else {
-		nyCarve.src = 'work/seam-carving/assets/content/maps/nyc/nyc-1.jpg'
-	};
-}, 1500);
+	let counter = 0;
+	let direction = 1;
+	let intervalId = null;
+
+	function updateFrame() {
+		nyCarve.src = frames[counter];
+		counter += direction;
+
+		if (counter === frames.length - 1 || counter === 0) {
+			direction *= -1;
+		}
+	}
+
+	const observer = new IntersectionObserver(entries => {
+		entries.forEach(entry => {
+			if (entry.isIntersecting && intervalId === null) {
+				updateFrame();
+				intervalId = setInterval(updateFrame, 1500);
+			} else if (!entry.isIntersecting && intervalId !== null) {
+				clearInterval(intervalId);
+				intervalId = null;
+			}
+		});
+	}, { threshold: 0.1 });
+
+	observer.observe(nyCarve);
+}
+
 
 
 
@@ -251,21 +325,16 @@ var sortLaterInterval = window.setInterval(function(){
 
 // SORT LATER	====================================================================================================================
 // Variables & elements	------------------------------------------------------------------------------------------------------------
-let sortlaterVisibility;
+let isSortlaterVisible = false;
 const sortlaterScroll = document.getElementById('sortlater-scroll');
 
 
 
 // Page section observer	--------------------------------------------------------------------------------------------------------
 const sortlaterObserver = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-			sortlaterVisibility = true;
-
-        } else {
-			sortlaterVisibility = false;
-        };
-    });
+	entries.forEach(entry => {
+		isSortlaterVisible = entry.isIntersecting;
+	});
 });
 
 sortlaterObserver.observe(sortlaterScroll);
@@ -279,6 +348,8 @@ function applySortLaterScroll(){
 	let minThreshold = sortlaterContainer.offsetHeight * -1;
 	
 	let offset = normalizeBetween(containerPos, minThreshold, viewerHeight, -200, 0);
+	offset = Math.max(-200, Math.min(0, offset));
+
 
 	sortlaterScroll.style.top = offset + '%';
 };
