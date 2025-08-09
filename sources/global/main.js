@@ -237,6 +237,13 @@ footerTxt[9] = 'A personal journey of perpetual web crafting...';
 // Elements ------------------------------------------------------------------------------------------------------------------------
 const footerField = document.getElementById('footer-field');
 const backToTop = document.getElementById('top-btn');
+const footerDate = document.getElementById('footer-date');
+const currentYear = new Date().getFullYear();
+
+
+
+// Set footer date  ----------------------------------------------------------------------------------------------------------------
+footerDate.innerHTML = `&#169;${currentYear} MMB`;
 
 
 
