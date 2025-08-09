@@ -240,10 +240,17 @@
     cursor: var(--sliderCursor);
 }
 
-.slider::-moz-range-thumb{
-    width: 1rem;
+.slider::-moz-range-track {
+    border: none;
+    border-radius: 0;
+}
+
+.slider::-moz-range-thumb {
+    width: 0.5rem;
     height: 1rem;
     background: var(--green);
+    border: none;
+    border-radius: 0;
     cursor: var(--sliderCursor);
 }
 
