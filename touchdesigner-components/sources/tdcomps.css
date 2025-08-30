@@ -41,6 +41,8 @@ html, body {
 
     --td-sop-color: #45739f;
     --td-sop-text-color: #98bbde;
+
+    --td-readable-color: #bfbf4d;
 }
 
 
@@ -190,6 +192,8 @@ section.documentation{
     }
 }
 
+
+
 h4{
     font-weight: 500;
     font-size: 0.8rem;
@@ -227,6 +231,8 @@ math.outline{
 h5 + p{
     margin-top: 0;
 }
+
+
 
 .maths{
     display: -webkit-box;
@@ -287,6 +293,11 @@ h5 + p{
 .sop-text{
     padding: 0.2rem 0.1rem 0 0.15rem;
     background-color: var(--td-sop-text-color);
+}
+
+.date-text{
+    padding: 0.2rem 0.1rem 0 0.15rem;
+    background-color: var(--td-readable-color);
 }
 
 
