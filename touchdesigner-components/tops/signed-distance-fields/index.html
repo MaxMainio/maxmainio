@@ -571,9 +571,20 @@
 				<section id="jfa-sdf" class="documentation">
 					<div class="docuinfo">
 						<h2>JFA SDF</h2>
-						<h3>Sub-Title</h3>
+						<h3>Distance Field Generation</h3>
 						<p>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim diam vulputate ut pharetra sit amet aliquam. Integer eget aliquet nibh praesent tristique magna sit. Massa id neque aliquam vestibulum. Egestas diam in arcu cursus euismod quis viverra nibh. Ultrices vitae auctor eu augue ut lectus arcu bibendum at. Vel risus commodo viverra maecenas accumsan lacus vel facilisis volutpat. Sit amet cursus sit amet dictum sit. Scelerisque mauris pellentesque pulvinar pellentesque habitant morbi tristique. Rutrum quisque non tellus orci ac.
+							Within this component, the Jump Flood Algorithm (JFA) is used to rapidly propagate distance information across the image in order to efficiently construct a Signed Distance Field of the given input. By spreading distance values in successive “jumps,” JFA makes it possible to approximate an SDF in only a few passes, balancing speed and accuracy in a way that is ideal for real-time workflows in TouchDesigner.
+						</p>
+
+						<p>
+							Since a Signed Distance Field is fundamentally a construct of single floating-point values, this calculation disregards any color information present in the source image. Instead, the component relies on a thresholded interpretation of the provided image&rsquo;s alpha channel to define the borders of shapes, ensuring a clear inside&hyphen;outside distinction for distance encoding.
+						</p>
+
+						<h5>Resources:</h5>
+						<p>
+							<a href="https://github.com/MaxMainio/TD_" target="_blank">Download the .tox files</a><br>
+							JFA Solidy COMP<br>
+							<a href="https://en.wikipedia.org/wiki/Signed_distance_function" target="_blank">SDFs on Wikipedia</a>
 						</p>
 					</div>
 
