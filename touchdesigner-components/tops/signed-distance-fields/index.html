@@ -601,7 +601,7 @@
 									<div class="vertical-bar">
 										<div class="vertical-color left"></div>
 					
-										<div class="connector-container double">
+										<div class="connector-container">
 											<div class="connector-color top-left"></div>
 											<div class="connector-space"></div>
 											<div class="connector-color bottom-left"></div>
@@ -747,6 +747,8 @@
 										<div class="connector-container double">
 											<div class="connector-color top-left"></div>
 											<div class="connector-space"></div>
+											<div class="connector-color center"></div>
+											<div class="connector-space"></div>
 											<div class="connector-color bottom-left"></div>
 										</div>
 					
@@ -812,6 +814,8 @@
 					
 										<div class="connector-container double">
 											<div class="connector-color top-left"></div>
+											<div class="connector-space"></div>
+											<div class="connector-color center"></div>
 											<div class="connector-space"></div>
 											<div class="connector-color bottom-left"></div>
 										</div>
@@ -890,6 +894,10 @@
 							</p>
 
 							<p>
+								<b>Input 1</b> &ndash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> image to be processed.
+							</p>
+
+							<p>
 								<b>Output 0</b> &ndash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> Lorem ipsum...
 							</p>
 
@@ -904,10 +912,48 @@
 
 				<section id="sdf-combiner" class="documentation">
 					<div class="docuinfo">
-						<h2>SDF Combiner</h2>
-						<h3>Sub-Title</h3>
+						<h2><a href="https://en.wikipedia.org/wiki/Signed_distance_function" target="_blank">SDF</a> Combiner</h2>
+						<h3>Boolean &amp; Smooth Shape Composition</h3>
 						<p>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim diam vulputate ut pharetra sit amet aliquam. Integer eget aliquet nibh praesent tristique magna sit. Massa id neque aliquam vestibulum. Egestas diam in arcu cursus euismod quis viverra nibh. Ultrices vitae auctor eu augue ut lectus arcu bibendum at. Vel risus commodo viverra maecenas accumsan lacus vel facilisis volutpat. Sit amet cursus sit amet dictum sit. Scelerisque mauris pellentesque pulvinar pellentesque habitant morbi tristique. Rutrum quisque non tellus orci ac.
+							These components provide methods for combining two Signed Distance Fields into a single output. By leveraging the properties of distance fields, combinations can be calculated with simple mathematical functions, producing new shapes through operations such as&colon;
+						</p>
+
+						<ol>
+							<li>
+								<h5>Union &lpar;Merge&rpar;&colon;</h5>
+								<p>
+									Takes the minimum of the two <a href="https://en.wikipedia.org/wiki/Signed_distance_function" target="_blank">SDF</a> values, combining both shapes into one. Any point inside either shape remains inside the result.
+								</p>
+							</li><br>
+
+							<li>
+								<h5>Intersection&colon;</h5>
+								<p>
+									Takes the maximum of the two <a href="https://en.wikipedia.org/wiki/Signed_distance_function" target="_blank">SDF</a> values, preserving only the overlapping regions of the shapes.
+								</p>
+							</li><br>
+
+							<li>
+								<h5>Subtraction&colon;</h5>
+								<p>
+									Inverts one <a href="https://en.wikipedia.org/wiki/Signed_distance_function" target="_blank">SDF</a> and intersects it with the other, effectively carving one shape out of another.
+								</p>
+							</li>
+						</ol>
+
+						<p>
+							The <a href="https://github.com/MaxMainio/TD_/blob/main/TOPs/SDF/SDF_Combiner_Smooth.tox" target="_blank">SDF Combiner Smooth</a> extends these operations by adding smoothing controls, allowing for gradual blending of boundaries rather than abrupt transitions. This makes it possible to create soft unions, rounded intersections, and morph-like subtractions where shapes appear to flow into one another.
+						</p>
+
+						<p>
+							Together, these tools provide a flexible foundation for constructing complex forms from simple primitives, enabling both precise Boolean logic and more organic, continuous blends depending on the workflow.
+						</p>
+
+						<h5>Resources:</h5>
+						<p>
+							<a href="https://github.com/MaxMainio/TD_" target="_blank">Download the .tox files</a><br>
+							<a href="https://en.wikipedia.org/wiki/Signed_distance_function" target="_blank">SDFs on Wikipedia</a><br>
+							<a href="https://www.ronja-tutorials.com/post/035-2d-sdf-combination/#union" target="_blank">2D SDF Combinations</a>
 						</p>
 					</div>
 
@@ -925,6 +971,8 @@
 					
 										<div class="connector-container double">
 											<div class="connector-color top-left"></div>
+											<div class="connector-space"></div>
+											<div class="connector-color center"></div>
 											<div class="connector-space"></div>
 											<div class="connector-color bottom-left"></div>
 										</div>
@@ -992,6 +1040,8 @@
 										<div class="connector-container double">
 											<div class="connector-color top-left"></div>
 											<div class="connector-space"></div>
+											<div class="connector-color center"></div>
+											<div class="connector-space"></div>
 											<div class="connector-color bottom-left"></div>
 										</div>
 					
@@ -1050,21 +1100,25 @@
 							<h4>Parameters</h4>
 							<h5>Method:</h5>
 							<p>
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim diam vulputate ut pharetra sit amet aliquam.
+								Defines the combination method used to merge the two input <a href="https://en.wikipedia.org/wiki/Signed_distance_function" target="_blank">SDFs</a>.
 							</p>
 
 							<h5>Smoothness:</h5>
 							<p>
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim diam vulputate ut pharetra sit amet aliquam.
+								Controls the degree of blending applied to the selected method. Higher values produce softer transitions and more gradual merging of boundaries, while lower values retain sharper Boolean edges.
 							</p>
 
 							<h4>In&hyphen; &sol; Outputs</h4>
 							<p>
-								<b>Input 0</b> &ndash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> image to be processed.
+								<b>Input 0</b> &ndash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> first <a href="https://en.wikipedia.org/wiki/Signed_distance_function" target="_blank">SDF</a> to be combined.
 							</p>
 
 							<p>
-								<b>Output 0</b> &ndash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> Lorem ipsum...
+								<b>Input 1</b> &ndash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> second <a href="https://en.wikipedia.org/wiki/Signed_distance_function" target="_blank">SDF</a> to be combined.
+							</p>
+
+							<p>
+								<b>Output 0</b> &ndash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> combined <a href="https://en.wikipedia.org/wiki/Signed_distance_function" target="_blank">SDF</a>.
 							</p>
 
 							<p style="margin-top: 1rem;">
