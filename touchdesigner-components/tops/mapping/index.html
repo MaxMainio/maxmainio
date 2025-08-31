@@ -68,11 +68,15 @@
 						<h1 id="title">Mapping</h1>
 						<h2 id="sub-title"><a href="https://derivative.ca/" target="_blank">TD</a> <a href="https://derivative.ca/UserGuide/Component" target="_blank">COMPs</a> / <a href="https://derivative.ca/tags/tops" target="_blank">TOPs</a> / 2023 &ndash; Present</h2>
 						<p>
-							Mapping is fundamental to many image processing and rendering techniques, providing structured ways to manipulate coordinates, distort textures, and create complex spatial arrangements. These components enable precise control over how images are projected, tiled, and transformed, making them essential tools for everything from texture mapping in 3D environments to procedural pattern generation.
+							Mapping, in the context of digital image processing, refers to the process of remapping pixel coordinates to new positions within an image space. Instead of directly altering color or intensity values, mapping focuses on the spatial arrangement of pixels — providing structured ways to manipulate coordinates, distort textures, and create complex spatial arrangements.
 						</p>
 
 						<p>
-							This collection includes coordinate mapping tools such as UV and UVW mapping, allowing for flexible image warping and projection. Future additions will introduce more advanced tiling methods, such as hex-grid structures and parametric tiling, expanding the possibilities for procedural pattern design and structured spatial transformations.
+							These components enable precise control over how images are projected, tiled, and transformed, making them essential tools for everything from texture mapping in 3D environments to procedural pattern generation. The current collection includes coordinate mapping tools such as <a href="#uv-map" target="_self">UV</a> and <a href="#uvw-map" target="_self">UVW mapping</a>, which allow for flexible image warping and projection.
+						</p>
+
+						<p>
+							Future additions will introduce more advanced tiling methods, such as hex-grid structures and parametric tiling, expanding the possibilities for procedural pattern design and structured spatial transformations.
 						</p>
 
 						<p>
@@ -206,10 +210,26 @@
 
 				<section id="uv-map" class="documentation">
 					<div class="docuinfo">
-						<h2>UV Map</h2>
-						<h3>Sub-Title</h3>
+						<h2><a href="https://docs.safe.com/fme/html/FME-Form-Documentation/FME-ReadersWriters/!FME_Geometry/Texture_Coordinates.htm#:~:text=u%20and%20v%20Texture%20Coordinates" target="_blank">UV Map</a></h2>
+						<h3>2D Coordinate Remapping</h3>
 						<p>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim diam vulputate ut pharetra sit amet aliquam. Integer eget aliquet nibh praesent tristique magna sit. Massa id neque aliquam vestibulum. Egestas diam in arcu cursus euismod quis viverra nibh. Ultrices vitae auctor eu augue ut lectus arcu bibendum at. Vel risus commodo viverra maecenas accumsan lacus vel facilisis volutpat. Sit amet cursus sit amet dictum sit. Scelerisque mauris pellentesque pulvinar pellentesque habitant morbi tristique. Rutrum quisque non tellus orci ac.
+							This component provides a flexible way to remap pixel positions using a two&hyphen;dimensional coordinate system. The input image texture is re&hyphen;projected according to <a href="https://www.aclockworkberry.com/uv-coordinate-systems-3ds-max-unity-unreal-engine/" target="_blank">U and V coordinates</a>, where U corresponds to the horizontal axis and V corresponds to the vertical axis.
+						</p>
+
+						<p>
+							This approach allows for controlled warping, shifting, and reorientation of images &mdash; making it a fundamental tool in both image processing and rendering workflows. Whether used for texture projection, procedural pattern design, or creative distortion effects, <a href="https://masonstevenson.dev/blog/unreal-texcoord-flowmaps#:~:text=UV%20Coordinate%20Data-,UV%20coordinate,-data%20can%20be" target="_blank">UV mapping</a> enables a structured method of reshaping how pixels are distributed across the output image.
+						</p>
+
+						<p>
+							By defining how input coordinates are mapped to the output space, this <a href="https://github.com/MaxMainio/TD_/blob/main/TOPs/Mapping/UV_map.tox" target="_blank">UV Map Component</a> acts as a versatile foundation for more complex mapping operations, such as tiling, layering, or non&hyphen;linear remapping.
+						</p>
+
+						<h5>Resources:</h5>
+						<p>
+							<a href="https://github.com/MaxMainio/TD_" target="_blank">Download the .tox files</a><br>
+							<a href="https://docs.derivative.ca/Texture_Coordinates_and_Texture_Sampling" target="_blank">Texture Coordinates and Texture Sampling</a><br>
+							<a href="https://docs.safe.com/fme/html/FME-Form-Documentation/FME-ReadersWriters/!FME_Geometry/Texture_Coordinates.htm" target="_blank">Texture Coordinates by FME</a><br>
+							<a href="https://en.wikipedia.org/wiki/UV_mapping" target="_blank">UV Mapping on Wikipedia</a>
 						</p>
 					</div>
 
@@ -279,34 +299,45 @@
 							<h4>Parameters</h4>
 							<h5>Sample:</h5>
 							<p>
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim diam vulputate ut pharetra sit amet aliquam.
+								Specifies a <a href="https://derivative.ca/UserGuide/TOP" target="_blank">TOP</a> input whose resolution will define the output UV Map&rsquo;s dimensions. Useful for ensuring the <a href="https://masonstevenson.dev/blog/unreal-texcoord-flowmaps#:~:text=UV%20Coordinate%20Data-,UV%20coordinate,-data%20can%20be" target="_blank">UV map</a> matches another texture in size.
 							</p>
 
 							<h5>Dimensions:</h5>
 							<p>
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim diam vulputate ut pharetra sit amet aliquam.
+								Sets the output resolution manually when no <a href="https://derivative.ca/UserGuide/TOP" target="_blank">TOP</a> is sampled. Defines the width and height of the generated <a href="https://masonstevenson.dev/blog/unreal-texcoord-flowmaps#:~:text=UV%20Coordinate%20Data-,UV%20coordinate,-data%20can%20be" target="_blank">UV map</a>.
 							</p>
 							
 							<h5>Method:</h5>
 							<p>
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim diam vulputate ut pharetra sit amet aliquam.
+								Determines the coordinate system for the <a href="https://masonstevenson.dev/blog/unreal-texcoord-flowmaps#:~:text=UV%20Coordinate%20Data-,UV%20coordinate,-data%20can%20be" target="_blank">UV map</a>&colon;<br>
+								Standard &lpar;<a href="https://en.wikipedia.org/wiki/Origin_(mathematics)" target="_blank">Origin</a> at the bottom&hyphen;left corner &lpar;0,0&rpar;&rpar; or<br>
+								Centered &lpar;<a href="https://en.wikipedia.org/wiki/Origin_(mathematics)" target="_blank">Origin</a> at the center of the output texture&rpar;
+							</p>
+
+							<h5>Aspect Correction:</h5>
+							<p>
+								Toggles whether the generated coordinates preserve the native aspect ratio of the output texture or are normalized between 0 and 1.
 							</p>
 
 							<hr/>
 							
 							<h5>Translate:</h5>
 							<p>
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim diam vulputate ut pharetra sit amet aliquam.
+								Offsets the <a href="https://masonstevenson.dev/blog/unreal-texcoord-flowmaps#:~:text=UV%20Coordinate%20Data-,UV%20coordinate,-data%20can%20be" target="_blank">UV map</a> along the X and Y axes, shifting the coordinate space horizontally or vertically.
 							</p>
 
 							<h5>Rotate:</h5>
 							<p>
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim diam vulputate ut pharetra sit amet aliquam.
+								Rotates the <a href="https://masonstevenson.dev/blog/unreal-texcoord-flowmaps#:~:text=UV%20Coordinate%20Data-,UV%20coordinate,-data%20can%20be" target="_blank">UV map</a> around the origin, allowing for reorientation of the coordinate system.
 							</p>
 
 							<h4>Outputs</h4>
 							<p>
-								<b>Output 0</b> &ndash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> Lorem ipsum...
+								<b>Output 0</b> &ndash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> generated <a href="https://masonstevenson.dev/blog/unreal-texcoord-flowmaps#:~:text=UV%20Coordinate%20Data-,UV%20coordinate,-data%20can%20be" target="_blank">UV map</a>.
+							</p>
+
+							<p style="margin-top: 1rem;">
+								<b>Updated</b> &ndash; <a href="https://en.wikipedia.org/wiki/List_of_date_formats_by_country#:~:text=regions%20and%20countries-,DMY,-Europe%3A%20Italy" target="_blank"><span class="date-text">31&sol;8&sol;2025</span></a>
 							</p>
 						</div>
 					</div>
@@ -316,10 +347,26 @@
 
 				<section id="uvw-map" class="documentation">
 					<div class="docuinfo">
-						<h2>UVW Map</h2>
-						<h3>Sub-Title</h3>
+						<h2><a href="https://docs.safe.com/fme/html/FME-Form-Documentation/FME-ReadersWriters/!FME_Geometry/Texture_Coordinates.htm#:~:text=w%20and%20q%20Texture%20Coordinates" target="_blank">UVW Map</a></h2>
+						<h3>3D Coordinate Remapping</h3>
 						<p>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim diam vulputate ut pharetra sit amet aliquam. Integer eget aliquet nibh praesent tristique magna sit. Massa id neque aliquam vestibulum. Egestas diam in arcu cursus euismod quis viverra nibh. Ultrices vitae auctor eu augue ut lectus arcu bibendum at. Vel risus commodo viverra maecenas accumsan lacus vel facilisis volutpat. Sit amet cursus sit amet dictum sit. Scelerisque mauris pellentesque pulvinar pellentesque habitant morbi tristique. Rutrum quisque non tellus orci ac.
+							This component extends traditional <a href="https://masonstevenson.dev/blog/unreal-texcoord-flowmaps#:~:text=UV%20Coordinate%20Data-,UV%20coordinate,-data%20can%20be" target="_blank">UV mapping</a> into three dimensions, generating a <a href="https://thenodeinstitute.org/topic/uvw-coordinates/" target="_blank">UVW coordinate</a> field where U corresponds to the horizontal axis, V to the vertical axis, and W to depth. Instead of working in only two axes, the <a href="https://docs.safe.com/fme/html/FME-Form-Documentation/FME-ReadersWriters/!FME_Geometry/Texture_Coordinates.htm#:~:text=w%20and%20q%20Texture%20Coordinates" target="_blank">UVW Map</a> allows you to define and manipulate a full three&hyphen;dimensional coordinate space for texture projection and spatial mapping.
+						</p>
+
+						<p>
+							By incorporating a W axis, this component enables more complex remapping operations such as volumetric textures, layered projections, and triplanar blending. The <a href="https://thenodeinstitute.org/topic/uvw-coordinates/" target="_blank">UVW coordinate</a> field can be rotated along all three axes and stretched or compressed independently, making it a versatile tool for procedural patterning and advanced mapping techniques.
+						</p>
+
+						<p>
+							As with <a href="#uv-map" target="_self">UV mapping</a>, the <a href="https://docs.safe.com/fme/html/FME-Form-Documentation/FME-ReadersWriters/!FME_Geometry/Texture_Coordinates.htm#:~:text=w%20and%20q%20Texture%20Coordinates" target="_blank">UVW Map</a> operates by re&hyphen;projecting the input image into a new coordinate space, but with the additional flexibility of depth&hyphen;aware manipulation. This allows for effects and workflows that go beyond simple 2D warping, including pseudo&hyphen;3D pattern generation and multi-axis distortions.
+						</p>
+
+						<h5>Resources:</h5>
+						<p>
+							<a href="https://github.com/MaxMainio/TD_" target="_blank">Download the .tox files</a><br>
+							<a href="https://docs.derivative.ca/Texture_Coordinates_and_Texture_Sampling" target="_blank">Texture Coordinates and Texture Sampling</a><br>
+							<a href="https://docs.safe.com/fme/html/FME-Form-Documentation/FME-ReadersWriters/!FME_Geometry/Texture_Coordinates.htm" target="_blank">Texture Coordinates by FME</a><br>
+							<a href="https://en.wikipedia.org/wiki/UVW_mapping" target="_blank">UVW Mapping on Wikipedia</a>
 						</p>
 					</div>
 
@@ -389,44 +436,48 @@
 							<h4>Parameters</h4>
 							<h5>Sample:</h5>
 							<p>
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim diam vulputate ut pharetra sit amet aliquam.
+								Specifies a <a href="https://derivative.ca/UserGuide/TOP" target="_blank">TOP</a> input whose resolution will define the output <a href="https://docs.safe.com/fme/html/FME-Form-Documentation/FME-ReadersWriters/!FME_Geometry/Texture_Coordinates.htm#:~:text=w%20and%20q%20Texture%20Coordinates" target="_blank">UVW Map&rsquo;s</a> dimensions.
 							</p>
 
 							<h5>Dimensions:</h5>
 							<p>
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim diam vulputate ut pharetra sit amet aliquam.
+								Sets the output resolution manually when no <a href="https://derivative.ca/UserGuide/TOP" target="_blank">TOP</a> is sampled. Defines the width and height of the generated <a href="https://docs.safe.com/fme/html/FME-Form-Documentation/FME-ReadersWriters/!FME_Geometry/Texture_Coordinates.htm#:~:text=w%20and%20q%20Texture%20Coordinates" target="_blank">UVW map</a>.
 							</p>
 	
 							<h5>Depth:</h5>
 							<p>
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim diam vulputate ut pharetra sit amet aliquam.
+								Defines the scale of the W axis &lpar;depth&rpar; in the output <a href="https://docs.safe.com/fme/html/FME-Form-Documentation/FME-ReadersWriters/!FME_Geometry/Texture_Coordinates.htm#:~:text=w%20and%20q%20Texture%20Coordinates" target="_blank">UVW Map</a>.
 							</p>
 
-							<h5>Method:</h5>
+							<h5>Aspect Correction:</h5>
 							<p>
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim diam vulputate ut pharetra sit amet aliquam.
+								Toggles whether the generated coordinates preserve the native aspect ratio of the output texture or are normalized between 0 and 1.
 							</p>
 
 							<hr/>
 
-							<h5>Rotate:</h5>
-							<p>
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim diam vulputate ut pharetra sit amet aliquam.
-							</p>
-
 							<h5>Translate:</h5>
 							<p>
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim diam vulputate ut pharetra sit amet aliquam.
+								An XYZ offset applied to the UVW coordinate space. Shifts the mapping along the U, V, and W axes.
+							</p>
+
+							<h5>Rotate:</h5>
+							<p>
+								An XYZ rotation applied to the UVW coordinate system. Allows reorientation of the mapping around each axis.
 							</p>
 
 							<h5>Scale:</h5>
 							<p>
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim diam vulputate ut pharetra sit amet aliquam.
+								An XYZ scaling factor applied to the UVW coordinate space. Stretches or compresses the mapping independently along each axis.
 							</p>
 
 							<h4>Outputs</h4>
 							<p>
-								<b>Output 0</b> &ndash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> Lorem ipsum...
+								<b>Output 0</b> &ndash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> generated UVW Map.
+							</p>
+
+							<p style="margin-top: 1rem;">
+								<b>Updated</b> &ndash; <a href="https://en.wikipedia.org/wiki/List_of_date_formats_by_country#:~:text=regions%20and%20countries-,DMY,-Europe%3A%20Italy" target="_blank"><span class="date-text">31&sol;8&sol;2025</span></a>
 							</p>
 						</div>
 					</div>
