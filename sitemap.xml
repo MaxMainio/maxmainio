@@ -10,13 +10,13 @@
 <!-- MAIN PAGES -->
 <url>
   <loc>https://maxmain.io/</loc>
-  <lastmod>2024-09-01</lastmod>
+  <lastmod>2025-08-31T03:55:05+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 
 <url>
   <loc>https://maxmain.io/about/</loc>
-  <lastmod>2024-09-01</lastmod>
+  <lastmod>2025-08-31T03:55:05+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 
@@ -25,49 +25,49 @@
 <!-- WORK PAGES -->
 <url>
   <loc>https://maxmain.io/work/hedera/</loc>
-  <lastmod>2024-09-01</lastmod>
+  <lastmod>2025-08-31T03:55:05+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 
 <url>
   <loc>https://maxmain.io/work/lawn-texture/</loc>
-  <lastmod>2024-09-01</lastmod>
+  <lastmod>2025-08-31T03:55:05+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 
 <url>
   <loc>https://maxmain.io/work/seam-carving/</loc>
-  <lastmod>2024-09-01</lastmod>
+  <lastmod>2025-08-31T03:55:05+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 
 <url>
   <loc>https://maxmain.io/work/bloom/</loc>
-  <lastmod>2024-09-01</lastmod>
+  <lastmod>2025-08-31T03:55:05+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 
 <url>
   <loc>https://maxmain.io/work/sort-later/</loc>
-  <lastmod>2024-09-01</lastmod>
+  <lastmod>2025-08-31T03:55:05+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 
 <url>
   <loc>https://maxmain.io/work/generative-poems/</loc>
-  <lastmod>2024-09-01</lastmod>
+  <lastmod>2025-08-31T03:55:05+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 
 <url>
   <loc>https://maxmain.io/work/ed-brown-interview/</loc>
-  <lastmod>2024-09-01</lastmod>
+  <lastmod>2025-08-31T03:55:05+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 
 <url>
   <loc>https://maxmain.io/work/playlist-covers/</loc>
-  <lastmod>2024-09-01</lastmod>
+  <lastmod>2025-08-31T03:55:05+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 
@@ -75,19 +75,19 @@
 
 <url>
   <loc>https://maxmain.io/work/crosswalk-poetics/</loc>
-  <lastmod>2024-09-01</lastmod>
+  <lastmod>2025-08-31T03:55:05+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 
 <url>
   <loc>https://maxmain.io/work/crosswalk-poetics/physical-map/</loc>
-  <lastmod>2024-09-01</lastmod>
+  <lastmod>2025-08-31T03:55:05+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 
 <url>
   <loc>https://maxmain.io/work/crosswalk-poetics/phenomenal-map/</loc>
-  <lastmod>2024-09-01</lastmod>
+  <lastmod>2025-08-31T03:55:05+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 
@@ -95,37 +95,37 @@
 
 <url>
   <loc>https://maxmain.io/work/digital-overprint/</loc>
-  <lastmod>2024-09-01</lastmod>
+  <lastmod>2025-08-31T03:55:05+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 
 <url>
   <loc>https://maxmain.io/work/acetate-melt/</loc>
-  <lastmod>2024-09-01</lastmod>
+  <lastmod>2025-08-31T03:55:05+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 
 <url>
   <loc>https://maxmain.io/work/homodeus/</loc>
-  <lastmod>2024-09-01</lastmod>
+  <lastmod>2025-08-31T03:55:05+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 
 <url>
   <loc>https://maxmain.io/work/ruotuvaki/</loc>
-  <lastmod>2024-09-01</lastmod>
+  <lastmod>2025-08-31T03:55:05+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 
 <url>
   <loc>https://maxmain.io/work/collages/</loc>
-  <lastmod>2024-09-01</lastmod>
+  <lastmod>2025-08-31T03:55:05+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 
 <url>
   <loc>https://maxmain.io/work/drawings/</loc>
-  <lastmod>2024-09-01</lastmod>
+  <lastmod>2025-08-31T03:55:05+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 
@@ -134,19 +134,31 @@
 <!-- TD PAGES -->
 <url>
   <loc>https://maxmain.io/touchdesigner-components/</loc>
-  <lastmod>2024-09-01</lastmod>
+  <lastmod>2025-08-31T03:55:36+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+
+<url>
+  <loc>https://maxmain.io/touchdesigner-components/tops/edge-detectors/</loc>
+  <lastmod>2025-08-31T03:55:36+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 
 <url>
-  <loc>https://maxmain.io/touchdesigner-components/edge-detectors/</loc>
-  <lastmod>2024-09-01</lastmod>
-  <priority>0.64</priority>
+  <loc>https://maxmain.io/touchdesigner-components/tops/morphological/</loc>
+  <lastmod>2025-08-31T03:55:36+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 
 <url>
-  <loc>https://maxmain.io/touchdesigner-components/morphological/</loc>
-  <lastmod>2024-09-01</lastmod>
-  <priority>0.64</priority>
+  <loc>https://maxmain.io/touchdesigner-components/tops/mapping/</loc>
+  <lastmod>2025-08-31T03:55:36+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+
+<url>
+  <loc>https://maxmain.io/touchdesigner-components/tops/signed-distance-fields/</loc>
+  <lastmod>2025-08-31T03:55:36+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 </urlset>
