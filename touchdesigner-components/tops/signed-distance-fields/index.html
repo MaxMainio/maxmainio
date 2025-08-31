@@ -570,21 +570,22 @@
 
 				<section id="jfa-sdf" class="documentation">
 					<div class="docuinfo">
-						<h2>JFA SDF</h2>
-						<h3>Distance Field Generation</h3>
+						<h2><a href="https://youtu.be/A0pxY9QsgJE?si=N8H9M-QIrUN4wffW" target="_blank">JFA</a> <a href="https://en.wikipedia.org/wiki/Signed_distance_function" target="_blank">SDF</a></h2>
+						<h3><a href="https://en.wikipedia.org/wiki/Signed_distance_function" target="_blank">Signed Distance Field</a> Generation</h3>
 						<p>
-							Within this component, the Jump Flood Algorithm (JFA) is used to rapidly propagate distance information across the image in order to efficiently construct a Signed Distance Field of the given input. By spreading distance values in successive “jumps,” JFA makes it possible to approximate an SDF in only a few passes, balancing speed and accuracy in a way that is ideal for real-time workflows in TouchDesigner.
+							Within this component, the <a href="https://youtu.be/A0pxY9QsgJE?si=N8H9M-QIrUN4wffW" target="_blank">Jump Flood Algorithm</a> &lpar;<a href="https://youtu.be/A0pxY9QsgJE?si=N8H9M-QIrUN4wffW" target="_blank">JFA</a>&rpar; is used to rapidly propagate distance information across the image in order to efficiently construct a <a href="https://en.wikipedia.org/wiki/Signed_distance_function" target="_blank">Signed Distance Field</a> of the given input. By spreading distance values in successive “jumps,” <a href="https://youtu.be/A0pxY9QsgJE?si=N8H9M-QIrUN4wffW" target="_blank">JFA</a> makes it possible to approximate an <a href="https://en.wikipedia.org/wiki/Signed_distance_function" target="_blank">SDF</a> in only a few passes, balancing speed and accuracy in a way that is ideal for real-time workflows in TouchDesigner.
 						</p>
 
 						<p>
-							Since a Signed Distance Field is fundamentally a construct of single floating-point values, this calculation disregards any color information present in the source image. Instead, the component relies on a thresholded interpretation of the provided image&rsquo;s alpha channel to define the borders of shapes, ensuring a clear inside&hyphen;outside distinction for distance encoding.
+							Since a <a href="https://en.wikipedia.org/wiki/Signed_distance_function" target="_blank">Signed Distance Field</a> is fundamentally a construct of single floating-point values, this calculation disregards any color information present in the source image. Instead, the component relies on a thresholded interpretation of the provided image&rsquo;s <a href="https://www.linearity.io/blog/alpha-channel/" target="_blank">alpha channel</a> to define the borders of shapes, ensuring a clear inside&hyphen;outside distinction for distance encoding.
 						</p>
 
 						<h5>Resources:</h5>
 						<p>
 							<a href="https://github.com/MaxMainio/TD_" target="_blank">Download the .tox files</a><br>
 							JFA Solidy COMP<br>
-							<a href="https://en.wikipedia.org/wiki/Signed_distance_function" target="_blank">SDFs on Wikipedia</a>
+							<a href="https://en.wikipedia.org/wiki/Signed_distance_function" target="_blank">SDFs on Wikipedia</a><br>
+							<a href="https://youtu.be/A0pxY9QsgJE?si=N8H9M-QIrUN4wffW" target="_blank">JFA explanation by Benjamin Douglas</a>
 						</p>
 					</div>
 
@@ -661,55 +662,56 @@
 							<h4>Parameters</h4>
 							<h5>Alpha Threshold:</h5>
 							<p>
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim diam vulputate ut pharetra sit amet aliquam.
+								Defines the cutoff value used to interpret the <a href="https://www.linearity.io/blog/alpha-channel/" target="_blank">alpha channel</a> as a binary mask. Pixels above the threshold are considered foreground, while those below are background. This determines the boundaries from which the Signed Distance Field is calculated.
 							</p>
 
-							<h5>Metric:</h5>
+							<h5><a href="https://en.wikipedia.org/wiki/Metric_space" target="_blank">Metric</a>:</h5>
 							<p>
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim diam vulputate ut pharetra sit amet aliquam.
+								Specifies the <a href="https://en.wikipedia.org/wiki/Metric_space" target="_blank">distance metric</a> used in the calculation. Options include:<br>
+								<a href="https://en.wikipedia.org/wiki/Euclidean_distance" target="_blank">Euclidian</a>, <a href="https://en.wikipedia.org/wiki/Taxicab_geometry" target="_blank">Manhattan</a>, <a href="https://en.wikipedia.org/wiki/Chebyshev_distance" target="_blank">Chebyshev</a>, &amp; <a href="https://en.wikipedia.org/wiki/Minkowski_distance" target="_blank">Minkowski</a>.
 							</p>
 	
 							<h5>Exponent:</h5>
 							<p>
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim diam vulputate ut pharetra sit amet aliquam.
+								Controls the shape of the distance measurement when the <a href="https://en.wikipedia.org/wiki/Metric_space" target="_blank">Metric</a> is set to <a href="https://en.wikipedia.org/wiki/Minkowski_distance" target="_blank">Minkowski</a>. Lower or higher values warp the contribution of distances along different axes.
 							</p>
 
 							<h5>Scale Space:</h5>
 							<p>
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim diam vulputate ut pharetra sit amet aliquam.
+								An X/Y scaling factor applied to the <a href="https://en.wikipedia.org/wiki/Signed_distance_function" target="_blank">SDF</a> calculation. Allows distances to be warped, stretching the field horizontally or vertically.
 							</p>
 
 							<hr/>
 
 							<h5>Clamp Negatives:</h5>
 							<p>
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim diam vulputate ut pharetra sit amet aliquam.
+								Restricts the <a href="https://en.wikipedia.org/wiki/Signed_distance_function" target="_blank">SDF</a> to only encode distances outside of shapes. When enabled, interior distances are clamped to zero.
 							</p>
 
 							<h5>Normalize:</h5>
 							<p>
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim diam vulputate ut pharetra sit amet aliquam.
+								Rescales the <a href="https://en.wikipedia.org/wiki/Signed_distance_function" target="_blank">SDF</a> values to fit between 0 and 1.
 							</p>
 
 							<h5>Invert:</h5>
 							<p>
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim diam vulputate ut pharetra sit amet aliquam.
+								Flips the sign of the <a href="https://en.wikipedia.org/wiki/Signed_distance_function" target="_blank">SDF</a> so that areas considered inside become outside, and vice versa.
 							</p>
 
 							<hr/>
 
 							<h5>reCalculate:</h5>
 							<p>
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim diam vulputate ut pharetra sit amet aliquam.
+								Forces the component to re-cook the <a href="https://youtu.be/A0pxY9QsgJE?si=N8H9M-QIrUN4wffW" target="_blank">Jump Flood Algorithm</a>. Useful for clearing or correcting the output if visual errors appear during calculation.
 							</p>
 
 							<h4>In&hyphen; &sol; Outputs</h4>
 							<p>
-								<b>Input 0</b> &ndash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> image to be processed.
+								<b>Input 0</b> &ndash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> image used to generate the Signed Distance Field &lpar;alpha channel is evaluated&rpar;.
 							</p>
 
 							<p>
-								<b>Output 0</b> &ndash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> Lorem ipsum...
+								<b>Output 0</b> &ndash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> computed SDF of the input image.
 							</p>
 
 							<p style="margin-top: 1rem;">
