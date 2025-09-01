@@ -76,7 +76,7 @@
 						</p>
 
 						<p>
-							This family of <a href="https://derivative.ca/UserGuide/COMP_Class" target="_blank">COMPs</a> expands on the default <a href="https://docs.derivative.ca/Palette:histogram" target="_blank">Histogram COMP</a> included in the <a href="https://derivative.ca/UserGuide/Palette" target="_blank">TouchDesigner palette</a>. Each operator processes and stores the given image&rsquo;s <a href="https://www.geeksforgeeks.org/maths/what-are-the-different-ways-of-data-representation/" target="_blank">statistical representations</a> as a strip of <a href="https://derivative.ca/UserGuide/Pixel_Formats#:~:text=negative%20and%20positive.-,32%2Dbit%20float%20(RGBA),-%2D%20An%20RGBA%20format" target="_blank">32&hyphen;bit float RGBA pixels</a> appended to the bottom of said image, embedding the data directly into the <a href="https://derivative.ca/UserGuide/TOP" target="_blank">TOP</a> stream. This appended strip of pixels 2 high and 255 in width, encode both <a href="https://en.wikipedia.org/wiki/Histogram" target="_blank">histogram</a> and <a href="https://docs.flowjo.com/flowjo/graphs-and-gating/data-visualization-and-display/gw-cdf/" target="_blank">CDF</a> information and serves as the foundation for all subsequent components in the <a href="https://en.wikipedia.org/wiki/Histogram" target="_blank">Histogram</a> family. It is crucial to include for proper use of these components.
+							This family of <a href="https://derivative.ca/UserGuide/COMP_Class" target="_blank">COMPs</a> expands on the default <a href="https://docs.derivative.ca/Palette:histogram" target="_blank">Histogram COMP</a> included in the <a href="https://derivative.ca/UserGuide/Palette" target="_blank">TouchDesigner palette</a>. Each operator processes and stores the given image&rsquo;s <a href="https://www.geeksforgeeks.org/maths/what-are-the-different-ways-of-data-representation/" target="_blank">statistical representations</a> as a strip of <a href="https://derivative.ca/UserGuide/Pixel_Formats#:~:text=negative%20and%20positive.-,32%2Dbit%20float%20(RGBA),-%2D%20An%20RGBA%20format" target="_blank">32&hyphen;bit float RGBA pixels</a> appended to the bottom of said image, embedding the data directly into the <a href="https://derivative.ca/UserGuide/TOP" target="_blank">TOP</a> stream. This appended strip of pixels 2 high and 255 in width, encode both <a href="https://en.wikipedia.org/wiki/Histogram" target="_blank">histogram</a> and <a href="https://docs.flowjo.com/flowjo/graphs-and-gating/data-visualization-and-display/gw-cdf/" target="_blank">CDF</a> information and serves as the foundation for all subsequent components in the <a href="https://github.com/MaxMainio/TD_/tree/main/TOPs/Histogram" target="_blank">Histogram family</a>. It is crucial to include for proper use of these components.
 						</p>
 
 						<p>
@@ -517,7 +517,7 @@
 						</ol>
 
 						<p>
-							Within this component family, the <a href="https://github.com/MaxMainio/TD_/blob/main/TOPs/Histogram/Histogram.tox" target="_blank">Histogram COMP</a> serves as the entry point&colon; it generates and encodes these <a href="https://www.geeksforgeeks.org/maths/what-are-the-different-ways-of-data-representation/" target="_blank">statistical representations</a> so they can be interpreted by other operators in the <a href="https://en.wikipedia.org/wiki/Image_histogram" target="_blank">Histogram</a> workflow. By coupling the original image with its <a href="https://en.wikipedia.org/wiki/Image_histogram" target="_blank">histogram</a> or <a href="https://docs.flowjo.com/flowjo/graphs-and-gating/data-visualization-and-display/gw-cdf/" target="_blank">CDF</a>, this component provides a streamlined way to analyze and share image statistics across <a href="https://derivative.ca/" target="_blank">TouchDesigner</a> <a href="https://derivative.ca/UserGuide/TOP" target="_blank">TOP</a> <a href="https://derivative.ca/UserGuide/Network" target="_blank">networks</a>.
+							Within this <a href="https://github.com/MaxMainio/TD_/tree/main/TOPs/Histogram" target="_blank">component family</a>, the <a href="https://github.com/MaxMainio/TD_/blob/main/TOPs/Histogram/Histogram.tox" target="_blank">Histogram COMP</a> serves as the entry point&colon; it generates and encodes these <a href="https://www.geeksforgeeks.org/maths/what-are-the-different-ways-of-data-representation/" target="_blank">statistical representations</a> so they can be interpreted by other operators in the <a href="https://en.wikipedia.org/wiki/Image_histogram" target="_blank">Histogram</a> workflow. By coupling the original image with its <a href="https://en.wikipedia.org/wiki/Image_histogram" target="_blank">histogram</a> or <a href="https://docs.flowjo.com/flowjo/graphs-and-gating/data-visualization-and-display/gw-cdf/" target="_blank">CDF</a>, this component provides a streamlined way to analyze and share image statistics across <a href="https://derivative.ca/" target="_blank">TouchDesigner</a> <a href="https://derivative.ca/UserGuide/TOP" target="_blank">TOP</a> <a href="https://derivative.ca/UserGuide/Network" target="_blank">networks</a>.
 						</p>
 
 						<h5>Resources&colon;</h5>
@@ -601,43 +601,43 @@
 							<h4>Parameters</h4>
 							<h5>Output&colon;</h5>
 							<p>
-								Defines whether the component calculates a Histogram or a CDF of the input image.
+								Defines whether the component calculates a <a href="https://en.wikipedia.org/wiki/Image_histogram" target="_blank">Histogram</a> or a <a href="https://docs.flowjo.com/flowjo/graphs-and-gating/data-visualization-and-display/gw-cdf/" target="_blank">CDF</a> of the input image.
 							</p>
 
-							<h5>Normalize&colon;</h5>
+							<h5><a href="https://en.wikipedia.org/wiki/Normalization_(statistics)" target="_blank">Normalize</a>&colon;</h5>
 							<p>
-								Normalizes the statistical representation so that all values sum to 1.
+								<a href="https://en.wikipedia.org/wiki/Normalization_(statistics)" target="_blank">Normalizes</a> the <a href="https://www.geeksforgeeks.org/maths/what-are-the-different-ways-of-data-representation/" target="_blank">statistical representations</a> so that all values sum to 1.
 							</p>
 
 							<hr/>
 
 							<h5>Method&colon;</h5>
 							<p>
-								Defines how the statistical representation is calculated&colon;<br>
-								Fast &lpar;GLSL calculation, GPU&hyphen;accelerated, efficient for real&hyphen;time workflows.&rpar; or<br>
-								Accurate &lpar;Python calculation, CPU&hyphen;based, precise but slower.&rpar;
+								Defines how the <a href="https://www.geeksforgeeks.org/maths/what-are-the-different-ways-of-data-representation/" target="_blank">statistical representations</a> is calculated&colon;<br>
+								Fast &lpar;<a href="https://en.wikipedia.org/wiki/OpenGL_Shading_Language" target="_blank">GLSL</a> calculation, <a href="https://en.wikipedia.org/wiki/Graphics_processing_unit" target="_blank">GPU</a>&hyphen;accelerated, efficient for real&hyphen;time workflows.&rpar; or<br>
+								Accurate &lpar;<a href="https://www.python.org/" target="_blank">Python</a> calculation, <a href="https://en.wikipedia.org/wiki/Central_processing_unit" target="_blank">CPU</a>&hyphen;based, precise but slower.&rpar;
 							</p>
 
 							<h5>ReCalculate&colon;</h5>
 							<p>
-								When using the Accurate method, this pulse forces a recalculation of the statistical representation in case any errors appear in the output.
+								When using the Accurate method, this pulse forces a recalculation of the <a href="https://www.geeksforgeeks.org/maths/what-are-the-different-ways-of-data-representation/" target="_blank">statistical representations</a> in case any errors appear in the output.
 							</p>
 
 							<hr/>
 
 							<h5>Display&colon;</h5>
 							<p>
-								Controls how the RGB channels of the statistical representation are visualized. Options include RGB Overlay &lpar;overlaying channels together&rpar; or RGB Parade &lpar;presenting channels sequentially&rpar;.
+								Controls how the <a href="https://en.wikipedia.org/wiki/Channel_(digital_image)" target="_blank">RGB channels</a> of the <a href="https://www.geeksforgeeks.org/maths/what-are-the-different-ways-of-data-representation/" target="_blank">statistical representations</a> are visualized. Options include RGB Overlay &lpar;overlaying channels together&rpar; or RGB Parade &lpar;presenting channels sequentially&rpar;.
 							</p>
 
-							<h5>Interpolate Values&colon;</h5>
+							<h5><a href="https://en.wikipedia.org/wiki/Interpolation" target="_blank">Interpolate Values</a>&colon;</h5>
 							<p>
-								Toggles between a discrete bar-graph style visualization or a smoother representation where values are interpolated between bins.
+								Toggles between a <a href="https://en.wikipedia.org/wiki/Bar_chart" target="_blank">discrete bar&hyphen;graph</a> style visualization or a smoother representation where values are <a href="https://en.wikipedia.org/wiki/Interpolation" target="_blank">interpolated</a> between bins.
 							</p>
 
-							<h5>Square Histogram&colon;</h5>
+							<h5><a href="https://en.wikipedia.org/wiki/Square_(algebra)" target="_blank">Square</a> <a href="https://en.wikipedia.org/wiki/Image_histogram" target="_blank">Histogram</a>&colon;</h5>
 							<p>
-								Applies a square function to the representation, emphasizing smaller differences and improving readability of low&hyphen;frequency values.
+								Applies a <a href="https://en.wikipedia.org/wiki/Square_(algebra)" target="_blank">squaring function</a> to the visualization, emphasizing smaller differences and improving readability of low&hyphen;frequency values.
 							</p>
 
 							<h4>In&hyphen; &sol; Outputs</h4>
@@ -646,7 +646,7 @@
 							</p>
 
 							<p>
-								<b>Output 0</b> &ndash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> input image and it's statistical representation metadata.
+								<b>Output 0</b> &ndash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> input image and it's <a href="https://www.geeksforgeeks.org/maths/what-are-the-different-ways-of-data-representation/" target="_blank">statistical representations</a> metadata.
 							</p>
 
 							<p style="margin-top: 1rem;">
@@ -660,15 +660,33 @@
 
 				<section id="histogram-compilers" class="documentation">
 					<div class="docuinfo">
-						<h2>Histogram Compilers</h2>
-						<h3>Sub-Title</h3>
+						<h2><a href="https://en.wikipedia.org/wiki/Image_histogram" target="_blank">Histogram</a> Compilers</h2>
+						<h3>Metadata Extraction &amp; Reconstruction</h3>
 						<p>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim diam vulputate ut pharetra sit amet aliquam. Integer eget aliquet nibh praesent tristique magna sit. Massa id neque aliquam vestibulum. Egestas diam in arcu cursus euismod quis viverra nibh. Ultrices vitae auctor eu augue ut lectus arcu bibendum at. Vel risus commodo viverra maecenas accumsan lacus vel facilisis volutpat. Sit amet cursus sit amet dictum sit. Scelerisque mauris pellentesque pulvinar pellentesque habitant morbi tristique. Rutrum quisque non tellus orci ac.
+							These two <a href="https://derivative.ca/UserGuide/COMP_Class" target="_blank">components</a> manage the encoded metadata strip used by the <a href="https://github.com/MaxMainio/TD_/tree/main/TOPs/Histogram" target="_blank">Histogram component family</a>. By design, the histogram or <a href="https://docs.flowjo.com/flowjo/graphs-and-gating/data-visualization-and-display/gw-cdf/" target="_blank">CDF</a> data is appended to the bottom of the input image so it can travel through the <a href="https://derivative.ca/UserGuide/TOP" target="_blank">TOP</a> stream alongside the original texture. The <a href="https://github.com/MaxMainio/TD_/blob/main/TOPs/Histogram/Histogram_deCompiler.tox" target="_blank">deCompiler</a> and reCompiler provide tools for explicitly separating or reconstructing this combined representation.
+						</p>
+
+						<ul>
+							<li>
+								<strong><a href="https://github.com/MaxMainio/TD_/blob/main/TOPs/Histogram/Histogram_deCompiler.tox" target="_blank">Histogram deCompiler</a>&colon;</strong><br>
+								Accepts a <a href="https://derivative.ca/UserGuide/TOP" target="_blank">TOP</a> input that contains both the image and its statistical metadata strip. Outputs two <a href="https://derivative.ca/UserGuide/TOP" target="_blank">TOPs</a>: the original image with the strip removed, and the extracted metadata on its own.
+							</li><br>
+
+							<li>
+								<strong><a href="https://github.com/MaxMainio/TD_/blob/main/TOPs/Histogram/Histogram_reCompiler.tox" target="_blank">Histogram reCompiler</a>&colon;</strong><br>
+								Performs the reverse operation. Accepts two <a href="https://derivative.ca/UserGuide/TOP" target="_blank">TOP</a> inputs &mdash; an image and a <a href="https://en.wikipedia.org/wiki/Image_histogram" target="_blank">histogram</a>/<a href="https://docs.flowjo.com/flowjo/graphs-and-gating/data-visualization-and-display/gw-cdf/" target="_blank">CDF</a> metadata strip &mdash; and appends them together into a single <a href="https://derivative.ca/UserGuide/TOP" target="_blank">TOP</a>. The result can then be read and used by other <a href="https://github.com/MaxMainio/TD_/tree/main/TOPs/Histogram" target="_blank">Histogram components</a>.
+							</li>
+						</ul>
+
+						<p>
+							Together, these operators make it possible to isolate, reuse, or restructure <a href="https://en.wikipedia.org/wiki/Image_histogram" target="_blank">histogram</a> metadata within a TouchDesigner workflow, providing flexibility for both analysis and creative manipulation.
 						</p>
 
 						<h5>Resources&colon;</h5>
 						<p>
-							<a href="https://github.com/MaxMainio/TD_" target="_blank">Download the .tox files</a>
+							<a href="https://github.com/MaxMainio/TD_" target="_blank">Download the .tox files</a><br>
+							<a href="https://en.wikipedia.org/wiki/Image_histogram" target="_blank">Image Histogram on Wikipedia</a><br>
+							<a href="https://en.wikipedia.org/wiki/Cumulative_distribution_function" target="_blank">CDF on Wikipedia</a>
 						</p>
 					</div>
 
@@ -813,36 +831,56 @@
 
 						<div>
 							<h4>Parameters</h4>
-							<h5>par.name&colon;</h5>
+							<h5>Input&colon;</h5>
 							<p>
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim diam vulputate ut pharetra sit amet aliquam.
+								Specifies which type of metadata is being provided to the <a href="https://github.com/MaxMainio/TD_/blob/main/TOPs/Histogram/Histogram_reCompiler.tox" target="_blank">reCompiler Component</a> &lpar;<a href="https://en.wikipedia.org/wiki/Image_histogram" target="_blank">Histogram</a> or <a href="https://docs.flowjo.com/flowjo/graphs-and-gating/data-visualization-and-display/gw-cdf/" target="_blank">CDF</a>&rpar;. Ensures the correct statistical representation is appended to the output.
 							</p>
 
-							<h5>par.name&colon;</h5>
+							<h5>Output&colon;</h5>
 							<p>
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim diam vulputate ut pharetra sit amet aliquam.
+								Defines whether the component outputs a <a href="https://en.wikipedia.org/wiki/Image_histogram" target="_blank">Histogram</a> or a <a href="https://docs.flowjo.com/flowjo/graphs-and-gating/data-visualization-and-display/gw-cdf/" target="_blank">CDF</a> along with the input image.
+							</p>
+
+							<h5><a href="https://en.wikipedia.org/wiki/Normalization_(statistics)" target="_blank">Normalize</a> Output&colon;</h5>
+							<p>
+								<a href="https://en.wikipedia.org/wiki/Normalization_(statistics)" target="_blank">Normalizes</a> the <a href="https://www.geeksforgeeks.org/maths/what-are-the-different-ways-of-data-representation/" target="_blank">statistical representations</a> so that all values sum to 1.
 							</p>
 	
 							<hr/>
 	
-							<h5>par.name&colon;</h5>
+							<h5>Display&colon;</h5>
 							<p>
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim diam vulputate ut pharetra sit amet aliquam.
+								Controls how the <a href="https://en.wikipedia.org/wiki/Channel_(digital_image)" target="_blank">RGB channels</a> of the <a href="https://www.geeksforgeeks.org/maths/what-are-the-different-ways-of-data-representation/" target="_blank">statistical representations</a> are visualized. Options include RGB Overlay &lpar;overlaying channels together&rpar; or RGB Parade &lpar;presenting channels sequentially&rpar;.
 							</p>
 
-							<h5>par.name&colon;</h5>
+							<h5><a href="https://en.wikipedia.org/wiki/Interpolation" target="_blank">Interpolate Values</a>&colon;</h5>
 							<p>
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim diam vulputate ut pharetra sit amet aliquam.
+								Toggles between a <a href="https://en.wikipedia.org/wiki/Bar_chart" target="_blank">discrete bar&hyphen;graph</a> style visualization or a smoother representation where values are <a href="https://en.wikipedia.org/wiki/Interpolation" target="_blank">interpolated</a> between bins.
 							</p>
 
-							<h4>In&hyphen; &sol; Outputs</h4>
+							<h5><a href="https://en.wikipedia.org/wiki/Square_(algebra)" target="_blank">Square</a> <a href="https://en.wikipedia.org/wiki/Image_histogram" target="_blank">Histogram</a>&colon;</h5>
 							<p>
-								<b>Input 0</b> &ndash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> image to be processed.
+								Applies a <a href="https://en.wikipedia.org/wiki/Square_(algebra)" target="_blank">squaring function</a> to the visualization, emphasizing smaller differences and improving readability of low&hyphen;frequency values.
+							</p>
+
+							<h4><a href="https://github.com/MaxMainio/TD_/blob/main/TOPs/Histogram/Histogram_reCompiler.tox" target="_blank">deCompiler</a> In&hyphen; &sol; Outputs</h4>
+							<p>
+								<b>Input 0</b> &ndash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> image with appended metadata.
 							</p>
 
 							<p>
-								<b>Output 0</b> &ndash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> Lorem ipsum...<br>
-								<b>Output 1</b> &ndash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> Lorem ipsum...
+								<b>Output 0</b> &ndash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> input image without metadata.<br>
+								<b>Output 1</b> &ndash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> metadata without input image.
+							</p>
+
+							<h4><a href="https://github.com/MaxMainio/TD_/blob/main/TOPs/Histogram/Histogram_reCompiler.tox" target="_blank">reCompiler</a> In&hyphen; &sol; Outputs</h4>
+							<p>
+								<b>Input 0</b> &ndash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> image without metadata.<br>
+								<b>Input 1</b> &ndash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> metadata without image.
+							</p>
+
+							<p>
+								<b>Output 0</b> &ndash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> image with appended metadata.
 							</p>
 
 							<p style="margin-top: 1rem;">
@@ -854,7 +892,7 @@
 
 				<hr/>
 
-								<section id="histogram-conversion" class="documentation">
+				<section id="histogram-conversion" class="documentation">
 					<div class="docuinfo">
 						<h2>Histogram Conversion</h2>
 						<h3>Sub-Title</h3>
