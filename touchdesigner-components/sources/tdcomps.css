@@ -413,10 +413,20 @@ h5 + p{
 .connector-color{
     width: 100%;
     height: 18px;
-    background-color: var(--td-top-color);
+    /* background-color: var(--td-top-color); */
 
     border-width: 1px;
     border-color: rgba(255, 255, 255, 0.5);
+
+    &.top{
+        background-color: var(--td-top-color);
+    }
+
+    &.chop{
+        background-color: var(--td-chop-color);
+    }
+
+
 
     &.top-left{
         border-style: none none outset outset;
