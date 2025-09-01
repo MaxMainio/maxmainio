@@ -76,7 +76,7 @@
 						</p>
 
 						<p>
-							Index:<br>
+							Index&colon;<br>
 							<a href="#dilate-erode" target="_self">Dilate/Erode</a>, <a href="#dynamic-dilate-erode" target="_self">Dynamic Dilate/Erode</a>, <a href="#feature-detector" target="_self">Feature Detector</a>, <a href="#geodesic-dilate-erode" target="_self">Geodesic Dilate/Erode</a>, <a href="#gradient" target="_self">Gradient</a>, <a href="#hit-or-miss" target="_self">Hit&hyphen;or&hyphen;Miss</a>, <a href="#opening-closing" target="_self">Opening/Closing</a>, <a href="#perimeter" target="_self">Perimeter</a>, <a href="#pruning" target="_self">Pruning</a>, <a href="#smoothing" target="_self">Smoothing</a>, <a href="#thinning-thickening" target="_self">Thinning/Thickening</a>, <a href="#top-bottom-hat" target="_self">Top/Bottom Hat</a>
 						</p>
 					</div>
@@ -915,7 +915,7 @@
 							In conjunction, the <a href="https://homepages.inf.ed.ac.uk/rbf/HIPR2/dilate.htm" target="_blank">Dilate</a>&sol;<a href="https://homepages.inf.ed.ac.uk/rbf/HIPR2/erode.htm" target="_blank">Erode</a> component allows for precise control over the structure and features within an image, making it indispensable for tasks such as feature extraction, noise reduction, and image pre-processing.
 						</p>
 
-						<h5>Resources:</h5>
+						<h5>Resources&colon;</h5>
 						<p>
 							<a href="https://github.com/MaxMainio/TD_" target="_blank">Download the .tox files</a><br>
 							<a href="https://homepages.inf.ed.ac.uk/rbf/HIPR2/morops.htm" target="_blank">HIPR2 Morphology documentation</a><br>
@@ -997,31 +997,31 @@
 
 						<div>
 							<h4>Parameters</h4>
-							<h5>Mode:</h5>
+							<h5>Mode&colon;</h5>
 							<p>
 								Determines the operation to be performed on the input image. <a href="https://homepages.inf.ed.ac.uk/rbf/HIPR2/dilate.htm" target="_blank">Dilation</a>, which expands the boundaries of the <a href="https://medium.com/hackernoon/an-introduction-to-morphological-operations-for-digital-image-text-classification-79cb14bab2d7#:~:text=White%20Pixels%20(1s)%20represent%20the%20foreground." target="_blank">foreground objects</a>, or <a href="https://homepages.inf.ed.ac.uk/rbf/HIPR2/erode.htm" target="_blank">Erosion</a>, which shrinks them.
 							</p>
 
-							<h5>Depth:</h5>
+							<h5>Depth&colon;</h5>
 							<p>
 								Specifies the number of iterations that the morphological operation will be applied to the input image.
 							</p>
 	
 							<hr/>
 	
-							<h5>Dimensions:</h5>
+							<h5>Dimensions&colon;</h5>
 							<p>
 								Defines the width and height of the <a href="https://www.ni.com/docs/en-US/bundle/ni-vision-concepts-help/page/structuring_elements.html#:~:text=Morphological%20transformations%20use%20a%202D,the%20boundary%20of%20a%20particle." target="_blank">structuring element</a> to be used in the morphological operation, directly affecting the scope of the operation on the image.
 							</p>
 
-							<h5>Edge Handling:</h5>
+							<h5>Edge Handling&colon;</h5>
 							<p>
 								Determines how the edges of the image are treated during the <a href="https://docs.opencv.org/4.x/d9/d61/tutorial_py_morphological_ops.html#:~:text=Theory-,Morphological%20transformations,-are%20some%20simple" target="_blank">morphological transformation</a>. Extends the image to avoid edge artifacts.
 							</p>
 
 							<hr/>
 	
-							<h5>Roundness:</h5>
+							<h5>Roundness&colon;</h5>
 							<p>
 								Adjusts the shape of the default <a href="https://www.ni.com/docs/en-US/bundle/ni-vision-concepts-help/page/structuring_elements.html#:~:text=Morphological%20transformations%20use%20a%202D,the%20boundary%20of%20a%20particle." target="_blank">structuring element</a>. A value of 0 creates a square element, while a value of 1 produces a circular element.
 							</p>
@@ -1354,7 +1354,7 @@
 							The Morphological Feature Detector is ideal for identifying and separating textures from smooth gradients, enhancing specific edge types for image analysis and preprocessing, or noise reduction and feature enhancement in complex images.
 						</p>
 
-						<h5>Resources:</h5>
+						<h5>Resources&colon;</h5>
 						<p>
 							<a href="https://github.com/MaxMainio/TD_" target="_blank">Download the .tox files</a><br>
 							<a href="http://www.cyto.purdue.edu/cdroms/micro2/content/education/wirth08.pdf" target="_blank">Grayscale Morphological Analysis</a>
@@ -1434,36 +1434,36 @@
 
 						<div>
 							<h4>Parameters</h4>
-							<h5>Mode:</h5>
+							<h5>Mode&colon;</h5>
 							<p>
 								Selects the type of features to detect in the input image
 							</p>
 
-							<h5>Output Format:</h5>
+							<h5>Output Format&colon;</h5>
 							<p>
 								Defines the pixel format of the output image.
 							</p>
 
-							<h5>Depth:</h5>
+							<h5>Depth&colon;</h5>
 							<p>
 								Specifies the number of iterations that the morphological operation will be applied to the input image.
 							</p>
 	
 							<hr/>
 	
-							<h5>Dimensions:</h5>
+							<h5>Dimensions&colon;</h5>
 							<p>
 								Defines the width and height of the <a href="https://www.ni.com/docs/en-US/bundle/ni-vision-concepts-help/page/structuring_elements.html#:~:text=Morphological%20transformations%20use%20a%202D,the%20boundary%20of%20a%20particle." target="_blank">structuring element</a> to be used in the morphological operation, directly affecting the scope of the operation on the image.
 							</p>
 
-							<h5>Edge Handling:</h5>
+							<h5>Edge Handling&colon;</h5>
 							<p>
 								Determines how the edges of the image are treated during the <a href="https://docs.opencv.org/4.x/d9/d61/tutorial_py_morphological_ops.html#:~:text=Theory-,Morphological%20transformations,-are%20some%20simple" target="_blank">morphological transformation</a>. Extends the image to avoid edge artifacts.
 							</p>
 
 							<hr/>
 	
-							<h5>Roundness:</h5>
+							<h5>Roundness&colon;</h5>
 							<p>
 								Adjusts the shape of the default <a href="https://www.ni.com/docs/en-US/bundle/ni-vision-concepts-help/page/structuring_elements.html#:~:text=Morphological%20transformations%20use%20a%202D,the%20boundary%20of%20a%20particle." target="_blank">structuring element</a>. A value of 0 creates a square element, while a value of 1 produces a circular element.
 							</p>
@@ -1500,10 +1500,10 @@
 						</p>
 
 						<p>
-							Notice: A <a href="https://docs.derivative.ca/Feedback_TOP" target="_blank">Feedback TOP</a> is used to propagate the iterative <a href="https://homepages.inf.ed.ac.uk/rbf/HIPR2/dilate.htm" target="_blank">dilation</a>&sol;<a href="https://homepages.inf.ed.ac.uk/rbf/HIPR2/erode.htm" target="_blank">erosion</a> throughout the provided mask. As a result, you will need to let the calculation run over multiple frames for the <a href="https://homepages.inf.ed.ac.uk/rbf/HIPR2/dilate.htm" target="_blank">dilation</a>&sol;<a href="https://homepages.inf.ed.ac.uk/rbf/HIPR2/erode.htm" target="_blank">erosion</a> process to fully complete.
+							Notice&colon; A <a href="https://docs.derivative.ca/Feedback_TOP" target="_blank">Feedback TOP</a> is used to propagate the iterative <a href="https://homepages.inf.ed.ac.uk/rbf/HIPR2/dilate.htm" target="_blank">dilation</a>&sol;<a href="https://homepages.inf.ed.ac.uk/rbf/HIPR2/erode.htm" target="_blank">erosion</a> throughout the provided mask. As a result, you will need to let the calculation run over multiple frames for the <a href="https://homepages.inf.ed.ac.uk/rbf/HIPR2/dilate.htm" target="_blank">dilation</a>&sol;<a href="https://homepages.inf.ed.ac.uk/rbf/HIPR2/erode.htm" target="_blank">erosion</a> process to fully complete.
 						</p>
 
-						<h5>Resources:</h5>
+						<h5>Resources&colon;</h5>
 						<p>
 							<a href="https://github.com/MaxMainio/TD_" target="_blank">Download the .tox files</a><br>
 							<a href="https://homes.di.unimi.it/ferrari/MethImageProc2014_15/MIP2014_15_14_morphology_2_double.pdf" target="_blank">Advanced morphological processing</a>
@@ -1585,36 +1585,36 @@
 
 						<div>
 							<h4>Parameters</h4>
-							<h5>Mode:</h5>
+							<h5>Mode&colon;</h5>
 							<p>
 								Determines the operation to be performed on the input image. <a href="https://homepages.inf.ed.ac.uk/rbf/HIPR2/dilate.htm" target="_blank">Dilation</a>, which expands the boundaries of the <a href="https://medium.com/hackernoon/an-introduction-to-morphological-operations-for-digital-image-text-classification-79cb14bab2d7#:~:text=White%20Pixels%20(1s)%20represent%20the%20foreground." target="_blank">foreground objects</a>, or <a href="https://homepages.inf.ed.ac.uk/rbf/HIPR2/erode.htm" target="_blank">Erosion</a>, which shrinks them.
 							</p>
 
-							<h5>Depth:</h5>
+							<h5>Depth&colon;</h5>
 							<p>
 								Specifies the number of iterations that the morphological operation will be applied to the input image.
 							</p>
 	
 							<hr/>
 	
-							<h5>Dimensions:</h5>
+							<h5>Dimensions&colon;</h5>
 							<p>
 								Defines the width and height of the <a href="https://www.ni.com/docs/en-US/bundle/ni-vision-concepts-help/page/structuring_elements.html#:~:text=Morphological%20transformations%20use%20a%202D,the%20boundary%20of%20a%20particle." target="_blank">structuring element</a> to be used in the morphological operation. Larger values increase the scope of the operation but may cause the iterative process to jump across small borders in the mask image. Keeping the <a href="https://www.ni.com/docs/en-US/bundle/ni-vision-concepts-help/page/structuring_elements.html#:~:text=Morphological%20transformations%20use%20a%202D,the%20boundary%20of%20a%20particle." target="_blank">structuring element</a> small ensures better control.
 							</p>
 
-							<h5>Edge Handling:</h5>
+							<h5>Edge Handling&colon;</h5>
 							<p>
 								Determines how the edges of the image are treated during the <a href="https://docs.opencv.org/4.x/d9/d61/tutorial_py_morphological_ops.html#:~:text=Theory-,Morphological%20transformations,-are%20some%20simple" target="_blank">morphological transformation</a>. Extends the image to avoid edge artifacts.
 							</p>
 
 							<hr/>
 	
-							<h5>Roundness:</h5>
+							<h5>Roundness&colon;</h5>
 							<p>
 								Adjusts the shape of the default <a href="https://www.ni.com/docs/en-US/bundle/ni-vision-concepts-help/page/structuring_elements.html#:~:text=Morphological%20transformations%20use%20a%202D,the%20boundary%20of%20a%20particle." target="_blank">structuring element</a>. A value of 0 creates a square element, while a value of 1 produces a circular element.
 							</p>
 
-							<h5>Reset:</h5>
+							<h5>Reset&colon;</h5>
 							<p>
 								Resets the feedback loop, restarting the transformation from the initial state.
 							</p>
@@ -1761,7 +1761,7 @@
 							By selecting the appropriate <a href="https://en.wikipedia.org/wiki/Morphological_gradient" target="_blank">gradient</a> type, the <a href="https://en.wikipedia.org/wiki/Morphological_gradient" target="_blank">Morphological Gradient</a> component allows for precise control over how boundaries are interpreted and emphasized.
 						</p>
 
-						<h5>Resources:</h5>
+						<h5>Resources&colon;</h5>
 						<p>
 							<a href="https://github.com/MaxMainio/TD_" target="_blank">Download the .tox files</a><br>
 							<a href="https://homepages.inf.ed.ac.uk/rbf/HIPR2/morops.htm" target="_blank">HIPR2 Morphology documentation</a><br>
@@ -2125,7 +2125,7 @@
 								Determines how the edges of the image are treated during the <a href="https://docs.opencv.org/4.x/d9/d61/tutorial_py_morphological_ops.html#:~:text=Theory-,Morphological%20transformations,-are%20some%20simple" target="_blank">morphological transformation</a>. Extends the image to avoid edge artifacts.
 							</p>
 	
-							<h5>Invert <a href="https://www.ni.com/docs/en-US/bundle/ni-vision-concepts-help/page/structuring_elements.html#:~:text=Morphological%20transformations%20use%20a%202D,the%20boundary%20of%20a%20particle." target="_blank">structuring element</a>:</h5>
+							<h5>Invert <a href="https://www.ni.com/docs/en-US/bundle/ni-vision-concepts-help/page/structuring_elements.html#:~:text=Morphological%20transformations%20use%20a%202D,the%20boundary%20of%20a%20particle." target="_blank">structuring element</a>&colon;</h5>
 							<p>
 								When on, this will invert the sign of each cell of the <a href="https://www.ni.com/docs/en-US/bundle/ni-vision-concepts-help/page/structuring_elements.html#:~:text=Morphological%20transformations%20use%20a%202D,the%20boundary%20of%20a%20particle." target="_blank">structuring element</a>.
 							</p>
@@ -2543,7 +2543,7 @@
 							This process constitutes a single iteration of the <a href="https://en.wikipedia.org/wiki/Pruning_(morphology)" target="_blank">pruning</a> operation. To <a href="https://en.wikipedia.org/wiki/Pruning_(morphology)" target="_blank">prune</a> longer branches, the component must run iteratively over multiple frames. For example, to <a href="https://en.wikipedia.org/wiki/Pruning_(morphology)" target="_blank">prune</a> 30 pixels from the ends of branches, set the <i>Dimensions</i> parameter to 3&times;3 and let the component run for 15 frames. Each iteration removes both the endpoint and its immediate neighboring pixel, progressively shortening the branch.
 						</p>
 
-						<h5>Resources:</h5>
+						<h5>Resources&colon;</h5>
 						<p>
 							<a href="https://github.com/MaxMainio/TD_" target="_blank">Download the .tox files</a><br>
 							<a href="https://homepages.inf.ed.ac.uk/rbf/HIPR2/morops.htm" target="_blank">HIPR2 Morphology documentation</a><br>
@@ -2785,7 +2785,7 @@
 							These methods provide flexible and robust options for refining image content, whether you're focusing on reducing noise, softening textures, or preserving structural integrity. The <a href="https://en.wikipedia.org/wiki/Mathematical_morphology" target="_blank">Morphological</a> Smoothing component is a versatile tool for preprocessing images, enhancing visual clarity, and preparing data for advanced analysis or visualization.
 						</p>
 
-						<h5>Resources:</h5>
+						<h5>Resources&colon;</h5>
 						<p>
 							<a href="https://github.com/MaxMainio/TD_" target="_blank">Download the .tox files</a><br>
 							<a href="https://homepages.inf.ed.ac.uk/rbf/HIPR2/morops.htm" target="_blank">HIPR2 Morphology documentation</a><br>
@@ -3070,7 +3070,7 @@
 							Remember, this is an iterative morphological transformation which means it must be run for multiple frames to properly process the input image.
 						</p>
 
-						<h5>Resources:</h5>
+						<h5>Resources&colon;</h5>
 						<p>
 							<a href="https://github.com/MaxMainio/TD_" target="_blank">Download the .tox files</a><br>
 							<a href="https://homepages.inf.ed.ac.uk/rbf/HIPR2/morops.htm" target="_blank">HIPR2 Morphology documentation</a><br>
@@ -3150,17 +3150,17 @@
 
 						<div>
 							<h4>Parameters</h4>
-							<h5>Mode:</h5>
+							<h5>Mode&colon;</h5>
 							<p>
 								Selects the operation method to use. <a href="https://homepages.inf.ed.ac.uk/rbf/HIPR2/thin.htm" target="_blank">Thinning</a> reduces the thickness of <a href="https://medium.com/hackernoon/an-introduction-to-morphological-operations-for-digital-image-text-classification-79cb14bab2d7#:~:text=White%20Pixels%20(1s)%20represent%20the%20foreground." target="_blank">foreground objects</a> to skeletal lines, or <a href="https://homepages.inf.ed.ac.uk/rbf/HIPR2/thick.htm" target="_blank">Thickening</a>, which increases <a href="https://medium.com/hackernoon/an-introduction-to-morphological-operations-for-digital-image-text-classification-79cb14bab2d7#:~:text=White%20Pixels%20(1s)%20represent%20the%20foreground." target="_blank">foreground objects</a> thicknesses.
 							</p>
 
-							<h5>Edge Handling:</h5>
+							<h5>Edge Handling&colon;</h5>
 							<p>
 								Determines how the edges of the image are treated during the <a href="https://docs.opencv.org/4.x/d9/d61/tutorial_py_morphological_ops.html#:~:text=Theory-,Morphological%20transformations,-are%20some%20simple" target="_blank">morphological transformation</a>. Extends the image to avoid edge artifacts.
 							</p>
 
-							<h5>Reset:</h5>
+							<h5>Reset&colon;</h5>
 							<p>
 								Triggers a reset, reverting the image to its original state and allowing the operation to start over from the input image.
 							</p>

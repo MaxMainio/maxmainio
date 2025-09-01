@@ -80,7 +80,7 @@
 						</p>
 
 						<p>
-							Index:<br>
+							Index&colon;<br>
 							<a href="#uv-map" target="_self">UV Map</a>, <a href="#uvw-map" target="_self">UVW Map</a>
 						</p>
 					</div>
@@ -224,7 +224,7 @@
 							By defining how input coordinates are mapped to the output space, this <a href="https://github.com/MaxMainio/TD_/blob/main/TOPs/Mapping/UV_map.tox" target="_blank">UV Map Component</a> acts as a versatile foundation for more complex mapping operations, such as tiling, layering, or non&hyphen;linear remapping.
 						</p>
 
-						<h5>Resources:</h5>
+						<h5>Resources&colon;</h5>
 						<p>
 							<a href="https://github.com/MaxMainio/TD_" target="_blank">Download the .tox files</a><br>
 							<a href="https://docs.derivative.ca/Texture_Coordinates_and_Texture_Sampling" target="_blank">Texture Coordinates and Texture Sampling</a><br>
@@ -297,36 +297,36 @@
 
 						<div>
 							<h4>Parameters</h4>
-							<h5>Sample:</h5>
+							<h5>Sample&colon;</h5>
 							<p>
 								Specifies a <a href="https://derivative.ca/UserGuide/TOP" target="_blank">TOP</a> input whose resolution will define the output UV Map&rsquo;s dimensions. Useful for ensuring the <a href="https://masonstevenson.dev/blog/unreal-texcoord-flowmaps#:~:text=UV%20Coordinate%20Data-,UV%20coordinate,-data%20can%20be" target="_blank">UV map</a> matches another texture in size.
 							</p>
 
-							<h5>Dimensions:</h5>
+							<h5>Dimensions&colon;</h5>
 							<p>
 								Sets the output resolution manually when no <a href="https://derivative.ca/UserGuide/TOP" target="_blank">TOP</a> is sampled. Defines the width and height of the generated <a href="https://masonstevenson.dev/blog/unreal-texcoord-flowmaps#:~:text=UV%20Coordinate%20Data-,UV%20coordinate,-data%20can%20be" target="_blank">UV map</a>.
 							</p>
 							
-							<h5>Method:</h5>
+							<h5>Method&colon;</h5>
 							<p>
 								Determines the coordinate system for the <a href="https://masonstevenson.dev/blog/unreal-texcoord-flowmaps#:~:text=UV%20Coordinate%20Data-,UV%20coordinate,-data%20can%20be" target="_blank">UV map</a>&colon;<br>
 								Standard &lpar;<a href="https://en.wikipedia.org/wiki/Origin_(mathematics)" target="_blank">Origin</a> at the bottom&hyphen;left corner &lpar;0,0&rpar;&rpar; or<br>
 								Centered &lpar;<a href="https://en.wikipedia.org/wiki/Origin_(mathematics)" target="_blank">Origin</a> at the center of the output texture&rpar;
 							</p>
 
-							<h5>Aspect Correction:</h5>
+							<h5>Aspect Correction&colon;</h5>
 							<p>
 								Toggles whether the generated coordinates preserve the native aspect ratio of the output texture or are normalized between 0 and 1.
 							</p>
 
 							<hr/>
 							
-							<h5>Translate:</h5>
+							<h5>Translate&colon;</h5>
 							<p>
 								Offsets the <a href="https://masonstevenson.dev/blog/unreal-texcoord-flowmaps#:~:text=UV%20Coordinate%20Data-,UV%20coordinate,-data%20can%20be" target="_blank">UV map</a> along the X and Y axes, shifting the coordinate space horizontally or vertically.
 							</p>
 
-							<h5>Rotate:</h5>
+							<h5>Rotate&colon;</h5>
 							<p>
 								Rotates the <a href="https://masonstevenson.dev/blog/unreal-texcoord-flowmaps#:~:text=UV%20Coordinate%20Data-,UV%20coordinate,-data%20can%20be" target="_blank">UV map</a> around the origin, allowing for reorientation of the coordinate system.
 							</p>
@@ -361,7 +361,7 @@
 							As with <a href="#uv-map" target="_self">UV mapping</a>, the <a href="https://docs.safe.com/fme/html/FME-Form-Documentation/FME-ReadersWriters/!FME_Geometry/Texture_Coordinates.htm#:~:text=w%20and%20q%20Texture%20Coordinates" target="_blank">UVW Map</a> operates by re&hyphen;projecting the input image into a new coordinate space, but with the additional flexibility of depth&hyphen;aware manipulation. This allows for effects and workflows that go beyond simple 2D warping, including pseudo&hyphen;3D pattern generation and multi-axis distortions.
 						</p>
 
-						<h5>Resources:</h5>
+						<h5>Resources&colon;</h5>
 						<p>
 							<a href="https://github.com/MaxMainio/TD_" target="_blank">Download the .tox files</a><br>
 							<a href="https://docs.derivative.ca/Texture_Coordinates_and_Texture_Sampling" target="_blank">Texture Coordinates and Texture Sampling</a><br>
@@ -434,39 +434,39 @@
 
 						<div>
 							<h4>Parameters</h4>
-							<h5>Sample:</h5>
+							<h5>Sample&colon;</h5>
 							<p>
 								Specifies a <a href="https://derivative.ca/UserGuide/TOP" target="_blank">TOP</a> input whose resolution will define the output <a href="https://docs.safe.com/fme/html/FME-Form-Documentation/FME-ReadersWriters/!FME_Geometry/Texture_Coordinates.htm#:~:text=w%20and%20q%20Texture%20Coordinates" target="_blank">UVW Map&rsquo;s</a> dimensions.
 							</p>
 
-							<h5>Dimensions:</h5>
+							<h5>Dimensions&colon;</h5>
 							<p>
 								Sets the output resolution manually when no <a href="https://derivative.ca/UserGuide/TOP" target="_blank">TOP</a> is sampled. Defines the width and height of the generated <a href="https://docs.safe.com/fme/html/FME-Form-Documentation/FME-ReadersWriters/!FME_Geometry/Texture_Coordinates.htm#:~:text=w%20and%20q%20Texture%20Coordinates" target="_blank">UVW map</a>.
 							</p>
 	
-							<h5>Depth:</h5>
+							<h5>Depth&colon;</h5>
 							<p>
 								Defines the scale of the W axis &lpar;depth&rpar; in the output <a href="https://docs.safe.com/fme/html/FME-Form-Documentation/FME-ReadersWriters/!FME_Geometry/Texture_Coordinates.htm#:~:text=w%20and%20q%20Texture%20Coordinates" target="_blank">UVW Map</a>.
 							</p>
 
-							<h5>Aspect Correction:</h5>
+							<h5>Aspect Correction&colon;</h5>
 							<p>
 								Toggles whether the generated coordinates preserve the native aspect ratio of the output texture or are normalized between 0 and 1.
 							</p>
 
 							<hr/>
 
-							<h5>Translate:</h5>
+							<h5>Translate&colon;</h5>
 							<p>
 								An XYZ offset applied to the UVW coordinate space. Shifts the mapping along the U, V, and W axes.
 							</p>
 
-							<h5>Rotate:</h5>
+							<h5>Rotate&colon;</h5>
 							<p>
 								An XYZ rotation applied to the UVW coordinate system. Allows reorientation of the mapping around each axis.
 							</p>
 
-							<h5>Scale:</h5>
+							<h5>Scale&colon;</h5>
 							<p>
 								An XYZ scaling factor applied to the UVW coordinate space. Stretches or compresses the mapping independently along each axis.
 							</p>

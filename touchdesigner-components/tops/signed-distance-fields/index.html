@@ -80,7 +80,7 @@
 						</p>
 
 						<p>
-							Index:<br>
+							Index&colon;<br>
 							<a href="#jfa-sdf" target="_self">JFA SDF</a>, <a href="#sdf-chamfer" target="_self">SDF Chamfer</a>, <a href="#sdf-chamfer" target="_self">SDF Chamfer Smooth</a>, <a href="#sdf-combiner" target="_self">SDF Combiner</a>, <a href="#sdf-combiner" target="_self">SDF Combiner Smooth</a>, <a href="#sdf-corrector" target="_self">SDF Corrector</a>, <a href="#vp-sdf" target="_self">VP SDF</a>
 						</p>
 					</div>
@@ -580,7 +580,7 @@
 							Since a <a href="https://en.wikipedia.org/wiki/Signed_distance_function" target="_blank">Signed Distance Field</a> is fundamentally a construct of single floating-point values, this calculation disregards any color information present in the source image. Instead, the component relies on a thresholded interpretation of the provided image&rsquo;s <a href="https://www.linearity.io/blog/alpha-channel/" target="_blank">alpha channel</a> to define the borders of shapes, ensuring a clear inside&hyphen;outside distinction for distance encoding.
 						</p>
 
-						<h5>Resources:</h5>
+						<h5>Resources&colon;</h5>
 						<p>
 							<a href="https://github.com/MaxMainio/TD_" target="_blank">Download the .tox files</a><br>
 							<span title="coming soon...">JFA Solidy COMP</span><br>
@@ -660,7 +660,7 @@
 
 						<div>
 							<h4>Parameters</h4>
-							<h5>Alpha Threshold:</h5>
+							<h5>Alpha Threshold&colon;</h5>
 							<p>
 								Defines the cutoff value used to interpret the <a href="https://www.linearity.io/blog/alpha-channel/" target="_blank">alpha channel</a> as a binary mask. Pixels above the threshold are considered foreground, while those below are background. This determines the boundaries from which the Signed Distance Field is calculated.
 							</p>
@@ -671,36 +671,36 @@
 								<a href="https://en.wikipedia.org/wiki/Euclidean_distance" target="_blank">Euclidian</a>, <a href="https://en.wikipedia.org/wiki/Taxicab_geometry" target="_blank">Manhattan</a>, <a href="https://en.wikipedia.org/wiki/Chebyshev_distance" target="_blank">Chebyshev</a>, &amp; <a href="https://en.wikipedia.org/wiki/Minkowski_distance" target="_blank">Minkowski</a>.
 							</p>
 	
-							<h5>Exponent:</h5>
+							<h5>Exponent&colon;</h5>
 							<p>
 								Controls the shape of the distance measurement when the <a href="https://en.wikipedia.org/wiki/Metric_space" target="_blank">Metric</a> is set to <a href="https://en.wikipedia.org/wiki/Minkowski_distance" target="_blank">Minkowski</a>. Lower or higher values warp the contribution of distances along different axes.
 							</p>
 
-							<h5>Scale Space:</h5>
+							<h5>Scale Space&colon;</h5>
 							<p>
 								An X/Y scaling factor applied to the <a href="https://en.wikipedia.org/wiki/Signed_distance_function" target="_blank">SDF</a> calculation. Allows distances to be warped, stretching the field horizontally or vertically.
 							</p>
 
 							<hr/>
 
-							<h5>Clamp Negatives:</h5>
+							<h5>Clamp Negatives&colon;</h5>
 							<p>
 								Restricts the <a href="https://en.wikipedia.org/wiki/Signed_distance_function" target="_blank">SDF</a> to only encode distances outside of shapes. When enabled, interior distances are clamped to zero.
 							</p>
 
-							<h5>Normalize:</h5>
+							<h5>Normalize&colon;</h5>
 							<p>
 								Rescales the <a href="https://en.wikipedia.org/wiki/Signed_distance_function" target="_blank">SDF</a> values to fit between 0 and 1.
 							</p>
 
-							<h5>Invert:</h5>
+							<h5>Invert&colon;</h5>
 							<p>
 								Flips the sign of the <a href="https://en.wikipedia.org/wiki/Signed_distance_function" target="_blank">SDF</a> so that areas considered inside become outside, and vice versa.
 							</p>
 
 							<hr/>
 
-							<h5>reCalculate:</h5>
+							<h5>reCalculate&colon;</h5>
 							<p>
 								Forces the component to re-cook the <a href="https://youtu.be/A0pxY9QsgJE?si=N8H9M-QIrUN4wffW" target="_blank">Jump Flood Algorithm</a>. Useful for clearing or correcting the output if visual errors appear during calculation.
 							</p>
@@ -770,7 +770,7 @@
 							These operators are particularly useful for creating stylized geometry, smooth-shaded masks, or transitions that feel more tactile and constructed than simple boolean logic.
 						</p>
 
-						<h5>Resources:</h5>
+						<h5>Resources&colon;</h5>
 						<p>
 							<a href="https://github.com/MaxMainio/TD_" target="_blank">Download the .tox files</a><br>
 							<a href="https://en.wikipedia.org/wiki/Signed_distance_function" target="_blank">SDFs on Wikipedia</a><br>
@@ -919,17 +919,17 @@
 
 						<div>
 							<h4>Parameters</h4>
-							<h5>Method:</h5>
+							<h5>Method&colon;</h5>
 							<p>
 								Defines the combination method used to merge the two input <a href="https://en.wikipedia.org/wiki/Signed_distance_function" target="_blank">SDFs</a>.
 							</p>
 
-							<h5><a href="https://en.wikipedia.org/wiki/Chamfer" target="_blank">Chamfer</a> Size:</h5>
+							<h5><a href="https://en.wikipedia.org/wiki/Chamfer" target="_blank">Chamfer</a> Size&colon;</h5>
 							<p>
 								Defines the width of the <a href="https://en.wikipedia.org/wiki/Bevel" target="_blank">beveled</a> transition between the two input SDFs. Larger values produce broader <a href="https://en.wikipedia.org/wiki/Chamfer" target="_blank">chamfers</a>, softening the meeting point of shapes more dramatically, while smaller values result in a tighter, sharper <a href="https://en.wikipedia.org/wiki/Bevel" target="_blank">bevel</a>.
 							</p>
 
-							<h5>Smoothness:</h5>
+							<h5>Smoothness&colon;</h5>
 							<p>
 								Controls the degree of blending applied to the selected method. Higher values produce softer transitions and more gradual merging of boundaries, while lower values retain sharper boolean edges.
 							</p>
@@ -995,7 +995,7 @@
 							Together, these tools provide a flexible foundation for constructing complex forms from simple primitives, enabling both precise Boolean logic and more organic, continuous blends depending on the workflow.
 						</p>
 
-						<h5>Resources:</h5>
+						<h5>Resources&colon;</h5>
 						<p>
 							<a href="https://github.com/MaxMainio/TD_" target="_blank">Download the .tox files</a><br>
 							<a href="https://en.wikipedia.org/wiki/Signed_distance_function" target="_blank">SDFs on Wikipedia</a><br>
@@ -1144,12 +1144,12 @@
 
 						<div>
 							<h4>Parameters</h4>
-							<h5>Method:</h5>
+							<h5>Method&colon;</h5>
 							<p>
 								Defines the combination method used to merge the two input <a href="https://en.wikipedia.org/wiki/Signed_distance_function" target="_blank">SDFs</a>.
 							</p>
 
-							<h5>Smoothness:</h5>
+							<h5>Smoothness&colon;</h5>
 							<p>
 								Controls the degree of blending applied to the selected method. Higher values produce softer transitions and more gradual merging of boundaries, while lower values retain sharper Boolean edges.
 							</p>
@@ -1192,7 +1192,7 @@
 							This component is especially useful after combining multiple <a href="https://en.wikipedia.org/wiki/Signed_distance_function" target="_blank">SDFs</a> with unifying logic, where the output may look visually correct but the underlying distance values are mathematically invalid. By repairing these broken fields, the <a href="https://en.wikipedia.org/wiki/Signed_distance_function" target="_blank">SDF</a> Corrector provides a more robust foundation for both visual rendering and computational uses of <a href="https://en.wikipedia.org/wiki/Signed_distance_function" target="_blank">SDFs</a>.
 						</p>
 
-						<h5>Resources:</h5>
+						<h5>Resources&colon;</h5>
 						<p>
 							<a href="https://github.com/MaxMainio/TD_" target="_blank">Download the .tox files</a><br>
 							<a href="https://en.wikipedia.org/wiki/Signed_distance_function" target="_blank">SDFs on Wikipedia</a><br>
@@ -1271,44 +1271,44 @@
 
 						<div>
 							<h4>Parameters</h4>
-							<h5>Correction:</h5>
+							<h5>Correction&colon;</h5>
 							<p>
 								Smoothly interpolates between the original input SDF and the corrected version.
 							</p>
 
 							<hr/>
 
-							<h5>Alpha Threshold:</h5>
+							<h5>Alpha Threshold&colon;</h5>
 							<p>
 								Defines the cutoff value used to interpret the <a href="https://www.linearity.io/blog/alpha-channel/" target="_blank">alpha channel</a> as a binary mask. Pixels above the threshold are considered foreground, while those below are background. This determines the boundaries from which the Signed Distance Field is calculated.
 							</p>
 	
-							<h5>Metric:</h5>
+							<h5>Metric&colon;</h5>
 							<p>
 								Specifies the <a href="https://en.wikipedia.org/wiki/Metric_space" target="_blank">distance metric</a> used in the calculation. Options include:<br>
 								<a href="https://en.wikipedia.org/wiki/Euclidean_distance" target="_blank">Euclidian</a>, <a href="https://en.wikipedia.org/wiki/Taxicab_geometry" target="_blank">Manhattan</a>, <a href="https://en.wikipedia.org/wiki/Chebyshev_distance" target="_blank">Chebyshev</a>, &amp; <a href="https://en.wikipedia.org/wiki/Minkowski_distance" target="_blank">Minkowski</a>.
 							</p>
 
-							<h5>Exponent:</h5>
+							<h5>Exponent&colon;</h5>
 							<p>
 								Controls the shape of the distance measurement when the <a href="https://en.wikipedia.org/wiki/Metric_space" target="_blank">Metric</a> is set to <a href="https://en.wikipedia.org/wiki/Minkowski_distance" target="_blank">Minkowski</a>. Lower or higher values warp the contribution of distances along different axes.
 							</p>
 
-							<h5>Scale Space:</h5>
+							<h5>Scale Space&colon;</h5>
 							<p>
 								An X/Y scaling factor applied to the <a href="https://en.wikipedia.org/wiki/Signed_distance_function" target="_blank">SDF</a> calculation. Allows distances to be warped, stretching the field horizontally or vertically.
 							</p>
 
 							<hr/>
 
-							<h5>Invert:</h5>
+							<h5>Invert&colon;</h5>
 							<p>
 								Flips the sign of the <a href="https://en.wikipedia.org/wiki/Signed_distance_function" target="_blank">SDF</a> so that areas considered inside become outside, and vice versa.
 							</p>
 
 							<hr/>
 
-							<h5>reCalculate:</h5>
+							<h5>reCalculate&colon;</h5>
 							<p>
 								Forces the component to re-cook the <a href="https://youtu.be/A0pxY9QsgJE?si=N8H9M-QIrUN4wffW" target="_blank">Jump Flood Algorithm</a>. Useful for clearing or correcting the output if visual errors appear during calculation.
 							</p>
@@ -1347,7 +1347,7 @@
 							With this adjustment to how <a href="https://en.wikipedia.org/wiki/Signed_distance_function" target="_blank">SDFs</a> are calculated, the <a href="https://github.com/MaxMainio/TD_/blob/main/TOPs/SDF/VP_SDF.tox" target="_blank">VP SDF</a> makes it possible to generate entirely new classes of <a href="https://prideout.net/blog/distance_fields/" target="_blank">distance fields</a> &mdash; producing complex geometries and evolving surfaces that would be impossible to construct with traditional <a href="https://en.wikipedia.org/wiki/Signed_distance_function" target="_blank">SDF</a> operations alone.
 						</p>
 
-						<h5>Resources:</h5>
+						<h5>Resources&colon;</h5>
 						<p>
 							<a href="https://github.com/MaxMainio/TD_" target="_blank">Download the .tox files</a><br>
 							<a href="https://en.wikipedia.org/wiki/Signed_distance_function" target="_blank">SDFs on Wikipedia</a><br>
@@ -1427,12 +1427,12 @@
 
 						<div>
 							<h4>Parameters</h4>
-							<h5>Alpha threshold:</h5>
+							<h5>Alpha threshold&colon;</h5>
 							<p>
 								Defines the cutoff value used to interpret the <a href="https://www.linearity.io/blog/alpha-channel/" target="_blank">alpha channel</a> as a binary mask. Pixels above the threshold are considered foreground, while those below are background. This determines the boundaries from which the <a href="https://en.wikipedia.org/wiki/Signed_distance_function" target="_blank">Signed Distance Field</a> is calculated.
 							</p>
 
-							<h5>Method:</h5>
+							<h5>Method&colon;</h5>
 							<p>
 								Determines how propagated boundary values are applied to the <a href="https://en.wikipedia.org/wiki/Signed_distance_function" target="_blank">Signed Distance Field</a>. Options include&colon;<br>
 								Internal Negatives &lpar;adds the propagated values to the <a href="https://en.wikipedia.org/wiki/Signed_distance_function" target="_blank">SDF</a>&rpar; or<br>
@@ -1441,25 +1441,25 @@
 
 							<hr/>
 	
-							<h5><a href="https://en.wikipedia.org/wiki/Metric_space" target="_blank">Metric</a>:</h5>
+							<h5><a href="https://en.wikipedia.org/wiki/Metric_space" target="_blank">Metric</a>&colon;</h5>
 							<p>
 								Specifies the <a href="https://en.wikipedia.org/wiki/Metric_space" target="_blank">distance metric</a> used in the calculation. Options include:<br>
 								<a href="https://en.wikipedia.org/wiki/Euclidean_distance" target="_blank">Euclidian</a>, <a href="https://en.wikipedia.org/wiki/Taxicab_geometry" target="_blank">Manhattan</a>, <a href="https://en.wikipedia.org/wiki/Chebyshev_distance" target="_blank">Chebyshev</a>, &amp; <a href="https://en.wikipedia.org/wiki/Minkowski_distance" target="_blank">Minkowski</a>.
 							</p>
 
-							<h5>Exponent:</h5>
+							<h5>Exponent&colon;</h5>
 							<p>
 								Controls the shape of the distance measurement when the <a href="https://en.wikipedia.org/wiki/Metric_space" target="_blank">Metric</a> is set to <a href="https://en.wikipedia.org/wiki/Minkowski_distance" target="_blank">Minkowski</a>. Lower or higher values warp the contribution of distances along different axes.
 							</p>
 
-							<h5>Scale Space:</h5>
+							<h5>Scale Space&colon;</h5>
 							<p>
 								An X/Y scaling factor applied to the <a href="https://en.wikipedia.org/wiki/Signed_distance_function" target="_blank">SDF</a> calculation. Allows distances to be warped, stretching the field horizontally or vertically.
 							</p>
 	
 							<hr/>
 	
-							<h5>reCalculate:</h5>
+							<h5>reCalculate&colon;</h5>
 							<p>
 								Forces the component to re-cook the <a href="https://youtu.be/A0pxY9QsgJE?si=N8H9M-QIrUN4wffW" target="_blank">Jump Flood Algorithm</a>. Useful for clearing or correcting the output if visual errors appear during calculation.
 							</p>

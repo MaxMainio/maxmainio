@@ -80,8 +80,8 @@
 						</p>
 
 						<p>
-							Index:<br>
-							<a href="#histogram" target="_self">Histogram</a>, <a href="#histogram-decompiler" target="_self">Histogram deCompiler</a>, <a href="#histogram-recompiler" target="_self">Histogram reCompiler</a>, <a href="#histogram-conversion" target="_self">Histogram Conversion</a>, <a href="#histogram-distance" target="_self">Histogram Distance</a>, <a href="#histogram-equalization" target="_self">Histogram Equalization</a>
+							Index&colon;<br>
+							<a href="#histogram" target="_self">Histogram</a>, <a href="#histogram-compilers" target="_self">Histogram deCompiler</a>, <a href="#histogram-compilers" target="_self">Histogram reCompiler</a>, <a href="#histogram-conversion" target="_self">Histogram Conversion</a>, <a href="#histogram-distance" target="_self">Histogram Distance</a>, <a href="#histogram-equalization" target="_self">Histogram Equalization</a>
 						</p>
 					</div>
 				</section>
@@ -493,14 +493,38 @@
 				<section id="histogram" class="documentation">
 					<div class="docuinfo">
 						<h2>Histogram</h2>
-						<h3>Sub-Title</h3>
+						<h3>Statistical Representation of Images</h3>
 						<p>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim diam vulputate ut pharetra sit amet aliquam. Integer eget aliquet nibh praesent tristique magna sit. Massa id neque aliquam vestibulum. Egestas diam in arcu cursus euismod quis viverra nibh. Ultrices vitae auctor eu augue ut lectus arcu bibendum at. Vel risus commodo viverra maecenas accumsan lacus vel facilisis volutpat. Sit amet cursus sit amet dictum sit. Scelerisque mauris pellentesque pulvinar pellentesque habitant morbi tristique. Rutrum quisque non tellus orci ac.
+							This component calculates the statistical distribution of any given input image. Depending on the selected operating mode, this component can generate and display two different statistical representations&colon;
 						</p>
 
-						<h5>Resources:</h5>
+						<ol>
+							<li>
+								<h5>Histogram&colon;</h5>
+								
+								<p>
+									Displays the frequency of pixel values across the image. This reveals how intensities are distributed, providing insight into contrast, brightness, and tonal balance.
+								</p><br>
+							</li>
+
+							<li>
+								<h5>Cumulative Distribution Function &lpar;CDF&rpar;&colon;</h5>
+
+								<p>
+									Shows the running sum of those frequencies, mapping the cumulative proportion of pixels up to each value. The CDF is especially useful for tasks like histogram equalization, where pixel intensities are remapped to enhance contrast.
+								</p>
+							</li>
+						</ol>
+
 						<p>
-							<a href="https://github.com/MaxMainio/TD_" target="_blank">Download the .tox files</a>
+							Within this component family, the Histogram COMP serves as the entry point&colon; it generates and encodes these statistical representations so they can be interpreted by other operators in the Histogram workflow. By coupling the original image with its histogram or CDF, this component provides a streamlined way to analyze and share image statistics across TouchDesigner TOP networks.
+						</p>
+
+						<h5>Resources&colon;</h5>
+						<p>
+							<a href="https://github.com/MaxMainio/TD_" target="_blank">Download the .tox files</a><br>
+							<a href="https://en.wikipedia.org/wiki/Image_histogram" target="_blank">Image Histogram on Wikipedia</a><br>
+							<a href="https://en.wikipedia.org/wiki/Cumulative_distribution_function" target="_blank">CDF on Wikipedia</a>
 						</p>
 					</div>
 
@@ -575,24 +599,41 @@
 
 						<div>
 							<h4>Parameters</h4>
-							<h5>par.name:</h5>
+							<h5>Output&colon;</h5>
 							<p>
 								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim diam vulputate ut pharetra sit amet aliquam.
 							</p>
 
-							<h5>par.name:</h5>
+							<h5>Normalize&colon;</h5>
 							<p>
 								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim diam vulputate ut pharetra sit amet aliquam.
 							</p>
 	
 							<hr/>
-	
-							<h5>par.name:</h5>
+
+							<h5>Method&colon;</h5>
 							<p>
 								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim diam vulputate ut pharetra sit amet aliquam.
 							</p>
 
-							<h5>par.name:</h5>
+							<h5>ReCalculate&colon;</h5>
+							<p>
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim diam vulputate ut pharetra sit amet aliquam.
+							</p>
+
+							<hr/>
+
+							<h5>Display&colon;</h5>
+							<p>
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim diam vulputate ut pharetra sit amet aliquam.
+							</p>
+
+							<h5>Interpolate Values&colon;</h5>
+							<p>
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim diam vulputate ut pharetra sit amet aliquam.
+							</p>
+
+							<h5>Square Histogram&colon;</h5>
 							<p>
 								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim diam vulputate ut pharetra sit amet aliquam.
 							</p>
@@ -615,22 +656,22 @@
 
 				<hr/>
 
-				<section id="histogram-decompiler" class="documentation">
+				<section id="histogram-compilers" class="documentation">
 					<div class="docuinfo">
-						<h2>Histogram deCompiler</h2>
+						<h2>Histogram Compilers</h2>
 						<h3>Sub-Title</h3>
 						<p>
 							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim diam vulputate ut pharetra sit amet aliquam. Integer eget aliquet nibh praesent tristique magna sit. Massa id neque aliquam vestibulum. Egestas diam in arcu cursus euismod quis viverra nibh. Ultrices vitae auctor eu augue ut lectus arcu bibendum at. Vel risus commodo viverra maecenas accumsan lacus vel facilisis volutpat. Sit amet cursus sit amet dictum sit. Scelerisque mauris pellentesque pulvinar pellentesque habitant morbi tristique. Rutrum quisque non tellus orci ac.
 						</p>
 
-						<h5>Resources:</h5>
+						<h5>Resources&colon;</h5>
 						<p>
 							<a href="https://github.com/MaxMainio/TD_" target="_blank">Download the .tox files</a>
 						</p>
 					</div>
 
 					<div class="docuviz">
-						<div class="comp-display">
+						<div class="comp-display double">
 							<a href="https://github.com/MaxMainio/TD_/blob/main/TOPs/Histogram/Histogram_deCompiler.tox"
 								target="_blank"
 								title="Click here to be taken to the Histogram deCompiler COMP section of the Github repo where you can download all of these components."
@@ -698,67 +739,7 @@
 									</div>
 								</div>
 							</a>
-						</div>
 
-						<div>
-							<h4>Parameters</h4>
-							<h5>par.name:</h5>
-							<p>
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim diam vulputate ut pharetra sit amet aliquam.
-							</p>
-
-							<h5>par.name:</h5>
-							<p>
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim diam vulputate ut pharetra sit amet aliquam.
-							</p>
-	
-							<hr/>
-	
-							<h5>par.name:</h5>
-							<p>
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim diam vulputate ut pharetra sit amet aliquam.
-							</p>
-
-							<h5>par.name:</h5>
-							<p>
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim diam vulputate ut pharetra sit amet aliquam.
-							</p>
-
-							<h4>In&hyphen; &sol; Outputs</h4>
-							<p>
-								<b>Input 0</b> &ndash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> image to be processed.
-							</p>
-
-							<p>
-								<b>Output 0</b> &ndash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> Lorem ipsum...<br>
-								<b>Output 1</b> &ndash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> Lorem ipsum...
-							</p>
-
-							<p style="margin-top: 1rem;">
-								<b>Updated</b> &ndash; <a href="https://en.wikipedia.org/wiki/List_of_date_formats_by_country#:~:text=regions%20and%20countries-,DMY,-Europe%3A%20Italy" target="_blank"><span class="date-text">31&sol;8&sol;2025</span></a>
-							</p>
-						</div>
-					</div>
-				</section>
-
-				<hr/>
-
-				<section id="histogram-recompiler" class="documentation">
-					<div class="docuinfo">
-						<h2>Histogram reCompiler</h2>
-						<h3>Sub-Title</h3>
-						<p>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim diam vulputate ut pharetra sit amet aliquam. Integer eget aliquet nibh praesent tristique magna sit. Massa id neque aliquam vestibulum. Egestas diam in arcu cursus euismod quis viverra nibh. Ultrices vitae auctor eu augue ut lectus arcu bibendum at. Vel risus commodo viverra maecenas accumsan lacus vel facilisis volutpat. Sit amet cursus sit amet dictum sit. Scelerisque mauris pellentesque pulvinar pellentesque habitant morbi tristique. Rutrum quisque non tellus orci ac.
-						</p>
-
-						<h5>Resources:</h5>
-						<p>
-							<a href="https://github.com/MaxMainio/TD_" target="_blank">Download the .tox files</a>
-						</p>
-					</div>
-
-					<div class="docuviz">
-						<div class="comp-display">
 							<a href="https://github.com/MaxMainio/TD_/blob/main/TOPs/Histogram/Histogram_reCompiler.tox"
 								target="_blank"
 								title="Click here to be taken to the Histogram reCompiler COMP section of the Github repo where you can download all of these components."
@@ -830,36 +811,36 @@
 
 						<div>
 							<h4>Parameters</h4>
-							<h5>par.name:</h5>
+							<h5>par.name&colon;</h5>
 							<p>
 								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim diam vulputate ut pharetra sit amet aliquam.
 							</p>
 
-							<h5>par.name:</h5>
+							<h5>par.name&colon;</h5>
 							<p>
 								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim diam vulputate ut pharetra sit amet aliquam.
 							</p>
 	
 							<hr/>
 	
-							<h5>par.name:</h5>
+							<h5>par.name&colon;</h5>
 							<p>
 								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim diam vulputate ut pharetra sit amet aliquam.
 							</p>
 
-							<h5>par.name:</h5>
+							<h5>par.name&colon;</h5>
 							<p>
 								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim diam vulputate ut pharetra sit amet aliquam.
 							</p>
 
 							<h4>In&hyphen; &sol; Outputs</h4>
 							<p>
-								<b>Input 0</b> &ndash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> image to be processed.<br>
-								<b>Input 1</b> &ndash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> image to be processed.
+								<b>Input 0</b> &ndash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> image to be processed.
 							</p>
 
 							<p>
-								<b>Output 0</b> &ndash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> Lorem ipsum...
+								<b>Output 0</b> &ndash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> Lorem ipsum...<br>
+								<b>Output 1</b> &ndash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> Lorem ipsum...
 							</p>
 
 							<p style="margin-top: 1rem;">
@@ -879,7 +860,7 @@
 							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim diam vulputate ut pharetra sit amet aliquam. Integer eget aliquet nibh praesent tristique magna sit. Massa id neque aliquam vestibulum. Egestas diam in arcu cursus euismod quis viverra nibh. Ultrices vitae auctor eu augue ut lectus arcu bibendum at. Vel risus commodo viverra maecenas accumsan lacus vel facilisis volutpat. Sit amet cursus sit amet dictum sit. Scelerisque mauris pellentesque pulvinar pellentesque habitant morbi tristique. Rutrum quisque non tellus orci ac.
 						</p>
 
-						<h5>Resources:</h5>
+						<h5>Resources&colon;</h5>
 						<p>
 							<a href="https://github.com/MaxMainio/TD_" target="_blank">Download the .tox files</a>
 						</p>
@@ -956,24 +937,24 @@
 
 						<div>
 							<h4>Parameters</h4>
-							<h5>par.name:</h5>
+							<h5>par.name&colon;</h5>
 							<p>
 								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim diam vulputate ut pharetra sit amet aliquam.
 							</p>
 
-							<h5>par.name:</h5>
+							<h5>par.name&colon;</h5>
 							<p>
 								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim diam vulputate ut pharetra sit amet aliquam.
 							</p>
 	
 							<hr/>
 	
-							<h5>par.name:</h5>
+							<h5>par.name&colon;</h5>
 							<p>
 								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim diam vulputate ut pharetra sit amet aliquam.
 							</p>
 
-							<h5>par.name:</h5>
+							<h5>par.name&colon;</h5>
 							<p>
 								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim diam vulputate ut pharetra sit amet aliquam.
 							</p>
@@ -1004,7 +985,7 @@
 							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim diam vulputate ut pharetra sit amet aliquam. Integer eget aliquet nibh praesent tristique magna sit. Massa id neque aliquam vestibulum. Egestas diam in arcu cursus euismod quis viverra nibh. Ultrices vitae auctor eu augue ut lectus arcu bibendum at. Vel risus commodo viverra maecenas accumsan lacus vel facilisis volutpat. Sit amet cursus sit amet dictum sit. Scelerisque mauris pellentesque pulvinar pellentesque habitant morbi tristique. Rutrum quisque non tellus orci ac.
 						</p>
 
-						<h5>Resources:</h5>
+						<h5>Resources&colon;</h5>
 						<p>
 							<a href="https://github.com/MaxMainio/TD_" target="_blank">Download the .tox files</a>
 						</p>
@@ -1081,24 +1062,24 @@
 
 						<div>
 							<h4>Parameters</h4>
-							<h5>par.name:</h5>
+							<h5>par.name&colon;</h5>
 							<p>
 								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim diam vulputate ut pharetra sit amet aliquam.
 							</p>
 
-							<h5>par.name:</h5>
+							<h5>par.name&colon;</h5>
 							<p>
 								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim diam vulputate ut pharetra sit amet aliquam.
 							</p>
 	
 							<hr/>
 	
-							<h5>par.name:</h5>
+							<h5>par.name&colon;</h5>
 							<p>
 								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim diam vulputate ut pharetra sit amet aliquam.
 							</p>
 
-							<h5>par.name:</h5>
+							<h5>par.name&colon;</h5>
 							<p>
 								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim diam vulputate ut pharetra sit amet aliquam.
 							</p>
@@ -1129,7 +1110,7 @@
 							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim diam vulputate ut pharetra sit amet aliquam. Integer eget aliquet nibh praesent tristique magna sit. Massa id neque aliquam vestibulum. Egestas diam in arcu cursus euismod quis viverra nibh. Ultrices vitae auctor eu augue ut lectus arcu bibendum at. Vel risus commodo viverra maecenas accumsan lacus vel facilisis volutpat. Sit amet cursus sit amet dictum sit. Scelerisque mauris pellentesque pulvinar pellentesque habitant morbi tristique. Rutrum quisque non tellus orci ac.
 						</p>
 
-						<h5>Resources:</h5>
+						<h5>Resources&colon;</h5>
 						<p>
 							<a href="https://github.com/MaxMainio/TD_" target="_blank">Download the .tox files</a>
 						</p>
@@ -1206,24 +1187,24 @@
 
 						<div>
 							<h4>Parameters</h4>
-							<h5>par.name:</h5>
+							<h5>par.name&colon;</h5>
 							<p>
 								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim diam vulputate ut pharetra sit amet aliquam.
 							</p>
 
-							<h5>par.name:</h5>
+							<h5>par.name&colon;</h5>
 							<p>
 								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim diam vulputate ut pharetra sit amet aliquam.
 							</p>
 	
 							<hr/>
 	
-							<h5>par.name:</h5>
+							<h5>par.name&colon;</h5>
 							<p>
 								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim diam vulputate ut pharetra sit amet aliquam.
 							</p>
 
-							<h5>par.name:</h5>
+							<h5>par.name&colon;</h5>
 							<p>
 								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim diam vulputate ut pharetra sit amet aliquam.
 							</p>

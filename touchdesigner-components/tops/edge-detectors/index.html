@@ -74,7 +74,7 @@
 							Calculating the derivatives of images allows us to delve deeper into the intricacies of image data. By analyzing changes in intensity, edge detectors highlight areas of significant transition, enabling us to identify and isolate key features. This opens up a multitude of possibilities, from enhancing image clarity and detail to facilitating advanced techniques such as texture analysis and motion detection.
 						</p>
 						<p>
-							Index:<br>
+							Index&colon;<br>
 							<a href="#canny" target="_self">Canny</a>, <a href="#gradient" target="_self">Gradient</a>, <a href="#kirsch-operator" target="_self">Kirsch Operator</a>, <a href="#kirsch-compass" target="_self">Kirsch Compass</a>, <a href="#kirsch-compass" target="_self">Kirsch Compass Steerable</a>, <a href="#laplacian-operator" target="_self">Laplacian Standard</a>, <a href="#laplacian-superior" target="_self">Laplacian Superior</a>, <a href="#line-detector" target="_self">Line Detector</a>, <a href="#line-detector" target="_self">Line Detector Steerable</a>, <a href="#prewitt-operator" target="_self">Prewitt Standard</a>, <a href="#prewitt-operator" target="_self">Prewitt Steerable</a>, <a href="#roberts-cross" target="_self">Robert&rsquo;s Cross Standard</a>, <a href="#roberts-cross" target="_self">Robert&rsquo;s Cross Steerable</a>, <a href="#sobel-operator" target="_self">Sobel Simple</a>, <a href="#sobel-operator" target="_self">Sobel Standard</a>, <a href="#sobel-operator" target="_self">Sobel Steerable</a>, <a href="#sobel-superior" target="_self">Sobel Superior</a>
 						</p>
 					</div>
@@ -1369,7 +1369,7 @@
 						</p>
 
 						<p>
-							This <a href="https://en.wikipedia.org/wiki/OpenGL_Shading_Language" target="_blank">GLSL</a> implementation of the <a href="https://en.wikipedia.org/wiki/Canny_edge_detector" target="_blank">Canny Edge Detector</a> processes images as follows:
+							This <a href="https://en.wikipedia.org/wiki/OpenGL_Shading_Language" target="_blank">GLSL</a> implementation of the <a href="https://en.wikipedia.org/wiki/Canny_edge_detector" target="_blank">Canny Edge Detector</a> processes images as follows&colon;
 						</p>
 
 						<p>
@@ -1401,7 +1401,7 @@
 							</ol>
 						</p>
 
-						<h5>Resources:</h5>
+						<h5>Resources&colon;</h5>
 						<p>
 							<a href="https://github.com/MaxMainio/TD_" target="_blank">Download the .tox files</a><br>
 							<a href="https://en.wikipedia.org/wiki/Canny_edge_detector" target="_blank">Canny Edge Detection on Wikipedia</a><br>
@@ -1482,74 +1482,74 @@
 
 						<div>
 							<h4>Parameters</h4>
-							<h5>Luminance:</h5>
+							<h5>Luminance&colon;</h5>
 							<p>
 								Defines how the luminance of the input image will be calculated.
 							</p>
 
 							<hr/>
 
-							<h5>Type:</h5>
+							<h5>Type&colon;</h5>
 							<p>
 								Determines the mathematical function used to create the blur.
 							</p>
 
-							<h5>Extend:</h5>
+							<h5>Extend&colon;</h5>
 							<p>
 								Sets the extend conditions to determine what happens to the blur at the edge of the image.
 							</p>
 
-							<h5>Pre&hyphen;Shrink:</h5>
+							<h5>Pre&hyphen;Shrink&colon;</h5>
 							<p>
 								Reduces the image's resolution before applying the blur.
 							</p>
 
-							<h5>Filter Size:</h5>
+							<h5>Filter Size&colon;</h5>
 							<p>
 								The amount of blur in pixels. If you want a resolution-independent blur, use an expression like me.par.resolutionw/100 in this parameter (which would result in a 1% image blur).
 							</p>
 
 							<hr/>
 
-							<h5>Operator:</h5>
+							<h5>Operator&colon;</h5>
 							<p>
 								Selects the specific operator used for gradient calculation. Options include:<br>
 								<a href="#sobel-operator" target="_self">The Sobel operator</a>, <a href="#prewitt-operator" target="_self">the Prewitt operator</a>, 2x2 Gradient Kernel, or the 1D Gradient Kernel.
 							</p>
 	
-							<h5>Type:</h5>
+							<h5>Type&colon;</h5>
 							<p>
 								When the <i>Operator</i> parameter is set to <a href="#sobel-operator" target="_self">Sobel</a> this will allow you to specify which variant of the <a href="#sobel-operator" target="_self">Sobel operator</a> to convolve the input image with.
 							</p>
 	
-							<h5><a href="https://www.mdpi.com/2076-3417/11/22/10716#:~:text=Section%203.11.-,2.%20Dilated%20Filters,-In%20order%20to" target="_blank">Dilation</a>:</h5>
+							<h5><a href="https://www.mdpi.com/2076-3417/11/22/10716#:~:text=Section%203.11.-,2.%20Dilated%20Filters,-In%20order%20to" target="_blank">Dilation</a>&colon;</h5>
 							<p>
 								Increases the distance between the pixels being sampled by adding null rows and columns to the existing kernel.
 							</p>
 	
-							<h5>Edge Handling:</h5>
+							<h5>Edge Handling&colon;</h5>
 							<p>
 								Determines how the edges of the image are treated during convolution. Extends the image to avoid edge artifacts.
 							</p>
 
 							<hr/>
 
-							<h5>High Threshold:</h5>
+							<h5>High Threshold&colon;</h5>
 							<p>
 								This parameter defines the upper threshold for the double thresholding process. Pixels with gradient magnitudes above this value are classified as strong edges.
 							</p>
 
-							<h5>Low Threshold:</h5>
+							<h5>Low Threshold&colon;</h5>
 							<p>
 								This parameter defines the lower threshold for the double thresholding process. Pixels with gradient magnitudes between the low and high thresholds are classified as weak edges.
 							</p>
 
-							<h5>Alpha:</h5>
+							<h5>Alpha&colon;</h5>
 							<p>
 								This parameter determines the output for the alpha channel.
 							</p>
 
-							<h5>Reset:</h5>
+							<h5>Reset&colon;</h5>
 							<p>
 								Restarts the hysteresis thresholding promotion process. This is useful for recalculating the edge map, ensuring the proper promotion of weak edges after any changes to input parameters.
 							</p>
@@ -1659,7 +1659,7 @@
 							These formulas provide a robust method for understanding both the strength and direction of edges in an image, critical for edge refinement techniques such as non-maximum suppression and other advanced image processing tasks.
 						</p>
 
-						<h5>Resources:</h5>
+						<h5>Resources&colon;</h5>
 						<p>
 							<a href="https://github.com/MaxMainio/TD_" target="_blank">Download the .tox files</a><br>
 							<a href="https://pyimagesearch.com/2021/05/12/image-gradients-with-opencv-sobel-and-scharr/" target="_blank">pyimagesearch description of image gradients</a><br>
@@ -1740,20 +1740,20 @@
 
 						<div>
 							<h4>Parameters</h4>
-							<h5>Gradient:</h5>
+							<h5>Gradient&colon;</h5>
 							<p>
 								This parameter selects the method with which to calculate the gradient of the input image in both the x and y axis.<br>
 								<i>Slope</i> will use the built in <a href="https://docs.derivative.ca/index.php?title=Slope_TOP" target="_blank">Slope TOP</a> and <i>Custom</i> will provide a list of kernels that can be used to calculate the gradient of the input image.
 							</p>
 
-							<h5>Channel:</h5>
+							<h5>Channel&colon;</h5>
 							<p>
 								Specifies which channels of the input image the gradient operation will be calculated on.
 							</p>
 	
 							<hr/>
 	
-							<h5><a href="https://docs.derivative.ca/index.php?title=Slope_TOP#:~:text=horizontally%20or%20vertically.-,Method,-method%C2%A0%2D%20%E2%8A%9E" target="_blank">Method</a>:</h5>
+							<h5><a href="https://docs.derivative.ca/index.php?title=Slope_TOP#:~:text=horizontally%20or%20vertically.-,Method,-method%C2%A0%2D%20%E2%8A%9E" target="_blank">Method</a>&colon;</h5>
 							<p>
 								Determines what pixels to use when calculating the slope at each pixel in the image.
 							</p>
@@ -1763,47 +1763,47 @@
 								Sets the value to output when the slope is zero, similar to a midpoint. Default is .5 since 8-bit pxels are 0 to 1. But with Pixel Format et to 32-bit Float you should set this to 0, and look at the view in Normalized Split mode.
 							</p>
 	
-							<h5><a href="https://docs.derivative.ca/index.php?title=Slope_TOP#:~:text=Normalized%20Split%20mode.-,Strength,-strength%20%2D%20Set%20the" target="_blank">Strength</a>:</h5>
+							<h5><a href="https://docs.derivative.ca/index.php?title=Slope_TOP#:~:text=Normalized%20Split%20mode.-,Strength,-strength%20%2D%20Set%20the" target="_blank">Strength</a>&colon;</h5>
 							<p>
 								Set the strength of the output using this multiplier. Higher values result in higher slope values.
 							</p>
 	
-							<h5><a href="https://docs.derivative.ca/index.php?title=Slope_TOP#:~:text=higher%20slope%20values.-,Sample%20Step,-offset%C2%A0%2D%20%E2%8A%9E" target="_blank">Sample Step</a>:</h5>
+							<h5><a href="https://docs.derivative.ca/index.php?title=Slope_TOP#:~:text=higher%20slope%20values.-,Sample%20Step,-offset%C2%A0%2D%20%E2%8A%9E" target="_blank">Sample Step</a>&colon;</h5>
 							<p>
 								When sampling the image, this determines the distance from each pixel to the sample pixel. When units are set to pixels, it is the number of pixels away from the current pixel which is sampled to find edges. A Sample Step of 3 would sample pixels 3 pixels away to look for edges.
 							</p>
 	
 							<hr/>
 	
-							<h5>Operator:</h5>
+							<h5>Operator&colon;</h5>
 							<p>
-								Selects the specific operator used for gradient calculation. Options include:<br>
+								Selects the specific operator used for gradient calculation. Options include&colon;<br>
 								<a href="#sobel-operator" target="_self">The Sobel operator</a>, <a href="#prewitt-operator" target="_self">the Prewitt operator</a>, 2x2 Gradient Kernel, or the 1D Gradient Kernel.
 							</p>
 	
-							<h5>Type:</h5>
+							<h5>Type&colon;</h5>
 							<p>
 								When the <i>Operator</i> parameter is set to <a href="#sobel-operator" target="_self">Sobel</a> this will allow you to specify which variant of the <a href="#sobel-operator" target="_self">Sobel operator</a> to convolve the input image with.
 							</p>
 	
-							<h5><a href="https://www.mdpi.com/2076-3417/11/22/10716#:~:text=Section%203.11.-,2.%20Dilated%20Filters,-In%20order%20to" target="_blank">Dilation</a>:</h5>
+							<h5><a href="https://www.mdpi.com/2076-3417/11/22/10716#:~:text=Section%203.11.-,2.%20Dilated%20Filters,-In%20order%20to" target="_blank">Dilation</a>&colon;</h5>
 							<p>
 								Increases the distance between the pixels being sampled by adding null rows and columns to the existing kernel.
 							</p>
 	
-							<h5>Edge Handling:</h5>
+							<h5>Edge Handling&colon;</h5>
 							<p>
 								Determines how the edges of the image are treated during convolution. Extends the image to avoid edge artifacts.
 							</p>
 
 							<hr/>
 
-							<h5>Normalize Magnitude:</h5>
+							<h5>Normalize Magnitude&colon;</h5>
 							<p>
 								Normalize values in the calculated <i>Gradient Magnitude</i> image so that all values are scaled and shifted to fall between 0 and 1.
 							</p>
 
-							<h5>Normalize Orientation:</h5>
+							<h5>Normalize Orientation&colon;</h5>
 							<p>
 								Normalize values in the calculated <i>Edge Orientation</i> image so that all values are scaled and shifted to fall between 0 and 1. By default, the values in the <i>Edge Orientation</i> image will be between 0 and 180.
 							</p>
@@ -1932,7 +1932,7 @@
 						</p>
 
 						<p>
-							The <a href="https://en.wikipedia.org/wiki/Kirsch_operator#:~:text=Original-,Maximum%20gradient,-in%20the%208" target="_blank">maximum edge magnitude</a> calculation is:
+							The <a href="https://en.wikipedia.org/wiki/Kirsch_operator#:~:text=Original-,Maximum%20gradient,-in%20the%208" target="_blank">maximum edge magnitude</a> calculation is&colon;
 						</p>
 
 						<p class="maths" title="Right click for a cheat sheet">
@@ -2030,7 +2030,7 @@
 							</math>
 						</p>
 
-						<h5>Resources:</h5>
+						<h5>Resources&colon;</h5>
 						<p>
 							<a href="https://github.com/MaxMainio/TD_" target="_blank">Download the .tox files</a><br>
 							<a href="https://en.wikipedia.org/wiki/Kirsch_operator" target="_blank">Kirsch Operator on wikipedia</a><br>
@@ -2110,29 +2110,29 @@
 
 						<div>
 							<h4>Parameters</h4>
-							<h5><a href="https://www.mdpi.com/2076-3417/11/22/10716#:~:text=Section%203.11.-,2.%20Dilated%20Filters,-In%20order%20to" target="_blank">Dilation</a>:</h5>
+							<h5><a href="https://www.mdpi.com/2076-3417/11/22/10716#:~:text=Section%203.11.-,2.%20Dilated%20Filters,-In%20order%20to" target="_blank">Dilation</a>&colon;</h5>
 							<p>
 								Increases the distance between the pixels being sampled by adding null rows and columns to the existing kernel.
 							</p>
 
-							<h5>Invert Kernel:</h5>
+							<h5>Invert Kernel&colon;</h5>
 							<p>
 								When on, this will invert the sign of the values in each cell of the kernel.
 							</p>
 
 							<hr/>
 
-							<h5>Channel:</h5>
+							<h5>Channel&colon;</h5>
 							<p>
 								Specifies which channels of the input image the gradient operation will be calculated on.
 							</p>
 
-							<h5>Edge Handling:</h5>
+							<h5>Edge Handling&colon;</h5>
 							<p>
 								Determines how the edges of the image are treated during convolution. Extends the image to avoid edge artifacts.
 							</p>
 
-							<h5>Normalize:</h5>
+							<h5>Normalize&colon;</h5>
 							<p>
 								Normalize values in the output image so that they are all scaled and shifted to fall between 0 and 1.
 							</p>
@@ -2163,17 +2163,17 @@
 							As is mentioned above, for the <a href="#kirsch-operator" target="_blank">Kirsch Operator</a>, the Kirsch Operator is widely used for detecting edges in various image processing tasks due to its comprehensive directional sensitivity. It is particularly effective in highlighting edges in multiple directions.
 						</p>
 
-						<h5>Kirsch Compass:</h5>
+						<h5>Kirsch Compass&colon;</h5>
 						<p>
 							This variant allows you to select a specific compass direction kernel to convolve the input image with. This allows you to focus on detecting edges in a particular orientation, rather than taking the maximum across all directions.
 						</p>
 
-						<h5>Kirsch Compass Steerable:</h5>
+						<h5>Kirsch Compass Steerable&colon;</h5>
 						<p>
 							The steerable iteration of the Kirsch Operator allows convolution at any arbitrary angle, providing continuous control over the direction of edge detection within 360&deg;.
 						</p>
 
-						<h5>Resources:</h5>
+						<h5>Resources&colon;</h5>
 						<p>
 							<a href="https://github.com/MaxMainio/TD_" target="_blank">Download the .tox files</a><br>
 							<a href="https://en.wikipedia.org/wiki/Kirsch_operator" target="_blank">Kirsch Operator on wikipedia</a><br>
@@ -2319,35 +2319,35 @@
 
 						<div>
 							<h4>Parameters</h4>
-							<h5>Orientation:</h5>
+							<h5>Orientation&colon;</h5>
 							<p>
 								The standard Kirsch Compass Operator&rsquo;s orientation is limited to the 8 compass directions.<br>
 								Where as the Kirsch Steerable Operator allows for any arbitrary angle within 360&deg;.
 							</p>
 
-							<h5><a href="https://www.mdpi.com/2076-3417/11/22/10716#:~:text=Section%203.11.-,2.%20Dilated%20Filters,-In%20order%20to" target="_blank">Dilation</a>:</h5>
+							<h5><a href="https://www.mdpi.com/2076-3417/11/22/10716#:~:text=Section%203.11.-,2.%20Dilated%20Filters,-In%20order%20to" target="_blank">Dilation</a>&colon;</h5>
 							<p>
 								Increases the distance between the pixels being sampled by adding null rows and columns to the existing kernel.
 							</p>
 
-							<h5>Invert Kernel:</h5>
+							<h5>Invert Kernel&colon;</h5>
 							<p>
 								When on, this will invert the sign of the values in each cell of the kernel.
 							</p>
 
 							<hr/>
 
-							<h5>Channel:</h5>
+							<h5>Channel&colon;</h5>
 							<p>
 								Specifies which channels of the input image the gradient operation will be calculated on.
 							</p>
 
-							<h5>Edge Handling:</h5>
+							<h5>Edge Handling&colon;</h5>
 							<p>
 								Determines how the edges of the image are treated during convolution. Extends the image to avoid edge artifacts.
 							</p>
 
-							<h5>Normalize:</h5>
+							<h5>Normalize&colon;</h5>
 							<p>
 								Normalize values in the output image so that they are all scaled and shifted to fall between 0 and 1.
 							</p>
@@ -2378,7 +2378,7 @@
 							Due to its reliance on second derivatives, the Laplacian Operator can be more sensitive to noise. Pre-smoothing the image with a Gaussian filter is often recommended to mitigate this issue and improve performance.
 						</p>
 
-						<h5>Standard kernels:</h5>
+						<h5>Standard kernels&colon;</h5>
 						<p>
 							Two commonly used discrete approximations to the Laplacian filter:
 						</p>
@@ -2455,7 +2455,7 @@
 							</math>
 						</p>
 
-						<h5>Additional kernels:</h5>
+						<h5>Additional kernels&colon;</h5>
 						<p>
 							These kernels offer variations that can enhance specific image features and provide more flexibility in edge detection and image analysis:
 						</p>
@@ -2634,7 +2634,7 @@
 							</math>
 						</p>
 
-						<h5>Extended kernels:</h5>
+						<h5>Extended kernels&colon;</h5>
 						<p>
 							These larger 5x5 kernels offer enhanced edge detection capabilities by considering a broader context within the image:
 						</p>
@@ -2809,7 +2809,7 @@
 							Notice all the above kernels are defined using a negative peak, which is more common, but using the opposite sign convention is equally valid. Invert the sign of each cell value with the Invert kernel parameter.
 						</p>
 
-						<h5>Resources:</h5>
+						<h5>Resources&colon;</h5>
 						<p>
 							<a href="https://github.com/MaxMainio/TD_" target="_blank">Download the .tox files</a><br>
 							<a href="https://en.wikipedia.org/wiki/Laplace_operator" target="_blank">Laplacian Operator on wikipedia</a><br>
@@ -2888,7 +2888,7 @@
 
 						<div>
 							<h4>Parameters</h4>
-							<h5>Kernel:</h5>
+							<h5>Kernel&colon;</h5>
 							<p>
 								This menu selects which variant of the Laplacian will be performed on the input image.
 							</p>
@@ -2898,24 +2898,24 @@
 								Increases the distance between the pixels being sampled by adding null rows and columns to the existing kernel.
 							</p>
 	
-							<h5>Invert Kernel:</h5>
+							<h5>Invert Kernel&colon;</h5>
 							<p>
 								When on, this will invert the sign of the values in each cell of the kernel.
 							</p>
 							
 							<hr/>
 
-							<h5>Channel:</h5>
+							<h5>Channel&colon;</h5>
 							<p>
 								Specifies which channels of the input image the gradient operation will be calculated on.
 							</p>
 
-							<h5>Edge Handling:</h5>
+							<h5>Edge Handling&colon;</h5>
 							<p>
 								Determines how the edges of the image are treated during convolution. Extends the image to avoid edge artifacts.
 							</p>
 	
-							<h5>Normalize:</h5>
+							<h5>Normalize&colon;</h5>
 							<p>
 								Normalize values in the output image so that they are all scaled and shifted to fall between 0 and 1.
 							</p>
@@ -2947,7 +2947,7 @@
 						</p>
 
 						<p>
-							The kernel is calculated with this function:
+							The kernel is calculated with this function&colon;
 						</p>
 
 						<p class="maths" title="Right click for a cheat sheet">
@@ -3033,7 +3033,7 @@
 						</p>
 
 						<p>
-							When the parameters are set to generate a kernel of size 9, with a sigma &lpar;&sigma;&rpar; value of 1.4, and dilation set to 0, the Laplacian function looks like this:
+							When the parameters are set to generate a kernel of size 9, with a sigma &lpar;&sigma;&rpar; value of 1.4, and dilation set to 0, the Laplacian function looks like this&colon;
 						</p>
 
 						<img src="assets/content/laplacian-kernel.svg"
@@ -3046,7 +3046,7 @@
 							In the above function, <math><mi>&sigma;</mi></math> <i>&lpar;Sigma&rpar;</i> determines the spread of the inverted bell curve in the Laplacian kernel which is visualized above. For smaller values of window size &lpar;<math><mi>n</mi></math>&rpar; and <math><mi>&sigma;</mi></math>, you get a large negative number surrounded by 1s. As you increase the window size and <math><mi>&sigma;</mi></math>, the distribution changes, resulting in a smoother approximation. This adjustment helps in reducing noise and enhancing edge detection.
 						</p>
 
-						<h5>Resources:</h5>
+						<h5>Resources&colon;</h5>
 						<p>
 							<a href="https://github.com/MaxMainio/TD_" target="_blank">Download the .tox files</a><br>
 							<a href="https://en.wikipedia.org/wiki/Laplace_operator" target="_blank">Laplacian Operator on wikipedia</a><br>
@@ -3126,44 +3126,44 @@
 
 						<div>
 							<h4>Parameters</h4>
-							<h5>Size:</h5>
+							<h5>Size&colon;</h5>
 							<p>
 								Specify the size of the <a href="https://en.wikipedia.org/wiki/Kernel_(image_processing)" target="_blank">kernel</a> to be generated. Larger <a href="https://en.wikipedia.org/wiki/Kernel_(image_processing)" target="_blank">kernels</a> capture broader edges but may lose fine details. Note that the <a href="https://en.wikipedia.org/wiki/Kernel_(image_processing)" target="_blank">kernel</a> must have a center cell, so the size must be an odd number.
 							</p>
 
-							<h5>Sigma:</h5>
+							<h5>Sigma&colon;</h5>
 							<p>
 								Determines the spread of the inverted bell curve in the Laplacian of Gaussian (LoG) function.
 							</p>
 	
-							<h5>Round to Decimal:</h5>
+							<h5>Round to Decimal&colon;</h5>
 							<p>
 								Round the <a href="https://en.wikipedia.org/wiki/Kernel_(image_processing)" target="_blank">kernel</a> values to a specified number of decimal places for precision control in calculations.
 							</p>
 
-							<h5><a href="https://www.mdpi.com/2076-3417/11/22/10716#:~:text=Section%203.11.-,2.%20Dilated%20Filters,-In%20order%20to" target="_blank">Dilation</a>:</h5>
+							<h5><a href="https://www.mdpi.com/2076-3417/11/22/10716#:~:text=Section%203.11.-,2.%20Dilated%20Filters,-In%20order%20to" target="_blank">Dilation</a>&colon;</h5>
 							<p>
 								Increases the distance between the pixels being sampled by adding null rows and columns to the existing kernel.
 							</p>
 
-							<h5>Invert Kernel:</h5>
+							<h5>Invert Kernel&colon;</h5>
 							<p>
 								When on, this will invert the sign of the values in each cell of the kernel.
 							</p>
 							
 							<hr/>
 
-							<h5>Channel:</h5>
+							<h5>Channel&colon;</h5>
 							<p>
 								Specifies which channels of the input image the gradient operation will be calculated on.
 							</p>
 
-							<h5>Edge Handling:</h5>
+							<h5>Edge Handling&colon;</h5>
 							<p>
 								Determines how the edges of the image are treated during <a href="https://en.wikipedia.org/wiki/Kernel_(image_processing)#:~:text=the%20center%20element.-,Convolution,-%5Bedit%5D" target="_blank">convolution</a>. Extends the image to avoid edge artifacts.
 							</p>
 	
-							<h5>Normalize:</h5>
+							<h5>Normalize&colon;</h5>
 							<p>
 								Normalize values in the output image so that they are all scaled and shifted to fall between 0 and 1.
 							</p>
@@ -3339,7 +3339,7 @@
 							</math>
 						</p>
 
-						<h5>Resources:</h5>
+						<h5>Resources&colon;</h5>
 						<p>
 							<a href="https://github.com/MaxMainio/TD_" target="_blank">Download the .tox files</a><br>
 							<a href="https://en.wikipedia.org/wiki/Line_detection" target="_blank">Line Detection on wikipedia</a><br>
@@ -3484,35 +3484,35 @@
 
 						<div>
 							<h4>Parameters</h4>
-							<h5>Orientation:</h5>
+							<h5>Orientation&colon;</h5>
 							<p>
 								The standard <a href="https://en.wikipedia.org/wiki/Line_detection" target="_blank">Line Detector</a> is limited to the four directions listed on the left, along with a combination of all four.<br>
 								The Steerable <a href="https://en.wikipedia.org/wiki/Line_detection" target="_blank">Line Detector</a> allows for any arbitrary angle within 180&deg;.
 							</p>
 
-							<h5><a href="https://www.mdpi.com/2076-3417/11/22/10716#:~:text=Section%203.11.-,2.%20Dilated%20Filters,-In%20order%20to" target="_blank">Dilation</a>:</h5>
+							<h5><a href="https://www.mdpi.com/2076-3417/11/22/10716#:~:text=Section%203.11.-,2.%20Dilated%20Filters,-In%20order%20to" target="_blank">Dilation</a>&colon;</h5>
 							<p>
 								Increases the distance between the pixels being sampled by adding null rows and columns to the existing kernel.
 							</p>
 
-							<h5>Invert <a href="https://en.wikipedia.org/wiki/Kernel_(image_processing)" target="_blank">Kernel</a>:</h5>
+							<h5>Invert <a href="https://en.wikipedia.org/wiki/Kernel_(image_processing)" target="_blank">Kernel</a>&colon;</h5>
 							<p>
 								When on, this will invert the sign of the values in each cell of the <a href="https://en.wikipedia.org/wiki/Kernel_(image_processing)" target="_blank">kernel</a>.
 							</p>
 
 							<hr/>
 
-							<h5>Channel:</h5>
+							<h5>Channel&colon;</h5>
 							<p>
 								Specifies which channels of the input image the gradient operation will be calculated on.
 							</p>
 
-							<h5>Edge Handling:</h5>
+							<h5>Edge Handling&colon;</h5>
 							<p>
 								Determines how the edges of the image are treated during <a href="https://en.wikipedia.org/wiki/Kernel_(image_processing)#:~:text=the%20center%20element.-,Convolution,-%5Bedit%5D" target="_blank">convolution</a>. Extends the image to avoid edge artifacts.
 							</p>
 
-							<h5>Normalize:</h5>
+							<h5>Normalize&colon;</h5>
 							<p>
 								Normalize values in the output image so that they are all scaled and shifted to fall between 0 and 1.
 							</p>
@@ -3544,7 +3544,7 @@
 						</p>
 
 						<p>
-							Examples of the Prewitt <a href="https://en.wikipedia.org/wiki/Kernel_(image_processing)" target="_blank">kernel</a> are defined as:
+							Examples of the Prewitt <a href="https://en.wikipedia.org/wiki/Kernel_(image_processing)" target="_blank">kernel</a> are defined as&colon;
 						</p>
 
 						<p class="maths" title="Right click for a cheat sheet">
@@ -3640,7 +3640,7 @@
 						</p>
 
 						<p>
-							As with other edge detectors that utilize both horizontal and vertical <a href="https://en.wikipedia.org/wiki/Kernel_(image_processing)" target="_blank">kernels</a>, the <a href="https://pyimagesearch.com/2021/05/12/image-gradients-with-opencv-sobel-and-scharr/#:~:text=The-,gradient%20magnitude,-is%20used%20to" target="_blank">gradient magnitude</a> &lpar; <math><mrow><mi>G</mi></mrow></math> &rpar; and <a href="https://pyimagesearch.com/2021/05/12/image-gradients-with-opencv-sobel-and-scharr/#:~:text=The-,gradient%20orientation,-is%20used%20to" target="_blank">edge orientation</a> &lpar; <math><mrow><mi>&Theta;</mi></mrow></math> &rpar; can easily be calculated by taking the horizontal &lpar; <math><mrow><msub><mi>g</mi><mn>x</mn></msub></mrow></math>&rpar; and vertical &lpar; <math><mrow><msub><mi>g</mi><mn>y</mn></msub></mrow></math>&rpar; gradients of the input image. The following formulas, based on the <a href="https://www.google.com/search?q=pythagorean+theorem&oq=Pythagorean+theorem&gs_lcrp=EgZjaHJvbWUqCggAEAAYsQMYgAQyCggAEAAYsQMYgAQyBwgBEAAYgAQyBwgCEAAYgAQyBwgDEAAYgAQyCggEEAAYsQMYgAQyCggFEAAYsQMYgAQyBwgGEAAYgAQyBwgHEAAYgAQyBwgIEAAYgAQyBwgJEAAYjwLSAQc2ODhqMGo5qAIAsAIB&sourceid=chrome&ie=UTF-8" target="_blank">Pythagorean theorem</a> and the <a href="https://en.wikipedia.org/wiki/Inverse_trigonometric_functions#:~:text=%E2%88%98-,arctangent,-%F0%9D%91%A6" target="_blank">arctangent function</a>, can be used:
+							As with other edge detectors that utilize both horizontal and vertical <a href="https://en.wikipedia.org/wiki/Kernel_(image_processing)" target="_blank">kernels</a>, the <a href="https://pyimagesearch.com/2021/05/12/image-gradients-with-opencv-sobel-and-scharr/#:~:text=The-,gradient%20magnitude,-is%20used%20to" target="_blank">gradient magnitude</a> &lpar; <math><mrow><mi>G</mi></mrow></math> &rpar; and <a href="https://pyimagesearch.com/2021/05/12/image-gradients-with-opencv-sobel-and-scharr/#:~:text=The-,gradient%20orientation,-is%20used%20to" target="_blank">edge orientation</a> &lpar; <math><mrow><mi>&Theta;</mi></mrow></math> &rpar; can easily be calculated by taking the horizontal &lpar; <math><mrow><msub><mi>g</mi><mn>x</mn></msub></mrow></math>&rpar; and vertical &lpar; <math><mrow><msub><mi>g</mi><mn>y</mn></msub></mrow></math>&rpar; gradients of the input image. The following formulas, based on the <a href="https://www.google.com/search?q=pythagorean+theorem&oq=Pythagorean+theorem&gs_lcrp=EgZjaHJvbWUqCggAEAAYsQMYgAQyCggAEAAYsQMYgAQyBwgBEAAYgAQyBwgCEAAYgAQyBwgDEAAYgAQyCggEEAAYsQMYgAQyCggFEAAYsQMYgAQyBwgGEAAYgAQyBwgHEAAYgAQyBwgIEAAYgAQyBwgJEAAYjwLSAQc2ODhqMGo5qAIAsAIB&sourceid=chrome&ie=UTF-8" target="_blank">Pythagorean theorem</a> and the <a href="https://en.wikipedia.org/wiki/Inverse_trigonometric_functions#:~:text=%E2%88%98-,arctangent,-%F0%9D%91%A6" target="_blank">arctangent function</a>, can be used&colon;
 						</p>
 
 						<p class="maths" title="Right click for a cheat sheet">
@@ -3701,7 +3701,7 @@
 							</math>
 						</p>
 
-						<h5>Resources:</h5>
+						<h5>Resources&colon;</h5>
 						<p>
 							<a href="https://github.com/MaxMainio/TD_" target="_blank">Download the .tox files</a><br>
 							<a href="https://en.wikipedia.org/wiki/Prewitt_operator" target="_blank">Prewitt Operator on wikipedia</a><br>
@@ -3846,29 +3846,29 @@
 
 						<div>
 							<h4>Parameters</h4>
-							<h5>Orientation:</h5>
+							<h5>Orientation&colon;</h5>
 							<p>
 								In the Standard Prewitt Operator, the orientation is limited to the 8 compass directions. The Steerable Prewitt Operator allows for any arbitrary angle within 360&deg;.
 							</p>
 
-							<h5><a href="https://www.mdpi.com/2076-3417/11/22/10716#:~:text=Section%203.11.-,2.%20Dilated%20Filters,-In%20order%20to" target="_blank">Dilation</a>:</h5>
+							<h5><a href="https://www.mdpi.com/2076-3417/11/22/10716#:~:text=Section%203.11.-,2.%20Dilated%20Filters,-In%20order%20to" target="_blank">Dilation</a>&colon;</h5>
 							<p>
 								Increases the distance between the pixels being sampled by adding null rows and columns to the existing kernel.
 							</p>
 
 							<hr/>
 
-							<h5>Channel:</h5>
+							<h5>Channel&colon;</h5>
 							<p>
 								Specifies which channels of the input image the gradient operation will be calculated on.
 							</p>
 
-							<h5>Edge Handling:</h5>
+							<h5>Edge Handling&colon;</h5>
 							<p>
 								Determines how the edges of the image are treated during <a href="https://en.wikipedia.org/wiki/Convolution#:~:text=gT.-,Discrete%20convolution,-%5Bedit%5D" target="_blank">convolution</a>. Extends the image to avoid edge artifacts.
 							</p>
 	
-							<h5>Normalize:</h5>
+							<h5>Normalize&colon;</h5>
 							<p>
 								Normalize values in the output image so that they are all scaled and shifted to fall between 0 and 1.
 							</p>
@@ -4030,7 +4030,7 @@
 						</p>
 
 						<p>
-							and the gradient direction is:
+							and the gradient direction is&colon;
 						</p>
 						
 						<p class="maths" title="Right click for a cheat sheet">
@@ -4066,7 +4066,7 @@
 							The <a href="https://en.wikipedia.org/wiki/Roberts_cross" target="_blank">Robert&rsquo;s Cross Operator</a> is simple and efficient, making it suitable for real&hyphen;time applications and situations where computational resources are limited. However, it is sensitive to noise and may not perform well on images with significant high-frequency content or where precise edge detection is required.
 						</p>
 
-						<h5>Resources:</h5>
+						<h5>Resources&colon;</h5>
 						<p>
 							<a href="https://github.com/MaxMainio/TD_" target="_blank">Download the .tox files</a><br>
 							<a href="https://en.wikipedia.org/wiki/Roberts_cross" target="_blank">Robert&rsquo;s Cross Operator on wikipedia</a><br>
@@ -4211,29 +4211,29 @@
 
 						<div>
 							<h4>Parameters</h4>
-							<h5>Orientation:</h5>
+							<h5>Orientation&colon;</h5>
 							<p>
 								In the Standard <a href="https://en.wikipedia.org/wiki/Roberts_cross" target="_blank">Robert&rsquo;s Cross</a> Operator, the orientation is limited to the 4 diagonal directions. The Steerable <a href="https://en.wikipedia.org/wiki/Roberts_cross" target="_blank">Robert&rsquo;s Cross</a> Operator allows for any arbitrary angle within 360&deg;.
 							</p>
 
-							<h5><a href="https://www.mdpi.com/2076-3417/11/22/10716#:~:text=Section%203.11.-,2.%20Dilated%20Filters,-In%20order%20to" target="_blank">Dilation</a>:</h5>
+							<h5><a href="https://www.mdpi.com/2076-3417/11/22/10716#:~:text=Section%203.11.-,2.%20Dilated%20Filters,-In%20order%20to" target="_blank">Dilation</a>&colon;</h5>
 							<p>
 								Increases the distance between the pixels being sampled by adding null rows and columns to the existing kernel.
 							</p>
 
 							<hr/>
 
-							<h5>Channel:</h5>
+							<h5>Channel&colon;</h5>
 							<p>
 								Specifies which channels of the input image the gradient operation will be calculated on.
 							</p>
 
-							<h5>Edge Handling:</h5>
+							<h5>Edge Handling&colon;</h5>
 							<p>
 								Determines how the edges of the image are treated during <a href="https://en.wikipedia.org/wiki/Convolution#:~:text=gT.-,Discrete%20convolution,-%5Bedit%5D" target="_blank">convolution</a>. Extends the image to avoid edge artifacts.
 							</p>
 	
-							<h5>Normalize:</h5>
+							<h5>Normalize&colon;</h5>
 							<p>
 								Normalize values in the output image so that they are all scaled and shifted to fall between 0 and 1.
 							</p>
@@ -4267,9 +4267,9 @@
 							Calculating the first derivative of images is crucial for tasks such as edge detection and gradient analysis. It is especially effective when working with Signed Distance Functions (SDFs) for calculating slope orientation, providing detailed information about changes in intensity.
 						</p>
 
-						<p>Both Sobel components offer the flexibility to switch between three standard <a href="https://en.wikipedia.org/wiki/Kernel_(image_processing)" target="_blank">kernels</a>:</p>
+						<p>Both Sobel components offer the flexibility to switch between three standard <a href="https://en.wikipedia.org/wiki/Kernel_(image_processing)" target="_blank">kernels</a>&colon;</p>
 						
-						<h5>Standard <a href="https://en.wikipedia.org/wiki/Kernel_(image_processing)" target="_blank">kernel</a> &lpar;<a href="https://en.wikipedia.org/wiki/Sobel_operator#:~:text=in%20the%20image.-,Formulation,-%5Bedit%5D" target="_blank">Sobel&hyphen;Feldmann kernel</a>&rpar;:</h5>
+						<h5>Standard <a href="https://en.wikipedia.org/wiki/Kernel_(image_processing)" target="_blank">kernel</a> &lpar;<a href="https://en.wikipedia.org/wiki/Sobel_operator#:~:text=in%20the%20image.-,Formulation,-%5Bedit%5D" target="_blank">Sobel&hyphen;Feldmann kernel</a>&rpar;&colon;</h5>
 						<p>
 							The classic <a href="https://en.wikipedia.org/wiki/Sobel_operator#:~:text=in%20the%20image.-,Formulation,-%5Bedit%5D" target="_blank">Sobel&hyphen;Feldmann kernel</a> is great for general gradient and edge analysis. It balances noise reduction with edge localization and is suitable for most applications.
 						</p>
@@ -4334,7 +4334,7 @@
 							</math>
 						</p>
 
-						<h5><a href="https://en.wikipedia.org/wiki/Sobel_operator#:~:text=%5D-,Scharr%20operators,-result%20from%20an" target="_blank">Scharr kernel</a>:</h5>
+						<h5><a href="https://en.wikipedia.org/wiki/Sobel_operator#:~:text=%5D-,Scharr%20operators,-result%20from%20an" target="_blank">Scharr kernel</a>&colon;</h5>
 						<p>
 							This <a href="https://en.wikipedia.org/wiki/Sobel_operator#:~:text=%5D-,Scharr%20operators,-result%20from%20an" target="_blank">Scharr kernel</a> provides improved rotational symmetry and better performance in high-frequency regions. It is ideal for images with fine details requiring precise gradient approximations.
 						</p>
@@ -4399,7 +4399,7 @@
 							</math>
 						</p>
 
-						<h5><a href="https://en.wikipedia.org/wiki/Sobel_operator#:~:text=%5D-,Scharr%20operators,-result%20from%20an" target="_blank">Scharr Optimized kernel</a>:</h5>
+						<h5><a href="https://en.wikipedia.org/wiki/Sobel_operator#:~:text=%5D-,Scharr%20operators,-result%20from%20an" target="_blank">Scharr Optimized kernel</a>&colon;</h5>
 						<p>
 							This <a href="https://en.wikipedia.org/wiki/Kernel_(image_processing)" target="_blank">kernel</a> results from <a href="https://en.wikipedia.org/wiki/Sobel_operator#:~:text=%5D-,Scharr%20operators,-result%20from%20an" target="_blank">Scharr's theory</a>, optimized for minimal angular error &lpar;about 0.2&deg;&rpar;, making it suitable for applications requiring high precision in gradient calculations.
 						</p>
@@ -4464,7 +4464,7 @@
 							</math>
 						</p>
 
-						<h5>Resources:</h5>
+						<h5>Resources&colon;</h5>
 						<p>
 							<a href="https://github.com/MaxMainio/TD_" target="_blank">Download the .tox files</a><br>
 							<a href="https://en.wikipedia.org/wiki/Sobel_operator" target="_blank">Sobel Operator on wikipedia</a><br>
@@ -4676,34 +4676,34 @@
 
 						<div>
 							<h4>Parameters</h4>
-							<h5>Operator:</h5>
+							<h5>Operator&colon;</h5>
 							<p>
 								Specify which of the 3 standard Sobel <a href="https://en.wikipedia.org/wiki/Kernel_(image_processing)" target="_blank">kernels</a> to <a href="https://en.wikipedia.org/wiki/Convolution#:~:text=gT.-,Discrete%20convolution,-%5Bedit%5D" target="_blank">convolve</a> input 0 with.
 							</p>
 	
-							<h5>Orientation:</h5>
+							<h5>Orientation&colon;</h5>
 							<p>
 								In the Standard Sobel Operator, the orientation is limited to the 8 compass directions. The Steerable Sobel Operator allows for any arbitrary angle within 360&deg;.
 							</p>
 
-							<h5><a href="https://www.mdpi.com/2076-3417/11/22/10716#:~:text=Section%203.11.-,2.%20Dilated%20Filters,-In%20order%20to" target="_blank">Dilation</a>:</h5>
+							<h5><a href="https://www.mdpi.com/2076-3417/11/22/10716#:~:text=Section%203.11.-,2.%20Dilated%20Filters,-In%20order%20to" target="_blank">Dilation</a>&colon;</h5>
 							<p>
 								Increases the distance between the pixels being sampled by adding null rows and columns to the existing kernel.
 							</p>
 	
 							<hr/>
 
-							<h5>Channel:</h5>
+							<h5>Channel&colon;</h5>
 							<p>
 								Specifies which channels of the input image the gradient operation will be calculated on.
 							</p>
 
-							<h5>Edge Handling:</h5>
+							<h5>Edge Handling&colon;</h5>
 							<p>
 								Determines how the edges of the image are treated during <a href="https://en.wikipedia.org/wiki/Convolution#:~:text=gT.-,Discrete%20convolution,-%5Bedit%5D" target="_blank">convolution</a>. Extends the image to avoid edge artifacts.
 							</p>
 	
-							<h5>Normalize:</h5>
+							<h5>Normalize&colon;</h5>
 							<p>
 								Normalize values in the output image so that they are all scaled and shifted to fall between 0 and 1.
 							</p>
@@ -4739,7 +4739,7 @@
 						</p>
 
 						<p>
-							An example of a generated <a href="https://en.wikipedia.org/wiki/Kernel_(image_processing)" target="_blank">kernel</a>, as can be seen in the example operator on the right, is a 5&times;5 <a href="https://en.wikipedia.org/wiki/Kernel_(image_processing)" target="_blank">kernel</a> oriented horizontally to the right:
+							An example of a generated <a href="https://en.wikipedia.org/wiki/Kernel_(image_processing)" target="_blank">kernel</a>, as can be seen in the example operator on the right, is a 5&times;5 <a href="https://en.wikipedia.org/wiki/Kernel_(image_processing)" target="_blank">kernel</a> oriented horizontally to the right&colon;
 						</p>
 
 						<p class="maths" title="Right click for a cheat sheet">
@@ -4790,7 +4790,7 @@
 							</math>
 						</p>
 
-						<h5>Resources:</h5>
+						<h5>Resources&colon;</h5>
 						<p>
 							<a href="https://github.com/MaxMainio/TD_" target="_blank">Download the .tox files</a><br>
 							<a href="https://en.wikipedia.org/wiki/Sobel_operator" target="_blank">Sobel Operator on wikipedia</a><br>
@@ -4871,39 +4871,39 @@
 
 						<div>
 							<h4>Parameters</h4>
-							<h5>Size:</h5>
+							<h5>Size&colon;</h5>
 							<p>
 								Specify the size of the <a href="https://en.wikipedia.org/wiki/Kernel_(image_processing)" target="_blank">kernel</a> to be generated. Larger <a href="https://en.wikipedia.org/wiki/Kernel_(image_processing)" target="_blank">kernels</a> capture broader edges but may lose fine details. Note that the <a href="https://en.wikipedia.org/wiki/Kernel_(image_processing)" target="_blank">kernel</a> must have a center cell, so the size must be an odd number.
 							</p>
 	
-							<h5>Orientation:</h5>
+							<h5>Orientation&colon;</h5>
 							<p>
 								Unlike the <a href="#sobel-operator" target="_self">Steerable Sobel Operator</a>, this operator will generate a new <a href="https://en.wikipedia.org/wiki/Kernel_(image_processing)" target="_blank">kernel</a> for any given angle.
 							</p>
 
-							<h5>Round to Decimal:</h5>
+							<h5>Round to Decimal&colon;</h5>
 							<p>
 								Round the <a href="https://en.wikipedia.org/wiki/Kernel_(image_processing)" target="_blank">kernel</a> values to a specified number of decimal places for precision control in calculations.
 							</p>
 
-							<h5><a href="https://www.mdpi.com/2076-3417/11/22/10716#:~:text=Section%203.11.-,2.%20Dilated%20Filters,-In%20order%20to" target="_blank">Dilation</a>:</h5>
+							<h5><a href="https://www.mdpi.com/2076-3417/11/22/10716#:~:text=Section%203.11.-,2.%20Dilated%20Filters,-In%20order%20to" target="_blank">Dilation</a>&colon;</h5>
 							<p>
 								Increases the distance between the pixels being sampled by adding null rows and columns to the existing kernel.
 							</p>
 	
 							<hr/>
 
-							<h5>Channel:</h5>
+							<h5>Channel&colon;</h5>
 							<p>
 								Specifies which channels of the input image the gradient operation will be calculated on.
 							</p>
 
-							<h5>Edge Handling:</h5>
+							<h5>Edge Handling&colon;</h5>
 							<p>
 								Determines how the edges of the image are treated during <a href="https://en.wikipedia.org/wiki/Kernel_(image_processing)#:~:text=the%20center%20element.-,Convolution,-%5Bedit%5D" target="_blank">convolution</a>. Extends the image to avoid edge artifacts.
 							</p>
 	
-							<h5>Normalize:</h5>
+							<h5>Normalize&colon;</h5>
 							<p>
 								Normalize values in the output image so that they are all scaled and shifted to fall between 0 and 1.
 							</p>
