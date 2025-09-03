@@ -80,9 +80,11 @@ ul{
     list-style: none;
 
     & > li > h5:before{
-        content: "_";
-        /* content: "&mdash;"; */
-        margin: 0 0.3rem 0 -1rem;
+        /* content: "_"; */
+        /* margin: 0 0.3rem 0 -1rem; */
+
+        content: "\2014";
+        margin: 0 -0.1rem 0 -1rem;
     }
 }
 
