@@ -79,8 +79,9 @@ ul{
 
     list-style: none;
 
-    & > li:before{
+    & > li > h5:before{
         content: "_";
+        /* content: "&mdash;"; */
         margin: 0 0.3rem 0 -1rem;
     }
 }
