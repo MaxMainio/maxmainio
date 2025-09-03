@@ -1063,15 +1063,21 @@
 
 						<ul>
 							<li>
-								Positive values&colon; Indicate <a href="https://homepages.inf.ed.ac.uk/rbf/HIPR2/dilate.htm" target="_blank">dilation</a>, with the magnitude scaling the effect relative to the maximum radius.
+								<p>
+									Positive values&colon; Indicate <a href="https://homepages.inf.ed.ac.uk/rbf/HIPR2/dilate.htm" target="_blank">dilation</a>, with the magnitude scaling the effect relative to the maximum radius.
+								</p>
 							</li>
 
 							<li>
-								Negative values&colon; Indicate <a href="https://homepages.inf.ed.ac.uk/rbf/HIPR2/erode.htm" target="_blank">erosion</a>, similarly, with the magnitude scaling the effect relative to the maximum radius.
+								<p>
+									Negative values&colon; Indicate <a href="https://homepages.inf.ed.ac.uk/rbf/HIPR2/erode.htm" target="_blank">erosion</a>, similarly, with the magnitude scaling the effect relative to the maximum radius.
+								</p>
 							</li>
 
 							<li>
-								Zero values&colon; Leave the pixel unchanged.
+								<p>
+									Zero values&colon; Leave the pixel unchanged.
+								</p>
 							</li>
 						</ul>
 
@@ -2325,54 +2331,58 @@
 
 						<ul>
 							<li>
-								Outline&colon; Extracts the outer boundary of objects by subtracting the <a href="#dilate-erode" target="_self">dilated image</a> from the input.
-								<span title="Right click for a cheat sheet">
-									<math>
-										<mrow>
-											<msub>
-												<mi>g</mi>
-												<mi>ext</mi>
-											</msub>
-											<mo>= &lpar;</mo>
-											<mi>I</mi>
-											<mo>&oplus;</mo>
-											<mi>s</mi>
-											<mo> &rpar; &minus;</mo>
-											<mi>I</mi>
-											<mo>=</mo>
-											<mi>I</mi>
-											<mi>&delta;</mi>
-											<mo>&minus;</mo>
-											<mi>I</mi>
-										</mrow>
-									</math>
-								</span>
+								<p>
+									Outline&colon; Extracts the outer boundary of objects by subtracting the <a href="#dilate-erode" target="_self">dilated image</a> from the input.
+									<span title="Right click for a cheat sheet">
+										<math>
+											<mrow>
+												<msub>
+													<mi>g</mi>
+													<mi>ext</mi>
+												</msub>
+												<mo>= &lpar;</mo>
+												<mi>I</mi>
+												<mo>&oplus;</mo>
+												<mi>s</mi>
+												<mo> &rpar; &minus;</mo>
+												<mi>I</mi>
+												<mo>=</mo>
+												<mi>I</mi>
+												<mi>&delta;</mi>
+												<mo>&minus;</mo>
+												<mi>I</mi>
+											</mrow>
+										</math>
+									</span>
+								</p>
 							</li>
 
 							<li>
-								Inline&colon; Extracts the inner boundary of objects by subtracting the input from the <a href="#dilate-erode" target="_self">eroded image</a>.
-								<span title="Right click for a cheat sheet">
-									<math>
-										<mrow>
-											<msub>
-												<mi>g</mi>
-												<mi>int</mi>
-											</msub>
-											<mo>=</mo>
-											<mi>I</mi>
-											<mo> &minus; &lpar;</mo>
-											<mi>I</mi>
-											<mo>&ominus;</mo>
-											<mi>s</mi>
-											<mo> &rpar;</mo>
-											<mo>=</mo>
-											<mi>I</mi>
-											<mo>&minus;</mo>
-											<mi>I</mi>
-											<mi>&epsilon;</mi>
-										</mrow>
-									</math>
-								</span>
+								<p>
+									Inline&colon; Extracts the inner boundary of objects by subtracting the input from the <a href="#dilate-erode" target="_self">eroded image</a>.
+									<span title="Right click for a cheat sheet">
+										<math>
+											<mrow>
+												<msub>
+													<mi>g</mi>
+													<mi>int</mi>
+												</msub>
+												<mo>=</mo>
+												<mi>I</mi>
+												<mo> &minus; &lpar;</mo>
+												<mi>I</mi>
+												<mo>&ominus;</mo>
+												<mi>s</mi>
+												<mo> &rpar;</mo>
+												<mo>=</mo>
+												<mi>I</mi>
+												<mo>&minus;</mo>
+												<mi>I</mi>
+												<mi>&epsilon;</mi>
+											</mrow>
+										</math>
+									</span>
+								</p>
 							</li>
 						</ul>
 
