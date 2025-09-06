@@ -502,24 +502,158 @@
 
 						<ol>
 							<li>
-								<h5><a href="https://en.wikipedia.org/wiki/Image_histogram" target="_blank">Histogram</a>&colon;</h5>
+								<h5><a href="https://en.wikipedia.org/wiki/Image_histogram" target="_blank">Histogram</a> &lpar; <span title="Right click for a cheat sheet"><math><mi>h</mi></math></span> &rpar;&colon;</h5>
 								
 								<p>
-									Displays the frequency of pixel values across the image. This reveals how intensities are distributed, providing insight into <a href="https://en.wikipedia.org/wiki/Contrast_(vision)" target="_blank">contrast</a>, <a href="https://en.wikipedia.org/wiki/Brightness" target="_blank">brightness</a>, and <a href="https://en.wikipedia.org/wiki/Color_balance" target="_blank">tonal balance</a>
+									Displays the frequency of pixel &lpar; <span title="Right click for a cheat sheet"><math><mi>&iota;</mi></math></span> &rpar; values across the image &lpar; <span title="Right click for a cheat sheet"><math><mi>&Iota;</mi></math></span> &rpar;. This reveals how intensities are distributed, providing insight into <a href="https://en.wikipedia.org/wiki/Contrast_(vision)" target="_blank">contrast</a>, <a href="https://en.wikipedia.org/wiki/Brightness" target="_blank">brightness</a>, and <a href="https://en.wikipedia.org/wiki/Color_balance" target="_blank">tonal balance</a>.
+								</p>
+
+								<p class="maths">
+									<span title="Right click for a cheat sheet">
+										<math class="outline">
+											<mrow>
+												<msub>
+													<mi>h</mi>
+													<mi>i</mi>
+												</msub>
+												<mo>=</mo>
+												<munder>
+													<mrow><mo>&sum;</mo></mrow>
+													<mrow>
+														<mi>&iota;</mi>
+														<mo>&notin;</mo>
+														<mi>&Iota;</mi>
+													</mrow>
+												</munder>
+												<mrow>
+													<mo>&lbrack;</mo>
+													<mi>&Iota;</mi>
+													<mo>&lpar;</mo><mi>&iota;</mi><mo>&rpar;</mo>
+													<mo>=</mo>
+													<mi>i</mi>
+													<mo>&rbrack;</mo>
+												</mrow>
+											</mrow>
+										</math>
+									</span>
+								</p><br>
+
+								<p>
+									<a href="https://en.wikipedia.org/wiki/Normalization_(statistics)" target="_blank">Normalized</a>&colon;
+								</p>
+
+								<p class="maths">
+									<span title="Right click for a cheat sheet">
+										<math class="outline">
+											<mrow>
+												<msub>
+													<mi>h</mi>
+													<mi>i</mi>
+												</msub>
+												<mo>=</mo>
+												<mfrac>
+													<mn>1</mn>
+													<mi>N</mi>
+												</mfrac>
+												<munder>
+													<mrow><mo>&sum;</mo></mrow>
+													<mrow>
+														<mi>&iota;</mi>
+														<mo>&notin;</mo>
+														<mi>&Iota;</mi>
+													</mrow>
+												</munder>
+												<mrow>
+													<mo>&lbrack;</mo>
+													<mi>&Iota;</mi>
+													<mo>&lpar;</mo><mi>&iota;</mi><mo>&rpar;</mo>
+													<mo>=</mo>
+													<mi>i</mi>
+													<mo>&rbrack;</mo>
+												</mrow>
+											</mrow>
+										</math>
+									</span>
 								</p><br>
 							</li>
 
 							<li>
-								<h5><a href="https://docs.flowjo.com/flowjo/graphs-and-gating/data-visualization-and-display/gw-cdf/" target="_blank">Cumulative Distribution Function</a> &lpar;<a href="https://docs.flowjo.com/flowjo/graphs-and-gating/data-visualization-and-display/gw-cdf/" target="_blank">CDF</a>&rpar;&colon;</h5>
+								<h5><a href="https://docs.flowjo.com/flowjo/graphs-and-gating/data-visualization-and-display/gw-cdf/" target="_blank">Cumulative Distribution Function</a> &lpar;<a href="https://docs.flowjo.com/flowjo/graphs-and-gating/data-visualization-and-display/gw-cdf/" target="_blank">CDF</a>&rpar; &lpar; <span title="Right click for a cheat sheet"><math><mi>H</mi></math></span> &rpar;&colon;</h5>
 
 								<p>
-									Shows the running sum of those frequencies, mapping the cumulative proportion of pixels up to each value. The <a href="https://docs.flowjo.com/flowjo/graphs-and-gating/data-visualization-and-display/gw-cdf/" target="_blank">CDF</a> is especially useful for tasks like <a href="#histogram-equalization" target="_self">histogram equalization</a>, where pixel intensities are remapped to enhance contrast.
+									Shows the running sum of those frequencies, mapping the cumulative proportion of pixels &lpar; <span title="Right click for a cheat sheet"><math><mi>&iota;</mi></math></span> &rpar; up to each value. The <a href="https://docs.flowjo.com/flowjo/graphs-and-gating/data-visualization-and-display/gw-cdf/" target="_blank">CDF &lpar; <span title="Right click for a cheat sheet"><math><mi>H</mi></math></span> &rpar;</a> is especially useful for tasks like <a href="#histogram-equalization" target="_self">histogram equalization</a>, where pixel &lpar; <span title="Right click for a cheat sheet"><math><mi>&iota;</mi></math></span> &rpar; intensities are remapped to enhance <a href="https://en.wikipedia.org/wiki/Contrast_(vision)" target="_blank">contrast</a>.
 								</p>
+
+								<p class="maths">
+									<span title="Right click for a cheat sheet">
+										<math class="outline">
+											<mrow>
+												<msub>
+													<mi>H</mi>
+													<mi>i</mi>
+												</msub>
+												<mo>=</mo>
+												<munderover>
+													<mrow><mo>&sum;</mo></mrow>
+													<mrow>
+														<mi>j</mi>
+														<mo>=</mo>
+														<mi>0</mi>
+													</mrow>
+													<mrow>
+														<mi>i</mi>
+													</mrow>
+												</munderover>
+												<msub>
+													<mi>h</mi>
+													<mi>j</mi>
+												</msub>
+											</mrow>
+										</math>
+									</span>
+								</p><br>
+
+								<p>
+									<a href="https://en.wikipedia.org/wiki/Normalization_(statistics)" target="_blank">Normalized</a>&colon;
+								</p>
+
+								<p class="maths">
+									<span title="Right click for a cheat sheet">
+										<math class="outline">
+											<mrow>
+												<msub>
+													<mi>H</mi>
+													<mi>i</mi>
+												</msub>
+												<mo>=</mo>
+												<mfrac>
+													<mn>1</mn>
+													<mi>N</mi>
+												</mfrac>
+												<munderover>
+													<mrow><mo>&sum;</mo></mrow>
+													<mrow>
+														<mi>j</mi>
+														<mo>=</mo>
+														<mi>0</mi>
+													</mrow>
+													<mrow>
+														<mi>i</mi>
+													</mrow>
+												</munderover>
+												<msub>
+													<mi>h</mi>
+													<mi>j</mi>
+												</msub>
+											</mrow>
+										</math>
+									</span>
+								</p><br>
 							</li>
 						</ol>
 
 						<p>
-							Within this <a href="https://github.com/MaxMainio/TD_/tree/main/TOPs/Histogram" target="_blank">component family</a>, the <a href="https://github.com/MaxMainio/TD_/blob/main/TOPs/Histogram/Histogram.tox" target="_blank">Histogram COMP</a> serves as the entry point&colon; it generates and encodes these <a href="https://www.geeksforgeeks.org/maths/what-are-the-different-ways-of-data-representation/" target="_blank">statistical representations</a> so they can be interpreted by other operators in the <a href="https://en.wikipedia.org/wiki/Image_histogram" target="_blank">Histogram</a> workflow. By coupling the original image with its <a href="https://en.wikipedia.org/wiki/Image_histogram" target="_blank">histogram</a> or <a href="https://docs.flowjo.com/flowjo/graphs-and-gating/data-visualization-and-display/gw-cdf/" target="_blank">CDF</a>, this component provides a streamlined way to analyze and share image statistics across <a href="https://derivative.ca/" target="_blank">TouchDesigner</a> <a href="https://derivative.ca/UserGuide/TOP" target="_blank">TOP</a> <a href="https://derivative.ca/UserGuide/Network" target="_blank">networks</a>.
+							Within this <a href="https://github.com/MaxMainio/TD_/tree/main/TOPs/Histogram" target="_blank">component family</a>, the <a href="https://github.com/MaxMainio/TD_/blob/main/TOPs/Histogram/Histogram.tox" target="_blank">Histogram COMP</a> serves as the entry point&colon; it generates and encodes these <a href="https://www.geeksforgeeks.org/maths/what-are-the-different-ways-of-data-representation/" target="_blank">statistical representations</a> so they can be interpreted by other <a href="https://github.com/MaxMainio/TD_/tree/main/TOPs/Histogram" target="_blank">Histogram operators</a> in the workflow. By coupling the original image with its <a href="https://en.wikipedia.org/wiki/Image_histogram" target="_blank">histogram</a> or <a href="https://docs.flowjo.com/flowjo/graphs-and-gating/data-visualization-and-display/gw-cdf/" target="_blank">CDF</a>, this component provides a streamlined way to analyze and share image statistics across <a href="https://derivative.ca/" target="_blank">TouchDesigner</a> <a href="https://derivative.ca/UserGuide/TOP" target="_blank">TOP</a> <a href="https://derivative.ca/UserGuide/Network" target="_blank">networks</a>.
 						</p>
 
 						<h5>Resources&colon;</h5>
@@ -912,19 +1046,78 @@
 						
 						<ol>
 							<li>
-								<h5><a href="https://en.wikipedia.org/wiki/Image_histogram" target="_blank">Histogram</a>&colon;</h5>
+								<h5><a href="https://en.wikipedia.org/wiki/Image_histogram" target="_blank">Histogram</a> &lpar; <span title="Right click for a cheat sheet"><math><mi>h</mi></math></span> &rpar;&colon;</h5>
 								
 								<p>
-									Displays the frequency of pixel values across the image. This reveals how intensities are distributed, providing insight into <a href="https://en.wikipedia.org/wiki/Contrast_(vision)" target="_blank">contrast</a>, <a href="https://en.wikipedia.org/wiki/Brightness" target="_blank">brightness</a>, and <a href="https://en.wikipedia.org/wiki/Color_balance" target="_blank">tonal balance</a>
+									Displays the frequency of pixel &lpar; <span title="Right click for a cheat sheet"><math><mi>&iota;</mi></math></span> &rpar; values across the image &lpar; <span title="Right click for a cheat sheet"><math><mi>&Iota;</mi></math></span> &rpar;. This reveals how intensities are distributed, providing insight into <a href="https://en.wikipedia.org/wiki/Contrast_(vision)" target="_blank">contrast</a>, <a href="https://en.wikipedia.org/wiki/Brightness" target="_blank">brightness</a>, and <a href="https://en.wikipedia.org/wiki/Color_balance" target="_blank">tonal balance</a>.
+								</p>
+
+								<p class="maths">
+									<span title="Right click for a cheat sheet">
+										<math class="outline">
+											<mrow>
+												<msub>
+													<mi>h</mi>
+													<mi>i</mi>
+												</msub>
+												<mo>=</mo>
+												<munder>
+													<mrow><mo>&sum;</mo></mrow>
+													<mrow>
+														<mi>&iota;</mi>
+														<mo>&notin;</mo>
+														<mi>&Iota;</mi>
+													</mrow>
+												</munder>
+												<mrow>
+													<mo>&lbrack;</mo>
+													<mi>&Iota;</mi>
+													<mo>&lpar;</mo><mi>&iota;</mi><mo>&rpar;</mo>
+													<mo>=</mo>
+													<mi>i</mi>
+													<mo>&rbrack;</mo>
+												</mrow>
+											</mrow>
+										</math>
+									</span>
 								</p><br>
 							</li>
 
 							<li>
-								<h5><a href="https://docs.flowjo.com/flowjo/graphs-and-gating/data-visualization-and-display/gw-cdf/" target="_blank">Cumulative Distribution Function</a> &lpar;<a href="https://docs.flowjo.com/flowjo/graphs-and-gating/data-visualization-and-display/gw-cdf/" target="_blank">CDF</a>&rpar;&colon;</h5>
+								<h5><a href="https://docs.flowjo.com/flowjo/graphs-and-gating/data-visualization-and-display/gw-cdf/" target="_blank">Cumulative Distribution Function</a> &lpar;<a href="https://docs.flowjo.com/flowjo/graphs-and-gating/data-visualization-and-display/gw-cdf/" target="_blank">CDF</a>&rpar; &lpar; <span title="Right click for a cheat sheet"><math><mi>H</mi></math></span> &rpar;&colon;</h5>
 
 								<p>
-									Shows the running sum of those frequencies, mapping the cumulative proportion of pixels up to each value. The <a href="https://docs.flowjo.com/flowjo/graphs-and-gating/data-visualization-and-display/gw-cdf/" target="_blank">CDF</a> is especially useful for tasks like <a href="#histogram-equalization" target="_self">histogram equalization</a>, where pixel intensities are remapped to enhance contrast.
+									Shows the running sum of those frequencies, mapping the cumulative proportion of pixels &lpar; <span title="Right click for a cheat sheet"><math><mi>&iota;</mi></math></span> &rpar; up to each value. The <a href="https://docs.flowjo.com/flowjo/graphs-and-gating/data-visualization-and-display/gw-cdf/" target="_blank">CDF &lpar; <span title="Right click for a cheat sheet"><math><mi>H</mi></math></span> &rpar;</a> is especially useful for tasks like <a href="#histogram-equalization" target="_self">histogram equalization</a>, where pixel &lpar; <span title="Right click for a cheat sheet"><math><mi>&iota;</mi></math></span> &rpar; intensities are remapped to enhance <a href="https://en.wikipedia.org/wiki/Contrast_(vision)" target="_blank">contrast</a>.
 								</p>
+
+								<p class="maths">
+									<span title="Right click for a cheat sheet">
+										<math class="outline">
+											<mrow>
+												<msub>
+													<mi>H</mi>
+													<mi>i</mi>
+												</msub>
+												<mo>=</mo>
+												<munderover>
+													<mrow><mo>&sum;</mo></mrow>
+													<mrow>
+														<mi>j</mi>
+														<mo>=</mo>
+														<mi>0</mi>
+													</mrow>
+													<mrow>
+														<mi>i</mi>
+													</mrow>
+												</munderover>
+												<msub>
+													<mi>h</mi>
+													<mi>j</mi>
+												</msub>
+											</mrow>
+										</math>
+									</span>
+								</p><br>
 							</li>
 						</ol>
 
@@ -1063,39 +1256,64 @@
 
 				<section id="histogram-equalization" class="documentation">
 					<div class="docuinfo">
-						<h2>Histogram Equalization</h2>
+						<h2><a href="https://en.wikipedia.org/wiki/Histogram_equalization" target="_blank">Histogram Equalization</a></h2>
 						<h3>Intensity Remapping</h3>
 						<p>
-							<a href="https://github.com/MaxMainio/TD_/blob/main/TOPs/Histogram/Histogram_Equalization.tox" target="_blank">This component</a> applies <a href="https://en.wikipedia.org/wiki/Histogram_equalization" target="_blank">histogram equalization</a> to any image with an appended statistical metadata strip. Using the <a href="https://en.wikipedia.org/wiki/Cumulative_distribution_function" target="_blank">Cumulative Distribution Function</a> &lpar;<a href="https://en.wikipedia.org/wiki/Cumulative_distribution_function" target="_blank">CDF</a>&rpar; encoded in the metadata, it remaps pixel intensities so that values are more uniformly distributed across the available range. The result is an image with enhanced contrast, where details in darker or lighter regions become more visible.
+							<a href="https://github.com/MaxMainio/TD_/blob/main/TOPs/Histogram/Histogram_Equalization.tox" target="_blank">This component</a> redistributes the pixel &lpar; <span title="Right click for a cheat sheet"><math><mi>&iota;</mi></math></span> &rpar; intensities of an image &lpar; <span title="Right click for a cheat sheet"><math><mi>&Iota;</mi></math></span> &rpar; to achieve a more uniform distribution of values, thereby enhancing <a href="https://en.wikipedia.org/wiki/Contrast_(vision)" target="_blank">contrast</a> and making features more visible. <a href="https://github.com/MaxMainio/TD_/blob/main/TOPs/Histogram/Histogram_Equalization.tox" target="_blank">Histogram Equalization</a> works by mapping the original pixel &lpar; <span title="Right click for a cheat sheet"><math><mi>&iota;</mi></math></span> &rpar; values to new values according to the <a href="https://en.wikipedia.org/wiki/Normalization_(statistics)" target="_blank">normalized</a> <a href="https://en.wikipedia.org/wiki/Cumulative_distribution_function" target="_blank">Cumulative Distribution Function</a> &lpar; <span title="Right click for a cheat sheet"><math><mi>H</mi></math></span> &rpar;.
 						</p>
 
 						<p>
-							<a href="https://en.wikipedia.org/wiki/Histogram_equalization" target="_blank">Histogram equalization</a> is a cornerstone technique in digital image processing. By stretching and flattening the distribution of intensities, it improves the visibility of features that may otherwise be hidden in low&hyphen;contrast areas. 
-							<!-- This makes it particularly useful for&colon; -->
+							Formally, the transformation function is defined as&colon;
 						</p>
 
-						<!-- <ul>
+						<p class="maths">
+							<span title="Right click for a cheat sheet">
+								<math class="outline">
+									<mrow>
+										<mi>I</mi>
+										<mo>&apos;</mo>
+										<mo>&lpar;</mo><mi>&iota;</mi><mo>&rpar;</mo>
+										<mo>=</mo>
+										<mo>&lpar;</mo>
+										<mi>L</mi><mo>&minus;</mo><mn>1</mn>
+										<mo>&rpar;</mo>
+										<mo>&middot;</mo>
+										<mi>H</mi>
+										<mo>&lpar;</mo><mi>&Iota;</mi>
+										<mo>&lpar;</mo><mi>&iota;</mi><mo>&rpar;</mo>
+										<mo>&rpar;</mo>
+									</mrow>
+								</math>
+							</span>
+						</p><br>
+
+						<p>
+							This mapping ensures that the output image&rsquo;s <a href="https://en.wikipedia.org/wiki/Image_histogram" target="_blank">histogram</a> spans the available intensity range more evenly, improving <a href="https://en.wikipedia.org/wiki/Contrast_(vision)" target="_blank">contrast</a> in areas that were previously compressed.
+						</p>
+
+						<p>
+							In practice, <a href="https://github.com/MaxMainio/TD_/blob/main/TOPs/Histogram/Histogram_Equalization.tox" target="_blank">Histogram Equalization</a> is especially useful for&colon;
+						</p>
+
+						<ul>
 							<li>
-								<h5>Enhancing contrast</h5>
 								<p>
-									in photographs and video.
+									Enhancing low&hyphen;<a href="https://en.wikipedia.org/wiki/Contrast_(vision)" target="_blank">contrast</a> images &lpar;e.g., foggy or <a href="https://photographylife.com/underexposure-and-overexposure-in-photography" target="_blank">underexposed</a>&rpar;.
 								</p>
 							</li>
 
 							<li>
-								<h5>Improving visibility</h5>
 								<p>
-									in scientific or medical imaging.
+									Highlighting features in medical, scientific, or technical imagery.
 								</p>
 							</li>
 
 							<li>
-								<h5>Pre&hyphen;processing</h5>
 								<p>
-									images for tasks like edge detection, segmentation, or pattern recognition.
+									Preprocessing steps for segmentation or <a href="../edge-detectors/">edge detection</a>, where uniform <a href="https://en.wikipedia.org/wiki/Contrast_(vision)" target="_blank">contrast</a> improves results.
 								</p>
 							</li>
-						</ul> -->
+						</ul>
 
 						<h5>Resources&colon;</h5>
 						<p>
@@ -1191,8 +1409,8 @@
 							<h5>Method&colon;</h5>
 							<p>
 								Defines how the <a href="https://www.geeksforgeeks.org/maths/what-are-the-different-ways-of-data-representation/" target="_blank">statistical representations</a> is calculated&colon;<br>
-								Fast &lpar;<a href="https://en.wikipedia.org/wiki/OpenGL_Shading_Language" target="_blank">GLSL</a> calculation, <a href="https://en.wikipedia.org/wiki/Graphics_processing_unit" target="_blank">GPU</a>&hyphen;accelerated, efficient for real&hyphen;time workflows.&rpar; or<br>
-								Accurate &lpar;<a href="https://www.python.org/" target="_blank">Python</a> calculation, <a href="https://en.wikipedia.org/wiki/Central_processing_unit" target="_blank">CPU</a>&hyphen;based, precise but slower.&rpar;
+								Fast &lpar;<a href="https://en.wikipedia.org/wiki/OpenGL_Shading_Language" target="_blank">GLSL</a> calculation, <a href="https://en.wikipedia.org/wiki/Graphics_processing_unit" target="_blank">GPU</a>&hyphen;accelerated, efficient for real&hyphen;time workflows&rpar; or<br>
+								Accurate &lpar;<a href="https://www.python.org/" target="_blank">Python</a> calculation, <a href="https://en.wikipedia.org/wiki/Central_processing_unit" target="_blank">CPU</a>&hyphen;based, precise but slower&rpar;.
 							</p>
 
 							<h5>ReCalculate&colon;</h5>
