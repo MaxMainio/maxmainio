@@ -542,15 +542,6 @@
 						</p>
 					</div>
 
-					<div id="boundary" class="notation-entry">
-						<span class="notation-symbol"><math><mi>&part;</mi></math> &mdash;</span>
-
-						<p class="notation-description">
-							<span class="notation-title">Boundary&colon;</span><br>
-							Denotes the boundary of a shape or subset. In the context of SDFs, <math><mi>&part;</mi><mi>&Omega;</mi></math> represents the dividing line between interior and exterior regions &mdash; the reference from which signed distances are measured.
-						</p>
-					</div>
-
 					<div id="subset" class="notation-entry">
 						<span class="notation-symbol"><math><mi>&Omega;</mi></math> &mdash;</span>
 
@@ -560,12 +551,68 @@
 						</p>
 					</div>
 
+					<div id="boundary" class="notation-entry">
+						<span class="notation-symbol"><math><mi>&part;</mi></math> &mdash;</span>
+
+						<p class="notation-description">
+							<span class="notation-title">Boundary&colon;</span><br>
+							Denotes the boundary of a shape or subset. In the context of SDFs, <math><mi>&part;</mi><mi>&Omega;</mi></math> represents the dividing line between interior and exterior regions &mdash; the reference from which signed distances are measured.
+						</p>
+					</div>
+
+					<div id="boundary-pixel" class="notation-entry">
+						<span class="notation-symbol"><math><mi>&beta;</mi></math> &mdash;</span>
+
+						<p class="notation-description">
+							<span class="notation-title">Boundary Pixel&colon;</span><br>
+							Represents the nearest boundary pixel relative to a given <a href="#pixel" target="_self">pixel &lpar; <math><mi>&iota;</mi></math> &rpar;</a>.<br>
+							<math><msub><mi>&iota;</mi><mi>&beta;</mi></msub></math> denotes the nearest boundary pixel to <a href="#pixel" target="_self">pixel &lpar; <math><mi>&iota;</mi></math> &rpar;</a>.<br>
+							<math><mi>&Iota;</mi><mo>&lpar;</mo><msub><mi>&iota;</mi><mi>&beta;</mi></msub><mo>&rpar;</mo></math> denotes the value of the <a href="#image" target="_self">input image &lpar; <math><mi>&Iota;</mi></math> &rpar;</a> at that boundary pixel.
+						</p>
+					</div>
+
 					<div id="sdf" class="notation-entry">
 						<span class="notation-symbol"><math><mi>&#7429;</mi></math> &mdash;</span>
 
 						<p class="notation-description">
 							<span class="notation-title">Signed Distance Field&colon;</span><br>
-							Represents the Signed Distance Field &lpar;SDF&rpar; of an <a href="#image" target="_self">image &lpar; <math><mi>&Iota;</mi></math> &rpar;</a>. Each <a href="#pixel" target="_self">pixel &lpar; <math><mi>&iota;</mi></math> &rpar;</a> stores its signed distance to the nearest <a href="#boundary" target="_self">boundary &lpar; <math><mi>&part;</mi><mi>&Omega;</mi></math> &rpar;</a> of the <a href="#subset" target="_self">subset &lpar; <math><mi>&Omega;</mi></math> &rpar;</a>. Negative values indicate pixels inside the subset, positive values outside. Multiple SDFs may be indexed as <math><msub><mrow><mi>&Iota;</mi><mi>&#7429;</mi></mrow><mrow><mn>1</mn></mrow></msub></math>, <math><msub><mrow><mi>&Iota;</mi><mi>&#7429;</mi></mrow><mrow><mn>2</mn></mrow></msub></math> when combining fields.
+							Represents the Signed Distance Field &lpar;SDF&rpar; of an <a href="#image" target="_self">image</a>. Each <a href="#pixel" target="_self">pixel</a> stores its signed distance to the nearest <a href="#boundary" target="_self">boundary</a> of the <a href="#subset" target="_self">subset</a>. Negative values indicate pixels inside the subset, positive values outside. Multiple SDFs may be indexed as <math><msub><mrow><mi>&Iota;</mi><mi>&#7429;</mi></mrow><mrow><mn>1</mn></mrow></msub></math>, <math><msub><mrow><mi>&Iota;</mi><mi>&#7429;</mi></mrow><mrow><mn>2</mn></mrow></msub></math> when combining fields.
+						</p>
+					</div>
+				</section>
+
+				<hr/>
+
+				<section class="notation-category">
+					<h3>Set Theory&colon;</h3>
+
+					<div id="union" class="notation-entry">
+						<span class="notation-symbol"><math><mi>&cup;</mi></math> &mdash;</span>
+
+						<p class="notation-description">
+							<span class="notation-title">Union&colon;</span><br>
+							Represents the union of two sets.<br>
+							In the context of <a href="#sdf" target="_self">Signed Distance Fields</a>, this is typically implemented as the minimum of two input values.
+						</p>
+					</div>
+
+					<div id="intersection" class="notation-entry">
+						<span class="notation-symbol"><math><mi>&cap;</mi></math> &mdash;</span>
+
+						<p class="notation-description">
+							<span class="notation-title">Intersection&colon;</span><br>
+							Represents the intersection of two sets.<br>
+							In the context of <a href="#sdf" target="_self">Signed Distance Fields</a>, this is typically implemented as the minimum of two input values.
+						</p>
+					</div>
+
+					<div id="subtraction" class="notation-entry">
+						<span class="notation-symbol"><math><mi>&setminus;</mi></math> &mdash;</span>
+
+						<p class="notation-description">
+							<span class="notation-title">Subtraction &lpar;Set Difference&rpar;&colon;</span><br>
+							Represents the subtraction of one set from another.<br>
+							In the context of <a href="#sdf" target="_self">Signed Distance Fields</a>, this is typically implemented by inverting one <a href="#sdf" target="_self">SDF</a> and <a href="#intersection" target="_self">intersecting</a> with the other.
 						</p>
 					</div>
 				</section>

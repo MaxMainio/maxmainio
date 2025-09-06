@@ -569,13 +569,16 @@
 						</p>
 
 						<p>
-							The <a href="https://en.wikipedia.org/wiki/Signed_distance_function" target="_blank">Signed Distance Field</a> &lpar;<a href="https://en.wikipedia.org/wiki/Signed_distance_function" target="_blank">SDF</a>&rpar; encodes the distance of each pixel &lpar; <span title="Right click for a cheat sheet"><math><mi>&iota;</mi></math></span> &rpar; to the nearest boundary &lpar; <span title="Right click for a cheat sheet"><math><mi>&part;</mi><mi>&Omega;</mi></math></span> &rpar; of a subset &lpar; <span title="Right click for a cheat sheet"><math><mi>&Omega;</mi></math></span> &rpar;. If the pixel &lpar; <span title="Right click for a cheat sheet"><math><mi>&iota;</mi></math></span> &rpar; lies inside the region, the distance is negative&semi; if the pixel &lpar; <span title="Right click for a cheat sheet"><math><mi>&iota;</mi></math></span> &rpar; lies outside, the distance is positive&colon;
+							The <a href="https://en.wikipedia.org/wiki/Signed_distance_function" target="_blank">Signed Distance Field</a> &lpar; <span title="Right click for a cheat sheet"><math><mi>&#7429;</mi></math></span> &rpar; encodes the distance of each pixel &lpar; <span title="Right click for a cheat sheet"><math><mi>&iota;</mi></math></span> &rpar; to the nearest boundary &lpar; <span title="Right click for a cheat sheet"><math><mi>&part;</mi><mi>&Omega;</mi></math></span> &rpar; of a subset &lpar; <span title="Right click for a cheat sheet"><math><mi>&Omega;</mi></math></span> &rpar;. If the pixel &lpar; <span title="Right click for a cheat sheet"><math><mi>&iota;</mi></math></span> &rpar; lies inside the region, the distance is negative&semi; if the pixel &lpar; <span title="Right click for a cheat sheet"><math><mi>&iota;</mi></math></span> &rpar; lies outside, the distance is positive&colon;
 						</p>
 
 						<p class="maths" title="Right click for a cheat sheet">
 							<math class="outline">
-								<mi>SDF</mi>
-								<mo>&lpar;</mo><mi>&iota;</mi><mo>&rpar;</mo>
+								<mi>&Iota;</mi><mi>&#7429;</mi>
+								<mo>=</mo>
+								<mi>d</mi>
+								<mo>&lpar;</mo><mi>&iota;</mi><mo>,</mo>
+								<mo>&#8706;</mo><mi>&#937;</mi><mo>&rpar;</mo>
 								<mo>=</mo>
 								<mrow>
 									<mo>&lcub;</mo>
@@ -1573,7 +1576,7 @@
 						</p>
 
 						<p>
-							This component is especially useful after combining multiple <a href="https://en.wikipedia.org/wiki/Signed_distance_function" target="_blank">SDFs</a> with unifying logic, where the output may look visually correct but the underlying distance values are mathematically invalid. By repairing these broken fields, the <a href="https://en.wikipedia.org/wiki/Signed_distance_function" target="_blank">SDF</a> Corrector provides a more robust foundation for both visual rendering and computational uses of <a href="https://en.wikipedia.org/wiki/Signed_distance_function" target="_blank">SDFs</a>.
+							This component is especially useful after combining multiple <a href="https://en.wikipedia.org/wiki/Signed_distance_function" target="_blank">SDFs</a> with unifying logic, where the output may look visually correct but the underlying distance values are mathematically invalid. By repairing these broken fields, the <a href="https://github.com/MaxMainio/TD_/blob/main/TOPs/SDF/SDF_Corrector.tox" target="_blank">SDF Corrector</a> provides a more robust foundation for both visual rendering and computational uses of <a href="https://en.wikipedia.org/wiki/Signed_distance_function" target="_blank">SDFs</a>.
 						</p>
 
 						<h5>Resources&colon;</h5>
@@ -1724,7 +1727,27 @@
 						</p>
 
 						<p>
-							As with a standard <a href="https://en.wikipedia.org/wiki/Signed_distance_function" target="_blank">SDF</a>, the <a href="https://www.linearity.io/blog/alpha-channel/" target="_blank">alpha channel</a> defines the interior and exterior regions of the input. However, in a <a href="https://github.com/MaxMainio/TD_/blob/main/TOPs/SDF/VP_SDF.tox" target="_blank">VP SDF</a> the boundary is not fixed at zero. Instead, each boundary pixel carries its own value from the input, and this value is added to the propagated distance. This means a pixel five units away from the nearest boundary will inherit the boundary&rsquo;s value plus its distance, producing a richer, value&hyphen;aware <a href="https://prideout.net/blog/distance_fields/" target="_blank">distance field</a>.
+							As with a standard <a href="https://en.wikipedia.org/wiki/Signed_distance_function" target="_blank">SDF</a> &lpar; <span title="Right click for a cheat sheet"><math><mi>&#7429;</mi></math></span> &rpar;, the <a href="https://www.linearity.io/blog/alpha-channel/" target="_blank">alpha channel</a> defines the interior and exterior regions of the input. However, in a <a href="https://github.com/MaxMainio/TD_/blob/main/TOPs/SDF/VP_SDF.tox" target="_blank">VP SDF</a> the <a href="https://en.wikipedia.org/wiki/Boundary_(topology)" target="_blank">boundary</a> &lpar; <span title="Right click for a cheat sheet"><math><mi>&part;</mi><mi>&Omega;</mi></math></span> &rpar; is not fixed at zero. Instead, each <a href="https://en.wikipedia.org/wiki/Boundary_(topology)" target="_blank">boundary</a> pixel &lpar; <span title="Right click for a cheat sheet"><math><msub><mi>&iota;</mi><mi>&beta;</mi></msub></math></span> &rpar; carries its own value from the input image &lpar; <span title="Right click for a cheat sheet"><math><mi>&Iota;</mi></math></span> &rpar;, and this value is added to the propagated distance.
+						</p>
+
+						<p>
+							Formally, the VP SDF at pixel &lpar; <span title="Right click for a cheat sheet"><math><mi>&iota;</mi></math></span> &rpar; is defined as&colon;
+						</p>
+
+						<p class="maths" title="Right click for a cheat sheet">
+							<math>
+								<mi>&Iota;</mi><mi>&#7429;</mi>
+								<mo>=</mo>
+								<mi>&Iota;</mi><mi>&lpar;</mi><msub><mi>&iota;</mi><mi>&beta;</mi></msub><mi>&rpar;</mi>
+								<mo>&plus;</mo>
+								<mi>d</mi>
+								<mo>&lpar;</mo><mi>&iota;</mi><mo>,</mo>
+								<mo>&#8706;</mo><mi>&#937;</mi><mo>&rpar;</mo>
+							</math>
+						</p>
+
+						<p>
+							This means a pixel five units away from the nearest <a href="https://en.wikipedia.org/wiki/Boundary_(topology)" target="_blank">boundary</a> will inherit the <a href="https://en.wikipedia.org/wiki/Boundary_(topology)" target="_blank">boundary</a>&rsquo;s value plus its distance, producing a richer, value&hyphen;aware <a href="https://prideout.net/blog/distance_fields/" target="_blank">distance field</a>.
 						</p>
 
 						<p>
