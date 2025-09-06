@@ -611,13 +611,15 @@ h5 + p{
     -ms-grid-column: 1;
     -ms-grid-column-span: 8;
     grid-column: 1 / 9;
-    padding: 3rem 0;
+    /* padding: 3rem 0; */
+    padding: 3rem 0 9rem 0;
 
     & > h3{
         font-weight: 400;
         font-size: 1rem;
         line-height: 1.3rem;
         letter-spacing: 0.75px;
+        margin-bottom: -6rem;
     }
 }
 
@@ -628,7 +630,9 @@ h5 + p{
     -webkit-box-align: start;
         -ms-flex-align: start;
             align-items: flex-start;
-    margin-bottom: 1rem;
+    /* margin-bottom: 1rem; */
+    margin-bottom: -5rem;
+    padding-top: 6rem;
 }
 
 .notation-symbol {

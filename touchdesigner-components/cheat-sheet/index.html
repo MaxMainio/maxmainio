@@ -108,13 +108,13 @@
 						
 						<p class="notation-description">
 							<span class="notation-title">Gradient&colon;</span><br>
-							Represents the image gradient, which measures the change in pixel intensity between neighboring pixels.<br>
-							Subscripts are used to specify defining attributes of the gradient in question, such as the orientation:<br>
+							Represents the image gradient, which measures the change in <a href="#pixel" target="_self">pixel</a> intensity between neighboring <a href="#pixel" target="_self">pixels</a>.<br>
+							Subscripts are used to specify defining attributes of the gradient in question, such as the orientation&colon;<br>
 							<math class="outline"><mrow><msub><mi>g</mi><mn>x</mn></msub><mi>,</mi></mrow></math> <math><mrow><msub><mi>g</mi><mn>y</mn></msub><mi>,</mi></mrow></math> <math><mrow><msub><mi>g</mi><mn>z</mn></msub></mrow></math> are gradients along the x, y, &amp; z axis respectively,<br>
 							<math class="outline"><mrow><msub><mi>g</mi><mn>N</mn></msub><mi>,</mi></mrow></math> <math><mrow><msub><mi>g</mi><mn>NE</mn></msub><mi>...</mi></mrow></math> are gradients oriented towards compass directions.<br>
-							Whether a gradient is a composite of multiple gradients:<br>
+							Whether a gradient is a composite of multiple gradients&colon;<br>
 							<math class="outline"><mrow><msub><mi>g</mi><mn>max</mn></msub><mi>,</mi></mrow></math> <math><mrow><msub><mi>g</mi><mn>avg</mn></msub><mi>...</mi></mrow></math> are the maximum or average response from multiple gradients.<br>
-							Other attributes for example:<br>
+							Other attributes for example&colon;<br>
 							<math class="outline"><mrow><msub><mi>g</mi><mn>int</mn></msub><mi>,</mi></mrow></math> <math><mrow><msub><mi>g</mi><mn>ext</mn></msub><mi>...</mi></mrow></math> which refer to the interior or exterior gradients of an object&rsquo;s boundaries...
 						</p>
 					</div>
@@ -124,7 +124,7 @@
 						
 						<p class="notation-description">
 							<span class="notation-title">Gradient Magnitude&colon;</span><br>
-							The overall strength of the gradient at a pixel, calculated using the Pythagorean theorem and the images horizontal and vertical gradients.<br>
+							The overall strength of the <a href="#gradient" target="_self">gradient</a> at a <a href="#pixel" target="_self">pixel</a>, calculated using the Pythagorean theorem and the <a href="#image" target="_self">images</a> horizontal and vertical <a href="#gradient" target="_self">gradients</a>.<br>
 
 							<math class="outline">
 								<mrow>
@@ -150,11 +150,11 @@
 					</div>
 
 					<div id="edge-orientation" class="notation-entry">
-						<span class="notation-symbol"><math><mrow><mi>&Theta;</mi></mrow></math> &mdash;</span>
+						<span class="notation-symbol"><math><mi>&Theta;</mi></math> &mdash;</span>
 						
 						<p class="notation-description">
 							<span class="notation-title">Edge Orientation&colon;</span><br>
-							The direction of the gradient relative to the x-axis, indicating the angle or orientation of an edge. It is computed using the arctangent function and the images horizontal and vertical gradients.<br>
+							The direction of the <a href="#gradient" target="_self">gradient</a> relative to the x&hyphen;axis, indicating the angle or orientation of an edge. It is computed using the arctangent function and the <a href="#image" target="_self">images</a> horizontal and vertical <a href="#gradient" target="_self">gradients</a>.<br>
 
 							<math class="outline">
 								<mrow>
@@ -180,12 +180,12 @@
 					</div>
 
 					<div id="kernel" class="notation-entry">
-						<span class="notation-symbol"><math><mrow><mi>k</mi></mrow></math> &mdash;</span>
+						<span class="notation-symbol"><math><mi>k</mi></math> &mdash;</span>
 						
 						<p class="notation-description">
 							<span class="notation-title">Kernel&colon;</span><br>
-							A matrix applied to an image during convolution, used for tasks such as blurring, sharpening, embossing, and edge detection. Each pixel in the output image is a function of the nearby pixels in the input image, and the kernel defines how this function operates.<br>
-							Below is the NE-oriented <a href="../tops/edge-detectors/#kirsch-operator">Kirsch Operator</a> kernel as an example. Notice the <a href="https://en.wikipedia.org/wiki/Subscript_and_superscript" target="_blank">subscript</a> notation mirrors that used in the <a href="#gradient" target="_self">gradient</a> &lpar;<math><mrow><mi>g</mi></mrow></math>&rpar; notation:<br>
+							A matrix applied to an <a href="#image" target="_self">image</a> during convolution, used for tasks such as blurring, sharpening, embossing, and edge detection. Each <a href="#pixel" target="_self">pixel</a> in the output <a href="#image" target="_self">image</a> is a function of the nearby <a href="#pixel" target="_self">pixels</a> in the <a href="#image" target="_self">input image</a>, and the <a href="#kernel" target="_self">kernel</a> defines how this function operates.<br>
+							Below is the NE&hyphen;oriented Kirsch Operator <a href="#kernel" target="_self">kernel</a> as an example. Notice the subscript notation mirrors that used in the <a href="#gradient" target="_self">gradient</a> &lpar;<math><mi>g</mi></math>&rpar; notation:<br>
 
 							<math class="outline">
 								<mrow>
@@ -219,11 +219,11 @@
 					</div>
 
 					<div id="response" class="notation-entry">
-						<span class="notation-symbol"><math><mrow><mi>R</mi></mrow></math> &mdash;</span>
+						<span class="notation-symbol"><math><mi>R</mi></math> &mdash;</span>
 						
 						<p class="notation-description">
 							<span class="notation-title">Response:</span><br>
-							In symmetrical convolutional operations that do not result in an image gradient, <math><mrow><mi>R</mi></mrow></math> represents the maximum response from all directional kernels.
+							In symmetrical convolutional operations that do not result in an <a href="#gradient" target="_self">image gradient</a>, <math><mi>R</mi></math> represents the maximum response from all directional <a href="#kernel" target="_self">kernels</a>.
 						</p>
 					</div>
 				</section>
@@ -233,7 +233,7 @@
 				<section class="notation-category">
 					<h3>Histogram&colon;</h3>
 
-					<div id="histograms" class="notation-entry">
+					<div id="histogram" class="notation-entry">
 						<span class="notation-symbol"><math><mrow><mi>p</mi><mo>,</mo><mi>q</mi></mrow></math></span>
 
 						<p class="notation-description">
@@ -242,12 +242,12 @@
 						</p>
 					</div>
 
-					<div id="cdfs" class="notation-entry">
-						<span class="notation-symbol"><math><mrow><mi>P</mi><mo>,</mo><mi>Q</mi></mrow></math></span>
+					<div id="cdf" class="notation-entry">
+						<span class="notation-symbol"><math><mi>P</mi><mo>,</mo><mi>Q</mi></math></span>
 
 						<p class="notation-description">
 							<span class="notation-title">Cumulative Distribution Functions &lpar;CDFs&rpar;&colon;</span><br>
-							Uppercase letters denote cumulative distributions derived from histograms. Individual cumulative values are indexed as <math><mrow><msub><mi>P</mi><mi>i</mi></msub><mo>, </mo><msub><mi>Q</mi><mi>i</mi></msub></mrow></math>, representing the cumulative proportion of pixels up to bin <math><mrow><mi>i</mi></mrow></math>.
+							Uppercase letters denote cumulative distributions derived from <a href="#histograms" target="_self">histograms</a>. Individual cumulative values are indexed as <math><mrow><msub><mi>P</mi><mi>i</mi></msub><mo>, </mo><msub><mi>Q</mi><mi>i</mi></msub></mrow></math>, representing the cumulative proportion of pixels up to bin <math><mrow><mi>i</mi></mrow></math>.
 						</p>
 					</div>
 				</section>
@@ -258,16 +258,16 @@
 					<h3>Morphology&colon;</h3>
 
 					<div id="dilation" class="notation-entry">
-						<span class="notation-symbol"><math><mrow><mi>&oplus;</mi></mrow></math> &mdash;</span>
+						<span class="notation-symbol"><math><mi>&oplus;</mi></math> &mdash;</span>
 						
 						<p class="notation-description">
 							<span class="notation-title">Dilation&colon;</span><br>
-							Expands the boundaries of <a href="https://medium.com/hackernoon/an-introduction-to-morphological-operations-for-digital-image-text-classification-79cb14bab2d7#:~:text=White%20Pixels%20(1s)%20represent%20the%20foreground." target="_blank">foreground regions</a> (typically white pixels) in an image.
+							Expands the boundaries of foreground regions &lpar;typically white <a href="#pixel" target="_self">pixels</a>&rpar; in an <a href="#image" target="_self">image</a>.
 						</p>
 					</div>
 
 					<div id="dilated-img" class="notation-entry">
-						<span class="notation-symbol"><math><mrow><mi>&delta;</mi></mrow></math> &mdash;</span>
+						<span class="notation-symbol"><math><mi>&delta;</mi></math> &mdash;</span>
 						
 						<p class="notation-description">
 							<span class="notation-title">Dilated Image&colon;</span><br>
@@ -276,16 +276,16 @@
 					</div>
 
 					<div id="erosion" class="notation-entry">
-						<span class="notation-symbol"><math><mrow><mi>&ominus;</mi></mrow></math> &mdash;</span>
+						<span class="notation-symbol"><math><mi>&ominus;</mi></math> &mdash;</span>
 						
 						<p class="notation-description">
 							<span class="notation-title">Erosion&colon;</span><br>
-							Contracts the boundaries of <a href="https://medium.com/hackernoon/an-introduction-to-morphological-operations-for-digital-image-text-classification-79cb14bab2d7#:~:text=White%20Pixels%20(1s)%20represent%20the%20foreground." target="_blank">foreground regions</a> (typically white pixels) in an image
+							Contracts the boundaries of foreground regions &lpar;typically white <a href="#pixel" target="_self">pixels</a>&rpar; in an <a href="#image" target="_self">image</a>.
 						</p>
 					</div>
 
 					<div id="eroded-img" class="notation-entry">
-						<span class="notation-symbol"><math><mrow><mi>&epsilon;</mi></mrow></math> &mdash;</span>
+						<span class="notation-symbol"><math><mi>&epsilon;</mi></math> &mdash;</span>
 						
 						<p class="notation-description">
 							<span class="notation-title">Eroded Image&colon;</span><br>
@@ -294,51 +294,51 @@
 					</div>
 
 					<div id="opened-img" class="notation-entry">
-						<span class="notation-symbol"><math><mrow><mi>&gamma;</mi></mrow></math> &mdash;</span>
+						<span class="notation-symbol"><math><mi>&gamma;</mi></math> &mdash;</span>
 						
 						<p class="notation-description">
 							<span class="notation-title">Opened Image&colon;</span><br>
-							The resulting image after having been opened which involves first applying <a href="#erosion" target="_self">erosion</a> followed by <a href="#dilation" target="_self">dilation</a>.<br>
+							The resulting image after having been opened which involves first applying <a href="#erosion" target="_self">erosion &lpar; <math><mi>&ominus;</mi></math> &rpar;</a> followed by <a href="#dilation" target="_self">dilation &lpar; <math><mi>&oplus;</mi></math> &rpar;</a>.<br>
 							<math class="underline"><mi>&Iota;</mi><mi>&gamma;</mi><mo>= &lpar;</mo><mi>&Iota;</mi><mo>&ominus;</mo><mi>s</mi><mo>&rpar; &oplus;</mo><mi>s</mi></math>
 						</p>
 					</div>
 
 					<div id="closed-img" class="notation-entry">
-						<span class="notation-symbol"><math><mrow><mi>&#632;</mi></mrow></math> &mdash;</span>
+						<span class="notation-symbol"><math><mi>&#632;</mi></math> &mdash;</span>
 						
 						<p class="notation-description">
 							<span class="notation-title">Closed Image&colon;</span><br>
-							The resulting image after having been closed which involves first applying <a href="#dilation" target="_self">dilation</a> followed by <a href="#erosion" target="_self">erosion</a>.<br>
+							The resulting image after having been closed which involves first applying <a href="#dilation" target="_self">dilation &lpar; <math><mi>&oplus;</mi></math> &rpar;</a> followed by <a href="#erosion" target="_self">erosion &lpar; <math><mi>&ominus;</mi></math> &rpar;</a>.<br>
 							<math class="underline"><mi>&Iota;</mi><mi>&#632;</mi><mo>= &lpar;</mo><mi>&Iota;</mi><mo>&oplus;</mo><mi>s</mi><mo>&rpar; &ominus;</mo><mi>s</mi></math>
 						</p>
 					</div>
 
 					<div id="hit-or-miss" class="notation-entry">
-						<span class="notation-symbol"><math><mrow><mi>&odot;</mi></mrow></math> &mdash;</span>
+						<span class="notation-symbol"><math><mi>&odot;</mi></math> &mdash;</span>
 						
 						<p class="notation-description">
 							<span class="notation-title">Hit&hyphen;or&hyphen;Miss&colon;</span><br>
-							Detects specific patterns of pixels in an image by comparing foreground and background pixels to a <a href="composite-structuring-element">composite structuring element</a> &lpar; <math><mi>S</mi></math> &rpar;.
+							Detects specific patterns of <a href="#pixel" target="_self">pixels</a> in an <a href="#image" target="_self">image</a> by comparing foreground and background <a href="#pixel" target="_self">pixels</a> to a <a href="composite-structuring-element">composite structuring element</a>.
 						</p>
 					</div>
 
 					<div id="hit-or-miss-img" class="notation-entry">
-						<span class="notation-symbol"><math><mrow><mi>&eta;</mi></mrow></math> &mdash;</span>
+						<span class="notation-symbol"><math><mi>&eta;</mi></math> &mdash;</span>
 						
 						<p class="notation-description">
 							<span class="notation-title">Hit&hyphen;or&hyphen;Miss Result&colon;</span><br>
-							The output of the <a href="../tops/morphological/#hit-or-miss">Hit&hyphen;or&hyphen;Miss transformation</a>. Pixels are active only where the specified <a href="composite-structuring-element">composite structuring element</a>&rsquo;s pattern matches the input image exactly.<br>
-							<math class="underline"><mi>&Iota;</mi><mi>&eta;</mi><mo>= &lpar;</mo><mi>&Iota;</mi><mo>&odot;</mo><mi>s</mi><mo>&rpar;</mo></math>
+							The output of the <a href="#hit-or-miss" target="_self">Hit&hyphen;or&hyphen;Miss transformation <math><mi>&odot;</mi></math></a>. <a href="#pixel" target="_self">Pixels &lpar; <math><mi>&iota;</mi></math> &rpar;</a> are active only where the specified <a href="#composite-structuring-element" target="_self">composite structuring element&rsquo;s &lpar; <math><mi>S</mi></math> &rpar;</a> pattern matches the <a href="#image" target="_self">input image &lpar; <math><mi>&Iota;</mi></math> &rpar;</a> exactly.<br>
+							<math class="underline"><mi>&Iota;</mi><mi>&eta;</mi><mo>=</mo><mo>&lpar;</mo><mi>&Iota;</mi><mo>&odot;</mo><mi>S</mi><mo>&rpar;</mo></math>
 						</p>
 					</div>
 
 					<div id="structuring-element" class="notation-entry">
-						<span class="notation-symbol"><math><mrow><mi>s</mi></mrow></math> &mdash;</span>
+						<span class="notation-symbol"><math><mi>s</mi></math> &mdash;</span>
 						
 						<p class="notation-description">
 							<span class="notation-title">Structuring Element&colon;</span><br>
-							A predefined shape used in morphological operations to probe the image. The shape and size of the structuring element determine how these morphological operations interact with the objects in the input image.<br>
-							Much like a <a href="#kernel" target="_self">convolutional kernel</a>, structuring elements are defined as matrices, but a key difference is that cells can be designated as &ldquo;don&rsquo;t cares&rdquo; &lpar;marked with <math><mrow><mi>x</mi></mrow></math>&rsquo;s&rpar;, which are skipped during the morphological transformation. For example&colon;<br>
+							A predefined shape used in morphological operations to probe the <a href="#image" target="_self">image</a>. The shape and size of the structuring element determine how these morphological operations interact with the objects in the <a href="#image" target="_self">input image</a>.<br>
+							Much like a <a href="#kernel" target="_self">convolutional kernel</a>, structuring elements are defined as matrices, but a key difference is that cells can be designated as &ldquo;don&rsquo;t cares&rdquo; &lpar;marked with <math><mi>x</mi></math>&rsquo;s&rpar;, which are skipped during the morphological transformation. For example&colon;<br>
 
 							<math class="outline">
 								<mrow>
@@ -369,11 +369,11 @@
 					</div>
 
 					<div id="composite-structuring-element" class="notation-entry">
-						<span class="notation-symbol"><math><mrow><mi>S</mi></mrow></math> &mdash;</span>
+						<span class="notation-symbol"><math><mi>S</mi></math> &mdash;</span>
 						
 						<p class="notation-description">
 							<span class="notation-title">Composite Structuring Element&colon;</span><br>
-							A collection of <a href="#structuring-element">structuring element</a>, typically used in the <a href="../tops/morphological/#hit-or-miss">Hit&hyphen;or&hyphen;Miss transformation</a>, that usually include multiple rotations or variations of a base <a href="#structuring-element">structuring element</a>. This ensures that patterns can be detected regardless of their orientation within the input image. For example, in a Concave Corner mode:<br>
+							A collection of <a href="#structuring-element" target="_self">structuring element &lpar; <math><mi>s</mi></math> &rpar;</a>, typically used in the <a href="#hit-or-miss" target="_self">Hit&hyphen;or&hyphen;Miss transformation</a>, that usually include multiple rotations or variations of a base <a href="#structuring-element" target="_self">structuring element &lpar; <math><mi>s</mi></math> &rpar;</a>. This ensures that patterns can be detected regardless of their orientation within the <a href="#image" target="_self">input image</a>. For example, in a Concave Corner mode:<br>
 							<math class="outline">
 								<mrow>
 									<mi>S</mi>
@@ -534,7 +534,7 @@
 					<h3>SDFs&colon;</h3>
 
 					<div id="metric" class="notation-entry">
-						<span class="notation-symbol"><math><mrow><mi>d</mi></mrow></math> &mdash;</span>
+						<span class="notation-symbol"><math><mi>d</mi></math> &mdash;</span>
 
 						<p class="notation-description">
 							<span class="notation-title">Distance Metric&colon;</span><br>
@@ -543,29 +543,29 @@
 					</div>
 
 					<div id="boundary" class="notation-entry">
-						<span class="notation-symbol"><math><mrow><mi>&part;</mi></mrow></math> &mdash;</span>
+						<span class="notation-symbol"><math><mi>&part;</mi></math> &mdash;</span>
 
 						<p class="notation-description">
 							<span class="notation-title">Boundary&colon;</span><br>
-							Denotes the boundary of a shape or subset. In the context of SDFs, <math><mrow><mi>&part;</mi><mi>&Omega;</mi></mrow></math> represents the dividing line between interior and exterior regions &mdash; the reference from which signed distances are measured.
+							Denotes the boundary of a shape or subset. In the context of SDFs, <math><mi>&part;</mi><mi>&Omega;</mi></math> represents the dividing line between interior and exterior regions &mdash; the reference from which signed distances are measured.
 						</p>
 					</div>
 
 					<div id="subset" class="notation-entry">
-						<span class="notation-symbol"><math><mrow><mi>&Omega;</mi></mrow></math> &mdash;</span>
+						<span class="notation-symbol"><math><mi>&Omega;</mi></math> &mdash;</span>
 
 						<p class="notation-description">
 							<span class="notation-title">Subset&colon;</span><br>
-							Represents a region or set of pixels within the image space. In SDFs, <math><mrow><mi>&Omega;</mi></mrow></math> is the shape or area of interest, while its complement is the space outside the shape.
+							Represents a region or set of pixels within the image space. In SDFs, <math><mi>&Omega;</mi></math> is the shape or area of interest, while its complement is the space outside the shape.
 						</p>
 					</div>
 
 					<div id="sdf" class="notation-entry">
-						<span class="notation-symbol"><math><mrow><mi>&#7429;</mi></mrow></math> &mdash;</span>
+						<span class="notation-symbol"><math><mi>&#7429;</mi></math> &mdash;</span>
 
 						<p class="notation-description">
 							<span class="notation-title">Signed Distance Field&colon;</span><br>
-							Represents the Signed Distance Field &lpar;SDF&rpar; of an image &lpar; <math><mrow><mi>&Iota;</mi></mrow></math> &rpar;. Each pixel &lpar; <math><mrow><mi>&iota;</mi></mrow></math> &rpar; stores its signed distance to the nearest boundary &lpar; <math><mrow><mi>&part;</mi><mi>&Omega;</mi></mrow></math> &rpar; of the subset &lpar; <math><mrow><mi>&Omega;</mi></mrow></math> &rpar;. Negative values indicate pixels inside the subset, positive values outside. Multiple SDFs may be indexed as <math><msub><mrow><mi>&Iota;</mi><mi>&#7429;</mi></mrow><mrow><mn>1</mn></mrow></msub></math>, <math><msub><mrow><mi>&Iota;</mi><mi>&#7429;</mi></mrow><mrow><mn>2</mn></mrow></msub></math> when combining fields.
+							Represents the Signed Distance Field &lpar;SDF&rpar; of an <a href="#image" target="_self">image &lpar; <math><mi>&Iota;</mi></math> &rpar;</a>. Each <a href="#pixel" target="_self">pixel &lpar; <math><mi>&iota;</mi></math> &rpar;</a> stores its signed distance to the nearest <a href="#boundary" target="_self">boundary &lpar; <math><mi>&part;</mi><mi>&Omega;</mi></math> &rpar;</a> of the <a href="#subset" target="_self">subset &lpar; <math><mi>&Omega;</mi></math> &rpar;</a>. Negative values indicate pixels inside the subset, positive values outside. Multiple SDFs may be indexed as <math><msub><mrow><mi>&Iota;</mi><mi>&#7429;</mi></mrow><mrow><mn>1</mn></mrow></msub></math>, <math><msub><mrow><mi>&Iota;</mi><mi>&#7429;</mi></mrow><mrow><mn>2</mn></mrow></msub></math> when combining fields.
 						</p>
 					</div>
 				</section>
