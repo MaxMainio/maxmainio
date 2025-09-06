@@ -762,32 +762,251 @@
 						</p>
 
 						<p>
-							Chamfering works by first generating a new field through the addition of the two input SDFs. This creates a diagonal transition at the meeting point of the shapes, after normalization to ensure correct distance scaling, the <a href="https://en.wikipedia.org/wiki/Chamfer" target="_blank">chamfer</a> field is merged back into the result, producing the <a href="https://en.wikipedia.org/wiki/Bevel" target="_blank">beveled</a> union.
+							<a href="https://en.wikipedia.org/wiki/Chamfer" target="_blank">Chamfering</a> works by first generating a new field through the addition of the two input <a href="https://en.wikipedia.org/wiki/Signed_distance_function" target="_blank">SDF</a>s &lpar; <span title="Right click for a cheat sheet"><math><mi>&#7429;</mi></math></span> &rpar;. This creates a diagonal transition at the meeting point of the shapes, after <a href="https://en.wikipedia.org/wiki/Normalization_(image_processing)" target="_blank">normalization</a> to ensure correct distance scaling. This <a href="https://en.wikipedia.org/wiki/Chamfer" target="_blank">chamfer</a> field is then offset by the <a href="https://en.wikipedia.org/wiki/Chamfer" target="_blank">chamfer</a> size &lpar; <span title="Right click for a cheat sheet"><math><mi>c</mi></math></span> &rpar; and merged back into the result.
 						</p>
 
 						<p>
-							The provided union calculation methods are&colon;
+							The provided <a href="https://en.wikipedia.org/wiki/Union_(set_theory)" target="_blank">union calculation</a> methods are&colon;
 						</p>
 
 						<ol>
 							<li>
-								<h5>Union <a href="https://en.wikipedia.org/wiki/Chamfer" target="_blank">Chamfer</a>&colon;</h5>
+								<h5><a href="https://en.wikipedia.org/wiki/Union_(set_theory)" target="_blank">Union</a> <a href="https://en.wikipedia.org/wiki/Chamfer" target="_blank">Chamfer</a>&colon;</h5>
 								<p>
 									Expands the combined field with a <a href="https://en.wikipedia.org/wiki/Bevel" target="_blank">beveled</a> transition between shapes.
 								</p>
-							</li><br>
 
-							<li>
-								<h5>Intersection <a href="https://en.wikipedia.org/wiki/Chamfer" target="_blank">Chamfer</a>&colon;</h5>
-								<p>
-									Shrinks the overlap between shapes while adding the <a href="https://en.wikipedia.org/wiki/Bevel" target="_blank">beveled</a> transition.
+								<p class="maths">
+									<span title="Right click for a cheat sheet">
+										<math>
+											<msub>
+												<mrow>
+													<mi>&Iota;</mi><mi>&#7429;</mi>
+												</mrow>
+												<mrow>
+													<mn>1</mn>
+												</mrow>
+											</msub>
+											<mo>&cup;</mo>
+											<msub>
+												<mrow>
+													<mi>&Iota;</mi><mi>&#7429;</mi>
+												</mrow>
+												<mrow>
+													<mn>2</mn>
+												</mrow>
+											</msub>
+											<mo>=</mo>
+											<mi>min</mi>
+											<mo>&lpar;</mo>
+											<mi>min</mi>
+											<mo>&lpar;</mo>
+											<msub>
+												<mrow>
+													<mi>&Iota;</mi><mi>&#7429;</mi>
+												</mrow>
+												<mrow>
+													<mn>1</mn>
+												</mrow>
+											</msub>
+											<mo>,</mo>
+											<msub>
+												<mrow>
+													<mi>&Iota;</mi><mi>&#7429;</mi>
+												</mrow>
+												<mrow>
+													<mn>2</mn>
+												</mrow>
+											</msub>
+											<mo>&rpar;</mo>
+											<mo>,</mo>
+											<mo>&lpar;</mo>
+											<msub>
+												<mrow>
+													<mi>&Iota;</mi><mi>&#7429;</mi>
+												</mrow>
+												<mrow>
+													<mn>1</mn>
+												</mrow>
+											</msub>
+											<mo>&plus;</mo>
+											<msub>
+												<mrow>
+													<mi>&Iota;</mi><mi>&#7429;</mi>
+												</mrow>
+												<mrow>
+													<mn>2</mn>
+												</mrow>
+											</msub>
+											<mo>&rpar;</mo>
+											<msqrt>
+												<mn>0.5</mn>
+											</msqrt>
+											<mo>&minus;</mo>
+											<mi>c</mi>
+											<mo>&rpar;</mo>
+										</math>
+									</span>
 								</p>
 							</li><br>
 
 							<li>
-								<h5>Subtraction <a href="https://en.wikipedia.org/wiki/Chamfer" target="_blank">Chamfer</a>&colon;</h5>
+								<h5><a href="https://en.wikipedia.org/wiki/Intersection_(set_theory)" target="_blank">Intersection</a> <a href="https://en.wikipedia.org/wiki/Chamfer" target="_blank">Chamfer</a>&colon;</h5>
+								<p>
+									Shrinks the overlap between shapes while adding the <a href="https://en.wikipedia.org/wiki/Bevel" target="_blank">beveled</a> transition.
+								</p>
+
+								<p class="maths">
+									<span title="Right click for a cheat sheet">
+										<math>
+											<msub>
+												<mrow>
+													<mi>&Iota;</mi><mi>&#7429;</mi>
+												</mrow>
+												<mrow>
+													<mn>1</mn>
+												</mrow>
+											</msub>
+											<mo>&cap;</mo>
+											<msub>
+												<mrow>
+													<mi>&Iota;</mi><mi>&#7429;</mi>
+												</mrow>
+												<mrow>
+													<mn>2</mn>
+												</mrow>
+											</msub>
+											<mo>=</mo>
+											<mi>max</mi>
+											<mo>&lpar;</mo>
+											<mi>max</mi>
+											<mo>&lpar;</mo>
+											<msub>
+												<mrow>
+													<mi>&Iota;</mi><mi>&#7429;</mi>
+												</mrow>
+												<mrow>
+													<mn>1</mn>
+												</mrow>
+											</msub>
+											<mo>,</mo>
+											<msub>
+												<mrow>
+													<mi>&Iota;</mi><mi>&#7429;</mi>
+												</mrow>
+												<mrow>
+													<mn>2</mn>
+												</mrow>
+											</msub>
+											<mo>&rpar;</mo>
+											<mo>,</mo>
+											<mo>&lpar;</mo>
+											<msub>
+												<mrow>
+													<mi>&Iota;</mi><mi>&#7429;</mi>
+												</mrow>
+												<mrow>
+													<mn>1</mn>
+												</mrow>
+											</msub>
+											<mo>&plus;</mo>
+											<msub>
+												<mrow>
+													<mi>&Iota;</mi><mi>&#7429;</mi>
+												</mrow>
+												<mrow>
+													<mn>2</mn>
+												</mrow>
+											</msub>
+											<mo>&rpar;</mo>
+											<msqrt>
+												<mn>0.5</mn>
+											</msqrt>
+											<mo>&plus;</mo>
+											<mi>c</mi>
+											<mo>&rpar;</mo>
+										</math>
+									</span>
+								</p>
+							</li><br>
+
+							<li>
+								<h5><a href="https://www.mathwords.com/s/set_subtraction.htm" target="_blank">Subtraction</a> <a href="https://en.wikipedia.org/wiki/Chamfer" target="_blank">Chamfer</a>&colon;</h5>
 								<p>
 									Produces a <a href="https://en.wikipedia.org/wiki/Bevel" target="_blank">beveled</a> edge where one field is cut away from another.
+								</p>
+
+								<p class="maths">
+									<span title="Right click for a cheat sheet">
+										<math>
+											<msub>
+												<mrow>
+													<mi>&Iota;</mi><mi>&#7429;</mi>
+												</mrow>
+												<mrow>
+													<mn>1</mn>
+												</mrow>
+											</msub>
+											<mo>&setminus;</mo>
+											<msub>
+												<mrow>
+													<mi>&Iota;</mi><mi>&#7429;</mi>
+												</mrow>
+												<mrow>
+													<mn>2</mn>
+												</mrow>
+											</msub>
+											<mo>=</mo>
+											<mi>max</mi>
+											<mo>&lpar;</mo>
+											<mi>max</mi>
+											<mo>&lpar;</mo>
+											<msub>
+												<mrow>
+													<mi>&Iota;</mi><mi>&#7429;</mi>
+												</mrow>
+												<mrow>
+													<mn>1</mn>
+												</mrow>
+											</msub>
+											<mo>,</mo>
+											<msub>
+												<mrow>
+													<mo>&minus;</mo><mi>&Iota;</mi><mi>&#7429;</mi>
+												</mrow>
+												<mrow>
+													<mn>2</mn>
+												</mrow>
+											</msub>
+											<mo>&rpar;</mo>
+											<mo>,</mo>
+											<mo>&lpar;</mo>
+											<msub>
+												<mrow>
+													<mi>&Iota;</mi><mi>&#7429;</mi>
+												</mrow>
+												<mrow>
+													<mn>1</mn>
+												</mrow>
+											</msub>
+											<mo>&minus;</mo>
+											<msub>
+												<mrow>
+													<mi>&Iota;</mi><mi>&#7429;</mi>
+												</mrow>
+												<mrow>
+													<mn>2</mn>
+												</mrow>
+											</msub>
+											<mo>&rpar;</mo>
+											<msqrt>
+												<mn>0.5</mn>
+											</msqrt>
+											<mo>&plus;</mo>
+											<mi>c</mi>
+											<mo>&rpar;</mo>
+										</math>
+									</span>
 								</p>
 							</li>
 						</ol>
@@ -804,7 +1023,7 @@
 						<p>
 							<a href="https://github.com/MaxMainio/TD_" target="_blank">Download the .tox files</a><br>
 							<a href="https://en.wikipedia.org/wiki/Signed_distance_function" target="_blank">SDFs on Wikipedia</a><br>
-							<a href="https://www.ronja-tutorials.com/post/035-2d-sdf-combination/#union" target="_blank">2D SDF Combinations</a>
+							<a href="https://www.ronja-tutorials.com/post/035-2d-sdf-combination/#champfer" target="_blank">2D SDF Combinations</a>
 						</p>
 					</div>
 
@@ -996,7 +1215,7 @@
 
 						<ol>
 							<li>
-								<h5>Union &lpar;Merge&rpar;&colon;</h5>
+								<h5><a href="https://en.wikipedia.org/wiki/Union_(set_theory)" target="_blank">Union</a> &lpar;Merge&rpar;&colon;</h5>
 								<p>
 									Takes the minimum of the two <a href="https://en.wikipedia.org/wiki/Signed_distance_function" target="_blank">SDF &lpar; <span title="Right click for a cheat sheet"><math><mi>&#7429;</mi></math></span> &rpar;</a> values, combining both shapes into one. Any point inside either shape remains inside the result.
 								</p>
@@ -1004,8 +1223,6 @@
 								<p class="maths">
 									<span title="Right click for a cheat sheet">
 										<math>
-											<mi>&Iota;</mi><mi>&#7429;</mi>
-											<mo>=</mo>
 											<msub>
 												<mrow>
 													<mi>&Iota;</mi><mi>&#7429;</mi>
@@ -1050,7 +1267,7 @@
 							</li><br>
 
 							<li>
-								<h5>Intersection&colon;</h5>
+								<h5><a href="https://en.wikipedia.org/wiki/Intersection_(set_theory)" target="_blank">Intersection</a>&colon;</h5>
 								<p>
 									Takes the maximum of the two <a href="https://en.wikipedia.org/wiki/Signed_distance_function" target="_blank">SDF &lpar; <span title="Right click for a cheat sheet"><math><mi>&#7429;</mi></math></span> &rpar;</a> values, preserving only the overlapping regions of the shapes.
 								</p>
@@ -1058,8 +1275,6 @@
 								<p class="maths">
 									<span title="Right click for a cheat sheet">
 										<math>
-											<mi>&Iota;</mi><mi>&#7429;</mi>
-											<mo>=</mo>
 											<msub>
 												<mrow>
 													<mi>&Iota;</mi><mi>&#7429;</mi>
@@ -1104,7 +1319,7 @@
 							</li><br>
 
 							<li>
-								<h5>Subtraction&colon;</h5>
+								<h5><a href="https://www.mathwords.com/s/set_subtraction.htm" target="_blank">Subtraction</a>&colon;</h5>
 								<p>
 									Inverts one <a href="https://en.wikipedia.org/wiki/Signed_distance_function" target="_blank">SDF &lpar; <span title="Right click for a cheat sheet"><math><mi>&#7429;</mi></math></span> &rpar;</a> and intersects it with the other, effectively carving one shape out of another.
 								</p>
@@ -1112,8 +1327,6 @@
 								<p class="maths">
 									<span title="Right click for a cheat sheet">
 										<math>
-											<mi>&Iota;</mi><mi>&#7429;</mi>
-											<mo>=</mo>
 											<msub>
 												<mrow>
 													<mi>&Iota;</mi><mi>&#7429;</mi>
@@ -1145,7 +1358,7 @@
 											<mo>,</mo>
 											<msub>
 												<mrow>
-													<mi>&minus;&Iota;</mi><mi>&#7429;</mi>
+													<mo>&minus;</mo><mi>&Iota;</mi><mi>&#7429;</mi>
 												</mrow>
 												<mrow>
 													<mn>2</mn>
@@ -1159,11 +1372,11 @@
 						</ol>
 
 						<p>
-							The <a href="https://github.com/MaxMainio/TD_/blob/main/TOPs/SDF/SDF_Combiner_Smooth.tox" target="_blank">SDF Combiner Smooth</a> extends these operations by adding smoothing controls, allowing for gradual blending of boundaries &lpar; <span title="Right click for a cheat sheet"><math><mi>&Omega;</mi></math></span> &rpar; rather than abrupt transitions. This makes it possible to create soft unions, rounded intersections, and morph-like subtractions where shapes appear to flow into one another.
+							The <a href="https://github.com/MaxMainio/TD_/blob/main/TOPs/SDF/SDF_Combiner_Smooth.tox" target="_blank">SDF Combiner Smooth</a> extends these operations by adding smoothing controls, allowing for gradual blending of boundaries &lpar; <span title="Right click for a cheat sheet"><math><mi>&part;</mi><mi>&Omega;</mi></math></span> &rpar; rather than abrupt transitions. This makes it possible to create soft <a href="https://en.wikipedia.org/wiki/Union_(set_theory)" target="_blank">unions</a>, rounded <a href="https://en.wikipedia.org/wiki/Intersection_(set_theory)" target="_blank">intersections</a>, and morph&hyphen;like <a href="https://www.mathwords.com/s/set_subtraction.htm" target="_blank">subtractions</a> where shapes appear to flow into one another.
 						</p>
 
 						<p>
-							Together, these tools provide a flexible foundation for constructing complex forms from simple primitives, enabling both precise Boolean logic and more organic, continuous blends depending on the workflow.
+							Together, these tools provide a flexible foundation for constructing complex forms from <a href="https://en.wikipedia.org/wiki/Geometric_primitive" target="_blank">simple primitives</a>, enabling both precise <a href="https://www.lotame.com/resources/what-is-boolean-logic/" target="_blank">boolean logic</a> and more organic, continuous blends depending on the workflow.
 						</p>
 
 						<h5>Resources&colon;</h5>
