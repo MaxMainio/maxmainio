@@ -556,7 +556,16 @@
 
 						<p class="notation-description">
 							<span class="notation-title">Subset&colon;</span><br>
-							epresents a region or set of pixels within the image space. In SDFs, <math><mrow><mi>&Omega;</mi></mrow></math> is the shape or area of interest, while its complement is the space outside the shape.
+							Represents a region or set of pixels within the image space. In SDFs, <math><mrow><mi>&Omega;</mi></mrow></math> is the shape or area of interest, while its complement is the space outside the shape.
+						</p>
+					</div>
+
+					<div id="sdf" class="notation-entry">
+						<span class="notation-symbol"><math><mrow><mi>&#7429;</mi></mrow></math> &mdash;</span>
+
+						<p class="notation-description">
+							<span class="notation-title">Signed Distance Field&colon;</span><br>
+							Represents the Signed Distance Field &lpar;SDF&rpar; of an image &lpar; <math><mrow><mi>&Iota;</mi></mrow></math> &rpar;. Each pixel &lpar; <math><mrow><mi>&iota;</mi></mrow></math> &rpar; stores its signed distance to the nearest boundary &lpar; <math><mrow><mi>&part;</mi><mi>&Omega;</mi></mrow></math> &rpar; of the subset &lpar; <math><mrow><mi>&Omega;</mi></mrow></math> &rpar;. Negative values indicate pixels inside the subset, positive values outside. Multiple SDFs may be indexed as <math><msub><mrow><mi>&Iota;</mi><mi>&#7429;</mi></mrow><mrow><mn>1</mn></mrow></msub></math>, <math><msub><mrow><mi>&Iota;</mi><mi>&#7429;</mi></mrow><mrow><mn>2</mn></mrow></msub></math> when combining fields.
 						</p>
 					</div>
 				</section>
