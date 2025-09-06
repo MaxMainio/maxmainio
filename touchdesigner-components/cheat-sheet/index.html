@@ -234,20 +234,40 @@
 					<h3>Histogram&colon;</h3>
 
 					<div id="histogram" class="notation-entry">
-						<span class="notation-symbol"><math><mrow><mi>p</mi><mo>,</mo><mi>q</mi></mrow></math></span>
+						<span class="notation-symbol"><math><mi>h</mi></math> &mdash;</span>
 
 						<p class="notation-description">
 							<span class="notation-title">Histograms&colon;</span><br>
-							Lowercase letters denote histograms as statistical distributions. Individual bin values are indexed as <math><mrow><msub><mi>p</mi><mi>i</mi></msub><mo>, </mo><msub><mi>q</mi><mi>i</mi></msub></mrow></math>, representing the frequency &lpar;or normalized frequency&rpar; of intensity value <math><mrow><mi>i</mi></mrow></math>.
+							Represents the statistical distribution of pixel intensities.<br>
+							<math><msub><mi>h</mi><mi>i</mi></msub></math> denote the cumulative proportion of <a href="#pixel" target="_self">pixels</a> up to intensity value <math><mi>i</mi></math>.
 						</p>
 					</div>
 
 					<div id="cdf" class="notation-entry">
-						<span class="notation-symbol"><math><mi>P</mi><mo>,</mo><mi>Q</mi></math></span>
+						<span class="notation-symbol"><math><mi>H</mi></math> &mdash;</span>
 
 						<p class="notation-description">
 							<span class="notation-title">Cumulative Distribution Functions &lpar;CDFs&rpar;&colon;</span><br>
-							Uppercase letters denote cumulative distributions derived from <a href="#histograms" target="_self">histograms</a>. Individual cumulative values are indexed as <math><mrow><msub><mi>P</mi><mi>i</mi></msub><mo>, </mo><msub><mi>Q</mi><mi>i</mi></msub></mrow></math>, representing the cumulative proportion of pixels up to bin <math><mrow><mi>i</mi></mrow></math>.
+							Represents the cumulative sum of <a href="#histograms" target="_self">histogram</a> values.<br>
+							<math><msub><mi>H</mi><mi>i</mi></msub></math> denote the cumulative proportion of <a href="#pixel" target="_self">pixels</a> up to intensity value <math><mi>i</mi></math>.
+						</p>
+					</div>
+
+					<div id="intensity-range" class="notation-entry">
+						<span class="notation-symbol"><math><mi>L</mi></math> &mdash;</span>
+
+						<p class="notation-description">
+							<span class="notation-title">Intensity Range&colon;</span><br>
+							Defines the maximum number of intensity levels in an <a href="#image" target="_self">image</a>. For 8&hyphen;bit grayscale, L = 256.
+						</p>
+					</div>
+
+					<div id="equalized-pixel" class="notation-entry">
+						<span class="notation-symbol"><math><mi>&Iota;</mi><mo>&apos;</mo><mo>&lpar;</mo><mi>&iota;</mi><mo>&rpar;</mo></math></span>
+
+						<p class="notation-description">
+							<span class="notation-title">Equalized Pixel Value&colon;</span><br>
+							The remapped intensity of a pixel <math><mi>&iota;</mi></math> after <a href="#histogram" target="_self">histogram</a> equalization, derived from its <a href="#cdf" target="_self">CDF</a> value.
 						</p>
 					</div>
 				</section>
@@ -566,7 +586,7 @@
 						<p class="notation-description">
 							<span class="notation-title">Boundary Pixel&colon;</span><br>
 							Represents the nearest boundary pixel relative to a given <a href="#pixel" target="_self">pixel &lpar; <math><mi>&iota;</mi></math> &rpar;</a>.<br>
-							<math><msub><mi>&iota;</mi><mi>&beta;</mi></msub></math> denotes the nearest boundary pixel to <a href="#pixel" target="_self">pixel &lpar; <math><mi>&iota;</mi></math> &rpar;</a>.<br>
+							<math><msub><mi>&iota;</mi><mi>&beta;</mi></msub></math> denotes the nearest boundary pixel to <a href="#pixel" target="_self">pixel &lpar; <math><mi>&iota;</mi></math> &rpar;</a>,<br>
 							<math><mi>&Iota;</mi><mo>&lpar;</mo><msub><mi>&iota;</mi><mi>&beta;</mi></msub><mo>&rpar;</mo></math> denotes the value of the <a href="#image" target="_self">input image &lpar; <math><mi>&Iota;</mi></math> &rpar;</a> at that boundary pixel.
 						</p>
 					</div>
@@ -603,6 +623,28 @@
 							<span class="notation-title">Intersection&colon;</span><br>
 							Represents the intersection of two sets.<br>
 							In the context of <a href="#sdf" target="_self">Signed Distance Fields</a>, this is typically implemented as the minimum of two input values.
+						</p>
+					</div>
+
+					<div id="element" class="notation-entry">
+						<span class="notation-symbol"><math><mi>&isin;</mi></math> &mdash;</span>
+
+						<p class="notation-description">
+							<span class="notation-title">Element of&colon;</span><br>
+							Indicates that an element belongs to a set.<br>
+							In the context of image processing, it expresses that a <a href="#pixel" target="_self">pixel &lpar; <math><mi>&iota;</mi></math> &rpar;</a> lies inside a <a href="#subset" target="_self">subset &lpar; <math><mi>&Omega;</mi></math> &rpar;</a>. For example&colon;<br>
+							<math><mi>&iota;</mi><mo>&isin;</mo><mi>&Omega;</mi></math>
+						</p>
+					</div>
+
+					<div id="not-element" class="notation-entry">
+						<span class="notation-symbol"><math><mi>&notin;</mi></math> &mdash;</span>
+
+						<p class="notation-description">
+							<span class="notation-title">Not an Element of&colon;</span><br>
+							Indicates that an element does not belongs to a set.<br>
+							In the context of image processing, it expresses that a <a href="#pixel" target="_self">pixel &lpar; <math><mi>&iota;</mi></math> &rpar;</a> lies outside a <a href="#subset" target="_self">subset &lpar; <math><mi>&Omega;</mi></math> &rpar;</a>. For example&colon;<br>
+							<math><mi>&iota;</mi><mo>&notin;</mo><mi>&Omega;</mi></math>
 						</p>
 					</div>
 
