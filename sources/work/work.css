@@ -105,6 +105,10 @@ html{
     }
 }
 
+div.index-row{
+    color: var(--anti-type);
+}
+
 
 
 
@@ -222,6 +226,28 @@ hgroup{
         -ms-flex-pack: center;
             justify-content: center;
     height: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+/* Nike ------------------------------------------------------------------------------------------------------------------------- */
+.swoosh{
+    width: 100%;
+    position: absolute;
+    inset: auto 0 0 0;
+
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-position: center;
 }
 
 
