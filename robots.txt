@@ -5,23 +5,7 @@ Disallow: /assets/no-index/
 
 Disallow: /about/assets/
 
-Disallow: /touchdesigner-components/assets/no-index/
-Disallow: /touchdesigner-components/cheat-sheet/
-Disallow: /touchdesigner-components/tops/advanced-detectors/assets/no-index/
-Disallow: /touchdesigner-components/tops/edge-detectors/assets/no-index/
-Disallow: /touchdesigner-components/tops/fourier-transformers/assets/no-index/
-Disallow: /touchdesigner-components/tops/image-analysis/assets/no-index/
-Disallow: /touchdesigner-components/tops/misc-processors/assets/no-index/
-Disallow: /touchdesigner-components/tops/morphologicalassets/no-index/
-Disallow: /touchdesigner-components/tops/noise/assets/no-index/
-Disallow: /touchdesigner-components/tops/normalizers/assets/no-index/
-Disallow: /touchdesigner-components/tops/point-operators/assets/no-index/
-Disallow: /touchdesigner-components/tops/pyramids/assets/no-index/
-Disallow: /touchdesigner-components/tops/segmentors/assets/no-index/
-Disallow: /touchdesigner-components/tops/shaping-functions/assets/no-index/
-Disallow: /touchdesigner-components/tops/signed-distance-fields/assets/no-index/
-Disallow: /touchdesigner-components/tops/solidifiers/assets/no-index/
-Disallow: /touchdesigner-components/tops/video-processors/assets/no-index/
+
 
 Disallow: /work/acetate-melt/assets/no-index/
 Disallow: /work/bloom/assets/no-index/
@@ -36,7 +20,23 @@ Disallow: /work/generative-poems/assets/no-index/
 Disallow: /work/hedera/assets/no-index/
 Disallow: /work/homodeus/assets/no-index/
 Disallow: /work/lawn-texture/assets/no-index/
+Disallow: /work/nike/assets/no-index/
 Disallow: /work/playlist-covers/assets/no-index/
 Disallow: /work/ruotuvaki/assets/no-index/
 Disallow: /work/seam-carving/assets/no-index/
 Disallow: /work/sort-later/assets/no-index/
+
+
+
+Disallow: /touchdesigner-components/assets/no-index/
+Disallow: /touchdesigner-components/cheat-sheet/
+Disallow: /touchdesigner-components/tops/edge-detectors/assets/no-index/
+Disallow: /touchdesigner-components/tops/histogram/assets/no-index/
+Disallow: /touchdesigner-components/tops/mapping/assets/no-index/
+Disallow: /touchdesigner-components/tops/math/assets/no-index/
+Disallow: /touchdesigner-components/tops/math/arithmetic/assets/no-index/
+Disallow: /touchdesigner-components/tops/math/calculus/assets/no-index/
+Disallow: /touchdesigner-components/tops/math/matrix/assets/no-index/
+Disallow: /touchdesigner-components/tops/math/vectors/assets/no-index/
+Disallow: /touchdesigner-components/tops/morphologicalassets/no-index/
+Disallow: /touchdesigner-components/tops/signed-distance-fields/assets/no-index/
