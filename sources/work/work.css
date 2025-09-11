@@ -238,6 +238,20 @@ hgroup{
 
 
 /* Nike ------------------------------------------------------------------------------------------------------------------------- */
+.nike-content{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+}
+
+#nike-hero{
+    position: absolute;
+    height: 100%;
+}
+
 .swoosh{
     width: 100%;
     position: absolute;
