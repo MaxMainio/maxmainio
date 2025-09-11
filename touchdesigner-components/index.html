@@ -32,6 +32,26 @@
 		<link rel="stylesheet" type="text/css" href="sources/tdmain.css">
 
 		<script src="../../sources/global/main.js" defer></script>
+		<script type="application/ld+json">
+			{
+				"@context": "https://schema.org",
+				"@type": "BreadcrumbList",
+				"itemListElement": [
+					{
+						"@type": "ListItem",
+						"position": 1,
+						"name": "Work",
+						"item": "https://maxmain.io/"
+					},
+					{
+						"@type": "ListItem",
+						"position": 2,
+						"name": "TouchDesigner Components",
+						"item": "https://maxmain.io/touchdesigner-components/"
+					}
+				]
+			}
+		</script>
 	</head>
 
 	<body>
@@ -82,10 +102,10 @@
 
 				<div id="hidden-divider"></div>
 
-				<section class="documentation tdmain">
+				<section id="tops" class="documentation tdmain">
 					<h2 class="top-text">
 						<a href="https://docs.derivative.ca/TOP" target="_blank">
-							 TOPs
+							TOPs
 						</a>
 					</h2>
 
@@ -665,7 +685,7 @@
 
 				<hr>
 
-				<section class="documentation tdmain">
+				<section id="chops" class="documentation tdmain">
 					<h2 class="chop-text">
 						<a href="https://docs.derivative.ca/CHOP" target="_blank">
 							CHOPs
@@ -704,7 +724,7 @@
 
 				<hr>
 
-				<section class="documentation tdmain">
+				<section id="sops" class="documentation tdmain">
 					<h2 class="sop-text">
 						<a href="https://docs.derivative.ca/SOP" target="_blank">
 							SOPs
