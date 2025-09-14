@@ -693,10 +693,10 @@
 
 						<div>
 							<h4>Parameters</h4>
-							<h5>Alpha Threshold&colon;</h5>
+							<!-- <h5>Alpha Threshold&colon;</h5>
 							<p>
 								Defines the cutoff value used to interpret the <a href="https://www.linearity.io/blog/alpha-channel/" target="_blank">alpha channel</a> as a binary mask. Pixels above the threshold are considered foreground, while those below are background. This determines the boundaries from which the Signed Distance Field is calculated.
-							</p>
+							</p> -->
 
 							<h5><a href="https://en.wikipedia.org/wiki/Metric_space" target="_blank">Metric</a>:</h5>
 							<p>
@@ -714,6 +714,18 @@
 								An X/Y scaling factor applied to the <a href="https://en.wikipedia.org/wiki/Signed_distance_function" target="_blank">SDF</a> calculation. Allows distances to be warped, stretching the field horizontally or vertically.
 							</p>
 
+							<h5>Unit&colon;</h5>
+							<p>
+								Specifies the measurement unit for distance values in the <a href="https://en.wikipedia.org/wiki/Signed_distance_function" target="_blank">Signed Distance Field</a>.<br>
+								When set to <i>UV Space</i> distances are calculated in normalized UV coordinates &lpar;0&ndash;1&rpar;<br>
+								When set to <i>Pixel Step</i> distances are measured in pixel units. Each pixel contributes a fixed value to the distance, controlled by the <i>Step Size</i> parameter.
+							</p>
+
+							<h5>Step Size&colon;</h5>
+							<p>
+								Determines the distance increment for each pixel when the <i>Unit</i> parameter is set to <i>Pixel Step.</i> This defines how much each pixel contributes to the total distance value in the <a href="https://en.wikipedia.org/wiki/Signed_distance_function" target="_blank">Signed Distance Field</a>. Larger values result in a faster-growing field, while smaller values provide finer control over distance granularity.
+							</p>
+
 							<hr/>
 
 							<h5>Clamp Negatives&colon;</h5>
@@ -721,10 +733,10 @@
 								Restricts the <a href="https://en.wikipedia.org/wiki/Signed_distance_function" target="_blank">SDF</a> to only encode distances outside of shapes. When enabled, interior distances are clamped to zero.
 							</p>
 
-							<h5>Normalize&colon;</h5>
+							<!-- <h5>Normalize&colon;</h5>
 							<p>
 								Rescales the <a href="https://en.wikipedia.org/wiki/Signed_distance_function" target="_blank">SDF</a> values to fit between 0 and 1.
-							</p>
+							</p> -->
 
 							<h5>Invert&colon;</h5>
 							<p>
@@ -1665,10 +1677,10 @@
 
 							<hr/>
 
-							<h5>Alpha Threshold&colon;</h5>
+							<!-- <h5>Alpha Threshold&colon;</h5>
 							<p>
 								Defines the cutoff value used to interpret the <a href="https://www.linearity.io/blog/alpha-channel/" target="_blank">alpha channel</a> as a binary mask. Pixels above the threshold are considered foreground, while those below are background. This determines the boundaries from which the Signed Distance Field is calculated.
-							</p>
+							</p> -->
 	
 							<h5>Metric&colon;</h5>
 							<p>
@@ -1684,6 +1696,18 @@
 							<h5>Scale Space&colon;</h5>
 							<p>
 								An X/Y scaling factor applied to the <a href="https://en.wikipedia.org/wiki/Signed_distance_function" target="_blank">SDF</a> calculation. Allows distances to be warped, stretching the field horizontally or vertically.
+							</p>
+
+							<h5>Unit&colon;</h5>
+							<p>
+								Specifies the measurement unit for distance values in the <a href="https://en.wikipedia.org/wiki/Signed_distance_function" target="_blank">Signed Distance Field</a>.<br>
+								When set to <i>UV Space</i> distances are calculated in normalized UV coordinates &lpar;0&ndash;1&rpar;<br>
+								When set to <i>Pixel Step</i> distances are measured in pixel units. Each pixel contributes a fixed value to the distance, controlled by the <i>Step Size</i> parameter.
+							</p>
+
+							<h5>Step Size&colon;</h5>
+							<p>
+								Determines the distance increment for each pixel when the <i>Unit</i> parameter is set to <i>Pixel Step.</i> This defines how much each pixel contributes to the total distance value in the <a href="https://en.wikipedia.org/wiki/Signed_distance_function" target="_blank">Signed Distance Field</a>. Larger values result in a faster-growing field, while smaller values provide finer control over distance granularity.
 							</p>
 
 							<hr/>
@@ -1834,16 +1858,14 @@
 
 						<div>
 							<h4>Parameters</h4>
-							<h5>Alpha threshold&colon;</h5>
+							<!-- <h5>Alpha threshold&colon;</h5>
 							<p>
 								Defines the cutoff value used to interpret the <a href="https://www.linearity.io/blog/alpha-channel/" target="_blank">alpha channel</a> as a binary mask. Pixels above the threshold are considered foreground, while those below are background. This determines the boundaries from which the <a href="https://en.wikipedia.org/wiki/Signed_distance_function" target="_blank">Signed Distance Field</a> is calculated.
-							</p>
+							</p> -->
 
 							<h5>Method&colon;</h5>
 							<p>
 								Determines how propagated boundary values are applied to the <a href="https://en.wikipedia.org/wiki/Signed_distance_function" target="_blank">Signed Distance Field</a>. Options include&colon;<br>
-								Internal Negatives &lpar;adds the propagated values to the <a href="https://en.wikipedia.org/wiki/Signed_distance_function" target="_blank">SDF</a>&rpar; or<br>
-								External Negatives &lpar;subtracts the propagated values to the <a href="https://en.wikipedia.org/wiki/Signed_distance_function" target="_blank">SDF</a>&rpar;
 							</p>
 
 							<hr/>
@@ -1863,7 +1885,26 @@
 							<p>
 								An X/Y scaling factor applied to the <a href="https://en.wikipedia.org/wiki/Signed_distance_function" target="_blank">SDF</a> calculation. Allows distances to be warped, stretching the field horizontally or vertically.
 							</p>
+
+							<h5>Unit&colon;</h5>
+							<p>
+								Specifies the measurement unit for distance values in the <a href="https://en.wikipedia.org/wiki/Signed_distance_function" target="_blank">Signed Distance Field</a>.<br>
+								When set to <i>UV Space</i> distances are calculated in normalized UV coordinates &lpar;0&ndash;1&rpar;<br>
+								When set to <i>Pixel Step</i> distances are measured in pixel units. Each pixel contributes a fixed value to the distance, controlled by the <i>Step Size</i> parameter.
+							</p>
+
+							<h5>Step Size&colon;</h5>
+							<p>
+								Determines the distance increment for each pixel when the <i>Unit</i> parameter is set to <i>Pixel Step.</i> This defines how much each pixel contributes to the total distance value in the <a href="https://en.wikipedia.org/wiki/Signed_distance_function" target="_blank">Signed Distance Field</a>. Larger values result in a faster-growing field, while smaller values provide finer control over distance granularity.
+							</p>
 	
+							<hr/>
+
+							<h5>Invert&colon;</h5>
+							<p>
+								Flips the sign of the <a href="https://en.wikipedia.org/wiki/Signed_distance_function" target="_blank">SDF</a> so that areas considered inside become outside, and vice versa.
+							</p>
+
 							<hr/>
 	
 							<h5>reCalculate&colon;</h5>
