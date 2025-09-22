@@ -21,6 +21,10 @@ html{
     scroll-behavior: auto;
 }
 
+:root{
+    --swoosh-color:#f60;
+}
+
 
 
 
@@ -238,30 +242,43 @@ hgroup{
 
 
 /* Nike ------------------------------------------------------------------------------------------------------------------------- */
-.nike-content{
+#nike .mid-container {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-}
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 
-#nike-hero{
-    position: absolute;
-    height: 100%;
-}
+    & > a.hero {
+        display: block;
+        position: relative;
+        height: 100%;
 
-.swoosh{
-    width: 100%;
-    position: absolute;
-    inset: auto 0 0 0;
+        pointer-events: all;
 
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    background-position: center;
+        & img {
+            height: 100%;
+        }
+    }
+
+    & > a.swoosh {
+        width: 100%;
+        position: absolute;
+        inset: auto 0 0 0;
+
+        &:hover{
+            background-color: rgba(0, 0, 0, 0);
+        }
+
+        & > svg * {
+            fill: var(--swoosh-color);
+            pointer-events: visibleFill;
+        }
+    }
 }
 
 

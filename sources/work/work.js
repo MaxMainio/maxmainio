@@ -216,6 +216,54 @@ function applyParallax(windowPos) {
 
 
 
+// NIKE SECTION	====================================================================================================================
+const nikeHero = document.getElementById('nike-hero');
+
+if (nikeHero) {
+	const heroImages = [
+		{
+			src: 'work/nike/assets/content/2025/phantom-6/turn-table/high/phantom-6-high-detail.avif',
+			blur: '(work/nike/assets/no-index/2025/phantom-6/turn-table/high/phantom-6-high-detail-blurry.webp',
+			alt: 'Detail image of the underside of the Nike Phantom 6 football cleat.',
+			title: 'Detail image of the underside of the Nike Phantom 6 football cleat.'
+		},
+		{
+			src: 'work/nike/assets/content/2025/run-swoosh/marketing/runswoosh-1.jpg',
+			blur: '(work/nike/assets/no-index/2025/run-swoosh/marketing/runswoosh-1-blurry.jpg',
+			alt: 'Runner in motion on a track wearing the Run Swoosh Vomero 18s.',
+			title: 'Runner in motion on a track wearing the Run Swoosh Vomero 18s.'
+		},
+		{
+			src: 'work/nike/assets/content/2025/run-swoosh/marketing/runswoosh-2.jpg',
+			blur: '(work/nike/assets/no-index/2025/run-swoosh/marketing/runswoosh-2-blurry.jpg',
+			alt: 'Runner stretching on a track while wearing the Run Swoosh Vomero 18s.',
+			title: 'Runner stretching on a track while wearing the Run Swoosh Vomero 18s.'
+		},
+		{
+			src: 'work/nike/assets/content/2025/sabrina-3-hoopers-blueprint/marketing/sabrina-3-hero.webp',
+			blur: 'work/nike/assets/no-index/2025/sabrina-3-hoopers-blueprint/marketing/sabrina-3-hero-blurry.webp',
+			alt: "Sabrina Ionescu dribbling on a basketball court while wearing the Nike Sabrina 3 in the launch Hooper's Blueprint colorway.",
+			title: "Sabrina Ionescu in the Nike Sabrina 3 Hooper's Blueprint colorway"
+		}
+	];
+
+	const randomIndex = getRandomInt(0, heroImages.length - 1);
+	const chosen = heroImages[randomIndex];
+
+	nikeHero.src = chosen.src;
+	nikeHero.style.backgroundImage = chosen.blur;
+	nikeHero.alt = chosen.alt;
+	nikeHero.title = chosen.title;
+}
+
+
+
+
+
+
+
+
+
 // HEDERA SECTION	================================================================================================================
 // Trigger	------------------------------------------------------------------------------------------------------------------------
 let hasTyped = false;
