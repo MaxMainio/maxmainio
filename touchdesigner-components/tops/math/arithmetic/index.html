@@ -253,7 +253,7 @@
 				<section id="mean" class="documentation">
 					<div class="docuinfo">
 						<h2>Mean</h2>
-						<h3>Multi&hyphen;Input Averaging Operator</h3>
+						<h3>Multi&hyphen;Input <a href="https://en.wikipedia.org/wiki/Average" target="_blank">Averaging</a> Operator</h3>
 						<p>
 							While the term <a href="https://www.cuemath.com/data/difference-between-average-and-mean/#:~:text=Download-,Difference%20Between%20Average%20and%20Mean,-Average%20and%20mean" target="_blank">average is often used generically</a>, the mean defines a specific mathematical approach to averaging &mdash; one that determines a central or representative value among multiple inputs. In image processing, mean operations can blend, stabilize, or normalize data across several images, producing smoother transitions and reducing local variance.
 						</p>
@@ -525,19 +525,19 @@
 
 							<h5>Include Alpha&colon;</h5>
 							<p>
-								Toggles whether the <a href="https://www.linearity.io/blog/alpha-channel/" target="_blank">alpha channel</a> is included in the <a href="https://en.wikipedia.org/wiki/Mean" target="_blank">mean calculation</a>. When disabled, only RGB channels are processed while the alpha channel is passed through unchanged.
+								Toggles whether the <a href="https://www.linearity.io/blog/alpha-channel/" target="_blank">alpha channel</a> is included in the <a href="https://en.wikipedia.org/wiki/Mean" target="_blank">mean calculation</a>. When disabled, only RGB channels are processed while the <a href="https://www.linearity.io/blog/alpha-channel/" target="_blank">alpha channel</a> is passed through unchanged.
 							</p>
 	
 							<hr/>
 	
 							<h5>Add Input&colon;</h5>
 							<p>
-								Adds an additional TOP input to be included in the <a href="https://en.wikipedia.org/wiki/Mean" target="_blank">mean calculation</a>.
+								Adds an additional <a href="https://derivative.ca/UserGuide/TOP" target="_blank">TOP input</a> to be included in the <a href="https://en.wikipedia.org/wiki/Mean" target="_blank">mean calculation</a>.
 							</p>
 
 							<h5>Remove Input&colon;</h5>
 							<p>
-								Removes the last TOP input of the Mean COMP.
+								Removes the last <a href="https://derivative.ca/UserGuide/TOP" target="_blank">TOP input</a> of the <a href="https://github.com/MaxMainio/TD_/blob/main/TOPs/Math/Arithmetic/Mean.tox" target="_blank">Mean COMP</a>.
 							</p>
 
 							<h4>In&hyphen; &sol; Outputs</h4>
@@ -546,7 +546,7 @@
 							</p>
 
 							<p>
-								<b>Output 0</b> &mdash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> Lorem ipsum...
+								<b>Output 0</b> &mdash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> calculated <a href="https://en.wikipedia.org/wiki/Mean" target="_blank">mean</a> of the input image.
 							</p>
 
 							<p style="margin-top: 1rem;">
@@ -561,10 +561,101 @@
 				<section id="median" class="documentation">
 					<div class="docuinfo">
 						<h2>Median</h2>
-						<h3>Multi&hyphen;Input Averaging Operator</h3>
+						<h3>Multi&hyphen;Input <a href="https://en.wikipedia.org/wiki/Central_tendency" target="_blank">Central Tendency</a> Operator</h3>
 						<p>
-							Lorem ipsum...
+							While the mean defines an average based on arithmetic or proportional relationships, the median family of operations determines the central or most representative pixel value from multiple inputs. These operations emphasize stability and resistance to outliers &mdash; providing more perceptually consistent results when combining images that contain sharp intensity contrasts, noise, or irregular exposure levels.
 						</p>
+
+						<p>
+							The different operations available in this component describe alternative approaches to finding a <i>central</i> value among inputs, each suited to distinct image&hyphen;processing goals&colon;
+						</p>
+
+						<ol>
+							<li>
+								<h5><a href="https://en.wikipedia.org/wiki/Median" target="_blank">Median</a></h5>
+								
+								<p>
+									Identifies the middle pixel value among all inputs when they are ordered by intensity. Unlike the <a href="#mean" target="_self">arithmetic mean</a>, the median is unaffected by extreme values, making it ideal for denoising, temporal filtering, and exposure balancing.
+								</p>
+							</li><br>
+
+							<li>
+								<h5><a href="https://en.wikipedia.org/wiki/Mode_(statistics)" target="_blank">Mode</a></h5>
+
+								<p>
+									Selects the most frequently occurring pixel value among inputs. This emphasizes recurring features or dominant tones, often used when consolidating multiple nearly identical images or pattern repetitions.<br>
+									A tolerance value &lpar; <math><mi>&epsilon;</mi></math> &rpar; defines the range within which pixel values are considered equivalent.
+								</p>
+							</li><br>
+
+							<li>
+								<h5><a href="https://en.wikipedia.org/wiki/Mid-range" target="_blank">Mid&hyphen;Range</a></h5>
+
+								<p>
+									Calculates the midpoint between the minimum and maximum pixel values, providing a simple yet fast approximation of the central intensity. While less robust to outliers than the median, it can be useful for quick tone balancing or establishing exposure baselines.<br>
+									Defined as&colon;
+								</p>
+
+								<p class="maths">
+									<span title="Right click for a cheat sheet">
+										<math class="outline">
+											<mrow>
+												<mfrac>
+													<mrow>
+														<mi>min</mi>
+														<mo>&lpar;</mo>
+														<msub>
+															<mi>&Iota;</mi>
+															<mi>1</mi>
+														</msub>
+														<mi>,</mi>
+														<msub>
+															<mi>&Iota;</mi>
+															<mi>2</mi>
+														</msub>
+														<mi>,</mi>
+														<mi>...</mi>
+														<mi>,</mi>
+														<msub>
+															<mi>&Iota;</mi>
+															<mi>n</mi>
+														</msub>
+														<mo>&rpar;</mo>
+														<mo>&plus;</mo>
+														<mi>max</mi>
+														<mo>&lpar;</mo>
+														<msub>
+															<mi>&Iota;</mi>
+															<mi>1</mi>
+														</msub>
+														<mi>,</mi>
+														<msub>
+															<mi>&Iota;</mi>
+															<mi>2</mi>
+														</msub>
+														<mi>,</mi>
+														<mi>...</mi>
+														<mi>,</mi>
+														<msub>
+															<mi>&Iota;</mi>
+															<mi>n</mi>
+														</msub>
+														<mo>&rpar;</mo>
+													</mrow>
+													<mrow>
+														<mi>2</mi>
+													</mrow>
+												</mfrac>
+											</mrow>
+										</math>
+									</span>
+								</p>
+
+								<p>
+									By unifying these three operations into a single framework, the <a href="https://github.com/MaxMainio/TD_/blob/main/TOPs/Math/Arithmetic/Median.tox" target="_blank">Median COMP</a> offers flexible methods for deriving central or dominant intensity representations across multiple images. It serves as a practical tool for temporal smoothing, noise reduction, mode-based compositing, and adaptive blending workflows in both analytical and creative contexts.
+								</p>
+							</li>
+						</ol>
 
 						<h5>Resources&colon;</h5>
 						<p>
@@ -648,31 +739,31 @@
 							<h4>Parameters</h4>
 							<h5>Operation&colon;</h5>
 							<p>
-								Specifies which central tendency calculation is performed across the input images&colon;<br>
-								Median, Mode, Mid&hyphen;Range.
+								Specifies which <a href="https://en.wikipedia.org/wiki/Central_tendency" target="_blank">central tendency</a> calculation is performed across the input images&colon;<br>
+								<a href="https://en.wikipedia.org/wiki/Median" target="_blank">Median</a>, <a href="https://en.wikipedia.org/wiki/Mode_(statistics)" target="_blank">Mode</a>, <a href="https://en.wikipedia.org/wiki/Mid-range" target="_blank">Mid&hyphen;Range</a>.
 							</p>
 
 							<h5>Epsilon&colon;</h5>
 							<p>
-								Active only when the <i>Operation</i> parameter is set to <i>Mode</i>.<br>
-								Defines a tolerance range used to group pixel values considered equivalent when identifying the mode. This prevents instability from minor numerical differences and ensures smoother mode estimation across floating&hyphen;point data.
+								Active only when the <i>Operation</i> parameter is set to <a href="https://en.wikipedia.org/wiki/Mode_(statistics)" target="_blank"><i>Mode</i></a>.<br>
+								Defines a tolerance range used to group pixel values considered equivalent when identifying the <a href="https://en.wikipedia.org/wiki/Mode_(statistics)" target="_blank">mode</a>. This prevents instability from minor numerical differences and ensures smoother <a href="https://en.wikipedia.org/wiki/Mode_(statistics)" target="_blank">mode</a> estimation across <a href="https://en.wikipedia.org/wiki/Floating-point_arithmetic" target="_blank">floating&hyphen;point data</a>.
 							</p>
 
 							<h5>Include Alpha&colon;</h5>
 							<p>
-								Toggles whether the <a href="https://www.linearity.io/blog/alpha-channel/" target="_blank">alpha channel</a> is included in the central tendency calculation. When disabled, only RGB channels are processed while the alpha channel is passed through unchanged.
+								Toggles whether the <a href="https://www.linearity.io/blog/alpha-channel/" target="_blank">alpha channel</a> is included in the <a href="https://en.wikipedia.org/wiki/Central_tendency" target="_blank">central tendency</a> calculation. When disabled, only RGB channels are processed while the <a href="https://www.linearity.io/blog/alpha-channel/" target="_blank">alpha channel</a> is passed through unchanged.
 							</p>
 
 							<hr/>
 	
 							<h5>Add Input&colon;</h5>
 							<p>
-								Adds an additional TOP input to be included in the tendency calculation.
+								Adds an additional <a href="https://derivative.ca/UserGuide/TOP" target="_blank">TOP input</a> to be included in the tendency calculation.
 							</p>
 
 							<h5>Remove Input&colon;</h5>
 							<p>
-								Removes the last TOP input of the Median COMP.
+								Removes the last <a href="https://derivative.ca/UserGuide/TOP" target="_blank">TOP input</a> of the <a href="https://github.com/MaxMainio/TD_/blob/main/TOPs/Math/Arithmetic/Median.tox" target="_blank">Median COMP</a>.
 							</p>
 
 							<h4>In&hyphen; &sol; Outputs</h4>
@@ -681,11 +772,11 @@
 							</p>
 
 							<p>
-								<b>Output 0</b> &mdash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> Lorem ipsum...
+								<b>Output 0</b> &mdash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> calculated <a href="https://en.wikipedia.org/wiki/Central_tendency" target="_blank">central tendency</a> of the input image.
 							</p>
 
 							<p style="margin-top: 1rem;">
-								<b>Updated</b> &ndash; <a href="https://en.wikipedia.org/wiki/List_of_date_formats_by_country#:~:text=regions%20and%20countries-,DMY,-Europe%3A%20Italy" target="_blank"><span class="date-text">18&sol;10&sol;2025</span></a>
+								<b>Updated</b> &ndash; <a href="https://en.wikipedia.org/wiki/List_of_date_formats_by_country#:~:text=regions%20and%20countries-,DMY,-Europe%3A%20Italy" target="_blank"><span class="date-text">19&sol;10&sol;2025</span></a>
 							</p>
 						</div>
 					</div>
