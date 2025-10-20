@@ -184,14 +184,57 @@
 				<section id="integral" class="documentation">
 					<div class="docuinfo">
 						<h2>Integral</h2>
-						<h3>Sub-Title</h3>
+						<h3>Summed Area Computation</h3>
 						<p>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim diam vulputate ut pharetra sit amet aliquam. Integer eget aliquet nibh praesent tristique magna sit. Massa id neque aliquam vestibulum. Egestas diam in arcu cursus euismod quis viverra nibh. Ultrices vitae auctor eu augue ut lectus arcu bibendum at. Vel risus commodo viverra maecenas accumsan lacus vel facilisis volutpat. Sit amet cursus sit amet dictum sit. Scelerisque mauris pellentesque pulvinar pellentesque habitant morbi tristique. Rutrum quisque non tellus orci ac.
+							<a href="https://github.com/MaxMainio/TD_/blob/main/TOPs/Math/Calculus/Integral.tox" target="_blank">This component</a> calculates the <a href="https://levelup.gitconnected.com/the-integral-image-4df3df5dce35" target="_blank">integral image</a> <i>&lpar;also known as the <a href="https://en.wikipedia.org/wiki/Summed-area_table" target="_blank">summed area table</a>&rpar;</i> of the input, producing an output where each pixel represents the <a href="https://mathworld.wolfram.com/CumulativeSum.html" target="_blank">cumulative sum</a> of all pixel values above and to the left of its position. This operation is widely used in <a href="https://en.wikipedia.org/wiki/Computer_vision" target="_blank">computer vision</a> and <a href="https://en.wikipedia.org/wiki/Image_analysis" target="_blank">image analysis</a>, providing an efficient way to compute regional sums or averages with constant&hyphen;time lookups &mdash; fundamental to algorithms like Haar feature detection, adaptive thresholding, and local filtering.
+						</p>
+
+						<p>
+							Formally, the <a href="https://levelup.gitconnectZed.com/the-integral-image-4df3df5dce35" target="_blank">integral image</a> is defined as&colon;
+						</p>
+
+						<p class="maths" title="Right click for a cheat sheet">
+							<math>
+								<mrow>
+									<msub><mi>&Iota;</mi><mi>&Sigma;</mi></msub>
+									<mo>(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo>)</mo>
+									<mo>=</mo>
+									<munderover><mo>&sum;</mo><mrow><mi>i</mi>=<mn>0</mn></mrow><mi>x</mi></munderover>
+									<munderover><mo>&sum;</mo><mrow><mi>j</mi>=<mn>0</mn></mrow><mi>y</mi></munderover>
+									<mi>&Iota;</mi><mo>(</mo><mi>i</mi><mo>,</mo><mi>j</mi><mo>)</mo>
+								</mrow>
+							</math>
+						</p>
+
+						<p>
+							In addition to the standard <a href="https://en.wikipedia.org/wiki/Integral" target="_blank">integral</a>, this component also includes an experimental <a href="https://en.wikipedia.org/wiki/Product_(mathematics)" target="_blank">Product</a> mode. Rather than summing pixel values, this mode computes the <a href="https://mathworld.wolfram.com/CumulativeProduct.html" target="_blank">cumulative product</a> of all pixels above and to the left of each position &mdash; effectively generating a product area table. While not commonly applied in practical image processing, this operation serves as a conceptual counterpart to the <a href="https://en.wikipedia.org/wiki/Integral" target="_blank">integral</a>, emphasizing multiplicative relationships instead of additive ones.
+						</p>
+
+						<p>
+							Formally, the product image is defined as&colon;
+						</p>
+
+						<p class="maths" title="Right click for a cheat sheet">
+							<math>
+								<mrow>
+									<msub><mi>&Iota;</mi><mi>&Pi;</mi></msub>
+									<mo>(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo>)</mo>
+									<mo>=</mo>
+									<munderover><mo>&prod;</mo><mrow><mi>i</mi>=<mn>0</mn></mrow><mi>x</mi></munderover>
+									<munderover><mo>&prod;</mo><mrow><mi>j</mi>=<mn>0</mn></mrow><mi>y</mi></munderover>
+									<mi>&Iota;</mi><mo>(</mo><mi>i</mi><mo>,</mo><mi>j</mi><mo>)</mo>
+								</mrow>
+							</math>
+						</p>
+
+						<p>
+							Together, these operations extend the notion of cumulative image accumulation into both additive and multiplicative domains, revealing new ways to explore spatial relationships and intensity distributions in images.
 						</p>
 
 						<h5>Resources&colon;</h5>
 						<p>
-							<a href="https://github.com/MaxMainio/TD_" target="_blank">Download the .tox files</a>
+							<a href="https://github.com/MaxMainio/TD_" target="_blank">Download the .tox files</a><br>
+							<a href="https://levelup.gitconnected.com/the-integral-image-4df3df5dce35" target="_blank">Integral Image on Medium</a>
 						</p>
 					</div>
 
@@ -268,12 +311,13 @@
 							<h4>Parameters</h4>
 							<h5>Operation&colon;</h5>
 							<p>
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim diam vulputate ut pharetra sit amet aliquam.
+								Specifies which type of accumulation is performed across the input image.<br>
+								<a href="https://en.wikipedia.org/wiki/Integral" target="_blank">Integral</a> or <a href="https://en.wikipedia.org/wiki/Product_(mathematics)" target="_blank">Product</a>.
 							</p>
 
 							<h5>Epsilon&colon;</h5>
 							<p>
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim diam vulputate ut pharetra sit amet aliquam.
+								Defines a small positive constant used to clamp near&hyphen;zero pixel values when the Operation is set to <a href="https://en.wikipedia.org/wiki/Product_(mathematics)" target="_blank">Product</a>. This prevents numerical underflow and ensures that valid results are maintained even in dark or low&hyphen;intensity regions of the input image.
 							</p>
 
 							<h4>In&hyphen; &sol; Outputs</h4>
@@ -282,7 +326,7 @@
 							</p>
 
 							<p>
-								<b>Output 0</b> &ndash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> calculated integral of the input image.
+								<b>Output 0</b> &ndash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> calculated accumulation of the input image.
 							</p>
 
 							<p style="margin-top: 1rem;">
