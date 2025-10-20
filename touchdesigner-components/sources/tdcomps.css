@@ -126,6 +126,20 @@ article{
     /* width: calc((2560px - 1rem) / 2 + 440px); */
 }
 
+.sub-bento{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-column-gap: 1rem;
+       -moz-column-gap: 1rem;
+            column-gap: 1rem;
+    row-gap: 1rem;
+    align-content: flex-start;
+    width: 100%;
+}
+
 #hidden-divider{
     -ms-grid-column: 1;
     -ms-grid-column-span: 8;
