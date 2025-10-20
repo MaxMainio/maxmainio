@@ -255,11 +255,11 @@
 						<h2>Mean</h2>
 						<h3>Multi&hyphen;Input <a href="https://en.wikipedia.org/wiki/Average" target="_blank">Averaging</a> Operator</h3>
 						<p>
-							While the term <a href="https://www.cuemath.com/data/difference-between-average-and-mean/#:~:text=Download-,Difference%20Between%20Average%20and%20Mean,-Average%20and%20mean" target="_blank">average is often used generically</a>, the mean defines a specific mathematical approach to averaging &mdash; one that determines a central or representative value among multiple inputs. In image processing, mean operations can blend, stabilize, or normalize data across several images, producing smoother transitions and reducing local variance.
+							While the term <a href="https://www.cuemath.com/data/difference-between-average-and-mean/#:~:text=Download-,Difference%20Between%20Average%20and%20Mean,-Average%20and%20mean" target="_blank">average is often used generically</a>, the mean defines a specific mathematical approach to <a href="https://en.wikipedia.org/wiki/Average" target="_blank">averaging</a> &mdash; one that determines a central or representative value among multiple inputs. In <a href="https://en.wikipedia.org/wiki/Digital_image_processing" target="_blank">image processing</a>, mean operations can <a href="https://courses.cs.vt.edu/~masc1044/L20-BlendingChromakey/Blending.html" target="_blank">blend</a>, <a href="https://en.wikipedia.org/wiki/Image_stabilization" target="_blank">stabilize</a>, or <a href="https://en.wikipedia.org/wiki/Normalization" target="_blank">normalize data</a> across several images, producing smoother transitions and reducing local variance.
 						</p>
 
 						<p>
-							The operations provided by this component emphasize different mathematical relationships between pixel values, allowing the user to control how intensities combine across inputs.
+							The operations provided by this component emphasize different mathematical relationships between <a href="https://homepages.inf.ed.ac.uk/rbf/HIPR2/value.htm" target="_blank">pixel values</a>, allowing the user to control how intensities combine across inputs.
 						</p>
 
 						<ol>
@@ -267,7 +267,7 @@
 								<h5><a href="https://en.wikipedia.org/wiki/Arithmetic_mean" target="_blank">Arithmetic Mean</a></h5>
 								
 								<p>
-									Computes the standard average of pixel values, ideal for general blending or smoothing between multiple images.<br>
+									Computes the <a href="https://www.calculator.net/average-calculator.html" target="_blank">standard average</a> of <a href="https://homepages.inf.ed.ac.uk/rbf/HIPR2/value.htm" target="_blank">pixel values</a>, ideal for general <a href="https://medium.com/tangibit-studios/an-introduction-to-image-blending-a5c0d83bdabe" target="_blank">blending</a> or smoothing between multiple images.<br>
 									Defined as the sum of all inputs divided by the number of inputs&colon;
 								</p>
 
@@ -313,7 +313,7 @@
 								<h5><a href="https://en.wikipedia.org/wiki/Geometric_mean" target="_blank">Geometric Mean</a></h5>
 
 								<p>
-									Calculates the nth root of the product of all input values, preserving proportional balance between pixels. This method is especially useful for averaging multiplicative data or images with wide dynamic ranges.<br>
+									Calculates the <span title="Right click for a cheat sheet"><math><mi>n</mi><mi>th</mi></math></span> root of the product of all input values, preserving proportional balance between pixels. This method is especially useful for <a href="https://en.wikipedia.org/wiki/Average" target="_blank">averaging</a> multiplicative data or images with <a href="https://reolink.com/blog/wide-dynamic-range/" target="_blank">wide dynamic ranges</a>.<br>
 									Defined as&colon;
 								</p>
 
@@ -363,7 +363,7 @@
 								<h5><a href="https://en.wikipedia.org/wiki/Harmonic_mean" target="_blank">Harmonic Mean</a></h5>
 
 								<p>
-									Emphasizes smaller values, producing results that are less influenced by bright outliers. Commonly used when averaging rates or ratios, it is particularly stable for combining images with inverse intensity relationships.<br>
+									Emphasizes smaller values, producing results that are less influenced by bright outliers. Commonly used when <a href="https://en.wikipedia.org/wiki/Average" target="_blank">averaging</a> rates or ratios, it is particularly stable for combining images with inverse intensity relationships.<br>
 									Defined as&colon;
 								</p>
 
@@ -420,7 +420,7 @@
 						</ol>
 
 						<p>
-							By providing these three modes within a single component, the <a href="https://github.com/MaxMainio/TD_/blob/main/TOPs/Math/Arithmetic/Mean.tox" target="_blank">Mean COMP</a> offers precise control over how pixel intensities are unified. It serves as a flexible foundation for tasks such as exposure normalization, temporal blending, multi&hyphen;channel compositing, and procedural averaging in both analytical and creative image workflows.
+							By providing these three modes within a single component, the <a href="https://github.com/MaxMainio/TD_/blob/main/TOPs/Math/Arithmetic/Mean.tox" target="_blank">Mean COMP</a> offers precise control over how pixel intensities are unified. It serves as a flexible foundation for tasks such as exposure <a href="https://en.wikipedia.org/wiki/Normalization" target="_blank">normalization</a>, <a href="https://visionbook.mit.edu/temporal_filters_v2.html" target="_blank">temporal blending</a>, multi&hyphen;channel <a href="https://en.wikipedia.org/wiki/Compositing" target="_blank">compositing</a>, and procedural averaging in both analytical and creative image workflows.
 						</p>
 
 						<h5>Resources&colon;</h5>
@@ -514,7 +514,7 @@
 								Active only when the <i>Operation</i> parameter is set to <a href="https://en.wikipedia.org/wiki/Arithmetic_mean" target="_blank"><i>Arithmetic Mean</i></a>.<br>
 								Determines how the arithmetic average is computed&colon;<br>
 								<i>Native,</i> which uses TouchDesigner&rsquo;s <a href="https://docs.derivative.ca/index.php?title=Composite_TOP" target="_blank">Composite TOP</a> Average operand.<br><br>
-								<i>Explicit,</i> which manually sums all input images and divides by the total number of inputs. This option ensures precision and consistency in cases where the native composite method produces rounding artifacts or channel discrepancies.
+								<i>Explicit,</i> which manually sums all input images and divides by the total number of inputs. This option ensures precision and consistency in cases where the native <a href="https://docs.derivative.ca/index.php?title=Composite_TOP" target="_blank">Composite TOP</a> produces rounding artifacts or channel discrepancies.
 							</p>
 
 							<h5>Epsilon&colon;</h5>
@@ -563,7 +563,7 @@
 						<h2>Median</h2>
 						<h3>Multi&hyphen;Input <a href="https://en.wikipedia.org/wiki/Central_tendency" target="_blank">Central Tendency</a> Operator</h3>
 						<p>
-							While the mean defines an average based on arithmetic or proportional relationships, the median family of operations determines the central or most representative pixel value from multiple inputs. These operations emphasize stability and resistance to outliers &mdash; providing more perceptually consistent results when combining images that contain sharp intensity contrasts, noise, or irregular exposure levels.
+							While the <a href="https://en.wikipedia.org/wiki/Arithmetic_mean" target="_blank">mean</a> defines an <a href="https://en.wikipedia.org/wiki/Average" target="_blank">average</a> based on arithmetic or proportional relationships, the <a href="https://en.wikipedia.org/wiki/Median" target="_blank">median</a> family of operations determines the central or most representative pixel value from multiple inputs. These operations emphasize stability and resistance to outliers &mdash; providing more perceptually consistent results when combining images that contain sharp <a href="https://www.sciencedirect.com/topics/computer-science/pixel-intensity" target="_blank">intensity</a> contrasts, noise, or irregular exposure levels.
 						</p>
 
 						<p>
@@ -575,7 +575,7 @@
 								<h5><a href="https://en.wikipedia.org/wiki/Median" target="_blank">Median</a></h5>
 								
 								<p>
-									Identifies the middle pixel value among all inputs when they are ordered by intensity. Unlike the <a href="#mean" target="_self">arithmetic mean</a>, the median is unaffected by extreme values, making it ideal for denoising, temporal filtering, and exposure balancing.
+									Identifies the middle pixel value among all inputs when they are ordered by <a href="https://www.sciencedirect.com/topics/computer-science/pixel-intensity" target="_blank">intensity</a>. Unlike the <a href="#mean" target="_self">arithmetic mean</a>, the <a href="https://en.wikipedia.org/wiki/Median" target="_blank">median</a> is unaffected by extreme values, making it ideal for <a href="https://en.wikipedia.org/wiki/Noise_reduction" target="_blank">denoising</a>, <a href="https://visionbook.mit.edu/temporal_filters_v2.html" target="_blank">temporal filtering</a>, and <a href="https://www.canon.ca/CanonOutsideOfAuto/play" target="_blank">exposure balancing</a>.
 								</p>
 							</li><br>
 
@@ -584,7 +584,7 @@
 
 								<p>
 									Selects the most frequently occurring pixel value among inputs. This emphasizes recurring features or dominant tones, often used when consolidating multiple nearly identical images or pattern repetitions.<br>
-									A tolerance value &lpar; <math><mi>&epsilon;</mi></math> &rpar; defines the range within which pixel values are considered equivalent.
+									A tolerance value &lpar; <span title="Right click for a cheat sheet"><math><mi>&epsilon;</mi></math></span> &rpar; defines the range within which pixel values are considered equivalent.
 								</p>
 							</li><br>
 
@@ -592,7 +592,7 @@
 								<h5><a href="https://en.wikipedia.org/wiki/Mid-range" target="_blank">Mid&hyphen;Range</a></h5>
 
 								<p>
-									Calculates the midpoint between the minimum and maximum pixel values, providing a simple yet fast approximation of the central intensity. While less robust to outliers than the median, it can be useful for quick tone balancing or establishing exposure baselines.<br>
+									Calculates the <a href="https://www.calculatorsoup.com/calculators/geometry-plane/midpoint-calculator.php" target="_blank">midpoint</a> between the <a href="https://en.wikipedia.org/wiki/Maximum_and_minimum" target="_blank">minimum and maximum</a> pixel values, providing a simple yet fast approximation of the central intensity. While less robust to outliers than the <a href="https://en.wikipedia.org/wiki/Median" target="_blank">median</a>, it can be useful for quick <a href="https://en.wikipedia.org/wiki/Color_balance" target="_blank">tone balancing</a> or establishing <a href="https://diglloyd.com/blog/2024/20240220_0900-BaselineExposure.html" target="_blank">exposure baselines</a>.<br>
 									Defined as&colon;
 								</p>
 
@@ -650,12 +650,12 @@
 										</math>
 									</span>
 								</p>
-
-								<p>
-									By unifying these three operations into a single framework, the <a href="https://github.com/MaxMainio/TD_/blob/main/TOPs/Math/Arithmetic/Median.tox" target="_blank">Median COMP</a> offers flexible methods for deriving central or dominant intensity representations across multiple images. It serves as a practical tool for temporal smoothing, noise reduction, mode-based compositing, and adaptive blending workflows in both analytical and creative contexts.
-								</p>
 							</li>
 						</ol>
+
+						<p>
+							By unifying these three operations into a single framework, the <a href="https://github.com/MaxMainio/TD_/blob/main/TOPs/Math/Arithmetic/Median.tox" target="_blank">Median COMP</a> offers flexible methods for deriving central or dominant intensity representations across multiple images. It serves as a practical tool for <a href="https://visionbook.mit.edu/temporal_filters_v2.html" target="_blank">temporal smoothing</a>, <a href="https://en.wikipedia.org/wiki/Noise_reduction" target="_blank">noise reduction</a>, <a href="https://en.wikipedia.org/wiki/Mode_(statistics)" target="_blank">mode</a>&hyphen;based <a href="https://en.wikipedia.org/wiki/Compositing" target="_blank">compositing</a>, and adaptive blending workflows in both analytical and creative contexts.
+						</p>
 
 						<h5>Resources&colon;</h5>
 						<p>
