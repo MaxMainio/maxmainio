@@ -242,7 +242,7 @@ hgroup{
 
 
 /* Nike ------------------------------------------------------------------------------------------------------------------------- */
-#nike .mid-container {
+/* #nike .mid-container {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -279,7 +279,7 @@ hgroup{
             pointer-events: visibleFill;
         }
     }
-}
+} */
 
 
 
@@ -313,7 +313,6 @@ hgroup{
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-    /* overflow: hidden; */
 
     & > a{
         display: block;
@@ -368,12 +367,6 @@ hgroup{
 
     position: absolute;
     inset: 0;
-    /* display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-            align-items: center; */
 }
 
 #growth{
@@ -687,7 +680,6 @@ span.lawn, span.flower{
         display: block;
         max-width: 100%;
         max-height: auto;
-        /* max-height: 100%; */
         aspect-ratio: 1024 / 1322;
 
         pointer-events: all;

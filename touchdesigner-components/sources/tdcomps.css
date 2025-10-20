@@ -79,14 +79,6 @@ ul{
 
     list-style: none;
 
-    /* & > li > h5:before{ */
-        /* content: "_"; */
-        /* margin: 0 0.3rem 0 -1rem; */
-
-        /* content: "\2014";
-        margin: 0 -0.1rem 0 -1rem;
-    } */
-
     & > li > *:first-child::before {
         content: "\2014";
         margin: 0 -0.1rem 0 -1rem;
@@ -111,7 +103,6 @@ article{
 }
 
 #first.bento{
-    /* position: absolute; */
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -123,7 +114,6 @@ article{
     row-gap: 1rem;
     align-content: flex-start;
     width: 150%;
-    /* width: calc((2560px - 1rem) / 2 + 440px); */
 }
 
 .sub-bento{
@@ -435,7 +425,6 @@ h5 + p{
 .connector-color{
     width: 100%;
     height: 18px;
-    /* background-color: var(--td-top-color); */
 
     border-width: 1px;
     border-color: rgba(255, 255, 255, 0.5);
@@ -525,9 +514,6 @@ h5 + p{
 
 .viewer{
     height: 100%;
-
-    /* display: flex;
-    justify-content: center; */
 
     & > img{
         display: block;
@@ -630,7 +616,6 @@ h5 + p{
     -ms-grid-column: 1;
     -ms-grid-column-span: 8;
     grid-column: 1 / 9;
-    /* padding: 3rem 0; */
     padding: 3rem 0 4rem 0;
 
     & > h3{
@@ -639,7 +624,6 @@ h5 + p{
         line-height: 1.3rem;
         letter-spacing: 0.75px;
         
-        /* margin-bottom: 0; */
         margin-bottom: -1rem;
     }
 }
@@ -651,7 +635,6 @@ h5 + p{
     -webkit-box-align: start;
         -ms-flex-align: start;
             align-items: flex-start;
-    /* margin-bottom: 1rem; */
     margin-bottom: -1rem;
     padding-top: 2rem;
 }
