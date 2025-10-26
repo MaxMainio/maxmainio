@@ -98,14 +98,14 @@
 						<h1 id="title">Matrix</h1>
 						<h2 id="sub-title"><a href="https://derivative.ca/" target="_blank">TD</a> <a href="https://derivative.ca/UserGuide/Component" target="_blank">COMPs</a> / <a href="https://derivative.ca/tags/tops" target="_blank">TOPs</a> / 2023 &ndash; Present</h2>
 						<p>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim diam vulputate ut pharetra sit amet aliquam. Integer eget aliquet nibh praesent tristique magna sit. Massa id neque aliquam vestibulum. Egestas diam in arcu cursus euismod quis viverra nibh. Ultrices vitae auctor eu augue ut lectus arcu bibendum at. Vel risus commodo viverra maecenas accumsan lacus vel facilisis volutpat. Sit amet cursus sit amet dictum sit. Scelerisque mauris pellentesque pulvinar pellentesque habitant morbi tristique. Rutrum quisque non tellus orci ac.
+							Unlike traditional implementations where every pixel in an image represents a cell within a numerical matrix, these Matrix components treat entire images as individual matrix elements. This higher&hyphen;level approach allows mathematical operations &mdash; such as addition, subtraction, or scalar multiplication &mdash; to occur between images, combining or transforming them according to their spatially aligned pixels.
 						</p>
 						<p>
-							Cras sed felis eget velit. Ipsum a arcu cursus vitae congue. Quis ipsum suspendisse ultrices gravida dictum. Condimentum mattis pellentesque id nibh tortor id aliquet. Magna fermentum iaculis eu non. Massa eget egestas purus viverra accumsan. Lobortis mattis aliquam faucibus purus in massa tempor. Aliquam id diam maecenas ultricies mi. Morbi enim nunc faucibus a pellentesque. Ultricies mi eget mauris pharetra et ultrices neque ornare.
+							This methodology originated from the determinant and trace computations used in the Harris and Hessian detectors, where multiple directional derivative images form the elements of a single matrix. The rest of these components are an extension of that concept — expanding matrix math into a framework that operates at the image level rather than the pixel level.
 						</p>
 						<p>
 							Index&colon;<br>
-							<a href="#" target="_self">Lorem ipsum</a>, <a href="#" target="_self">dolor sit</a>, <a href="#" target="_self">amet</a>
+							<a href="#determinant" target="_self">Determinant</a>, <a href="#frobenius-norm" target="_self">Frobenius Norm</a>, <a href="#linear-combination" target="_self">Linear Combination</a>, <a href="#matrix-compiler" target="_self">Matrix Compiler</a>, <a href="#matrix-visualizer" target="_self">Matrix Visualizer</a>, <a href="#multiplication" target="_self">Multiplication</a>, <a href="#scalar" target="_self">Scalar</a>, <a href="#trace" target="_self">Trace</a>, <a href="#transpose" target="_self">Transpose</a>
 						</p>
 					</div>
 				</section>
@@ -640,14 +640,23 @@
 				<section id="determinant" class="documentation">
 					<div class="docuinfo">
 						<h2>Determinant</h2>
-						<h3>Sub-Title</h3>
+						<h3>Matrix Volume Operator</h3>
 						<p>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim diam vulputate ut pharetra sit amet aliquam. Integer eget aliquet nibh praesent tristique magna sit. Massa id neque aliquam vestibulum. Egestas diam in arcu cursus euismod quis viverra nibh. Ultrices vitae auctor eu augue ut lectus arcu bibendum at. Vel risus commodo viverra maecenas accumsan lacus vel facilisis volutpat. Sit amet cursus sit amet dictum sit. Scelerisque mauris pellentesque pulvinar pellentesque habitant morbi tristique. Rutrum quisque non tellus orci ac.
+							<a href="https://github.com/MaxMainio/TD_/blob/main/TOPs/Math/Matrix/Determinant.tox" target="_blank">This component</a> computes a scalar measure of the input matrice&rsquo;s overall magnitude or &ldquo;volume.&rdquo; In this implementation, each cell of the matrix represents a complete image, and the determinant is calculated by combining those image cells according to classical matrix algebra.
+						</p>
+
+						<p>
+							The Determinant calculation requires a square matrix as input, meaning the number of rows and columns must be equal. <a href="https://github.com/MaxMainio/TD_/blob/main/TOPs/Math/Matrix/Determinant.tox" target="_blank">This component</a> supports matrices of sizes 2&times;2, 3&times;3, and 4&times;4 configurations. For each supported size, the determinant is expanded according to the appropriate minor and cofactor relationships, with pixel values calculated in parallel across all positions in the image.
+						</p>
+
+						<p>
+							The resulting output is a single image whose pixel values represent the determinant computed at each coordinate &mdash; effectively collapsing the matrix into one image that encodes its cumulative spatial &ldquo;response.&rdquo; In practical workflows, this operation is fundamental to methods such as the Harris and Hessian detectors, where determinant values quantify local curvature, corner strength, or structural stability across an image.
 						</p>
 
 						<h5>Resources&colon;</h5>
 						<p>
-							<a href="https://github.com/MaxMainio/TD_" target="_blank">Download the .tox files</a>
+							<a href="https://github.com/MaxMainio/TD_" target="_blank">Download the .tox files</a><br>
+							<a href="https://en.wikipedia.org/wiki/Determinant" target="_blank">Matrix Determinant on Wikipedia</a>
 						</p>
 					</div>
 
@@ -715,11 +724,11 @@
 						<div>
 							<h4>In&hyphen; &sol; Outputs</h4>
 							<p>
-								<b>Input 0</b> &ndash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> image to be processed.
+								<b>Input 0</b> &ndash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> matrix to be processed.
 							</p>
 
 							<p>
-								<b>Output 0</b> &ndash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> Lorem ipsum...
+								<b>Output 0</b> &ndash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> calculated determinant of the input matrix.
 							</p>
 
 							<p style="margin-top: 1rem;">
@@ -911,11 +920,14 @@
 
 							<h4>In&hyphen; &sol; Outputs</h4>
 							<p>
-								<b>Input 0</b> &ndash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> image to be processed.
+								<b>Input 0</b> &ndash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> first matrix to be processed.
+							</p>
+							<p>
+								<b>Input 1</b> &ndash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> second matrix to be processed.
 							</p>
 
 							<p>
-								<b>Output 0</b> &ndash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> Lorem ipsum...
+								<b>Output 0</b> &ndash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> calculated combination of input matrices.
 							</p>
 
 							<p style="margin-top: 1rem;">
@@ -1046,9 +1058,13 @@
 				<section id="matrix-visualizer" class="documentation">
 					<div class="docuinfo">
 						<h2>Matrix Visualizer</h2>
-						<h3>Sub-Title</h3>
+						<h3>2D Array Matrix Representation</h3>
 						<p>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim diam vulputate ut pharetra sit amet aliquam. Integer eget aliquet nibh praesent tristique magna sit. Massa id neque aliquam vestibulum. Egestas diam in arcu cursus euismod quis viverra nibh. Ultrices vitae auctor eu augue ut lectus arcu bibendum at. Vel risus commodo viverra maecenas accumsan lacus vel facilisis volutpat. Sit amet cursus sit amet dictum sit. Scelerisque mauris pellentesque pulvinar pellentesque habitant morbi tristique. Rutrum quisque non tellus orci ac.
+							Because matrices in this system are transmitted as <a href="https://derivative.ca/UserGuide/2D_Texture_Array" target="_blank">2D Texture Arrays</a>, their spatial relationships can be difficult to interpret directly within TouchDesigner&rsquo;s TOP viewer. The <a href="https://github.com/MaxMainio/TD_/blob/main/TOPs/Math/Matrix/Matrix_Visualizer.tox" target="_blank">Matrix Visualizer</a> reconstructs and displays these arrays in their true matrix configuration, restoring the visual organization of rows and columns that would otherwise be lost in transmission.
+						</p>
+
+						<p>
+							While it performs no mathematical operations, the <a href="https://github.com/MaxMainio/TD_/blob/main/TOPs/Math/Matrix/Matrix_Visualizer.tox" target="_blank">Matrix Visualizer</a> is an essential utility for verifying the structure and integrity of matrix inputs before applying analytical or procedural transformations.
 						</p>
 
 						<h5>Resources&colon;</h5>
@@ -1121,11 +1137,11 @@
 						<div>
 							<h4>In&hyphen; &sol; Outputs</h4>
 							<p>
-								<b>Input 0</b> &ndash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> image to be processed.
+								<b>Input 0</b> &ndash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> matrix to be visualized.
 							</p>
 							
 							<p>
-								<b>Output 0</b> &ndash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> compiled Matrix.
+								<b>Output 0</b> &ndash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> unaltered input Matrix.
 							</p>
 
 							<p style="margin-top: 1rem;">
@@ -1217,11 +1233,15 @@
 						<div>
 							<h4>In&hyphen; &sol; Outputs</h4>
 							<p>
-								<b>Input 0</b> &ndash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> image to be processed.
+								<b>Input 0</b> &ndash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> firsts matrix to be processed.
 							</p>
 
 							<p>
-								<b>Output 0</b> &ndash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> compiled Matrix.
+								<b>Input 1</b> &ndash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> second matrix to be processed.
+							</p>
+
+							<p>
+								<b>Output 0</b> &ndash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> calculated product of input Matrices.
 							</p>
 
 							<p style="margin-top: 1rem;">
@@ -1236,9 +1256,9 @@
 				<section id="scalar" class="documentation">
 					<div class="docuinfo">
 						<h2>Scalar</h2>
-						<h3>Sub-Title</h3>
+						<h3>Per&hyphen;Cell Multiplicative Adjustment</h3>
 						<p>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim diam vulputate ut pharetra sit amet aliquam. Integer eget aliquet nibh praesent tristique magna sit. Massa id neque aliquam vestibulum. Egestas diam in arcu cursus euismod quis viverra nibh. Ultrices vitae auctor eu augue ut lectus arcu bibendum at. Vel risus commodo viverra maecenas accumsan lacus vel facilisis volutpat. Sit amet cursus sit amet dictum sit. Scelerisque mauris pellentesque pulvinar pellentesque habitant morbi tristique. Rutrum quisque non tellus orci ac.
+							This component multiplies every pixel in each matrix cell by a uniform scalar value. Each cell represents a complete image within the compiled matrix, and the Scalar parameter applies the same floating-point multiplier across all of them, preserving the relative structure of the matrix while uniformly adjusting image intensity.
 						</p>
 
 						<h5>Resources&colon;</h5>
@@ -1317,11 +1337,11 @@
 
 							<h4>In&hyphen; &sol; Outputs</h4>
 							<p>
-								<b>Input 0</b> &ndash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> image to be processed.
+								<b>Input 0</b> &ndash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> matrix to be processed.
 							</p>
 
 							<p>
-								<b>Output 0</b> &ndash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> compiled Matrix.
+								<b>Output 0</b> &ndash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> scaled Matrix.
 							</p>
 
 							<p style="margin-top: 1rem;">
@@ -1336,14 +1356,23 @@
 				<section id="trace" class="documentation">
 					<div class="docuinfo">
 						<h2>Trace</h2>
-						<h3>Sub-Title</h3>
+						<h3>Diagonal Summation Operator</h3>
 						<p>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim diam vulputate ut pharetra sit amet aliquam. Integer eget aliquet nibh praesent tristique magna sit. Massa id neque aliquam vestibulum. Egestas diam in arcu cursus euismod quis viverra nibh. Ultrices vitae auctor eu augue ut lectus arcu bibendum at. Vel risus commodo viverra maecenas accumsan lacus vel facilisis volutpat. Sit amet cursus sit amet dictum sit. Scelerisque mauris pellentesque pulvinar pellentesque habitant morbi tristique. Rutrum quisque non tellus orci ac.
+							<a href="https://github.com/MaxMainio/TD_/blob/main/TOPs/Math/Matrix/Trace.tox" target="_blank">This component</a> computes the sum of all images along its principal diagonal. Each diagonal cell contributes its pixel values directly to the final output, producing a single composite image that represents the cumulative intensity or structure along the matrix&rsquo;s diagonal.
+						</p>
+
+						<p>
+							While the input is a full matrix composed of multiple image cells, the output is a collapsed single image. This operation effectively reduces the dimensionality of the matrix, translating multi&hyphen;cell relationships into a unified spatial field.
+						</p>
+
+						<p>
+							<a href="https://github.com/MaxMainio/TD_/blob/main/TOPs/Math/Matrix/Trace.tox" target="_blank">This component</a> is a particularly useful tool for summarizing complex matrix interactions in a single visual result.
 						</p>
 
 						<h5>Resources&colon;</h5>
 						<p>
-							<a href="https://github.com/MaxMainio/TD_" target="_blank">Download the .tox files</a>
+							<a href="https://github.com/MaxMainio/TD_" target="_blank">Download the .tox files</a><br>
+							<a href="https://en.wikipedia.org/wiki/Trace_(linear_algebra)" target="_blank">Matrix Trace on Wikipedia</a>
 						</p>
 					</div>
 
@@ -1411,11 +1440,11 @@
 						<div>
 							<h4>In&hyphen; &sol; Outputs</h4>
 							<p>
-								<b>Input 0</b> &ndash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> image to be processed.
+								<b>Input 0</b> &ndash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> matrix to be processed.
 							</p>
 
 							<p>
-								<b>Output 0</b> &ndash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> compiled Matrix.
+								<b>Output 0</b> &ndash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> calculated Trace of the input Matrix.
 							</p>
 
 							<p style="margin-top: 1rem;">
@@ -1430,14 +1459,19 @@
 				<section id="transpose" class="documentation">
 					<div class="docuinfo">
 						<h2>Transpose</h2>
-						<h3>Sub-Title</h3>
+						<h3>Matrix Cell Reorientation</h3>
 						<p>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim diam vulputate ut pharetra sit amet aliquam. Integer eget aliquet nibh praesent tristique magna sit. Massa id neque aliquam vestibulum. Egestas diam in arcu cursus euismod quis viverra nibh. Ultrices vitae auctor eu augue ut lectus arcu bibendum at. Vel risus commodo viverra maecenas accumsan lacus vel facilisis volutpat. Sit amet cursus sit amet dictum sit. Scelerisque mauris pellentesque pulvinar pellentesque habitant morbi tristique. Rutrum quisque non tellus orci ac.
+							This component swaps the rows and columns of the input matrix, producing its transposed form. Each cell represents a complete image, and during transposition, the position of each image is mirrored across the matrix&rsquo;s diagonal.
+						</p>
+
+						<p>
+							While the pixel content of each image remains unchanged, the spatial organization of the matrix is restructured. This makes the <a href="https://github.com/MaxMainio/TD_/blob/main/TOPs/Math/Matrix/Transpose.tox" target="_blank">Transpose COMP</a> particularly useful for operations where the order of matrix elements influences subsequent computations, such as in <a href="#multiplication" target="_self">multiplication</a>, <a href="#determinant" target="_self">determinant</a>, or <a href="#trace" target="_self">trace</a> workflows.
 						</p>
 
 						<h5>Resources&colon;</h5>
 						<p>
-							<a href="https://github.com/MaxMainio/TD_" target="_blank">Download the .tox files</a>
+							<a href="https://github.com/MaxMainio/TD_" target="_blank">Download the .tox files</a><br>
+							<a href="https://en.wikipedia.org/wiki/Transpose" target="_blank">Matrix Transposition on Wikipedia</a>
 						</p>
 					</div>
 
@@ -1505,11 +1539,11 @@
 						<div>
 							<h4>In&hyphen; &sol; Outputs</h4>
 							<p>
-								<b>Input 0</b> &ndash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> image to be processed.
+								<b>Input 0</b> &ndash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> matrix to be processed.
 							</p>
 
 							<p>
-								<b>Output 0</b> &ndash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> compiled Matrix.
+								<b>Output 0</b> &ndash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> transposed Matrix.
 							</p>
 
 							<p style="margin-top: 1rem;">
