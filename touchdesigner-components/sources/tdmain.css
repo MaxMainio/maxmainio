@@ -142,7 +142,7 @@
     gap: 1rem;
 
     &.soon{
-        color: var(--anti-type);
+        color: var(--anti-type) !important;
     }
 
     & h3{

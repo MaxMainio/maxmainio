@@ -320,6 +320,10 @@ h5 + p{
     background-color: var(--td-readable-color);
 }
 
+.soon{
+    color: var(--anti-type) !important;
+}
+
 
 
 
