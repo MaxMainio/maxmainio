@@ -5,8 +5,8 @@
 		<title>Max Mainio | Matrix</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="author" content="Max Mainio Beidler">
-		<meta name="description" content="FIXME:">
-		<meta name="theme-color" media="(prefers-color-scheme: light)" content="#00ff00">
+		<meta name="description" content="A subpage on Max Mainio Beidler's personal website featuring the Matrix category of custom TouchDesigner components.">
+		<meta name="theme-color" media="(prefers-color-scheme: light)" content="#cccccc">
 		<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#333333">
 		
 		<link rel="canonical" href="https://maxmain.io/touchdesigner-components/tops/math/matrix/">
@@ -98,7 +98,7 @@
 						<h1 id="title">Matrix</h1>
 						<h2 id="sub-title"><a href="https://derivative.ca/" target="_blank">TD</a> <a href="https://derivative.ca/UserGuide/Component" target="_blank">COMPs</a> / <a href="https://derivative.ca/tags/tops" target="_blank">TOPs</a> / 2023 &ndash; Present</h2>
 						<p>
-							Unlike traditional implementations where every pixel in an image represents a cell within a numerical matrix, these Matrix components treat entire images as individual matrix elements. This higher&hyphen;level approach allows mathematical operations &mdash; such as addition, subtraction, or scalar multiplication &mdash; to occur between images, combining or transforming them according to their spatially aligned pixels.
+							Unlike traditional implementations of Matrix calculations within the context of digital image processing, where each pixel in an image represents a cell within a numerical matrix, these Matrix components treat entire images as individual matrix elements. This higher&hyphen;level approach allows mathematical operations &mdash; such as addition, subtraction, or scalar multiplication &mdash; to occur between images, combining or transforming them according to their spatially aligned pixels.
 						</p>
 						<p>
 							This methodology originated from the determinant and trace computations used in the Harris and Hessian detectors, where multiple directional derivative images form the elements of a single matrix. The rest of these components are an extension of that concept — expanding matrix math into a framework that operates at the image level rather than the pixel level.
@@ -646,7 +646,7 @@
 						</p>
 
 						<p>
-							This implementation od the <a href="https://en.wikipedia.org/wiki/Determinant" target="_blank">Determinant</a> calculation requires a <a href="https://en.wikipedia.org/wiki/Square_matrix" target="_blank">square matrix</a> as input, meaning the number of rows and columns must be equal. <a href="https://github.com/MaxMainio/TD_/blob/main/TOPs/Math/Matrix/Determinant.tox" target="_blank">This component</a> supports <a href="https://en.wikipedia.org/wiki/Matrix_(mathematics)" target="_blank">matrices</a> of sizes 2&times;2, 3&times;3, and 4&times;4 configurations. For each supported size, the <a href="https://en.wikipedia.org/wiki/Determinant" target="_blank">determinant</a> is expanded according to the appropriate <a href="https://en.wikipedia.org/wiki/Minor_(linear_algebra)" target="_blank">minor and cofactor</a> relationships, with pixel values calculated in parallel across all positions in the <a href="https://en.wikipedia.org/wiki/Digital_image" target="_blank">image</a>.
+							This implementation of the <a href="https://en.wikipedia.org/wiki/Determinant" target="_blank">Determinant</a> calculation requires a <a href="https://en.wikipedia.org/wiki/Square_matrix" target="_blank">square matrix</a> as input, meaning the number of rows and columns must be equal. <a href="https://github.com/MaxMainio/TD_/blob/main/TOPs/Math/Matrix/Determinant.tox" target="_blank">This component</a> supports <a href="https://en.wikipedia.org/wiki/Matrix_(mathematics)" target="_blank">matrices</a> of sizes 2&times;2, 3&times;3, and 4&times;4 configurations. For each supported size, the <a href="https://en.wikipedia.org/wiki/Determinant" target="_blank">determinant</a> is expanded according to the appropriate <a href="https://en.wikipedia.org/wiki/Minor_(linear_algebra)" target="_blank">minor and cofactor</a> relationships, with pixel values calculated in parallel across all positions in the <a href="https://en.wikipedia.org/wiki/Digital_image" target="_blank">image</a>.
 						</p>
 
 						<p>
@@ -842,7 +842,7 @@
 						</p>
 
 						<p>
-							Formally, the <a href="https://en.wikipedia.org/wiki/Determinant" target="_blank">determinant</a> of a <a href="https://en.wikipedia.org/wiki/Matrix_(mathematics)" target="_blank">Matrix</a> <span title="Right click for a cheat sheet"><math><mo>&lpar;</mo><mi>M</mi><mo>&rpar;</mo></math></span> of size 2&times;2, is calculated as such&colon;
+							Formally, the <a href="https://en.wikipedia.org/wiki/Matrix_norm" target="_blank">Frobenius norm</a> of a <a href="https://en.wikipedia.org/wiki/Matrix_(mathematics)" target="_blank">Matrix</a> <span title="Right click for a cheat sheet"><math><mo>&lpar;</mo><mi>M</mi><mo>&rpar;</mo></math></span> of size 2&times;2, is calculated as such&colon;
 						</p>
 
 						<p class="maths">
@@ -1173,7 +1173,7 @@
 						<h2>Matrix Compiler</h2>
 						<h3><a href="https://derivative.ca/UserGuide/2D_Texture_Array" target="_blank">2D Texture Array</a> <a href="https://en.wikipedia.org/wiki/Matrix_(mathematics)" target="_blank">Matrix</a> Assembly</h3>
 						<p>
-							<a href="https://github.com/MaxMainio/TD_/blob/main/TOPs/Math/Matrix/Matrix_Compiler.tox" target="_blank">This component</a> constructs a <a href="https://en.wikipedia.org/wiki/Matrix_(mathematics)" target="_blank">matrix</a> by compiling multiple image inputs <i>(<a href="https://derivative.ca/UserGuide/TOP" target="_blank">TOPs</a>)</i> into a structured <a href="https://derivative.ca/UserGuide/2D_Texture_Array" target="_blank">2D Texture Array</a>. Unlike most <a href="https://derivative.ca/UserGuide/Operator" target="_blank">TouchDesigner operators</a>, the <a href="https://github.com/MaxMainio/TD_/blob/main/TOPs/Math/Matrix/Matrix_Compiler.tox" target="_blank">Matrix Compiler</a> does not accept a single input connection. Instead, each cell within the <a href="https://en.wikipedia.org/wiki/Matrix_(mathematics)" target="_blank">matrix</a> is populated by assigning a specific <a href="https://derivative.ca/UserGuide/TOP" target="_blank">TOP</a> to its corresponding <i>Cell</i> parameter.
+							<a href="https://github.com/MaxMainio/TD_/blob/main/TOPs/Math/Matrix/Matrix_Compiler.tox" target="_blank">This component</a> constructs a <a href="https://en.wikipedia.org/wiki/Matrix_(mathematics)" target="_blank">matrix</a> by compiling multiple image inputs <i>&lpar;<a href="https://derivative.ca/UserGuide/TOP" target="_blank">TOPs</a>&rpar;</i> into a structured <a href="https://derivative.ca/UserGuide/2D_Texture_Array" target="_blank">2D Texture Array</a>. Unlike most <a href="https://derivative.ca/UserGuide/Operator" target="_blank">TouchDesigner operators</a>, the <a href="https://github.com/MaxMainio/TD_/blob/main/TOPs/Math/Matrix/Matrix_Compiler.tox" target="_blank">Matrix Compiler</a> does not accept a single input connection. Instead, each cell within the <a href="https://en.wikipedia.org/wiki/Matrix_(mathematics)" target="_blank">matrix</a> is populated by assigning a specific <a href="https://derivative.ca/UserGuide/TOP" target="_blank">TOP</a> to its corresponding <i>Cell</i> parameter.
 						</p>
 
 						<p>
@@ -1224,7 +1224,7 @@
 						</p>
 
 						<p>
-							By formalizing the structure of <a href="https://en.wikipedia.org/wiki/Matrix_(mathematics)" target="_blank">matrices</a> as <a href="https://derivative.ca/UserGuide/2D_Texture_Array" target="_blank">2D Texture Array</a>, the <a href="https://github.com/MaxMainio/TD_/blob/main/TOPs/Math/Matrix/Matrix_Compiler.tox" target="_blank">Matrix Compiler</a> serves as the entry point for all <a href="https://en.wikipedia.org/wiki/Matrix_(mathematics)" target="_blank">matrix</a>&hyphen;based operations within <a href="https://github.com/MaxMainio/TD_/tree/main/TOPs/Math/Matrix" target="_blank">this system of components</a>, bridging traditional <a href="https://en.wikipedia.org/wiki/Matrix_(mathematics)" target="_blank">matrix</a> theory with <a href="https://en.wikipedia.org/wiki/Digital_image_processing" target="_blank">image&hyphen;based computation</a>.
+							By formalizing the structure of <a href="https://en.wikipedia.org/wiki/Matrix_(mathematics)" target="_blank">matrices</a> as a <a href="https://derivative.ca/UserGuide/2D_Texture_Array" target="_blank">2D Texture Array</a>, the <a href="https://github.com/MaxMainio/TD_/blob/main/TOPs/Math/Matrix/Matrix_Compiler.tox" target="_blank">Matrix Compiler</a> serves as the entry point for all <a href="https://en.wikipedia.org/wiki/Matrix_(mathematics)" target="_blank">matrix</a>&hyphen;based operations within <a href="https://github.com/MaxMainio/TD_/tree/main/TOPs/Math/Matrix" target="_blank">this system of components</a>, bridging traditional <a href="https://en.wikipedia.org/wiki/Matrix_(mathematics)" target="_blank">matrix</a> theory with <a href="https://en.wikipedia.org/wiki/Digital_image_processing" target="_blank">image&hyphen;based computation</a>.
 						</p>
 
 						<h5>Resources&colon;</h5>
@@ -1758,7 +1758,7 @@
 						</p>
 
 						<p>
-							Formally, for a <a href="https://en.wikipedia.org/wiki/Matrix_(mathematics)" target="_blank">Matrix</a> <span title="Right click for a cheat sheet"><math><mo>&lpar;</mo><mi>M</mi><mo>&rpar;</mo></math></span> of size 3&times;3, it&rsquo;s <a href="https://en.wikipedia.org/wiki/Trace_(linear_algebra)" target="_blank">trace</a> is calculated as such&colon;
+							Formally, for a <a href="https://en.wikipedia.org/wiki/Matrix_(mathematics)" target="_blank">Matrix</a> <span title="Right click for a cheat sheet"><math><mo>&lpar;</mo><mi>M</mi><mo>&rpar;</mo></math></span> of size 3&times;3, its <a href="https://en.wikipedia.org/wiki/Trace_(linear_algebra)" target="_blank">trace</a> is calculated as such&colon;
 						</p>
 
 						<p class="maths">
@@ -2012,7 +2012,6 @@
 										</mtable>
 										<mo>&rsqb;</mo>
 									</mrow>
-									<mi>,</mi>
 								</math>
 							</span>
 						</p>
