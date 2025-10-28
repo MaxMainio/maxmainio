@@ -287,6 +287,28 @@
 													<mo>&rpar;</mo>
 												</mrow>
 											</mrow>
+											<mo>=</mo>
+											<mfrac>
+												<mrow>
+													<msub>
+														<mi>&iota;</mi>
+														<mn>1</mn>
+													</msub>
+													<mo>&plus;</mo>
+													<msub>
+														<mi>&iota;</mi>
+														<mn>2</mn>
+													</msub>
+													<mo>&plus;</mo>
+													<mi>...</mi>
+													<mo>&plus;</mo>
+													<msub>
+														<mi>&iota;</mi>
+														<mi>n</mi>
+													</msub>
+												</mrow>
+												<mrow><mn>n</mn></mrow>
+											</mfrac>
 										</math>
 									</span>
 								</p><br>
@@ -337,6 +359,57 @@
 													</mrow>
 												</msup>
 											</mrow>
+											<mo>=</mo>
+											<msup>
+												<mrow>
+													<mo>&lpar;</mo>
+													<msub>
+														<mi>&iota;</mi>
+														<mn>1</mn>
+													</msub>
+													<mo>&times;</mo>
+													<msub>
+														<mi>&iota;</mi>
+														<mn>2</mn>
+													</msub>
+													<mo>&times;</mo>
+													<mi>...</mi>
+													<mo>&times;</mo>
+													<msub>
+														<mi>&iota;</mi>
+														<mi>n</mi>
+													</msub>
+													<mo>&rpar;</mo>
+												</mrow>
+												<mfrac>
+													<mn>1</mn>
+													<mi>n</mi>
+												</mfrac>
+											</msup>
+											<mo>=</mo>
+											<mroot>
+												<mrow>
+													<mo>&lpar;</mo>
+													<msub>
+														<mi>&iota;</mi>
+														<mn>1</mn>
+													</msub>
+													<mo>&times;</mo>
+													<msub>
+														<mi>&iota;</mi>
+														<mn>2</mn>
+													</msub>
+													<mo>&times;</mo>
+													<mi>...</mi>
+													<mo>&times;</mo>
+													<msub>
+														<mi>&iota;</mi>
+														<mi>n</mi>
+													</msub>
+													<mo>&rpar;</mo>
+												</mrow>
+												<mi>n</mi>
+											</mroot>
 										</math>
 									</span>
 								</p><br>
@@ -548,7 +621,76 @@
 								<h5><a href="https://en.wikipedia.org/wiki/Median" target="_blank">Median</a></h5>
 								
 								<p>
-									Identifies the middle pixel value among all inputs when they are ordered by <a href="https://www.sciencedirect.com/topics/computer-science/pixel-intensity" target="_blank">intensity</a>. Unlike the <a href="#mean" target="_self">arithmetic mean</a>, the <a href="https://en.wikipedia.org/wiki/Median" target="_blank">median</a> is unaffected by extreme values, making it ideal for <a href="https://en.wikipedia.org/wiki/Noise_reduction" target="_blank">denoising</a>, <a href="https://visionbook.mit.edu/temporal_filters_v2.html" target="_blank">temporal filtering</a>, and <a href="https://www.canon.ca/CanonOutsideOfAuto/play" target="_blank">exposure balancing</a>.
+									Identifies the middle pixel value among all inputs when they are ordered by <a href="https://www.sciencedirect.com/topics/computer-science/pixel-intensity" target="_blank">intensity</a>. Unlike the <a href="#mean" target="_self">arithmetic mean</a>, the <a href="https://en.wikipedia.org/wiki/Median" target="_blank">median</a> is unaffected by extreme values, making it ideal for <a href="https://en.wikipedia.org/wiki/Noise_reduction" target="_blank">denoising</a>, <a href="https://visionbook.mit.edu/temporal_filters_v2.html" target="_blank">temporal filtering</a>, and <a href="https://www.canon.ca/CanonOutsideOfAuto/play" target="_blank">exposure balancing</a>.<br>
+									For example, when the data set has an odd number of entries&colon;
+								</p>
+
+								<p class="maths">
+									<span title="Right click for a cheat sheet">
+										<math class="outline">
+											<mrow>
+												<mi>median</mi>
+												<mi>&lbrack;</mi>
+												<mn>1</mn>
+												<mo>,</mo>
+												<mn>3</mn>
+												<mo>,</mo>
+												<mn>3</mn>
+												<mo>,</mo>
+												<mn style="background-color: #00ff00;">6</mn>
+												<mo>,</mo>
+												<mn>7</mn>
+												<mo>,</mo>
+												<mn>8</mn>
+												<mo>,</mo>
+												<mn>9</mn>
+												<mi>&rbrack;</mi>
+												<mo>=</mo>
+												<mn>6</mn>
+											</mrow>
+										</math>
+									</span>
+								</p>
+
+								<p style="margin-top: 0.5rem;">
+									Or, when the data set has an even number of entries&colon;
+								</p>
+
+								<p class="maths">
+									<span title="Right click for a cheat sheet">
+										<math class="outline">
+											<mrow>
+												<mi>median</mi>
+												<mi>&lbrack;</mi>
+												<mn>1</mn>
+												<mo>,</mo>
+												<mn>2</mn>
+												<mo>,</mo>
+												<mn>3</mn>
+												<mo>,</mo>
+												<mn style="background-color: #00ff00;">4</mn>
+												<mo>,</mo>
+												<mn style="background-color: #00ff00;">5</mn>
+												<mo>,</mo>
+												<mn>6</mn>
+												<mo>,</mo>
+												<mn>8</mn>
+												<mo>,</mo>
+												<mn>9</mn>
+												<mi>&rbrack;</mi>
+												<mo>=</mo>
+												<mi>&lpar;</mi>
+												<mn>4</mn>
+												<mo>&plus;</mo>
+												<mn>5</mn>
+												<mi>&rpar;</mi>
+												<mo>&divide;</mo>
+												<mn>2</mn>
+												<mo>=</mo>
+												<mn>4.5</mn>
+											</mrow>
+										</math>
+									</span>
 								</p>
 							</li><br>
 
@@ -557,7 +699,39 @@
 
 								<p>
 									Selects the most frequently occurring pixel value among inputs. This emphasizes recurring features or dominant tones, often used when consolidating multiple nearly identical images or pattern repetitions.<br>
-									A tolerance value &lpar; <span title="Right click for a cheat sheet"><math><mi>&epsilon;</mi></math></span> &rpar; defines the range within which pixel values are considered equivalent.
+									A tolerance value &lpar; <span title="Right click for a cheat sheet"><math><mi>&epsilon;</mi></math></span> &rpar; defines the range within which pixel values are considered equivalent.<br>
+									For example&colon;
+								</p>
+
+								<p class="maths">
+									<span title="Right click for a cheat sheet">
+										<math class="outline">
+											<mrow>
+												<mi>mode</mi>
+												<mi>&lbrack;</mi>
+												<mn>1</mn>
+												<mo>,</mo>
+												<mn style="background-color: #00ff00;">2</mn>
+												<mo>,</mo>
+												<mn style="background-color: #00ff00;">2</mn>
+												<mo>,</mo>
+												<mn style="background-color: #00ff00;">2</mn>
+												<mo>,</mo>
+												<mn>3</mn>
+												<mo>,</mo>
+												<mn>3</mn>
+												<mo>,</mo>
+												<mn>4</mn>
+												<mo>,</mo>
+												<mn>7</mn>
+												<mo>,</mo>
+												<mn>9</mn>
+												<mi>&rbrack;</mi>
+												<mo>=</mo>
+												<mn>2</mn>
+											</mrow>
+										</math>
+									</span>
 								</p>
 							</li><br>
 
