@@ -5,7 +5,7 @@
 		<title>Max Mainio | Sorting</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="author" content="Max Mainio Beidler">
-		<meta name="description" content="FIXME:">
+		<meta name="description" content="A subpage on Max Mainio Beidler's website featuring pixel-sorting TouchDesigner components.">
 		<meta name="theme-color" media="(prefers-color-scheme: light)" content="#cccccc">
 		<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#333333">
 
@@ -93,11 +93,17 @@
 						<h1 id="title">Sorting</h1>
 						<h2 id="sub-title"><a href="https://derivative.ca/" target="_blank">TD</a> <a href="https://derivative.ca/UserGuide/Component" target="_blank">COMPs</a> / <a href="https://derivative.ca/tags/tops" target="_blank">TOPs</a> / 2023 &ndash; Present</h2>
 						<p>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim diam vulputate ut pharetra sit amet aliquam. Integer eget aliquet nibh praesent tristique magna sit. Massa id neque aliquam vestibulum. Egestas diam in arcu cursus euismod quis viverra nibh. Ultrices vitae auctor eu augue ut lectus arcu bibendum at. Vel risus commodo viverra maecenas accumsan lacus vel facilisis volutpat. Sit amet cursus sit amet dictum sit. Scelerisque mauris pellentesque pulvinar pellentesque habitant morbi tristique. Rutrum quisque non tellus orci ac.
+							Pixel sorting is a technique that reorganizes the pixels of an image according to a defined metric&hyphen;such as brightness, luminance, or individual color channels. Rather than altering the pixel values themselves, these operations rearrange where pixels appear in the image, producing visually striking transformations or enabling analytical exploration of an image&rsquo;s intensity structure.
 						</p>
+
 						<p>
-							Cras sed felis eget velit. Ipsum a arcu cursus vitae congue. Quis ipsum suspendisse ultrices gravida dictum. Condimentum mattis pellentesque id nibh tortor id aliquet. Magna fermentum iaculis eu non. Massa eget egestas purus viverra accumsan. Lobortis mattis aliquam faucibus purus in massa tempor. Aliquam id diam maecenas ultricies mi. Morbi enim nunc faucibus a pellentesque. Ultricies mi eget mauris pharetra et ultrices neque ornare.
+							In image processing, sorting can reveal hidden gradients, expose tonal distributions, and create controlled distortions that respond directly to the underlying data. By treating the image as a collection of sortable elements, pixel sorting becomes both an artistic tool and a procedural analytical method.
 						</p>
+
+						<p>
+							Pixel sorting is commonly used in data&hyphen;driven visualization, glitch aesthetics, compression&hyphen;like effects, luminance mapping, and generative texture design. Together, these components provide a controlled and reversible way to explore pixel&hyphen;level reordering within TouchDesigner TOP networks.
+						</p>
+
 						<p>
 							Index&colon;<br>
 							<a href="#sort" target="_self">Sort</a>, <a href="#unsort" target="_self">unSort</a>
@@ -234,20 +240,49 @@
 				<section id="sort" class="documentation">
 					<div class="docuinfo">
 						<h2>Sort</h2>
-						<h3>Sub-Title</h3>
+						<h3>Pixel ReOrdering</h3>
 						<p>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim diam vulputate ut pharetra sit amet aliquam. Integer eget aliquet nibh praesent tristique magna sit. Massa id neque aliquam vestibulum. Egestas diam in arcu cursus euismod quis viverra nibh. Ultrices vitae auctor eu augue ut lectus arcu bibendum at. Vel risus commodo viverra maecenas accumsan lacus vel facilisis volutpat. Sit amet cursus sit amet dictum sit. Scelerisque mauris pellentesque pulvinar pellentesque habitant morbi tristique. Rutrum quisque non tellus orci ac.
+							This component reorders the pixels of an input image according to a user&hyphen;defined sorting strategy. Unlike traditional image filters, pixel sorting rearranges the spatial structure of the image itself, producing results that range from analytical reorganizations to highly stylized effects. The sorting process is computed using POPs, and the re&hyphen;organizational data generated during sorting can be optionally output alongside the final image.
+						</p>
+
+						<p>
+							The Sort COMP operates in three modes, each defining how pixels are arranged on the output grid&colon;
+						</p>
+
+						<ul>
+							<li>
+								<p>
+									Full&colon; Sorts all pixels globally from brightest to darkest, filling the output from the top&hyphen;left corner downward in a zig&hyphen;zag row pattern.
+								</p>
+							</li>
+
+							<li>
+								<p>
+									Columns&colon; Sorts pixels independently within each column, placing brighter values toward the top and darker values toward the bottom.
+								</p>
+							</li>
+
+							<li>
+								<p>
+									Rows&colon; Sorts pixels independently within each row, placing brighter values to the left and darker values to the right.
+								</p>
+							</li>
+						</ul>
+
+						<p>
+							When paired with the unSort COMP, the sorting process becomes fully reversible. This makes it possible to experiment freely with pixel ordering while preserving the ability to return the image to its original spatial configuration.
 						</p>
 
 						<h5>Resources&colon;</h5>
 						<p>
-							<a href="https://github.com/MaxMainio/TD_" target="_blank">Download the .tox files</a>
+							<a href="https://github.com/MaxMainio/TD_" target="_blank">Download the .tox files</a><br>
+							<a href="https://medium.com/@xoalexo/pixel-sorting-is-the-coolest-thing-youve-never-tried-48097954e9f3" target="_blank">Pixel Sorting on Medium</a>
 						</p>
 					</div>
 
 					<div class="docuviz">
 						<div class="comp-display">
-							<a href="https://github.com/MaxMainio/TD_/blob/main/TOPs/Edge%20Detectors/Gradient.tox"
+							<a href="https://github.com/MaxMainio/TD_/blob/main/TOPs/Sorting/Sort.tox"
 								target="_blank"
 								title="Click here to be taken to the Sort COMP section of the Github repo where you can download all of these components."
 								class="td-comp small theme-dark">
@@ -313,37 +348,38 @@
 							<h4>Parameters</h4>
 							<h5>Sort&colon;</h5>
 							<p>
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim diam vulputate ut pharetra sit amet aliquam.
+								Defines the direction and structure of the pixel sorting operation.
 							</p>
 
 							<h5>Sort By&colon;</h5>
 							<p>
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim diam vulputate ut pharetra sit amet aliquam.
+								Specifies the metric used to evaluate pixel intensity.
 							</p>
 
 							<h5>Luminance&colon;</h5>
 							<p>
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim diam vulputate ut pharetra sit amet aliquam.
+								Determines the method used to calculate luminance &rpar;active only when Sort By is set to Luminance&lpar;.
 							</p>
 	
 							<hr/>
 	
 							<h5>Output unSort Data&colon;</h5>
 							<p>
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim diam vulputate ut pharetra sit amet aliquam.
+								When enabled, outputs corresponding POP data describing the pixel order transformation applied during sorting.
 							</p>
 
 							<h4>In&hyphen; &sol; Outputs</h4>
 							<p>
-								<b>Input 0</b> &ndash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> image to be processed.
+								<b>Input 0</b> &ndash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> image to be sorted.
 							</p>
 
 							<p>
-								<b>Output 0</b> &ndash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> Lorem ipsum...
+								<b>Output 0</b> &ndash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> Sorted image.<br>
+								<b>Output 1</b> &ndash; <a href="https://derivative.ca/UserGuide/POP" target="_blank"><span class="pop-text">POP</span></a> Pixel sorting data.
 							</p>
 
 							<p style="margin-top: 1rem;">
-								<b>Updated</b> &ndash; <a href="https://en.wikipedia.org/wiki/List_of_date_formats_by_country#:~:text=regions%20and%20countries-,DMY,-Europe%3A%20Italy" target="_blank"><span class="date-text">30&sol;8&sol;2025</span></a>
+								<b>Updated</b> &ndash; <a href="https://en.wikipedia.org/wiki/List_of_date_formats_by_country#:~:text=regions%20and%20countries-,DMY,-Europe%3A%20Italy" target="_blank"><span class="date-text">16&sol;11&sol;2025</span></a>
 							</p>
 						</div>
 					</div>
@@ -354,20 +390,31 @@
 				<section id="unsort" class="documentation">
 					<div class="docuinfo">
 						<h2>unSort</h2>
-						<h3>Sub-Title</h3>
+						<h3>Pixel ReOrdering Reversal</h3>
 						<p>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim diam vulputate ut pharetra sit amet aliquam. Integer eget aliquet nibh praesent tristique magna sit. Massa id neque aliquam vestibulum. Egestas diam in arcu cursus euismod quis viverra nibh. Ultrices vitae auctor eu augue ut lectus arcu bibendum at. Vel risus commodo viverra maecenas accumsan lacus vel facilisis volutpat. Sit amet cursus sit amet dictum sit. Scelerisque mauris pellentesque pulvinar pellentesque habitant morbi tristique. Rutrum quisque non tellus orci ac.
+							The unSort component reconstructs the original spatial arrangement of an image after it has been processed by the Sort COMP. Instead of applying its own sorting logic, the unSort COMP uses the re&hyphen;organizational POP data generated during the original Sort operation to reverse the pixel ordering step by step.
+						</p>
+
+						<p>
+							The unSort COMP requires two inputs&colon;<br>
+							The image to be unsorted, and<br>
+							POP data stream produced by the Sort COMP.
+						</p>
+
+						<p>
+							By referencing this stored mapping, the component restores each pixel to its initial position, effectively undoing any sorting performed across rows, columns, or the full image. This allows pixel sorting to be used as a reversible transformation &mdash; ideal for analytic workflows, generative animation, or procedural effects where temporary reordering must remain recoverable.
 						</p>
 
 						<h5>Resources&colon;</h5>
 						<p>
-							<a href="https://github.com/MaxMainio/TD_" target="_blank">Download the .tox files</a>
+							<a href="https://github.com/MaxMainio/TD_" target="_blank">Download the .tox files</a><br>
+							<a href="https://medium.com/@xoalexo/pixel-sorting-is-the-coolest-thing-youve-never-tried-48097954e9f3" target="_blank">Pixel Sorting on Medium</a>
 						</p>
 					</div>
 
 					<div class="docuviz">
 						<div class="comp-display">
-							<a href="https://github.com/MaxMainio/TD_/blob/main/TOPs/Edge%20Detectors/Gradient.tox"
+							<a href="https://github.com/MaxMainio/TD_/blob/main/TOPs/Sorting/unSort.tox"
 								target="_blank"
 								title="Click here to be taken to the unSort COMP section of the Github repo where you can download all of these components."
 								class="td-comp small theme-dark">
@@ -433,20 +480,22 @@
 							<h4>Parameters</h4>
 							<h5>unSort&colon;</h5>
 							<p>
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim diam vulputate ut pharetra sit amet aliquam.
+								Specifies the sorting structure that should be reversed.<br>
+								This must match the Sort mode used in the original Sort COMP in order to correctly reconstruct the input image&rsquo;s original pixel arrangement.
 							</p>
 
 							<h4>In&hyphen; &sol; Outputs</h4>
 							<p>
-								<b>Input 0</b> &ndash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> image to be processed.
+								<b>Input 0</b> &ndash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> Sorted image to be unsorted.<br>
+								<b>Input 1</b> &ndash; <a href="https://derivative.ca/UserGuide/POP" target="_blank"><span class="pop-text">POP</span></a> Pixel sorting data.
 							</p>
 
 							<p>
-								<b>Output 0</b> &ndash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> Lorem ipsum...
+								<b>Output 0</b> &ndash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> Unsorted image.
 							</p>
 
 							<p style="margin-top: 1rem;">
-								<b>Updated</b> &ndash; <a href="https://en.wikipedia.org/wiki/List_of_date_formats_by_country#:~:text=regions%20and%20countries-,DMY,-Europe%3A%20Italy" target="_blank"><span class="date-text">30&sol;8&sol;2025</span></a>
+								<b>Updated</b> &ndash; <a href="https://en.wikipedia.org/wiki/List_of_date_formats_by_country#:~:text=regions%20and%20countries-,DMY,-Europe%3A%20Italy" target="_blank"><span class="date-text">16&sol;11&sol;2025</span></a>
 							</p>
 						</div>
 					</div>
