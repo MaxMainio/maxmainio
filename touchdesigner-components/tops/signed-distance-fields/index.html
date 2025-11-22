@@ -106,7 +106,7 @@
 
 						<p>
 							Index&colon;<br>
-							<a href="#jfa-sdf" target="_self">JFA SDF</a>, <a href="#sdf-chamfer" target="_self">SDF Chamfer</a>, <a href="#sdf-chamfer" target="_self">SDF Chamfer Smooth</a>, <a href="#sdf-combiner" target="_self">SDF Combiner</a>, <a href="#sdf-combiner" target="_self">SDF Combiner Smooth</a>, <a href="#sdf-corrector" target="_self">SDF Corrector</a>, <a href="#sdf-renormalization" target="_self">SDF reNormalization</a>, <a href="#vp-sdf" target="_self">VP SDF</a>
+							<a href="#jfa-sdf" target="_self">JFA SDF</a>, <a href="#sdf-chamfer" target="_self">SDF Chamfer</a>, <a href="#sdf-chamfer" target="_self">SDF Chamfer Smooth</a>, <a href="#sdf-combiner" target="_self">SDF Combiner</a>, <a href="#sdf-combiner" target="_self">SDF Combiner Smooth</a>, <a href="#sdf-corrector" target="_self">SDF Corrector</a>, <a href="#vp-sdf" target="_self">VP SDF</a>, <a href="#sdf-renormalization" target="_self">SDF reNormalization</a>
 						</p>
 					</div>
 				</section>
@@ -1695,156 +1695,6 @@
 
 				<hr/>
 
-				<section id="sdf-renormalization" class="documentation">
-					<div class="docuinfo">
-						<h2><a href="https://github.com/MaxMainio/TD_/blob/main/TOPs/SDF/SDF_reNormalization.tox" target="_blank">SDF reNormalization</a></h2>
-						<h3>Unit Distance Correction</h3>
-						<p>
-							Many <a href="https://en.wikipedia.org/wiki/Signed_distance_function" target="_blank">SDF</a> workflows &mdash; including <a href="https://en.wikipedia.org/wiki/Gaussian_blur" target="_blank">blurring</a>, <a href="https://en.wikipedia.org/wiki/Image_warping" target="_blank">warping</a>, iterative propagation, accumulation &mdash; can distort the unit step size. Instead of increasing by exactly 1 unit per pixel &lpar;in <i>Image Space</i>&rpar; or <span title="Right click for a cheat sheet"><math><mn>1</mn><mo>/</mo><mi>min</mi><mo>&lpar;</mo><mi>width</mi><mo>,</mo><mi>height</mi><mo>&rpar;</mo></math></span> &lpar;in <i>UV Space</i>&rpar;, the <a href="https://en.wikipedia.org/wiki/Signed_distance_function" target="_blank">SDF</a> may become stretched, compressed, or uneven.
-						</p>
-
-						<p>
-							<a href="https://github.com/MaxMainio/TD_/blob/main/TOPs/SDF/SDF_reNormalization.tox" target="_blank">The SDF ReNormalization Component</a> restores this global unit&hyphen;distance consistency by analyzing the input <a href="https://en.wikipedia.org/wiki/Signed_distance_function" target="_blank">SDF</a> holistically, determining the effective &ldquo;distance per pixel,&rdquo; and applying a single uniform scaling factor across the entire field. This re&hyphen;aligns the <a href="https://en.wikipedia.org/wiki/Signed_distance_function" target="_blank">SDF</a> so that distances increase at the correct rate, ensuring compatibility with downstream <a href="https://en.wikipedia.org/wiki/Signed_distance_function" target="_blank">SDF</a> operations such as <a href="https://micro.magnet.fsu.edu/primer/java/digitalimaging/russ/booleancombinations/index.html" target="_blank">Boolean combinations</a>, <a href="https://www.ge0.dev/tech/image-smoothing-algorithms" target="_blank">smoothing</a>, <a href="#sdf-chamfer" target="_self">chamfering</a>, or <a href="https://en.wikipedia.org/wiki/Ray_marching" target="_blank">raymarching</a>.
-						</p>
-
-						<h5>Resources&colon;</h5>
-						<p>
-							<a href="https://github.com/MaxMainio/TD_" target="_blank">Download the .tox files</a><br>
-							<a href="https://en.wikipedia.org/wiki/Signed_distance_function" target="_blank">SDFs on Wikipedia</a>
-						</p>
-					</div>
-
-					<div class="docuviz">
-						<div class="comp-display">
-							<a href="https://github.com/MaxMainio/TD_/blob/main/TOPs/SDF/SDF_reNormalization.tox"
-								target="_blank"
-								target="_blank"
-								title="Click here to be taken to the SDF reNormalization COMP section of the Github repo where you can download all of these components."
-								class="td-comp small theme-light">
-								<div class="td-row"></div>
-
-								<div class="td-body">
-									<div class="td-side input top">
-										<div class="td-filler"></div>
-										<div class="td-connector">
-											<div class="td-color"></div>
-											<div class="td-spacer"></div>
-											<div class="td-color"></div>
-										</div>
-										<div class="td-filler"></div>
-									</div>
-
-									<div class="td-flag-col">
-										<img src="../../assets/content/td-icons/viewer-on.webp" loading="lazy">
-										<img src="../../assets/content/td-icons/clone-immune-off.webp" loading="lazy">
-										<img src="../../assets/content/td-icons/no-cook-off.webp" loading="lazy">
-										<img src="../../assets/content/td-icons/unlocked.webp" loading="lazy">
-									</div>
-
-									<div class="td-viewer">
-										<div class="td-viewer-inner">
-											<img src="assets/content/sdf-renormalization.webp"
-												alt="Visualization of a Value Propagated Signed Distance Field normalized to the screen space of the input image."
-												class="blur-load"
-												style="background-image: url(assets/no-index/sdf-renormalization-blurry.webp); aspect-ratio: 1;"
-												loading="lazy">
-										</div>
-									</div>
-
-									<div class="td-side output top">
-										<div class="td-filler"></div>
-										<div class="td-connector">
-											<div class="td-color"></div>
-											<div class="td-spacer"></div>
-											<div class="td-color"></div>
-										</div>
-										<div class="td-filler"></div>
-									</div>
-								</div>
-
-								<div class="td-row"></div>
-								<div class="td-hairline"></div>
-
-								<div class="td-footer">
-									<div class="td-title">
-										<p class="td-name">SDF_reNormalization</p>
-									</div>
-									<div class="td-active">
-										<img src="../../assets/content/td-icons/activate-off.webp" loading="lazy">
-									</div>
-								</div>
-							</a>
-						</div>
-
-						<div>
-							<h4>Parameters</h4>
-							<h5>Method&colon;</h5>
-							<p>
-								Defines how the <a href="https://en.wikipedia.org/wiki/Signed_distance_function" target="_blank">SDF</a> is renormalized.<br>
-								Fast estimates the local gradient of the input <a href="https://en.wikipedia.org/wiki/Signed_distance_function" target="_blank">SDF</a> and rescales pixel values so that distance steps approach unit length.<br>
-								Accurate rebuilds a new <a href="https://en.wikipedia.org/wiki/Signed_distance_function" target="_blank">Signed Distance Field</a> from the <a href="https://en.wikipedia.org/wiki/Thresholding_(image_processing)" target="_blank">thresholded</a> input, enforcing proper unit distance from the ground up.
-							</p>
-	
-							<h5>Unit&colon;</h5>
-							<p>
-								Specifies the measurement unit for distance values in the <a href="https://en.wikipedia.org/wiki/Signed_distance_function" target="_blank">Signed Distance Field</a>.<br>
-								When set to <i>UV Space</i> distances are calculated in normalized UV coordinates &lpar;0&ndash;1&rpar;<br>
-								When set to <i>Pixel Step</i> distances are measured in pixel units. Each pixel contributes a fixed value to the distance, controlled by the <i>Step Size</i> parameter.
-							</p>
-
-							<h5>Step Size&colon;</h5>
-							<p>
-								Determines the distance increment for each pixel when the <i>Unit</i> parameter is set to <i>Pixel Step.</i> This defines how much each pixel contributes to the total distance value in the <a href="https://en.wikipedia.org/wiki/Signed_distance_function" target="_blank">Signed Distance Field</a>. Larger values result in a faster-growing field, while smaller values provide finer control over distance granularity.
-							</p>
-
-							<hr/>
-
-							<h5><a href="https://en.wikipedia.org/wiki/Metric_space" target="_blank">Metric</a>&colon;</h5>
-							<p>
-								Specifies the <a href="https://en.wikipedia.org/wiki/Metric_space" target="_blank">distance metric</a> used in the calculation. Options include:<br>
-								<a href="https://en.wikipedia.org/wiki/Euclidean_distance" target="_blank">Euclidian</a>, <a href="https://en.wikipedia.org/wiki/Taxicab_geometry" target="_blank">Manhattan</a>, <a href="https://en.wikipedia.org/wiki/Chebyshev_distance" target="_blank">Chebyshev</a>, &amp; <a href="https://en.wikipedia.org/wiki/Minkowski_distance" target="_blank">Minkowski</a>.
-							</p>
-
-							<h5>Exponent&colon;</h5>
-							<p>
-								Controls the shape of the distance measurement when the <a href="https://en.wikipedia.org/wiki/Metric_space" target="_blank">Metric</a> is set to <a href="https://en.wikipedia.org/wiki/Minkowski_distance" target="_blank">Minkowski</a>. Lower or higher values warp the contribution of distances along different axes.
-							</p>
-
-							<h5>Scale Space&colon;</h5>
-							<p>
-								An X/Y scaling factor applied to the <a href="https://en.wikipedia.org/wiki/Signed_distance_function" target="_blank">SDF</a> calculation. Allows distances to be warped, stretching the field horizontally or vertically.
-							</p>
-
-							<h5>reCalculate&colon;</h5>
-							<p>
-								Forces the component to re-cook the <a href="https://youtu.be/A0pxY9QsgJE?si=N8H9M-QIrUN4wffW" target="_blank">Jump Flood Algorithm</a>. Useful for clearing or correcting the output if visual errors appear during calculation.
-							</p>
-	
-							<hr/>
-
-							<h5>Invert&colon;</h5>
-							<p>
-								Flips the sign of the <a href="https://en.wikipedia.org/wiki/Signed_distance_function" target="_blank">SDF</a> so that areas considered inside become outside, and vice versa.
-							</p>
-
-							<h4>In&hyphen; &sol; Outputs</h4>
-							<p>
-								<b>Input 0</b> &ndash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> SDF to be reNormalized.
-							</p>
-
-							<p>
-								<b>Output 0</b> &ndash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> ReNormalized SDF.
-							</p>
-
-							<p style="margin-top: 1rem;">
-								<b>Updated</b> &ndash; <a href="https://en.wikipedia.org/wiki/List_of_date_formats_by_country#:~:text=regions%20and%20countries-,DMY,-Europe%3A%20Italy" target="_blank"><span class="date-text">22&sol;11&sol;2025</span></a>
-							</p>
-						</div>
-					</div>
-				</section>
-
-				<hr/>
-
 				<section id="vp-sdf" class="documentation">
 					<div class="docuinfo">
 						<h2><a href="https://github.com/MaxMainio/TD_/blob/main/TOPs/SDF/VP_SDF.tox" target="_blank">VP SDF</a></h2>
@@ -2010,6 +1860,156 @@
 
 							<p>
 								<b>Output 0</b> &ndash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> calculated <a href="https://github.com/MaxMainio/TD_/blob/main/TOPs/SDF/VP_SDF.tox" target="_blank">VP SDF</a>.
+							</p>
+
+							<p style="margin-top: 1rem;">
+								<b>Updated</b> &ndash; <a href="https://en.wikipedia.org/wiki/List_of_date_formats_by_country#:~:text=regions%20and%20countries-,DMY,-Europe%3A%20Italy" target="_blank"><span class="date-text">22&sol;11&sol;2025</span></a>
+							</p>
+						</div>
+					</div>
+				</section>
+
+				<hr/>
+
+				<section id="sdf-renormalization" class="documentation">
+					<div class="docuinfo">
+						<h2><a href="https://github.com/MaxMainio/TD_/blob/main/TOPs/SDF/SDF_reNormalization.tox" target="_blank">SDF reNormalization</a></h2>
+						<h3>Unit Distance Correction</h3>
+						<p>
+							Many <a href="https://en.wikipedia.org/wiki/Signed_distance_function" target="_blank">SDF</a> workflows &mdash; including <a href="https://en.wikipedia.org/wiki/Gaussian_blur" target="_blank">blurring</a>, <a href="https://en.wikipedia.org/wiki/Image_warping" target="_blank">warping</a>, iterative propagation, accumulation &mdash; can distort the unit step size. Instead of increasing by exactly 1 unit per pixel &lpar;in <i>Image Space</i>&rpar; or <span title="Right click for a cheat sheet"><math><mn>1</mn><mo>/</mo><mi>min</mi><mo>&lpar;</mo><mi>width</mi><mo>,</mo><mi>height</mi><mo>&rpar;</mo></math></span> &lpar;in <i>UV Space</i>&rpar;, the <a href="https://en.wikipedia.org/wiki/Signed_distance_function" target="_blank">SDF</a> may become stretched, compressed, or uneven.
+						</p>
+
+						<p>
+							<a href="https://github.com/MaxMainio/TD_/blob/main/TOPs/SDF/SDF_reNormalization.tox" target="_blank">The SDF reNormalization Component</a> restores this global unit&hyphen;distance consistency by analyzing the input <a href="https://en.wikipedia.org/wiki/Signed_distance_function" target="_blank">SDF</a> holistically, determining the effective &ldquo;distance per pixel,&rdquo; and applying a single uniform scaling factor across the entire field. This re&hyphen;aligns the <a href="https://en.wikipedia.org/wiki/Signed_distance_function" target="_blank">SDF</a> so that distances increase at the correct rate, ensuring compatibility with downstream <a href="https://en.wikipedia.org/wiki/Signed_distance_function" target="_blank">SDF</a> operations such as <a href="https://micro.magnet.fsu.edu/primer/java/digitalimaging/russ/booleancombinations/index.html" target="_blank">Boolean combinations</a>, <a href="https://www.ge0.dev/tech/image-smoothing-algorithms" target="_blank">smoothing</a>, <a href="#sdf-chamfer" target="_self">chamfering</a>, or <a href="https://en.wikipedia.org/wiki/Ray_marching" target="_blank">raymarching</a>.
+						</p>
+
+						<h5>Resources&colon;</h5>
+						<p>
+							<a href="https://github.com/MaxMainio/TD_" target="_blank">Download the .tox files</a><br>
+							<a href="https://en.wikipedia.org/wiki/Signed_distance_function" target="_blank">SDFs on Wikipedia</a>
+						</p>
+					</div>
+
+					<div class="docuviz">
+						<div class="comp-display">
+							<a href="https://github.com/MaxMainio/TD_/blob/main/TOPs/SDF/SDF_reNormalization.tox"
+								target="_blank"
+								target="_blank"
+								title="Click here to be taken to the SDF reNormalization COMP section of the Github repo where you can download all of these components."
+								class="td-comp small theme-light">
+								<div class="td-row"></div>
+
+								<div class="td-body">
+									<div class="td-side input top">
+										<div class="td-filler"></div>
+										<div class="td-connector">
+											<div class="td-color"></div>
+											<div class="td-spacer"></div>
+											<div class="td-color"></div>
+										</div>
+										<div class="td-filler"></div>
+									</div>
+
+									<div class="td-flag-col">
+										<img src="../../assets/content/td-icons/viewer-on.webp" loading="lazy">
+										<img src="../../assets/content/td-icons/clone-immune-off.webp" loading="lazy">
+										<img src="../../assets/content/td-icons/no-cook-off.webp" loading="lazy">
+										<img src="../../assets/content/td-icons/unlocked.webp" loading="lazy">
+									</div>
+
+									<div class="td-viewer">
+										<div class="td-viewer-inner">
+											<img src="assets/content/sdf-renormalization.webp"
+												alt="Visualization of a Value Propagated Signed Distance Field normalized to the screen space of the input image."
+												class="blur-load"
+												style="background-image: url(assets/no-index/sdf-renormalization-blurry.webp); aspect-ratio: 1;"
+												loading="lazy">
+										</div>
+									</div>
+
+									<div class="td-side output top">
+										<div class="td-filler"></div>
+										<div class="td-connector">
+											<div class="td-color"></div>
+											<div class="td-spacer"></div>
+											<div class="td-color"></div>
+										</div>
+										<div class="td-filler"></div>
+									</div>
+								</div>
+
+								<div class="td-row"></div>
+								<div class="td-hairline"></div>
+
+								<div class="td-footer">
+									<div class="td-title">
+										<p class="td-name">SDF_reNormalization</p>
+									</div>
+									<div class="td-active">
+										<img src="../../assets/content/td-icons/activate-off.webp" loading="lazy">
+									</div>
+								</div>
+							</a>
+						</div>
+
+						<div>
+							<h4>Parameters</h4>
+							<h5>Method&colon;</h5>
+							<p>
+								Defines how the <a href="https://en.wikipedia.org/wiki/Signed_distance_function" target="_blank">SDF</a> is renormalized.<br>
+								Fast estimates the local gradient of the input <a href="https://en.wikipedia.org/wiki/Signed_distance_function" target="_blank">SDF</a> and rescales pixel values so that distance steps approach unit length.<br>
+								Accurate rebuilds a new <a href="https://en.wikipedia.org/wiki/Signed_distance_function" target="_blank">Signed Distance Field</a> from the <a href="https://en.wikipedia.org/wiki/Thresholding_(image_processing)" target="_blank">thresholded</a> input, enforcing proper unit distance from the ground up.
+							</p>
+	
+							<h5>Unit&colon;</h5>
+							<p>
+								Specifies the measurement unit for distance values in the <a href="https://en.wikipedia.org/wiki/Signed_distance_function" target="_blank">Signed Distance Field</a>.<br>
+								When set to <i>UV Space</i> distances are calculated in normalized UV coordinates &lpar;0&ndash;1&rpar;<br>
+								When set to <i>Pixel Step</i> distances are measured in pixel units. Each pixel contributes a fixed value to the distance, controlled by the <i>Step Size</i> parameter.
+							</p>
+
+							<h5>Step Size&colon;</h5>
+							<p>
+								Determines the distance increment for each pixel when the <i>Unit</i> parameter is set to <i>Pixel Step.</i> This defines how much each pixel contributes to the total distance value in the <a href="https://en.wikipedia.org/wiki/Signed_distance_function" target="_blank">Signed Distance Field</a>. Larger values result in a faster-growing field, while smaller values provide finer control over distance granularity.
+							</p>
+
+							<hr/>
+
+							<h5><a href="https://en.wikipedia.org/wiki/Metric_space" target="_blank">Metric</a>&colon;</h5>
+							<p>
+								Specifies the <a href="https://en.wikipedia.org/wiki/Metric_space" target="_blank">distance metric</a> used in the calculation. Options include:<br>
+								<a href="https://en.wikipedia.org/wiki/Euclidean_distance" target="_blank">Euclidian</a>, <a href="https://en.wikipedia.org/wiki/Taxicab_geometry" target="_blank">Manhattan</a>, <a href="https://en.wikipedia.org/wiki/Chebyshev_distance" target="_blank">Chebyshev</a>, &amp; <a href="https://en.wikipedia.org/wiki/Minkowski_distance" target="_blank">Minkowski</a>.
+							</p>
+
+							<h5>Exponent&colon;</h5>
+							<p>
+								Controls the shape of the distance measurement when the <a href="https://en.wikipedia.org/wiki/Metric_space" target="_blank">Metric</a> is set to <a href="https://en.wikipedia.org/wiki/Minkowski_distance" target="_blank">Minkowski</a>. Lower or higher values warp the contribution of distances along different axes.
+							</p>
+
+							<h5>Scale Space&colon;</h5>
+							<p>
+								An X/Y scaling factor applied to the <a href="https://en.wikipedia.org/wiki/Signed_distance_function" target="_blank">SDF</a> calculation. Allows distances to be warped, stretching the field horizontally or vertically.
+							</p>
+
+							<h5>reCalculate&colon;</h5>
+							<p>
+								Forces the component to re-cook the <a href="https://youtu.be/A0pxY9QsgJE?si=N8H9M-QIrUN4wffW" target="_blank">Jump Flood Algorithm</a>. Useful for clearing or correcting the output if visual errors appear during calculation.
+							</p>
+	
+							<hr/>
+
+							<h5>Invert&colon;</h5>
+							<p>
+								Flips the sign of the <a href="https://en.wikipedia.org/wiki/Signed_distance_function" target="_blank">SDF</a> so that areas considered inside become outside, and vice versa.
+							</p>
+
+							<h4>In&hyphen; &sol; Outputs</h4>
+							<p>
+								<b>Input 0</b> &ndash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> SDF to be reNormalized.
+							</p>
+
+							<p>
+								<b>Output 0</b> &ndash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> ReNormalized SDF.
 							</p>
 
 							<p style="margin-top: 1rem;">
