@@ -111,7 +111,7 @@
 						</p>
 						<p>
 							Index&colon;<br>
-							<a href="#determinant" target="_self">Determinant</a>, <a href="#frobenius-norm" target="_self">Frobenius Norm</a>, <a href="#linear-combination" target="_self">Linear Combination</a>, <a href="#matrix-compiler" target="_self">Matrix Compiler</a>, <a href="#matrix-visualizer" target="_self">Matrix Visualizer</a>, <a href="#multiplication" target="_self">Multiplication</a>, <a href="#scalar" target="_self">Scalar</a>, <a href="#trace" target="_self">Trace</a>, <a href="#transpose" target="_self">Transpose</a>
+							<a href="#determinant" target="_self">Determinant</a>, <a href="#frobenius-norm" target="_self">Frobenius Norm</a>, <a href="#linear-combination" target="_self">Linear Combination</a>, <a href="#matrix-compiler" target="_self">Matrix Compiler</a>, <a href="#matrix-mix" target="_self">Matrix Mix</a>, <a href="#matrix-visualizer" target="_self">Matrix Visualizer</a>, <a href="#multiplication" target="_self">Multiplication</a>, <a href="#scalar" target="_self">Scalar</a>, <a href="#trace" target="_self">Trace</a>, <a href="#transpose" target="_self">Transpose</a>
 						</p>
 					</div>
 				</section>
@@ -341,6 +341,64 @@
 						<div class="td-footer">
 							<div class="td-title">
 								<p class="td-name">Matrix_Combiner</p>
+							</div>
+							<div class="td-active">
+								<img src="../../../assets/content/td-icons/activate-off.webp" loading="lazy">
+							</div>
+						</div>
+					</a>
+
+					<a href="#matrix-mix"
+						target="_self"
+						title="Click here to be taken to the Matrix Mix COMP section of the Matrix COMPs sub-page."
+						class="td-comp medium theme-dark">
+						<div class="td-row"></div>
+
+						<div class="td-body">
+							<div class="td-side input top">
+								<div class="td-filler"></div>
+								<div class="td-connector">
+									<div class="td-color"></div>
+									<div class="td-spacer"></div>
+									<div class="td-color"></div>
+								</div>
+								<div class="td-filler"></div>
+							</div>
+
+							<div class="td-flag-col">
+								<img src="../../../assets/content/td-icons/viewer-on.webp" loading="lazy">
+								<img src="../../../assets/content/td-icons/clone-immune-off.webp" loading="lazy">
+								<img src="../../../assets/content/td-icons/no-cook-off.webp" loading="lazy">
+								<img src="../../../assets/content/td-icons/unlocked.webp" loading="lazy">
+							</div>
+
+							<div class="td-viewer">
+								<div class="td-viewer-inner">
+									<img src="assets/content/matrix-mix.webp"
+										alt="View of an empty 2 by 2 matrix being rearranged into another empty 2 by 2 matrix."
+										class="blur-load"
+										style="background-image: url(assets/no-index/matrix-mix-blurry.webp); aspect-ratio: 2;"
+										loading="lazy">
+								</div>
+							</div>
+
+							<div class="td-side output top">
+								<div class="td-filler"></div>
+								<div class="td-connector">
+									<div class="td-color"></div>
+									<div class="td-spacer"></div>
+									<div class="td-color"></div>
+								</div>
+								<div class="td-filler"></div>
+							</div>
+						</div>
+
+						<div class="td-row"></div>
+						<div class="td-hairline"></div>
+
+						<div class="td-footer">
+							<div class="td-title">
+								<p class="td-name">Matrix_Mix</p>
 							</div>
 							<div class="td-active">
 								<img src="../../../assets/content/td-icons/activate-off.webp" loading="lazy">
@@ -1328,13 +1386,147 @@
 								References a <a href="https://derivative.ca/UserGuide/TOP" target="_blank">TOP</a> to be inserted into the corresponding <a href="https://en.wikipedia.org/wiki/Matrix_(mathematics)" target="_blank">matrix</a> cell.
 							</p>
 
-							<h4>In&hyphen; &sol; Outputs</h4>
+							<h4>Outputs</h4>
 							<p>
 								<b>Output 0</b> &ndash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> compiled <a href="https://en.wikipedia.org/wiki/Matrix_(mathematics)" target="_blank">matrix</a>.
 							</p>
 
 							<p style="margin-top: 1rem;">
 								<b>Updated</b> &ndash; <a href="https://en.wikipedia.org/wiki/List_of_date_formats_by_country#:~:text=regions%20and%20countries-,DMY,-Europe%3A%20Italy" target="_blank"><span class="date-text">22&sol;11&sol;2025</span></a>
+							</p>
+						</div>
+					</div>
+				</section>
+
+				<hr/>
+
+				<section id="matrix-mix" class="documentation">
+					<div class="docuinfo">
+						<h2>Matrix Mix</h2>
+						<h3><a href="https://en.wikipedia.org/wiki/Matrix_(mathematics)" target="_blank">Matrix</a> Cell Remapping</h3>
+						<p>
+							<a href="https://github.com/MaxMainio/TD_/blob/main/TOPs/Math/Matrix/Matrix_Mix.tox" target="_blank">The Matrix Mix COMP</a> takes direct inspiration from <a href="https://derivative.ca/" target="_blank">TouchDesigner&rsquo;s</a> <a href="https://docs.derivative.ca/Channel_Mix_TOP" target="_blank">Channel Mix TOP</a>, but extends the concept into the domain of <a href="https://en.wikipedia.org/wiki/Matrix_(mathematics)" target="_blank">matrix</a>&hyphen;based image processing. Instead of mixing individual channels, this operator mixes <i>entire <a href="https://en.wikipedia.org/wiki/Matrix_(mathematics)" target="_blank">matrix</a> cells.</i>
+						</p>
+
+						<p>
+							For every output cell, <a href="https://github.com/MaxMainio/TD_/blob/main/TOPs/Math/Matrix/Matrix_Mix.tox" target="_blank">this component</a> allows you to specify which input cell should be routed into it and how that cell should be transformed along the way. Each output&hyphen;cell control is expressed as a <a href="https://thebookofshaders.com/glossary/?search=vec4" target="_blank">four&hyphen;value vector</a>&colon;
+						</p>
+
+						<p>
+							<ol>
+								<li>
+									Index &mdash; selects which input cell is copied into this output position.
+								</li>
+								<li>
+									<a href="https://docs.derivative.ca/Math_TOP#:~:text=the%20following%20order%3A-,Pre%2DAdd,-preoff%20%2D%20First%2C%20add" target="_blank">Pre&hyphen;Add</a> &mdash; adds a constant value to all pixels before scaling.
+								</li>
+								<li>
+									<a href="https://docs.derivative.ca/Math_TOP#:~:text=of%20each%20channel.-,Multiply,-gain%20%2D%20Then%20multiply" target="_blank">Scalar</a> &mdash; multiplies all pixel values by a user&hyphen;defined factor.
+								</li>
+								<li>
+									<a href="https://docs.derivative.ca/Math_TOP#:~:text=by%20this%20value.-,Post%2DAdd,-postoff%20%2D%20Then%20add" target="_blank">Post&hyphen;Add</a> &mdash; adds a final offset after scaling.
+								</li>
+							</ol>
+						</p>
+
+						<p>
+							This design makes <a href="https://github.com/MaxMainio/TD_/blob/main/TOPs/Math/Matrix/Matrix_Mix.tox" target="_blank">the Matrix Mix COMP</a> both a structural and mathematical operator&colon; it can reorganize the layout of a <a href="https://en.wikipedia.org/wiki/Matrix_(mathematics)" target="_blank">matrix</a> while simultaneously performing per&hyphen;cell adjustments in a single pass.
+						</p>
+
+						<h5>Resources&colon;</h5>
+						<p>
+							<a href="https://github.com/MaxMainio/TD_" target="_blank">Download the .tox files</a><br>
+							<a href="https://en.wikipedia.org/wiki/Matrix_(mathematics)" target="_blank">Matrices on Wikipedia</a>
+						</p>
+					</div>
+
+					<div class="docuviz">
+						<div class="comp-display">
+							<a href="https://github.com/MaxMainio/TD_/blob/main/TOPs/Math/Matrix/Matrix_Mix.tox"
+								target="_blank"
+								title="Click here to be taken to the Matrix Mix COMP section of the Github repo where you can download all of these components."
+								class="td-comp medium theme-dark">
+								<div class="td-row"></div>
+
+								<div class="td-body">
+									<div class="td-side input top">
+										<div class="td-filler"></div>
+										<div class="td-connector">
+											<div class="td-color"></div>
+											<div class="td-spacer"></div>
+											<div class="td-color"></div>
+										</div>
+										<div class="td-filler"></div>
+									</div>
+
+									<div class="td-flag-col">
+										<img src="../../../assets/content/td-icons/viewer-on.webp" loading="lazy">
+										<img src="../../../assets/content/td-icons/clone-immune-off.webp" loading="lazy">
+										<img src="../../../assets/content/td-icons/no-cook-off.webp" loading="lazy">
+										<img src="../../../assets/content/td-icons/unlocked.webp" loading="lazy">
+									</div>
+
+									<div class="td-viewer">
+										<div class="td-viewer-inner">
+											<img src="assets/content/matrix-mix.webp"
+												alt="View of an empty 2 by 2 matrix being reorganized to another empty 2 by 2 matrix."
+												class="blur-load"
+												style="background-image: url(assets/no-index/matrix-mix-blurry.webp); aspect-ratio: 2;"
+												loading="lazy">
+										</div>
+									</div>
+
+									<div class="td-side output top">
+										<div class="td-filler"></div>
+										<div class="td-connector">
+											<div class="td-color"></div>
+											<div class="td-spacer"></div>
+											<div class="td-color"></div>
+										</div>
+										<div class="td-filler"></div>
+									</div>
+								</div>
+
+								<div class="td-row"></div>
+								<div class="td-hairline"></div>
+
+								<div class="td-footer">
+									<div class="td-title">
+										<p class="td-name">Matrix_Mix</p>
+									</div>
+									<div class="td-active">
+										<img src="../../../assets/content/td-icons/activate-off.webp" loading="lazy">
+									</div>
+								</div>
+							</a>
+						</div>
+
+						<div>
+							<h4>Parameters</h4>
+							<h5>Output <a href="https://en.wikipedia.org/wiki/Matrix_(mathematics)" target="_blank">Matrix</a> Dimensions&colon;</h5>
+							<p>
+								Defines the size of the <a href="https://en.wikipedia.org/wiki/Matrix_(mathematics)" target="_blank">matrix</a> in terms of its number of rows &lpar;Y&rpar; and columns &lpar;X&rpar;.
+							</p>
+	
+							<hr/>
+
+							<h5>Output Cell 0 &ndash; n&colon;</h5>
+							<p>
+								Specifies how this output cell is built&colon;<br>
+								Value 0 selects the input cell, Value 1 adds a pre&hyphen;offset, Value 2 applies a <a href="https://en.wikipedia.org/wiki/Scalar_(mathematics)" target="_blank">scalar</a>, and Value 3 adds a final post-offset.
+							</p>
+
+							<h4>In&hyphen; &sol; Outputs</h4>
+							<p>
+								<b>Input 0</b> &ndash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> <a href="https://en.wikipedia.org/wiki/Matrix_(mathematics)" target="_blank">matrix</a> to be rearranged.
+							</p>
+
+							<p>
+								<b>Output 0</b> &ndash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> rearranged <a href="https://en.wikipedia.org/wiki/Matrix_(mathematics)" target="_blank">matrix</a>.
+							</p>
+
+							<p style="margin-top: 1rem;">
+								<b>Updated</b> &ndash; <a href="https://en.wikipedia.org/wiki/List_of_date_formats_by_country#:~:text=regions%20and%20countries-,DMY,-Europe%3A%20Italy" target="_blank"><span class="date-text">23&sol;11&sol;2025</span></a>
 							</p>
 						</div>
 					</div>
