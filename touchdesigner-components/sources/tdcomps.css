@@ -47,6 +47,10 @@ html, body {
     --td-pop-color: #3c3c95;
     --td-pop-text-color: #38388e;
 
+    --td-dat-color: #885275;
+    --td-dat-text-color: #a77094;
+    --td-dat-text-alt: #8e7094;
+
     --td-readable-color: #bfbf4d;
 }
 
