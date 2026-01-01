@@ -169,7 +169,7 @@
 						</div>
 					</div>
 
-					<div id="color-converters" class="op-cat soon" title="coming soon...">
+					<div id="color" class="op-cat soon" title="coming soon...">
 						<div class="cat-col">
 							<h3>Color</h3>
 						</div>
@@ -181,6 +181,21 @@
 								HEX in,<br>
 								RGB to &lowbar;&lowbar;&lowbar;,<br>
 								sRGB &sol; Linear
+							</p>
+						</div>
+					</div>
+
+					<div id="dithering" class="op-cat soon" title="coming soon...">
+						<div class="cat-col">
+							<h3>Dithering</h3>
+						</div>
+
+						<div class="op-col">
+							<p>
+								Bayer Matrix Dither,<br>
+								Error Diffusion Dither,<br>
+								IGN Dither,<br>
+								Noise Dither
 							</p>
 						</div>
 					</div>
@@ -253,18 +268,19 @@
 
 						<div class="op-col">
 							<p>
-								Average,<br>
+								Average Global,<br>
 								Average Local,<br>
-								Detail Metric,<br>
+								Colormap,<br>
+								Detail Metric Global,<br>
 								Detail Metric Local,<br>
 								Local Analysis,<br>
 								Masked Analysis,<br>
 								nonMinMax Suppression,<br>
 								Orientation Aware nonMaximum Suppression,<br>
 								RGB Max,<br>
-								Variability,<br>
+								Variability Global,<br>
 								Variability Local,<br>
-								Varience
+								Varience Global
 							</p>
 						</div>
 					</div>
@@ -384,7 +400,6 @@
 								<p>
 									3D Compiler,<br>
 									Channel Separator,<br>
-									Colormap,<br>
 									Media In,<br>
 									Pre&hyphen;Multiplication,<br>
 									Scan,<br>
@@ -441,6 +456,8 @@
 							<p>
 								Normalize RGB,<br>
 								Normalize S&hyphen;Curve,<br>
+								Normalize to Average,<br>
+								Normalize to Sum,<br>
 								Sigmoid,<br>
 								Sigmoid Tunable,<br>
 								Soft Min&sol;Max,<br>
@@ -473,8 +490,19 @@
 								Adaptive Threshold,<br>
 								Band&hyphen;Pass Threshold,<br>
 								Double Threshold,<br>
-								Hysteresis Threshold,<br>
-								Mapped Threshold
+								Hysteresis Threshold
+							</p>
+						</div>
+					</div>
+
+					<div id="print" class="op-cat soon" title="coming soon...">
+						<div class="cat-col">
+							<h3>Print</h3>
+						</div>
+
+						<div class="op-col">
+							<p>
+								PPI Conversion
 							</p>
 						</div>
 					</div>
@@ -510,8 +538,8 @@
 								<a href="tops/signed-distance-fields/#sdf-combiner">SDF Combiner</a>,<br>
 								<a href="tops/signed-distance-fields/#sdf-combiner">SDF Combiner Smooth</a>,<br>
 								<a href="tops/signed-distance-fields/#sdf-corrector">SDF Corrector</a>,<br>
-								<a href="tops/signed-distance-fields/#vp-sdf">VP SDF</a>,<br>
-								<a href="tops/signed-distance-fields/#sdf-renormalization">SDF reNormalization</a>
+								<a href="tops/signed-distance-fields/#sdf-renormalization">SDF reNormalization</a>,<br>
+								<a href="tops/signed-distance-fields/#vp-sdf">VP SDF</a>
 							</p>
 						</div>
 					</div>
@@ -564,9 +592,7 @@
 									Double&hyphen;Circular,<br>
 									Double&hyphen;Elliptical Seat,<br>
 									Double&hyphen;Elliptical Sigmoid,<br>
-									Double&hyphen;Elliptical,<br>
-									Double&hyphen;Linear with Circular Fillet,<br>
-									Double&hyphen;Linear
+									Double&hyphen;Elliptical
 								</p>
 							</div>
 						</div>
@@ -594,7 +620,9 @@
 							<div>
 								<p>
 									Almost Identity 1,<br>
-									Almost Identity 2
+									Almost Identity 2,<br>
+									Double&hyphen;Linear with Circular Fillet,<br>
+									Double&hyphen;Linear
 								</p>
 							</div>
 						</div>
@@ -694,9 +722,9 @@
 						</div>
 					</div>
 
-					<div id="video-processors" class="op-cat soon" title="coming soon...">
+					<div id="video" class="op-cat soon" title="coming soon...">
 						<div class="cat-col">
-							<h3>Video Processors</h3>
+							<h3>Video</h3>
 						</div>
 
 						<div class="op-col">
