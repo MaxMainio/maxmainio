@@ -262,6 +262,30 @@ if (nikeHero) {
 			blur: 'work/nike/assets/no-index/2025/vomero-premium/athlete/vomero-premium-jacob-kiplimo-blurry.webp',
 			alt: "Professional runner Jacob Kiplimo in motion wearing the Nike Vomero Premium.",
 			title: "Vomero Premium — worn by Jacob Kiplimo."
+		},
+		{
+			src: 'work/nike/assets/content/2026/glam-gods/close-ups/dragonfly-2.jpg',
+			blur: 'work/nike/assets/no-index/2026/glam-gods/close-ups/dragonfly-2.jpg',
+			alt: "Close-up of the Nike Dragonfly 2 from the Glam Gods pack, featuring crystal gradient graphics, subtle glitter finishes, and removable gold shoewelry accents.",
+			title: "Glam Gods — Dragonfly 2 close-up with crystal gradients and gold shoewelry"
+		},
+		{
+			src: 'work/nike/assets/content/2026/glam-gods/close-ups/lj-elite.jpg',
+			blur: 'work/nike/assets/no-index/2026/glam-gods/close-ups/lj-elite.jpg',
+			alt: "Close-up of the Nike Long Jump Elite from the Glam Gods pack, showcasing crystal gradient treatments, subtle glitter hits, and gold shoewelry designed to be worn as jewelry.",
+			title: "Glam Gods — Long Jump Elite close-up with crystal gradients and gold shoewelry"
+		},
+		{
+			src: 'work/nike/assets/content/2026/glam-gods/close-ups/maxfly-2.jpg',
+			blur: 'work/nike/assets/no-index/2026/glam-gods/close-ups/maxfly-2.jpg',
+			alt: "Close-up of the Nike Maxfly 2 from the Glam Gods pack, highlighting crystal gradient graphics, shimmering finishes, and removable gold shoewelry accents.",
+			title: "Glam Gods — Maxfly 2 close-up with crystal gradients and gold shoewelry"
+		},
+		{
+			src: 'work/nike/assets/content/2026/glam-gods/close-ups/victory-2.jpg',
+			blur: 'work/nike/assets/no-index/2026/glam-gods/close-ups/victory-2.jpg',
+			alt: "Close-up of the Nike Victory 2 from the Glam Gods pack, featuring crystal gradient coloration, subtle glitter details, and gold shoewelry that can be repurposed as jewelry.",
+			title: "Glam Gods — Victory 2 close-up with crystal gradients and gold shoewelry"
 		}
 	];
 
