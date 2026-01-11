@@ -3388,6 +3388,278 @@
 						</div>
 					</div>
 				</section>
+
+				<hr/>
+
+				<section id="morphological-blur" class="documentation">
+					<div class="docuinfo">
+						<h2>Morphological Blur</h2>
+						<h3><a href="https://towardsdatascience.com/understanding-morphological-image-processing-and-its-operations-7bcf1ed11756/#:~:text=representing%20region%20shape%2C-,boundaries,-%2C%20etc." target="_blank">Boundary</a>&hyphen;Aware Morphological Smoothing</h3>
+						<p>
+							<a href="https://github.com/MaxMainio/TD_/blob/main/TOPs/Morphological/Morphological_Blur.tox" target="_blank">This experimental component</a> combines the fundamental morphological operations &mdash; <a href="#dilate-erode" target="_self">dilation &amp; erosion</a> &mdash; with a simple <a href="https://www.redsharknews.com/technology-computing/item/1922-all-you-need-to-know-about-digital-blur" target="_blank">blur</a>, performing both simultaneously rather than as separate steps. Instead of uniformly averaging all pixels, the <a href="https://www.redsharknews.com/technology-computing/item/1922-all-you-need-to-know-about-digital-blur" target="_blank">blur</a> calculation considers only non&hyphen;fully transparent pixels, preserving clear <a href="https://towardsdatascience.com/understanding-morphological-image-processing-and-its-operations-7bcf1ed11756/#:~:text=representing%20region%20shape%2C-,boundaries,-%2C%20etc." target="_blank">morphological boundaries</a> while allowing color values to blend smoothly within valid regions.
+						</p>
+
+						<p>
+							The output of <a href="https://github.com/MaxMainio/TD_/blob/main/TOPs/Morphological/Morphological_Blur.tox" target="_blank">this component</a> is always a <a href="#dilate-erode" target="_self">morphologically dilated or eroded</a> result, just like a traditional <a href="#dilate-erode" target="_self">morphological operation</a>. However, unlike standard <a href="https://en.wikipedia.org/wiki/Mathematical_morphology" target="_blank">morphology</a>, the interior of the resulting shape is blended during the operation itself. This produces a stylized softening effect where edges remain crisp and structurally accurate &mdash; only expanded or contracted &mdash; while colors within the <a href="https://en.wikipedia.org/wiki/Mathematical_morphology" target="_blank">morphological region</a> are smoothed together rather than remaining flat or binary.
+						</p>
+
+						<p>
+							<a href="https://github.com/MaxMainio/TD_/blob/main/TOPs/Morphological/Morphological_Blur.tox" target="_blank">Morphological Blur</a> was originally created with the intention of applying expressive, non&hyphen;photorealistic <a href="https://en.wikipedia.org/wiki/Mathematical_morphology" target="_blank">morphological effects</a> to colorful geometric and illustrative imagery. It favors visual character and controlled softness over strict mathematical correctness, making it a deliberately stylized extension of <a href="https://en.wikipedia.org/wiki/Mathematical_morphology" target="_blank">classic morphology</a>.
+						</p>
+
+						<p>
+							<a href="https://github.com/MaxMainio/TD_/blob/main/TOPs/Morphological/Morphological_Blur.tox" target="_blank">Morphological Blur</a> is designed for workflows where spatial structure must be preserved while introducing controlled softness&hyphen;bridging the gap between strict binary morphology and conventional image blurring.
+						</p>
+
+						<h5>Resources&colon;</h5>
+						<p>
+							<a href="https://github.com/MaxMainio/TD_" target="_blank">Download the .tox files</a><br>
+							<a href="https://homepages.inf.ed.ac.uk/rbf/HIPR2/morops.htm" target="_blank">HIPR2 Morphology documentation</a><br>
+							<a href="https://en.wikipedia.org/wiki/Mathematical_morphology#:~:text=the%20letter%20%22o%22.-,Dilation,-%5Bedit%5D" target="_blank">Dilation on Wikipedia</a><br>
+							<a href="https://en.wikipedia.org/wiki/Mathematical_morphology#:~:text=in%20E.-,Erosion,-%5Bedit%5D" target="_blank">Erosion on Wikipedia</a>
+						</p>
+					</div>
+
+					<div class="docuviz">
+						<div class="comp-display">
+							<a href="https://github.com/MaxMainio/TD_/blob/main/TOPs/Morphological/Morphological_Blur.tox"
+								target="_blank"
+								title="Click here to be taken to the Morphological Blur COMP section of the Github repo where you can download all of these components."
+								class="td-comp medium theme-light">
+								<div class="td-row"></div>
+
+								<div class="td-body">
+									<div class="td-side input top">
+										<div class="td-filler"></div>
+										<div class="td-connector">
+											<div class="td-color"></div>
+											<div class="td-spacer"></div>
+											<div class="td-color"></div>
+											<div class="td-spacer"></div>
+											<div class="td-color"></div>
+										</div>
+										<div class="td-filler"></div>
+									</div>
+
+									<div class="td-flag-col">
+										<img src="../../assets/content/td-icons/viewer-on.webp" loading="lazy">
+										<img src="../../assets/content/td-icons/clone-immune-off.webp" loading="lazy">
+										<img src="../../assets/content/td-icons/no-cook-off.webp" loading="lazy">
+										<img src="../../assets/content/td-icons/unlocked.webp" loading="lazy">
+									</div>
+
+									<div class="td-viewer">
+										<div class="td-viewer-inner">
+											<img src="assets/content/morphological-blur.webp"
+												alt="Example of a color image that has been processed with the Morphological Blur operation with a circular structuring element that is 21 by 21 pixels in size."
+												class="blur-load"
+												style="background-image: url(assets/no-index/morphological-blur-blurry.webp); aspect-ratio: 2;"
+												loading="lazy">
+										</div>
+									</div>
+
+									<div class="td-side output top">
+										<div class="td-filler"></div>
+										<div class="td-connector">
+											<div class="td-color"></div>
+											<div class="td-spacer"></div>
+											<div class="td-color"></div>
+										</div>
+										<div class="td-filler"></div>
+									</div>
+								</div>
+
+								<div class="td-row"></div>
+								<div class="td-hairline"></div>
+
+								<div class="td-footer">
+									<div class="td-title">
+										<p class="td-name">Morphological_Blur</p>
+									</div>
+									<div class="td-active">
+										<img src="../../assets/content/td-icons/activate-off.webp" loading="lazy">
+									</div>
+								</div>
+							</a>
+						</div>
+
+						<div>
+							<h4>Parameters</h4>
+							<h5>Mode&colon;</h5>
+							<p>
+								Determines the operation to be performed on the input image. <a href="https://homepages.inf.ed.ac.uk/rbf/HIPR2/dilate.htm" target="_blank">Dilation</a>, which expands the boundaries of the <a href="https://medium.com/hackernoon/an-introduction-to-morphological-operations-for-digital-image-text-classification-79cb14bab2d7#:~:text=White%20Pixels%20(1s)%20represent%20the%20foreground." target="_blank">foreground objects</a>, or <a href="https://homepages.inf.ed.ac.uk/rbf/HIPR2/erode.htm" target="_blank">Erosion</a>, which shrinks them.
+							</p>
+
+							<h5>Depth&colon;</h5>
+							<p>
+								Specifies the number of iterations that the morphological operation will be applied to the input image.
+							</p>
+
+							<h5>Correct Gamma&colon;</h5>
+							<p>
+								Ensures the blur is computed in <a href="https://docs.unity3d.com/6000.3/Documentation/Manual/differences-linear-gamma-color-space.html" target="_blank">linear color space</a> rather than gamma&hyphen;encoded <a href="https://en.wikipedia.org/wiki/SRGB" target="_blank">sRGB</a>.
+							</p>
+	
+							<hr/>
+	
+							<h5>Dimensions&colon;</h5>
+							<p>
+								Defines the width and height of the <a href="https://www.ni.com/docs/en-US/bundle/ni-vision-concepts-help/page/structuring_elements.html#:~:text=Morphological%20transformations%20use%20a%202D,the%20boundary%20of%20a%20particle." target="_blank">structuring element</a> to be used in the morphological operation, directly affecting the scope of the operation on the image.
+							</p>
+
+							<h5>Edge Handling&colon;</h5>
+							<p>
+								Determines how the edges of the image are treated during the <a href="https://docs.opencv.org/4.x/d9/d61/tutorial_py_morphological_ops.html#:~:text=Theory-,Morphological%20transformations,-are%20some%20simple" target="_blank">morphological transformation</a>. Extends the image to avoid edge artifacts.
+							</p>
+
+							<hr/>
+	
+							<h5>Roundness&colon;</h5>
+							<p>
+								Adjusts the shape of the default <a href="https://www.ni.com/docs/en-US/bundle/ni-vision-concepts-help/page/structuring_elements.html#:~:text=Morphological%20transformations%20use%20a%202D,the%20boundary%20of%20a%20particle." target="_blank">structuring element</a>. A value of 0 creates a square element, while a value of 1 produces a circular element.
+							</p>
+
+							<h4>In&hyphen; &sol; Outputs</h4>
+							<p>
+								<b>Input 0</b> &ndash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> image to be processed.<br>
+								<b>Input 1</b> &ndash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> binary image to be used as the <a href="https://www.ni.com/docs/en-US/bundle/ni-vision-concepts-help/page/structuring_elements.html#:~:text=Morphological%20transformations%20use%20a%202D,the%20boundary%20of%20a%20particle." target="_blank">structuring element</a>.
+							</p>
+
+							<p>
+								<b>Output 0</b> &ndash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> processed image.
+							</p>
+
+							<p style="margin-top: 1rem;">
+								<b>Updated</b> &ndash; <a href="https://en.wikipedia.org/wiki/List_of_date_formats_by_country#:~:text=regions%20and%20countries-,DMY,-Europe%3A%20Italy" target="_blank"><span class="date-text">11&sol;1&sol;2026</span></a>
+							</p>
+						</div>
+					</div>
+				</section>
+
+				<hr/>
+
+				<section id="nearest-neighbor" class="documentation">
+					<div class="docuinfo">
+						<h2>Nearest Neighbor</h2>
+						<h3>Lorem ipsum...</h3>
+						<p>
+							Lorem ipsum...
+						</p>
+
+						<h5>Resources&colon;</h5>
+						<p>
+							<a href="https://github.com/MaxMainio/TD_" target="_blank">Download the .tox files</a><br>
+							<a href="https://www.mathworks.com/help/images/morphological-dilation-and-erosion.html#:~:text=top%20and%20right.-,imtophat,-Perform%20a%20morphological" target="_blank">Top&hyphen;Hat on Math Works,</a><br>
+							<a href="https://www.mathworks.com/help/images/morphological-dilation-and-erosion.html#:~:text=in%20an%20image.-,imbothat,-Perform%20a%20morphological" target="_blank">Bottom&hyphen;Hat on Math Works,</a><br>
+							<a href="https://en.wikipedia.org/wiki/Top-hat_transform" target="_blank">Top&hyphen;Hat on Wikipedia</a>
+						</p>
+					</div>
+
+					<div class="docuviz">
+						<div class="comp-display">
+							<a href="https://github.com/MaxMainio/TD_/blob/main/TOPs/Morphological/Nearest_Neighbor.tox"
+								target="_blank"
+								title="Click here to be taken to the Nearest Neighbor COMP section of the Github repo where you can download all of these components."
+								class="td-comp medium theme-light">
+								<div class="td-row"></div>
+
+								<div class="td-body">
+									<div class="td-side input top">
+										<div class="td-filler"></div>
+										<div class="td-connector">
+											<div class="td-color"></div>
+											<div class="td-spacer"></div>
+											<div class="td-color"></div>
+											<div class="td-spacer"></div>
+											<div class="td-color"></div>
+										</div>
+										<div class="td-filler"></div>
+									</div>
+
+									<div class="td-flag-col">
+										<img src="../../assets/content/td-icons/viewer-on.webp" loading="lazy">
+										<img src="../../assets/content/td-icons/clone-immune-off.webp" loading="lazy">
+										<img src="../../assets/content/td-icons/no-cook-off.webp" loading="lazy">
+										<img src="../../assets/content/td-icons/unlocked.webp" loading="lazy">
+									</div>
+
+									<div class="td-viewer">
+										<div class="td-viewer-inner">
+											<img src="assets/content/nearest-neighbor.webp"
+												alt="Example of a color image that has been processed with the Nearest Neighbor operation with a circular structuring element that is 21 by 21 pixels in size."
+												class="blur-load"
+												style="background-image: url(assets/no-index/nearest-neighbor-blurry.webp); aspect-ratio: 2;"
+												loading="lazy">
+										</div>
+									</div>
+
+									<div class="td-side output top">
+										<div class="td-filler"></div>
+										<div class="td-connector">
+											<div class="td-color"></div>
+											<div class="td-spacer"></div>
+											<div class="td-color"></div>
+										</div>
+										<div class="td-filler"></div>
+									</div>
+								</div>
+
+								<div class="td-row"></div>
+								<div class="td-hairline"></div>
+
+								<div class="td-footer">
+									<div class="td-title">
+										<p class="td-name">Nearest_Neighbor</p>
+									</div>
+									<div class="td-active">
+										<img src="../../assets/content/td-icons/activate-off.webp" loading="lazy">
+									</div>
+								</div>
+							</a>
+						</div>
+
+						<div>
+							<h4>Parameters</h4>
+							<h5>Depth&colon;</h5>
+							<p>
+								Specifies the number of iterations that the morphological operation will be applied to the input image.
+							</p>
+	
+							<hr/>
+	
+							<h5>Dimensions&colon;</h5>
+							<p>
+								Defines the width and height of the <a href="https://www.ni.com/docs/en-US/bundle/ni-vision-concepts-help/page/structuring_elements.html#:~:text=Morphological%20transformations%20use%20a%202D,the%20boundary%20of%20a%20particle." target="_blank">structuring element</a> to be used in the morphological operation, directly affecting the scope of the operation on the image.
+							</p>
+
+							<h5>Edge Handling&colon;</h5>
+							<p>
+								Determines how the edges of the image are treated during the <a href="https://docs.opencv.org/4.x/d9/d61/tutorial_py_morphological_ops.html#:~:text=Theory-,Morphological%20transformations,-are%20some%20simple" target="_blank">morphological transformation</a>. Extends the image to avoid edge artifacts.
+							</p>
+
+							<hr/>
+	
+							<h5>Roundness&colon;</h5>
+							<p>
+								Adjusts the shape of the default <a href="https://www.ni.com/docs/en-US/bundle/ni-vision-concepts-help/page/structuring_elements.html#:~:text=Morphological%20transformations%20use%20a%202D,the%20boundary%20of%20a%20particle." target="_blank">structuring element</a>. A value of 0 creates a square element, while a value of 1 produces a circular element.
+							</p>
+
+							<h4>In&hyphen; &sol; Outputs</h4>
+							<p>
+								<b>Input 0</b> &ndash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> image to be processed.<br>
+								<b>Input 1</b> &ndash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> binary image to be used as the <a href="https://www.ni.com/docs/en-US/bundle/ni-vision-concepts-help/page/structuring_elements.html#:~:text=Morphological%20transformations%20use%20a%202D,the%20boundary%20of%20a%20particle." target="_blank">structuring element</a>.
+							</p>
+
+							<p>
+								<b>Output 0</b> &ndash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> processed image.
+							</p>
+
+							<p style="margin-top: 1rem;">
+								<b>Updated</b> &ndash; <a href="https://en.wikipedia.org/wiki/List_of_date_formats_by_country#:~:text=regions%20and%20countries-,DMY,-Europe%3A%20Italy" target="_blank"><span class="date-text">11&sol;1&sol;2026</span></a>
+							</p>
+						</div>
+					</div>
+				</section>
 			</article>
 		</main>
 
