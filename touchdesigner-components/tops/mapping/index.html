@@ -384,7 +384,7 @@
 						</div>
 					</a>
 
-					<a href="#uv-corrector"
+					<!-- <a href="#uv-corrector"
 						target="_self"
 						title="Click here to be taken to the UV Corrector section of this page."
 						class="td-comp small theme-light">
@@ -440,7 +440,7 @@
 								<img src="../../assets/content/td-icons/activate-off.webp" loading="lazy">
 							</div>
 						</div>
-					</a>
+					</a> -->
 
 					<a href="#uv-inverse-map"
 						target="_self"
@@ -1135,18 +1135,195 @@
 
 				<hr/>
 
-				<section id="uv-corrector" class="documentation">
+				<!-- <section id="uv-corrector" class="documentation">
 					<div class="docuinfo">
 						<h2><a href="https://github.com/MaxMainio/TD_/blob/main/TOPs/Mapping/UV_Corrector.tox" target="_blank">UV Corrector</a></h2>
-						<h3>Coordinate Correction</h3>
+						<h3>Local UV Linearization</h3>
 						<p>
-							Lorem ipsum...
+							This component corrects distorted UV maps by restoring local linearity within the UV coordinate field. Rather than globally reprojecting or re&hyphen;mapping coordinates, the UV Corrector operates locally &mdash; allowing repeated or tiled UV structures to be corrected independently within each repetition.
+						</p>
+
+						<p>
+							When UV maps are warped, stretched, or procedurally modified, their red and green gradient fields often lose linear consistency. This loss of structure results in visible artifacts during image remapping, such as warped geometry, bent textures, or uneven scaling. The UV Corrector addresses these issues by re&hyphen;linearizing the UV gradients while preserving the original spatial placement and character of the distortion.
+						</p>
+
+						<p>
+							The mathematical approach behind this component was shared by <a href="https://www.youtube.com/@andreizelenco4164/featured" target="_blank">Andrei Zelenco</a>, who defined the locally correcting UV gradients via differential analysis as&colon;
+						</p>
+
+						<p>
+							Let the input UV map be treated as a vector&hyphen;valued function over image space&colon;
+						</p>
+
+						<p class="maths">
+							<span title="Right click for a cheat sheet">
+								<math class="outline">
+									<mrow>
+										<mi>&fnof;</mi>
+										<mo>&lpar;</mo>
+										<mi>&iota;</mi>
+										<mo>&rpar;</mo>
+										<mo>=</mo>
+									</mrow>
+									<mrow>
+										<mo>&lsqb;</mo>
+										<mtable>
+											<mtr>
+												<mtd>
+													<mi>u</mi>
+													<mo>&lpar;</mo>
+													<mi>&iota;</mi>
+													<mo>&rpar;</mo>
+												</mtd>
+											</mtr>
+											<mtr>
+												<mtd>
+													<mi>v</mi>
+													<mo>&lpar;</mo>
+													<mi>&iota;</mi>
+													<mo>&rpar;</mo>
+												</mtd>
+											</mtr>
+										</mtable>
+										<mo>&rsqb;</mo>
+									</mrow>
+								</math>
+							</span>
+						</p>
+
+						<p>
+							Where <span title="Right click for a cheat sheet"><math><mi>&iota;</mi></math></span> denotes a pixel position in the image, and <span title="Right click for a cheat sheet"><math><mi>u</mi></math></span> and <span title="Right click for a cheat sheet"><math><mi>v</mi></math></span> correspond to the red and green channels of the UV map respectively.
+						</p>
+
+						<p>
+							The local deformation of this UV field is described by its Jacobian matrix&colon;
+						</p>
+
+						<p class="maths">
+							<span title="Right click for a cheat sheet">
+								<math class="outline">
+									<mrow>
+										<mi>J</mi>
+										<mo>&lpar;</mo>
+										<mi>&iota;</mi>
+										<mo>&rpar;</mo>
+										<mo>=</mo>
+									</mrow>
+									<mrow>
+										<mo>&lsqb;</mo>
+										<mtable>
+											<mtr>
+												<mtd>
+													<mfrac>
+														<mrow>
+															<mo>&part;</mo>
+															<mi>u</mi>
+														</mrow>
+														<mrow>
+															<mo>&part;</mo>
+															<mi>x</mi>
+														</mrow>
+													</mfrac>
+												</mtd>
+												<mtd>
+													<mfrac>
+														<mrow>
+															<mo>&part;</mo>
+															<mi>u</mi>
+														</mrow>
+														<mrow>
+															<mo>&part;</mo>
+															<mi>y</mi>
+														</mrow>
+													</mfrac>
+												</mtd>
+											</mtr>
+											<mtr>
+												<mtd>
+													<mfrac>
+														<mrow>
+															<mo>&part;</mo>
+															<mi>v</mi>
+														</mrow>
+														<mrow>
+															<mo>&part;</mo>
+															<mi>x</mi>
+														</mrow>
+													</mfrac>
+												</mtd>
+												<mtd>
+													<mfrac>
+														<mrow>
+															<mo>&part;</mo>
+															<mi>v</mi>
+														</mrow>
+														<mrow>
+															<mo>&part;</mo>
+															<mi>y</mi>
+														</mrow>
+													</mfrac>
+												</mtd>
+											</mtr>
+										</mtable>
+										<mo>&rsqb;</mo>
+									</mrow>
+								</math>
+							</span>
+						</p>
+
+						<p>
+							This matrix captures how the UV coordinates stretch, shear, or rotate locally with respect to image space.
+						</p>
+
+						<p>
+							To correct the distortion, the UV Corrector computes the inverse of the transposed Jacobian and applies it to the original UV vector&colon;
+						</p>
+
+						<p class="maths">
+							<span title="Right click for a cheat sheet">
+								<math class="outline">
+									<mrow>
+										<msub>
+											<mi>&fnof;</mi>
+											<mi>Corrected</mi>
+										</msub>
+									</mrow>
+									<mrow>
+										<mo>&lpar;</mo>
+										<mi>&iota;</mi>
+										<mo>&rpar;</mo>
+										<mo>=</mo>
+										<mo>&lpar;</mo>
+										<mi>J</mi>
+										<mo>&lpar;</mo>
+										<mi>&iota;</mi>
+										<msup>
+											<mo>&rpar;</mo>
+											<mi>T</mi>
+										</msup>
+										<msup>
+											<mo>&rpar;</mo>
+											<mn>-1</mn>
+										</msup>
+										<mo>&middot;</mo>
+										<mi>&fnof;</mi>
+										<mo>&lpar;</mo>
+										<mi>&iota;</mi>
+										<mo>&rpar;</mo>
+									</mrow>
+								</math>
+							</span>
+						</p>
+
+						<p>
+							This ability to restore linearity to input UV Maps while preserving the positional intent of the original UV transformation proves to be a powerful differential tool for repairing distorted UV fields rather than replacing them, enabling reversible, high&hyphen;fidelity UV workflows in complex procedural mapping pipelines.
 						</p>
 
 						<h5>Resources&colon;</h5>
 						<p>
 							<a href="https://github.com/MaxMainio/TD_" target="_blank">Download the .tox files</a><br>
 							<a href="https://docs.derivative.ca/Texture_Coordinates_and_Texture_Sampling" target="_blank">Texture Coordinates and Texture Sampling</a><br>
+							<a href="https://www.youtube.com/@andreizelenco4164/featured" target="_blank">Andrei Zelenco&rsquo;s YouTube Channel</a>
 						</p>
 					</div>
 
@@ -1239,7 +1416,7 @@
 					</div>
 				</section>
 
-				<hr/>
+				<hr/> -->
 
 				<section id="uv-inverse-map" class="documentation">
 					<div class="docuinfo">
