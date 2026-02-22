@@ -420,25 +420,25 @@
 							<h4>Parameters</h4>
 							<h5>Matrix Scale&colon;</h5>
 							<p>
-								Defines the dimensions of the Bayer threshold matrix used for dithering. Larger values increase the pattern size and spatial repetition.
+								Defines the dimensions of the <a href="https://en.wikipedia.org/wiki/Bayer_filter" target="_blank">Bayer threshold matrix</a> used for <a href="https://en.wikipedia.org/wiki/Dither" target="_blank">dithering</a>. Larger values increase the pattern size and spatial repetition.
 							</p>
 
 							<h5>Pattern Tiling&colon;</h5>
 							<p>
-								Specifies how the Bayer matrix is tiled across the image&colon;<br>
+								Specifies how the <a href="https://en.wikipedia.org/wiki/Bayer_filter" target="_blank">Bayer matrix</a> is tiled across the image&colon;<br>
 								Repeat tiles uniformly, while Mirror alternates orientation to reduce visible seams.
 							</p>
 	
 							<hr/>
-	
+
 							<h5>Bit Depth&colon;</h5>
 							<p>
-								Defines the target bit depth used for quantization during dithering.
+								Defines the target <a href="https://en.wikipedia.org/wiki/Color_depth" target="_blank">bit depth</a> used for <a href="https://en.wikipedia.org/wiki/Quantization_(image_processing)" target="_blank">quantization</a> during <a href="https://en.wikipedia.org/wiki/Dither" target="_blank">dithering</a>.
 							</p>
 
 							<h5>Pixel Format&colon;</h5>
 							<p>
-								Specifies the output image format.
+								Specifies the output <a href="https://derivative.ca/UserGuide/Pixel_Formats" target="_blank">image pixel format</a>.
 							</p>
 
 							<h4>In&hyphen; &sol; Outputs</h4>
@@ -461,7 +461,7 @@
 
 				<section id="error-diffusion-dither" class="documentation">
 					<div class="docuinfo">
-						<h2>Error Diffusion Dither</h2>
+						<h2><a href="https://en.wikipedia.org/wiki/Dither#:~:text=void%2Dand%2Dcluster)-,Error%2Ddiffusion%20dithering,-is%20a%20feedback" target="_blank">Error Diffusion Dither</a></h2>
 						<h3>Sub-Title</h3>
 						<p>
 							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim diam vulputate ut pharetra sit amet aliquam. Integer eget aliquet nibh praesent tristique magna sit. Massa id neque aliquam vestibulum. Egestas diam in arcu cursus euismod quis viverra nibh. Ultrices vitae auctor eu augue ut lectus arcu bibendum at. Vel risus commodo viverra maecenas accumsan lacus vel facilisis volutpat. Sit amet cursus sit amet dictum sit. Scelerisque mauris pellentesque pulvinar pellentesque habitant morbi tristique. Rutrum quisque non tellus orci ac.
@@ -538,26 +538,26 @@
 							<h4>Parameters</h4>
 							<h5>Algorithm&colon;</h5>
 							<p>
-								Selects the error diffusion kernel used to distribute quantization error across neighboring pixels.<br>
-								Options&colon; Floyd&hyphen;Steinberg, Jarvis&hyphen;Judice&hyphen;Ninke, Stucki, Atkinson, Burkes, or Sierra.
+								Selects the <a href="https://en.wikipedia.org/wiki/Dither#:~:text=void%2Dand%2Dcluster)-,Error%2Ddiffusion%20dithering,-is%20a%20feedback" target="_blank">error diffusion</a> kernel used to distribute quantization error across neighboring pixels. Options are&colon;<br>
+								<a href="https://scipython.com/blog/floyd-steinberg-dithering/" target="_blank">Floyd&hyphen;Steinberg</a>, <a href="https://graphicsacademy.com/what_ditherjarvis.php" target="_blank">Jarvis&hyphen;Judice&hyphen;Ninke</a>, <a href="https://tannerhelland.com/2012/12/28/dithering-eleven-algorithms-source-code.html#:~:text=and%20over%20again.-,Stucki%20Dithering,-Five%20years%20after" target="_blank">Stucki</a>, <a href="https://en.wikipedia.org/wiki/Atkinson_dithering" target="_blank">Atkinson</a>, <a href="https://www.cyotek.com/blog/dithering-an-image-using-the-burkes-algorithm-in-csharp" target="_blank">Burkes</a>, or <a href="https://tannerhelland.com/2012/12/28/dithering-eleven-algorithms-source-code.html#:~:text=hit%20to%20quality.-,Sierra%20Dithering,-The%20final%20three" target="_blank">Sierra</a>.
 							</p>
 
 							<h5>Alternate&colon;</h5>
 							<p>
-								Defines the Sierra diffusion kernel variant to use&colon;<br>
-								Full, Two&hyphen;Row, or Lite.
+								Defines the <i><a href="https://tannerhelland.com/2012/12/28/dithering-eleven-algorithms-source-code.html#:~:text=hit%20to%20quality.-,Sierra%20Dithering,-The%20final%20three" target="_blank">Sierra</a></i> diffusion kernel variant to use&colon;<br>
+								<a href="https://tannerhelland.com/2012/12/28/dithering-eleven-algorithms-source-code.html#:~:text=X%20%20%205%20%20%203%0A%20%20%20%20%202%20%20%204%20%205%20%20%204%20%20%202%0A%20%20%20%20%20%20%20%20%202%20%203%20%20%202%0A%20%20%20%20%20%20%20%20%20%20(1/32)" target="_blank">Full</a>, <a href="https://tannerhelland.com/2012/12/28/dithering-eleven-algorithms-source-code.html#:~:text=X%20%20%204%20%20%203%0A%20%20%20%201%20%20%202%20%20%203%20%20%202%20%20%201%0A%20%20%20%20%20%20%20%20%20%20(1/16)" target="_blank">Two&hyphen;Row</a>, or <a href="https://tannerhelland.com/2012/12/28/dithering-eleven-algorithms-source-code.html#:~:text=X%20%20%202%0A%20%20%20%20%20%20%20%201%20%20%201%0A%20%20%20%20%20%20%20%20%20%20(1/4)" target="_blank">Lite</a>.
 							</p>
 	
 							<hr/>
 	
 							<h5>Bit Depth&colon;</h5>
 							<p>
-								Defines the target bit depth used for quantization during dithering.
+								Defines the target <a href="https://en.wikipedia.org/wiki/Color_depth" target="_blank">bit depth</a> used for <a href="https://en.wikipedia.org/wiki/Quantization_(image_processing)" target="_blank">quantization</a> during <a href="https://en.wikipedia.org/wiki/Dither" target="_blank">dithering</a>.
 							</p>
 
 							<h5>Pixel Format&colon;</h5>
 							<p>
-								Specifies the output image format.
+								Specifies the output <a href="https://derivative.ca/UserGuide/Pixel_Formats" target="_blank">image pixel format</a>.
 							</p>
 
 							<h4>In&hyphen; &sol; Outputs</h4>
@@ -657,12 +657,12 @@
 							<h4>Parameters</h4>
 							<h5>Bit Depth&colon;</h5>
 							<p>
-								Defines the target bit depth used for quantization during dithering.
+								Defines the target <a href="https://en.wikipedia.org/wiki/Color_depth" target="_blank">bit depth</a> used for <a href="https://en.wikipedia.org/wiki/Quantization_(image_processing)" target="_blank">quantization</a> during <a href="https://en.wikipedia.org/wiki/Dither" target="_blank">dithering</a>.
 							</p>
 
 							<h5>Pixel Format&colon;</h5>
 							<p>
-								Specifies the output image format.
+								Specifies the output <a href="https://derivative.ca/UserGuide/Pixel_Formats" target="_blank">image pixel format</a>.
 							</p>
 
 							<h4>In&hyphen; &sol; Outputs</h4>
@@ -788,12 +788,12 @@
 	
 							<h5>Bit Depth&colon;</h5>
 							<p>
-								Defines the target bit depth used for quantization during dithering.
+								Defines the target <a href="https://en.wikipedia.org/wiki/Color_depth" target="_blank">bit depth</a> used for <a href="https://en.wikipedia.org/wiki/Quantization_(image_processing)" target="_blank">quantization</a> during <a href="https://en.wikipedia.org/wiki/Dither" target="_blank">dithering</a>.
 							</p>
 
 							<h5>Pixel Format&colon;</h5>
 							<p>
-								Specifies the output image format.
+								Specifies the output <a href="https://derivative.ca/UserGuide/Pixel_Formats" target="_blank">image pixel format</a>.
 							</p>
 
 							<h4>In&hyphen; &sol; Outputs</h4>
