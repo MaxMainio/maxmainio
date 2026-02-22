@@ -90,7 +90,7 @@
 			<article>
 				<section class="context-container">
 					<div class="context">
-						<h1 id="title">Title</h1>
+						<h1 id="title">Dithering</h1>
 						<h2 id="sub-title"><a href="https://derivative.ca/" target="_blank">TD</a> <a href="https://derivative.ca/UserGuide/Component" target="_blank">COMPs</a> / <a href="https://derivative.ca/tags/tops" target="_blank">TOPs</a> / 2023 &ndash; Present</h2>
 						<p>
 							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim diam vulputate ut pharetra sit amet aliquam. Integer eget aliquet nibh praesent tristique magna sit. Massa id neque aliquam vestibulum. Egestas diam in arcu cursus euismod quis viverra nibh. Ultrices vitae auctor eu augue ut lectus arcu bibendum at. Vel risus commodo viverra maecenas accumsan lacus vel facilisis volutpat. Sit amet cursus sit amet dictum sit. Scelerisque mauris pellentesque pulvinar pellentesque habitant morbi tristique. Rutrum quisque non tellus orci ac.
@@ -418,39 +418,40 @@
 
 						<div>
 							<h4>Parameters</h4>
-							<h5>par.name&colon;</h5>
+							<h5>Matrix Scale&colon;</h5>
 							<p>
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim diam vulputate ut pharetra sit amet aliquam.
+								Defines the dimensions of the Bayer threshold matrix used for dithering. Larger values increase the pattern size and spatial repetition.
 							</p>
 
-							<h5>par.name&colon;</h5>
+							<h5>Pattern Tiling&colon;</h5>
 							<p>
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim diam vulputate ut pharetra sit amet aliquam.
+								Specifies how the Bayer matrix is tiled across the image&colon;<br>
+								Repeat tiles uniformly, while Mirror alternates orientation to reduce visible seams.
 							</p>
 	
 							<hr/>
 	
-							<h5>par.name&colon;</h5>
+							<h5>Bit Depth&colon;</h5>
 							<p>
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim diam vulputate ut pharetra sit amet aliquam.
+								Defines the target bit depth used for quantization during dithering.
 							</p>
 
-							<h5>par.name&colon;</h5>
+							<h5>Pixel Format&colon;</h5>
 							<p>
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim diam vulputate ut pharetra sit amet aliquam.
+								Specifies the output image format.
 							</p>
 
 							<h4>In&hyphen; &sol; Outputs</h4>
 							<p>
-								<b>Input 0</b> &ndash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> image to be processed.
+								<b>Input 0</b> &ndash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> image to be dithered.
 							</p>
 
 							<p>
-								<b>Output 0</b> &ndash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> Lorem ipsum...
+								<b>Output 0</b> &ndash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> dithered image.
 							</p>
 
 							<p style="margin-top: 1rem;">
-								<b>Updated</b> &ndash; <a href="https://en.wikipedia.org/wiki/List_of_date_formats_by_country#:~:text=regions%20and%20countries-,DMY,-Europe%3A%20Italy" target="_blank"><span class="date-text">30&sol;8&sol;2025</span></a>
+								<b>Updated</b> &ndash; <a href="https://en.wikipedia.org/wiki/List_of_date_formats_by_country#:~:text=regions%20and%20countries-,DMY,-Europe%3A%20Italy" target="_blank"><span class="date-text">21&sol;2&sol;2025</span></a>
 							</p>
 						</div>
 					</div>
@@ -535,39 +536,41 @@
 
 						<div>
 							<h4>Parameters</h4>
-							<h5>par.name&colon;</h5>
+							<h5>Algorithm&colon;</h5>
 							<p>
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim diam vulputate ut pharetra sit amet aliquam.
+								Selects the error diffusion kernel used to distribute quantization error across neighboring pixels.<br>
+								Options&colon; Floyd&hyphen;Steinberg, Jarvis&hyphen;Judice&hyphen;Ninke, Stucki, Atkinson, Burkes, or Sierra.
 							</p>
 
-							<h5>par.name&colon;</h5>
+							<h5>Alternate&colon;</h5>
 							<p>
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim diam vulputate ut pharetra sit amet aliquam.
+								Defines the Sierra diffusion kernel variant to use&colon;<br>
+								Full, Two&hyphen;Row, or Lite.
 							</p>
 	
 							<hr/>
 	
-							<h5>par.name&colon;</h5>
+							<h5>Bit Depth&colon;</h5>
 							<p>
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim diam vulputate ut pharetra sit amet aliquam.
+								Defines the target bit depth used for quantization during dithering.
 							</p>
 
-							<h5>par.name&colon;</h5>
+							<h5>Pixel Format&colon;</h5>
 							<p>
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim diam vulputate ut pharetra sit amet aliquam.
+								Specifies the output image format.
 							</p>
 
 							<h4>In&hyphen; &sol; Outputs</h4>
 							<p>
-								<b>Input 0</b> &ndash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> image to be processed.
+								<b>Input 0</b> &ndash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> image to be dithered.
 							</p>
 
 							<p>
-								<b>Output 0</b> &ndash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> Lorem ipsum...
+								<b>Output 0</b> &ndash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> dithered image.
 							</p>
 
 							<p style="margin-top: 1rem;">
-								<b>Updated</b> &ndash; <a href="https://en.wikipedia.org/wiki/List_of_date_formats_by_country#:~:text=regions%20and%20countries-,DMY,-Europe%3A%20Italy" target="_blank"><span class="date-text">30&sol;8&sol;2025</span></a>
+								<b>Updated</b> &ndash; <a href="https://en.wikipedia.org/wiki/List_of_date_formats_by_country#:~:text=regions%20and%20countries-,DMY,-Europe%3A%20Italy" target="_blank"><span class="date-text">21&sol;2&sol;2025</span></a>
 							</p>
 						</div>
 					</div>
@@ -652,39 +655,27 @@
 
 						<div>
 							<h4>Parameters</h4>
-							<h5>par.name&colon;</h5>
+							<h5>Bit Depth&colon;</h5>
 							<p>
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim diam vulputate ut pharetra sit amet aliquam.
+								Defines the target bit depth used for quantization during dithering.
 							</p>
 
-							<h5>par.name&colon;</h5>
+							<h5>Pixel Format&colon;</h5>
 							<p>
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim diam vulputate ut pharetra sit amet aliquam.
-							</p>
-	
-							<hr/>
-	
-							<h5>par.name&colon;</h5>
-							<p>
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim diam vulputate ut pharetra sit amet aliquam.
-							</p>
-
-							<h5>par.name&colon;</h5>
-							<p>
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim diam vulputate ut pharetra sit amet aliquam.
+								Specifies the output image format.
 							</p>
 
 							<h4>In&hyphen; &sol; Outputs</h4>
 							<p>
-								<b>Input 0</b> &ndash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> image to be processed.
+								<b>Input 0</b> &ndash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> image to be dithered.
 							</p>
 
 							<p>
-								<b>Output 0</b> &ndash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> Lorem ipsum...
+								<b>Output 0</b> &ndash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> dithered image.
 							</p>
 
 							<p style="margin-top: 1rem;">
-								<b>Updated</b> &ndash; <a href="https://en.wikipedia.org/wiki/List_of_date_formats_by_country#:~:text=regions%20and%20countries-,DMY,-Europe%3A%20Italy" target="_blank"><span class="date-text">30&sol;8&sol;2025</span></a>
+								<b>Updated</b> &ndash; <a href="https://en.wikipedia.org/wiki/List_of_date_formats_by_country#:~:text=regions%20and%20countries-,DMY,-Europe%3A%20Italy" target="_blank"><span class="date-text">21&sol;2&sol;2025</span></a>
 							</p>
 						</div>
 					</div>
@@ -769,39 +760,53 @@
 
 						<div>
 							<h4>Parameters</h4>
-							<h5>par.name&colon;</h5>
+							<h5>Noise Type&colon;</h5>
 							<p>
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim diam vulputate ut pharetra sit amet aliquam.
+								Selects the noise distribution used for dithering&colon;<br>
+								Random &lpar;GPU&rpar;, White Noise, or Blue Noise.
 							</p>
 
-							<h5>par.name&colon;</h5>
+							<h5>Seed&colon;</h5>
 							<p>
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim diam vulputate ut pharetra sit amet aliquam.
+								Defines the seed value used to generate the random noise pattern.<br>
+								Active when <i>Noise Type</i> is set to <i>Random &lpar;GPU&rpar;.</i>
 							</p>
-	
+
+							<h5>Noise Dimensions&colon;</h5>
+							<p>
+								Specifies the resolution of the noise texture used for dithering.<br>
+								Active when <i>Noise Type</i> is set to <i>White Noise</i> or <i>Blue Noise.</i>
+							</p>
+
+							<h5>Noise Tiling&colon;</h5>
+							<p>
+								Defines how the noise texture is tiled across the image &lpar;Repeat or Mirror&rpar;.<br>
+								Active when <i>Noise Type</i> is set to <i>White Noise</i> or <i>Blue Noise.</i>
+							</p>
+
 							<hr/>
 	
-							<h5>par.name&colon;</h5>
+							<h5>Bit Depth&colon;</h5>
 							<p>
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim diam vulputate ut pharetra sit amet aliquam.
+								Defines the target bit depth used for quantization during dithering.
 							</p>
 
-							<h5>par.name&colon;</h5>
+							<h5>Pixel Format&colon;</h5>
 							<p>
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim diam vulputate ut pharetra sit amet aliquam.
+								Specifies the output image format.
 							</p>
 
 							<h4>In&hyphen; &sol; Outputs</h4>
 							<p>
-								<b>Input 0</b> &ndash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> image to be processed.
+								<b>Input 0</b> &ndash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> image to be dithered.
 							</p>
 
 							<p>
-								<b>Output 0</b> &ndash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> Lorem ipsum...
+								<b>Output 0</b> &ndash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> dithered image.
 							</p>
 
 							<p style="margin-top: 1rem;">
-								<b>Updated</b> &ndash; <a href="https://en.wikipedia.org/wiki/List_of_date_formats_by_country#:~:text=regions%20and%20countries-,DMY,-Europe%3A%20Italy" target="_blank"><span class="date-text">30&sol;8&sol;2025</span></a>
+								<b>Updated</b> &ndash; <a href="https://en.wikipedia.org/wiki/List_of_date_formats_by_country#:~:text=regions%20and%20countries-,DMY,-Europe%3A%20Italy" target="_blank"><span class="date-text">21&sol;2&sol;2025</span></a>
 							</p>
 						</div>
 					</div>
