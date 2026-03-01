@@ -321,7 +321,49 @@
 				<hr/>
 
 				<section class="notation-category">
+					<h3>Mapping&colon;</h3>
+
+					<div id="screen-space-coordinate" class="notation-entry">
+						<span class="notation-symbol"><math><msub><mi>&iota;</mi><mi>xy</mi></msub></math></span>
+
+						<p class="notation-description">
+							<span class="notation-title">Screen Space Pixel Coordinate&colon;</span><br>
+							Represents the integer pixel coordinate &lpar;<math><mi>x</mi><mo>,</mo><mi>y</mi></math>&rpar; of a pixel within image space. Used when calculations depend on discrete pixel indexing rather than normalized UV space.
+						</p>
+					</div>
+
+					<div id="normalized-uv-coordinate" class="notation-entry">
+						<span class="notation-symbol"><math><msub><mi>&iota;</mi><mi>uv</mi></msub></math></span>
+
+						<p class="notation-description">
+							<span class="notation-title">Normalized UV Coordinate&colon;</span><br>
+							Represents the normalized coordinate of a pixel in UV space, where both axes are mapped to the range 0&ndash;1 regardless of image resolution.
+						</p>
+					</div>
+				</section>
+
+				<hr/>
+
+				<section class="notation-category">
 					<h3>Math&colon;</h3>
+
+					<div id="floor" class="notation-entry">
+						<span class="notation-symbol"><math><mo>&lfloor;</mo><mo>&#9676;</mo><mo>&rfloor;</mo></math></span>
+
+						<p class="notation-description">
+							<span class="notation-title">Floor&colon;</span><br>
+							Rounds a value down to the nearest integer less than or equal to the input.
+						</p>
+					</div>
+
+					<div id="ceiling" class="notation-entry">
+						<span class="notation-symbol"><math><mo>&lceil;</mo><mo>&#9676;</mo><mo>&rceil;</mo></math></span>
+
+						<p class="notation-description">
+							<span class="notation-title">Ceiling&colon;</span><br>
+							Rounds a value up to the nearest integer greater than or equal to the input.
+						</p>
+					</div>
 
 					<div id="summation" class="notation-entry">
 						<span class="notation-symbol"><math><mi>&sum;</mi></math> &mdash;</span>
@@ -416,6 +458,74 @@
 										<mi>i</mi>
 										<mi>n</mi>
 									</msub>
+								</mrow>
+							</math>
+						</p>
+					</div>
+
+					<div id="fractional" class="notation-entry">
+						<span class="notation-symbol"><math><mo>fract</mo><mo>&lpar;</mo><mo>&#9676;</mo><mo>&rpar;</mo></math></span>
+
+						<p class="notation-description">
+							<span class="notation-title">Fractional Part&colon;</span><br>
+							Returns the fractional portion of a value. Equivalent to subtracting the floor of the value.<br>
+							Formerly&colon;<br>
+							<math>
+								<mrow>
+									<mo>fract</mo>
+									<mo>&lpar;</mo>
+									<mi>a</mi>
+									<mo>&rpar;</mo>
+									<mo>=</mo>
+									<mi>a</mi>
+									<mo>&minus;</mo>
+									<mo>&lfloor;</mo>
+									<mi>a</mi>
+									<mo>&rfloor;</mo>
+								</mrow>
+							</math>
+						</p>
+					</div>
+
+					<div id="dot-product" class="notation-entry">
+						<span class="notation-symbol"><math><mo>dot</mo><mo>&lpar;</mo><mo>&#9676;</mo><mo>,</mo><mo>&#9676;</mo><mo>&rpar;</mo></math></span>
+
+						<p class="notation-description">
+							<span class="notation-title">Dot Product&colon;</span><br>
+							Represents the dot product between two vectors. Produces a scalar equal to the sum of pairwise multiplications of vector components.<br>
+							Formerly&colon;<br>
+							<math>
+								<mrow>
+									<mo>dot</mo>
+									<mo>&lpar;</mo>
+									<mi>a</mi>
+									<mo>,</mo>
+									<mi>b</mi>
+									<mo>&rpar;</mo>
+									<mo>=</mo>
+									<mrow>
+										<msub>
+											<mi>a</mi>
+											<mn>1</mn>
+										</msub>
+										<mo>&times;</mo>
+										<msub>
+											<mi>b</mi>
+											<mn>1</mn>
+										</msub>
+									</mrow>
+									<mo>&plus;</mo>
+									<mrow>
+										<msub>
+											<mi>a</mi>
+											<mn>2</mn>
+										</msub>
+										<mo>&times;</mo>
+										<msub>
+											<mi>b</mi>
+											<mn>2</mn>
+										</msub>
+									</mrow>
 								</mrow>
 							</math>
 						</p>

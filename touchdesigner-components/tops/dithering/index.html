@@ -374,7 +374,7 @@
 										<mn>9</mn>
 									</mfrac>
 								</mrow>
-								<mo>&dot;</mo>
+								<mo>&#8729;</mo>
 								<mrow>
 									<mo>&lsqb;</mo>
 									<mtable>
@@ -420,7 +420,7 @@
 										<mn>16</mn>
 									</mfrac>
 								</mrow>
-								<mo>&dot;</mo>
+								<mo>&#8729;</mo>
 								<mrow>
 									<mo>&lsqb;</mo>
 									<mtable>
@@ -602,7 +602,7 @@
 												<mn>16</mn>
 											</mfrac>
 										</mrow>
-										<mo>&dot;</mo>
+										<mo>&#8729;</mo>
 										<mrow>
 											<mo>&lsqb;</mo>
 											<mtable>
@@ -642,7 +642,7 @@
 												<mn>48</mn>
 											</mfrac>
 										</mrow>
-										<mo>&dot;</mo>
+										<mo>&#8729;</mo>
 										<mrow>
 											<mo>&lsqb;</mo>
 											<mtable>
@@ -693,7 +693,7 @@
 												<mn>42</mn>
 											</mfrac>
 										</mrow>
-										<mo>&dot;</mo>
+										<mo>&#8729;</mo>
 										<mrow>
 											<mo>&lsqb;</mo>
 											<mtable>
@@ -744,7 +744,7 @@
 												<mn>8</mn>
 											</mfrac>
 										</mrow>
-										<mo>&dot;</mo>
+										<mo>&#8729;</mo>
 										<mrow>
 											<mo>&lsqb;</mo>
 											<mtable>
@@ -792,7 +792,7 @@
 												<mn>32</mn>
 											</mfrac>
 										</mrow>
-										<mo>&dot;</mo>
+										<mo>&#8729;</mo>
 										<mrow>
 											<mo>&lsqb;</mo>
 											<mtable>
@@ -845,7 +845,7 @@
 														<mn>32</mn>
 													</mfrac>
 												</mrow>
-												<mo>&dot;</mo>
+												<mo>&#8729;</mo>
 												<mrow>
 													<mo>&lsqb;</mo>
 													<mtable>
@@ -896,7 +896,7 @@
 														<mn>16</mn>
 													</mfrac>
 												</mrow>
-												<mo>&dot;</mo>
+												<mo>&#8729;</mo>
 												<mrow>
 													<mo>&lsqb;</mo>
 													<mtable>
@@ -940,7 +940,7 @@
 														<mn>4</mn>
 													</mfrac>
 												</mrow>
-												<mo>&dot;</mo>
+												<mo>&#8729;</mo>
 												<mrow>
 													<mo>&lsqb;</mo>
 													<mtable>
@@ -1085,14 +1085,71 @@
 				<section id="ign-dither" class="documentation">
 					<div class="docuinfo">
 						<h2>IGN Dither</h2>
-						<h3>Sub-Title</h3>
+						<h3><a href="https://www.iryoku.com/next-generation-post-processing-in-call-of-duty-advanced-warfare/" target="_blank">Interleaved Gradient Noise Dithering</a></h3>
 						<p>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim diam vulputate ut pharetra sit amet aliquam. Integer eget aliquet nibh praesent tristique magna sit. Massa id neque aliquam vestibulum. Egestas diam in arcu cursus euismod quis viverra nibh. Ultrices vitae auctor eu augue ut lectus arcu bibendum at. Vel risus commodo viverra maecenas accumsan lacus vel facilisis volutpat. Sit amet cursus sit amet dictum sit. Scelerisque mauris pellentesque pulvinar pellentesque habitant morbi tristique. Rutrum quisque non tellus orci ac.
+							This component implements dithering using <a href="https://www.iryoku.com/next-generation-post-processing-in-call-of-duty-advanced-warfare/" target="_blank">Interleaved Gradient Noise</a> &lpar;<a href="https://www.iryoku.com/next-generation-post-processing-in-call-of-duty-advanced-warfare/" target="_blank">IGN</a>&rpar; &mdash; a deterministic pseudo&hyphen;random pattern designed to evenly distribute quantization offsets across image space. Conceptually, <a href="https://www.iryoku.com/next-generation-post-processing-in-call-of-duty-advanced-warfare/" target="_blank">IGN</a> sits between <a href="#bayer-matrix-dither" target="_self">ordered dithering</a> and <a href="#noise-dither" target="_self">random noise dithering</a>&colon; it avoids the visible grid structure of <a href="#bayer-matrix-dither" target="_self">Bayer matrices</a> while remaining deterministic and more spatially uniform than purely random noise.
+						</p>
+
+						<p>
+							Rather than propagating error &lpar;as in <a href="#error-diffusion-dither" target="_self">diffusion methods</a>&rpar; or repeating a threshold grid &lpar;as in <a href="#bayer-matrix-dither" target="_self">ordered dithering</a>&rpar;, <a href="https://www.iryoku.com/next-generation-post-processing-in-call-of-duty-advanced-warfare/" target="_blank">IGN</a> generates a lightweight procedural value per pixel that subtly influences rounding decisions during quantization. The result is a stable, fine&hyphen;grained distribution of tonal variation without directional streaking or rigid tiling artifacts.
+						</p>
+
+						<p>
+							The <a href="https://www.iryoku.com/next-generation-post-processing-in-call-of-duty-advanced-warfare/" target="_blank">IGN</a> pattern is defined per pixel &lpar; <span title="Right click for a cheat sheet"><math><mi>&iota;</mi></math></span> &rpar; in screen space as&colon;
+						</p>
+						<p class="maths" title="Right click for a cheat sheet">
+							<math>
+								<mrow>
+									<mi>IGN</mi>
+									<mo>&lpar;</mo>
+									<mi>&iota;</mi>
+									<mo>&rpar;</mo>
+								</mrow>
+								<mrow>
+									<mo>=</mo>
+									<mo>fract</mo>
+									<mo>&lpar;</mo>
+									<mn>52.9829</mn>
+									<mo>&#8729;</mo>
+									<mo>fract</mo>
+									<mo>&lpar;</mo>
+									<mo>dot</mo>
+									<mo>&lpar;</mo>
+								</mrow>
+								<mrow>
+									<msub>
+										<mi>&iota;</mi>
+										<mn>xy</mn>
+									</msub>
+								</mrow>
+								<mrow>
+									<mo>,</mo>
+									<mo>&lbrack;</mo>
+									<mi>0.0671106</mi>
+									<mo>,</mo>
+									<mi>0.00583715</mi>
+									<mo>&rbrack;</mo>
+									<mo>&rpar;</mo>
+									<mo>&rpar;</mo>
+									<mo>&rpar;</mo>
+								</mrow>
+							</math>
+						</p>
+
+						<p>
+							This formulation produces a deterministic scalar value in the range 0&ndash;1, evenly distributed across image space while remaining computationally lightweight and frame&hyphen;stable.
+						</p>
+
+						<p>
+							Because <a href="https://www.iryoku.com/next-generation-post-processing-in-call-of-duty-advanced-warfare/" target="_blank">IGN</a> is procedural rather than texture&hyphen;based, it scales cleanly with resolution and remains temporally stable in animated workflows. The resulting dithering exhibits a subtle, uniform grain structure that avoids the geometric rigidity of ordered dithering and the diffusion streaking of error propagation methods.
 						</p>
 
 						<h5>Resources&colon;</h5>
 						<p>
-							<a href="https://github.com/MaxMainio/TD_" target="_blank">Download the .tox files</a>
+							<a href="https://github.com/MaxMainio/TD_" target="_blank">Download the .tox files</a>,<br>
+							<a href="https://www.iryoku.com/next-generation-post-processing-in-call-of-duty-advanced-warfare/" target="_blank">Original Article by Jorge Jimenez</a>,<br>
+							<a href="https://blog.demofox.org/2022/01/01/interleaved-gradient-noise-a-different-kind-of-low-discrepancy-sequence/" target="_blank">Article on The Blog at the Bottom of the Sea</a>,<br>
+							<a href="https://youtu.be/au9pce-xg5s" target="_blank">Dithering Video by Acerola</a>
 						</p>
 					</div>
 
@@ -1279,7 +1336,7 @@
 							<h5>Noise Type&colon;</h5>
 							<p>
 								Selects the noise distribution used for dithering&colon;<br>
-								Random &lpar;GPU&rpar;, White Noise, or Blue Noise.
+								Random &lpar;GPU&rpar;, <a href="https://en.wikipedia.org/wiki/White_noise" target="_blank">White Noise</a>, or <a href="https://en.wikipedia.org/wiki/Colors_of_noise#:~:text=media%20help.-,Blue%20noise,-%5Bedit%5D" target="_blank">Blue Noise</a>.
 							</p>
 
 							<h5>Seed&colon;</h5>
@@ -1291,13 +1348,13 @@
 							<h5>Noise Dimensions&colon;</h5>
 							<p>
 								Specifies the resolution of the noise texture used for dithering.<br>
-								Active when <i>Noise Type</i> is set to <i>White Noise</i> or <i>Blue Noise.</i>
+								Active when <i>Noise Type</i> is set to <i><a href="https://en.wikipedia.org/wiki/White_noise" target="_blank">White Noise</a></i> or <i><a href="https://en.wikipedia.org/wiki/Colors_of_noise#:~:text=media%20help.-,Blue%20noise,-%5Bedit%5D" target="_blank">Blue Noise</a>.</i>
 							</p>
 
 							<h5>Noise Tiling&colon;</h5>
 							<p>
 								Defines how the noise texture is tiled across the image &lpar;Repeat or Mirror&rpar;.<br>
-								Active when <i>Noise Type</i> is set to <i>White Noise</i> or <i>Blue Noise.</i>
+								Active when <i>Noise Type</i> is set to <i><a href="https://en.wikipedia.org/wiki/White_noise" target="_blank">White Noise</a></i> or <i><a href="https://en.wikipedia.org/wiki/Colors_of_noise#:~:text=media%20help.-,Blue%20noise,-%5Bedit%5D" target="_blank">Blue Noise</a>.</i>
 							</p>
 
 							<hr/>
