@@ -346,7 +346,7 @@
 						<h2><a href="https://en.wikipedia.org/wiki/Bayer_filter" target="_blank">Bayer Matrix</a> Dither</h2>
 						<h3>Ordered Dithering</h3>
 						<p>
-							<a href="https://github.com/MaxMainio/TD_/blob/main/TOPs/Dithering/Bayer_Matrix_Dither.tox" target="_blank">This component</a> iimplements ordered dithering using a structured threshold matrix. Instead of diffusing quantization error across neighboring pixels, this method compares each pixel value against a repeating threshold pattern derived from a <a href="https://en.wikipedia.org/wiki/Bayer_filter" target="_blank">Bayer Matrix</a>. The result is a deterministic, grid&hyphen;based distribution of quantization error.
+							<a href="https://github.com/MaxMainio/TD_/blob/main/TOPs/Dithering/Bayer_Matrix_Dither.tox" target="_blank">This component</a> implements ordered dithering using a structured threshold matrix. Instead of diffusing quantization error across neighboring pixels, this method compares each pixel value against a repeating threshold pattern derived from a <a href="https://en.wikipedia.org/wiki/Bayer_filter" target="_blank">Bayer Matrix</a>. The result is a deterministic, grid&hyphen;based distribution of quantization error.
 						</p>
 
 						<p>
@@ -371,6 +371,7 @@
 										<mn>9</mn>
 									</mfrac>
 								</mrow>
+								<mo>&dot;</mo>
 								<mrow>
 									<mo>&lsqb;</mo>
 									<mtable>
@@ -413,6 +414,7 @@
 										<mn>16</mn>
 									</mfrac>
 								</mrow>
+								<mo>&dot;</mo>
 								<mrow>
 									<mo>&lsqb;</mo>
 									<mtable>
@@ -789,9 +791,21 @@
 				<section id="noise-dither" class="documentation">
 					<div class="docuinfo">
 						<h2>Noise Dither</h2>
-						<h3>Sub-Title</h3>
+						<h3><a href="https://www.merriam-webster.com/dictionary/stochastic" target="_blank">Stochastic</a> Dithering</h3>
 						<p>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim diam vulputate ut pharetra sit amet aliquam. Integer eget aliquet nibh praesent tristique magna sit. Massa id neque aliquam vestibulum. Egestas diam in arcu cursus euismod quis viverra nibh. Ultrices vitae auctor eu augue ut lectus arcu bibendum at. Vel risus commodo viverra maecenas accumsan lacus vel facilisis volutpat. Sit amet cursus sit amet dictum sit. Scelerisque mauris pellentesque pulvinar pellentesque habitant morbi tristique. Rutrum quisque non tellus orci ac.
+							This component implements noise&hyphen;based dithering by introducing controlled randomness into the quantization process. Instead of using a fixed threshold matrix, each pixel is compared against a noise value, producing a <a href="https://www.merriam-webster.com/dictionary/stochastic" target="_blank">stochastic</a> distribution of quantization error across the image.
+						</p>
+
+						<p>
+							For each pixel, the input value is first quantized to the selected bit depth. A noise sample is then added or compared during the quantization step, influencing whether that pixel rounds up or down within the reduced color space. Unlike ordered dithering, the spatial distribution of tones is not determined by a repeating grid, but by a noise field.
+						</p>
+
+						<p>
+							The type of noise used directly influences the visual character of the result. <a href="https://en.wikipedia.org/wiki/White_noise" target="_blank">White noise</a> produces a purely random distribution of error, resulting in a grain&hyphen;like texture. <a href="https://en.wikipedia.org/wiki/Colors_of_noise#:~:text=media%20help.-,Blue%20noise,-%5Bedit%5D" target="_blank">Blue noise</a> distributes error with higher spatial frequency separation, reducing visible clumping and producing a more visually pleasing and perceptually uniform result. The Random &lpar;GPU&rpar; mode generates procedural noise directly on the GPU, allowing for dynamic or animated dithering patterns.
+						</p>
+
+						<p>
+							Because noise&hyphen;based dithering does not rely on fixed spatial patterns, it avoids the geometric repetition seen in ordered methods. This makes it suitable for organic, natural&hyphen;looking quantization, subtle tone simulation, or stylized grain effects.
 						</p>
 
 						<h5>Resources&colon;</h5>
