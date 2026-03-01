@@ -230,14 +230,46 @@
 
 				<hr/>
 
-					<section class="notation-category">
+				<section class="notation-category">
 					<h3>Dithering&colon;</h3>
 
 					<div id="diffusion-matrix" class="notation-entry">
 						<span class="notation-symbol"><math><mrow><mi>D</mi></mrow></math> &mdash;</span>
 						
 						<p class="notation-description">
-							asdf
+							<span class="notation-title">Diffusion Matrix&colon;</span><br>
+							Represents a weighted <a href="#kernel" target="_self">kernel</a> used in error diffusion dithering to propagate quantization error to neighboring pixels.<br>
+							The current pixel being processed is denoted by &lpar;<math><mrow><mi>&ast;</mi></mrow></math>&rpar;, and the matrix weights are normalized by a divisor. Empty cells are not taken into consideration and receive no propagated error.<br>
+							Formerly&colon;<br>
+							<math>
+								<mrow>
+									<mi>D</mi>
+									<mo>=</mo>
+								</mrow>
+								<mrow>
+									<mfrac>
+										<mn>1</mn>
+										<mn>16</mn>
+									</mfrac>
+								</mrow>
+								<mo>&dot;</mo>
+								<mrow>
+									<mo>&lsqb;</mo>
+									<mtable>
+										<mtr>
+											<mtd></mtd>
+											<mtd><mi>&ast;</mi></mtd>
+											<mtd><mn>7</mn></mtd>
+										</mtr>
+										<mtr>
+											<mtd><mn>3</mn></mtd>
+											<mtd><mn>5</mn></mtd>
+											<mtd><mn>1</mn></mtd>
+										</mtr>
+									</mtable>
+									<mo>&rsqb;</mo>
+								</mrow>
+							</math>
 						</p>
 					</div>
 				</section>
