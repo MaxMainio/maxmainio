@@ -567,14 +567,375 @@
 				<section id="error-diffusion-dither" class="documentation">
 					<div class="docuinfo">
 						<h2><a href="https://en.wikipedia.org/wiki/Dither#:~:text=void%2Dand%2Dcluster)-,Error%2Ddiffusion%20dithering,-is%20a%20feedback" target="_blank">Error Diffusion Dither</a></h2>
-						<h3>Sub-Title</h3>
+						<h3>Adaptive Quantization Propagation</h3>
 						<p>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim diam vulputate ut pharetra sit amet aliquam. Integer eget aliquet nibh praesent tristique magna sit. Massa id neque aliquam vestibulum. Egestas diam in arcu cursus euismod quis viverra nibh. Ultrices vitae auctor eu augue ut lectus arcu bibendum at. Vel risus commodo viverra maecenas accumsan lacus vel facilisis volutpat. Sit amet cursus sit amet dictum sit. Scelerisque mauris pellentesque pulvinar pellentesque habitant morbi tristique. Rutrum quisque non tellus orci ac.
+							This component implements <a href="https://en.wikipedia.org/wiki/Error_diffusion" target="_blank">error diffusion dithering</a> by propagating quantization error to neighboring pixels during processing. Rather than using a fixed threshold pattern, <a href="https://en.wikipedia.org/wiki/Error_diffusion" target="_blank">error diffusion</a> distributes the difference between the original pixel value and its quantized result across surrounding pixels according to a <a href="https://tannerhelland.com/2012/12/28/dithering-eleven-algorithms-source-code.html#:~:text=Two%2DDimensional%20Error%20Diffusion%20Dithering" target="_blank">weighted matrix</a>.
+						</p>
+
+						<p>
+							The selected Algorithm determines how this error is spatially distributed. Each <a href="https://tannerhelland.com/2012/12/28/dithering-eleven-algorithms-source-code.html#:~:text=Two%2DDimensional%20Error%20Diffusion%20Dithering" target="_blank">diffusion matrix</a> defines a neighborhood pattern and weight distribution that shapes the resulting tonal texture.
+						</p>
+
+						<ol>
+							<li>
+								<h5>
+									<a href="https://coolbutuseless.github.io/2018/02/04/error-diffusion-dithering-in-r/#:~:text=Floyd%20Steinberg%20dither" target="_blank">Floyd&hyphen;Steinberg</a>
+								</h5>
+								<p>
+									A compact and efficient <a href="https://tannerhelland.com/2012/12/28/dithering-eleven-algorithms-source-code.html#:~:text=Two%2DDimensional%20Error%20Diffusion%20Dithering" target="_blank">diffusion matrix</a> that produces sharp, high&hyphen;contrast dithering with minimal computational cost. Its limited neighborhood results in visible but crisp diffusion patterns.
+								</p>
+								<p class="maths" title="Right click for a cheat sheet">
+									<math>
+										<mrow>
+											<mfrac>
+												<mn>1</mn>
+												<mn>16</mn>
+											</mfrac>
+										</mrow>
+										<mo>&dot;</mo>
+										<mrow>
+											<mo>&lsqb;</mo>
+											<mtable>
+												<mtr>
+													<mtd></mtd>
+													<mtd><mi>&ast;</mi></mtd>
+													<mtd><mn>7</mn></mtd>
+												</mtr>
+												<mtr>
+													<mtd><mn>3</mn></mtd>
+													<mtd><mn>5</mn></mtd>
+													<mtd><mn>1</mn></mtd>
+												</mtr>
+											</mtable>
+											<mo>&rsqb;</mo>
+										</mrow>
+									</math>
+								</p><br>
+							</li>
+
+							<li>
+								<h5>
+									<a href="https://coolbutuseless.github.io/2018/02/04/error-diffusion-dithering-in-r/#:~:text=Jarvis%2C%20Judice%2C%20and%20Ninke%20Dithering" target="_blank">Jarvis&hyphen;Judice&hyphen;Ninke</a>
+								</h5>
+								<p>
+									A wider <a href="https://tannerhelland.com/2012/12/28/dithering-eleven-algorithms-source-code.html#:~:text=Two%2DDimensional%20Error%20Diffusion%20Dithering" target="_blank">diffusion matrix</a> that distributes error across two rows of neighboring pixels. This produces smoother tonal gradients and softer transitions at the cost of additional computation.
+								</p>
+								<p class="maths" title="Right click for a cheat sheet">
+									<math>
+										<mrow>
+											<mfrac>
+												<mn>1</mn>
+												<mn>48</mn>
+											</mfrac>
+										</mrow>
+										<mo>&dot;</mo>
+										<mrow>
+											<mo>&lsqb;</mo>
+											<mtable>
+												<mtr>
+													<mtd></mtd>
+													<mtd></mtd>
+													<mtd><mi>&ast;</mi></mtd>
+													<mtd><mn>7</mn></mtd>
+													<mtd><mn>5</mn></mtd>
+												</mtr>
+												<mtr>
+													<mtd><mn>3</mn></mtd>
+													<mtd><mn>5</mn></mtd>
+													<mtd><mn>7</mn></mtd>
+													<mtd><mn>5</mn></mtd>
+													<mtd><mn>3</mn></mtd>
+												</mtr>
+												<mtr>
+													<mtd><mn>1</mn></mtd>
+													<mtd><mn>3</mn></mtd>
+													<mtd><mn>5</mn></mtd>
+													<mtd><mn>3</mn></mtd>
+													<mtd><mn>1</mn></mtd>
+												</mtr>
+											</mtable>
+											<mo>&rsqb;</mo>
+										</mrow>
+									</math>
+								</p><br>
+							</li>
+
+							<li>
+								<h5>
+									<a href="https://tannerhelland.com/2012/12/28/dithering-eleven-algorithms-source-code.html#:~:text=and%20over%20again.-,Stucki%20Dithering,-Five%20years%20after" target="_blank">Stucki</a>
+								</h5>
+								<p>
+									A variation of <a href="https://coolbutuseless.github.io/2018/02/04/error-diffusion-dithering-in-r/#:~:text=Jarvis%2C%20Judice%2C%20and%20Ninke%20Dithering" target="_blank">Jarvis&hyphen;Judice&hyphen;Ninke</a> with adjusted weighting for improved tonal balance. It preserves smooth gradients while maintaining slightly stronger local contrast.
+								</p>
+								<p class="maths" title="Right click for a cheat sheet">
+									<math>
+										<mrow>
+											<mfrac>
+												<mn>1</mn>
+												<mn>42</mn>
+											</mfrac>
+										</mrow>
+										<mo>&dot;</mo>
+										<mrow>
+											<mo>&lsqb;</mo>
+											<mtable>
+												<mtr>
+													<mtd></mtd>
+													<mtd></mtd>
+													<mtd><mi>&ast;</mi></mtd>
+													<mtd><mn>8</mn></mtd>
+													<mtd><mn>4</mn></mtd>
+												</mtr>
+												<mtr>
+													<mtd><mn>2</mn></mtd>
+													<mtd><mn>4</mn></mtd>
+													<mtd><mn>8</mn></mtd>
+													<mtd><mn>4</mn></mtd>
+													<mtd><mn>2</mn></mtd>
+												</mtr>
+												<mtr>
+													<mtd><mn>1</mn></mtd>
+													<mtd><mn>2</mn></mtd>
+													<mtd><mn>4</mn></mtd>
+													<mtd><mn>2</mn></mtd>
+													<mtd><mn>1</mn></mtd>
+												</mtr>
+											</mtable>
+											<mo>&rsqb;</mo>
+										</mrow>
+									</math>
+								</p><br>
+							</li>
+
+							<li>
+								<h5>
+									<a href="https://tannerhelland.com/2012/12/28/dithering-eleven-algorithms-source-code.html#:~:text=slight%20speed%20increase.-,Atkinson%20Dithering,-During%20the%20mid" target="_blank">Atkinson</a>
+								</h5>
+								<p>
+									A simplified <a href="https://tannerhelland.com/2012/12/28/dithering-eleven-algorithms-source-code.html#:~:text=Two%2DDimensional%20Error%20Diffusion%20Dithering" target="_blank">matrix</a> with a smaller diffusion footprint. Produces a lighter, more stylized dithering pattern often associated with early Macintosh graphics.
+								</p>
+								<p class="maths" title="Right click for a cheat sheet">
+									<math>
+										<mrow>
+											<mfrac>
+												<mn>1</mn>
+												<mn>8</mn>
+											</mfrac>
+										</mrow>
+										<mo>&dot;</mo>
+										<mrow>
+											<mo>&lsqb;</mo>
+											<mtable>
+												<mtr>
+													<mtd></mtd>
+													<mtd><mi>&ast;</mi></mtd>
+													<mtd><mn>1</mn></mtd>
+													<mtd><mn>1</mn></mtd>
+												</mtr>
+												<mtr>
+													<mtd><mn>1</mn></mtd>
+													<mtd><mn>1</mn></mtd>
+													<mtd><mn>1</mn></mtd>
+													<mtd></mtd>
+												</mtr>
+												<mtr>
+													<mtd></mtd>
+													<mtd><mn>1</mn></mtd>
+													<mtd></mtd>
+													<mtd></mtd>
+												</mtr>
+											</mtable>
+											<mo>&rsqb;</mo>
+										</mrow>
+									</math>
+								</p><br>
+							</li>
+
+							<li>
+								<h5>
+									<a href="https://tannerhelland.com/2012/12/28/dithering-eleven-algorithms-source-code.html#:~:text=1%0A%0A%20%20%20%20%20%20(1/8)-,Burkes%20Dithering,-Seven%20years%20after" target="_blank">Burkes</a>
+								</h5>
+								<p>
+									A reduced version of the <a href="https://coolbutuseless.github.io/2018/02/04/error-diffusion-dithering-in-r/#:~:text=Jarvis%2C%20Judice%2C%20and%20Ninke%20Dithering" target="_blank">Jarvis&hyphen;Judice&hyphen;Ninke matrix</a> that diffuses error across two rows but with fewer weights, offering a balance between quality and performance.
+								</p>
+								<p class="maths" title="Right click for a cheat sheet">
+									<math>
+										<mrow>
+											<mfrac>
+												<mn>1</mn>
+												<mn>32</mn>
+											</mfrac>
+										</mrow>
+										<mo>&dot;</mo>
+										<mrow>
+											<mo>&lsqb;</mo>
+											<mtable>
+												<mtr>
+													<mtd></mtd>
+													<mtd></mtd>
+													<mtd><mi>&ast;</mi></mtd>
+													<mtd><mn>8</mn></mtd>
+													<mtd><mn>4</mn></mtd>
+												</mtr>
+												<mtr>
+													<mtd><mn>2</mn></mtd>
+													<mtd><mn>4</mn></mtd>
+													<mtd><mn>8</mn></mtd>
+													<mtd><mn>4</mn></mtd>
+													<mtd><mn>2</mn></mtd>
+												</mtr>
+											</mtable>
+											<mo>&rsqb;</mo>
+										</mrow>
+									</math>
+								</p><br>
+							</li>
+
+							<li>
+								<h5>
+									<a href="https://tannerhelland.com/2012/12/28/dithering-eleven-algorithms-source-code.html#:~:text=hit%20to%20quality.-,Sierra%20Dithering,-The%20final%20three" target="_blank">Sierra</a>
+								</h5>
+								<p>
+									A family of <a href="https://tannerhelland.com/2012/12/28/dithering-eleven-algorithms-source-code.html#:~:text=Two%2DDimensional%20Error%20Diffusion%20Dithering" target="_blank">diffusion matrices</a> offering multiple variants that trade diffusion range for performance.
+								</p>
+
+								<ul>
+									<li>
+										<h5>
+											<a href="https://tannerhelland.com/2012/12/28/dithering-eleven-algorithms-source-code.html#:~:text=X%20%20%205%20%20%203%0A%20%20%20%20%202%20%20%204%20%205%20%20%204%20%20%202%0A%20%20%20%20%20%20%20%20%202%20%203%20%20%202%0A%20%20%20%20%20%20%20%20%20%20(1/32)" target="_blank">Sierra &lpar;Full&rpar;</a>
+										</h5>
+										<p>
+											Balanced diffusion across three rows.
+										</p>
+										<p class="maths" title="Right click for a cheat sheet">
+											<math>
+												<mrow>
+													<mfrac>
+														<mn>1</mn>
+														<mn>32</mn>
+													</mfrac>
+												</mrow>
+												<mo>&dot;</mo>
+												<mrow>
+													<mo>&lsqb;</mo>
+													<mtable>
+														<mtr>
+															<mtd></mtd>
+															<mtd></mtd>
+															<mtd><mi>&ast;</mi></mtd>
+															<mtd><mn>5</mn></mtd>
+															<mtd><mn>3</mn></mtd>
+														</mtr>
+														<mtr>
+															<mtd><mn>2</mn></mtd>
+															<mtd><mn>4</mn></mtd>
+															<mtd><mn>5</mn></mtd>
+															<mtd><mn>4</mn></mtd>
+															<mtd><mn>2</mn></mtd>
+														</mtr>
+														<mtr>
+															<mtd></mtd>
+															<mtd><mn>2</mn></mtd>
+															<mtd><mn>3</mn></mtd>
+															<mtd><mn>2</mn></mtd>
+															<mtd></mtd>
+														</mtr>
+													</mtable>
+													<mo>&rsqb;</mo>
+												</mrow>
+											</math>
+										</p><br>
+									</li>
+
+									<li>
+										<h5>
+											<a href="https://tannerhelland.com/2012/12/28/dithering-eleven-algorithms-source-code.html#:~:text=X%20%20%204%20%20%203%0A%20%20%20%201%20%20%202%20%20%203%20%20%202%20%20%201%0A%20%20%20%20%20%20%20%20%20%20(1/16)" target="_blank">Sierra Two&hyphen;Row</a>
+										</h5>
+										<p>
+											Reduced vertical spread with moderate smoothing.
+										</p>
+										<p class="maths" title="Right click for a cheat sheet">
+											<math>
+												<mrow>
+													<mfrac>
+														<mn>1</mn>
+														<mn>16</mn>
+													</mfrac>
+												</mrow>
+												<mo>&dot;</mo>
+												<mrow>
+													<mo>&lsqb;</mo>
+													<mtable>
+														<mtr>
+															<mtd></mtd>
+															<mtd></mtd>
+															<mtd><mi>&ast;</mi></mtd>
+															<mtd><mn>4</mn></mtd>
+															<mtd><mn>3</mn></mtd>
+														</mtr>
+														<mtr>
+															<mtd><mn>1</mn></mtd>
+															<mtd><mn>2</mn></mtd>
+															<mtd><mn>3</mn></mtd>
+															<mtd><mn>2</mn></mtd>
+															<mtd><mn>1</mn></mtd>
+														</mtr>
+													</mtable>
+													<mo>&rsqb;</mo>
+												</mrow>
+											</math>
+										</p><br>
+									</li>
+
+									<li>
+										<h5>
+											<a href="https://tannerhelland.com/2012/12/28/dithering-eleven-algorithms-source-code.html#:~:text=X%20%20%202%0A%20%20%20%20%20%20%20%201%20%20%201%0A%20%20%20%20%20%20%20%20%20%20(1/4)" target="_blank">Sierra Lite</a>
+										</h5>
+										<p>
+											Minimal diffusion footprint with sharper contrast.
+										</p>
+										<p class="maths" title="Right click for a cheat sheet">
+											<math>
+												<mrow>
+													<mfrac>
+														<mn>1</mn>
+														<mn>4</mn>
+													</mfrac>
+												</mrow>
+												<mo>&dot;</mo>
+												<mrow>
+													<mo>&lsqb;</mo>
+													<mtable>
+														<mtr>
+															<mtd></mtd>
+															<mtd><mi>&ast;</mi></mtd>
+															<mtd><mn>2</mn></mtd>
+														</mtr>
+														<mtr>
+															<mtd><mn>1</mn></mtd>
+															<mtd><mn>1</mn></mtd>
+															<mtd></mtd>
+														</mtr>
+													</mtable>
+													<mo>&rsqb;</mo>
+												</mrow>
+											</math>
+										</p><br>
+									</li>
+								</ul>
+							</li>
+						</ol>
+
+						<p>
+							By providing multiple <a href="https://tannerhelland.com/2012/12/28/dithering-eleven-algorithms-source-code.html#:~:text=Two%2DDimensional%20Error%20Diffusion%20Dithering" target="_blank">diffusion matrices</a> within a single component, the <a href="https://github.com/MaxMainio/TD_/blob/main/TOPs/Dithering/Error_Diffusion_Dither.tox" target="_blank">Error Diffusion Dither COMP</a> allows fine control over the spatial character of quantization. Smaller <a href="https://tannerhelland.com/2012/12/28/dithering-eleven-algorithms-source-code.html#:~:text=Two%2DDimensional%20Error%20Diffusion%20Dithering" target="_blank">matrices</a> emphasize contrast and pattern visibility, while larger <a href="https://tannerhelland.com/2012/12/28/dithering-eleven-algorithms-source-code.html#:~:text=Two%2DDimensional%20Error%20Diffusion%20Dithering" target="_blank">matrices</a> favor smoother tonal reproduction. The structure of the final image emerges directly from the interaction between the input image and the chosen diffusion weights.
 						</p>
 
 						<h5>Resources&colon;</h5>
 						<p>
-							<a href="https://github.com/MaxMainio/TD_" target="_blank">Download the .tox files</a>
+							<a href="https://github.com/MaxMainio/TD_" target="_blank">Download the .tox files</a>,<br>
+							<a href="https://tannerhelland.com/2012/12/28/dithering-eleven-algorithms-source-code.html" target="_blank">Article by Tanner Helland</a>,<br>
+							<a href="https://liamappelbe.medium.com/dizzy-dithering-2ae76dbceba1" target="_blank">Dizzy Dithering by Liam Appelbe</a>,<br>
+							<a href="https://youtu.be/ico4fJfohMQ" target="_blank">Computerphile&rsquo;s video on Dithering</a>
 						</p>
 					</div>
 
