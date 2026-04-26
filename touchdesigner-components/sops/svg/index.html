@@ -93,7 +93,20 @@
 						<h1 id="title">SVGs</h1>
 						<h2 id="sub-title"><a href="https://derivative.ca/" target="_blank">TD</a> <a href="https://derivative.ca/UserGuide/Component" target="_blank">COMPs</a> / <a href="https://derivative.ca/UserGuide/SOP" target="_blank">SOPs</a> / 2023 &ndash; Present</h2>
 						<p>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue. Nam tincidunt congue enim, ut porta lorem lacinia consectetur. Donec ut libero sed arcu vehicula ultricies a non tortor. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+							This collection of components focuses on translating SVG vector data into and out of TouchDesigner&rsquo;s procedural environment. SVGs are inherently resolution&hyphen;independent and defined through mathematical curves, making them well suited for precise geometry, typography, and graphic systems.
+						</p>
+
+						<p>
+							Within TouchDesigner, however, SVG data is not natively represented as editable procedural geometry. These components bridge that gap by converting SVG paths into cubic Bézier SOP geometry and reconstructing SVG output from that geometry when needed.
+						</p>
+
+						<p>
+							At present, this category includes tools for both importing and exporting SVG data.
+						</p>
+
+						<p>
+							Index&colon;<br>
+							<a href="#svg-in" target="_self">SVG in</a>, <a href="#svg-out" target="_self">SVG out</a>
 						</p>
 					</div>
 				</section>
@@ -211,9 +224,17 @@
 				<section id="svg-in" class="documentation">
 					<div class="docuinfo">
 						<h2>SVG In</h2>
-						<h3>SubTitle</h3>
+						<h3>SVG to Cubic B&eacute;zier Geometry</h3>
 						<p>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue. Nam tincidunt congue enim, ut porta lorem lacinia consectetur. Donec ut libero sed arcu vehicula ultricies a non tortor. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+							This component imports .svg files and converts their path data into SOP geometry using true cubic B&eacute;zier curves. Unlike many SVG import workflows that approximate curves with dense polylines, this implementation preserves the original mathematical structure of the SVG by leveraging TouchDesigner&rsquo;s native cubic B&eacute;zier support.
+						</p>
+
+						<p>
+							TouchDesigner requires all curve primitives within a single geometry to be uniformly cubic. As a result, SVG paths that contain a mix of line segments, quadratic curves, or other path commands are internally converted to cubic B&eacute;zier form during parsing. This ensures consistency and visual accuracy, but may increase the number of control points in simpler shapes.
+						</p>
+
+						<p>
+							For example, a basic rectangle defined by four points in an SVG may be expanded into a cubic representation with additional vertices. While this introduces extra geometry, it guarantees that all imported paths conform to TouchDesigner&rsquo;s requirements and render accurately without approximation artifacts.
 						</p>
 
 						<h5>Resources&colon;</h5>
@@ -280,31 +301,15 @@
 
 						<div>
 							<h4>Parameters</h4>
-							<h5>par.name&colon;</h5>
+							<h5>.svg&colon;</h5>
 							<p>
-								Lorem ipsum...
-							</p>
-
-							<h5>par.name&colon;</h5>
-							<p>
-								Lorem ipsum...
-							</p>
-	
-							<hr/>
-
-							<h5>par.name&colon;</h5>
-							<p>
-								Lorem ipsum...
-							</p>
-
-							<h5>Pixel Format&colon;</h5>
-							<p>
-								Lorem ipsum...
+								Specifies the SVG file to import.<br>
+								The selected file is parsed and converted into cubic Bézier SOP geometry.
 							</p>
 
 							<h4>In&hyphen; &sol; Outputs</h4>
 							<p>
-								<b>Output 0</b> &ndash; <a href="https://derivative.ca/UserGuide/SOP" target="_blank"><span class="sop-text">SOP</span></a> b&eacute;zier geometry.
+								<b>Output 0</b> &ndash; <a href="https://derivative.ca/UserGuide/SOP" target="_blank"><span class="sop-text">SOP</span></a> Cubic b&eacute;zier geometry.
 							</p>
 
 							<p style="margin-top: 1rem;">
@@ -388,26 +393,92 @@
 
 						<div>
 							<h4>Parameters</h4>
-							<h5>par.name&colon;</h5>
+							<h5>SVG Type&colon;</h5>
 							<p>
-								Lorem ipsum...
+								Defines the output path representation&colon;<br>
+								Bézier, Polyline, or Polygon.
 							</p>
 
-							<h5>par.name&colon;</h5>
+							<hr/>
+
+							<h5>Fill&colon;</h5>
 							<p>
-								Lorem ipsum...
+								Specifies how fill styling is applied to exported paths&colon;<br>
+								None, Uniform Color, or Varied Color &lpar;uses a <code>fillColor</code> float4 primitive attribute&rpar;.
+							</p>
+
+							<h5>Fill Color&colon;</h5>
+							<p>
+								Defines the RGBA fill color applied to all paths.<br>
+								Active when <i>Fill</i> is set to Uniform Color.
+							</p>
+
+							<h5>Stroke&colon;</h5>
+							<p>
+								Specifies stroke width behavior&colon;<br>
+								None, Uniform Width, or Varied Width &lpar;uses a <code>strokeWidth</code> float primitive attribute&rpar;.
+							</p>
+
+							<h5>Stroke Width&colon;</h5>
+							<p>
+								Defines the stroke width applied to all paths.<br>
+								Active when <i>Stroke</i> is set to Uniform Width.
+							</p>
+
+							<h5>Stroke Color Mode&colon;</h5>
+							<p>
+								Specifies how stroke color is applied&colon;<br>
+								None, Uniform Color, or Varied Color &lpar;uses a <code>strokeColor</code> float4 primitive attribute&rpar;.
+							</p>
+
+							<h5>Stroke Color&colon;</h5>
+							<p>
+								Defines the RGBA stroke color applied to all paths.<br>
+								Active when <i>Stroke Color Mode</i> is set to Uniform Color.
 							</p>
 	
 							<hr/>
 	
-							<h5>par.name&colon;</h5>
+							<h5>Artboard Size&colon;</h5>
 							<p>
-								Lorem ipsum...
+								Defines the output SVG artboard dimensions&colon;<br>
+								A4, Letter, Legal, Tabloid, or Custom.
 							</p>
 
-							<h5>par.name&colon;</h5>
+							<h5>Custom&colon;</h5>
 							<p>
-								Lorem ipsum...
+								Defines the width and height of the SVG artboard.<br>
+								Active when <i>Artboard Size</i> is set to Custom.
+							</p>
+
+							<h5>Units&colon;</h5>
+							<p>
+								Defines whether custom dimensions are interpreted as pixels &lpar;px&rpar; or millimeters &lpar;mm&rpar;.<br>
+								Active when <i>Artboard Size</i> is set to Custom.
+							</p>
+
+							<hr/>
+	
+							<h5>Destination Folder&colon;</h5>
+							<p>
+								Specifies the folder where the exported SVG file will be saved.
+							</p>
+
+							<h5>File Name&colon;</h5>
+							<p>
+								Defines the name of the exported SVG file.
+							</p>
+
+							<h5>Export SVG&colon;</h5>
+							<p>
+								Triggers the export of the SVG file.
+							</p>
+
+							<hr/>
+	
+							<h5>Generate requirements.txt&colon;</h5>
+							<p>
+								Generates or updates a requirements.txt file for use with the TDPyEnvManager COMP. Ensures all required Python dependencies for SVG export are included without overwriting existing entries.
 							</p>
 
 							<h4>In&hyphen; &sol; Outputs</h4>
