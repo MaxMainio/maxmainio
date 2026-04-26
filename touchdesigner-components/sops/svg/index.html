@@ -97,7 +97,7 @@
 						</p>
 
 						<p>
-							Within TouchDesigner, however, SVG data is not natively represented as editable procedural geometry. These components bridge that gap by converting SVG paths into cubic Bézier SOP geometry and reconstructing SVG output from that geometry when needed.
+							Within TouchDesigner, however, SVG data is not natively represented as editable procedural geometry. These components bridge that gap by converting SVG paths into cubic B&eacute;zier SOP geometry and reconstructing SVG output from that geometry when needed.
 						</p>
 
 						<p>
@@ -304,7 +304,7 @@
 							<h5>.svg&colon;</h5>
 							<p>
 								Specifies the SVG file to import.<br>
-								The selected file is parsed and converted into cubic Bézier SOP geometry.
+								The selected file is parsed and converted into cubic B&eacute;zier SOP geometry.
 							</p>
 
 							<h4>In&hyphen; &sol; Outputs</h4>
@@ -324,9 +324,70 @@
 				<section id="svg-out" class="documentation">
 					<div class="docuinfo">
 						<h2>SVG Out</h2>
-						<h3>SubTitle</h3>
+						<h3>SOP to SVG Export</h3>
 						<p>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue. Nam tincidunt congue enim, ut porta lorem lacinia consectetur. Donec ut libero sed arcu vehicula ultricies a non tortor. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+							This component exports SOP geometry as an SVG file, converting procedural geometry into vector path data. It builds on the original SOP&hyphen;to&hyphen;SVG workflow developed by Matthew Ragan, extending it with support for true cubic B&eacute;zier output, basic fill and stroke styling controls, attribute-driven variation through primitive attributes &lpar;<code>fillColor</code>, <code>strokeColor</code>, <code>strokeWidth</code>&rpar;, and compatibility with TouchDesigner&rsquo;s TDPyEnvManager for managing Python dependencies.
+						</p>
+
+						<h5>Setup&colon;</h5>
+						<p>
+							This component relies on external Python packages and must be used in conjunction with the TDPyEnvManager COMP.
+						</p>
+
+						<p>
+							The required Python dependencies are&colon;<br>
+							<code style="margin-left: 1rem;">svgwrite==1.4.3</code><br>
+							<code style="margin-left: 1rem;">setuptools==65.5.0</code><br>
+							<code style="margin-left: 1rem;">pip==26.0.1</code>
+						</p>
+
+						<p>
+							This component simplifies setup by allowing a TDPyEnvManager&hyphen;compatible requirements.txt file to be generated directly within the SVG Out COMP.
+						</p>
+
+						<ol>
+							<li>
+								Within the SVG Out COMP, press Generate requirements.txt to create or update a requirements.txt file in your project directory.
+							</li>
+
+							<li>
+								Within the TDPyEnvManager COMP, create a Python virtual environment using the Create vEnv pulse parameter.
+							</li>
+
+							<li>
+								Once the virtual environment is created, use Create From requirements.txt to install the required dependencies.
+							</li>
+
+							<li>
+								When the virtual environment is active, the SVG Out COMP is ready for use.
+							</li>
+						</ol>
+
+						<h5>Workflow&colon;</h5>
+						<p>
+							Input SOP geometry is parsed and converted into SVG path data based on the selected SVG Type. B&eacute;zier mode preserves curve information, while Polyline and Polygon modes provide simplified geometric representations.
+						</p>
+
+						<p>
+							Styling can be applied uniformly or driven per-primitive by defining attributes on the SOP geometry prior to export. The supported primitive attributes are&colon;
+						</p>
+
+						<ul>
+							<li>
+								<code>fillColor</code> &lpar;float4&rpar; &mdash; used when <i>Fill</i> is set to <i>Varied Color.</i>
+							</li>
+
+							<li>
+								<code>strokeColor</code> &lpar;float4&rpar; &mdash; used when <i>Stroke Color Mode</i> is set to <i>Varied Color.</i>
+							</li>
+
+							<li>
+								<code>strokeWidth</code> &lpar;float&rpar; &mdash; used when <i>Stroke</i> is set to <i>Varied Width.</i>
+							</li>
+						</ul>
+
+						<p>
+							This enables procedural workflows where both geometry and styling are authored within TouchDesigner before being exported as vector graphics.
 						</p>
 
 						<h5>Resources&colon;</h5>
@@ -396,7 +457,7 @@
 							<h5>SVG Type&colon;</h5>
 							<p>
 								Defines the output path representation&colon;<br>
-								Bézier, Polyline, or Polygon.
+								B&eacute;zier, Polyline, or Polygon.
 							</p>
 
 							<hr/>
