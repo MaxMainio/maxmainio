@@ -305,8 +305,8 @@
 							<h4>Parameters</h4>
 							<h5>.svg&colon;</h5>
 							<p>
-								Specifies the <a href="https://www.adobe.com/creativecloud/file-types/image/vector/svg-file.html" target="_blank">SVG</a> file to import.<br>
-								The selected file is parsed and converted into cubic B&eacute;zier SOP geometry.
+								Specifies the <a href="https://www.adobe.com/creativecloud/file-types/image/vector/svg-file.html" target="_blank">SVG file</a> to import.<br>
+								The selected file is parsed and converted into <a href="https://en.wikipedia.org/wiki/B%C3%A9zier_curve#:~:text=Cubic%20B%C3%A9zier%20curve%20with%20four%20control%20points" target="_blank">cubic B&eacute;zier SOP geometry</a>.
 							</p>
 
 							<h4>In&hyphen; &sol; Outputs</h4>
@@ -325,76 +325,80 @@
 
 				<section id="svg-out" class="documentation">
 					<div class="docuinfo">
-						<h2>SVG Out</h2>
-						<h3>SOP to SVG Export</h3>
+						<h2><a href="https://github.com/MaxMainio/TD_/blob/main/SOPs/SVG/SVG_Out.tox" target="_blank">SVG Out</a></h2>
+						<h3><a href="https://derivative.ca/UserGuide/SOP" target="_blank">SOP</a> to <a href="https://www.adobe.com/creativecloud/file-types/image/vector/svg-file.html" target="_blank">SVG</a> Export</h3>
 						<p>
-							This component exports SOP geometry as an SVG file, converting procedural geometry into vector path data. It builds on the original <a href="https://github.com/raganmd/touchdesigner-sop-to-svg" target="_blank">SOP&hyphen;to&hyphen;SVG</a> workflow developed by <a href="https://matthewragan.com/" target="_blank">Matthew Ragan</a>, extending it with support for true cubic B&eacute;zier output, basic fill and stroke styling controls, attribute-driven variation through primitive attributes &lpar;<code>fillColor</code>, <code>strokeColor</code>, <code>strokeWidth</code>&rpar;, and compatibility with TouchDesigner&rsquo;s TDPyEnvManager for managing Python dependencies.
+							<a href="https://github.com/MaxMainio/TD_/blob/main/SOPs/SVG/SVG_Out.tox" target="_blank">This component</a> exports <a href="https://derivative.ca/UserGuide/SOP" target="_blank">SOP geometry</a> as an <a href="https://www.adobe.com/creativecloud/file-types/image/vector/svg-file.html" target="_blank">SVG file</a>, converting procedural geometry into <a href="https://www.w3schools.com/graphics/svg_path.asp" target="_blank">vector path data</a>. It builds on the original <a href="https://github.com/raganmd/touchdesigner-sop-to-svg" target="_blank">SOP&hyphen;to&hyphen;SVG</a> workflow developed by <a href="https://matthewragan.com/" target="_blank">Matthew Ragan</a>, extending it with support for true <a href="https://en.wikipedia.org/wiki/B%C3%A9zier_curve#:~:text=Cubic%20B%C3%A9zier%20curve%20with%20four%20control%20points" target="_blank">Cubic B&eacute;zier</a> output, basic <a href="https://www.w3schools.com/graphics/svg_fill.asp" target="_blank">fill</a> and <a href="https://www.w3schools.com/graphics/svg_stroking.asp" target="_blank">stroke</a> styling controls, attribute&hyphen;driven variation through <a href="https://derivative.ca/UserGuide/Attribute#:~:text=Deforming%20Geometry%20(Skinning)-,PRIMITIVE%20ATTRIBUTES,-You%20can%20use" target="_blank">primitive attributes</a> &lpar;<code><a href="https://www.w3schools.com/graphics/svg_fill.asp#:~:text=of%20the%20shape-,SVG%20fill%20Attribute,-The%20fill%20attribute" target="_blank">fillColor</a></code>, <code><a href="https://www.w3schools.com/graphics/svg_stroking.asp#:~:text=stroke%20attribute%20can%20be%20a%20color" target="_blank">strokeColor</a></code>, <code><a href="SVG stroke-width Attribute" target="_blank">strokeWidth</a></code>&rpar;, and compatibility with <a href="https://derivative.ca/" target="_blank">TouchDesigner</a>&rsquo;s <a href="https://derivative.ca/community-post/introducing-touchdesigner-python-environment-manager-tdpyenvmanager/72024" target="_blank">TDPyEnvManager</a> for managing Python dependencies.
 						</p>
 
 						<h5>Setup&colon;</h5>
 						<p>
-							This component relies on external Python packages and must be used in conjunction with the TDPyEnvManager COMP.
+							<a href="https://github.com/MaxMainio/TD_/blob/main/SOPs/SVG/SVG_Out.tox" target="_blank">This component</a> relies on <a href="https://packaging.python.org/en/latest/specifications/externally-managed-environments/" target="_blank">external Python packages</a> and must be used in conjunction with the <a href="https://derivative.ca/community-post/introducing-touchdesigner-python-environment-manager-tdpyenvmanager/72024" target="_blank">TDPyEnvManager COMP</a>.
 						</p>
 
 						<p>
-							The required Python dependencies are&colon;<br>
-							<code style="margin-left: 1rem;">svgwrite==1.4.3</code><br>
-							<code style="margin-left: 1rem;">setuptools==65.5.0</code><br>
-							<code style="margin-left: 1rem;">pip==26.0.1</code>
+							The required <a href="https://packaging.python.org/en/latest/tutorials/managing-dependencies/" target="_blank">Python dependencies</a> are&colon;<br>
+							<code style="margin-left: 1rem;"><a href="https://pypi.org/project/svgwrite/" target="_blank">svgwrite==1.4.3</a></code><br>
+							<code style="margin-left: 1rem;"><a href="https://pypi.org/project/setuptools/" target="_blank">setuptools==65.5.0</a></code><br>
+							<code style="margin-left: 1rem;"><a href="https://pypi.org/project/pip/" target="_blank">pip==26.0.1</a></code>
 						</p>
 
 						<p>
-							This component simplifies setup by allowing a TDPyEnvManager&hyphen;compatible requirements.txt file to be generated directly within the SVG Out COMP.
+							<a href="https://github.com/MaxMainio/TD_/blob/main/SOPs/SVG/SVG_Out.tox" target="_blank">This component</a> simplifies setup by allowing a <a href="https://derivative.ca/community-post/introducing-touchdesigner-python-environment-manager-tdpyenvmanager/72024" target="_blank">TDPyEnvManager</a>&hyphen;compatible <a href="https://pip.pypa.io/en/stable/reference/requirements-file-format/" target="_blank">requirements.txt</a> file to be generated directly within the <a href="https://github.com/MaxMainio/TD_/blob/main/SOPs/SVG/SVG_Out.tox" target="_blank">SVG Out COMP</a>.
 						</p>
 
 						<ol>
 							<li>
-								Within the SVG Out COMP, press Generate requirements.txt to create or update a requirements.txt file in your project directory.
+								Within the <a href="https://github.com/MaxMainio/TD_/blob/main/SOPs/SVG/SVG_Out.tox" target="_blank">SVG Out COMP</a>, click the Generate <a href="https://pip.pypa.io/en/stable/reference/requirements-file-format/" target="_blank">requirements.txt</a> <a href="https://derivative.ca/UserGuide/Pulse" target="_blank">pulse parameter</a> to create or update a <a href="https://pip.pypa.io/en/stable/reference/requirements-file-format/" target="_blank">requirements.txt</a> file in your <a href="https://derivative.ca/UserGuide/Project_Class#:~:text=The%20folder%20at%20which%20the%20project%20resides." target="_blank">project directory</a>.
 							</li>
 
 							<li>
-								Within the TDPyEnvManager COMP, create a Python virtual environment using the Create vEnv pulse parameter.
+								Within the <a href="https://derivative.ca/community-post/introducing-touchdesigner-python-environment-manager-tdpyenvmanager/72024" target="_blank">TDPyEnvManager COMP</a>, create a <a href="https://www.w3schools.com/python/python_virtualenv.asp" target="_blank">Python virtual environment</a> using the <a href="https://derivative.ca/community-post/introducing-touchdesigner-python-environment-manager-tdpyenvmanager/72024#:~:text=simply%20click%20on-,Create%20vEnv,-to%20get%20going" target="_blank">Create vEnv pulse parameter</a>.
 							</li>
 
 							<li>
-								Once the virtual environment is created, use Create From requirements.txt to install the required dependencies.
+								Once the <a href="https://www.w3schools.com/python/python_virtualenv.asp" target="_blank">virtual environment</a> is created, use <i><a href="https://derivative.ca/community-post/introducing-touchdesigner-python-environment-manager-tdpyenvmanager/72024#:~:text=Create%20from%20requirements.txt" target="_blank">Create From requirements.txt</a></i> to install the required <a href="https://packaging.python.org/en/latest/tutorials/managing-dependencies/" target="_blank">dependencies</a>.
 							</li>
 
 							<li>
-								When the virtual environment is active, the SVG Out COMP is ready for use.
+								When the <a href="https://www.w3schools.com/python/python_virtualenv.asp" target="_blank">virtual environment</a> is active, the <a href="https://github.com/MaxMainio/TD_/blob/main/SOPs/SVG/SVG_Out.tox" target="_blank">SVG Out COMP</a> is ready for use.
 							</li>
 						</ol>
 
 						<h5>Workflow&colon;</h5>
 						<p>
-							Input SOP geometry is parsed and converted into SVG path data based on the selected SVG Type. B&eacute;zier mode preserves curve information, while Polyline and Polygon modes provide simplified geometric representations.
+							Input <a href="https://docs.derivative.ca/SOP" target="_blank">SOP geometry</a> is parsed and converted into <a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorials/SVG_from_scratch/Paths" target="_blank">SVG path data</a> based on the selected <i>SVG Type.</i> <i><a href="https://www.w3schools.com/graphics/svg_path.asp#:~:text=Try%20it%20Yourself%20%C2%BB-,A%20B%C3%A9zier%20Curve,-B%C3%A9zier%20curves%20are" target="_blank">B&eacute;zier</a> mode</i> preserves curve information, while <i><a href="https://www.w3schools.com/graphics/svg_polyline.asp" target="_blank">Polyline</a></i> and <i><a href="https://www.w3schools.com/graphics/svg_polygon.asp" target="_blank">Polygon</a></i> modes provide simplified geometric representations.
 						</p>
 
 						<p>
-							Styling can be applied uniformly or driven per-primitive by defining attributes on the SOP geometry prior to export. The supported primitive attributes are&colon;
+							<a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/style" target="_blank">Styling</a> can be applied uniformly or driven per&hyphen;<a href="https://derivative.ca/UserGuide/Primitive" target="_blank">primitive</a> by defining <a href="https://derivative.ca/UserGuide/SOP_Attribute" target="_blank">attributes</a> on the <a href="https://docs.derivative.ca/SOP" target="_blank">SOP geometry</a> prior to export.<br>
+							The supported <a href="https://derivative.ca/UserGuide/SOP_Attribute" target="_blank">primitive attributes</a> are&colon;
 						</p>
 
 						<ul>
 							<li>
-								<code>fillColor</code> &lpar;float4&rpar; &mdash; used when <i>Fill</i> is set to <i>Varied Color.</i>
+								<code><a href="https://www.w3schools.com/graphics/svg_fill.asp" target="_blank">fillColor</a></code> &lpar;float4&rpar; &mdash; used when <i>Fill</i> is set to <i>Varied Color.</i>
 							</li>
 
 							<li>
-								<code>strokeColor</code> &lpar;float4&rpar; &mdash; used when <i>Stroke Color Mode</i> is set to <i>Varied Color.</i>
+								<code><a href="https://www.w3schools.com/graphics/svg_stroking.asp#:~:text=SVG%20stroke%20Attribute" target="_blank">strokeColor</a></code> &lpar;float4&rpar; &mdash; used when <i>Stroke Color Mode</i> is set to <i>Varied Color.</i>
 							</li>
 
 							<li>
-								<code>strokeWidth</code> &lpar;float&rpar; &mdash; used when <i>Stroke</i> is set to <i>Varied Width.</i>
+								<code><a href="https://www.w3schools.com/graphics/svg_stroking.asp#:~:text=SVG%20stroke%2Dwidth%20Attribute" target="_blank">strokeWidth</a></code> &lpar;float&rpar; &mdash; used when <i>Stroke</i> is set to <i>Varied Width.</i>
 							</li>
 						</ul>
 
 						<p>
-							This enables procedural workflows where both geometry and styling are authored within TouchDesigner before being exported as vector graphics.
+							This enables procedural workflows where both <a href="https://derivative.ca/UserGuide/Category%3AGeometry" target="_blank">geometry</a> and <a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/style" target="_blank">styling</a> are authored within <a href="https://derivative.ca/" target="_blank">TouchDesigner</a> before being exported as a <a href="https://en.wikipedia.org/wiki/SVG" target="_blank">Scalable Vector Graphic</a>.
 						</p>
 
 						<h5>Resources&colon;</h5>
 						<p>
-							<a href="https://github.com/MaxMainio/TD_" target="_blank">Download the .tox files</a>
+							<a href="https://github.com/MaxMainio/TD_" target="_blank">Download the .tox files</a><br>
+							<a href="https://www.adobe.com/creativecloud/file-types/image/vector/svg-file.html" target="_blank">SVG Files by Adobe</a><br>
+							<a href="https://www.w3schools.com/graphics/svg_intro.asp" target="_blank">SVGs by W3 School</a><br>
+							<a href="https://github.com/raganmd/touchdesigner-sop-to-svg" target="_blank">Original SOP to SVG by Matthew Ragan</a>
 						</p>
 					</div>
 
@@ -459,89 +463,89 @@
 							<h5>SVG Type&colon;</h5>
 							<p>
 								Defines the output path representation&colon;<br>
-								B&eacute;zier, Polyline, or Polygon.
+								<i><a href="https://www.w3schools.com/graphics/svg_path.asp#:~:text=Try%20it%20Yourself%20%C2%BB-,A%20B%C3%A9zier%20Curve,-B%C3%A9zier%20curves%20are" target="_blank">B&eacute;zier</a>, <a href="https://www.w3schools.com/graphics/svg_polyline.asp" target="_blank">Polyline</a>,</i> or <i><a href="https://www.w3schools.com/graphics/svg_polygon.asp" target="_blank">Polygon</a>.</i>
 							</p>
 
 							<hr/>
 
-							<h5>Fill&colon;</h5>
+							<h5><a href="https://www.w3schools.com/graphics/svg_fill.asp" target="_blank">Fill</a>&colon;</h5>
 							<p>
-								Specifies how fill styling is applied to exported paths&colon;<br>
-								None, Uniform Color, or Varied Color &lpar;uses a <code>fillColor</code> float4 primitive attribute&rpar;.
+								Specifies how <a href="https://www.w3schools.com/graphics/svg_fill.asp" target="_blank">fill styling</a> is applied to exported <a href="https://www.w3schools.com/graphics/svg_path.asp" target="_blank">paths</a>&colon;<br>
+								<i>None, Uniform Color,</i> or <i>Varied Color</i> &lpar;uses a <code><a href="https://www.w3schools.com/graphics/svg_fill.asp" target="_blank">fillColor</a></code> float4 <a href="https://derivative.ca/UserGuide/SOP_Attribute" target="_blank">primitive attribute</a>&rpar;.
 							</p>
 
-							<h5>Fill Color&colon;</h5>
+							<h5><a href="https://www.w3schools.com/graphics/svg_fill.asp" target="_blank">Fill Color</a>&colon;</h5>
 							<p>
-								Defines the RGBA fill color applied to all paths.<br>
-								Active when <i>Fill</i> is set to Uniform Color.
+								Defines the <a href="https://rgbacolorpicker.com/" target="_blank">RGBA</a> <a href="https://www.w3schools.com/graphics/svg_fill.asp" target="_blank">fill color</a> applied to all <a href="https://www.w3schools.com/graphics/svg_path.asp" target="_blank">paths</a>.<br>
+								Active when <i><a href="https://www.w3schools.com/graphics/svg_fill.asp" target="_blank">Fill</a></i> is set to <i>Uniform Color.</i>
 							</p>
 
-							<h5>Stroke&colon;</h5>
+							<h5><a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Attribute/stroke" target="_blank">Stroke</a>&colon;</h5>
 							<p>
-								Specifies stroke width behavior&colon;<br>
-								None, Uniform Width, or Varied Width &lpar;uses a <code>strokeWidth</code> float primitive attribute&rpar;.
+								Specifies <a href="https://www.w3schools.com/graphics/svg_stroking.asp#:~:text=SVG%20stroke%2Dwidth%20Attribute" target="_blank">stroke width</a> behavior&colon;<br>
+								<i>None, Uniform Width,</i> or <i>Varied Width</i> &lpar;uses a <code><a href="https://www.w3schools.com/graphics/svg_stroking.asp#:~:text=SVG%20stroke%2Dwidth%20Attribute" target="_blank">strokeWidth</a></code> float <a href="https://derivative.ca/UserGuide/SOP_Attribute" target="_blank">primitive attribute</a>&rpar;.
 							</p>
 
-							<h5>Stroke Width&colon;</h5>
+							<h5><a href="https://www.w3schools.com/graphics/svg_stroking.asp#:~:text=SVG%20stroke%2Dwidth%20Attribute" target="_blank">Stroke Width</a>&colon;</h5>
 							<p>
-								Defines the stroke width applied to all paths.<br>
-								Active when <i>Stroke</i> is set to Uniform Width.
+								Defines the <a href="https://www.w3schools.com/graphics/svg_stroking.asp#:~:text=SVG%20stroke%2Dwidth%20Attribute" target="_blank">stroke width</a> applied to all <a href="https://www.w3schools.com/graphics/svg_path.asp" target="_blank">paths</a>.<br>
+								Active when <i><a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Attribute/stroke" target="_blank">Stroke</a></i> is set to <i>Uniform Width.</i>
 							</p>
 
-							<h5>Stroke Color Mode&colon;</h5>
+							<h5><a href="https://www.w3schools.com/graphics/svg_stroking.asp#:~:text=SVG%20stroke%20Attribute" target="_blank">Stroke Color</a> Mode&colon;</h5>
 							<p>
-								Specifies how stroke color is applied&colon;<br>
-								None, Uniform Color, or Varied Color &lpar;uses a <code>strokeColor</code> float4 primitive attribute&rpar;.
+								Specifies how <a href="https://www.w3schools.com/graphics/svg_stroking.asp#:~:text=SVG%20stroke%20Attribute" target="_blank">stroke color</a> is applied&colon;<br>
+								<i>None, Uniform Color,</i> or <i>Varied Color</i> &lpar;uses a <code><a href="https://www.w3schools.com/graphics/svg_stroking.asp#:~:text=SVG%20stroke%20Attribute" target="_blank">strokeColor</a></code> float4 <a href="https://derivative.ca/UserGuide/SOP_Attribute" target="_blank">primitive attribute</a>&rpar;.
 							</p>
 
-							<h5>Stroke Color&colon;</h5>
+							<h5><a href="https://www.w3schools.com/graphics/svg_stroking.asp#:~:text=SVG%20stroke%20Attribute" target="_blank">Stroke Color</a>&colon;</h5>
 							<p>
-								Defines the RGBA stroke color applied to all paths.<br>
-								Active when <i>Stroke Color Mode</i> is set to Uniform Color.
+								Defines the <a href="https://rgbacolorpicker.com/" target="_blank">RGBA</a> <a href="https://www.w3schools.com/graphics/svg_stroking.asp#:~:text=SVG%20stroke%20Attribute" target="_blank">stroke color</a> applied to all <a href="https://www.w3schools.com/graphics/svg_path.asp" target="_blank">paths</a>.<br>
+								Active when <i><a href="https://www.w3schools.com/graphics/svg_stroking.asp#:~:text=SVG%20stroke%20Attribute" target="_blank">Stroke Color</a> Mode</i> is set to <i>Uniform Color.</i>
 							</p>
 	
 							<hr/>
 	
 							<h5>Artboard Size&colon;</h5>
 							<p>
-								Defines the output SVG artboard dimensions&colon;<br>
-								A4, Letter, Legal, Tabloid, or Custom.
+								Defines the output <a href="https://css-tricks.com/svg-artboard-sizing/" target="_blank">SVG artboard</a> dimensions&colon;<br>
+								<i><a href="https://www.adobe.com/uk/creativecloud/design/discover/a4-format.html#:~:text=11.7%20x%2016.5-,A4,8.3%20x%2011.7,-A5" target="_blank">A4</a>, <a href="https://en.wikipedia.org/wiki/Letter_(paper_size)" target="_blank">Letter</a>, <a href="https://www.ibm.com/docs/en/cmofi/7.4.0?topic=reference-page-sizes-dimensions#:~:text=Legal,8.5%20x%2014%20inches" target="_blank">Legal</a>, <a href="https://www.ibm.com/docs/en/cmofi/7.4.0?topic=reference-page-sizes-dimensions#:~:text=Tabloid,x%2017%20inches" target="_blank">Tabloid</a>,</i> or <i>Custom.</i>
 							</p>
 
 							<h5>Custom&colon;</h5>
 							<p>
-								Defines the width and height of the SVG artboard.<br>
-								Active when <i>Artboard Size</i> is set to Custom.
+								Defines the width and height of the <a href="https://css-tricks.com/svg-artboard-sizing/" target="_blank">SVG artboard</a>.<br>
+								Active when <i>Artboard Size</i> is set to <i>Custom.</i>
 							</p>
 
 							<h5>Units&colon;</h5>
 							<p>
-								Defines whether custom dimensions are interpreted as pixels &lpar;px&rpar; or millimeters &lpar;mm&rpar;.<br>
-								Active when <i>Artboard Size</i> is set to Custom.
+								Defines whether custom dimensions are interpreted as <a href="https://pixelsconverter.com/pixels-to-millimeters" target="_blank">pixels</a> &lpar;<a href="https://pixelsconverter.com/pixels-to-millimeters" target="_blank">px</a>&rpar; or <a href="https://pixelsconverter.com/pixels-to-millimeters" target="_blank">millimeters</a> &lpar;<a href="https://pixelsconverter.com/pixels-to-millimeters" target="_blank">mm</a>&rpar;.<br>
+								Active when <i>Artboard Size</i> is set to <i>Custom.</i>
 							</p>
 
 							<hr/>
 	
 							<h5>Destination Folder&colon;</h5>
 							<p>
-								Specifies the folder where the exported SVG file will be saved.
+								Specifies the folder where the exported <a href="https://www.adobe.com/creativecloud/file-types/image/vector/svg-file.html" target="_blank">SVG file</a> will be saved.
 							</p>
 
 							<h5>File Name&colon;</h5>
 							<p>
-								Defines the name of the exported SVG file.
+								Defines the name of the exported <a href="https://www.adobe.com/creativecloud/file-types/image/vector/svg-file.html" target="_blank">SVG file</a>.
 							</p>
 
-							<h5>Export SVG&colon;</h5>
+							<h5>Export <a href="https://en.wikipedia.org/wiki/SVG" target="_blank">SVG</a>&colon;</h5>
 							<p>
-								Triggers the export of the SVG file.
+								Triggers the export of the <a href="https://www.adobe.com/creativecloud/file-types/image/vector/svg-file.html" target="_blank">SVG file</a>.
 							</p>
 
 							<hr/>
 	
-							<h5>Generate requirements.txt&colon;</h5>
+							<h5>Generate <a href="https://pip.pypa.io/en/stable/reference/requirements-file-format/" target="_blank">requirements.txt</a>&colon;</h5>
 							<p>
-								Generates or updates a requirements.txt file for use with the TDPyEnvManager COMP. Ensures all required Python dependencies for SVG export are included without overwriting existing entries.
+								Generates or updates a <a href="https://pip.pypa.io/en/stable/reference/requirements-file-format/" target="_blank">requirements.txt file</a> for use with the <a href="https://derivative.ca/community-post/introducing-touchdesigner-python-environment-manager-tdpyenvmanager/72024" target="_blank">TDPyEnvManager COMP</a>. Ensures all required <a href="https://packaging.python.org/en/latest/tutorials/managing-dependencies/" target="_blank">Python dependencies</a> for <a href="https://en.wikipedia.org/wiki/SVG" target="_blank">SVG</a> export are included without overwriting existing entries.
 							</p>
 
 							<h4>In&hyphen; &sol; Outputs</h4>
