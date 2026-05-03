@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Max Mainio | Color</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="author" content="Max Mainio Beidler">
+		<meta name="description" content="A subpage on Max Mainio Beidler's personal website featuring Color components. This collection of TouchDesigner operators focuses on color space conversion, format translation, and the integration of external color data into procedural workflows.">
+		<meta name="theme-color" media="(prefers-color-scheme: light)" content="#cccccc">
+		<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#333333">
+
+		<link rel="canonical" href="https://maxmain.io/touchdesigner-components/tops/color/">
+		<link rel="icon" href="../../../../assets/icons/favicon.png">
+		<link rel="apple-touch-icon" href="../../../../assets/icons/apple-touch-icon-1.png">
+
+		<meta property="og:url" content="https://maxmain.io/touchdesigner-components/tops/color/">
+		<meta property="og:type" content="website">
+		<meta property="og:title" content="Max Mainio | Color">
+		<meta property="og:description" content="Max Mainio Beidler's personal website.">
+		<meta property="og:image" content="https://maxmain.io/touchdesigner-components/tops/color/assets/opengraph/og-image.webp">
+
+		<meta name="twitter:card" content="summary_large_image">
+		<meta property="twitter:domain" content="maxmain.io">
+		<meta property="twitter:url" content="https://maxmain.io/touchdesigner-components/tops/color/">
+		<meta name="twitter:title" content="Max Mainio | Color">
+		<meta name="twitter:description" content="Max Mainio Beidler's personal website.">
+		<meta name="twitter:image" content="https://maxmain.io/touchdesigner-components/tops/color/assets/opengraph/og-image.webp">
+
+		<link rel="stylesheet" type="text/css" href="../../../../sources/global/main.css">
+		<link rel="stylesheet" type="text/css" href="../../../../sources/subpages/subpage.css">
+		<link rel="stylesheet" type="text/css" href="../../sources/tdcomps.css">
+		<!-- <link rel="stylesheet" type="text/css" href="sources/FIXME:"> -->
+
+		<script src="../../../../sources/global/main.js" defer></script>
+		<script src="../../sources/tdcomps.js" defer></script>
+
+		<script type="application/ld+json">
+			{
+				"@context": "https://schema.org",
+				"@type": "BreadcrumbList",
+				"itemListElement": [
+					{
+						"@type": "ListItem",
+						"position": 1,
+						"name": "TD COMPs",
+						"item": "https://maxmain.io/touchdesigner-components/"
+					},{
+						"@type": "ListItem",
+						"position": 2,
+						"name": "TOPs",
+						"item": "https://maxmain.io/touchdesigner-components/"
+					},{
+						"@type": "ListItem",
+						"position": 3,
+						"name": "Color",
+						"item": "https://maxmain.io/touchdesigner-components/tops/color/"
+					}
+				]
+			}
+		</script>
+	</head>
+
+	<body>
+		<div id="fader" class="fader motion"></div>
+
+		<header>
+			<nav>
+				<h3 class="nav-logo">
+					<span><a href="../../../../" title="Click here to return to the main work page.">Max Mainio Beidler</a></span>
+					<span><a href="../../../../" title="Click here to return to the main work page.">MMB</a></span>
+				</h3>
+
+				<div class="deep-nav-return">
+					<h3><a href="../../" title="Click here to return to the main TouchDesigner COMPs page.">
+						&larr;<div class="white-space"></div>TD COMPs
+					</a></h3>
+				</div>
+
+				<h3 class="nav-work"><a href="../../../../" title="Click here to return to the main work page.">Work</a></h3>
+
+				<div class="nav-flex">
+					<h3><a href="../../../../about/" title="Click here to learn more about who I am." style="cursor: help;">About</a></h3>
+					
+					<h3 title="Coming soon..." style="cursor: not-allowed">&rarr;</h3>
+				</div>
+			</nav>
+		</header>
+
+		<main>
+			<article>
+				<section class="context-container">
+					<div class="context">
+						<h1 id="title">Color</h1>
+						<h2 id="sub-title"><a href="https://derivative.ca/" target="_blank">TD</a> <a href="https://derivative.ca/UserGuide/Component" target="_blank">COMPs</a> / <a href="https://derivative.ca/tags/tops" target="_blank">TOPs</a> / 2023 &ndash; Present</h2>
+						<p>
+							This category of components focuses on translating, interpreting, and standardizing <a href="https://medium.com/@abhishekjainindore24/all-about-images-and-their-formats-1bcba5c854e7" target="_blank">color data</a> within <a href="https://derivative.ca/" target="_blank">TouchDesigner</a>. While images are fundamentally numerical, their meaning is often tied to <a href="https://en.wikipedia.org/wiki/Color_space" target="_blank">color spaces</a>, <a href="https://en.wikipedia.org/wiki/List_of_monochrome_and_RGB_color_formats" target="_blank">encoding methods</a>, and external formats. These components provide explicit control over how color is represented, converted, and imported into procedural workflows.
+						</p>
+
+						<p>
+							To maintain clarity and scalability, this collection is divided into subcategories&colon;
+						</p>
+
+						<ol>
+							<li class="soon" title="coming soon...">
+								<h5>Converters&colon;</h5>
+
+								<p>
+									These components provide tools for translating between color spaces and encoding formats. These components convert input TOPs to and from RGB and other standard color models such as HSV and LAB, as well as handle transformations like sRGB to Linear. By making these conversions explicit, they enable more predictable color behavior across compositing, shading, and image processing workflows.
+								</p>
+							</li><br>
+
+							<li>
+								<h5><a href="importers/">Importers</a>&colon;</h5>
+
+								<p>
+									<a href="importers/">These components</a> handle the ingestion of external color data into <a href="https://derivative.ca/" target="_blank">TouchDesigner</a>. These components convert formats such as <a href="https://helpx.adobe.com/indesign/using/swatches.html" target="_blank">Adobe Swatch Exchange</a> &lpar;<a href="https://helpx.adobe.com/indesign/using/swatches.html" target="_blank">ASE</a>&rpar;, <a href="https://en.wikipedia.org/wiki/CMYK_color_model" target="_blank">CMYK values</a>, and <a href="https://en.wikipedia.org/wiki/Web_colors#:~:text=to%2Dprint%20applications.-,Hex%20triplet,-%5Bedit%5D" target="_blank">HEX codes</a> into <a href="https://derivative.ca/" target="_blank">TouchDesigner</a>&hyphen;compatible <a href="https://en.wikipedia.org/wiki/RGB_color_model" target="_blank">RGB values</a>. This allows color palettes and externally defined color systems to be integrated directly into procedural environments.
+								</p>
+							</li>
+						</ol>
+
+						<p>
+							Together, <a href="https://github.com/MaxMainio/TD_/tree/main/TOPs/Color" target="_blank">these Color components</a> provide a consistent framework for working with color in both technical and creative contexts.
+						</p>
+					</div>
+				</section>
+
+				<div id="first" class="work-div bento">
+					<div class="sub-bento">
+						<div title="Documentation Coming Soon..."
+							class="td-comp small theme-light">
+							<div class="td-row"></div>
+
+							<div class="td-body">
+								<div class="td-side input top">
+									<div class="td-filler"></div>
+									<div class="td-connector">
+										<div class="td-color"></div>
+										<div class="td-spacer"></div>
+										<div class="td-color"></div>
+									</div>
+									<div class="td-filler"></div>
+								</div>
+
+								<div class="td-flag-col">
+									<img src="../../assets/content/td-icons/viewer-on.webp" loading="lazy">
+									<img src="../../assets/content/td-icons/clone-immune-off.webp" loading="lazy">
+									<img src="../../assets/content/td-icons/no-cook-off.webp" loading="lazy">
+									<img src="../../assets/content/td-icons/unlocked.webp" loading="lazy">
+								</div>
+
+								<div class="td-viewer">
+									<div class="td-viewer-inner">
+										<img src="/assets/icons/broken-image-icon.png"
+											alt="Coming Soon..."
+											loading="lazy">
+									</div>
+								</div>
+
+								<div class="td-side output top">
+									<div class="td-filler"></div>
+									<div class="td-connector">
+										<div class="td-color"></div>
+										<div class="td-spacer"></div>
+										<div class="td-color"></div>
+									</div>
+									<div class="td-filler"></div>
+								</div>
+							</div>
+
+							<div class="td-row"></div>
+							<div class="td-hairline"></div>
+
+							<div class="td-footer">
+								<div class="td-title">
+									<p class="td-name">___to_RGB</p>
+								</div>
+								<div class="td-active">
+									<img src="../../assets/content/td-icons/activate-off.webp" loading="lazy">
+								</div>
+							</div>
+						</div>
+
+						<div title="Documentation Coming Soon..."
+							class="td-comp small theme-light">
+							<div class="td-row"></div>
+
+							<div class="td-body">
+								<div class="td-side input top">
+									<div class="td-filler"></div>
+									<div class="td-connector">
+										<div class="td-color"></div>
+										<div class="td-spacer"></div>
+										<div class="td-color"></div>
+									</div>
+									<div class="td-filler"></div>
+								</div>
+
+								<div class="td-flag-col">
+									<img src="../../assets/content/td-icons/viewer-on.webp" loading="lazy">
+									<img src="../../assets/content/td-icons/clone-immune-off.webp" loading="lazy">
+									<img src="../../assets/content/td-icons/no-cook-off.webp" loading="lazy">
+									<img src="../../assets/content/td-icons/unlocked.webp" loading="lazy">
+								</div>
+
+								<div class="td-viewer">
+									<div class="td-viewer-inner">
+										<img src="/assets/icons/broken-image-icon.png"
+											alt="Coming Soon..."
+											loading="lazy">
+									</div>
+								</div>
+
+								<div class="td-side output top">
+									<div class="td-filler"></div>
+									<div class="td-connector">
+										<div class="td-color"></div>
+										<div class="td-spacer"></div>
+										<div class="td-color"></div>
+									</div>
+									<div class="td-filler"></div>
+								</div>
+							</div>
+
+							<div class="td-row"></div>
+							<div class="td-hairline"></div>
+
+							<div class="td-footer">
+								<div class="td-title">
+									<p class="td-name">RGB_to___</p>
+								</div>
+								<div class="td-active">
+									<img src="../../assets/content/td-icons/activate-off.webp" loading="lazy">
+								</div>
+							</div>
+						</div>
+
+						<div title="Documentation Coming Soon..."
+							class="td-comp small theme-light">
+							<div class="td-row"></div>
+
+							<div class="td-body">
+								<div class="td-side input top">
+									<div class="td-filler"></div>
+									<div class="td-connector">
+										<div class="td-color"></div>
+										<div class="td-spacer"></div>
+										<div class="td-color"></div>
+									</div>
+									<div class="td-filler"></div>
+								</div>
+
+								<div class="td-flag-col">
+									<img src="../../assets/content/td-icons/viewer-on.webp" loading="lazy">
+									<img src="../../assets/content/td-icons/clone-immune-off.webp" loading="lazy">
+									<img src="../../assets/content/td-icons/no-cook-off.webp" loading="lazy">
+									<img src="../../assets/content/td-icons/unlocked.webp" loading="lazy">
+								</div>
+
+								<div class="td-viewer">
+									<div class="td-viewer-inner">
+										<img src="/assets/icons/broken-image-icon.png"
+											alt="Coming Soon..."
+											loading="lazy">
+									</div>
+								</div>
+
+								<div class="td-side output top">
+									<div class="td-filler"></div>
+									<div class="td-connector">
+										<div class="td-color"></div>
+										<div class="td-spacer"></div>
+										<div class="td-color"></div>
+									</div>
+									<div class="td-filler"></div>
+								</div>
+							</div>
+
+							<div class="td-row"></div>
+							<div class="td-hairline"></div>
+
+							<div class="td-footer">
+								<div class="td-title">
+									<p class="td-name">sRGB_Linear</p>
+								</div>
+								<div class="td-active">
+									<img src="../../assets/content/td-icons/activate-off.webp" loading="lazy">
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="sub-bento">
+						<a href="importers/#ase-in"
+							title="Click here to be taken to the ASE in COMP section of the Arithmetic COMPs sub-page."
+							class="td-comp small theme-dark">
+							<div class="td-row"></div>
+
+							<div class="td-body">
+								<div class="td-side input top">
+									<div class="td-filler"></div>
+									<div class="td-filler"></div>
+								</div>
+
+								<div class="td-flag-col">
+									<img src="../../assets/content/td-icons/viewer-on.webp" loading="lazy">
+									<img src="../../assets/content/td-icons/clone-immune-off.webp" loading="lazy">
+									<img src="../../assets/content/td-icons/no-cook-off.webp" loading="lazy">
+									<img src="../../assets/content/td-icons/unlocked.webp" loading="lazy">
+								</div>
+
+								<div class="td-viewer">
+									<div class="td-viewer-inner">
+										<img src="importers/assets/content/ase-in.webp"
+											alt="Default visualization of the ASE in COMP."
+											class="blur-load"
+											style="background-image: url(importers/assets/no-index/ase-in-blurry.webp); aspect-ratio: 5/4;"
+											loading="lazy">
+									</div>
+								</div>
+
+								<div class="td-side output top">
+									<div class="td-filler"></div>
+									<div class="td-filler"></div>
+								</div>
+							</div>
+
+							<div class="td-row"></div>
+							<div class="td-hairline"></div>
+
+							<div class="td-footer">
+								<div class="td-title">
+									<p class="td-name">ASE_in</p>
+								</div>
+								<div class="td-active">
+									<img src="../../assets/content/td-icons/activate-off.webp" loading="lazy">
+								</div>
+							</div>
+						</a>
+
+						<a href="importers/#cmyk-in"
+							title="Click here to be taken to the CMYK in COMP section of the Arithmetic COMPs sub-page."
+							class="td-comp small theme-dark">
+							<div class="td-row"></div>
+
+							<div class="td-body">
+								<div class="td-side input top">
+									<div class="td-filler"></div>
+									<div class="td-filler"></div>
+								</div>
+
+								<div class="td-flag-col">
+									<img src="../../assets/content/td-icons/viewer-on.webp" loading="lazy">
+									<img src="../../assets/content/td-icons/clone-immune-off.webp" loading="lazy">
+									<img src="../../assets/content/td-icons/no-cook-off.webp" loading="lazy">
+									<img src="../../assets/content/td-icons/unlocked.webp" loading="lazy">
+								</div>
+
+								<div class="td-viewer">
+									<div class="td-viewer-inner">
+										<img src="importers/assets/content/cmyk-in.webp"
+											alt="Default visualization of the CMYK in COMP."
+											class="blur-load"
+											style="background-image: url(importers/assets/no-index/cmyk-in-blurry.webp); aspect-ratio: 5/4;"
+											loading="lazy">
+									</div>
+								</div>
+
+								<div class="td-side output top">
+									<div class="td-filler"></div>
+									<div class="td-filler"></div>
+								</div>
+							</div>
+
+							<div class="td-row"></div>
+							<div class="td-hairline"></div>
+
+							<div class="td-footer">
+								<div class="td-title">
+									<p class="td-name">CMYK_in</p>
+								</div>
+								<div class="td-active">
+									<img src="../../assets/content/td-icons/activate-off.webp" loading="lazy">
+								</div>
+							</div>
+						</a>
+
+						<a href="importers/#hex-in"
+							title="Click here to be taken to the HEX in COMP section of the Arithmetic COMPs sub-page."
+							class="td-comp small theme-dark">
+							<div class="td-row"></div>
+
+							<div class="td-body">
+								<div class="td-side input top">
+									<div class="td-filler"></div>
+									<div class="td-filler"></div>
+								</div>
+
+								<div class="td-flag-col">
+									<img src="../../assets/content/td-icons/viewer-on.webp" loading="lazy">
+									<img src="../../assets/content/td-icons/clone-immune-off.webp" loading="lazy">
+									<img src="../../assets/content/td-icons/no-cook-off.webp" loading="lazy">
+									<img src="../../assets/content/td-icons/unlocked.webp" loading="lazy">
+								</div>
+
+								<div class="td-viewer">
+									<div class="td-viewer-inner">
+										<img src="importers/assets/content/hex-in.webp"
+											alt="Default visualization of the HEX in COMP."
+											class="blur-load"
+											style="background-image: url(importers/assets/no-index/hex-in-blurry.webp); aspect-ratio: 5/4;"
+											loading="lazy">
+									</div>
+								</div>
+
+								<div class="td-side output top">
+									<div class="td-filler"></div>
+									<div class="td-filler"></div>
+								</div>
+							</div>
+
+							<div class="td-row"></div>
+							<div class="td-hairline"></div>
+
+							<div class="td-footer">
+								<div class="td-title">
+									<p class="td-name">HEX_in</p>
+								</div>
+								<div class="td-active">
+									<img src="../../assets/content/td-icons/activate-off.webp" loading="lazy">
+								</div>
+							</div>
+						</a>
+					</div>
+				</div>
+			</article>
+		</main>
+
+		<footer>
+			<section>
+				<div id="footer-nav">
+					<div>
+						<h2 id="footer-date"></h2>
+					</div>
+
+					<div>
+						<h2>Navigation</h2>
+						<h3><a target="_self" id="top-btn" title="Click here to be taken back to the top of this page.">Back to Top</a></h3>
+						<h3><a href="../../" title="Click here to return to the main TouchDesigner COMPs page.">TD COMPs</a></h3>
+						<h3><a href="../../../../" title="Click here to return to the main work page.">Work</a></h3>
+						<h3><a href="../../../../about/" title="Click here to learn more about who I am.">About</a></h3>
+					</div>
+
+					<div>
+						<h2>Contact</h2>
+						<h3><a href="mailto:beidler.max@gmail.com" title="Shoot me an email!" target="_self">
+							beidler.max@gmail.com
+						</a></h3>
+						<h3><a href="https://www.are.na/max-mainio" title="This is where I collect resources, for me and anyone else to use." target="_blank">
+							Are.na
+						</a></h3>
+						<h3><a href="https://github.com/MaxMainio" title="Most of my coding projects and experiments are on here. Feel free to study how I've made this website." target="_blank">
+							Github
+						</a></h3>
+						<h3><a href="https://www.instagram.com/max.mainio/?hl=en" title="I really don't post on here anymore, but I'm still active otherwise." target="_blank">
+							Instagram
+						</a></h3>
+						<h3><a href="https://www.linkedin.com/in/max-beidler-101b111a3/" title="I desperately need a new profile pic..." target="_blank">
+							Linkedin
+						</a></h3>
+						<h3><a href="https://pin.it/571oY2a" title="This is where I collect design inspiration." target="_blank">
+							Pinterest
+						</a></h3>
+						<h3><a href="https://open.spotify.com/user/mliflawsee?si=08f822a9f31e4a12" title="Check out what I'm listening to." target="_blank">
+							Spotify
+						</a></h3>
+					</div>
+				</div>
+
+				<div id="footer-gradient">
+					<div id="footer-field"></div>
+				</div>
+			</section>
+		</footer>
+	</body>
+</html>
