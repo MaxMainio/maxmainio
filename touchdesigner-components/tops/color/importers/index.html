@@ -385,12 +385,13 @@
 						</p>
 
 						<p>
-							Optionally, all converted values can be output as a <a href="https://derivative.ca/UserGuide/Table_DAT" target="_blank">table DAT</a>, making it easy to integrate CMYK&hyphen;derived palettes into <a href="https://derivative.ca/UserGuide/DAT" target="_blank">DAT</a>&hyphen;driven workflows or downstream processing.
+							Optionally, all converted values can be output as a <a href="https://derivative.ca/UserGuide/Table_DAT" target="_blank">table DAT</a>, making it easy to integrate <a href="https://en.wikipedia.org/wiki/CMYK_color_model" target="_blank">CMYK</a>&hyphen;derived palettes into <a href="https://derivative.ca/UserGuide/DAT" target="_blank">DAT</a>&hyphen;driven workflows or downstream processing.
 						</p>
 
 						<h5>Resources&colon;</h5>
 						<p>
 							<a href="https://en.wikipedia.org/wiki/CMYK_color_model" target="_blank">CMYK on Wikipedia</a><br>
+							<a href="https://www.w3schools.com/colors/colors_cmyk.asp" target="_blank">CMYK Color Picker on W3Schools</a><br>
 							<a href="https://github.com/MaxMainio/TD_" target="_blank">Download the .tox files</a>
 						</p>
 					</div>
@@ -488,14 +489,28 @@
 
 				<section id="hex-in" class="documentation">
 					<div class="docuinfo">
-						<h2>HEX in</h2>
-						<h3>Sub-Title</h3>
+						<h2><a href="https://en.wikipedia.org/wiki/Web_colors#:~:text=to%2Dprint%20applications.-,Hex%20triplet,-%5Bedit%5D" target="_blank">HEX</a> in</h2>
+						<h3><a href="https://en.wikipedia.org/wiki/Web_colors#:~:text=to%2Dprint%20applications.-,Hex%20triplet,-%5Bedit%5D" target="_blank">HEX</a> to <a href="https://en.wikipedia.org/wiki/List_of_monochrome_and_RGB_color_formats" target="_blank">RGB</a> Conversion</h3>
 						<p>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim diam vulputate ut pharetra sit amet aliquam. Integer eget aliquet nibh praesent tristique magna sit. Massa id neque aliquam vestibulum. Egestas diam in arcu cursus euismod quis viverra nibh. Ultrices vitae auctor eu augue ut lectus arcu bibendum at. Vel risus commodo viverra maecenas accumsan lacus vel facilisis volutpat. Sit amet cursus sit amet dictum sit. Scelerisque mauris pellentesque pulvinar pellentesque habitant morbi tristique. Rutrum quisque non tellus orci ac.
+							<a href="https://github.com/MaxMainio/TD_/blob/main/TOPs/Color/Importers/HEX_in.tox" target="_blank">This component</a> converts user&hyphen;defined <a href="https://www.color-hex.com/" target="_blank">HEX color codes</a> into <a href="https://derivative.ca/" target="_blank">TouchDesigner</a>&hyphen;compatible <a href="https://en.wikipedia.org/wiki/RGB_color_model" target="_blank">RGBA values</a>. By allowing <a href="https://www.color-hex.com/" target="_blank">HEX values</a> to be entered directly as <a href="https://derivative.ca/UserGuide/Parameter#:~:text=menus-,text%20strings,-paths" target="_blank">strings</a>, it provides a simple way to translate web&hyphen; and design&hyphen;oriented color formats into <a href="https://derivative.ca/" target="_blank">TouchDesigner</a>&rsquo;s normalized <a href="https://en.wikipedia.org/wiki/RGB_color_spaces" target="_blank">RGB space</a>.
+						</p>
+
+						<p>
+							Each <a href="https://en.wikipedia.org/wiki/Web_colors#:~:text=to%2Dprint%20applications.-,Hex%20triplet,-%5Bedit%5D" target="_blank">HEX</a> input is defined through a sequential parameter group. As new inputs are added, <a href="https://github.com/MaxMainio/TD_/blob/main/TOPs/Color/Importers/HEX_in.tox" target="_blank">the component</a> dynamically expands to include additional <a href="https://en.wikipedia.org/wiki/Web_colors#:~:text=to%2Dprint%20applications.-,Hex%20triplet,-%5Bedit%5D" target="_blank">HEX</a> &sol; <a href="https://en.wikipedia.org/wiki/RGB_color_model" target="_blank">RGBA</a> pairs. The input values are parsed and converted into normalized <a href="https://en.wikipedia.org/wiki/RGB_color_model" target="_blank">RGBA values</a> &lpar;0&ndash;1&rpar;, which are exposed as <a href="https://derivative.ca/UserGuide/Parameter#:~:text=of%20other%20parameters)-,read%2Donly,-%2D%20the%20parameter%20is" target="_blank">read&hyphen;only</a> parameters for easy <a href="https://derivative.ca/UserGuide/Reference" target="_blank">reference</a> and reuse throughout the <a href="https://derivative.ca/UserGuide/Network" target="_blank">node network</a>.
+						</p>
+
+						<p>
+							This workflow enables quick integration of color values from external sources such as design tools, style guides, or web palettes without requiring manual conversion. By operating as a parameter&hyphen;based color source, the <a href="https://github.com/MaxMainio/TD_/blob/main/TOPs/Color/Importers/HEX_in.tox" target="_blank">HEX in COMP</a> allows color to be defined, adjusted, and distributed procedurally within the <a href="https://derivative.ca/" target="_blank">TouchDesigner</a> environment.
+						</p>
+
+						<p>
+							Optionally, all converted values can be output as a <a href="https://derivative.ca/UserGuide/Table_DAT" target="_blank">table DAT</a>, making it easy to pass <a href="https://en.wikipedia.org/wiki/Web_colors#:~:text=to%2Dprint%20applications.-,Hex%20triplet,-%5Bedit%5D" target="_blank">HEX</a>&hyphen;derived palettes into <a href="https://derivative.ca/UserGuide/DAT" target="_blank">DAT</a>&hyphen;driven workflows or downstream processing.
 						</p>
 
 						<h5>Resources&colon;</h5>
 						<p>
+							<a href="https://en.wikipedia.org/wiki/Web_colors#:~:text=to%2Dprint%20applications.-,Hex%20triplet,-%5Bedit%5D" target="_blank">HEX Codes on Wikipedia</a><br>
+							<a href="https://www.w3schools.com/colors/colors_hexadecimal.asp" target="_blank">HEX Color Picker on W3Schools</a><br>
 							<a href="https://github.com/MaxMainio/TD_" target="_blank">Download the .tox files</a>
 						</p>
 					</div>
@@ -553,32 +568,34 @@
 
 						<div>
 							<h4>Parameters</h4>
-							<h5>Add HEX Input&colon;</h5>
+							<h5>Add <a href="https://en.wikipedia.org/wiki/Web_colors#:~:text=to%2Dprint%20applications.-,Hex%20triplet,-%5Bedit%5D" target="_blank">HEX</a> Input&colon;</h5>
 							<p>
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim diam vulputate ut pharetra sit amet aliquam.
+								Adds a new <a href="https://en.wikipedia.org/wiki/Web_colors#:~:text=to%2Dprint%20applications.-,Hex%20triplet,-%5Bedit%5D" target="_blank">HEX</a> input group.<br>
+								The number of groups defines how many <a href="https://en.wikipedia.org/wiki/Web_colors#:~:text=to%2Dprint%20applications.-,Hex%20triplet,-%5Bedit%5D" target="_blank">HEX values</a> will be entered and converted.
 							</p>
 
-							<h5>HEX&colon;</h5>
+							<h5><a href="https://en.wikipedia.org/wiki/Web_colors#:~:text=to%2Dprint%20applications.-,Hex%20triplet,-%5Bedit%5D" target="_blank">HEX</a>&colon;</h5>
 							<p>
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim diam vulputate ut pharetra sit amet aliquam.
+								<a href="https://derivative.ca/UserGuide/Parameter#:~:text=menus-,text%20strings,-paths" target="_blank">String input</a> for entering a <a href="https://en.wikipedia.org/wiki/Web_colors#:~:text=to%2Dprint%20applications.-,Hex%20triplet,-%5Bedit%5D" target="_blank">HEX color</a> code.<br>
+								The value is parsed and converted into <a href="https://derivative.ca/" target="_blank">TouchDesigner</a>&hyphen;compatible <a href="https://en.wikipedia.org/wiki/RGB_color_model" target="_blank">RGBA values</a>.
 							</p>
 
-							<h5>RGBA&colon;</h5>
+							<h5><a href="https://en.wikipedia.org/wiki/RGB_color_model" target="_blank">RGBA</a>&colon;</h5>
 							<p>
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim diam vulputate ut pharetra sit amet aliquam.
+								Displays the converted <a href="https://rgbacolorpicker.com/" target="_blank">RGBA</a> result for the corresponding <a href="https://en.wikipedia.org/wiki/Web_colors#:~:text=to%2Dprint%20applications.-,Hex%20triplet,-%5Bedit%5D" target="_blank">HEX</a> input. Values are provided in the normalized 0&ndash;1 range and can be referenced throughout the <a href="https://derivative.ca/UserGuide/Network" target="_blank">network</a>.
 							</p>
 	
 							<hr/>
 	
-							<h5>Output DAT&colon;</h5>
+							<h5>Output <a href="https://derivative.ca/UserGuide/DAT" target="_blank">DAT</a>&colon;</h5>
 							<p>
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim diam vulputate ut pharetra sit amet aliquam.
+								When enabled, outputs all converted <a href="https://rgbacolorpicker.com/" target="_blank">RGBA values</a> as a <a href="https://derivative.ca/UserGuide/Table_DAT" target="_blank">table DAT</a> for use in <a href="https://en.wikipedia.org/wiki/List_of_date_formats_by_country#:~:text=regions%20and%20countries-,DMY,-Europe%3A%20Italy" target="_blank">DAT</a>&hyphen;based workflows.
 							</p>
 
 							<h4>Outputs</h4>
 
 							<p>
-								<b>Output 0</b> &ndash; <a href="https://derivative.ca/UserGuide/DAT" target="_blank"><span class="dat-text">DAT</span></a> Lorem ipsum...
+								<b>Output 0</b> &ndash; <a href="https://derivative.ca/UserGuide/DAT" target="_blank"><span class="dat-text">DAT</span></a> <a href="https://derivative.ca/UserGuide/Table_DAT" target="_blank">Table DAT</a> of <a href="https://rgbacolorpicker.com/" target="_blank">RGBA values</a>.
 							</p>
 
 							<p style="margin-top: 1rem;">
