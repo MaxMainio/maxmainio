@@ -134,79 +134,101 @@
 <!-- TD PAGES -->
 <url>
   <loc>https://maxmain.io/touchdesigner-components/</loc>
-  <lastmod>2026-03-02T07:10:14+00:00</lastmod>
+  <lastmod>2026-05-04T03:49:02+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 
 <url>
   <loc>https://maxmain.io/touchdesigner-components/tops/edge-detectors/</loc>
-  <lastmod>2026-03-02T07:10:14+00:00</lastmod>
+  <lastmod>2026-05-04T03:49:02+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 
 <url>
   <loc>https://maxmain.io/touchdesigner-components/tops/morphological/</loc>
-  <lastmod>2026-03-02T07:10:14+00:00</lastmod>
+  <lastmod>2026-05-04T03:49:02+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 
 <url>
   <loc>https://maxmain.io/touchdesigner-components/tops/binning/</loc>
-  <lastmod>2026-03-02T07:10:14+00:00</lastmod>
+  <lastmod>2026-05-04T03:49:02+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 
 <url>
+  <loc>https://maxmain.io/touchdesigner-components/tops/color/</loc>
+  <lastmod>2026-05-04T03:49:02+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+
+<url>
+  <loc>https://maxmain.io/touchdesigner-components/tops/color/importers/</loc>
+  <lastmod>2026-05-04T03:49:02+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+
+
+
+<url>
   <loc>https://maxmain.io/touchdesigner-components/tops/dithering/</loc>
-  <lastmod>2026-03-02T07:10:14+00:00</lastmod>
+  <lastmod>2026-05-04T03:49:02+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 
 <url>
   <loc>https://maxmain.io/touchdesigner-components/tops/histogram/</loc>
-  <lastmod>2026-03-02T07:10:14+00:00</lastmod>
+  <lastmod>2026-05-04T03:49:02+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 
 <url>
   <loc>https://maxmain.io/touchdesigner-components/tops/mapping/</loc>
-  <lastmod>2026-03-02T07:10:14+00:00</lastmod>
+  <lastmod>2026-05-04T03:49:02+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 
 <url>
   <loc>https://maxmain.io/touchdesigner-components/tops/math/</loc>
-  <lastmod>2026-03-02T07:10:14+00:00</lastmod>
+  <lastmod>2026-05-04T03:49:02+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 
 <url>
   <loc>https://maxmain.io/touchdesigner-components/tops/math/arithmetic/</loc>
-  <lastmod>2026-03-02T07:10:14+00:00</lastmod>
+  <lastmod>2026-05-04T03:49:02+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 
 <url>
   <loc>https://maxmain.io/touchdesigner-components/tops/math/calculus/</loc>
-  <lastmod>2026-03-02T07:10:14+00:00</lastmod>
+  <lastmod>2026-05-04T03:49:02+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 
 <url>
   <loc>https://maxmain.io/touchdesigner-components/tops/math/matrix/</loc>
-  <lastmod>2026-03-02T07:10:14+00:00</lastmod>
+  <lastmod>2026-05-04T03:49:02+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 
+
+
 <url>
   <loc>https://maxmain.io/touchdesigner-components/tops/signed-distance-fields/</loc>
-  <lastmod>2026-03-02T07:10:14+00:00</lastmod>
+  <lastmod>2026-05-04T03:49:02+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 
 <url>
   <loc>https://maxmain.io/touchdesigner-components/tops/sorting/</loc>
-  <lastmod>2026-03-02T07:10:14+00:00</lastmod>
+  <lastmod>2026-05-04T03:49:02+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+
+<url>
+  <loc>https://maxmain.io/touchdesigner-components/sops/svg/</loc>
+  <lastmod>2026-05-04T03:49:02+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 </urlset>
