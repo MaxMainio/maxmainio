@@ -346,14 +346,133 @@
 				<section id="bitshift" class="documentation">
 					<div class="docuinfo">
 						<h2>Bitshift</h2>
-						<h3>Sub-Title</h3>
+						<h3>Bitwise Shifting Operations</h3>
 						<p>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim diam vulputate ut pharetra sit amet aliquam. Integer eget aliquet nibh praesent tristique magna sit. Massa id neque aliquam vestibulum. Egestas diam in arcu cursus euismod quis viverra nibh. Ultrices vitae auctor eu augue ut lectus arcu bibendum at. Vel risus commodo viverra maecenas accumsan lacus vel facilisis volutpat. Sit amet cursus sit amet dictum sit. Scelerisque mauris pellentesque pulvinar pellentesque habitant morbi tristique. Rutrum quisque non tellus orci ac.
+							<a href="https://github.com/MaxMainio/TD_/blob/main/TOPs/Bitwise/Bitshift.tox" target="_blank">This component</a> performs bitwise shift operations on the pixels of the input image. Rather than manipulating pixel values through traditional arithmetic, this <a href="https://github.com/MaxMainio/TD_/blob/main/TOPs/Bitwise/Bitshift.tox" target="_blank">Bitshift COMP</a> operates directly on the binary representation of each pixel channel, shifting all bits either left or right by a user&hyphen;defined number of steps.
+						</p>
+
+						<p>
+							A left shift moves all bits toward more significant positions, effectively multiplying integer pixel values by powers of two, while a right shift moves bits toward less significant positions, reducing precision and dividing values by powers of two. Bits shifted beyond the available bit range are discarded, and newly introduced positions are filled with zeros.
+						</p>
+
+						<p>
+							Formally, for a pixel value <span title="Right click for a cheat sheet"><math><mi>&Iota;</mi><mo>&lpar;</mo><mi>&iota;</mi><mo>&rpar;</mo></math></span>&colon;
+						</p>
+
+						<ul>
+							<li>
+								<p>
+									Left shift&colon;
+								</p>
+
+								<p class="maths" title="Right click for a cheat sheet">
+									<math>
+										<mrow>
+											<mi>&Iota;</mi>
+											<mo>&lpar;</mo>
+											<mi>&iota;</mi>
+											<mo>&rpar;</mo>
+											<mo>&Lt;</mo>
+											<mi>n</mi>
+											<mo>=</mo>
+											<mi>&Iota;</mi>
+											<mo>&lpar;</mo>
+											<mi>&iota;</mi>
+											<mo>&rpar;</mo>
+											<mo>&#8729;</mo>
+											<msup>
+												<mn>2</mn>
+												<mi>n</mi>
+											</msup>
+										</mrow>
+									</math>
+								</p><br>
+							</li>
+
+							<li>
+								<p>
+									Right shift&colon;
+								</p>
+
+								<p class="maths" title="Right click for a cheat sheet">
+									<math>
+										<mrow>
+											<mi>&Iota;</mi>
+											<mo>&lpar;</mo>
+											<mi>&iota;</mi>
+											<mo>&rpar;</mo>
+											<mo>&Gt;</mo>
+											<mi>n</mi>
+											<mo>=</mo>
+										</mrow>
+										<mrow>
+											<mo>&lfloor;</mo>
+											<mfrac>
+												<mrow>
+													<mi>&Iota;</mi>
+													<mo>&lpar;</mo>
+													<mi>&iota;</mi>
+													<mo>&rpar;</mo>
+												</mrow>
+												<mrow>
+													<msup>
+														<mn>2</mn>
+														<mi>n</mi>
+													</msup>
+												</mrow>
+											</mfrac>
+											<mo>&rfloor;</mo>
+										</mrow>
+									</math>
+								</p>
+							</li>
+						</ul>
+
+						<p>
+							Where <span title="Right click for a cheat sheet"><math><mi>n</mi></math></span> denotes the number of shift steps.
+						</p>
+
+						<p>
+							For example, given the 8&hyphen;bit binary value <span title="Right click for a cheat sheet"><math><mi>00001000</mi></math></span>&colon;
+						</p>
+
+						<p class="maths" title="Right click for a cheat sheet">
+							<math>
+								<mrow style="display: block;">
+									<mi>00001000</mi>
+									<mo>&Lt;</mo>
+									<mi>1</mi>
+									<mo>=</mo>
+									<mi>00010000</mi>
+								</mrow>
+
+								<mrow style="display: block;">
+									<mi>00001000</mi>
+									<mo>&Lt;</mo>
+									<mi>3</mi>
+									<mo>=</mo>
+									<mi>01000000</mi>
+								</mrow>
+
+								<mrow style="display: block;">
+									<mi>00001000</mi>
+									<mo>&Gt;</mo>
+									<mi>2</mi>
+									<mo>=</mo>
+									<mi>00000010</mi>
+								</mrow>
+							</math>
+						</p>
+
+						<p>
+							Because the operation is performed directly on binary data, the visual result depends heavily on the selected Bit Depth and pixel format. Small shifts may produce subtle quantization changes, while larger shifts can dramatically reduce or amplify tonal structure. This makes bitshifting useful both as a low&hyphen;level image processing utility and as a stylistic operation for creating posterization, digital corruption, or reduced&hyphen;precision aesthetics.
 						</p>
 
 						<h5>Resources&colon;</h5>
 						<p>
-							<a href="https://github.com/MaxMainio/TD_" target="_blank">Download the .tox files</a>
+							<a href="https://github.com/MaxMainio/TD_" target="_blank">Download the .tox files</a>,<br>
+							<a href="https://en.wikipedia.org/wiki/Bitwise_operation" target="_blank">Bitwise Operations on Wikipedia</a>,<br>
+							<a href="https://www.interviewcake.com/concept/java/bit-shift" target="_blank">Bit Shifting by Interview Cake</a>
 						</p>
 					</div>
 
@@ -443,7 +562,7 @@
 							</p>
 
 							<p>
-								<b>Output 0</b> &ndash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> Lorem ipsum...
+								<b>Output 0</b> &ndash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> bitshifted image.
 							</p>
 
 							<p style="margin-top: 1rem;">
