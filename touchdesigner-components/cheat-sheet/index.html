@@ -101,6 +101,313 @@
 				<hr/>
 
 				<section class="notation-category">
+					<h3>Bitwise&colon;</h3>
+
+					<div id="and" class="notation-entry">
+						<span class="notation-symbol"><math><mrow><mi>&and;</mi></mrow></math> &mdash;</span>
+						
+						<p class="notation-description">
+							<span class="notation-title">AND&colon;</span><br>
+							Represents the bitwise logical AND operation. Produces 1 only where both corresponding bits are 1.<br>
+							For example&colon;<br>
+							<math>
+								<mrow>
+									<mn>00001111</mn>
+									<mo>&and;</mo>
+									<mn>10101010</mn>
+									<mo>=</mo>
+									<mn>00001010</mn>
+								</mrow>
+							</math>
+						</p>
+					</div>
+
+					<div id="nand" class="notation-entry">
+						<span class="notation-symbol"><math><mrow><mi>&#8892;</mi></mrow></math> &mdash;</span>
+						
+						<p class="notation-description">
+							<span class="notation-title">NAND&colon;</span><br>
+							Represents the bitwise logical NAND operation. Produces 1 everywhere except where both corresponding bits are 1.<br>
+							For example&colon;<br>
+							<math>
+								<mrow>
+									<mn>00001111</mn>
+									<mo>&#8892;</mo>
+									<mn>10101010</mn>
+									<mo>=</mo>
+									<mn>11110101</mn>
+								</mrow>
+							</math>
+						</p>
+					</div>
+
+					<div id="or" class="notation-entry">
+						<span class="notation-symbol"><math><mrow><mi>&or;</mi></mrow></math> &mdash;</span>
+						
+						<p class="notation-description">
+							<span class="notation-title">OR&colon;</span><br>
+							Represents the bitwise logical OR operation. Produces 1 where either corresponding bit is 1.<br>
+							For example&colon;<br>
+							<math>
+								<mrow>
+									<mn>00001111</mn>
+									<mo>&or;</mo>
+									<mn>10101010</mn>
+									<mo>=</mo>
+									<mn>10101111</mn>
+								</mrow>
+							</math>
+						</p>
+					</div>
+
+					<div id="nor" class="notation-entry">
+						<span class="notation-symbol"><math><mrow><mi>&#8893;</mi></mrow></math> &mdash;</span>
+						
+						<p class="notation-description">
+							<span class="notation-title">NOR&colon;</span><br>
+							Represents the bitwise logical NOR operation. Produces 1 only where both corresponding bits are 0.<br>
+							For example&colon;<br>
+							<math>
+								<mrow>
+									<mn>00001111</mn>
+									<mo>&#8893;</mo>
+									<mn>10101010</mn>
+									<mo>=</mo>
+									<mn>01010000</mn>
+								</mrow>
+							</math>
+						</p>
+					</div>
+
+					<div id="xor" class="notation-entry">
+						<span class="notation-symbol"><math><mrow><mi>&veebar;</mi></mrow></math> &mdash;</span>
+						
+						<p class="notation-description">
+							<span class="notation-title">XOR&colon;</span><br>
+							Represents the bitwise logical exclusive OR operation. Produces 1 where corresponding bits differ.<br>
+							For example&colon;<br>
+							<math>
+								<mrow>
+									<mn>00001111</mn>
+									<mo>&veebar;</mo>
+									<mn>10101010</mn>
+									<mo>=</mo>
+									<mn>10100101</mn>
+								</mrow>
+							</math>
+						</p>
+					</div>
+
+					<div id="xnor" class="notation-entry">
+						<span class="notation-symbol"><math><mrow><mi>&#8893;&#818;</mi></mrow></math> &mdash;</span>
+						
+						<p class="notation-description">
+							<span class="notation-title">XNOR&colon;</span><br>
+							Represents the bitwise logical exclusive NOR operation. Produces 1 where corresponding bits are the same.<br>
+							For example&colon;<br>
+							<math>
+								<mrow>
+									<mn>00001111</mn>
+									<mo>&#8893;&#818;</mo>
+									<mn>10101010</mn>
+									<mo>=</mo>
+									<mn>01011010</mn>
+								</mrow>
+							</math>
+						</p>
+					</div>
+
+					<div id="not" class="notation-entry">
+						<span class="notation-symbol"><math><mrow><mi>&not;</mi></mrow></math> &mdash;</span>
+						
+						<p class="notation-description">
+							<span class="notation-title">NOT&colon;</span><br>
+							Represents the bitwise logical NOT operation. Produces the binary complement by inverting all bits.<br>
+							For example&colon;<br>
+							<math>
+								<mrow>
+									<mo>&not;</mo>
+									<mn>00001111</mn>
+									<mo>=</mo>
+									<mn>11110000</mn>
+								</mrow>
+							</math><br>
+
+							Or&colon;<br>
+							<math>
+								<mrow>
+									<mo>&not;</mo>
+									<mn>01010101</mn>
+									<mo>=</mo>
+									<mn>10101010</mn>
+								</mrow>
+							</math>
+						</p>
+					</div>
+
+					<div id="left-shift" class="notation-entry">
+						<span class="notation-symbol"><math><mrow><mi>&Lt;</mi></mrow></math> &mdash;</span>
+						
+						<p class="notation-description">
+							<span class="notation-title">Left Shift&colon;</span><br>
+							Represents a bitwise left shift operation. Bits are shifted toward more significant positions, multiplying the value by powers of two.<br>
+							Formerly&colon;<br>
+							<math>
+								<mrow>
+									<mi>&Iota;</mi>
+									<mo>&lpar;</mo>
+									<mi>&iota;</mi>
+									<mo>&rpar;</mo>
+									<mo>&Lt;</mo>
+									<mi>n</mi>
+									<mo>=</mo>
+									<mi>&Iota;</mi>
+									<mo>&lpar;</mo>
+									<mi>&iota;</mi>
+									<mo>&rpar;</mo>
+									<mo>&#8729;</mo>
+									<msup>
+										<mn>2</mn>
+										<mi>n</mi>
+									</msup>
+								</mrow>
+							</math><br><br>
+
+							Which would produce&colon;<br>
+							<math>
+								<mrow>
+									<mi>00001000</mi>
+									<mo>&Lt;</mo>
+									<mi>1</mi>
+									<mo>=</mo>
+									<mi>00010000</mi>
+								</mrow>
+							</math><br>
+
+							Or&colon;<br>
+							<math>
+								<mrow>
+									<mi>00001000</mi>
+									<mo>&Lt;</mo>
+									<mi>3</mi>
+									<mo>=</mo>
+									<mi>01000000</mi>
+								</mrow>
+							</math>
+						</p>
+					</div>
+
+					<div id="right-shift" class="notation-entry">
+						<span class="notation-symbol"><math><mrow><mi>&Gt;</mi></mrow></math> &mdash;</span>
+						
+						<p class="notation-description">
+							<span class="notation-title">Right Shift&colon;</span><br>
+							Represents a bitwise right shift operation. Bits are shifted toward less significant positions, dividing the value by powers of two.<br>
+							Formerly&colon;<br>
+							<math>
+								<mrow>
+									<mi>&Iota;</mi>
+									<mo>&lpar;</mo>
+									<mi>&iota;</mi>
+									<mo>&rpar;</mo>
+									<mo>&Gt;</mo>
+									<mi>n</mi>
+									<mo>=</mo>
+								</mrow>
+								<mrow>
+									<mo>&lfloor;</mo>
+									<mfrac>
+										<mrow>
+											<mi>&Iota;</mi>
+											<mo>&lpar;</mo>
+											<mi>&iota;</mi>
+											<mo>&rpar;</mo>
+										</mrow>
+										<mrow>
+											<msup>
+												<mn>2</mn>
+												<mi>n</mi>
+											</msup>
+										</mrow>
+									</mfrac>
+									<mo>&rfloor;</mo>
+								</mrow>
+							</math><br><br>
+
+							Which would produce&colon;<br>
+							<math>
+								<mrow>
+									<mi>00001000</mi>
+									<mo>&Gt;</mo>
+									<mi>1</mi>
+									<mo>=</mo>
+									<mi>00000100</mi>
+								</mrow>
+							</math><br>
+
+							Or&colon;<br>
+							<math>
+								<mrow>
+									<mi>00001000</mi>
+									<mo>&Gt;</mo>
+									<mi>3</mi>
+									<mo>=</mo>
+									<mi>00000001</mi>
+								</mrow>
+							</math>
+						</p>
+					</div>
+				</section>
+
+				<hr/>
+
+				<section class="notation-category">
+					<h3>Dithering&colon;</h3>
+
+					<div id="diffusion-matrix" class="notation-entry">
+						<span class="notation-symbol"><math><mrow><mi>D</mi></mrow></math> &mdash;</span>
+						
+						<p class="notation-description">
+							<span class="notation-title">Diffusion Matrix&colon;</span><br>
+							Represents a weighted <a href="#kernel" target="_self">kernel</a> used in error diffusion dithering to propagate quantization error to neighboring pixels.<br>
+							The current pixel being processed is denoted by &lpar;<math><mrow><mi>&ast;</mi></mrow></math>&rpar;, and the matrix weights are normalized by a divisor. Empty cells are not taken into consideration and receive no propagated error.<br>
+							Formerly&colon;<br>
+							<math>
+								<mrow>
+									<mi>D</mi>
+									<mo>=</mo>
+								</mrow>
+								<mrow>
+									<mfrac>
+										<mn>1</mn>
+										<mn>16</mn>
+									</mfrac>
+								</mrow>
+								<mo>&dot;</mo>
+								<mrow>
+									<mo>&lsqb;</mo>
+									<mtable>
+										<mtr>
+											<mtd></mtd>
+											<mtd><mi>&ast;</mi></mtd>
+											<mtd><mn>7</mn></mtd>
+										</mtr>
+										<mtr>
+											<mtd><mn>3</mn></mtd>
+											<mtd><mn>5</mn></mtd>
+											<mtd><mn>1</mn></mtd>
+										</mtr>
+									</mtable>
+									<mo>&rsqb;</mo>
+								</mrow>
+							</math>
+						</p>
+					</div>
+				</section>
+
+				<hr/>
+
+				<section class="notation-category">
 					<h3>Edge Detection&colon;</h3>
 
 					<div id="gradient" class="notation-entry">
@@ -224,52 +531,6 @@
 						<p class="notation-description">
 							<span class="notation-title">Response:</span><br>
 							In symmetrical convolutional operations that do not result in an <a href="#gradient" target="_self">image gradient</a>, <math><mi>R</mi></math> represents the maximum response from all directional <a href="#kernel" target="_self">kernels</a>.
-						</p>
-					</div>
-				</section>
-
-				<hr/>
-
-				<section class="notation-category">
-					<h3>Dithering&colon;</h3>
-
-					<div id="diffusion-matrix" class="notation-entry">
-						<span class="notation-symbol"><math><mrow><mi>D</mi></mrow></math> &mdash;</span>
-						
-						<p class="notation-description">
-							<span class="notation-title">Diffusion Matrix&colon;</span><br>
-							Represents a weighted <a href="#kernel" target="_self">kernel</a> used in error diffusion dithering to propagate quantization error to neighboring pixels.<br>
-							The current pixel being processed is denoted by &lpar;<math><mrow><mi>&ast;</mi></mrow></math>&rpar;, and the matrix weights are normalized by a divisor. Empty cells are not taken into consideration and receive no propagated error.<br>
-							Formerly&colon;<br>
-							<math>
-								<mrow>
-									<mi>D</mi>
-									<mo>=</mo>
-								</mrow>
-								<mrow>
-									<mfrac>
-										<mn>1</mn>
-										<mn>16</mn>
-									</mfrac>
-								</mrow>
-								<mo>&dot;</mo>
-								<mrow>
-									<mo>&lsqb;</mo>
-									<mtable>
-										<mtr>
-											<mtd></mtd>
-											<mtd><mi>&ast;</mi></mtd>
-											<mtd><mn>7</mn></mtd>
-										</mtr>
-										<mtr>
-											<mtd><mn>3</mn></mtd>
-											<mtd><mn>5</mn></mtd>
-											<mtd><mn>1</mn></mtd>
-										</mtr>
-									</mtable>
-									<mo>&rsqb;</mo>
-								</mrow>
-							</math>
 						</p>
 					</div>
 				</section>
