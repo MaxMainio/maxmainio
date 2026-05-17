@@ -579,15 +579,28 @@
 
 				<section id="local-binary-pattern" class="documentation">
 					<div class="docuinfo">
-						<h2>Local Binary Pattern</h2>
-						<h3>Sub-Title</h3>
+						<h2><a href="https://aihalapathirana.medium.com/understanding-the-local-binary-pattern-lbp-a-powerful-method-for-texture-analysis-in-computer-4fb55b3ed8b8" target="_blank">Local Binary Pattern</a></h2>
+						<h3>Binary Texture Encoding</h3>
 						<p>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim diam vulputate ut pharetra sit amet aliquam. Integer eget aliquet nibh praesent tristique magna sit. Massa id neque aliquam vestibulum. Egestas diam in arcu cursus euismod quis viverra nibh. Ultrices vitae auctor eu augue ut lectus arcu bibendum at. Vel risus commodo viverra maecenas accumsan lacus vel facilisis volutpat. Sit amet cursus sit amet dictum sit. Scelerisque mauris pellentesque pulvinar pellentesque habitant morbi tristique. Rutrum quisque non tellus orci ac.
+							<a href="https://github.com/MaxMainio/TD_/blob/main/TOPs/Bitwise/Local_Binary_Pattern.tox" target="_blank">This component</a> computes the <a href="https://en.wikipedia.org/wiki/Local_binary_patterns" target="_blank">Local Binary Pattern</a> &lpar;<a href="https://aihalapathirana.medium.com/understanding-the-local-binary-pattern-lbp-a-powerful-method-for-texture-analysis-in-computer-4fb55b3ed8b8" target="_blank">LBP</a>&rpar; of the input image &mdash; a texture descriptor that encodes the local spatial structure surrounding each pixel into a binary value. Rather than measuring intensity directly, the <a href="https://github.com/MaxMainio/TD_/blob/main/TOPs/Bitwise/Local_Binary_Pattern.tox" target="_blank">Local Binary Pattern operator</a> analyzes how neighboring pixels relate to the center pixel, producing a compact representation of local texture.
+						</p>
+
+						<p>
+							For each pixel <span title="Right click for a cheat sheet"><math><mi>&Iota;</mi><mo>&lpar;</mo><mi>&iota;</mi><mo>&rpar;</mo></math></span>, the surrounding 3&times;3 neighborhood is evaluated. Neighboring pixels greater than or equal to the center pixel are assigned a <a href="https://en.wikipedia.org/wiki/Binary_number" target="_blank">binary value</a> of 1, while neighboring pixels below the center pixel are assigned 0. These binary comparisons are then concatenated into an <a href="https://en.wikipedia.org/wiki/8-bit_computing" target="_blank">8&hyphen;bit binary number</a> describing the local texture pattern.
+						</p>
+
+						<p>
+							The resulting <a href="https://en.wikipedia.org/wiki/8-bit_computing" target="_blank">binary pattern</a> encodes local image structures such as edges, corners, flat regions, and repetitive textures into a single scalar value. Similar local structures produce similar <a href="https://en.wikipedia.org/wiki/8-bit_computing" target="_blank">binary codes</a>, making <a href="https://aihalapathirana.medium.com/understanding-the-local-binary-pattern-lbp-a-powerful-method-for-texture-analysis-in-computer-4fb55b3ed8b8" target="_blank">LBP</a> a lightweight but effective descriptor for <a href="https://en.wikipedia.org/wiki/Image_texture" target="_blank">texture analysis</a> and pattern recognition.
+						</p>
+
+						<p>
+							Because the operation compares neighboring pixels relationally rather than absolutely, <a href="https://en.wikipedia.org/wiki/Local_binary_patterns" target="_blank">Local Binary Patterns</a> are relatively robust to global illumination changes while remaining computationally inexpensive. Beyond analytical use cases, the encoded binary structures can also produce distinctive stylized textures and procedural patterning effects.
 						</p>
 
 						<h5>Resources&colon;</h5>
 						<p>
-							<a href="https://github.com/MaxMainio/TD_" target="_blank">Download the .tox files</a>
+							<a href="https://github.com/MaxMainio/TD_" target="_blank">Download the .tox files</a>,<br>
+							<a href="https://aihalapathirana.medium.com/understanding-the-local-binary-pattern-lbp-a-powerful-method-for-texture-analysis-in-computer-4fb55b3ed8b8" target="_blank">Understanding the LBP on Medium</a>
 						</p>
 					</div>
 
@@ -671,7 +684,7 @@
 							</p>
 
 							<p>
-								<b>Output 0</b> &ndash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> Lorem ipsum...
+								<b>Output 0</b> &ndash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> calculated <a href="https://aihalapathirana.medium.com/understanding-the-local-binary-pattern-lbp-a-powerful-method-for-texture-analysis-in-computer-4fb55b3ed8b8" target="_blank">LBP</a> of the input image.
 							</p>
 
 							<p style="margin-top: 1rem;">
