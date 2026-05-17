@@ -570,7 +570,7 @@
 							</p>
 
 							<p style="margin-top: 1rem;">
-								<b>Updated</b> &ndash; <a href="https://en.wikipedia.org/wiki/List_of_date_formats_by_country#:~:text=regions%20and%20countries-,DMY,-Europe%3A%20Italy" target="_blank"><span class="date-text">30&sol;8&sol;2025</span></a>
+								<b>Updated</b> &ndash; <a href="https://en.wikipedia.org/wiki/List_of_date_formats_by_country#:~:text=regions%20and%20countries-,DMY,-Europe%3A%20Italy" target="_blank"><span class="date-text">17&sol;5&sol;2026</span></a>
 							</p>
 						</div>
 					</div>
@@ -690,7 +690,7 @@
 							</p>
 
 							<p style="margin-top: 1rem;">
-								<b>Updated</b> &ndash; <a href="https://en.wikipedia.org/wiki/List_of_date_formats_by_country#:~:text=regions%20and%20countries-,DMY,-Europe%3A%20Italy" target="_blank"><span class="date-text">30&sol;8&sol;2025</span></a>
+								<b>Updated</b> &ndash; <a href="https://en.wikipedia.org/wiki/List_of_date_formats_by_country#:~:text=regions%20and%20countries-,DMY,-Europe%3A%20Italy" target="_blank"><span class="date-text">17&sol;5&sol;2026</span></a>
 							</p>
 						</div>
 					</div>
@@ -925,11 +925,11 @@
 							</p>
 
 							<p>
-								<b>Output 0</b> &ndash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> Lorem ipsum...
+								<b>Output 0</b> &ndash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> logically combined images.
 							</p>
 
 							<p style="margin-top: 1rem;">
-								<b>Updated</b> &ndash; <a href="https://en.wikipedia.org/wiki/List_of_date_formats_by_country#:~:text=regions%20and%20countries-,DMY,-Europe%3A%20Italy" target="_blank"><span class="date-text">30&sol;8&sol;2025</span></a>
+								<b>Updated</b> &ndash; <a href="https://en.wikipedia.org/wiki/List_of_date_formats_by_country#:~:text=regions%20and%20countries-,DMY,-Europe%3A%20Italy" target="_blank"><span class="date-text">17&sol;5&sol;2026</span></a>
 							</p>
 						</div>
 					</div>
@@ -940,14 +940,49 @@
 				<section id="not" class="documentation">
 					<div class="docuinfo">
 						<h2>NOT</h2>
-						<h3>Sub-Title</h3>
+						<h3>Bitwise Inversion</h3>
 						<p>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim diam vulputate ut pharetra sit amet aliquam. Integer eget aliquet nibh praesent tristique magna sit. Massa id neque aliquam vestibulum. Egestas diam in arcu cursus euismod quis viverra nibh. Ultrices vitae auctor eu augue ut lectus arcu bibendum at. Vel risus commodo viverra maecenas accumsan lacus vel facilisis volutpat. Sit amet cursus sit amet dictum sit. Scelerisque mauris pellentesque pulvinar pellentesque habitant morbi tristique. Rutrum quisque non tellus orci ac.
+							<a href="https://github.com/MaxMainio/TD_/blob/main/TOPs/Edge%20Detectors/Gradient.tox" target="_blank">This component</a> performs a <a href="https://homepages.inf.ed.ac.uk/rbf/HIPR2/invert.htm" target="_blank">bitwise NOT operation</a> on the input image. Rather than modifying pixel values through arithmetic inversion, the <a href="https://github.com/MaxMainio/TD_/blob/main/TOPs/Edge%20Detectors/Gradient.tox" target="_blank">NOT COMP</a> operates directly on the <a href="https://www.teachwithict.com/binary-representation-of-images.html" target="_blank">binary representation</a> of each <a href="https://en.wikipedia.org/wiki/Channel_(digital_image)" target="_blank">pixel channel</a>, flipping every individual bit within the selected <a href="https://en.wikipedia.org/wiki/Color_depth" target="_blank">Bit Depth</a>.
+						</p>
+
+						<p>
+							For each pixel value <span title="Right click for a cheat sheet"><math><mi>&Iota;</mi><mo>&lpar;</mo><mi>&iota;</mi><mo>&rpar;</mo></math></span>, every 0 bit becomes 1, and every 1 bit becomes 0. This produces the binary complement of the original image data.
+						</p>
+
+						<p>
+							For example, the <a href="https://homepages.inf.ed.ac.uk/rbf/HIPR2/invert.htm" target="_blank">NOT operation</a> produces&colon;
+						</p>
+
+						<p class="maths" title="Right click for a cheat sheet">
+							<math>
+								<mrow style="display: block;">
+									<mo>&not;</mo>
+									<mi>00001111</mi>
+									<mo>=</mo>
+									<mi>11110000</mi>
+								</mrow>
+
+								<mrow style="display: block;">
+									<mo>&not;</mo>
+									<mi>10101010</mi>
+									<mo>=</mo>
+									<mi>01010101</mi>
+								</mrow>
+							</math>
+						</p>
+
+						<p>
+							Because the inversion occurs at the binary level, the resulting image differs from a traditional color inversion performed in normalized <a href="https://en.wikipedia.org/wiki/Floating-point_arithmetic" target="_blank">floating&hyphen;point</a> space. The exact result depends on the selected <a href="https://en.wikipedia.org/wiki/Color_depth" target="_blank">Bit Depth</a> and <a href="https://en.wikipedia.org/wiki/Pixel_format" target="_blank">pixel format</a>, as the operation inverts the underlying integer representation directly.
+						</p>
+
+						<p>
+							This makes the <a href="https://homepages.inf.ed.ac.uk/rbf/HIPR2/invert.htm" target="_blank">NOT operation</a> useful both as a foundational <a href="https://homepages.inf.ed.ac.uk/rbf/HIPR2/arthops.htm" target="_blank">logical operator</a> and as a stylistic image transformation capable of producing harsh binary inversions, reduced&hyphen;precision artifacts, and computationally aesthetic image structures.
 						</p>
 
 						<h5>Resources&colon;</h5>
 						<p>
-							<a href="https://github.com/MaxMainio/TD_" target="_blank">Download the .tox files</a>
+							<a href="https://github.com/MaxMainio/TD_" target="_blank">Download the .tox files</a>,<br>
+							<a href="https://homepages.inf.ed.ac.uk/rbf/HIPR2/invert.htm" target="_blank">Logical NOT by HIPR2</a>
 						</p>
 					</div>
 
@@ -1027,11 +1062,11 @@
 							</p>
 
 							<p>
-								<b>Output 0</b> &ndash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> Lorem ipsum...
+								<b>Output 0</b> &ndash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> binary inverted image.
 							</p>
 
 							<p style="margin-top: 1rem;">
-								<b>Updated</b> &ndash; <a href="https://en.wikipedia.org/wiki/List_of_date_formats_by_country#:~:text=regions%20and%20countries-,DMY,-Europe%3A%20Italy" target="_blank"><span class="date-text">30&sol;8&sol;2025</span></a>
+								<b>Updated</b> &ndash; <a href="https://en.wikipedia.org/wiki/List_of_date_formats_by_country#:~:text=regions%20and%20countries-,DMY,-Europe%3A%20Italy" target="_blank"><span class="date-text">17&sol;5&sol;2026</span></a>
 							</p>
 						</div>
 					</div>
