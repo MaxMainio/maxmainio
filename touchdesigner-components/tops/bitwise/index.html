@@ -475,7 +475,8 @@
 						<p>
 							<a href="https://github.com/MaxMainio/TD_" target="_blank">Download the .tox files</a>,<br>
 							<a href="https://en.wikipedia.org/wiki/Bitwise_operation" target="_blank">Bitwise Operations on Wikipedia</a>,<br>
-							<a href="https://www.interviewcake.com/concept/java/bit-shift" target="_blank">Bit Shifting by Interview Cake</a>
+							<a href="https://www.interviewcake.com/concept/java/bit-shift" target="_blank">Bit Shifting by Interview Cake</a>,<br>
+							<a href="https://homepages.inf.ed.ac.uk/rbf/HIPR2/bitshift.htm" target="_blank">Bitshifting by HIPR2</a>
 						</p>
 					</div>
 
@@ -545,8 +546,8 @@
 							<h5><a href="https://en.wikipedia.org/wiki/Color_depth" target="_blank">Bit Depth</a>&colon;</h5>
 							<p>
 								Defines the <a href="https://en.wikipedia.org/wiki/Pixel_format" target="_blank">pixel format</a> and <a href="https://en.wikipedia.org/wiki/Color_depth" target="_blank">bit depth</a> used during the <a href="https://www.interviewcake.com/concept/java/bit-shift" target="_blank">bitshift operation</a>.<br>
-								Supported formats include&colon;<br>
-								8&hyphen; or 16&hyphen;bit Fixed RGBA, Mono, RG, A, or Mono + Alpha.
+								Supported <a href="https://docs.derivative.ca/Pixel_Formats" target="_blank">formats</a> include&colon;<br>
+								<a href="https://photographylife.com/8-bit-vs-16-bit-images" target="_blank">8&hyphen; or 16&hyphen;bit</a> <a href="https://docs.derivative.ca/Pixel_Formats#:~:text=Supported%20Pixel%20Formats-,Fixed%20Point%20vs.%20Floating%20Point,-Fixed%20point%20formats" target="_blank">Fixed</a> <a href="https://docs.derivative.ca/Pixel_Formats#:~:text=D%2C%20D%2C%201).-,Supported%20Pixel%20Formats,-8%2Dbit%20fixed" target="_blank">RGBA, Mono, RG, A, or Mono + Alpha</a>.
 							</p>
 
 							<h5>Direction&colon;</h5>
@@ -600,7 +601,8 @@
 						<h5>Resources&colon;</h5>
 						<p>
 							<a href="https://github.com/MaxMainio/TD_" target="_blank">Download the .tox files</a>,<br>
-							<a href="https://aihalapathirana.medium.com/understanding-the-local-binary-pattern-lbp-a-powerful-method-for-texture-analysis-in-computer-4fb55b3ed8b8" target="_blank">Understanding the LBP on Medium</a>
+							<a href="https://aihalapathirana.medium.com/understanding-the-local-binary-pattern-lbp-a-powerful-method-for-texture-analysis-in-computer-4fb55b3ed8b8" target="_blank">Understanding the LBP on Medium</a>,<br>
+							<a href="https://en.wikipedia.org/wiki/Local_binary_patterns" target="_blank">LBPs on Wikipedia</a>
 						</p>
 					</div>
 
@@ -669,13 +671,13 @@
 							<h4>Parameters</h4>
 							<h5>Channel&colon;</h5>
 							<p>
-								Determines which image channel is used to compute the Local Binary Pattern&colon;<br>
+								Determines which image channel is used to compute the Local <a href="https://en.wikipedia.org/wiki/Local_binary_patterns" target="_blank">Binary Pattern</a>&colon;<br>
 								Red, Green, Blue, or Alpha.
 							</p>
 
 							<h5>Edge Handling&colon;</h5>
 							<p>
-								Defines how pixels along the image boundary are handled during Local Binary Pattern calculation.
+								Defines how pixels along the image boundary are handled during Local <a href="https://en.wikipedia.org/wiki/Local_binary_patterns" target="_blank">Binary Pattern</a> calculation.
 							</p>
 
 							<h4>In&hyphen; &sol; Outputs</h4>
@@ -699,14 +701,143 @@
 				<section id="logic" class="documentation">
 					<div class="docuinfo">
 						<h2>Logic</h2>
-						<h3>Sub-Title</h3>
+						<h3><a href="https://en.wikipedia.org/wiki/Bitwise_operation" target="_blank">Bitwise Logical Operations</a></h3>
 						<p>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim diam vulputate ut pharetra sit amet aliquam. Integer eget aliquet nibh praesent tristique magna sit. Massa id neque aliquam vestibulum. Egestas diam in arcu cursus euismod quis viverra nibh. Ultrices vitae auctor eu augue ut lectus arcu bibendum at. Vel risus commodo viverra maecenas accumsan lacus vel facilisis volutpat. Sit amet cursus sit amet dictum sit. Scelerisque mauris pellentesque pulvinar pellentesque habitant morbi tristique. Rutrum quisque non tellus orci ac.
+							<a href="https://github.com/MaxMainio/TD_/blob/main/TOPs/Bitwise/Logic.tox" target="_blank">This component</a> performs <a href="https://en.wikipedia.org/wiki/Bitwise_operation" target="_blank">bitwise logical operations</a> between two input images. Rather than combining pixels through arithmetic blending, the <a href="https://github.com/MaxMainio/TD_/blob/main/TOPs/Bitwise/Logic.tox" target="_blank">Logic COMP</a> evaluates the <a href="https://www.teachwithict.com/binary-representation-of-images.html" target="_blank">binary representation</a> of each <a href="https://en.wikipedia.org/wiki/Channel_(digital_image)" target="_blank">pixel channel</a> directly, applying logical comparisons bit&hyphen;by&hyphen;bit across the two inputs.
+						</p>
+
+						<p>
+							The selected <i>Operand</i> determines how corresponding bits from the two images interact&colon;
+						</p>
+
+						<ol>
+							<li>
+								<p>
+									<a href="https://homepages.inf.ed.ac.uk/rbf/HIPR2/and.htm" target="_blank">AND</a> &mdash; active only when both bits are 1.<br>
+									For example&colon;
+								</p>
+
+								<p class="maths" title="Right click for a cheat sheet">
+									<math>
+										<mrow>
+											<mn>00001111</mn>
+											<mo>&and;</mo>
+											<mn>10101010</mn>
+											<mo>=</mo>
+											<mn>00001010</mn>
+										</mrow>
+									</math>
+								</p><br>
+							</li>
+
+							<li>
+								<p>
+									<a href="https://homepages.inf.ed.ac.uk/rbf/HIPR2/and.htm" target="_blank">NAND</a> &mdash; inverse of <a href="https://homepages.inf.ed.ac.uk/rbf/HIPR2/and.htm" target="_blank">AND</a>.<br>
+									For example&colon;
+								</p>
+
+								<p class="maths" title="Right click for a cheat sheet">
+									<math>
+										<mrow>
+											<mn>00001111</mn>
+											<mo>&#8892;</mo>
+											<mn>10101010</mn>
+											<mo>=</mo>
+											<mn>11110101</mn>
+										</mrow>
+									</math>
+								</p><br>
+							</li>
+
+							<li>
+								<p>
+									<a href="https://homepages.inf.ed.ac.uk/rbf/HIPR2/or.htm" target="_blank">OR</a> &mdash; active when either bit is 1.<br>
+									For example&colon;
+								</p>
+
+								<p class="maths" title="Right click for a cheat sheet">
+									<math>
+										<mrow>
+											<mn>00001111</mn>
+											<mo>&or;</mo>
+											<mn>10101010</mn>
+											<mo>=</mo>
+											<mn>10101111</mn>
+										</mrow>
+									</math>
+								</p><br>
+							</li>
+
+							<li>
+								<p>
+									<a href="https://homepages.inf.ed.ac.uk/rbf/HIPR2/or.htm" target="_blank">NOR</a> &mdash; inverse of <a href="https://homepages.inf.ed.ac.uk/rbf/HIPR2/or.htm" target="_blank">OR</a>.<br>
+									For example&colon;
+								</p>
+
+								<p class="maths" title="Right click for a cheat sheet">
+									<math>
+										<mrow>
+											<mn>00001111</mn>
+											<mo>&#8893;</mo>
+											<mn>10101010</mn>
+											<mo>=</mo>
+											<mn>01010000</mn>
+										</mrow>
+									</math>
+								</p><br>
+							</li>
+
+							<li>
+								<p>
+									<a href="https://homepages.inf.ed.ac.uk/rbf/HIPR2/xor.htm" target="_blank">XOR</a> &mdash; active when bits differ.<br>
+									For example&colon;
+								</p>
+
+								<p class="maths" title="Right click for a cheat sheet">
+									<math>
+										<mrow>
+											<mn>00001111</mn>
+											<mo>&veebar;</mo>
+											<mn>10101010</mn>
+											<mo>=</mo>
+											<mn>10100101</mn>
+										</mrow>
+									</math>
+								</p><br>
+							</li>
+
+							<li>
+								<p>
+									<a href="https://homepages.inf.ed.ac.uk/rbf/HIPR2/xor.htm" target="_blank">XNOR</a> &mdash; active when bits are equal.<br>
+									For example&colon;
+								</p>
+
+								<p class="maths" title="Right click for a cheat sheet">
+									<math>
+										<mrow>
+											<mn>00001111</mn>
+											<mo>&#8893;&#818;</mo>
+											<mn>10101010</mn>
+											<mo>=</mo>
+											<mn>01011010</mn>
+										</mrow>
+									</math>
+								</p><br>
+							</li>
+						</ol>
+
+						<p>
+							Because these operations occur directly on <a href="https://www.teachwithict.com/binary-representation-of-images.html" target="_blank">binary pixel data</a>, the resulting images often exhibit abrupt structural transitions and reduced&hyphen;precision artifacts. Depending on the selected <a href="https://en.wikipedia.org/wiki/Color_depth" target="_blank">Bit Depth</a> and <a href="https://en.wikipedia.org/wiki/Pixel_format" target="_blank">pixel format</a>, <a href="https://homepages.inf.ed.ac.uk/rbf/HIPR2/arthops.htm" target="_blank">logical operations</a> can preserve, suppress, isolate, or invert specific binary structures within the input images.
+						</p>
+
+						<p>
+							While <a href="https://en.wikipedia.org/wiki/Bitwise_operation" target="_blank">bitwise logic</a> is foundational to digital computation, applying these operations spatially to images produces a unique class of procedural transformations &mdash; useful for <a href="https://www.geeksforgeeks.org/dsa/what-is-bitmasking/" target="_blank">masking</a>, <a href="https://en.wikipedia.org/wiki/Local_binary_patterns" target="_blank">binary pattern</a> manipulation, digital compositing experiments, and intentionally computational aesthetics.
 						</p>
 
 						<h5>Resources&colon;</h5>
 						<p>
-							<a href="https://github.com/MaxMainio/TD_" target="_blank">Download the .tox files</a>
+							<a href="https://github.com/MaxMainio/TD_" target="_blank">Download the .tox files</a>,<br>
+							<a href="https://homepages.inf.ed.ac.uk/rbf/HIPR2/arthops.htm" target="_blank">Logical Operations by HIPR2</a>
 						</p>
 					</div>
 
@@ -775,17 +906,17 @@
 
 						<div>
 							<h4>Parameters</h4>
-							<h5>Bit Depth&colon;</h5>
+							<h5><a href="https://en.wikipedia.org/wiki/Color_depth" target="_blank">Bit Depth</a>&colon;</h5>
 							<p>
-								Defines the pixel format and bit depth used during the bitwise logic operation.<br>
-								Supported formats include&colon;<br>
-								8&hyphen; or 16&hyphen;bit Fixed RGBA, Mono, RG, A, or Mono + Alpha.
+								Defines the <a href="https://en.wikipedia.org/wiki/Pixel_format" target="_blank">pixel format</a> and <a href="https://en.wikipedia.org/wiki/Color_depth" target="_blank">bit depth</a> used during the bitwise logic operation.<br>
+								Supported <a href="https://docs.derivative.ca/Pixel_Formats" target="_blank">formats</a> include&colon;<br>
+								<a href="https://photographylife.com/8-bit-vs-16-bit-images" target="_blank">8&hyphen; or 16&hyphen;bit</a> <a href="https://docs.derivative.ca/Pixel_Formats#:~:text=Supported%20Pixel%20Formats-,Fixed%20Point%20vs.%20Floating%20Point,-Fixed%20point%20formats" target="_blank">Fixed</a> <a href="https://docs.derivative.ca/Pixel_Formats#:~:text=D%2C%20D%2C%201).-,Supported%20Pixel%20Formats,-8%2Dbit%20fixed" target="_blank">RGBA, Mono, RG, A, or Mono + Alpha</a>.
 							</p>
 
 							<h5>Operand&colon;</h5>
 							<p>
-								Determines the bitwise logical operation performed between the two input images&colon;<br>
-								AND, OR, XOR, NAND, NOR, or XNOR.
+								Determines the bitwise <a href="https://homepages.inf.ed.ac.uk/rbf/HIPR2/arthops.htm" target="_blank">logical operation</a> performed between the two input images&colon;<br>
+								<a href="https://homepages.inf.ed.ac.uk/rbf/HIPR2/and.htm" target="_blank">AND</a>, <a href="https://homepages.inf.ed.ac.uk/rbf/HIPR2/or.htm" target="_blank">OR</a>, <a href="https://homepages.inf.ed.ac.uk/rbf/HIPR2/xor.htm" target="_blank">XOR</a>, <a href="https://homepages.inf.ed.ac.uk/rbf/HIPR2/and.htm" target="_blank">NAND</a>, <a href="https://homepages.inf.ed.ac.uk/rbf/HIPR2/or.htm" target="_blank">NOR</a>, or <a href="https://homepages.inf.ed.ac.uk/rbf/HIPR2/xor.htm" target="_blank">XNOR</a>.
 							</p>
 
 							<h4>In&hyphen; &sol; Outputs</h4>
@@ -883,11 +1014,11 @@
 
 						<div>
 							<h4>Parameters</h4>
-							<h5>Bit Depth&colon;</h5>
+							<h5><a href="https://en.wikipedia.org/wiki/Color_depth" target="_blank">Bit Depth</a>&colon;</h5>
 							<p>
-								Defines the pixel format and bit depth used during the bitwise NOT operation.<br>
-								Supported formats include&colon;<br>
-								8&hyphen; or 16&hyphen;bit Fixed RGBA, Mono, RG, A, or Mono + Alpha.
+								Defines the <a href="https://en.wikipedia.org/wiki/Pixel_format" target="_blank">pixel format</a> and <a href="https://en.wikipedia.org/wiki/Color_depth" target="_blank">bit depth</a> used during the bitwise NOT operation.<br>
+								Supported <a href="https://docs.derivative.ca/Pixel_Formats" target="_blank">formats</a> include&colon;<br>
+								<a href="https://photographylife.com/8-bit-vs-16-bit-images" target="_blank">8&hyphen; or 16&hyphen;bit</a> <a href="https://docs.derivative.ca/Pixel_Formats#:~:text=Supported%20Pixel%20Formats-,Fixed%20Point%20vs.%20Floating%20Point,-Fixed%20point%20formats" target="_blank">Fixed</a> <a href="https://docs.derivative.ca/Pixel_Formats#:~:text=D%2C%20D%2C%201).-,Supported%20Pixel%20Formats,-8%2Dbit%20fixed" target="_blank">RGBA, Mono, RG, A, or Mono + Alpha</a>.
 							</p>
 
 							<h4>In&hyphen; &sol; Outputs</h4>
