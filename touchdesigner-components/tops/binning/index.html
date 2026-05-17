@@ -93,10 +93,10 @@
 						<h1 id="title">Binning</h1>
 						<h2 id="sub-title"><a href="https://derivative.ca/" target="_blank">TD</a> <a href="https://derivative.ca/UserGuide/Component" target="_blank">COMPs</a> / <a href="https://derivative.ca/tags/tops" target="_blank">TOPs</a> / 2023 &ndash; Present</h2>
 						<p>
-							<a href="https://en.wikipedia.org/wiki/Pixel_binning" target="_blank">Pixel binning</a> is the process of grouping neighboring pixels into fixed&hyphen;size blocks and replacing each block with a single representative value. In imaging, this is often used for controlled <a href="https://www.geeksforgeeks.org/python/spatial-resolution-down-sampling-and-up-sampling-in-image-processing/" target="_blank">downsampling</a>, noise reduction, spatial pooling, or block&hyphen;based abstraction. Rather than simply resizing an image, binning applies a defined statistical operation.
+							<a href="https://en.wikipedia.org/wiki/Pixel_binning" target="_blank">Pixel binning</a> is the process of grouping neighboring pixels into fixed&hyphen;size blocks and replacing each block with a single representative value. In imaging, this is often used for controlled <a href="https://www.geeksforgeeks.org/python/spatial-resolution-down-sampling-and-up-sampling-in-image-processing/" target="_blank">downsampling</a>, <a href="https://en.wikipedia.org/wiki/Noise_reduction#:~:text=noise%20reduction%20functions.-,In%20images,-%5Bedit%5D" target="_blank">noise reduction</a>, <a href="https://en.wikipedia.org/wiki/Pooling_layer" target="_blank">spatial pooling</a>, or block&hyphen;based abstraction. Rather than simply resizing an image, binning applies a defined statistical operation.
 						</p>
 						<p>
-							At the moment, this category is fairly minimal and contains a single <a href="https://github.com/MaxMainio/TD_/blob/main/TOPs/Binning/Pixel_Binning.tox" target="_blank">Binning COMP</a> focused on operation&hyphen;driven downsampling. The direction of this section is still open&hyphen;ended. As new workflows emerge &mdash; whether analytical, structural, or stylistic &mdash; more components may find a home here. If you have ideas for future additions to this category, <a href="mailto:beidler.max@gmail.com" title="Shoot me an email!" target="_self">feel free to reach out</a> &mdash; I&rsquo;m always interested in expanding the toolkit in meaningful ways.
+							At the moment, this category is fairly minimal and contains a single <a href="https://github.com/MaxMainio/TD_/blob/main/TOPs/Binning/Pixel_Binning.tox" target="_blank">Binning COMP</a> focused on operation&hyphen;driven <a href="https://visionbook.mit.edu/upsamplig_downsampling_2.html" target="_blank">downsampling</a>. The direction of this section is still open&hyphen;ended. As new workflows emerge &mdash; whether <a href="https://en.wikipedia.org/wiki/Image_analysis" target="_blank">analytical</a>, <a href="https://www.bic.mni.mcgill.ca/uploads/Seminars/2013-09-23_-_Structural_Image_Preprocessing_-_Kunio_Nakamura.pdf" target="_blank">structural</a>, or stylistic &mdash; more components may find a home here. If you have ideas for future additions to this category, <a href="mailto:beidler.max@gmail.com" title="Shoot me an email!" target="_self">feel free to reach out</a> &mdash; I&rsquo;m always interested in expanding the toolkit in meaningful ways.
 						</p>
 						<p>
 							Index&colon;<br>
@@ -169,23 +169,24 @@
 
 				<section id="binning" class="documentation">
 					<div class="docuinfo">
-						<h2>Binning</h2>
+						<h2><a href="https://www.teledynevisionsolutions.com/learn/learning-center/imaging-fundamentals/binning/" target="_blank">Binning</a></h2>
 						<h3>Block&hyphen;Based Image Reduction</h3>
 						<p>
-							This component provides intentional control over how image detail is collapsed through block aggregation. Instead of relying on generic resampling, pixel binning groups neighboring pixels into fixed&hyphen;size regions and replaces each region with a representative value defined by a selected operation.
+							This component provides intentional control over how image detail is collapsed through block aggregation. Instead of relying on generic resampling, <a href="https://www.teledynevisionsolutions.com/learn/learning-center/imaging-fundamentals/binning/" target="_blank">pixel binning</a> groups neighboring pixels into fixed&hyphen;size regions and replaces each region with a representative value defined by a selected operation.
 						</p>
 
 						<p>
-							Depending on the chosen method, a bin can preserve dominant tones &lpar;<a href="https://en.wikipedia.org/wiki/Mode_(statistics)" target="_blank">Mode</a>&rpar;, accumulate intensity &lpar;<a href="https://en.wikipedia.org/wiki/Summation" target="_blank">Summation</a>&rpar;, compute central tendency &lpar;<a href="https://en.wikipedia.org/wiki/Average" target="_blank">Average</a>&rpar;, or isolate extremes &lpar;<a href="https://en.wikipedia.org/wiki/Maximum_and_minimum" target="_blank">Maximum &sol; Minimum</a>&rpar;. Because the reduction is discrete and rule&hyphen;driven, binning functions both as a technical tool for resolution management and as a stylistic device for block&hyphen;based abstraction.
+							Depending on the chosen method, a bin can preserve dominant tones &lpar;<a href="https://en.wikipedia.org/wiki/Mode_(statistics)" target="_blank">Mode</a>&rpar;, accumulate intensity &lpar;<a href="https://en.wikipedia.org/wiki/Summation" target="_blank">Summation</a>&rpar;, compute central tendency &lpar;<a href="https://en.wikipedia.org/wiki/Average" target="_blank">Average</a>&rpar;, or isolate extremes &lpar;<a href="https://en.wikipedia.org/wiki/Maximum_and_minimum" target="_blank">Maximum &sol; Minimum</a>&rpar;. Because the reduction is discrete and rule&hyphen;driven, <a href="https://www.teledynevisionsolutions.com/learn/learning-center/imaging-fundamentals/binning/" target="_blank">binning</a> functions both as a technical tool for resolution management and as a stylistic device for block&hyphen;based abstraction.
 						</p>
 
 						<p>
-							Unlike conventional resizing, which interpolates between pixels, binning enforces structural segmentation. This makes it useful not only for downsampling, but for spatial pooling, noise consolidation, data compression experiments, and graphic simplification workflows.
+							Unlike <a href="https://en.wikipedia.org/wiki/Image_scaling#:~:text=learning%20from%20examples.-,Algorithms,-%5Bedit%5D" target="_blank">conventional resizing</a>, which <a href="https://medium.com/@nuwanthidileka/image-interpolation-5e4cbe90603a" target="_blank">interpolates between pixels</a>, <a href="https://www.teledynevisionsolutions.com/learn/learning-center/imaging-fundamentals/binning/" target="_blank">binning</a> enforces structural segmentation. This makes it useful not only for <a href="https://support.zivid.com/en/latest/camera/reference-articles/downsampling-theory.html" target="_blank">downsampling</a>, but for <a href="https://en.wikipedia.org/wiki/Pooling_layer" target="_blank">spatial pooling</a>, <a href="https://en.wikipedia.org/wiki/Noise_reduction" target="_blank">noise consolidation</a>, <a href="https://en.wikipedia.org/wiki/Image_compression" target="_blank">data compression</a> experiments, and graphic simplification workflows.
 						</p>
 
 						<h5>Resources&colon;</h5>
 						<p>
-							<a href="https://github.com/MaxMainio/TD_" target="_blank">Download the .tox files</a>
+							<a href="https://github.com/MaxMainio/TD_" target="_blank">Download the .tox files</a>,<br>
+							<a href="https://astrobackyard.com/binning-astrophotography/" target="_blank">Understand Binning in Astrophotography</a>
 						</p>
 					</div>
 
@@ -254,7 +255,7 @@
 							<h4>Parameters</h4>
 							<h5>Bin Size&colon;</h5>
 							<p>
-								Defines the width and height of each pixel block used for downsampling. A Bin Size of 16 processes 16&times;16 pixel regions into a single output pixel.
+								Defines the width and height of each pixel block used for <a href="https://support.zivid.com/en/latest/camera/reference-articles/downsampling-theory.html" target="_blank">downsampling</a>. A Bin Size of 16 processes 16&times;16 pixel regions into a single output pixel.
 							</p>
 
 							<h5>Operation&colon;</h5>
@@ -264,24 +265,24 @@
 	
 							<h5>Quantization&colon;</h5>
 							<p>
-								Active only when Operation is set to Mode. Reduces value precision within each bin to improve matching frequency detection. Higher values increase quantization steps.
+								Active only when <i>Operation</i> is set to <a href="https://en.wikipedia.org/wiki/Mode_(statistics)" target="_blank">Mode</a>. Reduces value precision within each bin to improve matching frequency detection. Higher values increase quantization steps.
 							</p>
 
 							<h5>Method&colon;</h5>
 							<p>
-								Active only when Operation is set to Average. Specifies how the bin&rsquo;s representative value is calculated: Mean, Median, or Medoid.
+								Active only when <i>Operation</i> is set to <a href="https://en.wikipedia.org/wiki/Average" target="_blank">Average</a>. Specifies how the bin&rsquo;s representative value is calculated&colon; <a href="https://en.wikipedia.org/wiki/Arithmetic_mean" target="_blank">Mean</a>, <a href="https://en.wikipedia.org/wiki/Median" target="_blank">Median</a>, or <a href="https://en.wikipedia.org/wiki/Medoid" target="_blank">Medoid</a>.
 							</p>
 
 							<hr/>
 
 							<h5>Comparator&colon;</h5>
 							<p>
-								Determines how pixel alpha values are evaluated against the Alpha Threshold. Defines which pixels are included in the bin calculation.
+								Determines how pixel <a href="https://www.linearity.io/blog/alpha-channel/" target="_blank">alpha values</a> are evaluated against the <i>Alpha Threshold</i>. Defines which pixels are included in the bin calculation.
 							</p>
 
 							<h5>Alpha Threshold&colon;</h5>
 							<p>
-								Sets the alpha value used by the Comparator to determine which pixels contribute to the downsampling operation.
+								Sets the <a href="https://www.linearity.io/blog/alpha-channel/" target="_blank">alpha value</a> used by the Comparator to determine which pixels contribute to the <a href="https://support.zivid.com/en/latest/camera/reference-articles/downsampling-theory.html" target="_blank">downsampling</a> operation.
 							</p>
 
 							<h4>In&hyphen; &sol; Outputs</h4>
