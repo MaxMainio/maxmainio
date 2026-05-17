@@ -93,10 +93,13 @@
 						<h1 id="title">Bitwise</h1>
 						<h2 id="sub-title"><a href="https://derivative.ca/" target="_blank">TD</a> <a href="https://derivative.ca/UserGuide/Component" target="_blank">COMPs</a> / <a href="https://derivative.ca/tags/tops" target="_blank">TOPs</a> / 2023 &ndash; Present</h2>
 						<p>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim diam vulputate ut pharetra sit amet aliquam. Integer eget aliquet nibh praesent tristique magna sit. Massa id neque aliquam vestibulum. Egestas diam in arcu cursus euismod quis viverra nibh. Ultrices vitae auctor eu augue ut lectus arcu bibendum at. Vel risus commodo viverra maecenas accumsan lacus vel facilisis volutpat. Sit amet cursus sit amet dictum sit. Scelerisque mauris pellentesque pulvinar pellentesque habitant morbi tristique. Rutrum quisque non tellus orci ac.
+							<a href="https://github.com/MaxMainio/TD_/tree/main/TOPs/Bitwise" target="_blank">This collection of components</a> focuses on <a href="https://medium.com/@RiwajNeupane/arithmetic-and-bitwise-operations-in-image-097e0190ac6a" target="_blank">bit&hyphen;level image processing operations</a>. Rather than interpreting pixel values purely as continuous intensities or colors, these operators treat image data as <a href="https://bioimagebook.github.io/chapters/1-concepts/3-bit_depths/bit_depths.html" target="_blank">binary information</a> &mdash; allowing direct manipulation of the individual bits that compose each pixel value.
 						</p>
 						<p>
-							Cras sed felis eget velit. Ipsum a arcu cursus vitae congue. Quis ipsum suspendisse ultrices gravida dictum. Condimentum mattis pellentesque id nibh tortor id aliquet. Magna fermentum iaculis eu non. Massa eget egestas purus viverra accumsan. Lobortis mattis aliquam faucibus purus in massa tempor. Aliquam id diam maecenas ultricies mi. Morbi enim nunc faucibus a pellentesque. Ultricies mi eget mauris pharetra et ultrices neque ornare.
+							<a href="https://en.wikipedia.org/wiki/Bitwise_operation" target="_blank">Bitwise operations</a> form a low&hyphen;level computational layer beneath many image processing techniques. <a href="https://www.interviewcake.com/concept/java/bit-shift" target="_blank">Shifting</a>, <a href="https://www.geeksforgeeks.org/dsa/what-is-bitmasking/" target="_blank">masking</a>, <a href="https://www.luisllamas.es/en/binary-logical-operations/" target="_blank">logical comparison</a>, and binary pattern analysis can be used for tasks ranging from compact image analysis and texture classification to stylized digital artifacts and reduced&hyphen;precision aesthetics.
+						</p>
+						<p>
+							Unlike traditional <a href="https://vincmazet.github.io/bip/digital-images/operations.html" target="_blank">arithmetic image operations</a>, <a href="https://en.wikipedia.org/wiki/Bitwise_operation" target="_blank">bitwise processes</a> often produce abrupt structural changes in the <a href="https://www.teachwithict.com/binary-representation-of-images.html" target="_blank">binary representation of an image</a>. This makes them useful both as analytical tools and as intentionally &ldquo;digital&rdquo; visual transformations that expose the discrete nature of image data itself.
 						</p>
 						<p>
 							Index&colon;<br>
@@ -348,11 +351,11 @@
 						<h2>Bitshift</h2>
 						<h3>Bitwise Shifting Operations</h3>
 						<p>
-							<a href="https://github.com/MaxMainio/TD_/blob/main/TOPs/Bitwise/Bitshift.tox" target="_blank">This component</a> performs bitwise shift operations on the pixels of the input image. Rather than manipulating pixel values through traditional arithmetic, this <a href="https://github.com/MaxMainio/TD_/blob/main/TOPs/Bitwise/Bitshift.tox" target="_blank">Bitshift COMP</a> operates directly on the binary representation of each pixel channel, shifting all bits either left or right by a user&hyphen;defined number of steps.
+							<a href="https://github.com/MaxMainio/TD_/blob/main/TOPs/Bitwise/Bitshift.tox" target="_blank">This component</a> performs <a href="https://www.interviewcake.com/concept/java/bit-shift" target="_blank">bitwise shift operations</a> on the pixels of the input image. Rather than manipulating pixel values through <a href="https://medium.com/@RiwajNeupane/arithmetic-and-bitwise-operations-in-image-097e0190ac6a" target="_blank">traditional arithmetics</a>, this <a href="https://github.com/MaxMainio/TD_/blob/main/TOPs/Bitwise/Bitshift.tox" target="_blank">Bitshift COMP</a> operates directly on the <a href="https://www.teachwithict.com/binary-representation-of-images.html" target="_blank">binary representation</a> of each <a href="https://en.wikipedia.org/wiki/Channel_(digital_image)" target="_blank">pixel channel</a>, shifting all bits either left or right by a user&hyphen;defined number of steps.
 						</p>
 
 						<p>
-							A left shift moves all bits toward more significant positions, effectively multiplying integer pixel values by powers of two, while a right shift moves bits toward less significant positions, reducing precision and dividing values by powers of two. Bits shifted beyond the available bit range are discarded, and newly introduced positions are filled with zeros.
+							A <a href="https://www.interviewcake.com/concept/java/bit-shift#:~:text=types%20of%20shifts%3A-,Left%20Shifts,-When%20shifting%20left" target="_blank">left shift</a> moves all bits toward more significant positions, effectively multiplying integer pixel values by powers of two, while a <a href="https://www.interviewcake.com/concept/java/bit-shift#:~:text=Logical%20Right%20Shifts" target="_blank">right shift</a> moves bits toward less significant positions, reducing precision and dividing values by powers of two. Bits <a href="https://www.interviewcake.com/concept/java/bit-shift" target="_blank">shifted</a> beyond the available bit range are discarded, and newly introduced positions are filled with zeros.
 						</p>
 
 						<p>
@@ -362,7 +365,7 @@
 						<ul>
 							<li>
 								<p>
-									Left shift&colon;
+									<a href="https://www.interviewcake.com/concept/java/bit-shift#:~:text=types%20of%20shifts%3A-,Left%20Shifts,-When%20shifting%20left" target="_blank">Left shift</a>&colon;
 								</p>
 
 								<p class="maths" title="Right click for a cheat sheet">
@@ -391,7 +394,7 @@
 
 							<li>
 								<p>
-									Right shift&colon;
+									<a href="https://www.interviewcake.com/concept/java/bit-shift#:~:text=Logical%20Right%20Shifts" target="_blank">Right shift</a>&colon;
 								</p>
 
 								<p class="maths" title="Right click for a cheat sheet">
@@ -429,7 +432,7 @@
 						</ul>
 
 						<p>
-							Where <span title="Right click for a cheat sheet"><math><mi>n</mi></math></span> denotes the number of shift steps.
+							Where <span title="Right click for a cheat sheet"><math><mi>n</mi></math></span> denotes the number of <a href="https://www.interviewcake.com/concept/java/bit-shift" target="_blank">shift</a> steps.
 						</p>
 
 						<p>
@@ -465,7 +468,7 @@
 						</p>
 
 						<p>
-							Because the operation is performed directly on binary data, the visual result depends heavily on the selected Bit Depth and pixel format. Small shifts may produce subtle quantization changes, while larger shifts can dramatically reduce or amplify tonal structure. This makes bitshifting useful both as a low&hyphen;level image processing utility and as a stylistic operation for creating posterization, digital corruption, or reduced&hyphen;precision aesthetics.
+							Because the operation is performed directly on <a href="https://medium.com/@andrewcohn0/how-are-images-encoded-in-binary-a-very-simplified-explanation-aba7435f3016" target="_blank">binary data</a>, the visual result depends heavily on the selected <a href="https://en.wikipedia.org/wiki/Color_depth" target="_blank">Bit Depth</a> and <a href="https://en.wikipedia.org/wiki/Pixel_format" target="_blank">pixel format</a>. Small <a href="https://www.interviewcake.com/concept/java/bit-shift" target="_blank">shifts</a> may produce subtle <a href="https://en.wikipedia.org/wiki/Quantization_(image_processing)" target="_blank">quantization</a> changes, while larger <a href="https://www.interviewcake.com/concept/java/bit-shift" target="_blank">shifts</a> can dramatically reduce or amplify tonal structure. This makes <a href="https://www.interviewcake.com/concept/java/bit-shift" target="_blank">bitshifting</a> useful both as a low&hyphen;level image processing utility and as a stylistic operation for creating <a href="https://en.wikipedia.org/wiki/Posterization" target="_blank">posterization</a>, digital corruption, or reduced&hyphen;precision aesthetics.
 						</p>
 
 						<h5>Resources&colon;</h5>
@@ -539,21 +542,21 @@
 
 						<div>
 							<h4>Parameters</h4>
-							<h5>Bit Depth&colon;</h5>
+							<h5><a href="https://en.wikipedia.org/wiki/Color_depth" target="_blank">Bit Depth</a>&colon;</h5>
 							<p>
-								Defines the pixel format and bit depth used during the bitshift operation.<br>
+								Defines the <a href="https://en.wikipedia.org/wiki/Pixel_format" target="_blank">pixel format</a> and <a href="https://en.wikipedia.org/wiki/Color_depth" target="_blank">bit depth</a> used during the <a href="https://www.interviewcake.com/concept/java/bit-shift" target="_blank">bitshift operation</a>.<br>
 								Supported formats include&colon;<br>
 								8&hyphen; or 16&hyphen;bit Fixed RGBA, Mono, RG, A, or Mono + Alpha.
 							</p>
 
 							<h5>Direction&colon;</h5>
 							<p>
-								Determines whether the bits of each pixel are shifted left or right.
+								Determines whether the bits of each pixel are <a href="https://www.interviewcake.com/concept/java/bit-shift#:~:text=types%20of%20shifts%3A-,Left%20Shifts,-When%20shifting%20left" target="_blank">shifted left</a> or <a href="https://www.interviewcake.com/concept/java/bit-shift#:~:text=Logical%20Right%20Shifts" target="_blank">right</a>.
 							</p>
 
 							<h5>Steps&colon;</h5>
 							<p>
-								Defines the number of bit positions to shift in the selected direction.
+								Defines the number of bit positions to <a href="https://www.interviewcake.com/concept/java/bit-shift" target="_blank">shift</a> in the selected direction.
 							</p>
 
 							<h4>In&hyphen; &sol; Outputs</h4>
@@ -562,7 +565,7 @@
 							</p>
 
 							<p>
-								<b>Output 0</b> &ndash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> bitshifted image.
+								<b>Output 0</b> &ndash; <a href="https://derivative.ca/UserGuide/TOP" target="_blank"><span class="top-text">TOP</span></a> <a href="https://www.interviewcake.com/concept/java/bit-shift" target="_blank">bitshifted</a> image.
 							</p>
 
 							<p style="margin-top: 1rem;">
