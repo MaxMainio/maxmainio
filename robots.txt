@@ -30,6 +30,12 @@ Disallow: /work/sort-later/assets/no-index/
 
 Disallow: /touchdesigner-components/assets/no-index/
 Disallow: /touchdesigner-components/cheat-sheet/
+Disallow: /touchdesigner-components/tops/binning/assets/no-index/
+Disallow: /touchdesigner-components/tops/bitwise/assets/no-index/
+Disallow: /touchdesigner-components/tops/color/assets/no-index/
+Disallow: /touchdesigner-components/tops/color/converters/assets/no-index/
+Disallow: /touchdesigner-components/tops/color/importers/assets/no-index/
+Disallow: /touchdesigner-components/tops/dithering/assets/no-index/
 Disallow: /touchdesigner-components/tops/edge-detectors/assets/no-index/
 Disallow: /touchdesigner-components/tops/histogram/assets/no-index/
 Disallow: /touchdesigner-components/tops/mapping/assets/no-index/
@@ -40,3 +46,4 @@ Disallow: /touchdesigner-components/tops/math/matrix/assets/no-index/
 Disallow: /touchdesigner-components/tops/math/vectors/assets/no-index/
 Disallow: /touchdesigner-components/tops/morphologicalassets/no-index/
 Disallow: /touchdesigner-components/tops/signed-distance-fields/assets/no-index/
+Disallow: /touchdesigner-components/tops/sorting/assets/no-index/
