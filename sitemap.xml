@@ -138,23 +138,21 @@
   <priority>1.00</priority>
 </url>
 
-<url>
-  <loc>https://maxmain.io/touchdesigner-components/tops/edge-detectors/</loc>
-  <lastmod>2026-05-04T03:49:02+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
 
-<url>
-  <loc>https://maxmain.io/touchdesigner-components/tops/morphological/</loc>
-  <lastmod>2026-05-04T03:49:02+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
 
 <url>
   <loc>https://maxmain.io/touchdesigner-components/tops/binning/</loc>
   <lastmod>2026-05-04T03:49:02+00:00</lastmod>
   <priority>0.80</priority>
 </url>
+
+<url>
+  <loc>https://maxmain.io/touchdesigner-components/tops/bitwise/</loc>
+  <lastmod>2026-05-18T05:53:23+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+
+
 
 <url>
   <loc>https://maxmain.io/touchdesigner-components/tops/color/</loc>
@@ -177,6 +175,12 @@
 </url>
 
 <url>
+  <loc>https://maxmain.io/touchdesigner-components/tops/edge-detectors/</loc>
+  <lastmod>2026-05-04T03:49:02+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+
+<url>
   <loc>https://maxmain.io/touchdesigner-components/tops/histogram/</loc>
   <lastmod>2026-05-04T03:49:02+00:00</lastmod>
   <priority>0.80</priority>
@@ -187,6 +191,8 @@
   <lastmod>2026-05-04T03:49:02+00:00</lastmod>
   <priority>0.80</priority>
 </url>
+
+
 
 <url>
   <loc>https://maxmain.io/touchdesigner-components/tops/math/</loc>
@@ -213,6 +219,12 @@
 </url>
 
 
+
+<url>
+  <loc>https://maxmain.io/touchdesigner-components/tops/morphological/</loc>
+  <lastmod>2026-05-04T03:49:02+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
 
 <url>
   <loc>https://maxmain.io/touchdesigner-components/tops/signed-distance-fields/</loc>
