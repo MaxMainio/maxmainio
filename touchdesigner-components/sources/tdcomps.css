@@ -327,6 +327,11 @@ h5 + p{
     background-color: var(--td-sop-text-color);
 }
 
+.comp-text{
+    padding: 0.2rem 0.1rem 0 0.15rem;
+    background-color: var(--td-panel-color-alt);
+}
+
 .pop-text{
     color: var(--anti-type);
     padding: 0.2rem 0.1rem 0 0.15rem;
