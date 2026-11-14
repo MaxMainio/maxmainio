@@ -204,6 +204,7 @@ nav{
 
 /* FADER    --------------------------------------------------------------------------------------------------------------------- */
 .fader{
+    display: none;
     position: fixed;
     height: 300vh;
     width: 100vw;
@@ -218,16 +219,23 @@ nav{
             transform: translateY(0);
 
     pointer-events: none;
-    -webkit-transition: 0.5s ease-in-out;
-    -o-transition: 0.5s ease-in-out;
-    transition: 0.5s ease-in-out;
+    transition: transform 0.5s ease-in-out;
+
+    &.is-active{
+        display: block;
+        animation: fader-recovery 1.8s step-end forwards;
+    }
 
     &.motion{
         -webkit-transform: translateY(-200vh);
             -ms-transform: translateY(-200vh);
                 transform: translateY(-200vh);
-        pointer-events: all;
     }
+}
+
+/* CSS also releases the overlay if execution stops after activation. */
+@keyframes fader-recovery {
+    to { visibility: hidden; }
 }
 
 
@@ -242,15 +250,6 @@ nav{
 .blur-load{
     background-size: cover;
     background-position: center;
-    
-    /* opacity: 0;
-    -webkit-transition: opacity 200ms ease-in-out;
-    -o-transition: opacity 200ms ease-in-out;
-    transition: opacity 200ms ease-in-out;
-
-    &.loaded{
-        opacity: 1;
-    } */
 }
 
 
@@ -260,6 +259,12 @@ nav{
 
 
 
+
+/* Failed images retain their alternative text and layout without implying ongoing loading. */
+img[data-media-state="error"] {
+    background-color: #f2f2f2;
+    outline: 1px dotted var(--anti-type);
+}
 
 /* MAIN ------------------------------------------------------------------------------------------------------------------------- */
 a img {
@@ -395,6 +400,60 @@ a{
 a:hover{
     background-color: var(--green);
     cursor: pointer;
+}
+
+/* Native controls keep the surrounding typography and the site's green feedback. */
+.plain-control{
+    appearance: none;
+    border: 0;
+    padding: 0;
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    letter-spacing: inherit;
+    text-align: inherit;
+    cursor: pointer;
+}
+
+.plain-control:hover{
+    background-color: var(--green);
+}
+
+:where(a, button, input, select, textarea, [tabindex]:not([tabindex="-1"]), [contenteditable]):focus-visible{
+    outline: 2px solid var(--type-color) !important;
+    outline-offset: 3px;
+    box-shadow: 0 0 0 3px var(--green);
+}
+
+.carousel-button:focus-visible,
+.zoomable.focused:focus-visible,
+.focused-glyph:focus-visible{
+    outline-offset: -5px;
+    box-shadow: inset 0 0 0 3px var(--green);
+}
+
+[hidden]{
+    display: none !important;
+}
+
+.visually-hidden,
+.radio-button input[type="radio"],
+input.visually-hidden{
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+    border: 0;
+}
+
+:is(input[type="radio"], input[type="checkbox"]):focus-visible + label{
+    outline: 2px solid var(--type-color);
+    outline-offset: 3px;
+    box-shadow: 0 0 0 3px var(--green);
 }
 
 sup, sub {
@@ -563,7 +622,7 @@ footer{
 
 
 @media (width <= 800px) {
-    #fader{
+    .fader.is-active{
         display: none;
     }
 }
@@ -581,11 +640,16 @@ footer{
         --shadow: 0px 0px 0px rgba(0, 0, 0, 0);
     }
 
-    #fader, #splash, header, footer{
+    .fader, .fader.is-active, #splash, header, footer{
         display: none;
     }
 
     img, video{
         background-image: none !important;
     }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto !important; }
+    .fader.is-active { display: none; }
 }

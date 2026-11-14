@@ -5,10 +5,12 @@ document.getElementById('moss-vid').playbackRate = 0.20;
 const simulationPages = document.getElementById('simulation-pages');
 const leftPage = document.getElementById('simulation-left');
 const rightPage = document.getElementById('simulation-right');
+const generateButton = document.getElementById('generate-poem');
+const printButton = document.getElementById('print-poem');
+const poemStatus = document.getElementById('poem-status');
 
 // Values & measurements    --------------------------------------------------------------------------------------------------------
 var isGenerating = false;
-var firstTransfer = true;
 
 const horizontalIMGs = 10;
 const verticalIMGs = 17;
@@ -60,7 +62,7 @@ poemClips[30] = 'Not a container <br> but an empty space';
 
 // INITIALIZERS & EVENT TRIGGERS    ================================================================================================
 window.addEventListener('pageshow', (event) => {
-    generatePoem();
+    if (!event.persisted) generatePoem();
 });
 
 window.addEventListener('afterprint', (event) => {
@@ -68,6 +70,11 @@ window.addEventListener('afterprint', (event) => {
     if (printCSS) {
         printCSS.remove();
     };
+});
+
+generateButton.addEventListener('click', generatePoem);
+printButton.addEventListener('click', () => {
+    if (leftPage.children.length) addPrintStylesheetAndPrint();
 });
 
 leftPage.addEventListener('click', (event) => {
@@ -97,6 +104,9 @@ function generatePoem(){
     };
 
     isGenerating = true;
+    generateButton.setAttribute('aria-disabled', 'true');
+    rightPage.setAttribute('aria-busy', 'true');
+    poemStatus.textContent = 'Generating a new Crosswalk Poem...';
     document.documentElement.style.setProperty('--rightCursor', 'wait');
 
     prepTitle();
@@ -201,11 +211,12 @@ function transportPoem(){
 
     isGenerating = false;
 
-    if (firstTransfer = true) {
-        leftPage.setAttribute('title', 'Click anywhere here on the left page to print your Crosswalk Poem.');
-        document.documentElement.style.setProperty('--leftCursor', 'pointer');
-        firstTransfer = false;
-    };
+    generateButton.setAttribute('aria-disabled', 'false');
+    rightPage.setAttribute('aria-busy', 'false');
+    printButton.disabled = false;
+    poemStatus.textContent = 'Your Crosswalk Poem is ready to print.';
+    leftPage.setAttribute('title', 'Click anywhere here on the left page to print your Crosswalk Poem.');
+    document.documentElement.style.setProperty('--leftCursor', 'pointer');
 };
 
 function getTime(){

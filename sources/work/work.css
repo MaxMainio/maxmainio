@@ -145,6 +145,11 @@ article{
     pointer-events: none;
 }
 
+.content img, .content video{
+    /* Inline baselines must not add height to aspect-ratio wrappers. */
+    display: block;
+}
+
 .out-container{
     position: absolute;
     height: 100%;
@@ -258,42 +263,19 @@ hgroup{
         -ms-flex-align: center;
             align-items: center;
 
-    /* & > a.hero {
-        display: block;
-        position: relative;
-        height: 100%;
-
-        pointer-events: all;
-
-        & img {
-            height: 100%;
-        }
-    }
-
-    & > a.swoosh {
-        width: 100%;
-        position: absolute;
-        inset: auto 0 0 0;
-
-        &:hover{
-            background-color: rgba(0, 0, 0, 0);
-        }
-
-        & > svg * {
-            fill: var(--swoosh-color);
-            pointer-events: visibleFill;
-        }
-    } */
-
     & > div.hero {
-        display: block;
-        position: relative;
-        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        inset: 0;
 
-        pointer-events: all;
-
-        & img {
-            height: 100%;
+        & img, video {
+            width: auto;
+            height: auto;
+            max-width: 100%;
+            max-height: 100%;
+            pointer-events: all;
         }
     }
 
@@ -301,6 +283,14 @@ hgroup{
         width: 100%;
         position: absolute;
         inset: auto 0 0 0;
+        max-height: 100%;
+        aspect-ratio: 1196.7 / 424;
+
+        & > svg {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
 
         &:hover{
             background-color: rgba(0, 0, 0, 0);
@@ -469,13 +459,15 @@ span.lawn, span.flower{
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    justify-content: center;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
 }
 
 .carving-content{
-    width: 100%;
+    /* Keep the stage height stable while the image sequence changes width. */
+    width: min(100%, calc(100vh * 1440 / 810));
     max-height: 100%;
     aspect-ratio: 1440 / 810;
     display: -webkit-box;
@@ -696,8 +688,10 @@ span.lawn, span.flower{
 /* GENERATIVE? POEMS    --------------------------------------------------------------------------------------------------------- */
 #generative-poems a{
     & img{
+        /* Fit the ratio-sized link even when a scan differs by a pixel. */
         width: 100%;
-        height: auto;
+        height: 100%;
+        object-fit: contain;
     }
 }
 
@@ -710,8 +704,10 @@ span.lawn, span.flower{
 
     & a{
         display: block;
+        min-width: 0;
+        min-height: 0;
         max-width: 100%;
-        max-height: auto;
+        max-height: 100%;
         aspect-ratio: 1024 / 1322;
 
         pointer-events: all;
@@ -749,6 +745,8 @@ span.lawn, span.flower{
 
     & a{
         display: block;
+        min-width: 0;
+        min-height: 0;
         max-width: 100%;
         max-height: 100%;
         aspect-ratio: 1024 / 1322;
@@ -1700,11 +1698,11 @@ a.in-fit{
         }
     
         &:nth-of-type(2) a{
-            margin: 20% 0 auto 0;
+            margin: min(20%, 20vh) 0 auto 0;
         }
     
         &:nth-of-type(3) a{
-            margin: auto 0 20% 0;
+            margin: auto 0 min(20%, 20vh) 0;
         }
     }
 }
@@ -1717,6 +1715,7 @@ a.in-fit{
     }
 
     .sortlater-content:nth-of-type(4){
+        height: min(50%, calc(50vw * 356 / 216));
         max-width: 50vw;
     }
 
@@ -1814,3 +1813,6 @@ a.in-fit{
                        break-inside: avoid;
     }
 }
+
+
+#nike .hero [hidden]{ display: none; }

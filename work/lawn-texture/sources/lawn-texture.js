@@ -353,7 +353,7 @@ illegibleBtn.addEventListener('click', event => {
             clearSpans(element);
         });
 
-        illegibleBtn.innerHTML = '<h3>Restart growth!<h3/>';
+        illegibleBtn.querySelector('span').textContent = 'Restart growth!';
         illegibleBtn.title = 'If you want to restart the growth simulation you can click this button and it will refresh the page.';
 
     } else {

@@ -363,3 +363,16 @@ video{
         grid-row: 4 / 6;
     }
 }
+/* Keep the book's pointer interaction and offer the same actions as native controls. */
+.simulation-controls{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1rem;
+    margin-top: 0.75rem;
+}
+
+.simulation-controls button:disabled,
+.simulation-controls button[aria-disabled="true"]{
+    color: var(--anti-type);
+    cursor: wait;
+}

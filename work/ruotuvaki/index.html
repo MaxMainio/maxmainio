@@ -53,7 +53,7 @@
 		</script>
 	</head>
 
-	<body>
+	<body id="top" tabindex="-1">
 		<div id="fader" class="fader motion"></div>
 
 		<header>
@@ -111,9 +111,9 @@
 				</div>
 
 				<div id="aukeama-container">
-					<div class="carousel" data-carousel>
-						<button class="carousel-button prev" data-carousel-button="prev"></button>
-						<button class="carousel-button next" data-carousel-button="next"></button>
+					<div class="carousel" data-carousel data-carousel-label="Ruotuväki pages">
+						<button class="carousel-button prev" data-carousel-button="prev" type="button" aria-label="Previous image"></button>
+						<button class="carousel-button next" data-carousel-button="next" type="button" aria-label="Next image"></button>
 
 						<ul data-slides>
 							<li class="slide" data-active="">
@@ -218,7 +218,7 @@
 
 					<div>
 						<h2>Navigation</h2>
-						<h3><a target="_self" id="top-btn" title="Click here to be taken back to the top of this page.">Back to Top</a></h3>
+						<h3><a href="#top" target="_self" id="top-btn" title="Click here to be taken back to the top of this page.">Back to Top</a></h3>
 						<h3><a href="../../#ruotuvaki" title="Click here to return to the main work page.">Work</a></h3>
 						<h3><a href="../../about/" title="Click here to learn more about who I am.">About</a></h3>
 					</div>

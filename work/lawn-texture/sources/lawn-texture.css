@@ -100,7 +100,7 @@ article{
         cursor: pointer;
     }
 
-    & h3{
+    & span{
         font-weight: 400;
         font-size: 1rem;
         line-height: 1rem;
@@ -207,7 +207,7 @@ article{
         max-width: calc(50vw - 2.5rem);
         inset: auto 1rem 1rem auto;
 
-        & h3{
+        & span{
             font-weight: 300;
             font-size: 0.8rem;
             line-height: 1.1rem;

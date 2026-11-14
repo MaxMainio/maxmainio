@@ -15,7 +15,6 @@ var windowPos = window.scrollY;
 // INITIALIZERS & EVENT TRIGGERS    ================================================================================================
 window.addEventListener('pageshow', e => {
 	applyParallax(windowPos);
-	hedera();
 
 	if (isSortlaterVisible) {
 		applySortLaterScroll();
@@ -128,11 +127,18 @@ if (splash) {
 
 
 // INDEX	========================================================================================================================
-const indexBtn = document.getElementById('index-btn');
+const indexBtn = document.querySelector('#index-btn button');
 const index = document.getElementById('index');
 
-indexBtn.addEventListener('click', e => {
-	index.style.display = index.style.display === 'none' ? '' : 'none';
+indexBtn.addEventListener('click', () => {
+	index.hidden = !index.hidden;
+	indexBtn.setAttribute('aria-expanded', String(!index.hidden));
+});
+index.addEventListener('keydown', event => {
+	if (event.key !== 'Escape') return;
+	index.hidden = true;
+	indexBtn.setAttribute('aria-expanded', 'false');
+	indexBtn.focus();
 });
 
 
@@ -217,91 +223,116 @@ function applyParallax(windowPos) {
 
 
 // NIKE SECTION	====================================================================================================================
-const nikeHero = document.getElementById('nike-hero');
+const nikeFallback = document.getElementById('nike-hero');
+let nikeHero = nikeFallback;
+const nikeImageDataURL = new URL('nike-images.json', document.currentScript.src);
 
-if (nikeHero) {
-	const heroImages = [
-		{
-			src: 'work/nike/assets/content/2025/phantom-6/model/high/phantom-6-high-4.avif',
-			blur: '(work/nike/assets/no-index/2025/phantom-6/model/high/phantom-6-high-4-blurry.webp',
-			alt: 'Detail image of the underside of the Nike Phantom 6 football cleat.',
-			title: 'Phantom 6 — underside detail of the football cleat.'
-		},
-		{
-			src: 'work/nike/assets/content/2025/run-swoosh/marketing/run-swoosh-shoot-1.jpg',
-			blur: '(work/nike/assets/no-index/2025/run-swoosh/marketing/run-swoosh-shoot-1-blurry.jpg',
-			alt: 'Runner in motion on a track wearing the Run Swoosh Vomero 18s.',
-			title: 'Run Swoosh — runner in motion wearing the Vomero 18.'
-		},
-		{
-			src: 'work/nike/assets/content/2025/run-swoosh/marketing/run-swoosh-shoot-2.jpg',
-			blur: '(work/nike/assets/no-index/2025/run-swoosh/marketing/run-swoosh-shoot-2-blurry.jpg',
-			alt: 'Runner stretching on a track while wearing the Run Swoosh Vomero 18s.',
-			title: 'Run Swoosh — runner stretching in the Vomero 18.'
-		},
-		{
-			src: 'work/nike/assets/content/2025/sabrina-3-hoopers-blueprint/marketing/sabrina-3-hoopers-blueprint-launch-1.webp',
-			blur: 'work/nike/assets/no-index/2025/sabrina-3-hoopers-blueprint/marketing/sabrina-3-hoopers-blueprint-launch-1-blurry.webp',
-			alt: "Sabrina Ionescu dribbling on a basketball court while wearing the Nike Sabrina 3 in the launch Hooper's Blueprint colorway.",
-			title: "Hooper's Blueprint — Sabrina Ionescu in the new Sabrina 3s."
-		},
-		{
-			src: 'work/nike/assets/content/2025/nxn/merch/gear-nxn-1.webp',
-			blur: 'work/nike/assets/no-index/2025/nxn/merch/gear-nxn-1-blurry.webp',
-			alt: "Nike Cross Nationals (NXN) official backpack and Dragonfly XC track spikes provided to qualifying runners for the 2025 competition.",
-			title: "Nike Cross Nationals 2025 — NXN backpack and Dragonfly XC spikes."
-		},
-		{
-			src: 'work/nike/assets/content/2025/vomero-premium/launch/vomero-premium-georgia-bell-launch.webp',
-			blur: 'work/nike/assets/no-index/2025/vomero-premium/launch/vomero-premium-georgia-bell-launch-blurry.webp',
-			alt: "Professional runner Georgia Bell in motion wearing the Nike Vomero Premium.",
-			title: "Vomero Premium — worn by Georgia Bell."
-		},
-		{
-			src: 'work/nike/assets/content/2025/vomero-premium/launch/vomero-premium-jacob-kiplimo-launch.webp',
-			blur: 'work/nike/assets/no-index/2025/vomero-premium/launch/vomero-premium-jacob-kiplimo-launch-blurry.webp',
-			alt: "Professional runner Jacob Kiplimo in motion wearing the Nike Vomero Premium.",
-			title: "Vomero Premium — worn by Jacob Kiplimo."
-		},
-		{
-			src: 'work/nike/assets/content/2026/glam-gods/close-ups/dragonfly-2.avif',
-			blur: 'work/nike/assets/no-index/2026/glam-gods/close-ups/dragonfly-2-blurry.webp',
-			alt: "Close-up of the Nike Dragonfly 2 from the Glam Gods pack, featuring crystal gradient graphics, subtle glitter finishes, and removable gold shoewelry accents.",
-			title: "Glam Gods — Dragonfly 2 close-up with crystal gradients and gold shoewelry"
-		},
-		{
-			src: 'work/nike/assets/content/2026/glam-gods/close-ups/lj-elite.avif',
-			blur: 'work/nike/assets/no-index/2026/glam-gods/close-ups/lj-elite-blurry.webp',
-			alt: "Close-up of the Nike Long Jump Elite from the Glam Gods pack, showcasing crystal gradient treatments, subtle glitter hits, and gold shoewelry designed to be worn as jewelry.",
-			title: "Glam Gods — Long Jump Elite close-up with crystal gradients and gold shoewelry"
-		},
-		{
-			src: 'work/nike/assets/content/2026/glam-gods/close-ups/maxfly-2.avif',
-			blur: 'work/nike/assets/no-index/2026/glam-gods/close-ups/maxfly-2-blurry.webp',
-			alt: "Close-up of the Nike Maxfly 2 from the Glam Gods pack, highlighting crystal gradient graphics, shimmering finishes, and removable gold shoewelry accents.",
-			title: "Glam Gods — Maxfly 2 close-up with crystal gradients and gold shoewelry"
-		},
-		{
-			src: 'work/nike/assets/content/2026/glam-gods/close-ups/rival-sprint.avif',
-			blur: 'work/nike/assets/no-index/2026/glam-gods/close-ups/rival-sprint-blurry.webp',
-			alt: "Close-up of the Nike Rival Sprint from the Glam Gods pack, featuring crystal gradient coloration, subtle glitter details, and gold shoewelry that can be repurposed as jewelry.",
-			title: "Glam Gods — Rival Sprint close-up with crystal gradients and gold shoewelry"
-		},
-		{
-			src: 'work/nike/assets/content/2026/glam-gods/close-ups/victory-2.avif',
-			blur: 'work/nike/assets/no-index/2026/glam-gods/close-ups/victory-2-blurry.webp',
-			alt: "Close-up of the Nike Victory 2 from the Glam Gods pack, featuring crystal gradient coloration, subtle glitter details, and gold shoewelry that can be repurposed as jewelry.",
-			title: "Glam Gods — Victory 2 close-up with crystal gradients and gold shoewelry"
+if (nikeHero && typeof NikeMedia !== 'undefined') {
+	const nikeStage = nikeHero.closest('.mid-container');
+	const nikeLayer = nikeHero.closest('.hero');
+	const phoneLayout = window.matchMedia('(max-width: 900px)');
+	const defaultLayout = { width: 100, height: 100, x: 50, y: 50, parallax: 25 };
+	let chosen = null;
+
+	function fitNikeImage() {
+		const [naturalWidth, naturalHeight] = NikeMedia.dimensions(nikeHero);
+		if (!naturalWidth || !naturalHeight) return;
+		const layout = { ...defaultLayout, ...chosen?.layout,
+			...(phoneLayout.matches ? chosen?.mobile : {}) };
+		const width = nikeStage.clientWidth;
+		const height = nikeStage.clientHeight;
+		const percent = value => Math.max(0, Math.min(100, value)) / 100;
+		const scale = Math.min(
+			width * percent(layout.width) / naturalWidth,
+			height * percent(layout.height) / naturalHeight
+		);
+		const imageWidth = naturalWidth * scale;
+		const imageHeight = naturalHeight * scale;
+
+		// Match the experiment: placement uses spare space inside the article.
+		Object.assign(nikeHero.style, {
+			position: 'absolute',
+			width: `${imageWidth}px`,
+			height: `${imageHeight}px`,
+			left: `${(width - imageWidth) * percent(layout.x)}px`,
+			top: `${(height - imageHeight) * percent(layout.y)}px`
+		});
+		nikeLayer.dataset.rate = layout.parallax;
+		applyParallax(window.scrollY);
+	}
+
+	nikeHero.addEventListener('load', fitNikeImage);
+	new ResizeObserver(fitNikeImage).observe(nikeStage);
+	phoneLayout.addEventListener('change', fitNikeImage);
+	fitNikeImage();
+
+	async function loadNikeImage() {
+		try {
+			const response = await fetch(nikeImageDataURL, { cache: 'no-cache' });
+			if (!response.ok) throw new Error(`HTTP ${response.status}`);
+			const heroImages = await response.json();
+			if (!Array.isArray(heroImages) || !heroImages.length) {
+				throw new Error('The Nike image roster is empty.');
+			}
+			chosen = NikeMedia.choose(heroImages);
+			if (!chosen) throw new Error('No included Nike media.');
+			if (chosen.kind === 'video') {
+				showNikeVideo(chosen);
+				return;
+			}
+			const source = new URL(chosen.src, nikeImageDataURL).href;
+			const preview = chosen.blur ? new URL(chosen.blur, nikeImageDataURL).href : '';
+			nikeHero.alt = chosen.alt;
+			nikeHero.title = chosen.title;
+			nikeHero.dataset.imageId = chosen.id;
+			setPreviewSource(nikeHero, source, preview);
+			if (nikeHero.complete) fitNikeImage();
+		} catch (error) {
+			// Keep the accepted HTML fallback if the roster cannot be loaded.
+			console.warn('Could not load the Nike image roster.', error);
 		}
-	];
+	}
 
-	const randomIndex = getRandomInt(0, heroImages.length - 1);
-	const chosen = heroImages[randomIndex];
 
-	nikeHero.src = chosen.src;
-	nikeHero.style.backgroundImage = chosen.blur;
-	nikeHero.alt = chosen.alt;
-	nikeHero.title = chosen.title;
+	function showNikeVideo(item) {
+		const video = NikeMedia.video(item, nikeImageDataURL);
+		video.hidden = true;
+		nikeLayer.prepend(video);
+		let visible = false;
+		function playback() {
+			if (visible && !document.hidden && !motionPreference.matches) {
+				video.play().catch(() => {});
+			} else video.pause();
+		}
+		video.addEventListener('loadedmetadata', () => {
+			nikeHero = video;
+			fitNikeImage();
+		});
+		video.addEventListener('loadeddata', () => {
+			nikeFallback.hidden = true;
+			video.hidden = false;
+			video.dataset.imageId = item.id;
+			playback();
+		});
+		const observer = new IntersectionObserver(entries => {
+			visible = entries[0].isIntersecting;
+			playback();
+		});
+		observer.observe(nikeStage.closest('article'));
+		document.addEventListener('visibilitychange', playback);
+		motionPreference.addEventListener('change', playback);
+		video.addEventListener('error', () => {
+			observer.disconnect();
+			video.pause();
+			video.remove();
+			nikeFallback.hidden = false;
+			nikeHero = nikeFallback;
+			chosen = null;
+			fitNikeImage();
+		}, {once:true});
+	}
+
+	loadNikeImage();
 }
 
 
@@ -313,26 +344,12 @@ if (nikeHero) {
 
 
 // HEDERA SECTION	================================================================================================================
-// Trigger	------------------------------------------------------------------------------------------------------------------------
-let hasTyped = false;
-
-const ivyObserver = new IntersectionObserver(entries => {
-	entries.forEach(entry => {
-		if (entry.isIntersecting && !hasTyped) {
-			typeWriterEffect();
-			hasTyped = true;
-			ivyObserver.unobserve(entry.target);
-		}
-	});
-}, { threshold: 0.2 });
-
-ivyObserver.observe(document.getElementById('ivy-container'));
-
-
-
 // Variables & elements	------------------------------------------------------------------------------------------------------------
 var ivyIndex = 0;
 var speed = 50;
+let ivyTimer = null;
+let ivyVisible = false;
+let ivyPageActive = true;
 
 ivyText = new Array();
 ivyText[0] = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sit amet venenatis urna cursus eget nunc scelerisque. Neque vitae tempus quam pellentesque nec. Mauris in aliquam sem fringilla ut morbi. Adipiscing vitae proin sagittis nisl rhoncus mattis rhoncus. Sit amet porttitor eget dolor morbi non arcu risus. Eget est lorem ipsum dolor sit amet consectetur. Arcu non sodales neque sodales ut etiam sit amet. In cursus turpis massa tincidunt dui ut. Tempor orci eu lobortis elementum nibh tellus molestie nunc. Enim diam vulputate ut pharetra sit amet aliquam id diam. Non pulvinar neque laoreet suspendisse interdum consectetur.";
@@ -344,25 +361,65 @@ const textNumber = getRandomInt(0, (ivyText.length - 1));
 
 const ivyContainer = document.getElementById('ivy-container');
 const ivyP = document.getElementById('ivy');
+const ivyGrowth = document.createTextNode('');
+document.getElementById('growth').append(ivyGrowth);
 
 
 
 // Main functions	----------------------------------------------------------------------------------------------------------------
 function hedera(){
 	let ivyHeight = ivyContainer.offsetHeight;
-	let lineHeight = ivyHeight / 21;
-	ivyP.style.fontSize = lineHeight + 'px';
-	ivyP.style.lineHeight = lineHeight + 'px';
+	// Lazy media can finish laying out after pageshow without a window resize.
+	if (ivyHeight > 0) {
+		let lineHeight = ivyHeight / 21;
+		ivyP.style.fontSize = lineHeight + 'px';
+		ivyP.style.lineHeight = lineHeight + 'px';
+	}
+	syncIvyTyping();
 };
+
+function canTypeIvy() {
+	return ivyVisible && ivyPageActive && !document.hidden &&
+		ivyContainer.offsetHeight > 0 && ivyIndex < ivyText[textNumber].length;
+}
+
+function syncIvyTyping() {
+	if (!canTypeIvy()) {
+		clearTimeout(ivyTimer);
+		ivyTimer = null;
+	} else if (ivyTimer === null) {
+		ivyTimer = setTimeout(typeWriterEffect, speed);
+	}
+}
 
 function typeWriterEffect() {
-	if (ivyIndex < ivyText[textNumber].length) {
-		document.getElementById("growth").innerHTML += ivyText[textNumber].charAt(ivyIndex);
-		ivyIndex++;
-		setTimeout(typeWriterEffect, speed);
-	};
+	ivyTimer = null;
+	if (!canTypeIvy()) return;
+	ivyGrowth.appendData(ivyText[textNumber].charAt(ivyIndex));
+	ivyIndex++;
+	syncIvyTyping();
 };
 
+// Keep observing so leaving the artwork pauses it and returning resumes it.
+const ivyObserver = new IntersectionObserver(entries => {
+	entries.forEach(entry => {
+		ivyVisible = entry.isIntersecting;
+	});
+	syncIvyTyping();
+});
+ivyObserver.observe(ivyContainer);
+
+const ivyResizeObserver = new ResizeObserver(hedera);
+ivyResizeObserver.observe(ivyContainer);
+document.addEventListener('visibilitychange', syncIvyTyping);
+window.addEventListener('pagehide', () => {
+	ivyPageActive = false;
+	syncIvyTyping();
+});
+window.addEventListener('pageshow', () => {
+	ivyPageActive = true;
+	hedera();
+});
 
 
 

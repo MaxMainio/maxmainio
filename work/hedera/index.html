@@ -54,7 +54,7 @@
 		</script>
 	</head>
 
-	<body>
+	<body id="top" tabindex="-1">
 		<div id="fader" class="fader motion"></div>
 
 		<header>
@@ -113,28 +113,28 @@
 					<div id="preview-interactive" class="interactive-container">
 						<div class="slider-container">
 							<p>Font Size:</p>
-							<input type="range" min="10" max="160" value="100" class="slider" id="sampleFontSize">
+							<input type="range" min="10" max="160" value="100" class="slider" id="sampleFontSize" aria-label="Sample font size">
 						</div>
 
 						<div class="slider-container">
 							<p>Line Height:</p>
-							<input type="range" min="10" max="100" value="10" class="slider" id="sampleLineHeight">
+							<input type="range" min="10" max="100" value="10" class="slider" id="sampleLineHeight" aria-label="Sample line height">
 						</div>
 
 						<div class="slider-container">
 							<p>Offset Axis:</p>
-							<input type="range" min="-100" max="100" value="-100" class="slider" id="sampleOffset">
+							<input type="range" min="-100" max="100" value="-100" class="slider" id="sampleOffset" aria-label="Sample offset axis">
 						</div>
 
 						<div class="box-shadow">
 							<p class="check-container">
-								<input type="checkbox" id="sampleContextual" checked/>
+								<input type="checkbox" id="sampleContextual" class="visually-hidden" checked/>
 								<label for="sampleContextual">Disconnect</label>
 							</p>
 						</div>
 
 						<div class="box-shadow">
-							<input type="color" id="sampleColorizor" name="colorizor" value="#333333"
+							<input type="color" id="sampleColorizor" aria-label="Sample text color" name="colorizor" value="#333333"
 								alt="Click here to set the color of the sample text"
 								title="Click here to set the color of the sample text"/>
 						</div>
@@ -145,7 +145,7 @@
 							<div class="sample-anatomy"><hr><hr><hr><hr></div>
 						</div>
 						<div class="sample-container">
-							<p id="textSample" class="text-sample" contenteditable="true">type something</p>
+							<p id="textSample" role="textbox" aria-label="Try typing in Hedera" aria-multiline="true" class="text-sample" contenteditable="true">type something</p>
 						</div>
 					</div>
 
@@ -172,16 +172,16 @@
 				<div class="work-div glyph-showcase-container">
 					<div id="showcase-interactive" class="interactive-container">
 						<div class="slider-container box-shadow">
-							<input type="text" placeholder="Click here to display any character in the Finnish alphabet" id="showcaseSearch">
+							<input type="text" placeholder="Click here to display any character in the Finnish alphabet" id="showcaseSearch" aria-label="Showcase character">
 						</div>
 
 						<div class="slider-container">
 							<p>Offset Axis:</p>
-							<input type="range" min="-100" max="100" value="-100" class="slider" id="showcaseOffset">
+							<input type="range" min="-100" max="100" value="-100" class="slider" id="showcaseOffset" aria-label="Showcase offset axis">
 						</div>
 
 						<div class="box-shadow">
-							<input type="color" id="showcaseColorizor" name="colorizor" value="#333333"
+							<input type="color" id="showcaseColorizor" aria-label="Showcase text color" name="colorizor" value="#333333"
 								alt="Click here to set the color of the showcase text"
 								title="Click here to set the color of the showcase text"/>
 						</div>
@@ -190,7 +190,7 @@
 					<div class="glyph-showcase">
 						<div class="spotlight">
 							<div>
-								<p class="showcased-glyph">ä</p>
+								<button type="button" class="showcased-glyph plain-control">ä</button>
 							</div>
 	
 							<div>
@@ -200,7 +200,7 @@
 	
 						<div class="spotlight">
 							<div>
-								<p class="showcased-glyph">ä</p>
+								<button type="button" class="showcased-glyph plain-control">ä</button>
 							</div>
 	
 							<div>
@@ -210,7 +210,7 @@
 	
 						<div class="spotlight">
 							<div>
-								<p class="showcased-glyph">ä</p>
+								<button type="button" class="showcased-glyph plain-control">ä</button>
 							</div>
 	
 							<div>
@@ -220,7 +220,7 @@
 	
 						<div class="spotlight">
 							<div>
-								<p class="showcased-glyph">ä</p>
+								<button type="button" class="showcased-glyph plain-control">ä</button>
 							</div>
 	
 							<div>
@@ -230,7 +230,7 @@
 	
 						<div class="spotlight">
 							<div>
-								<p class="showcased-glyph">ä</p>
+								<button type="button" class="showcased-glyph plain-control">ä</button>
 							</div>
 	
 							<div>
@@ -240,7 +240,7 @@
 	
 						<div class="spotlight">
 							<div>
-								<p class="showcased-glyph">ä</p>
+								<button type="button" class="showcased-glyph plain-control">ä</button>
 							</div>
 	
 							<div>
@@ -250,7 +250,7 @@
 	
 						<div class="spotlight">
 							<div>
-								<p class="showcased-glyph">ä</p>
+								<button type="button" class="showcased-glyph plain-control">ä</button>
 							</div>
 	
 							<div>
@@ -260,7 +260,7 @@
 	
 						<div class="spotlight">
 							<div>
-								<p class="showcased-glyph">ä</p>
+								<button type="button" class="showcased-glyph plain-control">ä</button>
 							</div>
 	
 							<div>
@@ -272,7 +272,7 @@
 	
 						<div class="spotlight">
 							<div>
-								<p class="showcased-glyph">ä</p>
+								<button type="button" class="showcased-glyph plain-control">ä</button>
 							</div>
 	
 							<div>
@@ -282,7 +282,7 @@
 	
 						<div class="spotlight">
 							<div>
-								<p class="showcased-glyph">ä</p>
+								<button type="button" class="showcased-glyph plain-control">ä</button>
 							</div>
 	
 							<div>
@@ -292,7 +292,7 @@
 	
 						<div class="spotlight">
 							<div>
-								<p class="showcased-glyph">ä</p>
+								<button type="button" class="showcased-glyph plain-control">ä</button>
 							</div>
 	
 							<div>
@@ -302,7 +302,7 @@
 	
 						<div class="spotlight">
 							<div>
-								<p class="showcased-glyph">ä</p>
+								<button type="button" class="showcased-glyph plain-control">ä</button>
 							</div>
 	
 							<div>
@@ -312,7 +312,7 @@
 	
 						<div class="spotlight">
 							<div>
-								<p class="showcased-glyph">ä</p>
+								<button type="button" class="showcased-glyph plain-control">ä</button>
 							</div>
 	
 							<div>
@@ -322,7 +322,7 @@
 	
 						<div class="spotlight">
 							<div>
-								<p class="showcased-glyph">ä</p>
+								<button type="button" class="showcased-glyph plain-control">ä</button>
 							</div>
 	
 							<div>
@@ -332,7 +332,7 @@
 	
 						<div class="spotlight">
 							<div>
-								<p class="showcased-glyph">ä</p>
+								<button type="button" class="showcased-glyph plain-control">ä</button>
 							</div>
 	
 							<div>
@@ -342,7 +342,7 @@
 	
 						<div class="spotlight">
 							<div>
-								<p class="showcased-glyph">ä</p>
+								<button type="button" class="showcased-glyph plain-control">ä</button>
 							</div>
 	
 							<div>
@@ -354,7 +354,7 @@
 
 						<div class="spotlight">
 							<div>
-								<p class="showcased-glyph">ä</p>
+								<button type="button" class="showcased-glyph plain-control">ä</button>
 							</div>
 	
 							<div>
@@ -364,7 +364,7 @@
 	
 						<div class="spotlight">
 							<div>
-								<p class="showcased-glyph">ä</p>
+								<button type="button" class="showcased-glyph plain-control">ä</button>
 							</div>
 	
 							<div>
@@ -374,7 +374,7 @@
 	
 						<div class="spotlight">
 							<div>
-								<p class="showcased-glyph">ä</p>
+								<button type="button" class="showcased-glyph plain-control">ä</button>
 							</div>
 	
 							<div>
@@ -384,7 +384,7 @@
 	
 						<div class="spotlight">
 							<div>
-								<p class="showcased-glyph">ä</p>
+								<button type="button" class="showcased-glyph plain-control">ä</button>
 							</div>
 	
 							<div>
@@ -394,7 +394,7 @@
 	
 						<div class="spotlight">
 							<div>
-								<p class="showcased-glyph">ä</p>
+								<button type="button" class="showcased-glyph plain-control">ä</button>
 							</div>
 	
 							<div>
@@ -404,7 +404,7 @@
 	
 						<div class="spotlight">
 							<div>
-								<p class="showcased-glyph">ä</p>
+								<button type="button" class="showcased-glyph plain-control">ä</button>
 							</div>
 	
 							<div>
@@ -414,7 +414,7 @@
 	
 						<div class="spotlight">
 							<div>
-								<p class="showcased-glyph">ä</p>
+								<button type="button" class="showcased-glyph plain-control">ä</button>
 							</div>
 	
 							<div>
@@ -424,7 +424,7 @@
 	
 						<div class="spotlight">
 							<div>
-								<p class="showcased-glyph">ä</p>
+								<button type="button" class="showcased-glyph plain-control">ä</button>
 							</div>
 	
 							<div>
@@ -451,7 +451,7 @@
 
 					<div>
 						<h2>Navigation</h2>
-						<h3><a target="_self" id="top-btn" title="Click here to be taken back to the top of this page.">Back to Top</a></h3>
+						<h3><a href="#top" target="_self" id="top-btn" title="Click here to be taken back to the top of this page.">Back to Top</a></h3>
 						<h3><a href="../../#hedera" title="Click here to return to the main work page.">Work</a></h3>
 						<h3><a href="../../about/" title="Click here to learn more about who I am.">About</a></h3>
 					</div>

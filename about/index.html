@@ -48,7 +48,7 @@
 		</script>
 	</head>
 
-	<body>
+	<body id="top" tabindex="-1">
 		<div id="fader" class="fader motion"></div>
 
 		<header>
@@ -72,9 +72,9 @@
 			<article>
 				<section id="profile-column">
 					<div class="profile-div">
-						<div class="carousel" data-carousel>
-							<button class="carousel-button prev" data-carousel-button="prev"></button>
-							<button class="carousel-button next" data-carousel-button="next"></button>
+						<div class="carousel" data-carousel data-carousel-label="Photographs of me">
+							<button class="carousel-button prev" data-carousel-button="prev" type="button" aria-label="Previous image"></button>
+							<button class="carousel-button next" data-carousel-button="next" type="button" aria-label="Next image"></button>
 
 							<ul data-slides>
 								<li class="slide" data-active="">
@@ -351,28 +351,33 @@
 								<a href="https://www.nike.com/" target="_blank">Nike</a>, <a href="https://youtu.be/JFm7YDVlqnI" target="_blank">World Headquarters</a>, Beaverton, USA
 							</h2>
 
-							<h3>Graphic Designer II, Training Graphics, 2025 &ndash; current</h3>
+							<h3>Senior Graphic &amp; Color Designer, <a href="https://www.britannica.com/story/why-do-some-people-call-football-soccer" title="Global Football" target="_blank">GFB</a>, <span title="November 2026 - current">2026 - current</span></h3>
 							<p class="modal hide">
-								Currently working as the sole Footwear Graphic Designer on the Nike Training Design team, working closely with a broader apparel&hyphen;focused design group. In this role, I contribute to a large&hyphen;scale revamp of Nike Training, helping define the new creative direction and translating that vision into innovative, performance&hyphen;driven footwear. Alongside managing day&hyphen;to&hyphen;day design needs, I focus on integrating generative and procedural design methods into my workflow, while supporting team growth through onboarding new designers and mentoring interns across disciplines.
+								I&rsquo;ve recently joined Nike&rsquo;s Global Football team, expanding my work within footwear design to encompass both Color and Graphic Design. I&rsquo;m excited to explore how the generative and procedural methods I&rsquo;ve used in graphics can inform my approach to color.
 							</p>
 
-							<h3 class="modal hide" style="margin-top: 0.5rem;">Graphic Designer II, Women&rsquo;s Footwear Graphics, 2024 &ndash; 2025</h3>
+							<h3 class="modal hide" style="margin-top: 0.5rem;">Graphic Designer II, Training Graphics, <span title="October 2025 - November 2026">2025 - 2026</span></h3>
 							<p class="modal hide">
-								Embedded within the Running footwear team as the primary graphic designer. I managed the categorie&rsquo;s daily graphic design needs while introducing modern generative and procedural design approaches to our footwear. I continued to contributed to a broad range of projects across most Women&rsquo;s footwear categories.
+								As the sole graphic designer dedicated to footwear on Nike&rsquo;s Training Design team, I contributed to a large-scale revamp of the category, helping shape a new creative direction for performance footwear. Alongside day-to-day design work, I helped improve the team&rsquo;s workflows and mentored interns across disciplines.
 							</p>
 
-							<h3 class="modal hide" style="margin-top: 0.5rem;">Graphic Designer II, Footwear Graphics Studio, 2023 &ndash; 2024</h3>
+							<h3 class="modal hide" style="margin-top: 0.5rem;">Graphic Designer II, Women&rsquo;s Footwear Graphics, <span title="July 2024 - October 2025">2024 - 2025</span></h3>
 							<p class="modal hide">
-								Transitioning from my internship, I served full&hyphen;time in the Footwear Graphics Studio. In this elevated role, I immersed myself more deeply in the design process, contributing and collaborating on innovative graphics projects for Nike&rsquo;s renowned footwear collections.
+								Embedded within Nike's Running Footwear Design team as the primary Graphic Designer, I managed the category's day-to-day graphics while continuing to contribute across Women's Footwear categories. During this time, I brought new generative and procedural design methods into our work and helped onboard new designers.
 							</p>
 
-							<h3 class="modal hide" style="margin-top: 0.5rem;">Footwear Graphics Design Intern, 2023</h3>
+							<h3 class="modal hide" style="margin-top: 0.5rem;">Graphic Designer II, Footwear Graphics Studio, <span title="October 2023 - July 2024">2023 - 2024</span></h3>
+							<p class="modal hide">
+								Transitioning from my internship, I joined the Footwear Graphics Studio full-time, where I immersed myself more deeply in the design process, contributing and collaborating on innovative graphics projects for Nike&rsquo;s renowned footwear collections.
+							</p>
+
+							<h3 class="modal hide" style="margin-top: 0.5rem;">Footwear Graphics Design Intern, <span title="Summer of 2023">2023</span></h3>
 							<p class="modal hide">
 								During my internship with the Footwear Graphics team at Nike, I laid the groundwork for my professional journey, acquiring comprehensive industry experience and actively contributing to diverse design projects.
 							</p>
 						</div>
 
-						<p><a class="xp-btn" target="_self">More...</a></p>
+						<p><button class="xp-btn plain-control" type="button" aria-expanded="false">More...</button></p>
 					</div>
 
 					<!-- <div class="xp-div">
@@ -407,7 +412,7 @@
 							</p>
 						</div>
 						
-						<p><a id="neoscape" class="xp-btn" target="_self">More...</a></p>
+						<p><button id="neoscape" class="xp-btn plain-control" type="button" aria-expanded="false">More...</button></p>
 					</div>
 
 					<div class="xp-div">
@@ -427,7 +432,7 @@
 							</p>
 						</div>
 						
-						<p><a class="xp-btn" target="_self">More...</a></p>
+						<p><button class="xp-btn plain-control" type="button" aria-expanded="false">More...</button></p>
 					</div>
 
 					<div class="xp-div">
@@ -446,7 +451,7 @@
 							</p>
 						</div>
 
-						<p><a class="xp-btn" target="_self">More...</a></p>
+						<p><button class="xp-btn plain-control" type="button" aria-expanded="false">More...</button></p>
 					</div>
 
 					<div class="xp-div">
@@ -465,7 +470,7 @@
 							</p>
 						</div>
 
-						<p><a class="xp-btn" target="_self">More...</a></p>
+						<p><button class="xp-btn plain-control" type="button" aria-expanded="false">More...</button></p>
 					</div>
 
 					<div class="xp-div">
@@ -484,7 +489,7 @@
 							</p>
 						</div>
 						
-						<p><a class="xp-btn" target="_self">More...</a></p>
+						<p><button class="xp-btn plain-control" type="button" aria-expanded="false">More...</button></p>
 					</div>						
 				</section>
 			</article>
@@ -498,7 +503,7 @@
 	
 						<div>
 							<h2>Navigation</h2>
-							<h3><a target="_self" id="top-btn" title="Click here to be taken back to the top of this page.">Back to Top</a></h3>
+							<h3><a href="#top" target="_self" id="top-btn" title="Click here to be taken back to the top of this page.">Back to Top</a></h3>
 							<h3><a href="../" title="Click here to return to the main work page.">Work</a></h3>
 						</div>
 	

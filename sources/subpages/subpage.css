@@ -83,13 +83,14 @@ img{
 
 /* ZOOMABLE --------------------------------------------------------------------------------------------------------------------- */
 .zoomable:hover{
-    cursor: -webkit-zoom-out;
-    cursor: zoom-out;
-}
-
-.zoomable:active{
     cursor: -webkit-zoom-in;
     cursor: zoom-in;
+}
+
+.zoomable:active,
+.zoomable.focused{
+    cursor: -webkit-zoom-out;
+    cursor: zoom-out;
 }
 
 
@@ -98,6 +99,8 @@ img{
     position: fixed;
     height: 100vh;
     width: auto;
+    max-width: 100vw;
+    object-fit: contain;
 
     inset: 0;
     margin: 0 auto;

@@ -57,7 +57,7 @@
 		</script>
 	</head>
 
-	<body>
+	<body id="top" tabindex="-1">
 		<div id="fader" class="fader motion"></div>
 
 		<header>
@@ -89,11 +89,11 @@
 						<p>
 							In Photoshop I scaled the scans to be the same size, overlaid them, then, by using different <a href="https://photoshoptrainingchannel.com/blending-modes-explained/" target="_blank">blending modes</a> I explored how the differently-sized <a href="https://smartpress.com/support/printing-basics/dot-patterns" target="_blank">halftone dot patterns</a> of the ink would interact with each other. The intricate fractal patterns that would emerge from this interactivity were most exciting to me.
 						</p>
-						<p>
-							<span>Drag around these four prints to explore how they interact.</span> Or change between these blending modes:
+						<p class="interaction-help">
+							<span>Drag around these four prints to explore how they interact.</span> <span id="print-move-help">With a keyboard, Tab to a print and use the arrow keys to move it. Hold Shift for smaller steps, or press Home to put it back.</span> Or change between these blending modes:
 						</p>
 						<br>
-						<p class="radio-button">
+						<p class="radio-button" role="group" aria-label="Blending mode">
 							<input type="radio" id="multiply" name="blend-mode" value="multiply">
 							<label for="multiply">Multiply</label>,
 							<input type="radio" id="overlay" name="blend-mode" value="overlay">
@@ -112,28 +112,28 @@
 				<img src="assets/content/full/1-inch.webp"
 					alt="AI generated face printed out at 1 by 1 inches with a resolution of 300dpi."
 					title="AI generated face printed out at 1 by 1 inches with a resolution of 300dpi. Click and drag to move this or any of the other similar looking images."
-					class="draggable blur-load"
+					class="draggable blur-load" tabindex="0" aria-describedby="print-move-help"
 					style="background-image: url(assets/no-index/square-blurry.webp);"
 					loading="lazy">
 
 				<img src="assets/content/full/2-inch.webp"
 					alt="AI generated face printed out at 2 by 2 inches with a resolution of 300dpi."
 					title="AI generated face printed out at 2 by 2 inches with a resolution of 300dpi. Click and drag to move this or any of the other similar looking images."
-					class="draggable blur-load"
+					class="draggable blur-load" tabindex="0" aria-describedby="print-move-help"
 					style="background-image: url(assets/no-index/square-blurry.webp);"
 					loading="lazy">
 
 				<img src="assets/content/full/4-inch.webp"
 					alt="AI generated face printed out at 4 by 4 inches with a resolution of 300dpi."
 					title="AI generated face printed out at 4 by 4 inches with a resolution of 300dpi. Click and drag to move this or any of the other similar looking images."
-					class="draggable blur-load"
+					class="draggable blur-load" tabindex="0" aria-describedby="print-move-help"
 					style="background-image: url(assets/no-index/square-blurry.webp);"
 					loading="lazy">
 
 				<img src="assets/content/full/8-inch.webp"
 					alt="AI generated face printed out at 8 by 8 inches with a resolution of 300dpi."
 					title="AI generated face printed out at 8 by 8 inches with a resolution of 300dpi. Click and drag to move this or any of the other similar looking images."
-					class="draggable blur-load"
+					class="draggable blur-load" tabindex="0" aria-describedby="print-move-help"
 					style="background-image: url(assets/no-index/square-blurry.webp);"
 					loading="lazy">
 
@@ -149,7 +149,7 @@
 
 					<div>
 						<h2>Navigation</h2>
-						<h3><a target="_self" id="top-btn" title="Click here to be taken back to the top of this page.">Back to Top</a></h3>
+						<h3><a href="#top" target="_self" id="top-btn" title="Click here to be taken back to the top of this page.">Back to Top</a></h3>
 						<h3><a href="../../#digital-overprint" title="Click here to return to the main work page.">Work</a></h3>
 						<h3><a href="../../about/" title="Click here to learn more about who I am.">About</a></h3>
 					</div>

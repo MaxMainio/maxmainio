@@ -13,7 +13,7 @@ var interacted = false;
 
 // Interactive elements ------------------------------------------------------------------------------------------------------------
 const allSliders = document.querySelectorAll('.slider');
-const allZoomableGlyphs = document.querySelectorAll('p.showcased-glyph');
+const allZoomableGlyphs = document.querySelectorAll('button.showcased-glyph');
 
 
 
@@ -27,7 +27,7 @@ const allZoomableGlyphs = document.querySelectorAll('p.showcased-glyph');
 window.addEventListener('load', setSampleBG);
 
 window.addEventListener('pageshow', e => {
-    heroSwap();
+    if (!e.persisted) heroSwap();
     fitHeroIvy();
 });
 
@@ -72,8 +72,8 @@ function heroSwap(){
     const selectedIMG = getRandomInt(1, 4);
     const selectedTXT = getRandomInt(0, (heroTxt.length - 1));
 
-    heroFlower.src = 'assets/content/flowers/flower-' + selectedIMG + '.webp';
-    heroFlower.style.backgroundImage = 'url(assets/no-index/flower-' + selectedIMG + '-blurry.webp)';
+    setPreviewSource(heroFlower, 'assets/content/flowers/flower-' + selectedIMG + '.webp',
+        'assets/no-index/flower-' + selectedIMG + '-blurry.webp');
 
     heroIvy.innerHTML = heroTxt[selectedTXT];
 };
@@ -266,7 +266,11 @@ showcaseSearch.addEventListener("input", function(event) {
 
 function validCharacterAction(character) {
     allShowcasedGlyphs.forEach((element) => {
-        element.innerHTML = character;
+        element.textContent = character;
+        if (element.tagName === 'BUTTON') {
+            const index = [...allZoomableGlyphs].indexOf(element);
+            element.setAttribute('aria-label', `Enlarge glyph ${character}, variation ${index + 1}`);
+        }
     });
 
     handleGlyphVisibility(character);
@@ -315,28 +319,13 @@ showcaseColorPicker.oninput = function(){
 
 
 // Showcase zoomable glyphs --------------------------------------------------------------------------------------------------------
-allZoomableGlyphs.forEach(function (element){
-    element.addEventListener("mousedown", (event) => {
-        if (event.button === 0) {
-            let current = event.target;
-
-            current.classList.add('focused-glyph');
-            document.body.style.cursor = 'zoom-out';
-
-            document.addEventListener("mouseup", (event) => {
-                current.classList.remove('focused-glyph');
-                document.body.style.cursor = 'auto';
-            });
-        };
+allZoomableGlyphs.forEach((element, index) => {
+    enableArtworkZoom(element, {
+        className: 'focused-glyph',
+        containerClass: null,
+        label: `Enlarge glyph ${element.textContent}, variation ${index + 1}`
     });
 });
-
-
-
-
-
-
-
 
 
 // GLOBAL FUNCTIONS ================================================================================================================

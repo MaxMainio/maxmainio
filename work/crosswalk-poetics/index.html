@@ -54,7 +54,7 @@
 		</script>
 	</head>
 
-	<body>
+	<body id="top" tabindex="-1">
 		<div id="fader" class="fader motion"></div>
 
 		<header>
@@ -128,7 +128,7 @@
 							loading="lazy">
 
 						<div id="simulation-pages">
-							<div id="simulation-left" title="Wait for the Crosswalk Poem to be fully generated, then you can click here on the left page to download it as a PDF."></div>
+							<div id="simulation-left" title="Once a Crosswalk Poem has finished generating, click here on the left page to print it or save it as a PDF."></div>
 							<div id="simulation-right" title="When this Crosswalk Poem has been generated and transferred over to the left page you can click anywhere here on the right page to generate another."></div>
 						</div>
 					</div>
@@ -138,8 +138,13 @@
 							Installation Simulation
 						</h2>
 						<p>
-							Building on our original project, I've designed a digital version of the installation right here on my website. As you can see above, a poem has been generated for you as you entered the page. To generate a new poem, simply click on the right page. Once the poem is finished, it will transfer to the left page where you can click on it and download it as a PDF. It's a way to experience our project, wherever you are.
+							Building on our original project, I've designed a digital version of the installation right here on my website. As you can see above, a poem has been generated for you as you entered the page. To generate a new poem, simply click on the right page. Once the poem is finished, it will transfer to the left page where you can click on it to print it or save it as a PDF. You can also use the buttons below. It's a way to experience our project, wherever you are.
 						</p>
+						<p class="simulation-controls">
+							<button type="button" class="plain-control" id="generate-poem" aria-controls="simulation-pages" aria-disabled="true">Generate another poem</button>
+							<button type="button" class="plain-control" id="print-poem" aria-controls="simulation-left" disabled>Print this poem</button>
+						</p>
+						<p class="visually-hidden" id="poem-status" role="status"></p>
 					</div>
 				</div>
 
@@ -204,7 +209,7 @@
 
 					<div>
 						<h2>Navigation</h2>
-						<h3><a target="_self" id="top-btn" title="Click here to be taken back to the top of this page.">Back to Top</a></h3>
+						<h3><a href="#top" target="_self" id="top-btn" title="Click here to be taken back to the top of this page.">Back to Top</a></h3>
 						<h3><a href="../../#crosswalk-poetics" title="Click here to return to the main work page.">Work</a></h3>
 						<h3><a href="../../about/" title="Click here to learn more about who I am.">About</a></h3>
 					</div>

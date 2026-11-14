@@ -79,6 +79,10 @@ img{
 
 
 /* INTERACTIVE  ----------------------------------------------------------------------------------------------------------------- */
+.interaction-help{
+    background-color: white;
+}
+
 .radio-button{
     & label{
         display: inline-block;
@@ -86,9 +90,6 @@ img{
         cursor: pointer;
     }
 
-    & input[type="radio"]{
-        display: none;
-    }
 
     & input[type="radio"]:checked+label{
         background-color: var(--green);
@@ -106,7 +107,7 @@ img{
 /* Media Queries    ------------------------------------------------------------------------------------------------------------- */
 @media (width <= 685px) {
     .radio-button{
-        display: none;
+        display: block;
     }
 
     .leftoid{

@@ -1,6 +1,4 @@
 // GLOBAL VARIABLES & CONSTANTS ====================================================================================================
-const allScalerButtons = [].slice.call(document.getElementsByClassName('scalers'));
-const allPriorityButtons = [].slice.call(document.getElementsByClassName('prioritizors'));
 const altTexts = {
     1: "the transformation the city’s greenery—parks, forests, and other natural areas—seemingly dissolves away as if subtly edged out of existence. This visual shift represents a real-world human mindset: the prioritization of human living space over natural landscapes. When the image expands, revealing newfound space, the instinct isn't to restore nature. Instead, it's seen as room for more urban development, reinforcing the narrative of human dominance and expansion over nature.",
     10: "this change, the city's urban infrastructure—buildings, streets, and other man-made structures—seemingly vanish as if subtly pushed out of existence. This visual shift represents a counter-narrative to the real-world human mindset: the prioritization of nature over human living space. When the image expands, revealing newfound space, the instinct isn't to fill it with more urban development. Instead, it's seen as an opportunity for nature to reclaim and flourish within the newly opened space, challenging the typical narrative of human dominance and expansion over nature."
@@ -15,9 +13,16 @@ const altTexts = {
 
 
 // INITIALIZERS & EVENT TRIGGERS    ================================================================================================
-window.addEventListener('load', function() {
+document.addEventListener('DOMContentLoaded', function() {
     window.activeContainers = initializeActive();
     window.allContainers = initializeObjectList(activeContainers);
+    activeContainers.forEach(container => {
+        const city = container.querySelector('h2').textContent;
+        container.querySelectorAll('.radio-button').forEach((group, index) => {
+            group.setAttribute('role', 'group');
+            group.setAttribute('aria-label', `${city}: ${index === 0 ? 'Size' : 'Prioritize'}`);
+        });
+    });
 });
 
 
@@ -49,7 +54,7 @@ function initializeObjectList(activeContainers){
         };
 
         current.source = 'assets/content/maps/' + current.tag + '/' + current.tag + '-'
-        current.altText = 'Triplet of images, starting with a satellite view of ' + current.id + ', unaltered in the first frame, the image then undergoes a striking transformation, compressing horizontally, and with ';
+        current.altText = 'Triplet of images, starting with a satellite view of ' + current.location + ', unaltered in the first frame, the image then undergoes a striking transformation, compressing horizontally, and with ';
 
         allContainers[current.tag] = current;
     };
@@ -67,27 +72,15 @@ function initializeObjectList(activeContainers){
 
 // INTERACTIONS ===============================================================================================================
 // ACTION   -------------------------------------------------------------------------------------------------------------------
-allScalerButtons.forEach((button) => {
-    button.addEventListener('click', (clicked) => {
-        let influenced = clicked.target.parentElement.parentElement.parentElement.children[0].children[0];
-        let info = allContainers[influenced.id];
-        let value = clicked.target.innerHTML.toLowerCase();
-
-        scaleImage(influenced, info, value);
+document.querySelectorAll('.interaction-container input[type="radio"]').forEach(input => {
+    input.addEventListener('change', () => {
+        const container = input.closest('.content-container');
+        const image = container.querySelector('.img-container img');
+        const info = allContainers[image.id];
+        if (input.name.endsWith('-scaler')) scaleImage(image, info, input.value);
+        else rePrioritizemage(image, info, input.value);
     });
 });
-
-allPriorityButtons.forEach((button) => {
-    button.addEventListener('click', (clicked) => {
-        let influenced = clicked.target.parentElement.parentElement.parentElement.children[0].children[0];
-        let info = allContainers[influenced.id];
-        let value = clicked.target.innerHTML.toLowerCase();
-
-        rePrioritizemage(influenced, info, value);
-    });
-});
-
-
 
 // REACTION -------------------------------------------------------------------------------------------------------------------
 function scaleImage(target, info, value) {

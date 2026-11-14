@@ -32,14 +32,15 @@
 		<meta name="p:domain_verify" content="ac61c9f8b46c00d7b0ac8ddab3427ac0"/>
 
 		<link rel="stylesheet" type="text/css" href="sources/global/main.css">
-		<link rel="stylesheet" type="text/css" href="sources/work/work.css">
+		<link rel="stylesheet" type="text/css" href="sources/work/work.css?v=nike-roster-2">
 
 		<script src="sources/global/main.js" defer></script>
-		<script src="sources/work/work.js" defer></script>
+		<script src="sources/work/nike-media.js" defer></script>
+		<script src="sources/work/work.js?v=nike-media-3" defer></script>
 		<script src="sources/work/lawn-texture-mini.js" defer></script>
 	</head>
 
-	<body>
+	<body id="top" tabindex="-1">
 		<div id="fader" class="fader motion"></div>
 
 		<article id="splash">
@@ -58,9 +59,9 @@
 					<span class="offlimits">MMB</span>
 				</h3>
 
-				<h3 id="index-btn"><a target="_self" title="Click here to toggle the index of my work open or closed.">
+				<h3 id="index-btn"><button type="button" class="plain-control" aria-expanded="false" aria-controls="index" title="Click here to toggle the index of my work open or closed.">
 					Index
-				</a></h3>
+				</button></h3>
 
 				<h3 class="nav-work current-page" title="You are currently on the work page">Work</h3>
 
@@ -71,7 +72,7 @@
 				</div>
 			</nav>
 
-			<section id="index" style="display: none;">
+			<section id="index" hidden>
 				<a href="#nike" target="_self" class="index-row" title="Click here to be taken to the Nike section of this page.">
 					<h3>Nike</h3>
 					<h3>Product Graphic Design</h3>
@@ -195,9 +196,9 @@
 				<section class="content">
 					<div class="mid-container">
 						<div target="_self" class="hero" data-rate="25">
-							<img src="work/nike/assets/content/2025/phantom-6/model/high/phantom-6-high-4.avif"
+							<img src="work/nike/assets/content/2025/global-football/phantom-6/footwear/high/phantom-6-high-4.avif"
 								alt="Detail image of the underside of the Nike Phantom 6 football cleat."
-								title="Detail image of the underside of the Nike Phantom 6 football cleat."
+								title="Phantom 6 — underside detail of the football cleat."
 								id="nike-hero"
 								class="drop-shadow blur-load"
 								style="background-image: url(work/nike/assets/no-index/2025/phantom-6/model/high/phantom-6-high-4-blurry.webp);"
@@ -595,8 +596,8 @@
 
 				<section class="context">
 					<hgroup>
-						<h1><a href="work/interview/">Ed Brown Interview</a></h1>
-						<h2><a href="work/interview/">Interview print and publication / 2022</a></h2>
+						<h1><a href="work/ed-brown-interview/">Ed Brown Interview</a></h1>
+						<h2><a href="work/ed-brown-interview/">Interview print and publication / 2022</a></h2>
 					</hgroup>
 				</section>
 			</article>
@@ -707,6 +708,7 @@
 						</a>
 
 						<video src="work/crosswalk-poetics/assets/content/book/book-projection.mp4"
+							poster="work/crosswalk-poetics/assets/no-index/projection-blurry.webp"
 							type="video/mp4"
 							alt="Tabloid sized book I made with a chipboard front and back cover. The pages of the book are all empty because the spreads were used as a surface onto which I projected randomly generated image and text poems"
 							title="Tabloid sized book I made with a chipboard front and back cover. The pages of the book are all empty because the spreads were used as a surface onto which I projected randomly generated image and text poems"
@@ -1079,8 +1081,8 @@
 
 					<div>
 						<h2>Navigation</h2>
-						<h3><a target="_self" id="top-btn" title="Click here to be taken back to the top of this page.">Back to Top</a></h3>
-						<h3><a href="../../about/" title="Click here to learn more about who I am.">About</a></h3>
+						<h3><a href="#top" target="_self" id="top-btn" title="Click here to be taken back to the top of this page.">Back to Top</a></h3>
+						<h3><a href="about/" title="Click here to learn more about who I am.">About</a></h3>
 					</div>
 
 					<div>

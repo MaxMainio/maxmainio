@@ -1,29 +1,22 @@
 // EXPERIENCE SECTION	============================================================================================================
 const allXpBtns = document.getElementsByClassName('xp-btn');
 
-for (var i = allXpBtns.length-1; i >=0  ; i--) {
-	allXpBtns[i].addEventListener('click', function() {
-		var container = this.parentNode.previousElementSibling;
-		var blocks = container.querySelectorAll('.modal');
-
-		blocks.forEach(element => {
-			element.classList.toggle('hide');
-		});
-		
-		if (this.innerHTML === 'More...') {
-			this.innerHTML = 'Less...'
-		} else {
-			this.innerHTML = 'More...'
-		};
-	});
-};
-
-
-
-
-
-
-
+[...allXpBtns].forEach((button, index) => {
+    const container = button.parentElement.previousElementSibling;
+    const blocks = [...container.querySelectorAll('.modal')];
+    const heading = container.querySelector('h2');
+    heading.id = `experience-heading-${index + 1}`;
+    button.id ||= `experience-toggle-${index + 1}`;
+    button.setAttribute('aria-labelledby', `${button.id} ${heading.id}`);
+    blocks.forEach((block, i) => { block.id = `experience-${index + 1}-${i + 1}`; });
+    button.setAttribute('aria-controls', blocks.map(block => block.id).join(' '));
+    button.addEventListener('click', () => {
+        const expanded = button.getAttribute('aria-expanded') !== 'true';
+        blocks.forEach(block => block.classList.toggle('hide', !expanded));
+        button.setAttribute('aria-expanded', String(expanded));
+        button.textContent = expanded ? 'Less...' : 'More...';
+    });
+});
 
 
 // FOOTER FIX	====================================================================================================================
@@ -59,7 +52,7 @@ function getHight(footer){
 
 
 // INITIALIZERS & EVENT TRIGGERS    ================================================================================================
-window.addEventListener('pageshow', setFooter());
+window.addEventListener('pageshow', setFooter);
 window.addEventListener('resize', event => {
 	setFooter();
 });
